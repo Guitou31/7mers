@@ -1,0 +1,3062 @@
+{
+  "_meta": {
+    "source": "04 Métiers (15-11-14).pdf",
+    "nb_metiers": 108,
+    "categories": [
+      "Métiers de Police",
+      "Métiers de Serviteurs",
+      "Métiers de la Maraude",
+      "Métiers de la Mer",
+      "Métiers de la Nature",
+      "Métiers des Armes",
+      "Métiers des Arts",
+      "Métiers des Belles Lettres",
+      "Métiers du Négoce",
+      "Métiers du Réconfort",
+      "Métiers d’Orateurs"
+    ]
+  },
+  "metiers": [
+    {
+      "nom": "Acrobate",
+      "supplement_origine": "Suppléments Ussura et Cathay",
+      "categories": [
+        "Métiers des Arts"
+      ],
+      "description": "Semblable au métier Bateleur, la spécialisation Acrobate est la capacité à réaliser des tours d’adresse comme la culbute, le funambulisme et la jonglerie. Bien qu’il s’agisse avant tout d’une forme de divertissement, ce métier se révèle bien utile en cas d’urgence, comme lorsqu’il faut traverser un abîme à l’aide d’une corde ou sauter d’un édifice en se faisant le moins mal possible.",
+      "competences_base": [
+        "Acrobatie",
+        "Équilibre",
+        "Jeu de jambes"
+      ],
+      "competences_avancees": [
+        "Amortir une chute",
+        "Contorsion",
+        "Équilibriste",
+        "Jonglerie",
+        "Roulé-boulé",
+        "Sauter",
+        "Soulever",
+        "Spectacle de rue",
+        "Tour de force"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Alchimiste",
+      "supplement_origine": "Suppléments Filles de Sophie et Guilde des Alchimistes",
+      "categories": [
+        "Métiers des Belles Lettres"
+      ],
+      "description": "Les alchimistes connaissent les théories chimiques ésotériques censées transformer un matériau vil en un autre. La plupart des notions alchimiques ont été remplacées par des concepts modernes de chimie et de sciences de la nature mais les Filles de Sophie y ont encore parfois recours. Veuillez noter que ce métier est bien distinct de l’avantage Alchimiste qui correspond plus à une vision pratique fondamentale. Il s’agit ici plus d’un recueil de théories dont la plupart ont été supplantées.",
+      "competences_base": [
+        "Alchimie",
+        "Fonderie",
+        "Recherches"
+      ],
+      "competences_avancees": [
+        "Bouilleur de cru",
+        "Calcul",
+        "Charlatanisme",
+        "Occultisme",
+        "Perception du temps",
+        "Philosophie",
+        "Poison",
+        "Sciences de la nature",
+        "Souffleur de verre"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Antiquaire",
+      "supplement_origine": "Supplément La Guilde des Antiquaires",
+      "categories": [
+        "Métiers des Belles Lettres",
+        "Métiers du Négoce"
+      ],
+      "description": "Les antiquaires sont les spécialistes des objets anciens, aussi bien des meubles et des œuvres d’art, des livres, des armes ou des bijoux que des objets provenant des Syrneths. Ce sont, souvent, des collectionneurs à la recherche de la pièce rare qu’ils peuvent acheter très cher. Ils se font rarement avoir lors de leurs achats. Certains sont spécialisés dans une époque ou un pays précis (Montaigne, Vodacce, Syrneth…). Ce métier est réputé très rentable et ceci grâce à l’engouement dont font preuve les nobles et les bourgeois à l’encontre des objets anciens et syrneths. Car plus que l’objet lui- même, l’antiquaire achète et vend son histoire. Parfois, ils font également office de prêteurs sur gages. Inutile de préciser que seuls les objets précieux et anciens les intéressent....",
+      "competences_base": [
+        "Évaluation",
+        "Histoire",
+        "Marchandage"
+      ],
+      "competences_avancees": [
+        "Banquier",
+        "Comptabilité",
+        "Connaissance des Syrneths",
+        "Contacts (cité)",
+        "Occultisme"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Apothicaire",
+      "supplement_origine": "Supplément La Guilde des Apothicaires",
+      "categories": [
+        "Métiers du Négoce",
+        "Métiers du Réconfort"
+      ],
+      "description": "Les apothicaires sont des spécialistes qui préparent et vendent les préparations et onguents à base de plantes, de pierres pilées, d’os et de substances chimiques prescrites par les médecins. Dans beaucoup de cas, on les appelle herboristes. Leur métier leur apprend à reconnaître un grand nombre de substances exotiques et rares, ainsi que leurs propriétés thérapeutiques ou autres. C’est une profession qui demande beaucoup de savoir-faire, et nombre d’apothicaires sont employés à demeure par de riches individus pour s’assurer que les meilleurs traitements leur seront dispensés rapidement. Malheureusement, l’apothicaire fait souvent office de bouc émissaire quand le médecin a échoué et beaucoup sont alors chassés de la ville, avec l’alternative d’offrir leurs services aux hors-la-loi et bandits, ou de tenter l’aventure à travers les territoires sauvages de Théah.",
+      "competences_base": [
+        "Diagnostic",
+        "Médications",
+        "Premiers secours"
+      ],
+      "competences_avancees": [
+        "Bouilleur de cru",
+        "Charlatanisme",
+        "Connaissance des plantes",
+        "Marchandage",
+        "Parfumeur",
+        "Poison",
+        "Savonnier",
+        "Souffleur de verre"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Appréciateur",
+      "supplement_origine": "Supplément La Guilde des Marchands",
+      "categories": [
+        "Métiers du Négoce",
+        "Métiers d’Orateurs"
+      ],
+      "description": "Les appréciateurs sont des experts dont le métier est de déterminer le prix d’un bien ou d’une marchandise. Certains travaillent au service de puissants marchands, alors que d’autres tiennent boutique de manière indépendante. Les meilleurs sont souvent embauchés par la guilde des marchands elle- même qui les affecte aux hôtels nationaux pour aider le service des fraudes. Ainsi, chaque hôtel national dispose d’un appréciateur de talent en permanence. Au vu de la diversité croissante des marchandises proposées par les marchands vendelars, voire vodaccis, ils ont de plus en plus tendance à se spécialiser dans un domaine : les antiquités, les animaux, les tissus, les produits exotiques, etc. Bien entendu, quand ils travaillent pour un marchand, ils font tout leur possible pour estimer la valeur du bien à l’avantage de leur employeur…",
+      "competences_base": [
+        "Calcul",
+        "Éloquence",
+        "Évaluation"
+      ],
+      "competences_avancees": [
+        "Comptabilité",
+        "Droit",
+        "Comportementalisme",
+        "Contacts (cité)",
+        "Falsification",
+        "Marchandage",
+        "Recherches",
+        "Sincérité et une compétence de base d’Artisan au choix"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Armateur",
+      "supplement_origine": "Supplément La Société des Aventuriers de Luthon et du Lovaine",
+      "categories": [
+        "Métiers de la Mer",
+        "Métiers du Négoce"
+      ],
+      "description": "Un armateur, ou affréteur, est un notable qui arme un navire, c’est-à-dire qui fournit le matériel et le ravitaillement de toutes sortes en vue de ses voyages et de son exploitation, et qui fait le lien entre l’équipage (dont le capitaine) et le commanditaire de l’expédition. C’est donc lui qui décide de l’utilisation du navire, quelles seront ses missions et dans quelles conditions vivra et travaillera l’équipage. Dans le cas d’un navire de pêche, l’armateur est souvent le propriétaire ou il partage cette propriété avec un ou plusieurs associés. On trouve également des patrons armateurs, qui en sont aussi les capitaines et les signataires des contrats maritimes avec les marchands. De plus, l’armateur peut être représenté par un agent dans les ports que relie le navire. À la construction du navire, il est d’usage de réserver une cabine à bord sous le nom de cabine d’armateur.",
+      "competences_base": [
+        "Calcul",
+        "Contacts (Cité)",
+        "Marchandage"
+      ],
+      "competences_avancees": [
+        "Banquier",
+        "Comptabilité",
+        "Connaissance de la mer",
+        "Construction navale",
+        "Corruption",
+        "Éloquence",
+        "Étiquette",
+        "Évaluation",
+        "Géographie",
+        "Logistique",
+        "Sens des affaires"
+      ],
+      "reputation": "Rang social : +2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Arnaqueur",
+      "supplement_origine": "Supplément Noblesse Oblige",
+      "categories": [
+        "Métiers d’Orateurs",
+        "Métiers de la Maraude"
+      ],
+      "description": "L’arnaqueur n’aime pas la violence et préfère inciter les gens à lui donner leurs biens plutôt que de les leur subtiliser physiquement. C’est un beau parleur, jamais à court d’idées pour se faire de l’argent. Il vendra sans vergogne un droit d’entrée en ville à un riche marchand crédule aussi facilement qu’il cédera pour quelques guilders un billet donnant accès à un spectacle gratuit. Certains des meilleurs sont des voleurs hautement qualifiés qui travaillent, en se cachant, pour un individu ou une organisation et qui se procurent de l’argent de différentes façons. Ils se placent eux-mêmes en position de confiance, et se débrouillent pour faire fructifier le capital de leurs malheureux clients pour des fins qui leur sont propres.",
+      "competences_base": [
+        "Comportementalisme",
+        "Comédie",
+        "Sincérité"
+      ],
+      "competences_avancees": [
+        "Cancanier",
+        "Charlatanisme",
+        "Corruption",
+        "Déguisement",
+        "Discrétion",
+        "Étiquette",
+        "Falsification",
+        "Intimidation",
+        "Jouer",
+        "Parier",
+        "Pique-assiette",
+        "Séduction",
+        "Sens des affaires",
+        "Tricher"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Artisan",
+      "supplement_origine": "Supplément La Guilde des Marchands",
+      "categories": [
+        "Métiers des Arts",
+        "Métiers du Négoce"
+      ],
+      "description": "Les artisans fabriquent tous les biens utilisés par les habitants de Théah, du manteau en soie au pot en terre cuite, en passant par la cotte de mailles. Ceux qui peuplent l’univers des Secrets de la Septième Mer se sont regroupés au sein de puissantes organisations plus ou moins contrôlées par la ligue de Vendel et/ou les princes-marchands de Vodacce. Ils créent des biens que les marchands leur achètent souvent pour revendre ensuite et jouent l’un des rôles les plus importants de l’économie de Théah.",
+      "competences_base": [
+        "Évaluation et une compétence artisanale au rang 2 parmi : Aubergiste",
+        "Barbier",
+        "Boucher",
+        "Bouilleur de cru",
+        "Boulanger",
+        "Brasseur",
+        "Calligraphe",
+        "Céramiste",
+        "Chandelon",
+        "Chapelier",
+        "Charpentier",
+        "Chaudronnier",
+        "Confiseur",
+        "Construction navale",
+        "Cordonnier",
+        "Couturier",
+        "Cuisinier",
+        "Ébéniste",
+        "Écrivain public",
+        "Embaumeur",
+        "Éventailliste",
+        "Fabricant d’Armes à feu",
+        "Fabricant de cerfs-volants (Cathayan uniquement)",
+        "Fabricant de dards",
+        "Fabricant de feux d’artifice (Cathayan uniquement)",
+        "Fabricant de vitraux",
+        "Fabricant de voiles",
+        "Facteur d’arcs",
+        "Fileur",
+        "Fleuriste",
+        "Forgeron",
+        "Fourreur",
+        "Haubergier",
+        "Horloger",
+        "Imprimeur",
+        "Jardinier",
+        "Joaillier",
+        "Luthier",
+        "Masseur",
+        "Maçon",
+        "Meunier",
+        "Miroitier",
+        "Orfèvre",
+        "Papetier",
+        "Parfumeur",
+        "Perruquier",
+        "Potier",
+        "Poudrier",
+        "Régisseur",
+        "Sabotier",
+        "Savonnier",
+        "Sellier",
+        "Serrurier",
+        "Souffleur de verre",
+        "Tailleur",
+        "Tailleur de pierres",
+        "Tanner",
+        "Teinturier",
+        "Tisserand",
+        "Tonnelier",
+        "Vannier",
+        "Vigneron",
+        "etc",
+        "Toutes ces compétences sont indicatives",
+        "il en existe de nombreuses autres",
+        "N",
+        "B",
+        "Vous pouvez acquérir d’autres compétences de base à raison d’un PP par rang"
+      ],
+      "competences_avancees": [
+        "Bricoleur",
+        "Calcul",
+        "Conduite d’attelage",
+        "Marchandage",
+        "Sens des affaires",
+        "Service",
+        "Soulever"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Artiste",
+      "supplement_origine": "Guide du Joueur",
+      "categories": [
+        "Métiers des Arts"
+      ],
+      "description": "Votre personnage maîtrise les techniques de l’un des beaux-arts : peut-être compose-t-il des sonnets d’amour pour sa bien-aimée, à moins qu’il ne fasse des portraits pour la noblesse. Les artistes sont des êtres à part : ils vivent de leur art et leurs œuvres peuvent bouleverser et influencer les foules ou n’être destinées qu’à un seul individu et changer son cœur à jamais.",
+      "competences_base": [
+        "Une compétence artistique au rang 3 parmi : Chant",
+        "Compositeur",
+        "Création littéraire",
+        "Dessin",
+        "Musique (instrument)",
+        "Sculpture",
+        "Vous pouvez en acquérir d’autres au prix de 1 PP par rang"
+      ],
+      "competences_avancees": [
+        "Comportementalisme",
+        "Débrouillardise",
+        "Éloquence",
+        "Séduction et une compétence de base d’artisan (de type Luthier",
+        "Papetier ou Tailleur de pierre) en fonction de la compétence de base principale"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Assassin",
+      "supplement_origine": "Supplément Novus Ordum Mundi, les Maîtres du Grand Jeu",
+      "categories": [
+        "Métiers des Armes",
+        "Métiers de la Maraude"
+      ],
+      "description": "Les assassins sont des tueurs à gages, des professionnels consciencieux et d’excellents combattants. Ils sont experts dans le maniement d’une grande variété d’armes et leur niveau d’entraînement se situe bien au-delà de la majorité des gardes, soldats, brigands et autres tueurs à la manque. Ils sont très habiles, également, à l’utilisation des poisons et à la construction de pièges. Ces talents leur permettent de se louer au plus offrant et il arrive qu’un assassin soit engagé par deux partis opposés pour éliminer les deux chefs adverses respectifs. Dans Théah, l’assassin est une arme très efficace en cas de conflit, utilisée indistinctement par les grandes familles nobles, l’église des Prophètes ou les sociétés secrètes.",
+      "competences_base": [
+        "Déplacement silencieux",
+        "Guet-apens",
+        "Poison"
+      ],
+      "competences_avancees": [
+        "Déguisement",
+        "Diagnostic",
+        "Dissimulation",
+        "Escalade",
+        "Estomac",
+        "Facteur d’arc",
+        "Filature",
+        "Qui-vive",
+        "Sincérité"
+      ],
+      "reputation": "Moralité : -2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Avoué",
+      "supplement_origine": "Supplément La Guilde des Lettrés",
+      "categories": [
+        "Métiers des Belles Lettres",
+        "Métiers de Police"
+      ],
+      "description": "Les avoués étudient longuement les procédés judiciaires de Théah et, d’une façon générale, tous les systèmes de lois. Ce sont des juristes professionnels, qui occupent une place élevée dans la société et jouissent, généralement, d’une excellente réputation. C’est d’ailleurs cette dernière qui constitue leur principale richesse. C’est encore elle qui leur apporte un afflux constant de clients, et donc de revenus ; aussi, peu d’avoués prennent-ils le risque de traiter des affaires qu’ils ne sont pas sûr de gagner. Toutefois, il arrive que de jeunes avoués se chargent d’affaires inhabituelles, susceptibles d’attirer l’attention de l’opinion publique, car de telles victoires augmentent terriblement leur réputation ainsi que leur position sociale et professionnelle. Bien que les régimes de lois diffèrent d’un pays à l’autre, ils ont de nombreuses similitudes ; un avoué compétent sera à même de venir à bout d’un système qui ne lui est pas familier après quelques recherches.",
+      "competences_base": [
+        "Droit",
+        "Éloquence",
+        "Sincérité"
+      ],
+      "competences_avancees": [
+        "Comportementalisme",
+        "Connaissance des bas-fonds (cité)",
+        "Corruption",
+        "Création Littéraire",
+        "Étiquette",
+        "Interrogatoire",
+        "Politique",
+        "Recherches"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Bagnard",
+      "supplement_origine": "Supplément La Maraude",
+      "categories": [
+        "Métiers de la Maraude"
+      ],
+      "description": "Vivre en prison est chose dangereuse. Tout d’abord, les prisonniers étant mélangés, il est fort possible de se retrouver à partager la cellule d’un psychopathe notoire qui essaiera de vous étrangler dans votre sommeil. De même, les vétérans de la prison n’hésitent pas à faire un peu d’exercice en tabassant les petits jeunots ou en se servant d’eux comme femmes. Toutes ces malversations se font de la même manière : une fois les lumières éteintes, entre deux rondes de gardes, à plusieurs contre la victime, elle-même bâillonnée. La plupart des détenus de longue durée comprennent rapidement que la prison risque de les tuer ou de les ramollir s’ils ne font pas attention. Il n’est donc pas rare de voir les anciens s’imposer de longues heures d’exercice. Cela a trois effets : primo, cela leur confère une force physique nécessaire pour survivre dans de telles conditions. Secundo, c’est très bon pour l’équilibre psychologique. Tertio, cela leur assure d’être en forme à leur sortie. On voit donc bien qu’être un bagnard n’est pas une sinécure et peut être riche de nombreux enseignements.",
+      "competences_base": [
+        "Débrouillardise",
+        "Estomac",
+        "Qui-vive"
+      ],
+      "competences_avancees": [
+        "Comportementalisme",
+        "Connaissance des bas-fonds (cité)",
+        "Corruption",
+        "Discrétion",
+        "Dissimulation",
+        "Escalade",
+        "Intimidation",
+        "Lire sur les lèvres"
+      ],
+      "reputation": "Moralité : -2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Bateleur",
+      "supplement_origine": "Guide du Joueur, suppléments Ussura et Cahtay",
+      "categories": [
+        "Métiers des Arts"
+      ],
+      "description": "Ce métier est celui de tous les personnages qui vivent en se produisant devant les foules, afin de les faire rire, pleurer ou s’extasier. Lanceurs de couteaux, acrobates, danseurs, chanteurs et ventriloques forment le gros de cette profession. Ce qu’ils récoltent dans leur chapeau à la fin de la représentation sera bien souvent tout ce qu’ils auront pour manger et dormir. C’est pour cette raison (ou simplement par envie) que certains acteurs utilisent leurs compétences à d’autres fins (moins honnêtes). Ces individus voyagent beaucoup, parfois seuls mais généralement au sein d’une troupe qui se produit dans les villages sur leur route. Les troupes les plus chanceuses ne cessent jamais de travailler et passent parfois plusieurs mois d’affilée dans la même ville. Les autres vivotent bon gré mal gré et sont en quête permanente d’un public susceptible de reconnaître leur talent.",
+      "competences_base": [
+        "3 compétences au rang 1 parmi : Chant",
+        "Comédie",
+        "Danse et Éloquence",
+        "Vous pouvez acquérir la dernière compétence de base au rang 1 pour 1 PP"
+      ],
+      "competences_avancees": [
+        "Compère",
+        "Comportementalisme",
+        "Conduite d’attelage",
+        "Connaissance des routes (nation)",
+        "Déguisement",
+        "Discrétion",
+        "Dressage",
+        "Équilibriste",
+        "Hypnotisme",
+        "Jonglerie",
+        "Musique (instrument)",
+        "Narrer",
+        "Prestidigitation",
+        "Séduction",
+        "Sher Da Shi (Croissantin uniquement)",
+        "Spectacle de rue"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Batelier",
+      "supplement_origine": "Supplément Eisen",
+      "categories": [
+        "Métiers de la Mer"
+      ],
+      "description": "La batellerie est une activité très répandue. C’est la profession des marins qui convoient des embarcations sur les cours d’eau. Certains sont des passeurs dont les bacs servent à franchir fleuves et rivières, ou transbahutent des passagers d’une ville à l’autre, mais la majorité vit surtout du fret. On véhicule par voie d’eau les produits les plus divers – draps, grains, pierre de taille, animaux, voire chargements de poudre et de munitions en temps de guerre. Les marins qui pilotent les embarcations fluviales sont d’une trempe différente de ceux qui s’aventurent en pleine mer. Si leurs frères de la mer se moquent de ces “hommes de boue”, ils savent pertinemment que seul un pilote fluvial est capable d’assurer la sécurité d’un voyage sur des eaux capricieuses pleines de rochers, d’embâcles, de troncs immergés et de malandrins mal intentionnés.",
+      "competences_base": [
+        "Canotage",
+        "Piloter",
+        "Potamologie (fleuve)"
+      ],
+      "competences_avancees": [
+        "Cartographie",
+        "Connaissance des nœuds",
+        "Corruption",
+        "Diplomatie",
+        "Équilibre",
+        "Gréer",
+        "Guet-apens",
+        "Lancer",
+        "Nager",
+        "Pêche",
+        "Perception du temps",
+        "Qui-vive"
+      ],
+      "reputation": "Rang social : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Bourreau",
+      "supplement_origine": "Supplément La Guilde des Services Publics",
+      "categories": [
+        "Métiers de Police"
+      ],
+      "description": "Les bourreaux sévissent, pour la plupart, dans les donjons et sur les places de Grève où ils acquièrent quelques-unes des habitudes les moins plaisantes de l’homme. Le bourreau est un expert dans les interrogatoires avec utilisation de la force et sait comment causer une grande souffrance qui ne laisse que très peu de traces. Certains bourreaux particulièrement qualifiés acquièrent même des connaissances en médecine, pour maintenir leur victime en vie jusqu’à ce qu’ils en aient fini avec elle. Ils donnent également les peines capitales aux criminels condamnés à mort. En ces occasions, ils portent une cagoule afin de ne pas être reconnus par la famille ou les amis du condamné qui pourraient vouloir les tuer pour se venger. Note historique : en France, “Monsieur de Paris”, le bourreau, avait le droit de faire le tour du marché et de prendre à chaque étal une poignée de nourriture.",
+      "competences_base": [
+        "Comportementalisme",
+        "Interrogatoire",
+        "Intimidation"
+      ],
+      "competences_avancees": [
+        "Diagnostic",
+        "Discrétion",
+        "Dissimulation",
+        "Estomac",
+        "Examiner",
+        "Lire sur les lèvres",
+        "Premiers secours",
+        "Sincérité",
+        "Qui-vive"
+      ],
+      "reputation": "Moralité : -2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Bûcheron",
+      "supplement_origine": "Supplément La Guilde des Bûcherons",
+      "categories": [
+        "Métiers de la Nature"
+      ],
+      "description": "Les bûcherons résident dans les grandes forêts de Théah. Ils vivent de l’abattage et de la coupe du bois. Le bûcheron doit aussi savoir reconnaître et éliminer la vermine qui menace les arbres. La majorité travaille sur des terres de gentilshommes, mais les plus entreprenants œuvrent pour leur compte personnel en bordure des forêts, vendant du bois de construction ou préparant de nouveaux sites.",
+      "competences_base": [
+        "Connaissance des plantes",
+        "Escalade",
+        "Qui-vive"
+      ],
+      "competences_avancees": [
+        "Conduite d’attelage",
+        "Connaissance des animaux",
+        "Déplacement silencieux",
+        "Pêche",
+        "Perception du temps",
+        "Sauter",
+        "Sens de l’orientation",
+        "Signes de piste",
+        "Soulever",
+        "Survie"
+      ],
+      "reputation": "Rang social : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Cambrioleur",
+      "supplement_origine": "Supplément La Maraude",
+      "categories": [
+        "Métiers de la Maraude"
+      ],
+      "description": "Le cambrioleur est un voleur particulièrement intéressé par la mécanique et le bricolage. Aucune serrure, aucun coffre, aucun piège ni aucun dispositif de sécurité n’a de secrets pour lui et même s’il n’en fait pas un usage intensif, il comprend le fonctionnement de la plupart des gadgets. Il pénètre par effraction dans les maisons et les dévalise, généralement de nuit. Il est habile pour repérer et marquer d’un signe révélateur les maisons inoccupées. C’est un être plutôt solitaire qui n’apprécie pas vraiment la vie de groupe, même s’il s’y résout lorsqu’il ne peut mener seul une opération.",
+      "competences_base": [
+        "Crochetage",
+        "Déplacement silencieux",
+        "Fouille"
+      ],
+      "competences_avancees": [
+        "Architecture",
+        "Bricoleur",
+        "Connaissance des bas-fonds (cité)",
+        "Connaissance des pièges",
+        "Évaluation",
+        "Langage des signes",
+        "Qui-vive",
+        "Serrurier"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Cartographe",
+      "supplement_origine": "Supplément La Guilde des Planiers",
+      "categories": [
+        "Métiers des Arts",
+        "Métiers de la Mer"
+      ],
+      "description": "Les cartographes réalisent des cartes qui sont commandées des mois à l’avance par de riches notables ou des capitaineries. Les cartes précises se vendent à prix d’or et les plus grands cartographes sont capables de réaliser des cartes maritimes, comme des portulans, incroyablement précises et des cartes terrestres d’une utilité incontestable. Les cartes ont un rôle important dans le commerce et les voyages terrestres ou maritimes et le fait d’en posséder une ou non fera de vous un riche marchand ou un petit commerçant. Certains cartographes ont choisi l’aventure et accompagnent les explorateurs à la découverte de nouveaux territoires.",
+      "competences_base": [
+        "Cartographie",
+        "Dessin",
+        "Géographie"
+      ],
+      "competences_avancees": [
+        "Astronomie",
+        "Calligraphie",
+        "Code secret",
+        "Connaissance des routes (nation)",
+        "Étiquette",
+        "Falsification",
+        "Orientation citadine (cité)",
+        "Papetier",
+        "Sens de l’orientation"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Chasseur",
+      "supplement_origine": "Guide du Joueur",
+      "categories": [
+        "Métiers de la Nature"
+      ],
+      "description": "La chasse est l’une des plus anciennes activités de Théah. Le chasseur est capable de suivre et, le plus souvent, de pressentir la direction qu’un animal a prise avec une inquiétante précision et de la tuer proprement. Les habitudes des bêtes sauvages sont une partie de leur existence ; ils ont une affinité peu ordinaire avec les créatures sauvages de leur milieu. Le chasseur semble renfrogné et taciturne, mais c’est surtout à cause de son style de vie solitaire et de la nécessité pour lui de chasser en silence.",
+      "competences_base": [
+        "Connaissance des animaux",
+        "Déplacement silencieux",
+        "Piéger"
+      ],
+      "competences_avancees": [
+        "Dressage",
+        "Guet-apens",
+        "Langage des signes",
+        "Pister",
+        "Qui-vive",
+        "Sens de l’orientation",
+        "Signes de piste",
+        "Soins des chiens",
+        "Survie",
+        "Tanner"
+      ],
+      "reputation": "Rang social : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Chasseur de primes",
+      "supplement_origine": "Supplément La Guilde des Chasseurs de Primes",
+      "categories": [
+        "Métiers des Armes",
+        "Métiers de Police"
+      ],
+      "description": "Les chasseurs de primes vivent en traquant les criminels recherchés, malfaiteurs et autres indésirables pour les remettre aux mains de la Justice. Les récompenses sont offertes par les souverains, les guildes, l’inquisition ou les ministres de la justice, voire même par les nobles locaux pour se débarrasser des brigands, récupérer un escroc un peu trop malin, ramener une fille en fuite pour son mariage, clore le bec à un agitateur – voire capturer El Vago. Les chasseurs de primes sont des combattants expérimentés capables de traquer leurs proies sans perdre leur piste ; car ils sont d’un caractère obstiné, dur et cynique. Ce sont des tueurs professionnels dans le vrai sens du terme, qui n’hésitent pas, en dernier ressort, à employer tous les moyens, s’ils justifient la fin, pour réussir. Ce sont des solitaires par nature, qui ne se fient à personne et qui ne recherchent la compagnie des autres qu’à partir du moment où elle sert leurs intérêts. Les gens de basse condition les considèrent avec peur et défiance et les autorités les voient comme un mal nécessaire tout en les accueillant froidement.",
+      "competences_base": [
+        "Contacts (cité)",
+        "Fouille",
+        "Guet-apens"
+      ],
+      "competences_avancees": [
+        "Cancanier",
+        "Comportementalisme",
+        "Course de vitesse",
+        "Déplacement silencieux",
+        "Filature",
+        "Interrogatoire",
+        "Intimidation",
+        "Pêche",
+        "Pister",
+        "Qui-vive"
+      ],
+      "reputation": "Réputation martiale : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Chroniqueur",
+      "supplement_origine": "Supplément La Guilde des Chroniqueurs",
+      "categories": [
+        "Métiers des Belles Lettres",
+        "Métiers de Police"
+      ],
+      "description": "Les chroniqueurs sont les journaleux de Théah, ils écrivent pour les diverses gazettes qui circulent dans les grandes villes. Certains se sont fait une spécialité de la vie des grands de ce monde, d’autres (avec les autorités aux trousses) contestent l’ordre établi et cherchent une plus grande équité et justice dans leurs écrits. Certains ont des phrases à peine correctes, alors que d’autres sont des érudits d’une grande finesse d’esprit. Toutefois, ce métier ne nourrit pas son homme et tous ont une deuxième profession, comme écrivain public, estudiant, professeur ou avoué par exemple.",
+      "competences_base": [
+        "Cancanier",
+        "Création littéraire",
+        "Recherches"
+      ],
+      "competences_avancees": [
+        "Calligraphie",
+        "Comportementalisme",
+        "Contacts (cité)",
+        "Corruption",
+        "Discrétion",
+        "Écrivain public",
+        "Éloquence",
+        "Étiquette",
+        "Histoire",
+        "Narrer",
+        "Politique",
+        "Sincérité"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Cocher",
+      "supplement_origine": "Supplément La Guilde des Rouliers",
+      "categories": [
+        "Métiers de la Nature",
+        "Métiers de Serviteurs"
+      ],
+      "description": "Voyager sur les routes de Théah est hasardeux et ceux qui en font leur métier ne sont pas n’importe qui. Le cocher doit faire face à de nombreuses difficultés, on peut même dire qu’il risque sa vie quotidiennement ; les routes sont dangereuses car très mal entretenues et les voyageurs peuvent s’attendre à faire de mauvaises rencontres telles que des bandes organisées, bandits de grands chemins, péagers irascibles et patrouilleurs ruraux inquisiteurs, sans parler de rencontres surnaturelles plus hasardeuses. C’est le travail peu enviable du cocher de mener passagers et cargaison en lieu sûr “contre vents et marées”, et d’acheminer les messages officiels ou leurs porteurs quand on les sollicite.",
+      "competences_base": [
+        "Conduite d’attelage",
+        "Connaissance des routes (nation)",
+        "Équilibre"
+      ],
+      "competences_avancees": [
+        "Conduite de traineau (Ussura)",
+        "Dressage",
+        "Équitation",
+        "Guet-apens",
+        "Perception du temps",
+        "Qui-vive",
+        "Sauter",
+        "Sauter en selle",
+        "Sens de l’orientation",
+        "Soin des chevaux"
+      ],
+      "reputation": "Rang social : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Collecteur d’impôts",
+      "supplement_origine": "Supplément La Guilde des Services Publics",
+      "categories": [
+        "Métiers de Police"
+      ],
+      "description": "Les collecteurs d’impôts sont probablement les citoyens les moins populaires de Théah. Qu’importe la bienveillance des gouvernements, ou la résignation des résidents, toujours est-il que personne n’aime payer ses impôts et que le collecteur fait les frais du ressentiment général. Ils constituent malgré tout une branche nécessaire du service civil et aucun régime ne pourrait survivre longtemps sans eux. Pourtant, les collecteurs de taxes n’ont que peu de satisfaction à accomplir leur tâche et ils sont rarement bien payés. Ceci explique que certains d’entre eux se laissent inévitablement corrompre, alors que d’autres, dans l’espoir d’une hypothétique promotion, restent d’une intégrité scrupuleuse. Il arrive souvent que l’administration afferme (sous-traite) la collecte des impôts d’une région. Le fermier, forcément un noble aisé ou un gros bourgeois, paye un droit, puis il appointe des serviteurs pour aller chercher les contributions ainsi que son bénéfice, souvent important. Cela lui vaudra beaucoup de soutiens attirés par sa richesse, mais aussi l’antipathie de ses contribuables.",
+      "competences_base": [
+        "Calcul",
+        "Comptabilité",
+        "Droit"
+      ],
+      "competences_avancees": [
+        "Comportementalisme",
+        "Corruption",
+        "Économie",
+        "Éloquence",
+        "Évaluation",
+        "Falsification",
+        "Intimidation",
+        "Numismatique"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Colporteur",
+      "supplement_origine": "Supplément La Guilde des Colporteurs",
+      "categories": [
+        "Métiers de la Nature",
+        "Métiers du Négoce"
+      ],
+      "description": "Peu de villages possèdent leurs propres boutiques ou comptoirs de commerce ; aussi tous sont dépendants du colporteur, insignifiant marchand ambulant. Après avoir acheté des marchandises facilement transportables à la foire ou dans les boutiques citadines, le colporteur va d’un village à l’autre, vendant ces produits tout en diffusant les nouvelles et potins de la ville. Le chargement du colporteur est constitué de tout ce qui peut se transporter facilement, comme des pots, casseroles, accessoires de vêtements, bourses, épingles, couteaux... Dans les régions plus peuplées, les colporteurs sont souvent patentés et peuvent avoir leur propre guilde chargée de protéger leurs intérêts et de décourager d’éventuels concurrents d’empiéter sur leurs prérogatives. Beaucoup ont une vie de nomade et croient résolument dans la fraternité de leur profession, même s’ils sont de races différentes et qu’ils n’ont ni culture, tradition ou langage commun. Beaucoup acquièrent des connaissances d’herboriste. À peu près tout le monde se méfie d’eux, spécialement les gardes, les patrouilleurs ruraux et gardes-frontières. Certains colporteurs vendent des livres, ce qui fait d’eux des vecteurs de culture, mais aussi des hors-la- loi s’il s’agit d’ouvrages interdits.",
+      "competences_base": [
+        "Connaissance des routes (nation)",
+        "Marchandage",
+        "Sens de l’orientation"
+      ],
+      "competences_avancees": [
+        "Cancanier",
+        "Charlatanisme",
+        "Comportementalisme",
+        "Conduite d’attelage",
+        "Connaissance des plantes",
+        "Contacts (cité)",
+        "Dissimulation",
+        "Évaluation",
+        "Narrer",
+        "Sens des affaires",
+        "Sincérité"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Comédien",
+      "supplement_origine": "Supplément Noblesse Oblige",
+      "categories": [
+        "Métiers des Arts",
+        "Métiers d’Orateurs"
+      ],
+      "description": "Un acteur gagne sa vie sur scène en interprétant divers personnages dans des pièces de théâtre. Il n’y a pas de distinction entre acteurs comiques et tragiques, même si on se voit souvent attribuer un “emploi”, dépendant de son physique : un comédien beau et athlétique sera “jeune premier” (le rôle de l’amoureux), une actrice ronde et bonhomme sera plus souvent servante que courtisée. Ce métier n’a rien à voir avec celui de bateleur : ce dernier montre un spectacle simple et rapide pour obtenir quelques pièces des badauds ; un acteur, lui, doit travailler son texte et son jeu pendant des semaines avant de monter sur scène pour une durée assez longue. Parfois même, il écrit des pièces, les met en scène et les interprète avec sa troupe. Un acteur de talent finira par se produire devant des nobles de haut rang à un moment ou un autre de sa carrière. Attention à ceux qui embrassent ce métier, car l’Église leur refusera l’enterrement selon les rites, à moins qu’ils ne jouent que des mystères.",
+      "competences_base": [
+        "Comédie",
+        "Déguisement",
+        "Éloquence"
+      ],
+      "competences_avancees": [
+        "Chant",
+        "Compère",
+        "Comportementalisme",
+        "Création littéraire",
+        "Danse",
+        "Galvaniser",
+        "Linguistique",
+        "Mode",
+        "Narrer",
+        "Séduction",
+        "Sincérité"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Commandement",
+      "supplement_origine": "Guide du Joueur",
+      "categories": [
+        "Métiers des Armes"
+      ],
+      "description": "Les dirigeants avisés savent combien il est important, pour la survie de leur pays, de s’entourer d’officiers de qualité. Les officiers constituent le ciment qui soude une armée ; sans leurs qualités diplomatiques et stratégiques, elle s’écroulerait.",
+      "competences_base": [
+        "Commander",
+        "Stratégie",
+        "Tactique"
+      ],
+      "competences_avancees": [
+        "Artillerie",
+        "Cartographie",
+        "Code secret",
+        "Diplomatie",
+        "Entraîner",
+        "Estomac",
+        "Galvaniser",
+        "Guet-apens",
+        "Héraldique",
+        "Histoire",
+        "Intimidation",
+        "Lancer de fusée (Cathayan uniquement)",
+        "Logistique",
+        "Ordre serré",
+        "Qui- vive"
+      ],
+      "reputation": "Réputation martiale : +2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Contrebandier",
+      "supplement_origine": "Supplément La Société des Aventuriers de Luthon et du Lovaine",
+      "categories": [
+        "Métiers de la Maraude",
+        "Métiers de la Mer",
+        "Métiers du Négoce"
+      ],
+      "description": "La plupart des grandes voies maritimes et terrestres empruntées par les marchands sont soumises à des droits et des taxes aux limites des pays, villes, fiefs – en fait, partout où les autorités locales ont décidé de taxer la circulation des marchandises. Dans les grands ports, presque tout ce qui entre ou qui sort est imposé de la même manière. Pour éviter de payer ces charges supplémentaires, certains esprits déterminés s’occupent de faire passer les marchandises en fraude. Dans certains villages côtiers isolés, la population entière se consacre à cette activité tout à fait ouvertement. Les contrebandiers sont souvent des gens très respectables qui ont trouvé la façon de déjouer les lois. Il existe aussi des contrebandiers amateurs que les professionnels considèrent plus comme des commerçants libéraux que comme de véritables criminels.",
+      "competences_base": [
+        "Canotage (s’il s’agit d’un contrebandier marin) ou Connaissance des routes (nation à préciser",
+        "s’il s’agit d’un contrebandier terrestre)",
+        "Déplacement silencieux",
+        "Évaluation"
+      ],
+      "competences_avancees": [
+        "Canotage (s’il s’agit d’un contrebandier terrestre) ou Connaissance des routes (nation à préciser",
+        "s’il s’agit d’un contrebandier marin)",
+        "Conduite d’attelage",
+        "Connaissance des bas-fonds (cité)",
+        "Corruption",
+        "Dissimulation",
+        "Falsification",
+        "Fouille",
+        "Guet-apens",
+        "Marchandage",
+        "Qui-vive"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Courtisan",
+      "supplement_origine": "Guide du Joueur et supplément Ussura",
+      "categories": [
+        "Métiers d’Orateurs",
+        "Métiers de Serviteurs"
+      ],
+      "description": "Les courtisans sont des parasites mondains passés maîtres dans l’art subtil de la diplomatie, vivant aux crochets des grands de ce monde pour tenter de se hisser le plus haut possible dans la hiérarchie sociale. En tant que membre de cette catégorie sociale, le PJ peut dîner avec les rois, plaisanter avec les cardinaux ou, lorsque le besoin s’en fait sentir, parvenir à soutirer des secrets même à sa bien-aimée. Peu scrupuleux par nature, il trahit facilement ses protecteurs d’hier pour peu que leur fortune vacille, et il se prête volontiers aux cabales et diffamations pour discréditer ses adversaires. Opportuniste et ambitieux, le courtisan est un hypocrite, souriant et obséquieux, sachant oublier son amour-propre quand il s’agit de flatter la vanité des puissants.",
+      "competences_base": [
+        "Danse",
+        "Étiquette",
+        "Mode"
+      ],
+      "competences_avancees": [
+        "Cancanier",
+        "Comportementalisme",
+        "Corruption",
+        "Diplomatie",
+        "Éloquence",
+        "Héraldique",
+        "Intrigant",
+        "Jouer",
+        "Lire sur les lèvres",
+        "Pique-assiette",
+        "Politique",
+        "Séduction",
+        "Sincérité"
+      ],
+      "reputation": "Rang social : +2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Détrousseur",
+      "supplement_origine": "Supplément La Maraude",
+      "categories": [
+        "Métiers des Armes",
+        "Métiers de la Maraude"
+      ],
+      "description": "Le détrousseur n’est pas réellement un voleur fin et subtil. Il pratique son métier dans les ruelles sombres des quartiers pauvres, où il agresse tous ceux à la fois riches et sans défense. S’il attaque quelquefois des habitants du quartier, il préfère prendre pour cible les bourgeois ou les nobles égarés. Il ne tue que pour se défendre et ne se bat que lorsque c’est obligatoire. Il possède généralement un tempérament de feu et sa grande gueule en fait un compagnon de route imprévisible mais attachant.",
+      "competences_base": [
+        "Déplacement silencieux",
+        "Guet-apens",
+        "Intimidation"
+      ],
+      "competences_avancees": [
+        "Assommer",
+        "Connaissance des bas-fonds (cité)",
+        "Filature",
+        "Fouille",
+        "Langage des signes",
+        "Orientation citadine (cité)",
+        "Qui-vive"
+      ],
+      "reputation": "Moralité : -2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Diplomate",
+      "supplement_origine": "Supplément Noblesse Oblige",
+      "categories": [
+        "Métiers des Belles Lettres",
+        "Métiers d’Orateurs"
+      ],
+      "description": "Théah est une terre violente et sans pitié, la mort y est rarement naturelle : le Fer, la Maladie, la Sorcellerie prélèvent quotidiennement un tribut en vies humaines. Le Vulgum Pecus pense souvent aux batailles ou à la guerre ; c’est un aspect très physique des choses. Rares sont ceux qui se doutent des intrigues qui se trament en coulisses, en toile de fond des crises. Il existe une “caste” de gens qui ont le pouvoir de faire et défaire les ducs, déclencher ou influencer le cours d’une bataille, dénouer ou envenimer une crise : ces personnes craintes même par les plus grands sont les diplomates. Un grand calme et un immense charisme sont leurs armes principales.",
+      "competences_base": [
+        "Diplomatie",
+        "Étiquette",
+        "Politique"
+      ],
+      "competences_avancees": [
+        "Code secret",
+        "Comportementalisme",
+        "Corruption",
+        "Économie",
+        "Éloquence",
+        "Géographie",
+        "Héraldique",
+        "Histoire",
+        "Intrigant",
+        "Linguistique",
+        "Sincérité"
+      ],
+      "reputation": "Rang social : +2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Domestique",
+      "supplement_origine": "Guide du Joueur et supplément Ussura",
+      "categories": [
+        "Métiers de Serviteurs"
+      ],
+      "description": "Les nobles et les négociants sont des maîtres exigeants. S’il veut garder sa place, un domestique doit savoir travailler avec diligence et en toute discrétion. Bien qu’on les regroupe en un seul métier, les domestiques ont de multiples assignations dans la maisonnée. Les lingères, les cuisiniers- ères, les valets de pied, les femmes de chambre, sont bien séparés dans leurs tâches ; souvent, par accord tacite, le maître de maison commande aux hommes et la maîtresse de maison aux femmes. Un Cocher, Garde du corps, Palefrenier ou Fauconnier peut faire partie des domestiques d’une maison, mais ce n’est pas là son Métier à proprement parler.",
+      "competences_base": [
+        "Discrétion",
+        "Étiquette",
+        "Tâches domestiques"
+      ],
+      "competences_avancees": [
+        "Cancanier",
+        "Comptabilité",
+        "Conduite d’attelage",
+        "Conduite d’attelage",
+        "Conduite de traîneau (Ussura)",
+        "Couturier",
+        "Cuisinier",
+        "Jardinier",
+        "Majordome",
+        "Marchandage",
+        "Mode",
+        "Qui-vive",
+        "Régisseur",
+        "Sincérité",
+        "Valet"
+      ],
+      "reputation": "Rang social : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Éclaireur",
+      "supplement_origine": "Supplément Les Gens d’Armées",
+      "categories": [
+        "Métiers des Armes",
+        "Métiers de la Nature"
+      ],
+      "description": "Les éclaireurs louent leurs services à l’armée, aux marchands, aux voyageurs ou à quiconque est en mesure d’en payer le prix. Leur travail consiste à partir en avant de leurs employeurs, afin d’explorer le terrain et de leur rendre compte de toute activité suspecte ou toute source possible de danger et ceci, avant que tout le groupe ne s’y aventure. Les éclaireurs sont experts dans l’art de se fondre dans le paysage ; ils parviennent souvent à s’approcher suffisamment près d’une armée pour lire les emblèmes de ses bannières et boucliers sans se faire repérer.",
+      "competences_base": [
+        "Déplacement silencieux",
+        "Pister",
+        "Sens de l’orientation"
+      ],
+      "competences_avancees": [
+        "Cartographie",
+        "Connaissance des animaux",
+        "Connaissance des routes (nation)",
+        "Course d’endurance",
+        "Équitation",
+        "Escalade",
+        "Guet-apens",
+        "Langage des signes",
+        "Pêche",
+        "Perception du temps",
+        "Qui-vive",
+        "Signes de piste",
+        "Survie"
+      ],
+      "reputation": "Réputation martiale : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Érudit",
+      "supplement_origine": "Guide du Joueur",
+      "categories": [
+        "Métiers des Belles Lettres"
+      ],
+      "description": "C’est sur les épaules des érudits que repose le niveau de développement actuel de Théah. Certains d’entre eux sont des rats de bibliothèques, enfermés dans leurs laboratoires et leurs salles d’études, tandis que d’autres osent braver les périls qui hantent les ruines syrneths afin d’en percer les secrets.",
+      "competences_base": [
+        "Calcul",
+        "Histoire",
+        "Recherches"
+      ],
+      "competences_avancees": [
+        "Architecture",
+        "Astronomie",
+        "Connaissance des animaux",
+        "Connaissance des plantes",
+        "Connaissance des Syrneths",
+        "Création littéraire",
+        "Droit",
+        "Économie",
+        "Éloquence",
+        "Géographie",
+        "Héraldique",
+        "Linguistique",
+        "Mathématiques",
+        "Numismatique",
+        "Occultisme",
+        "Philosophie",
+        "Sciences de la nature",
+        "Théologie"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Escamoteur",
+      "supplement_origine": "Supplément La Maraude",
+      "categories": [
+        "Métiers de la Maraude"
+      ],
+      "description": "L’escamoteur est un individu particulièrement discret. Il est spécialisé dans la subtilisation des valeurs dans les poches et les bourses. Il n’aime pas du tout la violence et se résout très rarement à l’utiliser, préférant toujours la fuite à une confrontation armée. C’est un tire-laine hors pair, même s’il lui arrive de voler à l’étalage. Il aime la compagnie des autres voleurs et se déplace généralement en groupe de trois ou quatre individus. Le pickpocket est un véritable fléau dans les villes et, les jours de marché, ils sont nombreux à opérer seuls ou en équipe sous le couvert de la foule. La technique favorite et la plus rencontrée consiste à détacher la bourse de la victime à l’aide d’un petit couteau tranchant ou d’un rasoir à manche. L’un d’eux peut aussi déclencher une dispute pour distraire la victime pendant qu’un larron lui fait les poches. Enfin, une minorité d’escamoteurs monte des spectacles de bateleurs et détrousse l’auditoire pendant qu’un acrobate, un singe savant ou un prestidigitateur détourne l’attention. Les bijoux sont une valeur sûre, mais souvent difficiles à dérober discrètement et facilement reconnaissables ; il est souvent ardu de les écouler sans le concours d’un Receleur, qui en profitera d’ailleurs pour escroquer le voleur sur la valeur de sa prise.",
+      "competences_base": [
+        "Course de vitesse",
+        "Orientation citadine (cité)",
+        "Pickpocket"
+      ],
+      "competences_avancees": [
+        "Comportementalisme",
+        "Connaissance des bas-fonds (cité)",
+        "Corruption",
+        "Course d’endurance",
+        "Discrétion",
+        "Dissimulation",
+        "Escalade",
+        "Filature",
+        "Langage des signes",
+        "Qui-vive",
+        "Sauter"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Espion",
+      "supplement_origine": "Guide du Joueur et supplément Ussura",
+      "categories": [
+        "Métiers d’Orateurs",
+        "Métiers de Police"
+      ],
+      "description": "Comme le ver dans la pomme, les espions sapent la stabilité des nations et de leur gouvernement. Ils rôdent furtivement, corrompent les sous-fifres, volent des secrets et assassinent les puissants qui les gênent. L’issue de nombreuses guerres repose sur leurs épaules. La plupart des Espions ont commencé par une autre carrière ; puis les circonstances, ou une personne influente, ont décidé qu’il leur faudrait acquérir des talents spéciaux. Les plus doués finissent par vivre de ce Métier, au point que leur ancienne position de noble, de valet ou de garde n’est plus qu’une de leurs identités. Les autres prennent peur, et retournent à leur vie normale ; ou bien on les retrouve la gorge tranchée devant l’hôtel particulier de leur employeur.",
+      "competences_base": [
+        "Code secret",
+        "Déplacement silencieux",
+        "Fouille"
+      ],
+      "competences_avancees": [
+        "Comportementalisme",
+        "Corruption",
+        "Crochetage",
+        "Déguisement",
+        "Dissimulation",
+        "Falsification",
+        "Filature",
+        "Hypnotisme",
+        "Interrogatoire",
+        "Langage des signes",
+        "Lire sur les lèvres",
+        "Qui-vive",
+        "Séduction",
+        "Sincérité"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Estudiant",
+      "supplement_origine": "Supplément La Guilde des Lettrés",
+      "categories": [
+        "Métiers des Belles Lettres"
+      ],
+      "description": "Beaucoup d’estudiants reçoivent un enseignement formel dans les établissements universitaires de Théah. De ce fait, ils ont la possibilité d’apprendre beaucoup de compétences, et d’accéder à une variété de carrières lucratives et respectables. En dépit de cela, beaucoup d’estudiants ont tendance à délaisser ces opportunités pour élargir leurs activités sociales et développer des appétits moins intellectuels. Certaines universités ont obtenu des privilèges légaux pour leurs estudiants. Cela engendre force frictions avec le guet et les puissants, mais de l’avis général, cela vaut mieux que de devoir sans cesse réprimer une jeunesse turbulente et pleine d’idées saugrenues.",
+      "competences_base": [
+        "Calcul",
+        "Débrouillardise",
+        "Orientation citadine (cité)"
+      ],
+      "competences_avancees": [
+        "Astronomie",
+        "Chant",
+        "Contacts (cité)",
+        "Droit",
+        "Géographie",
+        "Héraldique",
+        "Histoire",
+        "Jouer",
+        "Parier",
+        "Philosophie",
+        "Recherches",
+        "Sciences de la nature",
+        "Théologie"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Explorateur",
+      "supplement_origine": "Supplément La Société des Aventuriers de Luthon et du Lovaine",
+      "categories": [
+        "Métiers de la Mer",
+        "Métiers de la Nature"
+      ],
+      "description": "Les explorateurs voyagent énormément de part Théah, toujours à la recherche de nouveaux produits et de nouveaux emplacements où installer des comptoirs de commerce. Leur travail les conduit souvent à traverser des régions sauvages et inexplorées, ce qui les oblige à s’adjoindre la compagnie de combattants expérimentés autant que de marchands qualifiés.",
+      "competences_base": [
+        "Cartographie",
+        "Géographie",
+        "Sens de l’orientation"
+      ],
+      "competences_avancees": [
+        "Conduite d’attelage",
+        "Connaissance des animaux",
+        "Connaissance des routes (nation)",
+        "Déplacement silencieux",
+        "Diplomatie",
+        "Éloquence",
+        "Équitation",
+        "Linguistique",
+        "Marchandage",
+        "Perception du temps",
+        "Qui- vive",
+        "Survie"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Faussaire",
+      "supplement_origine": "Supplément La Rilasciare",
+      "categories": [
+        "Métiers des Arts",
+        "Métiers de la Maraude"
+      ],
+      "description": "De nombreux criminels sont capables de contrefaire des documents, mais seuls les professionnels sont passés maîtres dans l’art de la contrefaçon. Les faussaires de talent savent dénicher des documents spécifiques, quel type de papier et de cire utiliser, mais également comment faire sortir et entrer des documents au nez et à la barbe de la garde locale.",
+      "competences_base": [
+        "Calligraphie",
+        "Falsification",
+        "Recherches"
+      ],
+      "competences_avancees": [
+        "Cartographie",
+        "Code secret",
+        "Contacts (cité)",
+        "Création littéraire",
+        "Dissimulation",
+        "Fouille",
+        "Héraldique",
+        "Numismatique",
+        "Papetier"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Fouineur",
+      "supplement_origine": "Supplément La Guilde des Services Publics",
+      "categories": [
+        "Métiers de Police"
+      ],
+      "description": "Les fouineurs sont les enquêteurs de la police, les exécuteurs des basses œuvres des ministres et autres préfets. Ce sont eux qui enquêtent sur les meurtres, vols et autres arnaques parmi les plus réussies. Ce sont généralement des gardes ou d’anciens malfrats à l’intelligence affûtée qui gagnent leurs galons d’enquêteurs grâce à leur grande connaissance du milieu criminel et de son fonctionnement. Certains travaillent aussi pour l’Inquisition, les grands princes ou de hauts nobles pour faire respecter la justice de leur seigneur sur ses terres. Ce sont les ennemis jurés des cache-tampons, passe-muraille, tire-laine et autres assassins professionnels.",
+      "competences_base": [
+        "Filature",
+        "Fouille",
+        "Interrogatoire"
+      ],
+      "competences_avancees": [
+        "Comportementalisme",
+        "Connaissance des bas-fonds (cité)",
+        "Contacts (cité)",
+        "Droit",
+        "Étiquette",
+        "Examiner",
+        "Héraldique",
+        "Intimidation",
+        "Langage des signes",
+        "Numismatique",
+        "Orientation citadine (cité)",
+        "Politique",
+        "Qui-vive",
+        "Sincérité"
+      ],
+      "reputation": "Moralité +2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Fournisseur de drogues",
+      "supplement_origine": "Supplément La Guilde des Apothicaires",
+      "categories": [
+        "Métiers de la Maraude",
+        "Métiers du Négoce"
+      ],
+      "description": "Les fournisseurs de drogues pourvoient aux besoins en substances illicites des drogués de Théah. Le terme “dealer” utilisé en Avalon s’est répandu à travers tout Théah pour désigner ce type de racaille. Il en existe fondamentalement deux types différents : celui qui vit dans la haute société et fournit des personnages importants et celui qui survit dans les bas-fonds en fournissant leur dose à toute une série de parasites. Bien entendu, ils ne rechignent pas, à l’occasion, à fournir un poison plus ou moins puissant si on le leur demande et qu’on les paie bien. Et bien entendu aussi, ils garderont précieusement le nom de leur client quelque part dans leur tête, juste au cas où… La plupart d’entre eux se fournit à l’arrière des officines de la Guilde des Apothicaires (à l’exception notable de la Vodacce, bien entendu, puisque cette guilde n’y a pas accès).",
+      "competences_base": [
+        "Charlatanisme",
+        "Connaissance des plantes",
+        "Marchandage"
+      ],
+      "competences_avancees": [
+        "Comportementalisme",
+        "Connaissance des bas-fonds (cité)",
+        "Diagnostic",
+        "Dissimulation",
+        "Orientation citadine (cité)",
+        "Poison",
+        "Premiers secours",
+        "Qui-vive"
+      ],
+      "reputation": "Moralité : -2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Galérien",
+      "supplement_origine": "Supplément Novus Ordum Mundi, les Maîtres du Grand Jeu",
+      "categories": [
+        "Métiers de la Mer",
+        "Métiers de la Maraude"
+      ],
+      "description": "Voilà bien un métier qui est pratiqué involontairement. Que vous ayez été capturé puis enchaîné à un banc de nage ou puni par la loi et condamné aux galères, vous avez passé un certain nombre d’années à ramer et à tirer l’aviron. Ce sont des années difficiles mais qui forgent un homme, un peu comme le bagne. Traditionnellement, les galériens peuvent créer de petits objets d’art et les revendre au port. Ces babioles follement pittoresques plaisent aux riches et permettent aux forçats d’acheter un peu plus de nourriture. Mais il faut savoir les fabriquer.",
+      "competences_base": [
+        "Canotage",
+        "Qui-vive et une compétence de base d’Artisan au choix"
+      ],
+      "competences_avancees": [
+        "Connaissance de la mer",
+        "Connaissance des nœuds",
+        "Débrouillardise",
+        "Dissimulation",
+        "Estomac",
+        "Jeu de jambes",
+        "Soulever"
+      ],
+      "reputation": "Moralité : -2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Galopin",
+      "supplement_origine": "Supplément Eisen",
+      "categories": [
+        "Métiers de la Maraude",
+        "Métiers d’Orateurs"
+      ],
+      "description": "Lorsqu’on grandit dans la rue ou dans une région sauvage sans personne pour prendre soin de soi, on développe certaines aptitudes comme trouver de la nourriture mise aux ordures ou faire l’aumône. Ce type d’existence enseigne une souplesse morale qui place la survie au-dessus de l’honnêteté.",
+      "competences_base": [
+        "Déplacement silencieux",
+        "Orientation citadine (cité)",
+        "Survie"
+      ],
+      "competences_avancees": [
+        "Contacts (cité)",
+        "Course de vitesse",
+        "Débrouillardise",
+        "Dissimulation",
+        "Mendicité",
+        "Pickpocket",
+        "Sincérité"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Garde",
+      "supplement_origine": "Supplément La Guilde des Services Publics",
+      "categories": [
+        "Métiers de Police"
+      ],
+      "description": "Les gardes sont employés dans toutes les villes de Théah, pour faire fonction de policiers. Leur travail consiste à patrouiller dans les rues et à intervenir en cas de problèmes. Ils sont aussi de garde aux portes des villes, surveillant les environs depuis les tours de garde et vérifiant qui se rend en ville. Ils interrogent et fouillent les visiteurs, s’assurant qu’ils n’ont pas d’armes cachées. Ils sont aussi charger de faire appliquer la loi et de maintenir l’ordre. Les gardes sont employés par les autorités locales et leurs pouvoirs varient suivant les lieux ; dans beaucoup de villes, ils sont absolus (spécialement envers ceux qui sont pauvres et sans défense). C’est le lot du garde d’être impopulaire auprès des gens des villes et des cités ; ils sont recrutés dans les bas-fonds pour combattre les bas-fonds. Rares, parmi eux, sont les vrais fervents des lois.",
+      "competences_base": [
+        "Contacts (cité)",
+        "Orientation citadine (cité)",
+        "Qui-vive"
+      ],
+      "competences_avancees": [
+        "Connaissance des bas-fonds (cité)",
+        "Course d’endurance",
+        "Course de vitesse",
+        "Discrétion",
+        "Étiquette",
+        "Fouille",
+        "Interrogatoire",
+        "Intimidation",
+        "Langage des signes",
+        "Ordre serré"
+      ],
+      "reputation": "Réputation martiale : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Garde du corps",
+      "supplement_origine": "Supplément Noblesse Oblige",
+      "categories": [
+        "Métiers des Armes",
+        "Métiers de Police",
+        "Métiers de Serviteurs"
+      ],
+      "description": "Théah est un monde dangereux, spécialement si vous passez pour être franc de paroles, impopulaire, puissant ou riche. Depuis que de plus en plus de gens correspondent à ces signalements, il n’est plus surprenant qu’une catégorie de protecteurs professionnels ait fait son apparition pour répondre à la demande. Souvent les marchands et les gentilshommes entretiennent un groupe de gardes du corps qui les protègent de ceux qui voudraient leur faire un mauvais sort, et les débarrassent des mendiants et autres canailles rencontrés sur leur route. La nature de ces gardes du corps varie depuis le simple lourdaud - plus bête que méchant - jusqu’à la constitution d’une véritable armée privée ; la plupart d’entre eux, cependant, ne sont que de simples brutes qui prennent plaisir à rudoyer les citoyens qui n’ont rien à se reprocher. Le stéréotype populaire veut que le garde du corps soit un ancien soldat Eisenör.",
+      "competences_base": [
+        "Discrétion",
+        "Interposition",
+        "Qui-vive"
+      ],
+      "competences_avancees": [
+        "Comportementalisme",
+        "Dissimulation",
+        "Estomac",
+        "Fouille",
+        "Guet-apens",
+        "Intimidation",
+        "Orientation citadine (cité)"
+      ],
+      "reputation": "Réputation martiale : +2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Gérant de comptoir",
+      "supplement_origine": "Supplément La Guilde des Marchands",
+      "categories": [
+        "Métiers du Négoce",
+        "Métiers de la Nature"
+      ],
+      "description": "Les gérants de comptoir sont des commerçants installés dans des colonies ou des zones hostiles. Leur métier consiste à troquer des produits de valeur récoltés auprès des populations locales contre de la bimbeloterie et de la camelote. C’est un métier très rentable, mais également très dangereux. Si les autochtones se rendent compte que vous les avez arnaqués, ils ne mettront pas longtemps à vous le faire payer physiquement (cela devient même mortel si l’on traite avec des cannibales).",
+      "competences_base": [
+        "Charlatanisme",
+        "Évaluation",
+        "Marchandage"
+      ],
+      "competences_avancees": [
+        "Calcul",
+        "Comportementalisme",
+        "Comptabilité",
+        "Corruption",
+        "Débrouillardise",
+        "Diplomatie",
+        "Dissimulation",
+        "Langage des signes (pour se faire comprendre quand on ne parle pas la même langue)",
+        "Logistique",
+        "Sincérité"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Guérillero",
+      "supplement_origine": "Supplément Les Gens d’armées",
+      "categories": [
+        "Métiers des Armes",
+        "Métiers de la Nature"
+      ],
+      "description": "Les guérilleros sont des combattants spécialisés dans l’embuscade. Le plus souvent, leur pays ou région n’est pas capable de fournir un contingent correct de soldats entraînés, aussi, afin de défendre leur patrie prennent- ils les armes. Ils utilisent alors le terrain pour faire le plus de dommages possibles à leurs adversaires. C’est ce qui s’est passé récemment contre les armées particulièrement bien organisées de Montaigne aussi bien en Ussura qu’en Castille. Certains clans des Highlands se sont fait une spécialité de ce type de combat.",
+      "competences_base": [
+        "Déplacement silencieux",
+        "Guet-apens",
+        "Survie"
+      ],
+      "competences_avancees": [
+        "Connaissance des routes (nation)",
+        "Équitation",
+        "Langage des signes",
+        "Piéger",
+        "Qui-vive",
+        "Sens de l’orientation",
+        "Signes de piste",
+        "Tactique"
+      ],
+      "reputation": "Réputation martiale : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Guide",
+      "supplement_origine": "Supplément Vodacce",
+      "categories": [
+        "Métiers d’Orateurs",
+        "Métiers de Serviteurs"
+      ],
+      "description": "Les villes de Théah sont de déroutants dédales de ruelles étroites et de constructions plus ou moins élevées. Les étrangers, et même les autochtones, se plaignent constamment des difficultés qu’ils ont à s’y retrouver, et les visiteurs se perdent le plus souvent dans les minutes qui suivent leur arrivée. Nombre d’habitants proposent leurs services en offrant aux voyageurs de les conduire là où ils le souhaitent. La plupart des guides connaissent une ville en particulier comme le dos de leur main, en particulier l’emplacement des tavernes, bordels et tripots, dont les tenanciers leur reversent une commission. Ils font parfois aussi, dans les villes vodaccies, office de gondoliers ou de cochers lorsque l’activité touristique est faible.",
+      "competences_base": [
+        "Contacts (cité)",
+        "Éloquence",
+        "Orientation citadine (cité)"
+      ],
+      "competences_avancees": [
+        "Cartographie",
+        "Comportementalisme",
+        "Débrouillardise",
+        "Déplacement silencieux",
+        "Escalade",
+        "Géographie",
+        "Guet- apens",
+        "Linguistique",
+        "Marchandage",
+        "Qui-vive",
+        "Séduction",
+        "Sens de l’orientation",
+        "Sincérité"
+      ],
+      "reputation": "Rang social : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Herboriste",
+      "supplement_origine": "Supplément Les Filles de Sophie",
+      "categories": [
+        "Métiers de la Nature",
+        "Métiers du Réconfort"
+      ],
+      "description": "Les herboristes sont des spécialistes de la flore. Ils savent où pousse telle espèce de plante, de quoi elle se nourrit ou comment en tirer le meilleur parti possible. De nombreux herboristes se spécialisent également dans la guérison faisant office de “médecins de campagne” là où il n’y a pas de véritables docteurs.",
+      "competences_base": [
+        "Connaissance des plantes",
+        "Diagnostic",
+        "Premiers secours"
+      ],
+      "competences_avancees": [
+        "Agriculture",
+        "Charlatanisme",
+        "Cuisinier",
+        "Médications",
+        "Occultisme",
+        "Poison",
+        "Vétérinaire"
+      ],
+      "reputation": "Moralité : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Hors-la-loi",
+      "supplement_origine": "Supplément La Guilde des Rouliers",
+      "categories": [
+        "Métiers des Armes",
+        "Métiers de la Maraude",
+        "Métiers de la Nature"
+      ],
+      "description": "Les hors-la-loi sont des gens qui ont été mis au ban de la société, ou qui ont choisi de vivre en dehors de la loi. Dans la pratique, cela concerne un grand nombre de personnes. Certains bastions de hors-la-loi sont très puissants et peuvent effectivement se constituer en véritables petits royaumes. Les hors-la-loi s’identifient d’eux-mêmes à la paysannerie et au commun du peuple, lequel s’en remet souvent à eux pour les soutenir et les protéger. Généralement, les hors-la-loi se contentent d’attaquer les riches et les dignitaires du régime ; le fait qu’ils agissent comme de vulgaires malfaiteurs ne leur échappe pas, bien qu’ils n’attaquent que lorsque le besoin s’en fait sentir. Les hors-la-loi préfèrent opérer en forêt ou en terrain accidenté où ils peuvent se dissimuler. Leur technique favorite est l’embuscade et certains ont la spécialité de bondir depuis les arbres. Ce sont les voleurs de la campagne.",
+      "competences_base": [
+        "Déplacement silencieux",
+        "Escalade",
+        "Guet-apens"
+      ],
+      "competences_avancees": [
+        "Amortir une chute",
+        "Connaissance des routes (nation)",
+        "Facteur d’arcs",
+        "Fouille",
+        "Piéger",
+        "Pister",
+        "Qui-vive",
+        "Sauter",
+        "Sens de l’orientation",
+        "Signes de piste",
+        "Survie"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Incendiaire",
+      "supplement_origine": "Supplément La Rilasciare et la Guilde des Alchimistes",
+      "categories": [
+        "Métiers de la Maraude"
+      ],
+      "description": "Il faut plus que quelque instinct meurtrier et un baril de poudre pour détruire un édifice. Vous devez savoir où placer les explosifs, comment se répandra l’incendie, et quels sont les points les plus vulnérables pour passer à l’attaque. Les incendiaires ont une bonne connaissance des produits chimiques inflammables et de la combustibilité des matériaux. Ils s’y connaissent également en fondations et en murs porteurs. L’incendiaire est capable de concevoir des explosifs et sait où les placer pour causer le maximum de dommages. Pour ce qui est de détruire une fortification ennemie, cf. L’Ingénieur, page suivante.",
+      "competences_base": [
+        "Calcul",
+        "Orientation citadine (cité)",
+        "Qui-vive"
+      ],
+      "competences_avancees": [
+        "Architecture",
+        "Cartographie",
+        "Déplacement silencieux",
+        "Dissimulation",
+        "Mèche",
+        "Perception du temps",
+        "Sciences de la nature"
+      ],
+      "reputation": "Moralité : -2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Ingénieur",
+      "supplement_origine": "Supplément Castille",
+      "categories": [
+        "Métiers des Arts",
+        "Métiers des Belles Lettres"
+      ],
+      "description": "Les ingénieurs sont des personnages extrêmement considérés. Les personnages royaux emploient souvent des ingénieurs pour qu’ils fassent de leurs rêves des réalités. Officier de premier ordre dans le cadre de la poliorcétique (art de la guerre de siège), il peut être amené à honorer des commandes très variées : concevoir le plan d’une gentilhommière, d’un palais, d’une chapelle, d’une église ou de fortifications militaires, organiser la défense d’une place forte ou au contraire les retranchements d’une armée en siège. Tous ces ouvrages sont conçus par des ingénieurs aux horizons divers et variés.",
+      "competences_base": [
+        "Architecture",
+        "Calcul",
+        "Dessin"
+      ],
+      "competences_avancees": [
+        "Artillerie",
+        "Artillerie navale",
+        "Bricoleur",
+        "Charpentier",
+        "Construction navale",
+        "Création Littéraire",
+        "Fonderie",
+        "Géomancie (Cathayans uniquement)",
+        "Maçon",
+        "Mathématiques",
+        "Recherches",
+        "Sciences de la nature"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Intendant",
+      "supplement_origine": "Supplément Noblesse Oblige",
+      "categories": [
+        "Métiers des Belles Lettres",
+        "Métiers du Négoce",
+        "Métiers de Serviteurs"
+      ],
+      "description": "L’intendant gère les terres du noble qui l’emploie. Il s’occupe de toute l’administration et des finances de son domaine, rentabilisant au maximum ces dernières. Il connaît tous les rouages du fonctionnement de l’administration de son pays, les artisans compétents, les marchands honnêtes, etc. En bref, c’est un gestionnaire compétent.",
+      "competences_base": [
+        "Calcul",
+        "Étiquette",
+        "Régisseur"
+      ],
+      "competences_avancees": [
+        "Commander",
+        "Comptabilité",
+        "Contacts (cité)",
+        "Corruption",
+        "Diplomatie",
+        "Droit",
+        "Économie",
+        "Évaluation",
+        "Intimidation",
+        "Logistique",
+        "Marchandage",
+        "Politique",
+        "Sens des affaires"
+      ],
+      "reputation": "Rang social : +2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Jenny",
+      "supplement_origine": "Supplément La Guilde des Jennys",
+      "categories": [
+        "Métiers de la Maraude",
+        "Métiers du Négoce"
+      ],
+      "description": "Les jennys sont les prostituées du monde de Théah. C’est la gueuse des bas-quartiers ; c’est la fille de joie qui rôde dans le sillage des armées et vend son corps aux soldats, c’est la servante des maisons de bains qui aguiche les clients et se fait verser un généreux pourboire pour partager leur baquet, c’est l’accorte chambrière d’auberge qui finit dans le lit de l’hôte de passage et fait les poches de ses vêtements avant de disparaître au matin… Elles se sont organisées en guilde et sont aujourd’hui une organisation prospère même si leur métier est toujours, et restera toujours, dangereux à pratiquer.",
+      "competences_base": [
+        "Cancanier",
+        "Jenny",
+        "Séduction"
+      ],
+      "competences_avancees": [
+        "Chant",
+        "Comportementalisme",
+        "Connaissance des bas- fonds (cité)",
+        "Corruption",
+        "Danse",
+        "Discrétion",
+        "Dissimulation",
+        "Fouille",
+        "Marchandage",
+        "Masseur"
+      ],
+      "reputation": "Moralité : -2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Juge d’armes",
+      "supplement_origine": "Supplément Noblesse Oblige",
+      "categories": [
+        "Métiers des Belles Lettres",
+        "Métiers de Police"
+      ],
+      "description": "Le juge d’armes est un spécialiste des armoiries et de la généalogie à qui l’on s’adresse pour prouver son rang de noblesse. L’une de ses fonctions principales est d’établir les fameuses lettres de noblesse qui permettent de certifier le titre et la généalogie du porteur de ladite lettre. C’est également auprès d’eux que les nobles font enregistrer leurs armoiries, modifications de noms, confirmation ou répudiation d’héritiers, acquisition de nouvelles terres, fiefs, distinctions et autres titres honorifiques. Il garde ensuite précieusement les enregistrements qu’il a effectués et fait parvenir une copie de ces derniers à la chancellerie du royaume.",
+      "competences_base": [
+        "Héraldique",
+        "Histoire",
+        "Recherches"
+      ],
+      "competences_avancees": [
+        "Code secret",
+        "Corruption",
+        "Création littéraire",
+        "Dessin",
+        "Droit",
+        "Étiquette",
+        "Géographie",
+        "Linguistique",
+        "Narrer",
+        "Politique"
+      ],
+      "reputation": "Rang social : +2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Maistrance",
+      "supplement_origine": "Guide du Joueur",
+      "categories": [
+        "Métiers de la Mer"
+      ],
+      "description": "La spécialisation de Maistrance est à la marine ce que Commandement est à l’armée, à une seule et importante différence près. Au lieu d’apprendre les ficelles de l’artillerie, qui n’ont guère d’utilité sur un bateau, les officiers de la maistrance apprennent l’art subtil de la corruption. Forts de cette compétence, ils sont à même de gérer toute crise avec un officier de port immoral ou un officier des douanes corrompu.",
+      "competences_base": [
+        "Cartographie",
+        "Commander",
+        "Piloter"
+      ],
+      "competences_avancees": [
+        "Artillerie navale",
+        "Connaissance de la mer",
+        "Corruption",
+        "Diplomatie",
+        "Galvaniser",
+        "Géographie",
+        "Guet-apens",
+        "Intimidation",
+        "Logistique",
+        "Navigation",
+        "Stratégie",
+        "Tactique"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Malandrin",
+      "supplement_origine": "Guide du Joueur",
+      "categories": [
+        "Métiers de la Maraude"
+      ],
+      "description": "Le malandrin connaît sur le bout des doigts la cité qui lui sert de refuge. Il sait où acheter des biens au meilleur prix, où contacter des criminels ou des mercenaires et quel chemin prendre pour semer les gardes de la ville au beau milieu de la nuit. On le trouve aussi souvent dans les groupes de pillards qui maraudent dans le sillage des armées et il est le premier à profiter des émeutes et révoltes pour se remplir les poches des biens de ses victimes.",
+      "competences_base": [
+        "Connaissance des bas-fonds (cité)",
+        "Orientation citadine (cité)",
+        "Qui-vive"
+      ],
+      "competences_avancees": [
+        "Contacts (cité)",
+        "Débrouillardise",
+        "Déplacement silencieux",
+        "Dissimulation",
+        "Fouille",
+        "Guet-apens",
+        "Parier",
+        "Sens des affaires",
+        "Sincérité"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Marchand",
+      "supplement_origine": "Guide du Joueur et supplément La Guilde des Marchands",
+      "categories": [
+        "Métiers du Négoce"
+      ],
+      "description": "Tant que l’on pourra vendre et acheter soit un bien, soit un service, il y aura des marchands. Ceux qui peuplent l’univers des Secrets de la Septième Mer se sont regroupés au sein de puissantes organisations plus ou moins contrôlées par la ligue de Vendel et/ou les princes-marchands de Vodacce.",
+      "competences_base": [
+        "Calcul",
+        "Évaluation",
+        "Marchandage"
+      ],
+      "competences_avancees": [
+        "Banquier",
+        "Comportementalisme",
+        "Comptabilité",
+        "Contacts (cité)",
+        "Corruption",
+        "Économie",
+        "Éloquence",
+        "Étiquette",
+        "Logistique",
+        "Mathématiques",
+        "Numismatique",
+        "Sens des affaires"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Marin",
+      "supplement_origine": "Guide du Joueur",
+      "categories": [
+        "Métiers de la Mer"
+      ],
+      "description": "Un marin vit et travaille sur un navire. Plus précisément, il connaît les vents et leurs effets sur le gréement d’un navire ; il a appris à naviguer en se servant des étoiles et à choisir sa route ; il sait aussi comment tirer au canon sur des navires ennemis. En bref, il sait tout ce qui est nécessaire à la navigation en mer.",
+      "competences_base": [
+        "Connaissance des nœuds",
+        "Escalade",
+        "Gréer"
+      ],
+      "competences_avancees": [
+        "Canotage",
+        "Cartographie",
+        "Connaissance de la mer",
+        "Équilibre",
+        "Jouer",
+        "Nager",
+        "Navigation",
+        "Pêche",
+        "Perception du temps",
+        "Piloter",
+        "Sauter",
+        "Sens de l’orientation",
+        "Sincérité"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Marine",
+      "supplement_origine": "Supplément La Guilde des Marins",
+      "categories": [
+        "Métiers des Armes",
+        "Métiers de la Mer"
+      ],
+      "description": "Le marine est à la fois un marin et un guerrier qui navigue à bord des navires civils ou militaires pour prévenir d’éventuelles attaques de pirates. La plupart des marines ont été victimes de “marins-recruteurs” et doivent racheter leur liberté par un service difficile et dangereux pendant de trois à dix années à bord d’un navire de guerre. Cet aspect de leur condition fait des marines une bande redoutée et mise à l’écart par le reste du navire, même s’ils accomplissent un travail rigoureux et des plus dangereux. Le fait qu’ils servent aussi de police du bord n’arrange rien.",
+      "competences_base": [
+        "Artillerie navale",
+        "Estomac",
+        "Sauter"
+      ],
+      "competences_avancees": [
+        "Canotage",
+        "Connaissance des nœuds",
+        "Équilibre",
+        "Escalade",
+        "Fouille",
+        "Intimidation",
+        "Lancer (en particulier les grappins)",
+        "Nager"
+      ],
+      "reputation": "Réputation martiale : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Médecin",
+      "supplement_origine": "Guide du Joueur",
+      "categories": [
+        "Métiers des Belles Lettres",
+        "Métiers du Réconfort"
+      ],
+      "description": "Les médecins sont des professionnels des soins et peuvent donc guérir un patient (et parfois le charcuter pour son propre bien- être). Après avoir suivi des études universitaires, ce qui les distingue du chirurgien barbier, ils s’installent généralement dans une grande ville ou au service d’un puissant personnage. Pour soulager leurs semblables, ils utilisent à peu près tout ce qui leur tombe sous la main, dont les produits pharmaceutiques, les bandages, les outils de cautérisation et même d’obscurs remèdes populaires. La saignée, les clystères (lavements), les sangsues font partie de leur outillage et du folklore.",
+      "competences_base": [
+        "Diagnostic",
+        "Premiers secours",
+        "Sincérité"
+      ],
+      "competences_avancees": [
+        "Charlatanisme",
+        "Chirurgie",
+        "Dentiste",
+        "Estomac",
+        "Examiner",
+        "Hypnotisme",
+        "Médications",
+        "Philosophie",
+        "Vétérinaire"
+      ],
+      "reputation": "Moralité : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Mendiant",
+      "supplement_origine": "Supplément La Maraude",
+      "categories": [
+        "Métiers d’Orateurs",
+        "Métiers de la Maraude"
+      ],
+      "description": "Les mendiants sont les parias de la société, des désespérés qui n’ont pas de moyens visibles de subsistance. Ils se regroupent dans les villes et les cités de Théah, car la seule façon pour eux d’éviter les affres de la faim consiste à mendier dans les rues. C’est une activité des plus hasardeuses, surtout depuis que la plupart des villes autorisent que la garde moleste, marque au fer et jette en prison les clochards pratiquement comme il lui plaît. Le mendiant accepte ces risques comme inhérents à son métier et il devient souvent expert dans l’art d’extorquer de l’argent aux passants - certains jouent sur la pitié alors que d’autres offrent leur bénédiction ou menacent de malédictions - tout cela dans l’unique but de remplir leur sébile. Dans certaines grandes cités, les mendiants sont organisés en guildes de mendiants (non reconnues officiellement) qui attribuent les emplacements, s’occupent de détourner l’attention des autorités et éliminent les amateurs ou les mendiants non affiliés. Le plus souvent, la guilde des mendiants travaille conjointement avec la guilde des voleurs, lui fournissant des informations et des guetteurs.",
+      "competences_base": [
+        "Connaissance des bas-fonds (cité)",
+        "Mendicité",
+        "Orientation citadine (cité)"
+      ],
+      "competences_avancees": [
+        "Comédie",
+        "Comportementalisme",
+        "Débrouillardise",
+        "Déguisement",
+        "Déplacement silencieux",
+        "Dissimulation",
+        "Filature",
+        "Pickpocket",
+        "Sincérité"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Missionnaire",
+      "supplement_origine": "Supplément L’Église des Prophètes",
+      "categories": [
+        "Métiers d’Orateurs",
+        "Métiers du Réconfort"
+      ],
+      "description": "Un missionnaire est un prêtre chargé de porter les préceptes des Prophètes dans les régions encore païennes. Cela ne s’applique donc plus qu’à quelques zones de Théah. Nombre de missionnaires se sont rendus dans l’Empire du Croissant de Lune avec l’autorisation de l’Église. Ces dernières années, un grand nombre de jeunes prêtres ont pris la mer pour relier les mystérieuses îles occidentales dans l’espoir d’offrir la gloire de Theus à de nouvelles peuplades. Quelques âmes courageuses se sont établies dans le grand Nord pour tenter de convertir les Vestens. Enfin, une ou deux fois par siècle, un missionnaire nouvellement ordonné se sent irrésistiblement attiré vers le Cathay. Aucun n’est jamais revenu d’un tel périple. Un missionnaire peut être de n’importe quelle confession mais la plupart sont vaticins ou protestataires. Des personnages armés de courage peuvent être les missionnaires de religions marginales, comme les druides avaloniens ou les adorateurs de Vieux Père, au Vestenmannavnjar. De tels personnages ont de toute évidence beaucoup de travail.",
+      "competences_base": [
+        "Connaissance des routes (nation)",
+        "Éloquence",
+        "Survie"
+      ],
+      "competences_avancees": [
+        "Comportementalisme",
+        "Diplomatie",
+        "Intimidation",
+        "Narrer",
+        "Philosophie",
+        "Premiers secours",
+        "Sens de l’orientation",
+        "Théologie"
+      ],
+      "reputation": "Moralité : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Moine",
+      "supplement_origine": "Supplément L’Église des Prophètes",
+      "categories": [
+        "Métiers du Réconfort"
+      ],
+      "description": "Les moines et nonnes sont des membres ordonnés de l’Église qui ont choisi la solitude pour communier avec Theus. En raison de leurs sacrifices, nombre de Théans les voient comme des individus particulièrement saints et sages. En plus de leur soif de connaissance, ils s’attachent grandement à leur vie de reclus, ce qui leur donne une solide assise en matière de tâches domestiques. Ces individus cloîtrés servent également l’Église en qualité de scribes, créant de nouvelles copies du Livre des Prophètes et de beaucoup d’autres ouvrages.",
+      "competences_base": [
+        "Calligraphie",
+        "Tâches domestiques",
+        "Théologie"
+      ],
+      "competences_avancees": [
+        "Agriculture",
+        "Chant",
+        "Connaissance des plantes",
+        "Création littéraire",
+        "Majordome",
+        "Médications",
+        "Recherches",
+        "Philosophie",
+        "Premiers secours",
+        "et une compétence de base d’Artisan au choix"
+      ],
+      "reputation": "Moralité : +2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Monte-en-l’air",
+      "supplement_origine": "Supplément La Maraude",
+      "categories": [
+        "Métiers de la Maraude"
+      ],
+      "description": "Le monte-en-l’air est l’archétype même du voleur dans ce qu’il y a de plus prestigieux. Il est agile, rapide et n’apprécie guère la violence. Son métier l’incite à repousser toujours plus loin les limites du raisonnable et il est fréquent qu’un personnage de ce type soit considéré comme le pire des suicidaires. C’est un véritable professionnel qui calcule toujours les risques qu’il prend. Leurs vols et cambriolages sont toujours des plus spectaculaires, ils apprécient les hauteurs et rentrent chez leurs victimes par les vasistas, les cheminées et autres fenêtres. Ensuite, ils volent les biens les plus rentables entre taille, poids et valeur puis reprennent le chemin des airs, sans s’être le moins du monde fait remarquer.",
+      "competences_base": [
+        "Déplacement silencieux",
+        "Équilibre",
+        "Escalade"
+      ],
+      "competences_avancees": [
+        "Acrobatie",
+        "Amortir une chute",
+        "Connaissance des bas-fonds (cité)",
+        "Connaissance des pièges",
+        "Contorsion",
+        "Fouille",
+        "Langage des signes",
+        "Orientation citadine (cité)",
+        "Qui-vive",
+        "Sauter"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Navigateur",
+      "supplement_origine": "Supplément La Guilde des Planiers",
+      "categories": [
+        "Métiers des Belles Lettres",
+        "Métiers de la Mer"
+      ],
+      "description": "Le navigateur est un élément essentiel de l’équipage d’un navire, chargé d’établir et de tracer les itinéraires, tout en se portant garant de la position du vaisseau et de son cap. Les navigateurs s’orientent à l’aide des étoiles, du soleil, ou de cartes marines. Leurs aptitudes à la navigation sont également très utiles à terre et les navigateurs sont quelquefois engagés pour accompagner des expéditions risquées traversant des territoires inconnus.",
+      "competences_base": [
+        "Cartographie",
+        "Navigation",
+        "Sens de l’orientation"
+      ],
+      "competences_avancees": [
+        "Calcul",
+        "Canotage",
+        "Connaissance de la mer",
+        "Équilibre",
+        "Escalade",
+        "Géographie",
+        "Nager",
+        "Perception du temps",
+        "Piloter"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Palefrenier",
+      "supplement_origine": "Supplément La Guilde des Éleveurs",
+      "categories": [
+        "Métiers de la Nature",
+        "Métiers de Serviteurs"
+      ],
+      "description": "Le palefrenier est la personne préposée aux écuries et au soin des chevaux : pansage, nourriture, réparation des selles, etc. Ce métier vous permet de prendre soin de votre cheval en toutes circonstances… Ou presque…",
+      "competences_base": [
+        "Dressage",
+        "Soins des chevaux",
+        "Tâches domestiques"
+      ],
+      "competences_avancees": [
+        "Conduite d’attelage",
+        "Conduite de traîneaux (Ussura)",
+        "Déplacement silencieux",
+        "Discrétion",
+        "Équitation",
+        "Forgeron",
+        "Sellier",
+        "Soulever"
+      ],
+      "reputation": "Rang social : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Paysan",
+      "supplement_origine": "Supplément La Guilde des Fermiers",
+      "categories": [
+        "Métiers de la Nature"
+      ],
+      "description": "La majorité des humains de Théah, vit en dehors des villes et des grandes agglomérations. La vie d’un paysan peut paraître monotone, sa rude existence de labeur peu enviable, mais cette carrière apporte tout de même une certaine “sécurité”. On commence à parler d’exode rural depuis que la campagne devient plus dangereuse. Ainsi, lorsque des fermes isolées subissent des attaques de bandes organisées venant des forêts, des villages se forment, entretenant des mercenaires ou une milice pour leur protection. C’est pourquoi, de jeunes paysans quittent leur famille en quête d’une vie plus facile.",
+      "competences_base": [
+        "Agriculture",
+        "Conduite d’attelage",
+        "Estomac"
+      ],
+      "competences_avancees": [
+        "Cancanier",
+        "Connaissance des animaux",
+        "Connaissance des plantes",
+        "Dressage",
+        "Pêche",
+        "Perception du temps",
+        "Piéger",
+        "Sens de l’orientation",
+        "Soin des animaux (type d’animal au choix)",
+        "Soulever et une compétence de base d’Artisan au choix"
+      ],
+      "reputation": "Rang social : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Pêcheur",
+      "supplement_origine": "Supplément La Guilde des Marins",
+      "categories": [
+        "Métiers de la Mer"
+      ],
+      "description": "Beaucoup de ceux qui vivent dans les régions côtières et autour des plans d’eau gagnent leur vie en pêchant. Être pêcheur n’est pas un si mauvais métier ; on est assuré de manger à sa faim la plupart du temps, même si le menu ne varie pas souvent. Pourtant, dans les périodes difficiles où il fait si chaud que le poisson s’abîme avant qu’il puisse être transporté au marché, les pêcheurs se réunissent souvent sur les quais et dans les auberges avoisinantes, où ils rêvent d’une vie d’aventures, comme explorateurs ou riches marins.",
+      "competences_base": [
+        "Canotage",
+        "Connaissance de la mer ou Potamologie (fleuve)",
+        "Pêche"
+      ],
+      "competences_avancees": [
+        "Connaissance des nœuds",
+        "Équilibre",
+        "Escalade",
+        "Nager",
+        "Perception du temps",
+        "Sauter",
+        "Sens de l’orientation",
+        "Soulever"
+      ],
+      "reputation": "Rang social : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Piqueux",
+      "supplement_origine": "Supplément Noblesse Oblige",
+      "categories": [
+        "Métiers de la Nature",
+        "Métiers de Police",
+        "Métiers de Serviteurs"
+      ],
+      "description": "Le chien est une création de l’homme qui l’utilise pour la chasse, la garde ou le combat. Certains en ont fait un métier, les nobles utilisent des piqueux pour mener la meute de chiens lors de la chasse à courre, la police y a recours aussi bien pour poursuivre les fugitifs en utilisant l’odorat de ces animaux qu’à l’aide de gros mastiffs pour faire régner l’ordre dans les quartiers difficiles. Enfin, d’autres les utilisent pour chasser, tout simplement.",
+      "competences_base": [
+        "Dressage",
+        "Qui-vive",
+        "Soins des chiens"
+      ],
+      "competences_avancees": [
+        "Conduite de traîneaux (Ussura)",
+        "Connaissance des animaux",
+        "Course d’endurance",
+        "Guet-apens",
+        "Intimidation",
+        "Lancer",
+        "Pister",
+        "Sifflet"
+      ],
+      "reputation": "Réputation martiale : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Précepteur",
+      "supplement_origine": "Supplément Noblesse Oblige",
+      "categories": [
+        "Métiers des Belles Lettres",
+        "Métiers de Serviteurs"
+      ],
+      "description": "Tous les nobles d’un certain rang engagent des précepteurs pour faire cours à leurs enfants. Il s’agit souvent d’un ancien professeur, d’un érudit ou d’un maître d’armes à l’esprit plus fin qui remplit cette fonction. C’est un maître particulier, payé pour vivre et enseigner à demeure. Il doit former les jeunes esprits aux tâches qui les attendent. Bien plus qu’un simple professeur, c’est aussi un éducateur qui veille à l’édification aussi bien morale et religieuse qu’intellectuelle des enfants à sa charge. Il devient parfois plus proche de ses élèves que leurs propres parents.",
+      "competences_base": [
+        "Danse",
+        "Entraîner",
+        "Étiquette"
+      ],
+      "competences_avancees": [
+        "Calcul",
+        "Éloquence",
+        "Équitation",
+        "Géographie",
+        "Héraldique",
+        "Histoire",
+        "Intimidation",
+        "Mode"
+      ],
+      "reputation": "Rang social : +2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Prêtre",
+      "supplement_origine": "Suppléments Castille et L’Église des Prophètes",
+      "categories": [
+        "Métiers du Réconfort"
+      ],
+      "description": "D’une manière ou d’une autre, les prêtres constituent la base d’une religion puissante. Ils offrent réconfort aux pratiquants chagrinés et répondent à tous ceux qui recherchent l’illumination. Un personnage doté de la spécialisation Prêtre n’est pas forcément ordonné (et vice versa), mais il sait ce qui est nécessaire pour le devenir. Il vous faut néanmoins acheter l’avantage Ordonné pour être prêtre régulier du clergé.",
+      "competences_base": [
+        "Éloquence",
+        "Philosophie",
+        "Théologie"
+      ],
+      "competences_avancees": [
+        "Chant",
+        "Comportementalisme",
+        "Création littéraire",
+        "Diplomatie",
+        "Étiquette",
+        "Galvaniser",
+        "Intimidation",
+        "Narrer",
+        "Pique-assiette",
+        "Premiers secours"
+      ],
+      "reputation": "Moralité : +2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Professeur",
+      "supplement_origine": "Supplément Collège Invisible",
+      "categories": [
+        "Métiers des Belles Lettres",
+        "Métiers d’Orateurs"
+      ],
+      "description": "Les professeurs sont des universitaires qui ont décidé d’enseigner leur savoir aux plus brillants étudiants de Théah. Plutôt que de passer leur vie enfermés dans des laboratoires et des bibliothèques, ils passent leur temps à instruire des classes pleines de jeunes érudits avides d’apprendre. Ils écrivent des manuels, donnent des conférences et veillent à ce que leurs cours bénéficient de soutiens financiers adéquats.",
+      "competences_base": [
+        "Création littéraire",
+        "Éloquence",
+        "Recherches"
+      ],
+      "competences_avancees": [
+        "Bricoleur",
+        "Calcul",
+        "Comptabilité",
+        "Droit",
+        "Entraîner",
+        "Géographie",
+        "Mathématiques",
+        "Occultisme",
+        "Pique- assiette",
+        "Politique",
+        "Sciences de la nature",
+        "Théologie"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Prospecteur",
+      "supplement_origine": "Supplément La Guilde des Mineurs",
+      "categories": [
+        "Métiers de la Nature"
+      ],
+      "description": "C’est loin des habituelles voies de commerce, des villes et des fermes que les prospecteurs passent au crible le lit des rivières et des cours d’eau à la recherche de pépites d’or arrachées aux montagnes et charriées par le courant. La plupart des gisements des régions habitées sont déjà épuisés, aussi les prospecteurs passent le plus clair de leur temps loin des contrées peuplées et ils sillonnent les régions montagneuses et inexplorées. Tout ce qu’ils demandent, c’est de trouver une veine importante pour la revendiquer et l’exploiter avant que d’autres n’arrivent. Mais beaucoup ne résistent pas à la tentation de vanter leur trouvaille, même lorsqu’ils tiennent un véritable filon. La nouvelle se propage rapidement quand de l’or a été découvert et des baraquements surgissent quasiment en une seule nuit, pour être abandonnés tout aussi rapidement lorsque la veine sera épuisée.",
+      "competences_base": [
+        "Fouille",
+        "Sens de l’orientation",
+        "Survie"
+      ],
+      "competences_avancees": [
+        "Conduite d’attelage",
+        "Débrouillardise",
+        "Évaluation",
+        "Fonderie",
+        "Jouer",
+        "Marchandage",
+        "Narrer",
+        "Potamologie (fleuve)",
+        "Sciences de la nature"
+      ],
+      "reputation": "Rang social : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Racketteur",
+      "supplement_origine": "Supplément La Maraude",
+      "categories": [
+        "Métiers des Armes",
+        "Métiers de la Maraude"
+      ],
+      "description": "Les racketteurs sont des criminels qui gagnent leur vie en vendant leur “protection” à des artisans et des commerçants. Cette extorsion de fonds peut devenir violente si le marchand refuse de payer, allant de l’intimidation à l’incendie de sa boutique en passant par le passage à tabac ou l’enlèvement de ses proches. Généralement organisés en bandes, les racketteurs sévissent dans une zone géographique, un quartier, etc. Il arrive même parfois que le racketteur et le garde chargé de protéger la population ne soient qu’une seule et même personne…",
+      "competences_base": [
+        "Course de vitesse",
+        "Fouille",
+        "Intimidation"
+      ],
+      "competences_avancees": [
+        "Casser un membre",
+        "Connaissance des bas-fonds (cité)",
+        "Dissimulation",
+        "Estomac",
+        "Filature",
+        "Guet-apens",
+        "Orientation citadine (cité)"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Receleur",
+      "supplement_origine": "Supplément La Rilasciare",
+      "categories": [
+        "Métiers de la Maraude",
+        "Métiers du Négoce"
+      ],
+      "description": "Un receleur est un intermédiaire qui trouve un acheteur prêt à acquérir des biens volés. La Gilde de la libération a souvent besoin de receleurs pour écouler le fruit de ses rapines. D’ailleurs, les voleurs traditionnels font également appel à eux. La plupart des receleurs ont une véritable profession et trempent rarement dans le crime. Pour les individus dotés du métier de Receleur, Évaluation est une compétence de base. Gardez à l’esprit que se livrer au recel dans le monde de Théah est bien plus aisé que dans notre monde. La population moins nombreuse, et le manque de moyens de communication efficaces impliquent que les quelques personnes qui verront une œuvre d’art ne sauront sans doute pas si elle est volée ou non. Cela rend le travail de receleur bien plus facile et surtout moins risqué.",
+      "competences_base": [
+        "Contacts (cité)",
+        "Évaluation",
+        "Marchandage"
+      ],
+      "competences_avancees": [
+        "Banquier",
+        "Calcul",
+        "Comportementalisme",
+        "Connaissance des bas-fonds (cité)",
+        "Numismatique",
+        "Sens des affaires"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Recruteur",
+      "supplement_origine": "Supplément Les Gens d’Armées",
+      "categories": [
+        "Métiers d’Orateurs"
+      ],
+      "description": "Les recruteurs sont des sous-officiers chargés de trouver des troupes fraîches pour les armées. Certains sont honnêtes et font le tour des villages en expliquant aux paysans ce qui les attend, mais ils ne ramènent alors que très peu de soldats. D’autres utilisent toutes les méthodes à leur disposition, mensonges, chantage, enlèvement, tour des prisons, des bars en fin de soirée, sorties des universités, prime à l’embauche, etc. Ils ramènent beaucoup plus de monde mais ont également un taux de désertion très important. Ce n’est pas grave pour eux, puisqu’ils sont payés à l’engagement.",
+      "competences_base": [
+        "Comportementalisme",
+        "Corruption",
+        "Sincérité"
+      ],
+      "competences_avancees": [
+        "Assommer",
+        "Calcul",
+        "Éloquence",
+        "Équitation",
+        "Jouer",
+        "Marchandage",
+        "Séduction"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Soldat",
+      "supplement_origine": "Supplément Les Gens d’Armées",
+      "categories": [
+        "Métiers des Armes"
+      ],
+      "description": "Il existe peu de soldats professionnels sur Théah, la plupart sont des paysans recrutés de gré ou de force pour remplir les rangs. Cependant, avec les guerres récentes et de plus en plus nombreuses, longues et violentes, ils ont tendance à voir leur nombre progresser rapidement. Les soldats s’entraînent toujours pour être au mieux de leur forme physique et, bien qu’ils soient sous les ordres d’officiers, c’est de leur propre habileté sur le champ de bataille que dépendra souvent la victoire dans des conflits qui n’en finissent plus. Une fois leur indépendance retrouvée, beaucoup laisseront derrière eux la dure vie militaire pour une existence aventureuse et l’espoir de faire fortune.",
+      "competences_base": [
+        "Estomac",
+        "Ordre serré",
+        "Premiers secours"
+      ],
+      "competences_avancees": [
+        "Artillerie",
+        "Conduite d’attelage",
+        "Course d’endurance",
+        "Fouille",
+        "Jeu de jambes",
+        "Narrer",
+        "Qui-vive",
+        "Tactique",
+        "Valet"
+      ],
+      "reputation": "Réputation martiale : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Souteneur",
+      "supplement_origine": "Supplément La Guilde des Jennys",
+      "categories": [
+        "Métiers de la Maraude"
+      ],
+      "description": "Un souteneur est un homme qui fait travailler des prostituées à son service. On ne parle pas ici des Jennys, mais bien des prostituées. Il y a bien longtemps que la Guilde des Jennys s’est débarrassée de ces parasites. Malheureusement, les indépendantes sont toujours des proies faciles. Certains sont de petits malins avec de belles gueules qui n’hésitent pas à séduire de belles jeunes filles innocentes puis à les mettre sur le trottoir dans un pays étranger. D’autres sont plutôt “bonne pâte” et veillent réellement sur les filles qui les rémunèrent. Mais quoi qu’il en soit, entre la garde, les clients dangereux et une Guilde des Jennys qui tient particulièrement à la disparition de cette “profession”, c’est un métier qui n’est pas de tout repos.",
+      "competences_base": [
+        "Intimidation",
+        "Qui-vive",
+        "Séduction"
+      ],
+      "competences_avancees": [
+        "Assommer",
+        "Comportementalisme",
+        "Connaissance des bas-fonds (cité)",
+        "Contacts (cité)",
+        "Déplacement silencieux",
+        "Filature",
+        "Fouille",
+        "Orientation citadine (cité)"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Veneur",
+      "supplement_origine": "Supplément Noblesse Oblige",
+      "categories": [
+        "Métiers de la Nature",
+        "Métiers de Police",
+        "Métiers de Serviteurs"
+      ],
+      "description": "Les nobles possèdent de vastes terres sur lesquelles ils chassent régulièrement le gibier, mais ils ont également de luxueuses résidences qu’ils doivent faire surveiller jour et nuit durant leur absence. Le rôle du veneur peut aussi se limiter à la garde et au soin de l’animal préféré de son employeur (lévrier de race, faucon pèlerin...). Les veneurs soignent et dressent les chevaux, chiens et faucons de leurs maîtres. Ils s’occupent également des pigeons voyageurs utilisés pour l’acheminement des messages urgents, non seulement pour les nobles mais également pour les guildes ou l’armée.",
+      "competences_base": [
+        "Connaissance des animaux",
+        "Dressage",
+        "Vétérinaire"
+      ],
+      "competences_avancees": [
+        "Déplacement silencieux",
+        "Équitation",
+        "Étiquette",
+        "Piéger",
+        "Pister",
+        "Sens de l’orientation",
+        "Signes de piste",
+        "Soins des animaux (au choix)"
+      ],
+      "reputation": "Rang social : +1 Ces métiers sont limités à des groupes culturels rares ou éloignés de la zone de jeu habituelle (Empire du Croissant ou Cathay). Ils nécessitent donc l’autorisation du MJ pour être choisis par un joueur.",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Baleinier",
+      "supplement_origine": "Supplément Vendel/Vesten",
+      "categories": [
+        "Métiers de la Mer"
+      ],
+      "description": "Sur Théah, les baleiniers éprouvent les pires difficultés à exercer leur métier. Les baleines sont protégées par les terribles léviathans, qui attaquent non seulement tous ceux qui font du mal à une baleine, mais aussi les navires imprégnés de l’odeur du sang de baleine. Les baleiniers sont généralement très costauds, n’ont peur de rien et constituent de redoutables nageurs.",
+      "competences_base": [
+        "Connaissance des nœuds",
+        "Équilibre",
+        "Estomac"
+      ],
+      "competences_avancees": [
+        "Connaissance de la mer",
+        "Nager",
+        "Pêche",
+        "Perception du temps",
+        "Poison",
+        "Sauter",
+        "Survie"
+      ],
+      "reputation": "Réputation martiale : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Barde",
+      "supplement_origine": "Supplément Avalon",
+      "categories": [
+        "Métiers des Arts",
+        "Métiers d’Orateurs"
+      ],
+      "description": "Les bardes parcourent la campagne avalonienne en quête d’aventures, d’histoires et d’énigmes du monde. Même s’ils descendent des druides, il n’est pas nécessaire d’en être un pour pratiquer le métier de barde. Musiciens et conteurs sont parmi eux aussi nombreux que les blés.",
+      "competences_base": [
+        "Chant",
+        "Éloquence",
+        "Histoire"
+      ],
+      "competences_avancees": [
+        "Cancanier",
+        "Connaissance des plantes",
+        "Connaissance des routes (nation)",
+        "Connaissance des Sidhes",
+        "Diplomatie",
+        "Énigmes",
+        "Étiquette",
+        "Galvaniser",
+        "Héraldique",
+        "Musique (instrument)",
+        "Séduction"
+      ],
+      "reputation": "Rang social : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Bonne aventure",
+      "supplement_origine": "Suppléments Ussura et Cathay",
+      "categories": [
+        "Métiers des Arts",
+        "Métiers d’Orateurs"
+      ],
+      "description": "Cette spécialisation renferme les différents moyens de prédire l’avenir – chiromancie, cartomancie, augures – et de convaincre un client qui paye que la divination est vraie. Contrairement aux techniques des streghe del sorte, la bonne aventure n’a rien de magique. Elle s’inspire de techniques populaires traditionnelles plutôt que de puissances surnaturelles. Il n’y a aucun moyen de garantir que les prédictions révélées par le biais de la compétence se réalisent et les pratiquants apprennent à s’exprimer en termes vagues, ce qui permet aux consultants de trouver eux-mêmes les détails. Les sorcières de la destinée de Vodacce se servent rarement de la spécialisation Bonne aventure. Elles pensent qu’il s’agit de singeries bon marché de leurs réels pouvoirs magiques (de Sorte en l’occurrence). Une sorcière de la destinée qui use de Bonne aventure vaut autant qu’une ballerine de renommée mondiale dansant au coin de la rue pour quelques pièces.",
+      "competences_base": [
+        "Chiromancie",
+        "Comportementalisme",
+        "Sincérité"
+      ],
+      "competences_avancees": [
+        "Augures",
+        "Cartomancie",
+        "Comédie",
+        "Déguisement",
+        "Dissimulation",
+        "Énigmes",
+        "I Ching (Cathayans uniquement)",
+        "Marchandage",
+        "Occultisme",
+        "Osselets",
+        "Autre (préciser)"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Cao Yao (Acupuncteur)",
+      "supplement_origine": "Supplément Cathay",
+      "categories": [
+        "Métiers du Réconfort"
+      ],
+      "description": "Vous avez une grande connaissance des différentes techniques et substances utilisées pour soigner. Vous êtes un médecin pratiquant, et utilisez vos compétences de guérison à travers le Qi Guo.",
+      "competences_base": [
+        "Diagnostic",
+        "Masseur",
+        "Premier Secours"
+      ],
+      "competences_avancees": [
+        "Acupuncture",
+        "Charlatanisme",
+        "Médications",
+        "Méditation",
+        "Philosophie",
+        "Qui-vive"
+      ],
+      "reputation": "Moralité : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Caravanier",
+      "supplement_origine": "Supplément La Guilde des Marchands",
+      "categories": [
+        "Métiers du Négoce",
+        "Métiers de la Nature"
+      ],
+      "description": "Les caravaniers sont des commerçants qui parcourent de longues distances afin de s’enrichir par la revente de produits exotiques d’une région à l’autre. Un caravanier pourra partir d’Ekaternava, ses mulets chargés de biens manufacturés en provenance des pays de l’ouest de Théah qu’il revendra en territoire kosar. Là, il achètera des poneys, des arcs composites et des faucons qu’il revendra aux commerçants cathayans traversant le Mur de Feu. En échange, il acquerra de la soie, des épices et des animaux exotiques qu’il ramènera à Ekaternava pour les monnayer aux marchands de l’ouest venus avec leurs mousquets, leurs vins et leurs broderies. Il existe de multiples routes de commerce aussi bien en Ussura que dans l’Empire du Croissant. Mais ces routes sont dangereuses et les caravaniers doivent régulièrement affronter des hors-la-loi et des brigands de grands chemins.",
+      "competences_base": [
+        "Conduite d’attelage",
+        "Connaissance des routes (nation)",
+        "Marchandage"
+      ],
+      "competences_avancees": [
+        "Astronomie",
+        "Calcul",
+        "Cartographie",
+        "Conduite de traîneau (Ussura)",
+        "Équitation",
+        "Évaluation",
+        "Géographie",
+        "Guet-apens",
+        "Logistique",
+        "Qui-vive",
+        "Sens de l’orientation",
+        "Sincérité"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Courtisane",
+      "supplement_origine": "Suppléments Vodacce et Noblesse oblige",
+      "categories": [
+        "Métiers des Arts",
+        "Métiers d’Orateurs",
+        "Métiers de Serviteurs"
+      ],
+      "description": "Les courtisanes sont plus que de simples jennys. Intelligentes, pleines d’esprit et cultivées, elles conseillent, séduisent et divertissent leurs clients en leur proposant leur compagnie à tous les niveaux. Elles apprennent également à manipuler autrui pour en tirer parti car elles ne disposent pas de la protection d’une famille ou d’un mariage. Les courtisanes vodaccies sont charmantes à l’excès, et aussi dangereuses que séduisantes. Leur pendant masculin n’existe pas ; les hommes n’apprennent pas cette spécialisation.",
+      "competences_base": [
+        "3 compétences au rang 1 parmi : Comédie",
+        "Danse",
+        "Discrétion",
+        "Étiquette",
+        "Fouille",
+        "Jenny",
+        "Masseur",
+        "Mode",
+        "Séduction",
+        "Vous pouvez acquérir les autres compétences de base au rang 1 pour 1 PP chacune"
+      ],
+      "competences_avancees": [
+        "Cancanier",
+        "Comportementalisme",
+        "Dissimulation",
+        "Pique-assiette",
+        "Poison",
+        "Politique",
+        "Sincérité"
+      ],
+      "reputation": "Rang social : +2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Fauconnier",
+      "supplement_origine": "Supplément Ussura",
+      "categories": [
+        "Métiers de la Nature"
+      ],
+      "description": "Le sport antique qu’est la fauconnerie se meurt dans tout Théah, sauf au sein de la classe des boïars ussurans. Vous êtes capable de manipuler et de dresser des faucons et autres oiseaux de proie. Vous savez donc vous en occuper, les élever et faire en sorte qu’ils restent en bonne santé. Vous savez chasser en leur compagnie et donc vous procurer de la viande dans les étendues les plus désolées. Vous pouvez également convaincre votre oiseau de réaliser des tours comme passer dans un cerceau (ou par une fenêtre).",
+      "competences_base": [
+        "Dressage",
+        "Lancer (en particulier les leurres)",
+        "Soin des oiseaux"
+      ],
+      "competences_avancees": [
+        "Connaissance des animaux",
+        "Équitation",
+        "Étiquette",
+        "Pister",
+        "Qui-vive",
+        "Sens de l’orientation",
+        "Signes de piste",
+        "Tanner"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Feng Shui Shi (Géomancien)",
+      "supplement_origine": "Supplément Cathay",
+      "categories": [
+        "Métiers des Belles Lettres",
+        "Métiers du Réconfort"
+      ],
+      "description": "Un Feng Shui Shi est un prêtre et un expert en feng shui, l’art cathayan de la géomancie. Dans le Qi Guo, seuls les plus fous démarreraient la construction d’un nouveau bâtiment sans consulter d’abord l’un de ces hommes avisés.",
+      "competences_base": [
+        "Aménagement d’intérieur",
+        "Jardinier",
+        "Philosophie"
+      ],
+      "competences_avancees": [
+        "Astronomie",
+        "Cartographie",
+        "Chant",
+        "Éloquence",
+        "Géomancie",
+        "Méditation",
+        "Occultisme",
+        "Théologie"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Gitan",
+      "supplement_origine": "Supplément Les Fidhelis",
+      "categories": [
+        "Métiers de la Maraude",
+        "Métiers de la Nature"
+      ],
+      "description": "Manouches, tziganes, romanichels, bohémiens, gitans, les gens du voyage qui parcourent Théah doivent à leurs voisins plus établis toute une série d’appellations qui sont, dans l’ensemble, plutôt péjoratives. Par tradition, il règne, dans les pays traversés, une absence de confiance entre les populations sédentaires et les gitans souvent accusés de tous les vols, disparitions et autres malheurs qui se sont produits dans la région au cours des semaines précédant et suivant leur passage. Citoyens de nulle part en particulier, ils font d’excellents boucs émissaires. Cette hostilité est généralement renvoyée avec des intérêts et presque tous apprécient les plaisanteries faites aux dépens de ceux qui n’appartiennent pas à leur communauté : les Gadjo.",
+      "competences_base": [
+        "3 compétences au rang 1 parmi : Conduite d’attelage",
+        "Danse",
+        "Sens de l’orientation",
+        "Sincérité",
+        "Vous pouvez acquérir la dernière compétence au rang 1 pour 1 PP"
+      ],
+      "competences_avancees": [
+        "Charlatanisme",
+        "Connaissance des plantes",
+        "Connaissance des routes (nation)",
+        "Débrouillardise",
+        "Intimidation",
+        "Pickpocket",
+        "Signes de piste",
+        "Soin des chevaux",
+        "Spectacle de rue et une compétence de base d’Artisan au choix"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Guérisseur",
+      "supplement_origine": "Supplément Islands of gold",
+      "categories": [
+        "Métiers de la Nature",
+        "Métiers du Réconfort"
+      ],
+      "description": "Les guérisseurs sont d’habiles hommes- médecines et les chefs spirituels des cultures primitives. Puisqu’ils ne connaissent pas les techniques chirurgicales des médecins théans, ils utilisent à la place des herbes médicinales.",
+      "competences_base": [
+        "Connaissance des plantes",
+        "Diagnostic",
+        "Premiers secours"
+      ],
+      "competences_avancees": [
+        "Chant",
+        "Charlatanisme",
+        "Médications",
+        "Narrer",
+        "Théologie"
+      ],
+      "reputation": "Moralité : +2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Gwai Liao (Bureaucrate)",
+      "supplement_origine": "Supplément Cathay",
+      "categories": [
+        "Métiers d’Orateurs",
+        "Métiers des Belles Lettres"
+      ],
+      "description": "Un gwai liao est à la fois un courtisan, un politicien, un érudit, et surtout un fonctionnaire. Vous avez étudié pour passer les concours de la fonction publique, et vous utilisez votre connaissance d’une large variété de sujets et votre tact au service du gouvernement.",
+      "competences_base": [
+        "3 compétences au rang 1 parmi : Calcul",
+        "Création littéraire",
+        "Éloquence",
+        "Étiquette",
+        "Mode",
+        "Recherches",
+        "Vous pouvez acquérir les autres compétences au rang 1 pour 1 PP"
+      ],
+      "competences_avancees": [
+        "Comptabilité",
+        "Diplomatie",
+        "Droit",
+        "Intrigant",
+        "Politique",
+        "Sincérité"
+      ],
+      "reputation": "Rang social : +2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Rahib (Moine)",
+      "supplement_origine": "Supplément L’Empire du Croissant",
+      "categories": [
+        "Métiers du Réconfort"
+      ],
+      "description": "Un rahib (féminin rahib’i, pluriel ruhban) est un membre de l’un des nombreux ordres religieux qui font vœux d’humilité, de pauvreté et de chasteté et qui cherchent à atteindre l’illumination spirituelle. En raison de leur style de vie, les habitants de l’Empire du Croissant les estiment comme des hommes saints et sages. Les ruhban gagnent leurs repas grâce à leurs conseils spirituels, comme professeurs pour les hommes du peuple, en priant ou en effectuant des travaux physiques et manuels si nécessaire. La plupart des ordres de ruhban se rasent la tête, cependant quelques-uns, particulièrement parmi le Jadur’rihad, laissent une longue tresse pousser à l’arrière de leur tête.",
+      "competences_base": [
+        "3 compétences au rang 1 parmi : Calligraphie",
+        "Chant",
+        "Création littéraire",
+        "Discrétion",
+        "Histoire",
+        "Philosophie",
+        "Tâches domestiques",
+        "Vous pouvez acquérir les autres compétences au rang 1 pour 1 PP"
+      ],
+      "competences_avancees": [
+        "Contorsion",
+        "Débrouillardise",
+        "Diplomatie",
+        "Éloquence",
+        "Narrer",
+        "Occultisme",
+        "Pique-assiette",
+        "Théologie"
+      ],
+      "reputation": "Moralité : +2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Shirbaz (magicien)",
+      "supplement_origine": "Supplément L’Empire du Croissant",
+      "categories": [
+        "Métiers des Arts",
+        "Métiers de la Maraude"
+      ],
+      "description": "Un shirbaz est un prestidigitateur très habile de ses mains qui prépare soigneusement ses tours afin de faire croire qu’il dispose de l’appui de puissances surnaturelles. Certains exécutent leurs tours pour amuser l’assistance ; d’autres pour faire croire qu’ils sont plus puissants qu’ils ne paraissent. Certains sont des bateleurs de rue ou des comédiens de théâtre, alors que d’autres mettent leurs talents à la disposition de ceux qui payent bien une telle représentation. Éloquence, Étiquette, Mode.",
+      "competences_avancees": [
+        "Comédie",
+        "Comportementalisme",
+        "Dissimulation",
+        "Lire sur les lèvres",
+        "Pickpocket",
+        "Prestidigitation",
+        "Qui-vive",
+        "Séduction",
+        "Sincérité"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Skalde",
+      "supplement_origine": "Supplément Vendel/Vesten",
+      "categories": [
+        "Métiers des Arts"
+      ],
+      "description": "Le skalde est à la fois un conteur et un historien. Les skaldes entretiennent les traditions du Vestenmannavnjar. Ils transmettent leur sagesse à leurs prochains en chantant et en narrant d’épiques poèmes. Ils formulent des énigmes, clefs de vénérables légendes. Mais ils créent aussi de nouvelles légendes en écrivant des chants et des poèmes traitant des exploits de leurs contemporains.",
+      "competences_base": [
+        "Chant",
+        "Éloquence",
+        "Histoire"
+      ],
+      "competences_avancees": [
+        "Connaissance des routes (nation)",
+        "Connaissance des runes",
+        "Création littéraire",
+        "Diplomatie",
+        "Énigmes",
+        "Galvaniser",
+        "Musique (instrument)",
+        "Narrer",
+        "Séduction",
+        "Théologie"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Torero",
+      "supplement_origine": "Supplément La Guilde des Éleveurs",
+      "categories": [
+        "Métiers des Arts",
+        "Métiers de la Nature"
+      ],
+      "description": "Les toreros sont des artistes à part entière. Debout dans les arènes de Castille, ils évitent le taureau à l’aide de leur muleta, de façon très impressionnante, et ce pendant des heures, avant de mettre la bête à mort. C’est un métier rigoureux aux dangers omniprésents.",
+      "competences_base": [
+        "Course de vitesse",
+        "Qui-vive",
+        "Pas de côté"
+      ],
+      "competences_avancees": [
+        "Aveugler",
+        "Connaissance des animaux",
+        "Équitation",
+        "Estomac",
+        "Étiquette",
+        "Jeu de jambes",
+        "Roulé-boulé",
+        "Sauter",
+        "Séduction",
+        "Soin des animaux (bovins)"
+      ],
+      "reputation": "Réputation martiale : +1 Ces métiers sont réservées aux membres de certaines organisations secrètes, ou au moins très discrètes.",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Acolyte",
+      "supplement_origine": "Supplément L’Héritage de la Foi (Legacy of Faith)",
+      "categories": [
+        "Métiers des Armes",
+        "Métiers de Serviteurs"
+      ],
+      "description": "Les acolytes sont les jeunes recrues des Kreuzritter, ils sont formés par un chevalier qui les prend sous sa coupe et leur apprend les bases de la chevalerie : polir les épées, nettoyer l’écurie, garder les chevaux, etc. aussi longtemps que l’instructeur le souhaite.",
+      "competences_base": [
+        "Déplacement silencieux",
+        "Premiers secours",
+        "Tâches domestiques"
+      ],
+      "competences_avancees": [
+        "Équitation",
+        "Estomac",
+        "Guet-apens",
+        "Haubergier",
+        "Intimidation",
+        "Poison",
+        "Qui-vive",
+        "Soin des animaux (au choix)",
+        "Valet"
+      ],
+      "reputation": "Moralité : -1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Archéologue",
+      "supplement_origine": "Supplément La Croix d’Erèbe",
+      "categories": [
+        "Métiers des Belles Lettres"
+      ],
+      "description": "Si les érudits s’intéressent aux connaissances laissées par les Syrneths, les archéologues se spécialisent dans l’étude des races disparues. On ne peut apprendre cette spécialisation qu’au sein de la Société des explorateurs. Les érudits vaticins n’y ont pas accès.",
+      "competences_base": [
+        "Fouille",
+        "Occultisme",
+        "Recherches"
+      ],
+      "competences_avancees": [
+        "Astronomie",
+        "Calcul",
+        "Code secret",
+        "Connaissance des pièges",
+        "Connaissance des runes",
+        "Connaissance des Sidhes",
+        "Connaissance des Syrneths",
+        "Examen d’artefact",
+        "Qui-vive",
+        "Sens de l’orientation"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Artificier",
+      "supplement_origine": "Supplément La Rilasciare",
+      "categories": [
+        "Métiers des Armes"
+      ],
+      "description": "Les artificiers savent fabriquer grenades, bombes à base de poudre à canon et autres explosifs – un passe-temps dangereux et de haute technicité. Faire une bombe exige de posséder tous les ingrédients chimiques nécessaires, beaucoup de temps et des nerfs d’acier. L’artificier mène une existence extrêmement risquée… Car la poudre noire et les mèches sont loin d’être fiables, et les accidents sont dévastateurs.",
+      "competences_base": [
+        "Calcul",
+        "Forgeron",
+        "Tonnelier"
+      ],
+      "competences_avancees": [
+        "Fabrication d’armes à feu",
+        "Guet-apens",
+        "Mèches",
+        "Poison",
+        "Poudrier",
+        "Qui-vive",
+        "Sciences de la nature",
+        "Soulever"
+      ],
+      "reputation": "Réputation martiale : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Cadet",
+      "supplement_origine": "Supplément Mousquetaires et Chevaliers",
+      "categories": [
+        "Métiers des Armes",
+        "Métiers de Serviteurs"
+      ],
+      "description": "Les cadets sont des chevaliers en formation. Ils peuvent fréquenter une école formelle telle que l’Académie des mousquetaires ou celles des gardes de fer eisenöres ou bien être sous la tutelle directe d’un chevalier plus expérimenté, solution choisie par les Vigiles vodaccis par exemple. Bien que le cœur de la formation des cadets soit le combat, leur apprentissage ne se limite pas au métier des armes, ils apprennent également à lire et à écrire, des rudiments de droit, l’étiquette et tout ce qui leur sera nécessaire pour faire honneur à leur future unité. Beaucoup obtiennent leur place en raison de leur naissance, d’autres grâce à la fortune de leur famille, mais quelques-uns, les plus respectés, ont gagné leur place par leurs exploits, que ce soit sur un champ de bataille ou en affrontant la racaille dans les sombres ruelles d’une grande cité. NdG : le métier de Cadet se substitue à celui d’Écuyer, mais pas à ceux d’Acolyte ou de Pauvre Chevalier, les Kreuzritters et les Chevaliers de la Rose et de la Croix ont de trop nombreuses spécificités pour pouvoir être assimilés aux cadets des organisations chevaleresques reconnues.",
+      "competences_base": [
+        "Jeu de jambes",
+        "Ordre serré",
+        "Tâches domestiques (dans les académies) ou Valet (pour les autres)"
+      ],
+      "competences_avancees": [
+        "Calcul",
+        "Course de vitesse",
+        "Droit",
+        "Équitation",
+        "Étiquette",
+        "Héraldique",
+        "Histoire",
+        "Orientation citadine (la ville ou se situe l’académie) ou Connaissance des routes (sa nation",
+        "pour les autres)",
+        "Séduction",
+        "Soin des chevaux"
+      ],
+      "reputation": "Réputation martiale : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Conférencier",
+      "supplement_origine": "Supplément La Société des Aventuriers de Luthon et du Lovaine",
+      "categories": [
+        "Métiers d’Orateurs"
+      ],
+      "description": "Les conférenciers sillonnent les îles d’Émeraude afin de présenter les découvertes de la Société des Aventuriers de Luthon et d’éduquer la population quant aux merveilles du monde. Il leur arrive également souvent de se rendre à l’étranger lorsqu’ils sont invités à présenter les découvertes de leur organisation. Nombre d’entre eux sont d’anciens explorateurs ou des universitaires que la prise de parole en public n’effraye pas.",
+      "competences_base": [
+        "Éloquence",
+        "Narrer",
+        "Recherches"
+      ],
+      "competences_avancees": [
+        "Agitation",
+        "Comédie",
+        "Compère",
+        "Comportementalisme",
+        "Connaissance des routes (nation)",
+        "Diplomatie",
+        "Géographie",
+        "Histoire",
+        "Sincérité"
+      ],
+      "reputation": "Rang social : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Dilettante",
+      "supplement_origine": "Supplément Mousquetaires et Chevaliers",
+      "categories": [
+        "Métiers d’Orateurs"
+      ],
+      "description": "Tous les enfants de la noblesse ne peuvent hériter du titre et des fonctions de leurs géniteurs. Certains rejoignent alors les rangs de l’église, de la cour du souverain, de l’armée ou d’une organisation plus ou moins reconnue. Toutefois, une part non négligeable d’entre eux préfère vivre de ses rentes, s’adonnant à un travail, à un art, pour son seul plaisir, en amateur et avec une certaine fantaisie. À force d’oisiveté et de touche-à-tout, un dilettante peut se targuer d’avoir des connaissances étendues, quoique superficielles, dans tous les domaines. Vous les trouverez bien souvent hantant les clubs et sociétés de gentilshommes et gentes dames.",
+      "competences_base": [
+        "Contacts (cité)",
+        "Dilettantisme",
+        "Étiquette"
+      ],
+      "competences_avancees": [
+        "Écrivain public",
+        "Éloquence",
+        "Orientation citadine (cité)",
+        "Pique-assiette",
+        "Recherches et deux compétences au choix"
+      ],
+      "reputation": "Rang social : +2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Légionnaire",
+      "supplement_origine": "Supplément Numa, Capitale de l’ancien Empire",
+      "categories": [
+        "Métiers des Armes"
+      ],
+      "description": "Vous avez subi l’entraînement du légionnaire numain typique : marches forcées, combat en formation rapprochée avec les autres légionnaires, construction de camps militaires, etc. Ce n’est pas un métier habituel dans le Théah de 1670… Vous êtes sans doute un immortel ! Règle spéciale : cette spécialisation coûte 5 PP au lieu de 2 car rares sont ceux qui maîtrisent aujourd’hui le métier de Légionnaire de l’ancienne Numa. Par contre, ils reçoivent gratuitement l’avantage, entraînement au port de l’armure.",
+      "competences_base": [
+        "Jeu de jambes",
+        "Ordre serré",
+        "Tâches domestiques"
+      ],
+      "competences_avancees": [
+        "Corruption",
+        "Course d’endurance",
+        "Débrouillardise",
+        "Estomac",
+        "Galvaniser",
+        "Guet-apens",
+        "Intimidation",
+        "Jouer",
+        "Langage des signes",
+        "Logistique",
+        "Qui-vive",
+        "Survie",
+        "Tactique"
+      ],
+      "reputation": "Réputation martiale : +1",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Pauvre Chevalier",
+      "supplement_origine": "Supplément L’Héritage de la Foi (Legacy of Faith)",
+      "categories": [
+        "Métiers des Armes",
+        "Métiers de Serviteurs"
+      ],
+      "description": "Un Pauvre Chevalier est confié à un dominus qu’il est chargé de servir. Il raccommode ses vêtements déchirés, nettoie ses bottes, lui fait la cuisine et s’occupe de son cheval. Cette période d’entraînement avant de devenir officiellement chevalier peut durer de deux à cinq ans, mais renforce le lien qui unit le Pauvre Chevalier à son dominus. Il apprend tout de même à manier une épée, forge physiquement son corps et intègre les bases d’un métier artisanal pouvant être utile à la communauté comme maréchal-ferrant, Potier ou Tailleur.",
+      "competences_base": [
+        "Étiquette",
+        "Premiers secours",
+        "Tâches domestiques"
+      ],
+      "competences_avancees": [
+        "Amortir une chute",
+        "Cordonnier",
+        "Course de vitesse",
+        "Débrouillardise",
+        "Forgeron",
+        "Jeu de jambes",
+        "Nager",
+        "Potier",
+        "Qui-vive",
+        "Sauter",
+        "Séduction",
+        "Soin des animaux (chevaux)",
+        "Tailleur",
+        "Tonnelier"
+      ],
+      "reputation": "Réputation martiale : +2 Ces métiers sont réservées à des personnages très expérimentés, donc à priori, pas des personnages-joueurs débutants. Quant aux métiers Aérostier et Politicien, ils n’existent pas au moment de la création de personnage, que ce soit en 1656 ou en 1668. Ils ne seront donc proposés aux joueurs qu’à la discrétion du MJ.",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Aérostier",
+      "supplement_origine": "Supplément Noblesse Oblige",
+      "categories": [
+        "Métiers des Belles Lettres"
+      ],
+      "description": "Très peu de gens ont appris ce métier. Ce sont des inventeurs et des bricoleurs qui ont réussi à mettre au point des ballons, des montgolfières ou des dirigeables. Ce métier permet de les mettre en œuvre et de les manœuvrer pour arriver à bon port.",
+      "competences_base": [
+        "Gonflage",
+        "Maintenance",
+        "Piloter"
+      ],
+      "competences_avancees": [
+        "Amortir une chute",
+        "Bricoleur",
+        "Cartographie",
+        "Connaissance des nœuds",
+        "Équilibre",
+        "Lancer",
+        "Perception du temps",
+        "Sens de l’orientation",
+        "Soulever"
+      ],
+      "reputation": "Rang social : +2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Chevalier",
+      "supplement_origine": "Supplément Mousquetaires et Chevaliers",
+      "categories": [
+        "Métiers des Armes",
+        "Métiers de Police"
+      ],
+      "description": "Membre d’un Ordre de chevalerie ou mousquetaire de Montaigne, le chevalier a plusieurs missions qui peuvent varier d’un Ordre à l’autre. Toutefois, ils ont tous en commun de protéger leur seigneur et/ou le chef de leur ordre, de respecter le code de chevalerie, de devoir se comporter avec honneur et dignité et de se soutenir les uns les autres. La plupart d’entre eux ont également des missions de police et de surveillance de lieux sensibles.",
+      "competences_base": [
+        "Droit",
+        "Estomac",
+        "Étiquette"
+      ],
+      "competences_avancees": [
+        "Calcul",
+        "Connaissance des routes (la nation de son Ordre)",
+        "Équitation",
+        "Guet-apens",
+        "Héraldique",
+        "Intimidation",
+        "Mode",
+        "Politique",
+        "Premiers secours",
+        "Qui- vive",
+        "Séduction",
+        "Tactique"
+      ],
+      "reputation": "Réputation martiale : +3",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Maître d’armes",
+      "supplement_origine": "Supplément La Guilde des Spadassins",
+      "categories": [
+        "Métiers des Armes",
+        "Métiers de Serviteurs"
+      ],
+      "description": "Le maître d’armes est un spadassin qui enseigne à ses élèves les finesses de l’escrime et du combat. Qu’il soit l’inventeur d’un nouveau style ou le professeur lambda d’une grande académie d’escrime, c’est un enseignant compétent et consciencieux. Ses élèves lui seront, plus tard, redevables de quelques vies.",
+      "competences_base": [
+        "Entraîner",
+        "Jeu de jambes",
+        "Qui-vive"
+      ],
+      "competences_avancees": [
+        "Commander",
+        "Comportementalisme",
+        "Équilibre",
+        "Estomac",
+        "Étiquette",
+        "Galvaniser",
+        "Guet-apens",
+        "Intimidation",
+        "Narrer",
+        "Pas de côté",
+        "Premiers secours",
+        "Recherches",
+        "Roulé-boulé"
+      ],
+      "reputation": "Réputation martiale : +3",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Politicien",
+      "supplement_origine": "Suppléments La Révolution montaginoise et Noblesse oblige",
+      "categories": [
+        "Métiers d’Orateurs"
+      ],
+      "description": "Si les courtisans estiment être les maîtres de la politique, ils saisissent souvent mieux les ficelles de la mode que le véritable usage du pouvoir. Un politicien, lui, comprend la nature même du pouvoir. Il sait l’acquérir, l’exploiter et le reconnaître chez les autres. Un maître en politique comprend ce que les gens veulent avec un minimum de renseignements, et il sait comment répondre à leurs attentes. Dans le cas contraire, il sait a moins vers qui les orienter. Aussi, tant qu’une certaine organisation des plus discrètes ne se sera pas calmée et que ses effets sur Théah n’auront pas régressé, de plus en plus de courtisans seront obligés de tenir compte des besoins des individus qu’ils gouvernent. Dans le même temps, l’aristocratie de Théah devra apprendre à s’intéresser davantage aux réalités du gouvernement qu’aux mondanités. L’ère des courtisans arrive à son terme. Celle des politiciens ne fait que commencer.",
+      "competences_base": [
+        "Contacts (cité)",
+        "Éloquence",
+        "Étiquette"
+      ],
+      "competences_avancees": [
+        "Agitation",
+        "Comportementalisme",
+        "Corruption",
+        "Diplomatie",
+        "Galvaniser",
+        "Intrigant",
+        "Politique",
+        "Sincérité"
+      ],
+      "reputation": "Rang social : +2",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Rasoir",
+      "supplement_origine": "Supplément La Guilde des Spadassins",
+      "categories": [
+        "Métiers des Armes",
+        "Métiers de Police"
+      ],
+      "description": "Les Rasoirs font partie de l’organisation du même nom qui fait respecter la Loi de la Guilde au sein de la belliqueuse Guilde des Spadassins. En plus de perfectionner leurs qualités martiales, ils reçoivent également une formation dans le domaine du droit et de la diplomatie pour ne pas froisser les autorités locales lors de leurs diverses interventions.",
+      "competences_base": [
+        "Diplomatie",
+        "Estomac",
+        "Intimidation"
+      ],
+      "competences_avancees": [
+        "Commander",
+        "Comportementalisme",
+        "Corruption",
+        "Course de vitesse",
+        "Droit",
+        "Équitation",
+        "Étiquette",
+        "Filature",
+        "Guet-apens",
+        "Pas de côté",
+        "Premiers secours",
+        "Qui-vive",
+        "Tactique"
+      ],
+      "reputation": "Réputation martiale : +3",
+      "restriction_creation": "libre"
+    },
+    {
+      "nom": "Seigneur du crime",
+      "supplement_origine": "Supplément La Maraude",
+      "categories": [
+        "Métiers de la Maraude"
+      ],
+      "description": "Toute organisation humaine tend inexorablement à avoir un homme qui en prend la tête. Il est utopiste de croire qu’une organisation puisse être dirigée par tous ses membres de manière collégiale. Ainsi, même dans les bas-fonds, des hommes parviennent à devenir les leaders de la racaille. Imposant souvent leurs vues par la force, certains y parviennent par l’esprit, mais toujours grâce à la peur. Ils s’appuient généralement sur une organisation bien rôdée et des bras droits qui exécutent le sale boulot pour eux.",
+      "competences_base": [
+        "Commander",
+        "Connaissance des bas-fonds (cité)",
+        "Intimidation"
+      ],
+      "competences_avancees": [
+        "Agitation",
+        "Calcul",
+        "Contacts (cité)",
+        "Corruption",
+        "Droit",
+        "Éloquence",
+        "Estomac",
+        "Galvaniser",
+        "Guet-apens",
+        "Interrogatoire",
+        "Qui-vive"
+      ],
+      "reputation": "Moralité : -3",
+      "restriction_creation": "libre"
+    }
+  ]
+}

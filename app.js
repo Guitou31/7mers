@@ -49,6 +49,46 @@
       .toLowerCase();
   }
 
+  function slugify(s) {
+    return normalize(s).replace(/['']/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  }
+
+  // Cross-linking : index des spécialisations (entraînements + métiers)
+  const specialisationsIndex = {};
+  if (window.ENTRAINEMENTS_DATA && window.ENTRAINEMENTS_DATA.entrainements) {
+    for (const e of window.ENTRAINEMENTS_DATA.entrainements) {
+      specialisationsIndex[normalize(e.nom)] = { nom: e.nom, page: "entrainements" };
+    }
+  }
+  if (window.METIERS_DATA && window.METIERS_DATA.metiers) {
+    for (const m of window.METIERS_DATA.metiers) {
+      const k = normalize(m.nom);
+      if (!specialisationsIndex[k]) {
+        specialisationsIndex[k] = { nom: m.nom, page: "metiers" };
+      }
+    }
+  }
+  function renderSpecialisationLink(nom) {
+    const k = normalize(nom);
+    const found = specialisationsIndex[k];
+    if (found) {
+      return el("a", {
+        class: "specialisation-link",
+        href: found.page + ".html#" + slugify(found.nom),
+        title: "Ouvrir : " + found.nom + " (" + found.page + ")",
+      }, nom);
+    }
+    return document.createTextNode(nom);
+  }
+  function renderSpecialisationsInline(noms) {
+    const out = [];
+    noms.forEach((nom, i) => {
+      if (i > 0) out.push(document.createTextNode(", "));
+      out.push(renderSpecialisationLink(nom));
+    });
+    return out;
+  }
+
   function el(tag, attrs, children) {
     const e = document.createElement(tag);
     if (attrs) {
@@ -344,7 +384,7 @@
       el("dt", null, "Arme :"),
       el("dd", null, ecole.arme_display || ecole.arme || "—"),
       el("dt", null, "Spécialisations :"),
-      el("dd", null, ecole.specialisations.join(", ") || "—"),
+      el("dd", null, ecole.specialisations.length ? renderSpecialisationsInline(ecole.specialisations) : "—"),
     ]);
     container.appendChild(el("div", { class: "detail-section" }, meta));
 
@@ -406,7 +446,7 @@
     const metaEntries = [
       ["Arme(s) de prédilection", ecole.arme_display || ecole.arme],
       ["Catégorie(s) d'arme", (ecole.armes_categories || []).join(", ")],
-      ["Spécialisations", ecole.specialisations.join(", ")],
+      ["Spécialisations", ecole.specialisations.length ? renderSpecialisationsInline(ecole.specialisations) : ""],
       ["Origine", d.origine_texte || ecole.nations.join(", ")],
       ["Académies", d.academies],
       ["Homologation", d.homologation],

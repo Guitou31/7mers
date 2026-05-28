@@ -9,12 +9,21 @@
     return;
   }
 
-  // Index global pour le cross-linking (compétence → spécialisation cliquable)
-  // Cherche dans entrainements (et plus tard métiers).
-  const entrainementsByNom = {};
+  // Index global pour le cross-linking (compétence → spécialisation cliquable).
+  // Cherche dans entrainements ET métiers, en mémorisant la cible (page).
+  const specialisationsIndex = {}; // key normalized → { nom, page }
   if (window.ENTRAINEMENTS_DATA && window.ENTRAINEMENTS_DATA.entrainements) {
     for (const e of window.ENTRAINEMENTS_DATA.entrainements) {
-      entrainementsByNom[normalizeKey(e.nom)] = e.nom;
+      specialisationsIndex[normalizeKey(e.nom)] = { nom: e.nom, page: "entrainements" };
+    }
+  }
+  if (window.METIERS_DATA && window.METIERS_DATA.metiers) {
+    for (const m of window.METIERS_DATA.metiers) {
+      // Si déjà en entraînement, on ne réécrase pas (rare cas de collision de nom)
+      const k = normalizeKey(m.nom);
+      if (!specialisationsIndex[k]) {
+        specialisationsIndex[k] = { nom: m.nom, page: "metiers" };
+      }
     }
   }
 
@@ -58,10 +67,14 @@
   // === Lookup d'une spécialisation : renvoie {url, label} ou null si non trouvée ===
   function lookupSpecialisation(nom) {
     const key = normalizeKey(nom);
-    if (entrainementsByNom[key]) {
-      return { url: "entrainements.html#" + slugify(entrainementsByNom[key]), label: entrainementsByNom[key] };
+    const found = specialisationsIndex[key];
+    if (found) {
+      return {
+        url: found.page + ".html#" + slugify(found.nom),
+        label: found.nom,
+        page: found.page,
+      };
     }
-    // Plus tard : chercher dans métiers
     return null;
   }
 

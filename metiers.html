@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Compétences — Bréviaire 7ème Mer V2.1</title>
+  <title>Métiers — Bréviaire 7ème Mer V2.1</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-page="competences">
+<body data-page="metiers">
   <div id="page-layout"></div>
 
   <div class="page-section-title">
-    <h2>Compétences</h2>
+    <h2>Métiers</h2>
     <p class="page-section-sub">
-      Chaque compétence est apprenable via certaines spécialisations (entraînements ou métiers).
-      Cliquez sur le nom d'une spécialisation dans le détail pour ouvrir sa page.
+      Chaque métier donne accès à des Compétences de base (montée à coût réduit)
+      et des Compétences avancées (coût réduit). Cliquez sur le nom d'une compétence
+      pour voir son détail.
     </p>
   </div>
 
@@ -26,7 +27,7 @@
     <aside class="filters" id="filters" aria-label="Filtres">
       <div class="filter-group">
         <label for="search">Recherche</label>
-        <input type="search" id="search" placeholder="Nom, description, spécialisation…" autocomplete="off">
+        <input type="search" id="search" placeholder="Nom, description, compétence…" autocomplete="off">
       </div>
 
       <div class="filter-group">
@@ -41,23 +42,22 @@
       <div class="results-bar">
         <span class="results-count" id="results-count"></span>
       </div>
-      <ul class="ecoles-grid" id="competences-grid"></ul>
+      <ul class="ecoles-grid" id="metiers-grid"></ul>
       <p class="empty-state" id="empty-state" hidden>
-        Aucune compétence ne correspond à ces critères.
+        Aucun métier ne correspond à ces critères.
       </p>
     </main>
   </div>
 
-  <dialog id="competence-detail" class="ecole-detail" aria-labelledby="competence-detail-title">
-    <button class="ecole-detail-close" id="competence-detail-close" aria-label="Fermer" type="button">×</button>
-    <div id="competence-detail-content"></div>
+  <dialog id="metier-detail" class="ecole-detail" aria-labelledby="metier-detail-title">
+    <button class="ecole-detail-close" id="metier-detail-close" aria-label="Fermer" type="button">×</button>
+    <div id="metier-detail-content"></div>
   </dialog>
 
   <script src="layout.js"></script>
-  <script src="competences.js"></script>
-  <!-- entrainements.js + metiers.js : cross-linking compétences → spécialisations -->
-  <script src="entrainements.js"></script>
   <script src="metiers.js"></script>
-  <script src="competences-app.js"></script>
+  <!-- competences.js chargé pour le cross-linking métiers → compétences -->
+  <script src="competences.js"></script>
+  <script src="metiers-app.js"></script>
 </body>
 </html>
