@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bréviaire 7ème Mer V2.1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="index">
+  <div id="page-layout"></div>
+
+  <main class="home-main">
+    <section class="home-intro">
+      <h2>Bienvenue dans le Bréviaire</h2>
+      <p>
+        Compendium d'aides de jeu pour <strong>7ème Mer</strong>, conçu pour
+        un système 1ère édition joué dans l'univers de la 2ème édition.
+        Sélectionne une section pour consulter ses outils.
+      </p>
+    </section>
+
+    <section class="home-sections" aria-label="Sections du site">
+      <div id="home-cards"></div>
+    </section>
+  </main>
+
+  <script src="layout.js"></script>
+  <script>
+    (function () {
+      "use strict";
+      const sections = (window.SITE_SECTIONS || []).filter(s => s.id !== "index");
+      const labels = window.SITE_CATEGORY_LABELS || {};
+      const container = document.getElementById("home-cards");
+
+      // Groupe par catégorie en préservant l'ordre d'apparition
+      const byCategory = {};
+      const orderedCats = [];
+      for (const s of sections) {
+        if (!byCategory[s.category]) {
+          byCategory[s.category] = [];
+          orderedCats.push(s.category);
+        }
+        byCategory[s.category].push(s);
+      }
+
+      for (const cat of orderedCats) {
+        const groupTitle = document.createElement("h3");
+        groupTitle.className = "home-group-title";
+        groupTitle.textContent = labels[cat] || cat;
+        container.appendChild(groupTitle);
+
+        const grid = document.createElement("ul");
+        grid.className = "home-grid";
+        for (const s of byCategory[cat]) {
+          const li = document.createElement("li");
+          li.className = "home-card" + (s.available ? "" : " is-disabled");
+          if (s.available) {
+            const a = document.createElement("a");
+            a.href = s.file;
+            a.className = "home-card-link";
+            a.innerHTML = `<span class="home-card-label">${s.label}</span>
+              <span class="home-card-cta">Ouvrir →</span>`;
+            li.appendChild(a);
+          } else {
+            li.innerHTML = `<span class="home-card-label">${s.label}</span>
+              <span class="home-card-tag">À venir</span>`;
+          }
+          grid.appendChild(li);
+        }
+        container.appendChild(grid);
+      }
+    })();
+  </script>
+</body>
+</html>

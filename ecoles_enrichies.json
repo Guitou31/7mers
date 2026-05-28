@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "description": "Overrides MANUELS par école. Le contenu auto-extrait du PDF est dans ecoles_enrichies_auto.json. Ce fichier permet de corriger/compléter à la main : chaque clé d'école écrase la version auto. Régénération auto sans danger pour ce fichier.",
+    "champs_speciaux": {
+      "nations_override": "Liste de nations à utiliser à la place de celles extraites du PDF/CSV (ex: pour les organisations transnationales comme la Guilde des Jennys).",
+      "appartenance_requise": "Texte affiché en encart dans le modal : 'Il faut appartenir à X pour acquérir cette école.'"
+    }
+  },
+  "ecoles": {
+    "Malone": {
+      "nations_override": [
+        "Avalon", "Inismore", "Marches des Highlands",
+        "Castille", "Eisen", "Montaigne", "Sarmatie",
+        "Ussura", "Vesten", "Vodacce"
+      ],
+      "genre_restriction": "femmes",
+      "appartenance_requise": "Il faut appartenir à la Guilde des Jennys pour acquérir cette école.",
+      "origine_texte": "Guilde des Jennys (enseignée dans toutes les nations de Théah)."
+    },
+    "Rossini": {
+      "nations_override": ["Castille"],
+      "origine_texte": "Castille (Cité Vaticine).",
+      "appartenance_requise": "Il faut être membre de la garde de l'Église pour apprendre cette école."
+    },
+    "Épées de Salomon": {
+      "nations_override": ["Castille"],
+      "origine_texte": "Castille (Cité Vaticine).",
+      "appartenance_requise": "Il faut être membre de la garde de l'Église pour apprendre cette école."
+    },
+    "Desaix": {
+      "nations_override": ["Eisen"],
+      "origine_texte": "Eisen (Ordre de la Rose et la Croix).",
+      "appartenance_requise": "Il faut être membre de l'Ordre de la Rose et la Croix pour apprendre cette école."
+    }
+  }
+}

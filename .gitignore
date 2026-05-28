@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Sorties intermédiaires de parsing (régénérables)
+pdf_ecoles_brut.txt
+
+# Fichiers OS
+.DS_Store
+Thumbs.db
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+*.swo

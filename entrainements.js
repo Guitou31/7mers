@@ -1,0 +1,438 @@
+// Généré par pdf_entrainements_to_json.py — ne pas éditer à la main
+window.ENTRAINEMENTS_DATA = {
+  "_meta": {
+    "source": "05 Entraînements (10-07-13).pdf",
+    "nb_entrainements_total": 32,
+    "nb_libres": 25,
+    "nb_limitees": 7,
+    "categorie_to_restriction": {
+      "Entraînements autorisés sans restriction à la création": "libre",
+      "Entraînements à l'accès limité à la création": "limitee"
+    },
+    "modifs_maison": [
+      "Escrime divisée en sous-catégories Sabres/Rapières/Épées",
+      "Hache + Hache à deux mains fusionnés en Haches",
+      "Lance de cavalerie + Lance légère fusionnés en Lances",
+      "Matraque fusionnée dans Masses",
+      "Mousquet renommé Fusils (englobe Arquebuses + Mousquets)"
+    ]
+  },
+  "entrainements": [
+    {
+      "nom": "Arbalète",
+      "description": "Certes, les arbalètes commencent à disparaître des champs de bataille, mais certains soldats ou assassins se servent encore de cette arme, qui est à la fois silencieuse et facile d’utilisation. Outre les arbalètes proprement dites, on peut également trouver des armes suivant le même mode de fonctionnement : un système de cordes, de ressort, d’air comprimé, etc. propulse le projectile. Un mécanisme est presque toujours prévu pour garder l’arme en position de tir, sans fatigue pour le tireur. Le projectile de ces armes a toujours une trajectoire assez tendue, ce qui permet de viser plus facilement.",
+      "competences_base": [
+        "Tirer (Arbalète)",
+        "Facteur d’arcs"
+      ],
+      "competences_avancees": [
+        "Recharger (Arbalète)",
+        "Recharger (chu-ko-nu) (Cathayan uniquement)"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Arc",
+      "description": "L’archer a passé de longues années à perfectionner sa maîtrise du tir à l’arc. Sa spécialité le rend précieux dans toutes les armées et il n’aura jamais de mal à se nourrir. Les archers originaires d’Avalon sont les plus réputés. Le projectile des arcs a toujours une trajectoire en cloche à longue portée, rendant l’arme plus difficile à utiliser qu’une arbalète. L’arc ne sert normalement qu’au tir ; en situation d’urgence, un héros peut s’en servir comme d’un bâton (en utilisant la compétence Bâton et les caractéristiques de base d’un bâton), mais comme ce n’est pas la vocation première de l’arc, il sera pénalisé par un malus d’une augmentation tant en attaque qu’en parade. Les arcs sont assez fragiles, et leur corde doit être absolument maintenue au sec, car un arc est inutilisable tant que sa corde est humide.",
+      "competences_base": [
+        "Tirer (Arc)",
+        "Facteur d’arcs"
+      ],
+      "competences_avancees": [
+        "Tir à l’arc monté",
+        "Tir réflexe"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Arme d’hast",
+      "description": "Sur les champs de bataille de Théah, les piquiers côtoient fréquemment les mousquetaires : les premiers maintiennent l’ennemi à distance tandis que les seconds rechargent leurs armes. Une arme d’hast ressemble à une lance : c’est une longue hampe de bois sur laquelle est fixée une pointe ou une lame de métal. Cette dernière est souvent assez élaborée. Ce genre d’arme n’est pas prévu pour être lancé, ce sont des armes d’infanterie nécessitant de se servir des deux mains. Les armes d’hast sont populaires en raison de la longueur de leur hampe. Cependant, elles perdent rapidement de leur efficacité en terrain accidenté ou en corps à corps trop rapproché.",
+      "competences_base": [
+        "Attaque (Arme d’hast)",
+        "Parade (Arme d’hast)"
+      ],
+      "competences_avancees": [
+        "Réception de charge"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Athlétisme",
+      "description": "Les athlètes passent de longues heures à s’entraîner pour devenir plus rapides, plus forts, plus endurants ou plus agiles que le commun des mortels. Leurs compétences sont souvent d’un grand secours dans les tombes défendues par des pièges syrneths.",
+      "competences_base": [
+        "Course de vitesse",
+        "Escalade",
+        "Jeu de jambes",
+        "Lancer"
+      ],
+      "competences_avancees": [
+        "Acrobatie",
+        "Amortir une chute",
+        "Course d’endurance",
+        "Nager",
+        "Pas de côté",
+        "Roulé-boulé",
+        "Sauter",
+        "Soulever"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Bâton",
+      "description": "Un bâton est bien plus facile à fabriquer qu’une épée ou une arme d’hast, et bien moins souvent perçu comme une menace. Même si la majeure partie de votre entraînement martial au bâton utilise le bâton de combat d’Avalon ou le gwon du Cathay, même un grand bâton de marche peut être utilisé comme arme à l’aide de cette compétence. Les bâtons ne peuvent être utilisés qu’avec les deux mains. Le terme bâton désigne toutes les armes contondantes constituées uniquement d’une hampe. Si un héros désire combattre avec la hampe d’une lance plutôt que la pointe pour ne pas blesser sa cible, on peut utiliser les caractéristiques du bâton. Cette arme est populaire pour les non guerriers, car elle est peu coûteuse, facile à maîtriser, et elle peut être portée discrètement malgré sa taille. Il est en effet facile de convertir son bâton de marche en arme. Les bâtons ne peuvent pas être lancés de manière efficace en combat.",
+      "competences_base": [
+        "Attaque (bâton)",
+        "Parade (bâton)"
+      ],
+      "competences_avancees": [
+        "Pousser (bâton)",
+        "Virevolte"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Bouclier",
+      "description": "Tout le monde peut se servir d’un bouclier, mais seul un soldat rompu à son maniement peut en faire une véritable arme d’attaque. Les bases du maniement des boucliers de grandes tailles s’apprennent vite, mais les subtilités sont plus difficiles à acquérir. Par contre, pour se protéger des projectiles, le bouclier est idéal. Il permet en effet de s’abriter derrière et d’encaisser les dégâts dans le bouclier lui-même. Les boucliers sont construits en bois, acier ou bronze. Les Kosars utilisent également le cuir ou de la peau tendue (à traiter comme du cuir bouilli dans tous les cas). Le bouclier est fixé sur le bras gauche pour un droitier (l’inverse pour un gaucher). Il protège une surface plus ou moins grande en fonction de son type. Chaque bouclier possède un bonus provenant directement de sa taille et applicable à sa défense passive.",
+      "competences_base": [
+        "Parade (Bouclier)"
+      ],
+      "competences_avancees": [
+        "Attaque (Bouclier)"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Cape",
+      "description": "Dans les mains d’un combattant expérimenté, une cape peut être bien plus qu’un simple vêtement d’apparat. Elle peut quasiment servir de bouclier mais aussi empêtrer un adversaire. Son principal inconvénient est que – contrairement à la majeure partie des autres armes improvisées – on ne peut l’utiliser pour attaquer.",
+      "competences_base": [
+        "Parade (Cape)"
+      ],
+      "competences_avancees": [
+        "Aveugler"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Cavalier",
+      "description": "Avec cet entraînement, un personnage peut monter sur n’importe quel cheval domestique et peut le diriger avec un minimum d’efforts. Bien évidemment, un entraînement poussé permet d’accomplir des tours d’adresse beaucoup plus spectaculaires.",
+      "competences_base": [
+        "Équitation",
+        "Soins des chevaux"
+      ],
+      "competences_avancees": [
+        "Dressage",
+        "Sauter en selle",
+        "Voltige"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Couteau",
+      "description": "S’il est plus facile de dissimuler un couteau qu’une épée, cette arme est généralement considérée comme moins dangereuse. Les marins sont souvent particulièrement habiles au maniement du couteau, instrument qu’ils utilisent quotidiennement pour effectuer de multiples tâches. Les couteaux possèdent une lame ne dépassant pas 50 cm. Bien qu’elle permette d’infliger des dégâts tranchants, elle s’utilise surtout pour frapper d’estoc. Les bases de la dague sont faciles à apprendre, et comme l’arme est peu encombrante, elle est assez populaire. Beaucoup de héros n’ayant pas une vocation de combattants en portent une pour pouvoir se défendre malgré tout. La plupart des dagues sont assez légères est assez bien équilibrées pour être utilisées comme armes de jet. Remarque : bien qu’apparenté à une dague, le bichwa, les griffes animales, le hora et le katar se trouvent avec les gants de combat, car ils ne possèdent pas de poignée mais un anneau découpé pour les tenir.",
+      "competences_base": [
+        "Attaque (Couteau)",
+        "Parade (Couteau)"
+      ],
+      "competences_avancees": [
+        "Lancer (Couteau)"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Combat de rue",
+      "description": "Les subtilités du pugilat ne sont pas pour tout le monde. Certains pensent que le meilleur moyen de finir entre quatre planches c’est justement de combattre à la loyale.",
+      "competences_base": [
+        "Attaque (Combat de rue)"
+      ],
+      "competences_avancees": [
+        "Attaque (Armes improvisées)",
+        "Coup à la gorge",
+        "Coup aux yeux",
+        "Coup de pied",
+        "Lancer (Armes improvisées)",
+        "Parade (Armes improvisées)"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Épée à deux mains",
+      "description": "Tous les spadassins n’ont pas encore adopté les nouvelles techniques d’escrime. Cette compétence regroupe l’utilisation des épées à deux mains (toutes celles qui ne sont pas décrites dans la spécialisation Escrime). Ce n’est pas parce que ces armes ne sont plus à la mode qu’elles ont perdu leur efficacité. Les épées à deux mains sont souvent réservées aux combattants d’élite d’une armée. Leur portée accrue et les dégâts très importants que ces lourdes armes infligent permettent de faire le vide autour de soi assez aisément. Presque toutes les épées à deux mains sont à double tranchant. Elles sont normalement trop lourdes pour être maniée à une main ou à cheval, et ne peuvent pas être lancées non plus. Bien que les coups d’estoc soient possibles, ils sont assez rarement utilisés.",
+      "competences_base": [
+        "Attaque (Épée à deux mains)",
+        "Parade (Épée à deux mains)"
+      ],
+      "competences_avancees": [],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Escrime",
+      "description": "Cette catégorie regroupe trois sous-catégories d'armes blanches d'escrime : Sabres (lames courbes à une main), Rapières (rapière, fleuret, estoc, canne-épée) et Épées (épée droite, épée longue, katana, etc.). Les bonus s'appliquent à la sous-catégorie choisie lors de l'apprentissage de la compétence. Les personnages qui ont suivi un entraînement d’escrime possèdent une connaissance basique des théories et des techniques auxquelles fait appel l’escrime moderne. Cette compétence regroupe le maniement des armes d’escrime telles que la rapière, le fleuret, l’épée courte, le cimeterre ou l’épée longue. Cette compétence constitue la base de l’enseignement dispensé dans la plupart des écoles d’escrime de Théah. Les lames d’escrime constituent les armes les plus populaires. Elles offrent de bonnes possibilités de parade pour se défendre, associées à des dégâts conséquents. De plus les lames d’escrime sont solides, assez faciles à manier et pas trop encombrantes. Les lames d’escrime sont souvent à double tranchant, avec une pointe assez effilée. Elles peuvent être utilisées pour trancher, mais elles sont plus redoutables encore pour les coups d’estoc, ce qui les rend très versatiles. Elles se manient souvent à une main, mais la garde est parfois assez longue pour permettre une prise à deux mains aisée.",
+      "competences_base": [
+        "Attaque (Sabres, Rapières ou Épées)",
+        "Parade (Sabres, Rapières ou Épées)"
+      ],
+      "competences_avancees": [],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Éventail",
+      "description": "Cet entraînement permet d’utiliser un éventail comme une arme. Toutefois, pas n’importe quel éventail, deux modèles seulement sont utilisables en ce sens : le modèle de l’école Charmine entièrement fait de métal et centré sur la défense et celui de l’école Falisci, équipé de lames rétractables dans les lattes, plutôt tourné vers l’attaque. Les éventails archaïques entièrement en bois, encore utilisés en Eisen et Ussura peuvent également faire l’affaire, mais uniquement pour parer et l’on considérera qu’ils sont réduits en miettes à l’issue du combat. Enfin, les éventails classiques ne sont pas assez solides pour être utilisés comme une arme, on utilisera plutôt les compétences Attaque et Parade (Armes improvisées) dans ce cas. L’éventail en acier de l’école Charmine est considéré comme une arme infligeant 0g2 dés de dommages mais procurant une augmentation gratuite en parade (éventail), quant au modèle de l’école Falisci, il inflige 1g2 dés de dommages. Ils doivent tous deux être réalisés spécialement par un artisan qualifié (éventailliste) et une personne parvenant à combiner les deux styles de combat pourrait demander à créer un éventail spécial regroupant les avantages des deux écoles, ce qui lui permettrait de bénéficier d’une arme infligeant 1g2 dés de dommages et procurant une augmentation gratuite en parade (éventail). Les éventails des écoles Charmine et Falisci coûtent 30 guilders à faire fabriquer. Un modèle mixte reviendrait au minimum à 50 guilders.",
+      "competences_base": [
+        "Parade (Éventail)"
+      ],
+      "competences_avancees": [
+        "Attaque (Éventail)",
+        "Éventailliste"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Filet",
+      "description": "Les rets sont faits de cordes solides et servent souvent à dévier les coups ou à Empêtrer un ennemi.",
+      "competences_base": [
+        "Parade (filet)"
+      ],
+      "competences_avancees": [
+        "Empêtrer"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Fléau",
+      "description": "Les fléaux sont des armes articulées. Une chaîne ou une lanière de cuir relie au manche la partie dangereuse de l’arme. Les fléaux sont difficiles à maîtriser, surtout en parade. Ils ne peuvent pas être lancés avec une efficacité suffisante. Par contre, ils présentent deux avantages : ils ont une bonne portée, tout en étant peu encombrants, et surtout il est difficile de parer leurs coups. Pour parer efficacement un fléau, il faut réussir une parade avec un malus de deux augmentations, sinon le fléau s’entoure autour de votre arme. Les deux armes sont alors bloquées (référez-vous alors à la compétence de spadassin Emprisonner). Par contre, si le défenseur pare le fléau avec un bouclier, il ne court pas ce genre de risque (et ne subit donc pas les deux augmentations de malus).",
+      "competences_base": [
+        "Attaque (Fléau)"
+      ],
+      "competences_avancees": [
+        "Intimidation",
+        "Parade (Fléau)"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Fouet",
+      "description": "Bien qu’on s’en serve rarement au combat, le fouet n’en reste pas moins une arme efficace. Il dispose d’une très bonne allonge et sa rapidité d’utilisation lui confère un léger avantage léger sur les autres armes. Mais attention, si le fouet est une arme des plus dangereuses entre les mains d’un expert, elle l’est bien plus encore dans celles d’un néophyte. Les fouets sont constitués pour l’essentiel d’une corde ou d’une lanière, au bout de laquelle peut se trouver une lame ou un poids. Ces armes sont d’une utilisation assez particulière. Elles ont une portée importante en raison de la longueur de la partie souple, et peuvent s’utiliser en faisant tournoyer l’arme pour couvrir une surface importante. Elles peuvent aussi attraper quelque chose.",
+      "competences_base": [
+        "Attaque (fouet)",
+        "Emmêler"
+      ],
+      "competences_avancees": [
+        "Intimidation",
+        "Saisir un objet",
+        "Se balancer"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Gant de combat",
+      "description": "Les gants de combat regroupent toutes les armes qui s’utilisent plus comme une extension de la main que comme une arme à proprement parler. L’arme peut prendre différentes formes : pointes, griffes, lames, etc. Elle est presque toujours pourvue d’un gant, dans lequel on glisse la main. La plupart du temps, l’arme prend un certain temps à enfiler ou à retirer : elle nécessite donc souvent de se préparer à l’avance. Bien que bénéficiant d’une bonne vitesse, ces armes sont souvent moins efficaces que les autres : leurs dégâts sont souvent moindres, et elles ne permettent pas de parer très efficacement. Aucune de ces armes ne se lance. Parmi les plus utilisées, nous citerons le panzerfaust, les griffes ou le katar.",
+      "competences_base": [
+        "Attaque (gant de combat)"
+      ],
+      "competences_avancees": [
+        "Parade (gant de combat)",
+        "Uppercut (utilisable avec tous sauf le katar et les griffes)"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Grenade",
+      "description": "Les grenades sont d’une utilisation très récente, elles se lancent sur ses ennemis une fois que la mèche est allumée.",
+      "competences_base": [
+        "Lancer (grenade)"
+      ],
+      "competences_avancees": [
+        "Retour à l’envoyeur"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Haches",
+      "description": "Cet entraînement regroupe les haches à une main et les haches à deux mains (version maison fusionnée pour simplifier). Bien qu’elle ne soit plus guère d’usage dans les autres nations, la hache reste une arme répandue en Ussura et au Vestenmannavnjar. Ceux qui apprennent cette spécialisation savent manier la hache, les haches de lancer et autres haches à une main. Pour nombre d’Ussurans et de Vestens, il s’agit avant tout d’un outil avec lequel on peut se battre. Les haches sont des armes constituées d’un manche, généralement en bois, et d’une lourde lame. Elles infligent uniquement des dégâts tranchants. Elles sont parmi les armes les plus dévastatrices, mais elles sont moins efficaces pour parer les coups que certaines autres armes. Les haches ne se manient généralement qu’à une main et peuvent être utilisées comme arme de jet. Tous les spadassins n’ont pas encore adopté les nouvelles techniques d’escrime. Cette compétence regroupe l’utilisation des haches à deux mains particulièrement sanglantes. Ce n’est pas parce que ces armes ne sont plus à la mode qu’elles ont perdu leur efficacité. Les haches à deux mains sont des armes constituées d’un manche, généralement en bois, et d’une lourde lame. Elles infligent uniquement des dégâts tranchants. Elles sont parmi les armes les plus dévastatrices, mais elles sont moins efficaces pour parer les coups que certaines autres armes. Leur poids empêche de les utiliser comme arme de jet.",
+      "competences_base": [
+        "Attaque (Haches)",
+        "Parade (Haches)"
+      ],
+      "competences_avancees": [
+        "Lancer (Haches)"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Lances",
+      "categorie_creation": "Entraînements autorisés sans restriction à la création",
+      "description": "Cet entraînement regroupe les lances de cavalerie (lourdes, utilisées à cheval) et les lances légères (utilisées au sol ou jetées) — version maison fusionnée. Les lances de cavalerie possèdent une hampe allongée et une pointe plus importante que les lances légères. Elles ne peuvent être maniées qu’à deux mains (ou à une main, mais uniquement à cheval en la bloquant sur la selle) et ne peuvent pas être lancées, mais leur plus longue portée et les dégâts importants qu’elles causent peuvent faire la différence. En raison de leur poids et de leur encombrement, aucune de ces armes ne permet de parer, mais elles sont, de toute façon, surtout utilisées à cheval. Entrent dans cette catégorie toutes les armes constituées d’une pointe montée au bout d’un long manche, suffisamment légères pour être lancées. Elles peuvent être maniées à une main, bien que la prise à deux mains soit plus courante. Notez d’ailleurs que pour réussir une réception de charge, l’arme doit obligatoirement être tenue fermement à deux mains. Les lances présentent l’avantage d’être faciles à fabriquer et de donner une portée rassurante. Bien que peu maniables, elles peuvent s’avérer très dangereuses lorsqu’elles équipent un groupe d’hommes, alors capable de dresser un véritable mur de fer devant lui.",
+      "competences_base": [
+        "Attaque (Lances)",
+        "Lancer (Lances)"
+      ],
+      "competences_avancees": [
+        "Réception de charge",
+        "Parade (Lances)"
+      ]
+    },
+    {
+      "nom": "Lutte",
+      "description": "Spectacle pour les petites gens, la lutte a aussi de nombreuses applications pratiques. Un lutteur, s’il parvient à éviter l’arme d’un adversaire inexpérimenté, bénéficie d’un très gros avantage sur lui.",
+      "competences_base": [
+        "Prise"
+      ],
+      "competences_avancees": [
+        "Casser un membre",
+        "Coup de tête",
+        "Étreinte",
+        "Se dégager"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Masses",
+      "description": "Cet entraînement regroupe les masses d'armes et les matraques (version maison fusionnée). Les masses sont conçues pour écraser. Elles présentent l’avantage d’être faciles à utiliser : Il suffit de frapper fort. Ainsi un combattant peu aguerri se débrouillera mieux avec une masse qu’avec une épée par exemple. De plus, les masses sont solides. Les matraques ont plus pour but d’assommer un adversaire que de lui causer de graves blessures, c’est pourquoi elles équipent souvent les forces de l’ordre, mais aussi les voleurs qui peuvent ainsi mettre hors circuit leurs victimes sans risquer le gibet.",
+      "competences_base": [
+        "Attaque (Masses)",
+        "Assommer"
+      ],
+      "competences_avancees": [
+        "Parade (Masses)"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Fusils",
+      "description": "Cet entraînement, propre à la version maison, regroupe le maniement des deux principaux types d'armes à feu d'épaule de Théah : les arquebuses (anciennes, à mèche) et les mousquets (modernes, à platine à silex). Tous deux requièrent un temps de rechargement notable mais infligent des dégâts redoutables. Bien que d’apparition relativement récente, les armes comme le mousquet, la carabine ou l’arquebuse deviennent de plus en plus populaires à Théah. Elles restent cependant peu précises, ce qui constitue probablement leur plus grand défaut, même si les dégâts infligés le compensent pour une bonne partie. De plus, avec une baïonnette montée sur le canon de l’arme, celle-ci peut également servir d’arme d’hast en dernier recours.",
+      "competences_base": [
+        "Tirer (Fusils)"
+      ],
+      "competences_avancees": [
+        "Recharger (Fusils)",
+        "Attaque (arme d’hast)"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Pistolet",
+      "description": "Bien que d’apparition relativement récente, les armes comme le pistolet deviennent de plus en plus populaires à Théah. Elles restent cependant peu précises, ce qui constitue probablement leur plus grand défaut, même si leur faible encombrement les avantage grandement par rapport à une arbalète par exemple.",
+      "competences_base": [
+        "Tirer (Pistolet)"
+      ],
+      "competences_avancees": [
+        "Recharger (Pistolet)"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Pugilat",
+      "description": "Le pugilat est l’art du combat à mains nues tel qu’il est pratiqué par les gentilshommes lorsqu’ils doivent se défendre contre les scélérats qui en veulent à leur vie ou à leurs biens.",
+      "competences_base": [
+        "Attaque (Pugilat)",
+        "Direct",
+        "Jeu de jambes"
+      ],
+      "competences_avancees": [
+        "Claque sur l’oreille",
+        "Uppercut",
+        "Ces entraînements sont limités à des groupes culturels rares ou éloignés de la zone de jeu habituelle (Empire du Croissant ou Cathay)",
+        "Ils nécessitent donc l’autorisation du MJ pour être choisis par un joueur"
+      ],
+      "categorie_creation": "Entraînements autorisés sans restriction à la création"
+    },
+    {
+      "nom": "Arme de jet exotique",
+      "description": "Au Cathay, il existe beaucoup d’armes de lancer étranges qui ne correspondent à aucune autre catégorie, comme les couteaux ou les armes improvisées, parmi lesquelles le chakram ou le paku. Vous utilisez cette compétence pour attaquer avec ces armes.",
+      "competences_base": [
+        "Lancer (Arme de jet exotique)"
+      ],
+      "competences_avancees": [
+        "Tir d’adresse (Arme de jet exotique)"
+      ],
+      "categorie_creation": "Entraînements à l'accès limité à la création"
+    },
+    {
+      "nom": "Armes exotiques jumelées",
+      "description": "Au Cathay, il existe beaucoup d’armes étranges qui sont habituellement maniées par paire, et qui ne rentrent dans aucune autre catégorie, comme les couteaux ou les armes d’escrime. Cela inclut par exemple le Shuang Huan (\"Pleine Lune\") et le Shuang Gao. Vous êtes entraîné à manier ce type d’armes, que ce soit par paire ou seule.",
+      "competences_base": [
+        "Attaque (Armes exotiques jumelées)",
+        "Parade (Armes exotiques jumelées)"
+      ],
+      "competences_avancees": [
+        "Double parade (Armes exotiques jumelées)"
+      ],
+      "categorie_creation": "Entraînements à l'accès limité à la création"
+    },
+    {
+      "nom": "Arts martiaux défensifs",
+      "description": "Il existe deux sortes d’arts martiaux, distingués par des philosophies fondamentalement différentes : des styles agressifs et préventifs qui bloquent les attaques ennemies et frappent en retour, et des styles plus réactifs qui préfèrent retourner les attaques de l’adversaire contre lui en utilisant son énergie cinétique et son mouvement. Vous avez étudié un ou plusieurs styles d’arts martiaux défensifs.",
+      "competences_base": [
+        "Blocage (Arts martiaux défensifs)",
+        "Équilibre",
+        "Esquive",
+        "Jeu de jambes",
+        "Prise"
+      ],
+      "competences_avancees": [
+        "Amortir une chute",
+        "Blocage d’articulation",
+        "Désarmer (Mains nues)",
+        "Méditation",
+        "Pas de côté",
+        "Projection",
+        "Sauter",
+        "Se dégager"
+      ],
+      "categorie_creation": "Entraînements à l'accès limité à la création"
+    },
+    {
+      "nom": "Arts martiaux offensifs",
+      "description": "Il existe deux sortes d’arts martiaux, distingués par des philosophies fondamentalement différentes : des styles agressifs et préventifs qui bloquent les attaques ennemies et frappent en retour, et des styles plus réactifs qui préfèrent retourner les attaques de l’adversaire contre lui en utilisant son énergie cinétique et son mouvement. Vous avez étudié un ou plusieurs styles d’arts martiaux offensifs.",
+      "competences_base": [
+        "Attaque (Arts martiaux offensifs)",
+        "Blocage (Arts martiaux offensifs)",
+        "Direct",
+        "Équilibre",
+        "Jeu de jambes"
+      ],
+      "competences_avancees": [
+        "Amortir une chute",
+        "Atemi",
+        "Corps à corps",
+        "Coup à la gorge",
+        "Coup de pied",
+        "Sauter"
+      ],
+      "categorie_creation": "Entraînements à l'accès limité à la création"
+    },
+    {
+      "nom": "Bolas",
+      "description": "Les bolas sont constitués de deux boules assez lourdes reliées par une corde. Quand l’arme touche sa cible, elle s’enroule autour d’elle.",
+      "competences_base": [
+        "Lancer (Bolas)"
+      ],
+      "competences_avancees": [],
+      "categorie_creation": "Entraînements à l'accès limité à la création"
+    },
+    {
+      "nom": "Fronde",
+      "description": "Si la fronde est l’une des armes à projectiles les plus primitives, elle est toujours très utilisée dans l’Empire du Croissant de Lune. Les avantages de cette arme incluent un poids léger et un approvisionnement abondant en munitions, particulièrement dans les terrains rocheux sur les frontières nordiques, occidentales et méridionales de l’Empire du Croissant. Les frondes sont des armes de jet (exclusivement, elles ne peuvent pas être utilisées au corps à corps) simples à fabriquer.",
+      "competences_base": [
+        "Tirer (fronde)"
+      ],
+      "competences_avancees": [
+        "Tir réflexe"
+      ],
+      "categorie_creation": "Entraînements à l'accès limité à la création"
+    },
+    {
+      "nom": "Sarbacane",
+      "description": "Si les dards lancés par une sarbacane ne causent pas de dommages par eux-mêmes, ils font de bons moyens d’introduire du poison dans le corps d’une cible. Vous êtes entraîné pour viser et tirer avec une sarbacane.",
+      "competences_base": [
+        "Fabricant de dards",
+        "Tirer (Sarbacane)"
+      ],
+      "competences_avancees": [
+        "Poison",
+        "Tir d’adresse (Sarbacane)"
+      ],
+      "categorie_creation": "Entraînements à l'accès limité à la création"
+    }
+  ]
+};

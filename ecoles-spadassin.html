@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Écoles de Spadassin — Bréviaire 7ème Mer V2.1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="ecoles-spadassin">
+  <div id="page-layout"></div>
+
+  <div class="page-section-title">
+    <h2>Écoles de Spadassin</h2>
+    <p class="page-section-sub">Toutes les écoles d'escrime, filtrables par nation, arme et restriction.</p>
+  </div>
+
+  <div class="layout">
+    <button class="filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="filters">
+      <span class="filters-toggle-label">Filtres</span>
+      <span class="filters-toggle-count" id="filters-active-count" hidden></span>
+    </button>
+
+    <aside class="filters" id="filters" aria-label="Filtres">
+      <div class="filter-group">
+        <label for="search">Recherche</label>
+        <input type="search" id="search" placeholder="Nom, arme, mot-clé…" autocomplete="off">
+      </div>
+
+      <div class="filter-group">
+        <h3>Nations</h3>
+        <div class="checkbox-list" id="filter-nations"></div>
+      </div>
+
+      <div class="filter-group">
+        <h3>Catégorie d'arme</h3>
+        <div class="checkbox-list" id="filter-armes"></div>
+      </div>
+
+      <div class="filter-group">
+        <h3>Origine</h3>
+        <div class="checkbox-list" id="filter-origines"></div>
+      </div>
+
+      <div class="filter-group">
+        <h3>Restriction à la création</h3>
+        <div class="checkbox-list" id="filter-restrictions"></div>
+      </div>
+
+      <div class="filter-group">
+        <h3>Genre</h3>
+        <div class="checkbox-list" id="filter-genres"></div>
+      </div>
+
+      <button class="btn-reset" id="reset-filters" type="button">Réinitialiser les filtres</button>
+    </aside>
+
+    <main class="results">
+      <div class="results-bar">
+        <span class="results-count" id="results-count"></span>
+      </div>
+      <ul class="ecoles-grid" id="ecoles-grid"></ul>
+      <p class="empty-state" id="empty-state" hidden>
+        Aucune école ne correspond à ces critères.
+      </p>
+    </main>
+  </div>
+
+  <dialog id="ecole-detail" class="ecole-detail" aria-labelledby="ecole-detail-title">
+    <button class="ecole-detail-close" id="ecole-detail-close" aria-label="Fermer" type="button">×</button>
+    <div id="ecole-detail-content"></div>
+  </dialog>
+
+  <script src="layout.js"></script>
+  <script src="ecoles.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

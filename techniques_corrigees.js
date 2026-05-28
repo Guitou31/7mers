@@ -1,0 +1,1183 @@
+// Généré par docx_techniques_to_json.py — ne pas éditer à la main
+window.TECHNIQUES_CORRIGEES = {
+  "_meta": {
+    "source": "Liste des Techniques de combat.docx",
+    "nb_techniques": 73,
+    "categories": [
+      "Techniques de combat à distance",
+      "Techniques de spadassin avec animaux",
+      "Techniques de spadassin classiques",
+      "Techniques de spadassin d’assassinat",
+      "Techniques de spadassin à mains nues"
+    ]
+  },
+  "techniques": {
+    "arracher une arme": {
+      "nom": "Arracher une arme",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Votre PJ peut utiliser cette compétence pour arracher l’arme de son adversaire et la projeter au loin. Le spadassin utilise son fouet qui va s’enrouler autour de l’arme de son belligérant et le lui arrache des mains en tirant un coup sec sur la poignée de son fouet. Pour réussir cette manœuvre, le spadassin doit d’abord réussir un jet d’attaque contre le ND de son adversaire avec deux augmentations (il vise l’arme) ; s’il y parvient, il doit ensuite réussir un jet d’opposition [Gaillardise contre Détermination de son adversaire] avec un bonus de 5 points (rares sont ceux qui s’y attendent !). Celui qui remporte ce jet arrache l’arme de son adversaire et l’envoie à 1D10+2 mètres. Le spadassin doit donc faire attention de ne pas se retrouver lui-même désarmé lors de cette manœuvre particulièrement difficile.",
+      "ecoles_enseignant": [
+        "Malone"
+      ],
+      "tables": []
+    },
+    "attaque en degaine": {
+      "nom": "Attaque en dégaine",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Il s’agit de la capacité à dégainer et attaquer en un seul et fluide mouvement nommé Attaque en dégaine. Vous dépensez un seul dé d’action pour dégainer votre arme et attaquer dans le même mouvement. Vous devez utiliser cette technique de combat avec un malus d’une augmentation pour réussir cette manœuvre. Si vous ratez votre attaque contre votre adversaire, votre arme est de toute façon dégainée. De plus, cette manœuvre est particulièrement rapide, vous pouvez l’effectuer [rang d’Attaque en dégaine] phases avant le chiffre indiqué par votre dé d’action. Par exemple, Virgilio doit normalement agir en phase 7 et possède une technique de combat Attaque en dégaine de 3, il pourra donc effectuer cette manœuvre en phase 4.",
+      "ecoles_enseignant": [
+        "Badayah",
+        "Vigilare"
+      ],
+      "tables": []
+    },
+    "aveuglement": {
+      "nom": "Aveuglement",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Le spadassin utilise un accessoire de sa tenue (chapeau, cape, foulard…) ou une puissante lumière qu’il lance au visage de son adversaire pour l’aveugler. Pour cela, il doit réussir un jet de [Aveugler + Finesse] contre le ND +10 de son adversaire. Ce dernier verra alors son ND pour être touché chuter à 5 et sa défense active subir une pénalité de 10 points tant qu’il n’aura pas dépensé une action (à son tour ou via une interruption) pour retirer cet objet encombrant de son visage ou se déplacer de manière adéquate pour éviter la lumière ; cette technique de combat n’est utilisable qu’une fois par combat.",
+      "ecoles_enseignant": [
+        "Larsen"
+      ],
+      "tables": []
+    },
+    "ballestra": {
+      "nom": "Ballestra",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Une Ballestra est une double fente en avant extrêmement spectaculaire et impressionnante pour l’adversaire. De la position de garde, le spadassin effectue une sorte d’entrechat le portant en avant et termine son action en fente. En termes de jeu, le spadassin fait un jet de Finesse + Ballestra contre le ND de l’adversaire avec un nombre d’augmentations égal à la Détermination de ce dernier. Si la Ballestra est réussie, l’adversaire retire un nombre de dés d’action égal à la moitié du nombre d’augmentations prises par le spadassin lors de cette passe d’armes. En revanche, si l’attaque échoue, le spadassin perd purement et simplement sa prochaine action et se retrouve à un ND pour être touché de 5.",
+      "ecoles_enseignant": [
+        "Rojando & Wilcox",
+        "La Pointe au cœur"
+      ],
+      "tables": []
+    },
+    "cavatione": {
+      "nom": "Cavatione",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Une Cavatione est une attaque circulaire conçue pour éloigner les parades d’un adversaire et pour désengager violemment son arme des tentatives d’Emprisonnement. Lorsque vous attaquez votre adversaire, vous pouvez utiliser une Cavatione, en utilisant cette technique de combat à la place d’une attaque classique. Vous devez prendre une augmentation, mais si vous réussissez, votre adversaire ne peut effectuer de défense active en utilisant une parade, à l’exception de celle effectuée à l’aide d’une arme dotée de Défensive (comme les boucliers). En outre, vous pouvez également utiliser une Cavatione à la place d’une parade pour éviter une tentative d’Emprisonner. Si vous prenez une augmentation sur votre jet, en plus de libérer votre arme, vous infligez un nombre de dégâts égaux à la valeur de dommages de votre arme (ce jet de dommages n’est pas modifié par votre Gaillardise mais peut-être augmenté via la prise d’augmentations sur le jet de Cavatione, comme d’habitude).",
+      "ecoles_enseignant": [
+        "Provolone"
+      ],
+      "tables": []
+    },
+    "ceder la place": {
+      "nom": "Céder la place",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Le but de cette manœuvre est de faire tomber l’adversaire. Si votre adversaire réussit son attaque et passe votre défense passive, vous pouvez effectuer une défense active avec un test de [Finesse + Céder la place] avec un nombre d’augmentation égal à l’esprit de votre attaquant -1. En cas de réussite, vous dégagez votre buste sur le côté afin d’éviter l’attaque, saisissez le bras de votre attaquant et, au moyen d’un croc en jambe, le faites tomber à terre.",
+      "ecoles_enseignant": [
+        "De Vore",
+        "Escuela Pater Noster",
+        "Wu Tsain",
+        "Braslyn"
+      ],
+      "tables": []
+    },
+    "charge au bouclier": {
+      "nom": "Charge au bouclier",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Le spadassin qui utilise cette technique doit disposer d’au moins 5 mètres pour prendre son élan. Il court, bouclier en avant, et frappe violemment son adversaire avec son pavois afin de l’envoyer voler au loin. Contre cette attaque, les parades voient leur ND diminué à 5 (sauf bouclier). La cible devra utiliser une autre comme Jeu de jambes, Pas de côté ou Feinte de corps. Si l’adversaire rate sa défense active, il “s’envole”, il est précipité à 1D10 x 0,5 mètres de distance où il touche le sol avec violence ; il encaisse 1g0 de dommages par mètre de “vol” en sus des dommages normaux. S’il rate un jet de Finesse contre un ND de 20, son arme lui échappe et tombe au sol. Cette manœuvre peut être intéressante à utiliser contre un adversaire au bord d’une falaise, attention à la chute !",
+      "ecoles_enseignant": [
+        "Hallbjorn",
+        "Kemmler",
+        "Épées de Salomon"
+      ],
+      "tables": []
+    },
+    "colle serre": {
+      "nom": "Collé-Serré",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Le spadassin reste collé à son adversaire, l’empêchant d’utiliser efficacement ses armes d’escrime. Utilisée comme défense passive, son niveau est considéré comme de 2 rangs supérieur contre des armes d’une taille supérieure à un couteau (Arme d’escrime, Arme d’hast…), du moment que vous combattez avec et en portée d’allonge d’une lame courte (couteau, dague, …) mais, en contrepartie, quand vous combattez à une allonge de 1 ou plus, elle est considérée comme de 2 rangs inférieur (minimum 1 rang). Cette technique de combat peut également servir de défense active mais sans bonus ni malus.",
+      "ecoles_enseignant": [
+        "Angelo",
+        "Badayah"
+      ],
+      "tables": []
+    },
+    "corps a corps": {
+      "nom": "Corps à Corps",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Vous devez annoncer cette compétence à la place de la compétence d’attaque habituelle. Si l’attaque porte, vous n’infligez que 0g1 de dommages en attaque à mains nues, mais votre adversaire peut tomber à terre. Vous devez pour cela lui infliger au moins [5 x Gaillardise de la Cible] points de dommages. S’il chute, votre adversaire perd toutes ses actions qu’il aurait mises en réserve et il devra dépenser une action pour se relever. Au sol, ses défenses actives et passives sont basées sur la compétence Roulé-boulé. S’il essaie d’attaquer en étant au sol, il ne peut le faire qu’en utilisant une augmentation (à moins d’utiliser la compétence coup de pied) et le MJ est le seul juge de ce qui est possible ou non (pas de Corps à corps ou de Coup de pommeau par exemple). Pendant la phase au cours de laquelle il se relève, sa défense passive tombe à 5, mais il peut tout de même effectuer une défense active avec deux augmentations. Cette action ne peut permettre d’envoyer au sol un adversaire dont le poids est au moins trois fois supérieur au vôtre.",
+      "ecoles_enseignant": [
+        "Angelo",
+        "Bernouilli",
+        "Blitzen",
+        "El Puñal Oculto",
+        "Finnegan",
+        "Keiferhund",
+        "Kjemper",
+        "Leegstra",
+        "Les Cadets",
+        "Lucani",
+        "Mac Lellan",
+        "Marcina",
+        "Necare",
+        "Pavois",
+        "Peecke",
+        "Qor'qunq",
+        "Rees",
+        "Rogers",
+        "Scarron",
+        "Shan Dian Dao Te",
+        "Skollvfesson",
+        "Vipereus Morsus",
+        "Winckler"
+      ],
+      "tables": []
+    },
+    "coup d'epaule": {
+      "nom": "Coup d’épaule",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Cette violente bourrade (elle inflige 0g2 de Dommages) déstabilise fortement l’adversaire. Il perd autant de Dés d’Action qu’il aurait encaissé de blessures s’il doit être amené à en prendre. L’adversaire peut opposer une Défense Active mais celle-ci ne peut relever que des compétences Jeu de jambes ou Feinte de corps.",
+      "ecoles_enseignant": [
+        "Bouffe-doublons",
+        "Courtepointe",
+        "Hennessey",
+        "Les Cadets",
+        "Yorak"
+      ],
+      "tables": []
+    },
+    "coup de pied reflexe": {
+      "nom": "Coup de pied réflexe",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Un tel coup de pied est une contre-attaque faite sans penser à votre propre défense. Il s'agit d'un coup de pied rapide lancé contre un adversaire au moment où il tente de vous attaquer, dans l'espoir que votre pied l'empêchera de continuer son assaut. Quand un ennemi vous attaque, vous pouvez dépenser une action (comme une défense active) pour donner un coup de pied réflexe. Lancez un jet d'[Esprit + Coup de pied réflexe]. Si vous le touchez, vous lui infligez 0g1 dés de dégâts (en ajoutant votre Gaillardise aux dès non-gardés). S'il reçoit une Blessure Grave, alors l'attaque qu'il tentait d'effectuer est purement et simplement annulée. Vous pouvez prendre des Augmentations sur votre jet pour augmenter vos dommages ou localiser votre coup.",
+      "ecoles_enseignant": [
+        "Ki Kwanji",
+        "Zheng Yi Quan"
+      ],
+      "tables": []
+    },
+    "coup de pommeau": {
+      "nom": "Coup de pommeau",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Cette technique de combat permet de frapper un adversaire au visage en utilisant le pommeau de son arme. Vous devez annoncer que votre PJ utilise cette technique de combat à la place de sa compétence d’attaque habituelle. Le ND est alors augmenté de 10. Si le coup porte, vous infligez 0g2 dés de dommages, le ND pour toucher votre adversaire est réduit à 5 et toutes ses actions subissent une pénalité d’une augmentation. Ces effets durent jusqu’à que la cible dépense un dé d’action pour se rétablir et en annuler les effets, ou à la fin de la phase actuelle.",
+      "ecoles_enseignant": [
+        "Ambrogia",
+        "Bogatyr",
+        "Bouffe-Doublons",
+        "Geng Yu Qiang",
+        "Courtepointe",
+        "Daphan",
+        "Donnerwette",
+        "Drexel",
+        "Falisci",
+        "Halfdansson",
+        "Höpken",
+        "Lucani",
+        "Mac Donald",
+        "Mac Lellan",
+        "Malone",
+        "Mullooney",
+        "O'Faolain",
+        "Ottenheim Rasmussen",
+        "Swanson",
+        "Tréville",
+        "Yesukai"
+      ],
+      "tables": []
+    },
+    "coup fourre": {
+      "nom": "Coup fourré",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Un coup fourré est un mélange de parade et de contre- attaque qui exploite la lame de l’adversaire pour guider celle du spadassin. Lorsqu’un adversaire vous attaque, vous pouvez dépenser une action pour réaliser un coup fourré. Effectuez un jet d’[Esprit + Coup fourré] en guise de jet d’attaque contre votre assaillant. Si vous touchez, vous infligez 3g2 de dommages (Vous n’ajoutez pas votre Gaillardise). Si votre adversaire devait recevoir ainsi une blessure grave, l’attaque qu’il était sur le point d’effectuer est tout bonnement annulée.",
+      "ecoles_enseignant": [
+        "Villanova"
+      ],
+      "tables": []
+    },
+    "coup puissant": {
+      "nom": "Coup puissant",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Vous effectuez une attaque en utilisant toute votre force, mais prévisible. Vous devez annoncer cette action. Vous effectuez un jet de [Gaillardise + Coup puissant] et devez réussir votre jet en utilisant deux augmentations pour que cette attaque spécifique porte. Si vous réussissez votre jet, l’adversaire de votre PJ ne peut pas tenter d’éviter l’attaque en utilisant une défense active.",
+      "ecoles_enseignant": [
+        "Bernoulli",
+        "Boucher",
+        "Bogatyr",
+        "Caballo Rojo",
+        "Chaka",
+        "Daphan",
+        "Desco Numanaius",
+        "Eisenfaust",
+        "Guannazar",
+        "Haagen",
+        "Hammer",
+        "Kippe",
+        "Kiriakin",
+        "La Gouge",
+        "Peecke",
+        "Hirojosa",
+        "Leegstra",
+        "Lucani",
+        "Mac Donald",
+        "Mac Lellan",
+        "Monastic Order of Avalon",
+        "Ottenheim",
+        "Pösen",
+        "Qor'qunq",
+        "Quinn Snedig",
+        "Rossini",
+        "Salinas",
+        "Shan Dian Dao Te",
+        "Skollvfesson",
+        "Tréville",
+        "Urostifter"
+      ],
+      "tables": []
+    },
+    "decoller": {
+      "nom": "Décoller",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Cette technique de combat était utilisée autrefois par les chevaliers eisenörs lors des tournois qui les opposaient devant l’Imperator. Elle permet d’éjecter son adversaire de son cheval tout en restant soi-même bien planté dans ses étriers. Elle peut également être utilisée à l’encontre de fantassins de manière très efficace. En termes de jeu, pour réussir cette attaque, le spadassin doit dépenser deux actions (armé son bras, prendre de l’élan et attaquer), remporter un test d’opposition. De son côté, il utilise Gaillardise ou Équitation (le plus faible des deux) + Décoller. L’adversaire, quant à lui, à plusieurs options en fonction de la situation.\n\nS’il s’agit d’un adversaire monté, il peut : - Encaisser le coup : Détermination + Équitation ou Parade (Bouclier) (le plus faible des deux) ;\n\n- Répondre à l’attaque par l’attaque et essayer à son tour d’éjecter son adversaire, il utilise les mêmes compétences que le cavalier qu’il affronte (Gaillardise ou Équitation + Décoller) ;\n\n- Éviter la lance du cavalier : Dextérité + Acrobaties équestres.\n\nS’il s’agit d’un fantassin, il dispose quant à lui de deux options :\n\n- Encaisser le coup : Détermination + Réception de charge (mais la compétence est plutôt rare) ;\n\n- Éviter la lance du cavalier : Dextérité + Jeu de jambes ou Feinte de corps (au choix).\n\nEn cas d’échec, compte-tenu de la puissance du choc, le cavalier envoie son adversaire voler à (rang dans la technique de combat Décoller) x 0,5 mètres de là dans le décor avec les dommages afférents. Mais cette technique de combat est à double tranchant, si votre adversaire répond par une attaque (à cheval) ou une réception de charge (à pied), c’est vous qui risquez d’encaisser des dommages importants, si la possibilité est faible, elle n’est pas à négliger.",
+      "ecoles_enseignant": [
+        "Pösen"
+      ],
+      "tables": []
+    },
+    "defigurer": {
+      "nom": "Défigurer",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Cette technique de combat permet de défigurer son adversaire. Le spadassin inflige de profondes lacérations mais pas particulièrement douloureuses, elles visent surtout à le dévisager et à provoquer un fort saignement. Les dommages sont diminués d’un dé lancé et gardé, mais l’adversaire subit un malus de 5 à toutes ses actions tant qu’il ne sera pas soigné en raison de la gêne provoquée par son hémorragie faciale. De plus, même si des soins sont effectués, cette blessure ne guérira jamais totalement.",
+      "ecoles_enseignant": [
+        "Badayah",
+        "La Gouge",
+        "Smirnov",
+        "Ying Sun Wo"
+      ],
+      "tables": []
+    },
+    "deplacements circulaires": {
+      "nom": "Déplacements circulaires",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Le spadassin a appris à se déplacer en cercles et à toujours esquiver du côté faible de l’adversaire (à gauche pour les droitiers, à droite pour les gauchers). Lorsque l’adversaire vous rate (du fait de votre défense active ou passive), vous pouvez réduire votre dé d’action suivant de un pour chaque rang que vous possédez dans cette technique de combat. Vous ne pouvez évidemment pas réduire un dé d’action en dessous de la phase actuelle.",
+      "ecoles_enseignant": [
+        "Finnegan",
+        "O'Faolain"
+      ],
+      "tables": []
+    },
+    "desarconner": {
+      "nom": "Désarçonner",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "À la différence de la technique de combat Réception de charge, vous utiliser la manœuvre Désarçonner pour faire quitter les étriers au cavalier auquel vous êtes opposé, qu’il vous charge ou non. Pour cela, vous devez réussir un jet d’opposition de Gaillardise + Désarçonner contre la Détermination + Équitation de votre adversaire. Il encaisse alors 0g1 dés de dommages et se retrouve à terre.",
+      "ecoles_enseignant": [
+        "Haagen",
+        "Nahgem",
+        "Yesukai"
+      ],
+      "tables": []
+    },
+    "desarmer": {
+      "nom": "Désarmer",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Vous ne pouvez utiliser cette technique de combat que si l’attaque de l’adversaire de votre PJ vient d’échouer contre votre défense passive de parade. Utilisez un dé d’action afin de faire un jet d’opposition de votre [Gaillardise + Désarmer +5] contre [Gaillardise + Attaque (arme utilisée)] de la cible. Si vous remportez l’opposition, votre PJ lui fait sauter son arme des mains ; si vous remportez l’opposition avec un ND augmenté de 10, votre PJ peut même se retrouver avec l’arme de son adversaire en main si vous le désirez. De plus, pour le Désarmement, plutôt que d’utiliser la force brute, vous pouvez utiliser la ruse à la place. Dans ce cas, le jet sera effectué à l’aide de [Esprit + Désarmer du PJ] contre [Esprit + Attaque (arme utilisée)] de l’adversaire.",
+      "ecoles_enseignant": [
+        "Bahol",
+        "Bonita",
+        "Caldwell",
+        "Chin Te",
+        "Courtepointe",
+        "De Vore",
+        "Donovan",
+        "Drexel",
+        "Eisenfaust",
+        "Épées de Salomon",
+        "Escuela Pater Noster",
+        "Gautier",
+        "Guannazar",
+        "Halfdansson",
+        "Höpken",
+        "Keiferhund",
+        "Leibwächter",
+        "La Guêpe",
+        "Monastic Order of Avalon",
+        "Provolone",
+        "Rees",
+        "Robin Goodfellow",
+        "Rogers",
+        "Rossini",
+        "Trécy",
+        "Tom Morel",
+        "Vigilare",
+        "Winckler",
+        "Yael",
+        "Zepeda"
+      ],
+      "tables": []
+    },
+    "double attaque": {
+      "nom": "Double attaque",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Lorsque vous utilisez cette technique de combat, vous effectuez deux rapides attaques à l’aide de vos poignards ou hachettes, l’une après l’autre en utilisant une seule action. Vous devez annoncer la double attaque avant d’y avoir recours. Ensuite, vous effectuez vos deux attaques via cette technique de combat. Quand vous utilisez la double attaque, le ND pour toucher votre adversaire augmente de 10 pour ces deux attaques. Contrairement à l’attaque à deux armes classiques, vous infligez les dégâts entiers avec chaque arme et ne perdez pas les attributs « Défensives » des armes utilisées.",
+      "ecoles_enseignant": [
+        "Al'Marikk",
+        "Basulde",
+        "Chaka",
+        "Mac Codrum",
+        "Mortis",
+        "Siggursdottir"
+      ],
+      "tables": []
+    },
+    "double parade": {
+      "nom": "Double parade",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Cette technique de combat permet de parer un coup en se servant de deux armes (généralement une arme d’escrime et une arme de parade). Vous pouvez utiliser cette technique de combat en défense active à la place de la compétence parade habituelle de votre PJ ; vous devez l’annoncer. Elle ne peut être utilisée qu’en défense active. Si vous réussissez votre jet, vous bénéficier d’un dé d’héroïsme que vous pourrez utiliser pendant (rang de Double parade) phases.",
+      "ecoles_enseignant": [
+        "Awal Thmani",
+        "Blitzen",
+        "Boucher",
+        "Chaka",
+        "Desaix",
+        "Gautier",
+        "Kippe",
+        "Robertson",
+        "Scarron",
+        "Scola Carnavale",
+        "Smirnov",
+        "Soldano",
+        "Swanson",
+        "Torres",
+        "Urostifter",
+        "Valroux",
+        "Villanova",
+        "Qurra",
+        "Yael"
+      ],
+      "tables": []
+    },
+    "emprisonner": {
+      "nom": "Emprisonner",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "On ne peut utiliser cette technique de combat que contre des armes d’escrime. Elle permet de coincer l’épée de votre PJ (ou son bouclier, son Panzerfaust ou autre) dans celle de son adversaire. Annoncez votre intention d’y recourir, puis faites votre jet d’attaque en utilisant cette technique de combat. Si vous le réussissez, votre PJ a momentanément immobilisé l’épée de son adversaire. Durant ce laps de temps, aucun des deux protagonistes ne peut utiliser l’arme coincée. Pour tenter de se dégager, l’adversaire de votre PJ doit utiliser un dé d’action, puis faire un jet d’opposition de [Gaillardise + Parade (arme coincée)] contre Gaillardise + Emprisonner de votre PJ. S’il remporte l’opposition, il débloque son arme ; elle reste coincée dans le cas contraire. Vous pouvez, vous, utiliser un dé d’action pour renforcer la prise de votre PJ : chaque dé d’action utilisé vous fait bénéficier d’une augmentation gratuite lorsque votre adversaire tentera de dégager son arme. L’adversaire de votre PJ peut également choisir de lâcher son arme : votre PJ en aura alors deux. Si vous subissez une blessure, les armes sont automatiquement débloquées.",
+      "ecoles_enseignant": [
+        "Bonita",
+        "Donovan",
+        "Eisenfaust",
+        "El Puñal Oculto",
+        "Épées de Salomon",
+        "Fadh-Righ",
+        "Gautier",
+        "Hallbjorn",
+        "Keiferhund",
+        "Kemmler",
+        "Leibwächter",
+        "Pavois",
+        "Robertson",
+        "Rogers",
+        "Rossini",
+        "Teginbek",
+        "Tom Morel",
+        "Zepeda"
+      ],
+      "tables": []
+    },
+    "esquive acrobatique": {
+      "nom": "Esquive acrobatique",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Le spadassin utilise ses capacités acrobatiques exceptionnelles pour se défendre en toutes circonstances. Double saut périlleux arrière, roulade, pirouette par-dessus son adversaire, etc. Cette technique de défense peut être utilisée comme défense passive avec 2 fois le niveau de la technique de combat Acrobatie en bonus.",
+      "ecoles_enseignant": [
+        "Basulde",
+        "Rojando & Wilcox",
+        "Qurra",
+        "Zheng Yi Quan"
+      ],
+      "tables": []
+    },
+    "exploiter les faiblesses": {
+      "nom": "Exploiter les faiblesses",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Lorsque votre PJ affrontera une personne qui utilise une arme dont il connaît les points faibles, et ce, même si le PJ n’utilise pas cette arme lui-même pour combattre, il bénéficiera de (rang dans la technique de combat Exploiter les faiblesses) dés non-gardés à utiliser pour n’importe quel jet de compétences d’attaque, de défense ou de dommages par scène de combat contre l’utilisateur de ladite arme.",
+      "ecoles_enseignant": [
+        "Höpken",
+        "Ricardo",
+        "Buslayevich",
+        "Chima Gongjian Shou",
+        "Robin Goodfellow",
+        "Haagen",
+        "Rossini",
+        "Tréville",
+        "Monastic Order of Avalon",
+        "Pavois",
+        "Qor’qunq",
+        "Quinn",
+        "Qurra",
+        "Scarron",
+        "Wu Tsain",
+        "Zheng Yi Quan",
+        "Ki Kwanji",
+        "Tie Xiong Kung",
+        "Ying Sun Wo",
+        "Zheng Yi Quan",
+        "Caldwell",
+        "Peecke",
+        "Angelo",
+        "Bahol",
+        "Boucher",
+        "Courtepointe",
+        "Mortis",
+        "Mullooney",
+        "Necare",
+        "Vipereus Morsus",
+        "Desco Numanaius",
+        "Donovan",
+        "Épées de Salomon",
+        "Hua Shao Ren Te",
+        "Kemmler",
+        "Kippe",
+        "Kjemper",
+        "Leibwächter",
+        "Lucani",
+        "Mac Lellan",
+        "Urostifter",
+        "Drexel",
+        "Mac Donald",
+        "Sersemlik",
+        "Shan Dian Dao Te",
+        "Charmine",
+        "Falisci",
+        "Chin Te",
+        "Canis",
+        "Malone",
+        "Zepeda",
+        "Nadja’hari",
+        "Al’Marikk",
+        "Eisenfaust",
+        "Keiferhund",
+        "Smirnov",
+        "Bogatyr",
+        "Leegstra",
+        "Siggursdottir",
+        "Skollvfesson",
+        "Halfdansson",
+        "Kiriakin",
+        "Mac Codrum",
+        "Nahgem",
+        "Pösen",
+        "Zar’houni",
+        "Braslyn",
+        "Dobrynya",
+        "Fadh-Righ",
+        "Rees",
+        "Hammer",
+        "Winckler",
+        "Durante",
+        "Guzman",
+        "O’Faolain",
+        "Bouffe-Doublons",
+        "Bricquébec",
+        "Donnerwetter",
+        "Overmars",
+        "Rasmussen",
+        "Finnegan",
+        "Kensington",
+        "Aldana",
+        "Ambrogia",
+        "Blitzen",
+        "Délicatesse",
+        "Desaix",
+        "Escuela Pater Noster",
+        "Faileas",
+        "Gautier",
+        "Gosling",
+        "Hainzl",
+        "Hirojosa",
+        "La Guêpe",
+        "La Pointe au cœur",
+        "Larsen",
+        "Léon des Gueux",
+        "Les Cadets",
+        "Marchenko",
+        "Ottenheim",
+        "Provolone",
+        "Rachecourt",
+        "Robertson",
+        "Rochefort",
+        "Scarlatti",
+        "Scola Carnavale",
+        "Snedig",
+        "Swanson",
+        "Tom Morel",
+        "Torres",
+        "Trecy",
+        "Valroux",
+        "Villanova",
+        "Al-Aïfa",
+        "Basulde",
+        "Bernoulli",
+        "Bonita",
+        "Caballo Rojo",
+        "Daphan",
+        "El Puñal Oculto",
+        "Gallegos",
+        "Guannazar",
+        "Hennessey",
+        "Marcina",
+        "Rogers",
+        "Rojando & Wilcox",
+        "Salinas",
+        "Sanders",
+        "Soldano",
+        "Teginbek",
+        "Tulwar",
+        "Vigilare",
+        "Yesukai"
+      ],
+      "tables": []
+    },
+    "feinte": {
+      "nom": "Feinte",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Lorsque votre PJ attaque un adversaire, vous pouvez choisir d’utiliser cette technique de combat ; vous n’avez pas besoin de l’annoncer. Tout d’abord, vous effectuez votre attaque de façon classique (sans spécifier que vous envisagez une feinte). Si vous réussissez votre attaque mais que votre adversaire la pare ou l’évite via une Défense Active, alors seulement vous pouvez déclarer avoir en réalité effectué une feinte. Vous refaites alors votre jet d’attaque (en utilisant Finesse + Feinte) contre un ND égal à sa Défense active + 1 augmentation. Si votre coup porte, il ne peut effectuer une nouvelle défense active jusqu’à la fin de la phase en cours. Par contre, si votre coup échoue, votre adversaire effectuera toutes ses attaques contre vous avec une augmentation gratuite jusqu’à la fin de la phase.",
+      "ecoles_enseignant": [
+        "Aldana",
+        "Ambrogia",
+        "Andrews",
+        "Angelo",
+        "Awal Thmani",
+        "Bahol",
+        "Caldwell",
+        "Geng Yu Qiang",
+        "Chin Te",
+        "Desaix",
+        "Délicatesse",
+        "Faileas",
+        "Falisci",
+        "Gallegos",
+        "Gustavo",
+        "Hennessey",
+        "Hirojosa",
+        "Hua Shao Ren Te",
+        "La Guêpe",
+        "Larsen",
+        "Marcina",
+        "Mullooney",
+        "Peecke",
+        "Quinn",
+        "Robertson",
+        "Scarlatti",
+        "Sersemlik",
+        "Shan Dian Dao Te",
+        "Snedig",
+        "Swanson",
+        "Tom Morel",
+        "Urostifter",
+        "Valroux",
+        "Villanova",
+        "Yael",
+        "Zar'houni"
+      ],
+      "tables": []
+    },
+    "feinte de corps": {
+      "nom": "Feinte de corps",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Cette technique de défense est très difficile à exécuter. Le spadassin reste fixe et attend l’attaque de son adversaire (comme le torero attend le taureau) puis se déplace d’un pas ou deux par rotation sur le côté, toujours à la manière d’un torero, ce qui lui permet d’être ensuite idéalement placé pour porter son attaque. Vous devez utiliser une Défense Active avec un test de [Esprit + Feinte de corps] de votre choix à la prochaine attaque de votre cible avec -0g1, mais si vous réussissez cette défense particulièrement épineuse, vous pouvez alors placer une attaque contre un adversaire dont le ND sera diminué de 10 lors de cette manœuvre, et vous bénéficiez d’un dé de dommages supplémentaire (lancé et gardeé) pour chaque tranche de 10 points au-delà de ce seuil.Si cette technique est utilisée en-dehors d’un duel, tout ennemi en-dehors de la cible désignée pour le Feinte de corps bénéficie d’une augmentation gratuite à tous ses jets attaques contre vous.",
+      "ecoles_enseignant": [
+        "Braslyn",
+        "Dobrynya",
+        "Gosling",
+        "Salinas",
+        "Torres",
+        "Ying Sun Wo"
+      ],
+      "tables": []
+    },
+    "fente en avant": {
+      "nom": "Fente en avant",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Cette technique de combat permet de porter une brutale attaque pendant laquelle la garde du spadassin est ouverte. Déclarez l’utilisation de cette technique de combat et effectuez normalement votre jet d’attaque : si le coup porte, vous ferez votre jet de dommages en lançant (sans les garder) [rang de Fente en avant] dés de dommages supplémentaires. En contrepartie, le ND pour être touché de votre PJ tombe à 5 pendant cette phase et vous ne pouvez pas utiliser de défense active jusqu’à la fin de ladite phase.",
+      "ecoles_enseignant": [
+        "Andrews",
+        "Bernoulli",
+        "Bogatyr",
+        "Daphan",
+        "Desaix",
+        "Desco Numanaius",
+        "Drexel",
+        "Fadh-Righ",
+        "Gosling",
+        "Halfdansson",
+        "Hua Shao Ren Te",
+        "Kemmler",
+        "Kjemper",
+        "Leegstra",
+        "Léon des Gueux",
+        "Mac Codrum",
+        "Mac Donald",
+        "Qor'qunq",
+        "Quinn",
+        "Rachecourt",
+        "Rojando & Wilcox",
+        "Siggursdottir",
+        "Skollvfesson",
+        "Smirnov",
+        "Snedig",
+        "Tréville",
+        "Vipereus Morsus",
+        "Winckler",
+        "Zar'houni"
+      ],
+      "tables": []
+    },
+    "force d'ame": {
+      "nom": "Force d’âme",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Le personnage est habitué à se faire malmener et résiste bien à la douleur. Pour chaque rang qu’il possède dans cette compétence, le personnage bénéficie de +5 points de santé.",
+      "ecoles_enseignant": [
+        "Dobrynya",
+        "Guannazar",
+        "Kensington",
+        "Leibwächter",
+        "Overmars",
+        "Yorak"
+      ],
+      "tables": []
+    },
+    "frappe a deux mains": {
+      "nom": "Frappe à deux mains",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Cette technique de combat permet d’utiliser ses deux mains pour frapper un adversaire avec une arme à une main, infligeant ainsi des dégâts plus importants. Déclarez l’utilisation de cette technique de combat avec un test de [Finesse + Frappe à Deux Mains] : si le coup porte, vous ferez votre jet de dommages en lançant et gardant un dé de dommages supplémentaire. Mais comme vous devez ensuite reprendre votre position, votre ND diminue de 10 points (minimum 5) après la prochaine attaque subie ou la fin de la phase.",
+      "ecoles_enseignant": [
+        "Al Aïfa",
+        "Hammer",
+        "Ottenheim"
+      ],
+      "tables": []
+    },
+    "harceler": {
+      "nom": "Harceler",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Vous devez annoncer l’utilisation de cette technique lors de votre action. Vous devez de plus sacrifier une autre action et effectuer un test de [Finesse ou Panache + Harceler]. Grâce à cette technique de combat, vous infligez à votre adversaire une multitude de petites blessures en lui tournant autour, avec quelques quolibets. Étourdi par la rapidité de vos attaques, votre adversaire sera désemparé pour le reste du combat, il se battra alors avec un malus d’une augmentation sur toutes ses actions jusqu’à la fin du combat, à l’exception des jets qu’il effectuera pour s’enfuir ; auquel cas ils bénéficieront d’un bonus de deux augmentations.",
+      "ecoles_enseignant": [
+        "Awal Thmani",
+        "Hallbjorn",
+        "Léon des Gueux"
+      ],
+      "tables": []
+    },
+    "lacerer": {
+      "nom": "Lacérer",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Cette manœuvre nécessite une arme aux bords tranchants et, donc, pas une arme d’estoc. La technique la plus classique consiste à “faire un S” sur la poitrine de son adversaire. Les dégâts ne sont pas très importants mais la douleur ressentie est intense, aussi les dommages sont-ils réduits de deux dés (lancés et gardés) mais la victime subit alors un malus de 5 points à toutes ses actions. On peut utiliser cette technique de combat jusqu’à deux fois de suite efficacement (pour un malus total de -10) ; au- delà, la cible s’habitue à la douleur. La douleur due à la lacération jusqu’à la fin du round suivant.",
+      "ecoles_enseignant": [
+        "Al Aïfa",
+        "Badayah",
+        "Sanders"
+      ],
+      "tables": []
+    },
+    "maintenir a distance": {
+      "nom": "Maintenir à distance",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Quand le spadassin utilise cette tactique de combat, le ND de sa cible augmente de 10, ce qui simule la difficulté à le maintenir à distance tout en le frappant, et les dégâts que vous infligez sont alors réduits de 1 dés lancé et gardé. Vous devez être pile à votre portée d’allonge. Votre adversaire, par contre, ne peut vous attaquer que s’il possède une arme au moins aussi longue que la vôtre (d’où l’intérêt d’utiliser des armes d’hast particulièrement grandes). Dans le cas contraire, il devra dépenser un dé d’action et réussir un jet de Jeu de jambes, Acrobatie, Parade ou autre technique de défense approprié… contre un ND égal à votre score de Maintenir à distance multiplié par 5. S’il y parvient, il pourra s’approcher de vous à l’allonge désirée et son action se termine. Si vous deviez vous désengager de lui durant la même phase, il bénéficiera d’une augmentation gratuite s’il effectue une attaque d’opportunité.",
+      "ecoles_enseignant": [
+        "Geng Yu Qiang",
+        "Délicatesse",
+        "Haagen",
+        "Léon des Gueux",
+        "Mac Codrum",
+        "Nahgem"
+      ],
+      "tables": []
+    },
+    "marquer": {
+      "nom": "Marquer",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Faites votre jet d’attaque en utilisant cette technique de combat à la place de la compétence d’attaque habituelle de votre PJ. Si vous réussissez votre jet, votre PJ ne blesse pas son adversaire mais bénéficie de l’un des deux effets suivants : soit il y a un public, il bénéficie alors d’un point de réputation supplémentaire (un seul possible lors du même combat), soit son adversaire se retrouve avec un ND diminué de 10 (minimum 5) jusqu’à ce qu’il reprenne confiance en réussissant une passe d’arme contre l’auteur du marquage.",
+      "ecoles_enseignant": [
+        "Aldana",
+        "Canis",
+        "Chariot de Thespis",
+        "Donnerwetter",
+        "Fadh-Righ",
+        "Faileas",
+        "Falisci",
+        "Gallegos",
+        "Gosling",
+        "Hainzl",
+        "Hennessey",
+        "Hirojosa",
+        "Hua Shao Ren Te",
+        "Kensington",
+        "La Pointe au cœur",
+        "Marchenko",
+        "Nadja'hari",
+        "Rachecourt",
+        "Ricardo",
+        "Robin Goodfellow",
+        "Scarron",
+        "Scola Carnavale",
+        "Sersemlik",
+        "Soldano",
+        "Teginbek",
+        "Torres",
+        "Valroux",
+        "Wu Tsain",
+        "Zepeda"
+      ],
+      "tables": []
+    },
+    "mise a terre": {
+      "nom": "Mise à terre",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Cette technique de combat permet au spadassin de jeter son adversaire au sol. Le duelliste utilise son fouet qu’il enroule autour de la (les) cheville(s) de son ennemi et tire énergiquement sur la poignée de son arme, projetant ainsi brutalement son adversaire au sol, tête la première. Vous devez utiliser cette aptitude comme compétence d’attaque et réussir votre jet avec deux augmentations (vous visez ses jambes). Si vous touchez, votre adversaire est violemment projeté au sol sur la tête et encaisse un coup qui peut l’assommer (il doit réussir un jet de Gaillardise contre un ND de 10 + 5 par augmentation au-delà des deux premières). De plus, il devra ensuite dépenser un dé d’action pour défaire sa (ses) jambe(s) emmêlée(s), la contrepartie étant que votre fouet est également inutilisable pour vous.",
+      "ecoles_enseignant": [
+        "Malone"
+      ],
+      "tables": []
+    },
+    "mur d'acier": {
+      "nom": "Mur d’acier",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Votre épée est un outil en mouvement constant qui passe d’une parade à une autre. Vous l’exploitez comme une tortue se sert de sa carapace. Si vous n’avez pas encore attaqué lors de ce tour, vous pouvez utiliser la compétence parade comme défense passive et chaque rang de la compétence Mur d’acier augmente ce ND pour être touché de 3 points.",
+      "ecoles_enseignant": [
+        "Bonita",
+        "Charmine",
+        "De Vore",
+        "Desco Numanaius",
+        "Hainzl",
+        "Kjemper"
+      ],
+      "tables": []
+    },
+    "poignee de poudre": {
+      "nom": "Poignée de poudre",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Cette technique ne peut être utilisée qu’une fois par cible et combat. Dans le même mouvement qui suit la projection de la poudre au visage de l’adversaire (jet de Poignée de poudre + Finesse contre le ND pour être touché de l’adversaire avec un malus de une augmentation), il faut frapper d’estoc avec son épée, profitant du réflexe naturel qu’aura l’adversaire de porter ses mains à ses yeux, découvrant ainsi largement sa garde. Si l’attaquant réussit son jet, l’adversaire ne peut pas utiliser de défense active pour parer ou esquiver le coup d’estoc, dont les dommages sont augmentés de un dé lancé et gardé. De plus, s’il ne se décide pas à fuir, il retirera un dé à tous ses tests jusqu’à la fin de la phase suivante en raison de son irritation oculaire.",
+      "ecoles_enseignant": [
+        "Scola Carnavale"
+      ],
+      "tables": []
+    },
+    "prise de bras": {
+      "nom": "Prise de bras",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Généralement, le spadassin immobilise la lame de son adversaire en la bloquant avec sa propre épée au niveau de la garde. Puis il saisit promptement son poignet et porte un coup d’estoc. Il doit d’abord réussir une Défense Active de Parade. Il peut alors dépenser une action afin de faire un jet d’opposition de [Gaillardise + Prise de bras] contre [Gaillardise + Parade] de la cible. S’il échoue, il peut recommencer en dépensant à nouveau un dès d’action, sinon le spadassin à l’origine de la prise de bras place sa prochaine attaque immédiatement, sans dépenser de dé d’action supplémentaire, contre un ND de la cible réduit de 10 (minimum 5). Si la cible réussit, il dégage son poignet à temps afin de se remettre en garde, mais il aura dépensé un ou plusieurs dés d’action.",
+      "ecoles_enseignant": [
+        "Kippe",
+        "Les Cadets"
+      ],
+      "tables": []
+    },
+    "reproduire": {
+      "nom": "Reproduire",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Vous pouvez employer n’importe quelle Techniques de combat de votre adversaire à son encontre, comme si vous la possédiez vous-même. La première fois que votre adversaire emploie une technique de combat, vous devez effectuer un jet d’Esprit contre un ND égal à (5 + 5 x rang dans la technique de combat de l’adversaire) afin de comprendre celle-ci et de la gagner au même rang un pour le reste de la scène. Ensuite, chaque fois qu’il emploiera de nouveau cette technique de combat contre vous lors de cette scène, vous pouvez effectuer un autre jet d’Esprit (même seuil). Un succès incrémente votre rang dans cette technique de combat d’un niveau. Le gain maximum est votre rang de maîtrise dans la technique Reproduire. Ce talent ne s’applique que contre un adversaire contre lequel vous vous êtes concentrés sur ses mouvements. Vous ne gardez pas ces techniques de combat, vous les imitez simplement jusqu’à la fin de la scène. Cette technique de combat ne peut s’appliquer que contre un adversaire employant le même type d’arme que le spadassin (il est impossible, par exemple, de copier les mouvements et les compétences utilisées avec un bâton de combat ou un Panzerfaust avec une lame d’escrime).",
+      "ecoles_enseignant": [
+        "Faileas"
+      ],
+      "tables": []
+    },
+    "rasoir": {
+      "nom": "Rasoir",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Vous avez étudié les bases de l’anatomie et maîtrisez parfaitement le déplacement de votre lame d’escrime afin de profiter de vos connaissances. En conséquence, lorsque vous frappez un adversaire avec une arme d’escrime, vous infligez des blessures précises et extrêmement douloureuses. Pour chaque rang dans cette technique de combat, vous infligez 2 points de santé supplémentaires.",
+      "ecoles_enseignant": [
+        "Marchenko"
+      ],
+      "tables": []
+    },
+    "retourner les attaques": {
+      "nom": "Retourner les attaques",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Le spadassin qui utilise cette technique de combat retourne l’attaque de son adversaire contre lui. Cette manœuvre doit être utilisée comme défense active avec un ND augmenté de 10 et ne peut être employée lors d’une interruption. Si le spadassin réussi à retourner l’attaque, son antagoniste effectue alors les dommages contre lui-même avec le même jet de dégâts, mais en gardant les dés qui l’arrangent, c’est à dire les plus faibles afin d’encaisser le moins de dommages possibles.",
+      "ecoles_enseignant": [
+        "Caldwell",
+        "Mullooney",
+        "Wu Tsain"
+      ],
+      "tables": []
+    },
+    "riposte": {
+      "nom": "Riposte",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Cette technique de combat permet d’effectuer une parade suivie immédiatement d’une contre-attaque. Vous devez tout d’abord tenter une défense active de parade avec un test de [Finesse + Riposte + 5] pour éviter l’attaque visant votre PJ, puis, si vous y êtes parvenu, vous pourrez effectuer ensuite et sans dépenser d’autre dès d’action une attaque contre l’adversaire de votre PJ. Lorsque vous contre-attaquez, vous effectuez le test avec votre Finesse + [rang de Riposte divisé par 2 et arrondi à l’entier supérieur] + [rang d’Attaque divisé par deux (arrondi à l’entier inférieur)] dés pour votre contre-attaque et le ND de cette attaque est augmenté de 5. La Riposte ne peut être utilisée lors d’une interruption.",
+      "ecoles_enseignant": [
+        "Al Aïfa",
+        "Aldana",
+        "Ambrogia",
+        "Andrews",
+        "Awal Thmani",
+        "Blitzen",
+        "Boucher",
+        "De Vore",
+        "Donovan",
+        "Gallegos",
+        "Hallbjorn",
+        "Hainzl",
+        "La Guêpe",
+        "Marcina",
+        "Marchenko",
+        "Mortis",
+        "Pavois",
+        "Provolone",
+        "Salinas",
+        "Scarlatti",
+        "Trécy"
+      ],
+      "tables": []
+    },
+    "rompre le combat": {
+      "nom": "Rompre le combat",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Cette technique de combat permet au spadassin de rompre un combat de manière tactique sans prendre de coups au moment où il prend la fuite. Quand un combat se passe très mal, l’épéiste peut dépenser un dé d’action pour s’enfuir. L’adversaire peut dépenser comme à l’accoutumée un dès d’action pour effectuer immédiatement une attaque sur le fuyard, mais vous y opposez votre jet de technique de combat en Rompre le combat, auquel vous ajoutez au résultat le rang dans cette technique . Si vous réussissez votre jet, vous gagnez 3 phases sur la poursuite qui va s’engager. Si vous ratez, vous encaissez les dégâts, mais avez tout de même réussi à prendre la fuite (sans gagner de phases supplémentaires).",
+      "ecoles_enseignant": [
+        "Braslyn",
+        "Bricquébec",
+        "Rees",
+        "Necare"
+      ],
+      "tables": []
+    },
+    "saut a la perche": {
+      "nom": "Saut à la perche",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Vous avez appris à utiliser une perche afin d’améliorer les distances de saut (longueur et hauteur) que vous êtes capable d’effectuer. C’est une nouvelle compétence avancée de l’entraînement d’Athlétisme. Les spadassins Nahgem l’utilisent comme une compétence de base. Vous devez utiliser une perche d’une taille au moins égale à la vôtre. Vous effectuez un jet de Gaillardise + Saut à la perche, vous pouvez ajouter votre taille à un saut en hauteur, ou deux fois votre taille à un saut en longueur. Le ND de ce jet est de 15. Pour chaque augmentation que vous prenez sur ce jet, vous pouvez ajouter 0,25 mètres à un saut en hauteur ou 0,5 mètres à un saut en longueur. Vous ne pouvez augmenter la distance d’un saut en hauteur au-delà de la longueur de la perche que vous utilisez ou de deux fois cette distance pour un saut en longueur.",
+      "ecoles_enseignant": [
+        "Nahgem"
+      ],
+      "tables": []
+    },
+    "tourbillon": {
+      "nom": "Tourbillon",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Le Tourbillon est une attaque rotative conçue pour terrasser plusieurs ennemis inexpérimentés à la fois. Pour chaque rang que vous possédez dans cette technique de combat, ajoutez deux fois ce dernier à votre jet d’attaque lorsque vous combattez des brutes. Ainsi, un maître disposant de 5 rangs dans la technique de combat Tourbillon fera passer le résultat de son jet d’attaque de 19 (+ 2 x 5) à 29.",
+      "ecoles_enseignant": [
+        "Al'Marikk",
+        "Basulde",
+        "Chaka",
+        "Charmine",
+        "Geng Yu Qiang",
+        "Chin Te",
+        "Qurra",
+        "Sanders",
+        "Sersemlik",
+        "Shaktishaalee",
+        "Siggursdottir",
+        "Soldano",
+        "Vigilare"
+      ],
+      "tables": []
+    },
+    "veneration du prophete": {
+      "nom": "Vénération du Prophète",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Au moyen de cette technique de combat, vous pouvez faire tomber votre adversaire à genoux. L’objectif est de planter votre rapière dans l’une de ses rotules. La manœuvre consiste à plonger à ses pieds, la pointe au niveau de ses genoux. Pour réussir cette attaque, il vous faut déjà toucher la rotule de votre adversaire, ce qui nécessite de réussir une attaque en utilisant Vénération du Prophète avec un ND +10. Ensuite, pour que le coup soit porté avec suffisamment de force, il est nécessaire d’infliger une blessure. Dans ce cas, votre adversaire tombe à genoux et ne peux pas se relever sans assistance, ce qui l’empêche de se déplacer jusqu’à la fin de la scène, et diminue tous ses tests d’attaque et défense de 5.  Si, en revanche, vous échouez, vous vous retrouvez au sol dans une position désavantageuse ; votre ND pour être touché n’est que de 5 pour la prochaine action de votre adversaire.",
+      "ecoles_enseignant": [
+        "Escuela Pater Noster"
+      ],
+      "tables": []
+    },
+    "voir le style": {
+      "nom": "Voir le style",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Au début de chaque combat, les duellistes peuvent tenter un jet de [Esprit + Voir le style], avec un certain nombre d’augmentations. S’ils réussissent leur jet, ils reconnaissent l’école de leur adversaire. Ils bénéficient alors de 1 point de défense passive et active supplémentaire par rang en Voir le style, plus 2 par augmentation prise. Ce bonus de défense n’est valable que pour la défense passive.",
+      "ecoles_enseignant": [
+        "Toutes les écoles"
+      ],
+      "tables": [
+        [
+          [
+            "Difficultés des tests de Voir le Style"
+          ],
+          [
+            "Type d’école de l’adversaire",
+            "Niveau de Difficulté"
+          ],
+          [
+            "L’adversaire n’a aucune école ou est la même que la vôtre",
+            "10"
+          ],
+          [
+            "Ecole reconnue par la Guilde des Spadassins et du même pays que le personnage",
+            "15"
+          ],
+          [
+            "Ecole reconnue par la Guilde des Spadassins et du même continent que le personnage",
+            "20"
+          ],
+          [
+            "Ecole reconnue par la Guilde des Spadassins d’un autre continent",
+            "25"
+          ],
+          [
+            "Ecole non-reconnue par la Guilde des Spadassins et d’un autre continent",
+            "30"
+          ],
+          [
+            "Ecole enseignée par une organisation ou société secrète",
+            "40"
+          ],
+          [
+            "L’adversaire est un Grand Maitre de son école",
+            "+10"
+          ]
+        ]
+      ]
+    },
+    "assommer": {
+      "nom": "Assommer",
+      "categorie": "Techniques de spadassin à mains nues",
+      "description": "Pour assommer son adversaire, l’assaillant effectue un jet d’Assommer + Gaillardise contre le ND de la victime. En cas de réussite, la victime effectue un jet de Gaillardise avec un ND égal à trois fois les dommages infligés. Si ce jet est un échec, la victime est alors inconsciente. Si le jet est réussi, elle encaisse les dommages et peut continuer le combat. Si l’attaque est effectuée sans que la victime en soit consciente (embuscade, etc.), le ND est incrémenté de deux augmentations.",
+      "ecoles_enseignant": [
+        "Kensington",
+        "Yorak"
+      ],
+      "tables": []
+    },
+    "blocage offensif": {
+      "nom": "Blocage offensif",
+      "categorie": "Techniques de spadassin à mains nues",
+      "description": "Le blocage est l'art de placer votre bras ou votre jambe entre vous et les coups de votre ennemi. Le blocage offensif est l'acte de frapper le bras ou la jambe de votre ennemi alors qu'il vous porte une attaque à mains nues, votre défense devenant ainsi une attaque. Vous pouvez vous en servir en Défense Active contre toute attaque à mains nues, comme Attaque (Combat de rue), Attaque (Pugilat), Prise, Coup de pied, etc. Si vous réussissez votre Défense Active, vous infligez 1g1 dé de dommages à votre adversaire (vous n'y ajoutez pas votre Gaillardise). Vous pouvez prendre des augmentations pour accroître les dommages infligés comme s'il s'agissait d'une attaque normale, mais vous ne pouvez pas localiser vos coups.",
+      "ecoles_enseignant": [
+        "Tie Xiong Kung"
+      ],
+      "tables": []
+    },
+    "esquive de projectiles": {
+      "nom": "Esquive de projectiles",
+      "categorie": "Techniques de spadassin à mains nues",
+      "description": "Vous avez appris à dévier les flèches et autres projectiles tirés dans votre direction sans être blessé par eux. Vous pouvez l'utiliser comme compétence de défense quand vous devez vous défendre contre des armes lancées, des flèches, des pierres de fronde, des carreaux d'arbalète, mais pas contre des armes à feu, des attaques au corps à corps, ou des tirs d'artillerie. Si vous choisissez d'utiliser cette technique de combat comme défense active, vous ajoutez votre rang dans cette technique à la Défense Active et Passive. De plus, vous pouvez utiliser deux Augmentations sur votre jet d'Esprit + Esquive de projectiles pour attraper le projectile plutôt que de le dévier. Si vous parvenez à l'attraper, vous gagnez un dé d'héroïsme qui disparaîtra à la fin du round si vous ne l'utilisez pas.",
+      "ecoles_enseignant": [
+        "Zheng Yi Quan"
+      ],
+      "tables": []
+    },
+    "griffe": {
+      "nom": "Griffe",
+      "categorie": "Techniques de spadassin à mains nues",
+      "description": "Une griffe est un type d'attaque à mains nues qui utilise vos doigts pour appliquer une forte pression sur la peau de votre adversaire. Bien qu'il en résulte une prise momentanée, elle est relâchée immédiatement. Pour réaliser une telle attaque, faites un jet de Finesse + Griffe contre le ND pour être touché de votre ennemi, plus 10. Les dégâts d'une Griffe sont les mêmes que pour une attaque à mains nues ordinaire, mais comme vous agissez sur des points de pression de votre opposant, il sera aussi étourdi, et perdra son prochain dé d'action, s'il lui en reste un dans le round courant.",
+      "ecoles_enseignant": [
+        "Ying Sun Wo"
+      ],
+      "tables": []
+    },
+    "manchette": {
+      "nom": "Manchette",
+      "categorie": "Techniques de spadassin à mains nues",
+      "description": "Cette attaque à mains nues inflige 1g1 dé de dommages, mais augmente de 5 le ND que vous essayez d'atteindre. Vous devez déclarer votre intention avant d'effectuer votre jet, et utiliser cette technique de combat à la place de votre technique de combat d'attaque normale.",
+      "ecoles_enseignant": [
+        "Tie Xiong Kung"
+      ],
+      "tables": []
+    },
+    "attaque combinee": {
+      "nom": "Attaque combinée",
+      "categorie": "Techniques de spadassin avec animaux",
+      "description": "Votre PJ attaque conjointement à son animal, empêchant, par la même, son adversaire de se défendre efficacement. Pour cela, vous devez retarder votre dé d’action pour intervenir lors de la même phase que votre animal. Vous attaquez alors en même temps que votre animal. Si vous et votre animal passez ensemble la défense passive de votre cible, elle ne pourra utiliser pleinement sa défense active que contre vous ou votre animal.",
+      "ecoles_enseignant": [
+        "Canis",
+        "Teginbek"
+      ],
+      "tables": []
+    },
+    "attaque de cavalerie": {
+      "nom": "Attaque de cavalerie",
+      "categorie": "Techniques de spadassin avec animaux",
+      "description": "Le personnage tente de frapper tôt et souvent, puis se replie pour se mettre à l’abri. Vous pouvez diminuer deux de vos dés d’action de votre rang dans cette technique de combat (jusqu’à un minimum de 1) juste avant la première phase de chaque tour de combat lorsque vous êtes à cheval, ce qui vous permettra d’attaquer puis de vous replier avant que votre adversaire ne puisse faire quoi que ce soit excepté se défendre.",
+      "ecoles_enseignant": [
+        "Buslayevich",
+        "Chima Gongjian Shou",
+        "Gustavo",
+        "Shaktishaalee"
+      ],
+      "tables": []
+    },
+    "charge de cavalerie": {
+      "nom": "Charge de cavalerie",
+      "categorie": "Techniques de spadassin avec animaux",
+      "description": "Le cavalier charge son adversaire en galopant sur une distance d’au moins 50 mètres en ligne droite. Cette manœuvre est très impressionnante, en particulier si l’adversaire est à pied. Cette attaque étant une charge comme à pied, vous lancez [Finesse + Charge de Cavalerie] mais retirez -1g1 puisque cette attaque est considérée comme une charge à pied. Si la charge est un succès, le cavalier ajoute un dé (lancé et gardé) aux dégâts, plus un toutes les deux augmentations.",
+      "ecoles_enseignant": [
+        "Caballo Rojo",
+        "Chima Gongjian Shou",
+        "Gustavo",
+        "Pösen",
+        "Shaktishaalee",
+        "Yesukai"
+      ],
+      "tables": []
+    },
+    "meute": {
+      "nom": "Meute",
+      "categorie": "Techniques de spadassin avec animaux",
+      "description": "Cette technique de combat permet de donner des ordres aux chiens sur un champ de bataille afin qu’ils suivent leur maître. Un maître-chien peut ainsi être accompagné de (rang dans la technique de combat Meute) chiens de combat en plus de son chien de tête. Ces chiens sont considérés comme des brutes niveau 1 au rang d’apprenti, niveau 2 au rang de compagnon et niveau 3 au rang de maître.",
+      "ecoles_enseignant": [
+        "Canis"
+      ],
+      "tables": []
+    },
+    "saut de cheval": {
+      "nom": "Saut de cheval",
+      "categorie": "Techniques de spadassin avec animaux",
+      "description": "Cette technique vous permet de sauter sur un adversaire, monté ou à pied, tout en lui portant un coup d’épée au moment de l’impact. Le cavalier arrivant à hauteur de sa cible saute vigoureusement, pointe en avant sur son adversaire. Si sa monture a été dressée au sein de l’école, elle reviendra immédiatement vers lui après son saut, lui permettant de remonter en selle dès l’action suivante. Si elle réussit, cette attaque a un double effet : d’une part l’adversaire ne peut pas tenter de défense active, d’autre part, il ajoute trois à son prochain dé d’action à cause du choc reçu (si cela l’amène à un résultat supérieur à 10, l’action est perdue).",
+      "ecoles_enseignant": [
+        "Caballo Rojo"
+      ],
+      "tables": []
+    },
+    "ces techniques sont basees sur l'art de l'assassinat et le meurtre silencieux. elles sont donc enseignees par des ecoles de combat basees sur les frappes furtives, la dissimulation et le maniement des poisons.": {
+      "nom": "Ces techniques sont basées sur l'art de l'assassinat et le meurtre silencieux. Elles sont donc enseignées par des écoles de combat basées sur les frappes furtives, la Dissimulation et le maniement des poisons.",
+      "categorie": "Techniques de spadassin d’assassinat",
+      "description": "",
+      "ecoles_enseignant": [],
+      "tables": []
+    },
+    "erafler": {
+      "nom": "Érafler",
+      "categorie": "Techniques de spadassin d’assassinat",
+      "description": "Cette technique de combat permet au spadassin d’érafler la peau de son adversaire sur une grande longueur. Cette aptitude semble de peu d’utilité, en effet, les dégâts sont peu importants (0g1), et la manœuvre est difficile (ND + 5, surtout si l’adversaire porte une armure, les malus seront alors à la discrétion du MJ suivant les protections de l’adversaire), mais elle permet une meilleure infiltration de la substance qui recouvre l’arme dans le corps de sa victime (vitesse d’action du poison augmentée, à la discrétion du MJ). De plus, elle peut permettre d’infliger une balafre facilement reconnaissable à un ennemi que l’on voudrait pouvoir reconnaître et accuser aisément plus tard.",
+      "ecoles_enseignant": [
+        "Scarlatti"
+      ],
+      "tables": []
+    },
+    "garotter": {
+      "nom": "Garotter",
+      "categorie": "Techniques de spadassin d’assassinat",
+      "description": "Cette technique de combat permet à un assassin de tuer sa cible dans un silence presque total. À cette fin, il utilise une lanière de cuir ou un fil de métal, se glisse silencieusement derrière sa proie, lui passe le fil autour du cou et l’étrangle. La victime ne peut alors ni crier (à cause du filin qui lui écrase la trachée), ni se défendre (l’assassin se gardant d’être trop proche de sa cible).Cette technique de combat ne peut être utilisée qu’après que le spadassin ait réussi un jet de Discrétion ou Déplacement silencieux (en bref, sa cible ne doit pas se rendre compte de ses intentions, sinon son attaque est vouée l’échec). Le garrotteur effectue ensuite son attaque en utilisant sa technique de combat Garrotter contre un ND diminué de 5 en raison du fait que sa victime ne s’y attend pas. Cette dernière n’a ensuite plus qu’une option, essayer d’échapper à la mort. Pour cela, elle doit réussir un jet de [Finesse + Contorsionnisme] ou [Gaillardise + Se dégager] contre un ND de [10 + (Technique de combat Garrotter de l’assassin x 5)]. Si elle n’y parvient pas, elle est victime des règles de noyade dès le deuxième round de combat Il vaudrait mieux qu’elle arrive à échapper à la prise de l’assassin très rapidement !",
+      "ecoles_enseignant": [
+        "Nadja'hari"
+      ],
+      "tables": []
+    },
+    "noyer": {
+      "nom": "Noyer",
+      "categorie": "Techniques de spadassin d’assassinat",
+      "description": "Cette technique de combat, après avoir réussi à saisir son adversaire, permet de noyer ce dernier dans n’importe quel récipient d’eau pouvant contenir son visage (et plus). Pour ce faire, le personnage usant de cette technique de combat doit avoir réussi un jet de Finesse + Noyer contre un ND égale à (Esprit de l’adversaire x 5). Une fois ce jet réussi, l’assassin a pu plonger son adversaire partiellement ou totalement dans l’eau. Évidemment, la victime peut tenter de se dégager comme pour une prise normale mais doit le faire avec un malus de 5 sur son ND. En outre, pour savoir si l’adversaire est noyé, il est nécessaire de se référer aux règles sur la noyade.",
+      "ecoles_enseignant": [
+        "Bahol"
+      ],
+      "tables": []
+    },
+    "epingler": {
+      "nom": "Épingler",
+      "categorie": "Techniques de combat à distance",
+      "description": "Vous savez vous servir d’une arme de jet pour clouer la main (ou la manche) d’un adversaire à une surface proche, comme un arbre par exemple. Vous devez lancer une arme de jet en utilisant Épingler (Couteau) plutôt que votre compétence d’attaque habituelle, et ajoute 10 à votre ND pour toucher (pénalité qui ne peut être annulée avec la technique de combat Tir d’adresse). Si vous l’emportez, vous clouez le bras (ou la manche) de votre adversaire et il lâche ce qu’il tenait en main. En outre, il doit dépenser une action et réussir un test de [Gaillardise + Se Dégager] avec un ND de 10 pour se libérer. On ne peut utiliser cette technique de combat que contre des cibles portant des étoffes ou autres vêtements. Épingler une armure en métal (en Dracheneisen ou non) à une surface est tout simplement infaisable.",
+      "ecoles_enseignant": [
+        "Cappuntina",
+        "Necare"
+      ],
+      "tables": []
+    },
+    "gros sel": {
+      "nom": "Gros sel",
+      "categorie": "Techniques de combat à distance",
+      "description": "Un tireur de l’école Durante peut utiliser cette technique pour tirer des plombs de la taille du gros sel plutôt que des balles classiques. Cela lui permet, en raison de la quantité de projectiles insérés dans le canon, d’étendre la zone de dispersion de son tir, multipliant les victimes. Toutefois, les dégâts sont moindres. Lorsqu’il veut faire usage de cette technique de combat, le joueur doit le préciser avant de charger son arme, il effectuera ensuite un tir normal et il pourra toucher un nombre de cibles supplémentaire égal à son rang dans la technique de combat Gros sel. Par contre, les victimes ne subiront que 2g1 dégâts. Mais elles devront également faire face à une douleur cuisante et handicapante qui les privera d’un dé lancé et gardé sur tous leurs jets tant que ces blessures légères n’auront pas disparues (transformées en blessures graves ou soignées grâce à la compétence Premier secours).",
+      "ecoles_enseignant": [
+        "Cappuntina",
+        "Necare"
+      ],
+      "tables": []
+    },
+    "retourne tire": {
+      "nom": "Retourné-tiré",
+      "categorie": "Techniques de combat à distance",
+      "description": "Grâce à cette technique de combat, le personnage est capable de se retourner rapidement et de faire feu dans le même mouvement lors des duels au pistolet sans perdre sa concentration, ce qui lui permet de réduire la valeur de son premier dé d’initiative de 2 points par rang de maîtrise dans cette technique.",
+      "ecoles_enseignant": [
+        "Overmars"
+      ],
+      "tables": []
+    },
+    "tir a blanc": {
+      "nom": "Tir à blanc",
+      "categorie": "Techniques de combat à distance",
+      "description": "Cette technique de combat permet au personnage de faire feu avec une arme ne contenant pas de projectile mais une surdose de poudre. En pratique, lorsque le pistolier appuie sur la détente, un grand nuage de poudre jaillit du canon, faisant immédiatement éternuer et pleurer les personnes se trouvant à moins de trois mètres (5 pour les fusils). Pour cela, le pistolier doit réussir un jet de Tir à blanc + Finesse contre le ND de l’adversaire avec un malus de deux augmentations. S’il y parvient, et si son adversaire ne se décide pas à fuir, il retirera un dé (lancé et gardé) à tous ses jets de compétence pour ses (rang de maîtrise Tir à blanc)prochaines actions en raison de ses irritations des yeux et de la gorge.",
+      "ecoles_enseignant": [
+        "Bricquébec"
+      ],
+      "tables": []
+    },
+    "tir a carreau special": {
+      "nom": "Tir à carreau spécial",
+      "categorie": "Techniques de combat à distance",
+      "description": "Cette technique de combat permet à l’arbalétrier d’utiliser des carreaux spéciaux à la place des normaux. Il en connaît toutes les variétés et est capable d’adapter son tir à leur poids, leur forme, leur longueur. Malgré cela, le ND de sa cible augmente de 5 en raison de la grande variété de ses projectiles. Cette technique de combat remplace celle d’Attaque (Arbalète) quand le tireur utilise des carreaux spéciaux. Voici les principaux carreaux de Ricardo que l’on peut trouver :\n\nCarreau assommant : un petit sac de sable remplace la pointe et permet d’assommer la victime si le tireur a réussi à toucher la tête (4 augmentations) et que la cible rate un jet de Détermination contre un ND de 25. Elle choit alors au sol, assommée.\n\nCarreau d’artifice : ce carreau est utilisé de nuit, on le tire presque à la verticale. Il explose en fusées multicolores en arrivant à une certaine hauteur.\n\nCarreau éclairant : ce carreau, comme le carreau d’artifice est surtout utilisé de nuit, on le tire en l’air. Il explose et permet d’éclairer une vaste zone pendant une minute ou une phase, autorisant le tireur à tirer ses carreaux suivants sans pénalités ou presque sur ses cibles, maintenant éclairées.\n\nCarreau empoisonné : le carreau est évidé, on peut y glisser une ampoule en verre contenant généralement du poison, ce dernier s’écoule, de l’intérieur, jusqu’à la pointe permettant à la substance de se répandre immédiatement dans l’organisme de sa cible si elle subit au moins un point de santé.\n\nCarreau explosif : la pointe est remplacée par des explosifs qui entre en action au premier choc, infligeant 4g4 dés de dommages à la cible mais sans compter les attributs de perforation de l’arme.\n\nCarreau extincteur : la pointe est remplacée par un petit sac étanche rempli d’eau. Ce carreau est idéal pour éteindre une torche ou une lanterne (dont il casse la vitre) à distance et de plonger ainsi ses adversaires dans le noir. Afin de disparaître plus facilement bien évidemment.\n\nCarreau filet : ce carreau, au corps très épais, ne peut se tirer qu’à courte portée. Il contient un filet aux mailles fines et solides qui empêtrera sa victime (voir la technique de combat du même nom).\n\nCarreau fumée : ce carreau explose au premier choc dans un grand nuage de fumée. L’arbalétrier l’utilisera souvent en tirant à ses pieds afin de se camoufler au regard d’un autre tireur (+15 à son ND pour un tir à distance, +5 au corps à corps) ou de s’enfuir.\n\nCarreau marqueur : un petit sac remplace la pointe et explose au contact permettant de répandre une poudre luminescente sur la cible, facilitant le tir de nuit (pénalités annulées).\n\nCarreau perceur d’armure : une pointe métallique renforcée et très pointue facilite l’insertion dans les armures. Elle augmente de 5 l’attribut « Perforant » (à l’exception du Dracheneisen) mais diminue les portées moyennes et longues de 30 et 60.\n\nCarreau rasoir : la pointe de ce carreau se prolonge le long du corps du missile et est effilée comme un rasoir, infligeant 1 lancé et gardé de dommages supplémentaires sur les personnes sans armure. Sur celles qui ont une armure, par contre, il inflige 1 dé de moins à lancer et garder.\n\nCarreau séparateur : ce projectile se sépare en deux carreaux distincts dix mètres après avoir quitté l’arbalète. Il inflige donc deux fois des dommages, mais chacun d’eux avec un dé (à lancer et à garder) en moins.\n\nCarreau volant : ce carreau à la forme allongée est adapté au tir à longue portée, il permet de diminuer de 5 le ND à de telles distances.\n\nCarreau zigzag : ce carreau avance en zigzag, ne permettant pas à sa cible de vraiment se protéger. Ses défenses passives et actives sont diminuées de 5 lorsque l’on utilise ce genre de carreau.\n\nCarreau-grappin : le corps de ce carreau renferme trois bras métalliques inversés qui s’ouvre dès leur départ de l’arbalète. Une cordelette est attachée à un anneau à l’arrière du carreau, permettant de servir de grappin.",
+      "ecoles_enseignant": [],
+      "tables": []
+    },
+    "tir d'adresse": {
+      "nom": "Tir d’adresse",
+      "categorie": "Techniques de combat à distance",
+      "description": "Pour chaque rang dont vous disposez dans cette technique de combat, vous soustrayez 5 points à toutes les pénalités relatives au tir (portée, couverture, etc.). Tir d’adresse ne vous permet pas de descendre votre ND sous le niveau de difficulté pour être touché de base, tout comme il ne peut augmenter les dommages infligés. Cependant, cela s’applique aux coups ciblés. Par exemple, si une cible à un ND pour être touché de 20, plus 15 pour les modificateurs (comme un coup ciblé à la main), un spadassin ayant 5 rangs dans la technique de combat Tir d’adresse annulera les 15 points de modificateurs mais ne pourra baisser le ND pour être touché de base (soit 20).",
+      "ecoles_enseignant": [
+        "Bouffe-Doublons",
+        "Buslayevich",
+        "Cappuntina",
+        "Guzman",
+        "Höpken",
+        "Nadja'hari",
+        "O'Faolain",
+        "Overmars",
+        "Rasmussen",
+        "Ricardo"
+      ],
+      "tables": []
+    },
+    "tir d'instinct": {
+      "nom": "Tir d’Instinct",
+      "categorie": "Techniques de combat à distance",
+      "description": "Cette technique de combat permet au personnage de tirer sur une cible à l’instinct et, donc, à une vitesse ahurissante. S’il se fait attaquer et qu’il n’a pas le temps de réagir sans effectuer d’interruption, le joueur peut avancer l’un de ses dés d’action de (rang dans la technique de combat) x 2 phases (phase 1 au minimum) et l’utiliser pour tirer avant si sa nouvelle phase précède celle actuelle. Cette technique de combat est effective, même en cas d’attaque surprise, si l’arme est dans les mains du personnage. Ecoles l’enseignant : Bouffe-Doublons, Bricquébec, Buslayevich, Cappuntina, Chima Gongjian Shou, Durante, Mortis, Rasmussen",
+      "ecoles_enseignant": [],
+      "tables": []
+    },
+    "tir en cloche": {
+      "nom": "Tir en cloche",
+      "categorie": "Techniques de combat à distance",
+      "description": "Les spadassins qui maîtrisent cette technique de combat passent des mois à apprendre à faire mouche sur une cible très éloignée. Pour chaque rang dans cette technique de combat, le tireur augmente la portée de son arc de 5 mètres et l’arbalétrier de 10 mètres.",
+      "ecoles_enseignant": [
+        "Chima Gongjian Shou",
+        "Höpken",
+        "Robin Goodfellow"
+      ],
+      "tables": []
+    },
+    "tir en mouvement": {
+      "nom": "Tir en mouvement",
+      "categorie": "Techniques de combat à distance",
+      "description": "Pour chaque rang dont vous disposez dans cette technique de combat, vous soustrayez une pénalité lors des tirs effectués en mouvement. Par exemple, avec un rang dans cette technique de combat, le tireur ne subit pas de malus lorsqu’il marche prudemment et avec un rang de cinq, lorsqu’il pique un sprint.",
+      "ecoles_enseignant": [
+        "Durante"
+      ],
+      "tables": []
+    },
+    "tir en ricochet": {
+      "nom": "Tir en ricochet",
+      "categorie": "Techniques de combat à distance",
+      "description": "Chaque ricochet confère une augmentation de 5 points au ND du tir et retire 1 dé lancé et gardé aux dommages infligés, mais octroie 1 dé d’héroïsme qui doit être utilisé avant la fin du combat.",
+      "ecoles_enseignant": [
+        "Donnerwetter",
+        "Nadja'hari"
+      ],
+      "tables": []
+    },
+    "tir en v": {
+      "nom": "Tir en V",
+      "categorie": "Techniques de combat à distance",
+      "description": "Cette technique de combat permet au personnage de tirer deux flèches simultanément, un projectile de chaque côté du corps de l’arc et enchâssés dans la corde. Les flèches partent ainsi dans deux directions différentes. En visant entre deux adversaires, le personnage peut, avec cinq augmentations (diminué d’autant d’augmentations que le rang dans cette technique de combat) les toucher tous les deux en utilisant sa compétence Attaque (Arc) et leur infliger des dommages normaux.",
+      "ecoles_enseignant": [
+        "Buslayevich"
+      ],
+      "tables": []
+    },
+    "tir par dessus la jambe": {
+      "nom": "Tir par-dessus la jambe",
+      "categorie": "Techniques de combat à distance",
+      "description": "Le personnage à son arme à feu rangée dans un holster de ceinture (une innovation pour l’époque) et fait feu sans dégainer ce dernier, simplement en levant la jambe où est attaché le holster et en pressant la détente. Cela lui permet de gagner (rang dans la technique de combat) phases sur son dé d’action (minimum 1) pour son tir.",
+      "ecoles_enseignant": [
+        "Donnerwetter"
+      ],
+      "tables": []
+    },
+    "tir precis": {
+      "nom": "Tir précis",
+      "categorie": "Techniques de combat à distance",
+      "description": "Le personnage apprend à se concentrer afin de porter le coup là où il le faut. Le rang de cette technique de combat détermine le nombre de rounds pendant lesquels il peut se concentrer. Chaque round de concentration augmente la portée de l’arme de 10 mètres et donne une augmentation gratuite ne pouvant être utilisée que pour un tir localisé (tête, main, etc.).",
+      "ecoles_enseignant": [
+        "O'Faolain",
+        "Rasmussen",
+        "Ricardo",
+        "Robin Goodfellow",
+        "Guzman"
+      ],
+      "tables": []
+    }
+  }
+};
