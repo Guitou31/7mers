@@ -407,7 +407,8 @@ p { margin: 0 0 0.6em; }
   margin: 0 0 0.8rem;
   color: var(--ink);
   text-indent: 1.5rem;
-  text-align: justify;
+  /* text-align: justify; retiré : créait des espaces étirés disgracieux dans les
+     lignes courtes (CSS n'a pas la césure typographique des PDFs). */
 }
 .description-paragraph:last-child { margin-bottom: 0; }
 
