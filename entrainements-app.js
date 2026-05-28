@@ -23,6 +23,46 @@
     return (s || "").toString().normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase();
   }
 
+  function slugify(s) {
+    return normalize(s).replace(/['']/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  }
+
+  // Cross-linking : lookup d'une compétence par nom, avec fallbacks
+  const competencesByKey = {};
+  if (window.COMPETENCES_DATA && window.COMPETENCES_DATA.competences) {
+    for (const c of window.COMPETENCES_DATA.competences) {
+      competencesByKey[normalize(c.nom)] = c.nom;
+    }
+  }
+  function lookupCompetence(nom) {
+    const k1 = normalize(nom);
+    if (competencesByKey[k1]) return competencesByKey[k1];
+    // Fallback : strip parenthèse finale et essayer
+    const sansParen = nom.replace(/\s*\([^)]*\)\s*$/, "").trim();
+    if (sansParen !== nom) {
+      const k2 = normalize(sansParen);
+      if (competencesByKey[k2]) return competencesByKey[k2];
+      // Fallback bis : essayer avec "(type d'armes à préciser)"
+      for (const k in competencesByKey) {
+        if (k.startsWith(k2 + " (type") || k.startsWith(k2 + " (")) {
+          return competencesByKey[k];
+        }
+      }
+    }
+    return null;
+  }
+  function renderCompetenceLink(nom) {
+    const found = lookupCompetence(nom);
+    if (found) {
+      return el("a", {
+        class: "specialisation-link",
+        href: "competences.html#" + slugify(found),
+        title: "Ouvrir la compétence : " + found,
+      }, nom);
+    }
+    return document.createTextNode(nom);
+  }
+
   function el(tag, attrs, children) {
     const e = document.createElement(tag);
     if (attrs) {
@@ -142,12 +182,13 @@
     return el("div", { class: "competence-section " + cssClass }, [
       el("h4", null, label),
       el("ul", { class: "competence-list" },
-        items.map(c => el("li", null, c))
+        items.map(c => el("li", null, [renderCompetenceLink(c)]))
       ),
     ]);
   }
 
   function openDetail(entry) {
+    history.replaceState(null, "", "#" + slugify(entry.nom));
     const container = document.getElementById("entrainement-detail-content");
     container.innerHTML = "";
     const r = getRestriction(entry);
@@ -190,6 +231,14 @@
     const dialog = document.getElementById("entrainement-detail");
     if (typeof dialog.close === "function") dialog.close();
     else dialog.removeAttribute("open");
+    history.replaceState(null, "", location.pathname);
+  }
+
+  function openFromHash() {
+    const hash = (location.hash || "").replace(/^#/, "");
+    if (!hash) return;
+    const target = data.entrainements.find(e => slugify(e.nom) === hash);
+    if (target) openDetail(target);
   }
 
   function buildRestrictionsFilter() {
@@ -259,4 +308,6 @@
   buildRestrictionsFilter();
   wireEvents();
   renderGrid();
+  openFromHash();
+  window.addEventListener("hashchange", openFromHash);
 })();

@@ -596,6 +596,24 @@ p { margin: 0 0 0.6em; }
   }
 }
 
+/* ===== Page Compétences : liens cliquables vers spécialisations ===== */
+.specialisations-line {
+  margin: 0;
+  line-height: 1.7;
+}
+.specialisations-line .specialisation-link {
+  color: var(--accent);
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+.specialisations-line .specialisation-link:hover {
+  color: var(--accent-soft);
+  text-decoration: underline solid;
+}
+.specialisations-line .specialisation-text {
+  color: var(--ink-soft);
+}
+
 /* ===== Page Entraînements : compétences ===== */
 .competence-section {
   margin-bottom: 1rem;

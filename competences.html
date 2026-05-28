@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Entraînements — Bréviaire 7ème Mer V2.1</title>
+  <title>Compétences — Bréviaire 7ème Mer V2.1</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-page="entrainements">
+<body data-page="competences">
   <div id="page-layout"></div>
 
   <div class="page-section-title">
-    <h2>Entraînements</h2>
+    <h2>Compétences</h2>
     <p class="page-section-sub">
-      Chaque entraînement donne accès à des Compétences de base (montée à coût réduit)
-      et des Compétences avancées (coût réduit). Inclut les modifications maison
-      (fusions Haches, Lances, Masses ; Escrime divisée ; Fusils).
+      Chaque compétence est apprenable via certaines spécialisations (entraînements ou métiers).
+      Cliquez sur le nom d'une spécialisation dans le détail pour ouvrir sa page.
     </p>
   </div>
 
@@ -27,12 +26,12 @@
     <aside class="filters" id="filters" aria-label="Filtres">
       <div class="filter-group">
         <label for="search">Recherche</label>
-        <input type="search" id="search" placeholder="Nom, compétence, mot-clé…" autocomplete="off">
+        <input type="search" id="search" placeholder="Nom, description, spécialisation…" autocomplete="off">
       </div>
 
       <div class="filter-group">
-        <h3>Restriction à la création</h3>
-        <div class="checkbox-list" id="filter-restrictions"></div>
+        <h3>Catégorie</h3>
+        <div class="checkbox-list" id="filter-categories"></div>
       </div>
 
       <button class="btn-reset" id="reset-filters" type="button">Réinitialiser les filtres</button>
@@ -42,22 +41,22 @@
       <div class="results-bar">
         <span class="results-count" id="results-count"></span>
       </div>
-      <ul class="ecoles-grid" id="entrainements-grid"></ul>
+      <ul class="ecoles-grid" id="competences-grid"></ul>
       <p class="empty-state" id="empty-state" hidden>
-        Aucun entraînement ne correspond à ces critères.
+        Aucune compétence ne correspond à ces critères.
       </p>
     </main>
   </div>
 
-  <dialog id="entrainement-detail" class="ecole-detail" aria-labelledby="entrainement-detail-title">
-    <button class="ecole-detail-close" id="entrainement-detail-close" aria-label="Fermer" type="button">×</button>
-    <div id="entrainement-detail-content"></div>
+  <dialog id="competence-detail" class="ecole-detail" aria-labelledby="competence-detail-title">
+    <button class="ecole-detail-close" id="competence-detail-close" aria-label="Fermer" type="button">×</button>
+    <div id="competence-detail-content"></div>
   </dialog>
 
   <script src="layout.js"></script>
-  <script src="entrainements.js"></script>
-  <!-- competences.js chargé pour le cross-linking entraînements → compétences -->
   <script src="competences.js"></script>
-  <script src="entrainements-app.js"></script>
+  <!-- entrainements.js chargé pour le cross-linking compétences → entraînements -->
+  <script src="entrainements.js"></script>
+  <script src="competences-app.js"></script>
 </body>
 </html>

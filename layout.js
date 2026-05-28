@@ -17,7 +17,7 @@
     { id: "appartenance",          file: "appartenance.html",         label: "Appartenance",           available: false, category: "creation" },
     { id: "metiers",               file: "metiers.html",              label: "Métiers",                available: false, category: "creation" },
     { id: "entrainements",         file: "entrainements.html",        label: "Entraînements",          available: true,  category: "creation" },
-    { id: "competences",           file: "competences.html",          label: "Compétences",            available: false, category: "creation" },
+    { id: "competences",           file: "competences.html",          label: "Compétences",            available: true,  category: "creation" },
     { id: "avantages",             file: "avantages.html",            label: "Avantages",              available: false, category: "creation" },
     { id: "ecoles-spadassin",      file: "ecoles-spadassin.html",     label: "Écoles de Spadassin",    available: true,  category: "combat"   },
     { id: "ecoles-combat",         file: "ecoles-combat.html",        label: "Écoles de Combat",       available: false, category: "combat"   },
