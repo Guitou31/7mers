@@ -360,6 +360,38 @@ p { margin: 0 0 0.6em; }
 }
 .ecole-detail-close:hover { color: var(--accent); }
 
+/* ===== Cross-modal : header avec bouton Retour ===== */
+.cross-modal-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: -1rem -1rem 0.6rem;
+  padding: 0.6rem 1rem 0.5rem;
+  background: linear-gradient(180deg, var(--bg-elevated) 85%, transparent);
+}
+.cross-modal-back {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+  font-style: italic;
+  transition: background 0.12s, color 0.12s;
+}
+.cross-modal-back:hover { background: var(--accent); color: #fffbf0; border-color: var(--accent); }
+.cross-modal-header .ecole-detail-close {
+  position: static;
+  float: none;
+  margin: 0;
+}
+
 .detail-header {
   border-bottom: 2px solid var(--accent);
   padding-bottom: 0.75rem;

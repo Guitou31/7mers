@@ -13,7 +13,8 @@
     <h2>Compétences</h2>
     <p class="page-section-sub">
       Chaque compétence est apprenable via certaines spécialisations (entraînements ou métiers).
-      Cliquez sur le nom d'une spécialisation dans le détail pour ouvrir sa page.
+      Cliquez sur le nom d'une spécialisation dans le détail pour ouvrir sa fiche, et utilisez
+      le bouton « ← Retour » pour revenir.
     </p>
   </div>
 
@@ -48,16 +49,12 @@
     </main>
   </div>
 
-  <dialog id="competence-detail" class="ecole-detail" aria-labelledby="competence-detail-title">
-    <button class="ecole-detail-close" id="competence-detail-close" aria-label="Fermer" type="button">×</button>
-    <div id="competence-detail-content"></div>
-  </dialog>
-
   <script src="layout.js"></script>
-  <script src="competences.js"></script>
-  <!-- entrainements.js + metiers.js : cross-linking compétences → spécialisations -->
+  <script src="ecoles.js"></script>
   <script src="entrainements.js"></script>
   <script src="metiers.js"></script>
+  <script src="competences.js"></script>
+  <script src="cross-modal.js"></script>
   <script src="competences-app.js"></script>
 </body>
 </html>
