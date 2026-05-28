@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Écoles de Spadassin — Bréviaire 7ème Mer V2.1</title>
+  <title>Écoles de Combat — Bréviaire 7ème Mer V2.1</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-page="ecoles-spadassin">
+<body data-page="ecoles-combat">
   <div id="page-layout"></div>
 
   <div class="page-section-title">
-    <h2>Écoles de Spadassin</h2>
-    <p class="page-section-sub">Toutes les écoles d'escrime, filtrables par nation, arme et restriction.</p>
+    <h2>Écoles de Combat</h2>
+    <p class="page-section-sub">
+      Styles de combat hors Guilde des Spadassins (assassinat, combat à mains nues,
+      armes à distance, écoles à animaux…). Les écoles déjà reclassées en Spadassin
+      ne figurent pas ici — elles sont sur la page Écoles de Spadassin.
+    </p>
   </div>
 
   <div class="layout">
@@ -34,11 +38,6 @@
       <div class="filter-group">
         <h3>Catégorie d'arme</h3>
         <div class="checkbox-list" id="filter-armes"></div>
-      </div>
-
-      <div class="filter-group">
-        <h3>Origine</h3>
-        <div class="checkbox-list" id="filter-origines"></div>
       </div>
 
       <div class="filter-group">
@@ -66,13 +65,12 @@
   </div>
 
   <script src="layout.js"></script>
-  <!-- Toutes les data files pour le cross-linking -->
   <script src="ecoles.js"></script>
   <script src="ecoles_combat.js"></script>
   <script src="entrainements.js"></script>
   <script src="metiers.js"></script>
   <script src="competences.js"></script>
   <script src="cross-modal.js"></script>
-  <script src="app.js"></script>
+  <script src="ecoles-combat-app.js"></script>
 </body>
 </html>

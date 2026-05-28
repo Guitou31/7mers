@@ -92,11 +92,18 @@
     const k = normalize(nom);
     return data.ecoles.find(e => normalize(e.nom) === k) || null;
   }
+  function findEcoleCombat(nom) {
+    const data = window.ECOLES_COMBAT_DATA;
+    if (!data) return null;
+    const k = normalize(nom);
+    return data.ecoles.find(e => normalize(e.nom) === k) || null;
+  }
   function findByTypeAndNom(type, nom) {
     if (type === "competence") return findCompetence(nom);
     if (type === "metier") return findMetier(nom);
     if (type === "entrainement") return findEntrainement(nom);
     if (type === "ecole") return findEcole(nom);
+    if (type === "ecole_combat") return findEcoleCombat(nom);
     return null;
   }
 
@@ -217,6 +224,7 @@
     else if (top.type === "metier") renderMetier(item, container);
     else if (top.type === "entrainement") renderEntrainement(item, container);
     else if (top.type === "ecole") renderEcole(item, container);
+    else if (top.type === "ecole_combat") renderEcole(item, container);  // même renderer
     history.replaceState(null, "", "#" + top.type + "/" + slugify(top.nom));
     updateBackButtonVisibility();
   }
@@ -558,6 +566,8 @@
         item = window.ENTRAINEMENTS_DATA.entrainements.find(e => slugify(e.nom) === slug);
       } else if (type === "ecole" && window.ECOLES_DATA) {
         item = window.ECOLES_DATA.ecoles.find(e => slugify(e.nom) === slug);
+      } else if (type === "ecole_combat" && window.ECOLES_COMBAT_DATA) {
+        item = window.ECOLES_COMBAT_DATA.ecoles.find(e => slugify(e.nom) === slug);
       }
       if (item) openItem(type, item, { resetStack: true });
     } else {
@@ -568,10 +578,12 @@
       else if (page === "metiers") type = "metier";
       else if (page === "entrainements") type = "entrainement";
       else if (page === "ecoles-spadassin") type = "ecole";
+      else if (page === "ecoles-combat") type = "ecole_combat";
       if (type) {
         const data = type === "competence" ? window.COMPETENCES_DATA?.competences :
                      type === "metier" ? window.METIERS_DATA?.metiers :
                      type === "entrainement" ? window.ENTRAINEMENTS_DATA?.entrainements :
+                     type === "ecole_combat" ? window.ECOLES_COMBAT_DATA?.ecoles :
                      window.ECOLES_DATA?.ecoles;
         const item = data?.find(x => slugify(x.nom) === hash);
         if (item) openItem(type, item, { resetStack: true });

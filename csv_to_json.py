@@ -63,17 +63,44 @@ ECOLES_SECONDE_EDITION: set[str] = {
 # certaines régions / îles / organisations sont rattachées à une nation parent.
 NATION_REMAP = {
     # Trois Royaumes (Îles Glamour) : 3 nations distinctes
-    "Bryn Bresail": "Avalon",                # île Sidhe d'Avalon
-    "Highlands": "Marches des Highlands",    # variante de nom
-    # Vesten : nom court préféré au nom long et à la Ligue de Vendel
+    "Bryn Bresail": "Avalon",
+    "Highlands": "Marches des Highlands",
+    "Marche des Highlands": "Marches des Highlands",  # singulier → pluriel
+    # Vesten
     "Vestenmannavnjar": "Vesten",
     "Ligue de Vendel": "Vesten",
-    # Factions et régions sans véritable nation propre
+    # Régions sans nation propre
     "Confrérie de la Côte": "Nations Pirates",
-    "Conférie de la Côte": "Nations Pirates",  # variante orthographique du PDF
-    "Fidhelis": "Sarmatie",                    # gens du voyage = équivalent Sarmatie
-    "Kanuba": "Nations Pirates",                # Archipel de Minuit → Caraïbes V2
-    "Église du Vaticine": "Castille",          # siège Vaticine = Castille
+    "Conférie de la Côte": "Nations Pirates",
+    "Fidhelis": "Sarmatie",
+    "Kanuba": "Nations Pirates",
+    "Colonie de Marcina": "Nations Pirates",
+    "Corsaires du Croissant": "Empire du Croissant",
+    "Kosars": "Empire du Croissant",
+    "Pirates": "Nations Pirates",
+    # Organisations religieuses Vaticine
+    "Église du Vaticine": "Castille",
+    "Inquisition": "Castille",
+    "Les Filles de Sophie": "Castille",
+    "Los Vagos": "Castille",
+    # Organisations eisenores
+    "Die Kreuzritter": "Eisen",
+    "Les Nibelungen": "Eisen",
+    # Organisations Vodacce
+    "Rilasciare": "Vodacce",
+    "Fraternité de Bahol": "Vodacce",
+    # Sociétés savantes (rattachées par défaut à Montaigne, peuvent être discutées)
+    "Collège invisible": "Montaigne",
+    "Société des explorateurs": "Montaigne",
+    "Société des Explorateurs": "Montaigne",
+    # Autres factions
+    "N.O.M": "Nations Pirates",
+    "Empire numain": "Vodacce",                # historique, plus existant en 1668
+}
+
+# Termes à IGNORER complètement lors du split des nations (bruit textuel).
+NATION_IGNORE: set[str] = {
+    "marins",
 }
 
 # Nations virtuelles : ajoutées à une école si elle est enseignée dans TOUT un sous-ensemble.
@@ -123,10 +150,16 @@ def split_list(value: str) -> list[str]:
 
 
 def split_nations(value: str) -> list[str]:
-    """Découpe un champ nation sur ',' ET ' et ', applique NATION_REMAP, déduplique en gardant l'ordre."""
+    """Découpe un champ nation sur ',' et ' et '. Applique NATION_REMAP.
+    Filtre : ignore le contenu entre parenthèses (notes/commentaires), les chaînes
+    trop longues (> 40 chars = probable phrase parasite du PDF), et les mots de
+    NATION_IGNORE. Déduplique en préservant l'ordre.
+    """
     if not value or not value.strip():
         return []
     cleaned = value.strip().rstrip(".")
+    # Retire le contenu entre parenthèses (notes/explications hors nation)
+    cleaned = re.sub(r"\s*\([^)]*\)", "", cleaned).strip()
     # Split sur ',' puis sur ' et '
     raw_parts: list[str] = []
     for chunk in cleaned.split(","):
@@ -135,8 +168,14 @@ def split_nations(value: str) -> list[str]:
     seen: set[str] = set()
     ordered: list[str] = []
     for p in raw_parts:
-        n = re.sub(r"\s+", " ", p).strip()
+        n = re.sub(r"\s+", " ", p).strip().rstrip(".")
         if not n:
+            continue
+        # Filtre : trop long = bruit textuel d'origine PDF
+        if len(n) > 40:
+            continue
+        # Filtre : mot ignoré explicitement
+        if n in NATION_IGNORE:
             continue
         n = NATION_REMAP.get(n, n)
         if n in seen:
