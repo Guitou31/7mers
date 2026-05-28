@@ -107,7 +107,7 @@
     const nbBase = (c.donnent_acces_base || []).length;
     const nbAv = (c.donnent_acces_avancee || []).length;
     const total = nbBase + nbAv;
-    const catShort = (c.categorie || "Autre").replace("Compétences ", "");
+    const catShort = (c.categorie || "Autre").replace("Compétences ", "").toUpperCase();
     return el("li", {
       class: "ecole-card",
       tabindex: "0",
@@ -158,7 +158,7 @@
   function openDetail(c) {
     const container = document.getElementById("competence-detail-content");
     container.innerHTML = "";
-    const catShort = (c.categorie || "Autre").replace("Compétences ", "");
+    const catShort = (c.categorie || "Autre").replace("Compétences ", "").toUpperCase();
     container.appendChild(
       el("div", { class: "detail-header" }, [
         el("h2", { id: "competence-detail-title" }, c.nom),
