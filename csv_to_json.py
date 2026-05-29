@@ -133,6 +133,29 @@ def normalize(s: str) -> str:
     return re.sub(r"\s+", " ", cleaned.lower()).strip()
 
 
+# Alias de noms de techniques (clé = nom normalisé, valeur = nom d'affichage canonique).
+# Sert à corriger les variantes/artefacts pour que la ref se résolve vers le docx.
+TECHNIQUE_NOM_ALIASES: dict[str, str] = {
+    "charge": "Charge de cavalerie",          # 'Charge' seul = charge de cavalerie (évite confusion)
+    "vo voir le style": "Voir le style",      # artefact d'extraction PDF (fragment 'Vo' collé)
+}
+
+# Faux noms de techniques à IGNORER (sous-titres capturés à tort dans la police rouge).
+TECHNIQUES_IGNOREES: set[str] = {
+    "regle speciale",   # 'Règle spéciale' = sous-titre de description, pas une technique
+}
+
+
+def canonicaliser_technique(nom_base: str) -> str | None:
+    """Renvoie le nom d'affichage canonique d'une technique, ou None si à ignorer.
+    Applique TECHNIQUE_NOM_ALIASES et TECHNIQUES_IGNOREES (matching normalisé).
+    """
+    key = normalize(nom_base)
+    if key in TECHNIQUES_IGNOREES:
+        return None
+    return TECHNIQUE_NOM_ALIASES.get(key, nom_base)
+
+
 def parse_origine(nom: str) -> tuple[str, str]:
     nom = nom.strip()
     if nom.endswith("**"):
@@ -287,7 +310,11 @@ def main() -> None:
             seen_keys: set[str] = set()
             for t_raw in techniques_raw:
                 ref = parse_technique_ref(t_raw)
-                key = normalize(ref["nom_base"])
+                canon = canonicaliser_technique(ref["nom_base"])
+                if canon is None:
+                    continue  # technique ignorée (faux nom)
+                ref["nom_base"] = canon
+                key = normalize(canon)
                 ref["ref"] = key if key in techniques_db else None
                 ref["source"] = "csv"
                 techniques_enrichies.append(ref)
@@ -298,7 +325,11 @@ def main() -> None:
             enrichment = enrichissements.get(nom, {})
             for t_supp in enrichment.get("techniques_supplementaires", []):
                 ref = parse_technique_ref(t_supp)
-                key = normalize(ref["nom_base"])
+                canon = canonicaliser_technique(ref["nom_base"])
+                if canon is None:
+                    continue
+                ref["nom_base"] = canon
+                key = normalize(canon)
                 if key in seen_keys:
                     continue
                 ref["ref"] = key if key in techniques_db else None
@@ -366,7 +397,11 @@ def main() -> None:
         seen = set()
         for t_supp in enrichment.get("techniques_supplementaires", []):
             ref = parse_technique_ref(t_supp)
-            key = normalize(ref["nom_base"])
+            canon = canonicaliser_technique(ref["nom_base"])
+            if canon is None:
+                continue
+            ref["nom_base"] = canon
+            key = normalize(canon)
             if key in seen:
                 continue
             seen.add(key)

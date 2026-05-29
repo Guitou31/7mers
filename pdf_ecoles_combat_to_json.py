@@ -22,11 +22,15 @@ from csv_to_json import (
     split_nations,
     ajouter_nations_virtuelles,
     canonicaliser_nom_ecole,
+    canonicaliser_technique,
     CATEGORIE_TO_RESTRICTION,
     normalize,
     load_techniques_corrigees,
 )
 from armes_categories import extract_categories, format_arme_display
+
+# Écoles de combat à exclure totalement (en plus des doublons Spadassin).
+ECOLES_COMBAT_SUPPRIMEES = {"Rachecourt"}  # technique trop spécifique (sorcier Porté)
 
 PDF_COMBAT = Path(
     r"D:\Utilisateur\Guillaume\Bureau\JDR Papier\7ème Mer"
@@ -77,11 +81,15 @@ def transformer_ecole(nom: str, enrichment: dict, techniques_db: dict) -> dict:
         if key in seen or not nom_base:
             continue
         seen.add(key)
+        # Canonicalise (alias Charge→Charge de cavalerie, etc.) ou ignore (Règle spéciale).
+        canon = canonicaliser_technique(nom_base)
+        if canon is None:
+            continue
         # Résout la ref vers la base de techniques du docx (même mécanisme que Spadassin).
-        ref_key = normalize(nom_base)
+        ref_key = normalize(canon)
         ref = ref_key if ref_key in techniques_db else None
         techniques.append({
-            "nom_base": nom_base,
+            "nom_base": canon,
             "variante": variante,
             "ref": ref,
             "source": "pdf_combat",
@@ -122,13 +130,19 @@ def main() -> None:
     # 3. Filtrer les exclusions + transformer
     ecoles: list[dict] = []
     nb_exclues = 0
+    nb_supprimees = 0
     for nom_raw, enrichment in raw_ecoles.items():
         # Canonicalise le nom (pour le matching avec exclusions)
         nom_canon = canonicaliser_nom_ecole(nom_raw)
+        if nom_canon in ECOLES_COMBAT_SUPPRIMEES:
+            nb_supprimees += 1
+            continue
         if nom_canon in exclusions:
             nb_exclues += 1
             continue
         ecoles.append(transformer_ecole(nom_canon, enrichment, techniques_db))
+    if nb_supprimees:
+        print(f"  {nb_supprimees} école(s) supprimée(s) explicitement : {sorted(ECOLES_COMBAT_SUPPRIMEES)}")
 
     print(f"  → {len(ecoles)} écoles de combat retenues ({nb_exclues} exclues car déjà en Spadassin)")
 

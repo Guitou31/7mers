@@ -1,7 +1,7 @@
 {
   "_meta": {
     "source": "16 Ecoles de combat (16-11-14).pdf",
-    "nb_ecoles": 67,
+    "nb_ecoles": 66,
     "nb_exclues_deja_spadassin": 31,
     "nations_uniques": [
       "Avalon",
@@ -21,8 +21,8 @@
       "Escrime (Sabre)": 8,
       "Lances": 2,
       "Fouet": 1,
-      "Couteau": 9,
-      "Escrime (Rapière)": 6,
+      "Couteau": 8,
+      "Escrime (Rapière)": 5,
       "Pugilat": 4,
       "Escrime (Épée)": 2,
       "Boucliers": 1,
@@ -32,7 +32,7 @@
     },
     "repartition_restrictions": {
       "libre": 35,
-      "limitee": 16,
+      "limitee": 15,
       "interdite": 16
     },
     "armes_categories": [
@@ -518,9 +518,9 @@
           "source": "pdf_combat"
         },
         {
-          "nom_base": "Vo Voir le style",
+          "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -665,9 +665,9 @@
       "description_courte": "L’élève passe trois années complètes en formation. Durant les premiers mois, il essaie diverses montures puis son tuteur décide de celle qui lui convient le mieux. Celle-ci ne le quittera plus durant ",
       "techniques_combat": [
         {
-          "nom_base": "Charge",
+          "nom_base": "Charge de cavalerie",
           "variante": null,
-          "ref": null,
+          "ref": "charge de cavalerie",
           "source": "pdf_combat"
         },
         {
@@ -1098,9 +1098,9 @@
           "source": "pdf_combat"
         },
         {
-          "nom_base": "Charge",
+          "nom_base": "Charge de cavalerie",
           "variante": null,
-          "ref": null,
+          "ref": "charge de cavalerie",
           "source": "pdf_combat"
         },
         {
@@ -1947,9 +1947,9 @@
           "source": "pdf_combat"
         },
         {
-          "nom_base": "Charge",
+          "nom_base": "Charge de cavalerie",
           "variante": null,
-          "ref": null,
+          "ref": "charge de cavalerie",
           "source": "pdf_combat"
         },
         {
@@ -2027,7 +2027,7 @@
         {
           "nom_base": "Camouflage",
           "variante": null,
-          "ref": null,
+          "ref": "camouflage",
           "source": "pdf_combat"
         },
         {
@@ -2039,7 +2039,7 @@
         {
           "nom_base": "Observateur",
           "variante": null,
-          "ref": null,
+          "ref": "observateur",
           "source": "pdf_combat"
         },
         {
@@ -2459,13 +2459,13 @@
         {
           "nom_base": "Coup de pied sauté",
           "variante": null,
-          "ref": null,
+          "ref": "coup de pied saute",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Enchaînement",
           "variante": null,
-          "ref": null,
+          "ref": "enchainement",
           "source": "pdf_combat"
         },
         {
@@ -2632,7 +2632,7 @@
         {
           "nom_base": "Détourner l’attention",
           "variante": null,
-          "ref": null,
+          "ref": "detourner l'attention",
           "source": "pdf_combat"
         },
         {
@@ -2707,7 +2707,7 @@
         {
           "nom_base": "Coup bas",
           "variante": null,
-          "ref": null,
+          "ref": "coup bas",
           "source": "pdf_combat"
         },
         {
@@ -3400,7 +3400,7 @@
         {
           "nom_base": "Garrotter",
           "variante": null,
-          "ref": null,
+          "ref": "garrotter",
           "source": "pdf_combat"
         },
         {
@@ -3973,96 +3973,6 @@
       "genre_restriction": null
     },
     {
-      "nom": "Rachecourt",
-      "origine": "officielle",
-      "nations": [
-        "Montaigne"
-      ],
-      "arme": "Rapière et main gauche",
-      "arme_display": "Rapière et main gauche (Couteau)",
-      "armes_categories": [
-        "Escrime (Rapière)",
-        "Couteau"
-      ],
-      "specialisations": [
-        "Couteau",
-        "Escrime. De plus",
-        "le spadassin doit au moins  être un sorcier Porté demi-sang"
-      ],
-      "description_courte": "La famille Praisse de Rachecourt a dans ses rangs certains des sorciers Porté les plus puissants de toute la Montaigne. Malgré tout, jusqu’à il y a peu de temps, ils hésitaient à utiliser leurs pouvoi",
-      "techniques_combat": [
-        {
-          "nom_base": "Exploiter les faiblesses",
-          "variante": "Escrime",
-          "ref": "exploiter les faiblesses",
-          "source": "pdf_combat"
-        },
-        {
-          "nom_base": "Fente en avant",
-          "variante": null,
-          "ref": "fente en avant",
-          "source": "pdf_combat"
-        },
-        {
-          "nom_base": "Marquer",
-          "variante": null,
-          "ref": "marquer",
-          "source": "pdf_combat"
-        },
-        {
-          "nom_base": "Poche",
-          "variante": "Porté",
-          "ref": null,
-          "source": "pdf_combat"
-        },
-        {
-          "nom_base": "Voir le style",
-          "variante": null,
-          "ref": "voir le style",
-          "source": "pdf_combat"
-        }
-      ],
-      "avantages_courts": {
-        "apprenti": "",
-        "compagnon": "",
-        "maitre": ""
-      },
-      "details": {
-        "origine_texte": "Montaigne.",
-        "academies": "Uniquement au sein de la famille Rachecourt.",
-        "description_longue": [
-          "La famille Praisse de Rachecourt a dans ses rangs certains des sorciers Porté les plus puissants de toute la Montaigne. Malgré tout, jusqu’à il y a peu de temps, ils hésitaient à utiliser leurs pouvoirs en raison des interdictions de l’Église et durent trouver d’autres moyens pour se défendre. Un Rachecourt en particulier, Aymeric, était un grand spadassin de l’École Valroux. Quand Léon monta sur le trône et déclara la sorcellerie Porté comme légale et publique, Aymeric, alors en ambassade près des cardinaux de Numa, déclara qu’il était sorcier.",
-          "Mal lui en prit, car aussitôt l’Inquisition voulut faire un exemple en arrêtant ce sorcier Porté qui se trouvait si opportunément dans la cité sainte. Aymeric utilisa alors une combinaison de sorcellerie Porté et d’escrime pour vaincre ses adversaires, en ouvrant de petites ouvertures Porté, en se cachant derrière ces ouvertures et en y faisant pénétrer les épées ennemies. Les témoins affirmèrent que pendant la bataille, la lame d’Aymeric semblait pénétrer dans ces trous Porté pour ressortir derrière les inquisiteurs et s’enfoncer dans leurs dos. De plus, le champ de bataille était dans un grand désordre, avec des trous Porté qui dégoulinèrent de sang pendant presque une heure après l’affrontement.",
-          "Après cet événement, Aymeric enseigna sa technique à quelques membres de sa famille, y compris quelques demi-sang avant qu’un assassin ne le tue pendant son sommeil (bien entendu, l’Inquisition revendiqua cet assassinat comme un acte de justice).",
-          "La faiblesse de cette École réside dans la mise en place des trous Porté. Pendant ce temps, le spadassin Rachecourt doit surtout esquiver les attaques de ses ennemis tout en les provoquant verbalement afin de les déconcentrer, ce qui est loin d’être une position confortable !",
-          "Sauf indications contraires, les trous Porté durent jusqu’à la fin du round où ils ont été ouverts."
-        ],
-        "armes_pdf": "Rapière et main gauche",
-        "specialisations_pdf": [
-          "Couteau",
-          "Escrime. De plus",
-          "le spadassin doit au moins  être un sorcier Porté demi-sang"
-        ],
-        "niveaux": {
-          "apprenti": {
-            "fluff": "Il apprend à combattre avec une rapière dans sa main droite et une dague dans l’autre. Avec ce couteau, il ouvre des fissures dans la structure de l’univers en utilisant ses capacités Porté.",
-            "regles": "Ainsi, il peut se défendre en emprisonnant les lames de ses ennemis dans ces failles. Ces ouvertures se referment rapidement, emprisonnant ces armes définitivement. De plus, il ne subit pas la pénalité de main non directrice pour l’utilisation de son couteau dans sa main gauche. Enfin, il peut utiliser sa technique de combat Poche à la place de sa compétence de Parade (Couteau). Cela lui permet de l’utiliser comme une défense active, bloquant alors les armes de ses adversaires."
-          },
-          "compagnon": {
-            "fluff": "Le spadassin apprend à utiliser ses fissures Porté pour se défendre efficacement contre les attaques adverses.",
-            "regles": "La technique de combat Poche (Porté) peut être utilisée comme défense active et passive contre les attaques de mêlée et de distance avec une augmentation gratuite. Ensuite, le compagnon Rachecourt a toujours une arme à sa disposition. Il apprend à créer un “fourreau Porté” dans lequel il glisse une rapière et un couteau de rechange. Ainsi, s’il est désarmé pendant le combat, il peut récupérer rapidement une arme. Pour cela, il dépense une action et s’empare de l’arme qu’il avait “dissimulée”."
-          },
-          "maitre": {
-            "fluff": "Le maître Rachecourt maîtrise maintenant parfaitement ses portails. Il peut attaquer avec sa rapière en passant par n’importe quelle fissure Porté et en ressortant par une autre.",
-            "regles": "En raison de la nature inattendue de ce type d’attaque, l’adversaire ne peut absolument pas utiliser de défense active. Toutefois, pour réussir une telle attaque et en raison des angles d’attaque difficiles à appréhender, le spadassin Rachecourt subit deux augmentations de malus sur son attaque. Mais l’inconvénient, c’est qu’une fois que ce passage est ouvert, l’adversaire peut également l’utiliser pour vous attaquer, car il reste ouvert toute la scène !"
-          }
-        }
-      },
-      "enrichie": true,
-      "restriction_creation": "limitee",
-      "genre_restriction": null
-    },
-    {
       "nom": "Rasmussen",
       "origine": "officielle",
       "nations": [
@@ -4584,9 +4494,9 @@
           "source": "pdf_combat"
         },
         {
-          "nom_base": "Charge",
+          "nom_base": "Charge de cavalerie",
           "variante": null,
-          "ref": null,
+          "ref": "charge de cavalerie",
           "source": "pdf_combat"
         },
         {
@@ -4861,12 +4771,6 @@
           "variante": null,
           "ref": "voir le style",
           "source": "pdf_combat"
-        },
-        {
-          "nom_base": "Règle spéciale",
-          "variante": null,
-          "ref": null,
-          "source": "pdf_combat"
         }
       ],
       "avantages_courts": {
@@ -4931,7 +4835,7 @@
         {
           "nom_base": "Coup de pied sauté",
           "variante": null,
-          "ref": null,
+          "ref": "coup de pied saute",
           "source": "pdf_combat"
         },
         {
@@ -5423,9 +5327,9 @@
       "description_courte": "Les Kosars sont parmi les meilleurs cavaliers de Théah, mais également des bandits impitoyables capables de raser une petite ville ussurane en moins d’une journée !",
       "techniques_combat": [
         {
-          "nom_base": "Charge",
+          "nom_base": "Charge de cavalerie",
           "variante": null,
-          "ref": null,
+          "ref": "charge de cavalerie",
           "source": "pdf_combat"
         },
         {

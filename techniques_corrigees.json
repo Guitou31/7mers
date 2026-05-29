@@ -1,7 +1,7 @@
 {
   "_meta": {
     "source": "Liste des Techniques de combat.docx",
-    "nb_techniques": 73,
+    "nb_techniques": 79,
     "categories": [
       "Techniques de combat à distance",
       "Techniques de spadassin avec animaux",
@@ -119,6 +119,15 @@
         "Skollvfesson",
         "Vipereus Morsus",
         "Winckler"
+      ],
+      "tables": []
+    },
+    "coup bas": {
+      "nom": "Coup bas",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Le spadassin qui utilise cette technique porte un coup bas à son adversaire, comme un coup de pied dans les parties génitales, une morsure à l’oreille ou au nez, une fourchette dans les yeux, l’arrachage des cheveux, le retournement des doigts, etc. Quoi qu’il en soit, s’il réussit son attaque en utilisant cette technique de combat, l’adversaire encaisse 0g1 de dommages (en ignorant l’armure) et voit tous ses ND et tous ses jets de dés augmentés de [niveau de la technique de combat Coup bas x3] jusqu’à la fin de la scène en raison de la douleur qu’il endure. Cette technique ne peut être utilisée qu’une fois pour un même combat et même adversaire.",
+      "ecoles_enseignant": [
+        "La Gouge"
       ],
       "tables": []
     },
@@ -932,6 +941,16 @@
       ],
       "tables": []
     },
+    "coup de pied saute": {
+      "nom": "Coup de pied sauté",
+      "categorie": "Techniques de spadassin à mains nues",
+      "description": "Cette technique de combat nécessite la dépense d’un autre dé d’action en plus de celui de l’action en cours, sans quoi vous ne pourrez pas effectuer cette action. Vous effectuez un violent bond vers le haut, en gardant la jambe repliée et en la détendant violemment dans le visage de votre adversaire. Pour cela, vous devez effectuer un coup visé au visage (+ 4 augmentations). Si vous réussissez, votre adversaire encaisse une blessure. De plus, vous lancez les dés de dommages comme d’habitude. Ensuite, la victime effectue un jet de Gaillardise avec un ND égal à votre résultat du jet d’attaque. Si ce jet est un échec, la victime est alors temporairement sonnée et perd toutes ses actions du round en cours. Si le jet est réussi, elle encaisse les dommages et peut continuer le combat. Si l’attaque est effectuée sans que la victime en soit consciente (embuscade, etc.), le jet d’attaque est de 2 augmentations au lieu de 4.",
+      "ecoles_enseignant": [
+        "Ki Kwanji",
+        "Tie Xiong Kung"
+      ],
+      "tables": []
+    },
     "esquive de projectiles": {
       "nom": "Esquive de projectiles",
       "categorie": "Techniques de spadassin à mains nues",
@@ -995,6 +1014,15 @@
       ],
       "tables": []
     },
+    "detourner l'attention": {
+      "nom": "Détourner l’attention",
+      "categorie": "Techniques de spadassin avec animaux",
+      "description": "À l’aide de cette technique de combat vous effectuez toute une série de passes d’arme, de coups d’estoc et de bottes pour attirer l’attention de votre adversaire et permettre ainsi à votre animal de porter instinctivement sa prochaine attaque contre un ND de défense passive réduit de [Rang dans cette technique x2], sans que votre adversaire ne puisse effectuer de défense active : il n’a pas remarqué les mouvements de votre allié animal.",
+      "ecoles_enseignant": [
+        "Kiriakin"
+      ],
+      "tables": []
+    },
     "meute": {
       "nom": "Meute",
       "categorie": "Techniques de spadassin avec animaux",
@@ -1020,6 +1048,15 @@
       "ecoles_enseignant": [],
       "tables": []
     },
+    "enchainement": {
+      "nom": "Enchaînement",
+      "categorie": "Techniques de spadassin d’assassinat",
+      "description": "Grâce à cette technique de combat, le personnage peut enchaîner une multitude de coups rapides sur son adversaire. Il peut ainsi enchaîner sur un dé d’action, [rang en Enchaînement] attaques avec le ND pour être touché de l’adversaire qui augmente de 5 par attaque après de la première. Les dommages sont également réduits de 1 dé lancé par attaque au-delà de la première (minimum 1g1). Les attaques possibles par enchaînement sont les suivantes : attaque (arts martiaux défensifs, arts martiaux offensifs, combat de rue, pugilat), coup de pied, coup de tête, direct ou uppercut.",
+      "ecoles_enseignant": [
+        "Ki Kwanji"
+      ],
+      "tables": []
+    },
     "erafler": {
       "nom": "Érafler",
       "categorie": "Techniques de spadassin d’assassinat",
@@ -1029,8 +1066,8 @@
       ],
       "tables": []
     },
-    "garotter": {
-      "nom": "Garotter",
+    "garrotter": {
+      "nom": "Garrotter",
       "categorie": "Techniques de spadassin d’assassinat",
       "description": "Cette technique de combat permet à un assassin de tuer sa cible dans un silence presque total. À cette fin, il utilise une lanière de cuir ou un fil de métal, se glisse silencieusement derrière sa proie, lui passe le fil autour du cou et l’étrangle. La victime ne peut alors ni crier (à cause du filin qui lui écrase la trachée), ni se défendre (l’assassin se gardant d’être trop proche de sa cible).Cette technique de combat ne peut être utilisée qu’après que le spadassin ait réussi un jet de Discrétion ou Déplacement silencieux (en bref, sa cible ne doit pas se rendre compte de ses intentions, sinon son attaque est vouée l’échec). Le garrotteur effectue ensuite son attaque en utilisant sa technique de combat Garrotter contre un ND diminué de 5 en raison du fait que sa victime ne s’y attend pas. Cette dernière n’a ensuite plus qu’une option, essayer d’échapper à la mort. Pour cela, elle doit réussir un jet de [Finesse + Contorsionnisme] ou [Gaillardise + Se dégager] contre un ND de [10 + (Technique de combat Garrotter de l’assassin x 5)]. Si elle n’y parvient pas, elle est victime des règles de noyade dès le deuxième round de combat Il vaudrait mieux qu’elle arrive à échapper à la prise de l’assassin très rapidement !",
       "ecoles_enseignant": [
@@ -1044,6 +1081,15 @@
       "description": "Cette technique de combat, après avoir réussi à saisir son adversaire, permet de noyer ce dernier dans n’importe quel récipient d’eau pouvant contenir son visage (et plus). Pour ce faire, le personnage usant de cette technique de combat doit avoir réussi un jet de Finesse + Noyer contre un ND égale à (Esprit de l’adversaire x 5). Une fois ce jet réussi, l’assassin a pu plonger son adversaire partiellement ou totalement dans l’eau. Évidemment, la victime peut tenter de se dégager comme pour une prise normale mais doit le faire avec un malus de 5 sur son ND. En outre, pour savoir si l’adversaire est noyé, il est nécessaire de se référer aux règles sur la noyade.",
       "ecoles_enseignant": [
         "Bahol"
+      ],
+      "tables": []
+    },
+    "camouflage": {
+      "nom": "Camouflage",
+      "categorie": "Techniques de combat à distance",
+      "description": "Devenu un professionnel de l’embuscade, un tireur de l’école Guzman peut gagner un bonus de |rang en Camouflage] augmentations gratuites sur tous ses jets d’opposition visant à surprendre un adversaire lorsqu’il doit effectuer un tir. Pour pouvoir bénéficier de ce bonus, il doit également bénéficier de temps pour s’installer, chaque quart d’heure lui permet d’accumuler une augmentation.\n\nExemple : Juan a une compétence de 5 en Camouflage, ce qui lui permet de bénéficier de 5 augmentations sur son jet de Finesse + Guet-apens afin de surprendre son adversaire. Mais il n’a bénéficié que d’une demi-heure de préparation, réduisant son bénéfice à 2 augmentations gratuites.\n\nÀ l’inverse, un tireur Guzman sait instinctivement où se placerait un adversaire qui voudrait faire feu sur lui ou un allié. Aussi, lorsqu’il doit effectuer un jet de surprise quand on cherche à lui tirer dessus, lui ou un allié proche il bénéficie de [rang en Camouflage] augmentations gratuites sur son jet.",
+      "ecoles_enseignant": [
+        "Guzman"
       ],
       "tables": []
     },
@@ -1064,6 +1110,15 @@
       "ecoles_enseignant": [
         "Cappuntina",
         "Necare"
+      ],
+      "tables": []
+    },
+    "observateur": {
+      "nom": "Observateur",
+      "categorie": "Techniques de combat à distance",
+      "description": "Afin d’améliorer encore la précision du tir, les hommes de Guzman ont pris l’habitude de travailler en binôme : l’un équipé du mousquet de précision Guzman, l’autre d’une longue-vue et de plusieurs appareils de mesure (sens et vitesse du vent, hygrométrie, etc.). Ce dernier observe les cibles potentielles et donnent toutes les indications qui pourraient s’avérer utile au tireur, lui permettant d’optimiser son tir. En termes pratiques, l’observateur permet au tireur de bénéficier de [rang dans sa technique de combat Observateur] dés lancés non gardés sur son jet de tir.",
+      "ecoles_enseignant": [
+        "Guzman"
       ],
       "tables": []
     },
