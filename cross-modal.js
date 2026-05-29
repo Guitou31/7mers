@@ -325,13 +325,29 @@
     const cats = m.categories || [];
     container.appendChild(el("div", { class: "detail-header" }, [
       el("h2", { id: "cross-modal-title" }, m.nom),
-      el("div", { class: "badges" }, cats.map(c => el("span", { class: "badge nation" }, c))),
+      el("div", { class: "badges" }, [
+        ...cats.map(c => el("span", { class: "badge nation" }, c)),
+        m.restriction_type === "nationalite"
+          ? el("span", { class: "badge restriction-nationalite" }, "🌍 Restriction de Nationalité")
+          : m.restriction_type === "societe"
+            ? el("span", { class: "badge restriction-societe" }, "🛡 Restriction de Société")
+            : null,
+      ]),
     ]));
 
+    // Encart de restriction (texte explicite)
+    if (m.restriction_texte) {
+      container.appendChild(el("div", { class: "detail-banner banner-restriction" }, [
+        el("strong", null, "Condition d'accès : "),
+        el("span", null, m.restriction_texte),
+      ]));
+    }
+
     if (m.description) {
+      const paras = m.description.split(/\n{2,}/).filter(Boolean);
       container.appendChild(el("div", { class: "detail-section" }, [
         el("h3", null, "Description"),
-        el("p", { class: "description-paragraph" }, m.description),
+        ...paras.map(p => el("p", { class: "description-paragraph" }, p)),
       ]));
     }
 

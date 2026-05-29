@@ -2,7 +2,7 @@
 window.METIERS_DATA = {
   "_meta": {
     "source": "04 Métiers (15-11-14).pdf",
-    "nb_metiers": 108,
+    "nb_metiers": 105,
     "categories": [
       "Métiers de Police",
       "Métiers de Serviteurs",
@@ -41,7 +41,9 @@ window.METIERS_DATA = {
         "Tour de force"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Alchimiste",
@@ -66,7 +68,9 @@ window.METIERS_DATA = {
         "Souffleur de verre"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Antiquaire",
@@ -88,7 +92,9 @@ window.METIERS_DATA = {
         "Occultisme"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Apothicaire",
@@ -113,7 +119,9 @@ window.METIERS_DATA = {
         "Souffleur de verre"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Appréciateur",
@@ -138,7 +146,9 @@ window.METIERS_DATA = {
         "Sincérité et une compétence de base d’Artisan au choix"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Armateur",
@@ -166,7 +176,9 @@ window.METIERS_DATA = {
         "Sens des affaires"
       ],
       "reputation": "Rang social : +2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Arnaqueur",
@@ -197,7 +209,9 @@ window.METIERS_DATA = {
         "Tricher"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Artisan",
@@ -286,7 +300,9 @@ window.METIERS_DATA = {
         "Soulever"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Artiste",
@@ -311,7 +327,9 @@ window.METIERS_DATA = {
         "Papetier ou Tailleur de pierre) en fonction de la compétence de base principale"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Assassin",
@@ -337,7 +355,9 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "reputation": "Moralité : -2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Avoué",
@@ -362,7 +382,9 @@ window.METIERS_DATA = {
         "Recherches"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Bagnard",
@@ -386,7 +408,9 @@ window.METIERS_DATA = {
         "Lire sur les lèvres"
       ],
       "reputation": "Moralité : -2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Bateleur",
@@ -419,7 +443,9 @@ window.METIERS_DATA = {
         "Spectacle de rue"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Batelier",
@@ -447,7 +473,9 @@ window.METIERS_DATA = {
         "Qui-vive"
       ],
       "reputation": "Rang social : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Bourreau",
@@ -472,7 +500,9 @@ window.METIERS_DATA = {
         "Qui-vive"
       ],
       "reputation": "Moralité : -2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Bûcheron",
@@ -498,7 +528,9 @@ window.METIERS_DATA = {
         "Survie"
       ],
       "reputation": "Rang social : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Cambrioleur",
@@ -522,7 +554,9 @@ window.METIERS_DATA = {
         "Serrurier"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Cartographe",
@@ -548,7 +582,9 @@ window.METIERS_DATA = {
         "Sens de l’orientation"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Chasseur",
@@ -574,7 +610,9 @@ window.METIERS_DATA = {
         "Tanner"
       ],
       "reputation": "Rang social : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Chasseur de primes",
@@ -601,7 +639,9 @@ window.METIERS_DATA = {
         "Qui-vive"
       ],
       "reputation": "Réputation martiale : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Chroniqueur",
@@ -630,7 +670,9 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Cocher",
@@ -657,7 +699,9 @@ window.METIERS_DATA = {
         "Soin des chevaux"
       ],
       "reputation": "Rang social : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Collecteur d’impôts",
@@ -681,7 +725,9 @@ window.METIERS_DATA = {
         "Numismatique"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Colporteur",
@@ -709,7 +755,9 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Comédien",
@@ -737,7 +785,9 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Commandement",
@@ -768,7 +818,9 @@ window.METIERS_DATA = {
         "Qui- vive"
       ],
       "reputation": "Réputation martiale : +2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Contrebandier",
@@ -798,7 +850,9 @@ window.METIERS_DATA = {
         "Qui-vive"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Courtisan",
@@ -828,7 +882,9 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "reputation": "Rang social : +2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Détrousseur",
@@ -852,7 +908,9 @@ window.METIERS_DATA = {
         "Qui-vive"
       ],
       "reputation": "Moralité : -2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Diplomate",
@@ -880,7 +938,9 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "reputation": "Rang social : +2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Domestique",
@@ -911,7 +971,9 @@ window.METIERS_DATA = {
         "Valet"
       ],
       "reputation": "Rang social : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Éclaireur",
@@ -941,7 +1003,9 @@ window.METIERS_DATA = {
         "Survie"
       ],
       "reputation": "Réputation martiale : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Érudit",
@@ -975,7 +1039,9 @@ window.METIERS_DATA = {
         "Théologie"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Escamoteur",
@@ -1002,7 +1068,9 @@ window.METIERS_DATA = {
         "Sauter"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Espion",
@@ -1033,7 +1101,9 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Estudiant",
@@ -1062,7 +1132,9 @@ window.METIERS_DATA = {
         "Théologie"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Explorateur",
@@ -1091,7 +1163,9 @@ window.METIERS_DATA = {
         "Survie"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Faussaire",
@@ -1117,7 +1191,9 @@ window.METIERS_DATA = {
         "Papetier"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Fouineur",
@@ -1147,7 +1223,9 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "reputation": "Moralité +2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Fournisseur de drogues",
@@ -1172,7 +1250,9 @@ window.METIERS_DATA = {
         "Qui-vive"
       ],
       "reputation": "Moralité : -2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Galérien",
@@ -1195,7 +1275,9 @@ window.METIERS_DATA = {
         "Soulever"
       ],
       "reputation": "Moralité : -2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Galopin",
@@ -1219,7 +1301,9 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Garde",
@@ -1245,7 +1329,9 @@ window.METIERS_DATA = {
         "Ordre serré"
       ],
       "reputation": "Réputation martiale : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Garde du corps",
@@ -1270,7 +1356,9 @@ window.METIERS_DATA = {
         "Orientation citadine (cité)"
       ],
       "reputation": "Réputation martiale : +2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Gérant de comptoir",
@@ -1297,7 +1385,9 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Guérillero",
@@ -1322,7 +1412,9 @@ window.METIERS_DATA = {
         "Tactique"
       ],
       "reputation": "Réputation martiale : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Guide",
@@ -1352,7 +1444,9 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "reputation": "Rang social : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Herboriste",
@@ -1376,7 +1470,9 @@ window.METIERS_DATA = {
         "Vétérinaire"
       ],
       "reputation": "Moralité : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Hors-la-loi",
@@ -1405,7 +1501,9 @@ window.METIERS_DATA = {
         "Survie"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Incendiaire",
@@ -1428,7 +1526,9 @@ window.METIERS_DATA = {
         "Sciences de la nature"
       ],
       "reputation": "Moralité : -2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Ingénieur",
@@ -1457,7 +1557,9 @@ window.METIERS_DATA = {
         "Sciences de la nature"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Intendant",
@@ -1488,7 +1590,9 @@ window.METIERS_DATA = {
         "Sens des affaires"
       ],
       "reputation": "Rang social : +2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Jenny",
@@ -1515,7 +1619,9 @@ window.METIERS_DATA = {
         "Masseur"
       ],
       "reputation": "Moralité : -2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Juge d’armes",
@@ -1542,7 +1648,9 @@ window.METIERS_DATA = {
         "Politique"
       ],
       "reputation": "Rang social : +2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Maistrance",
@@ -1570,7 +1678,9 @@ window.METIERS_DATA = {
         "Tactique"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Malandrin",
@@ -1595,7 +1705,9 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Marchand",
@@ -1623,7 +1735,9 @@ window.METIERS_DATA = {
         "Sens des affaires"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Marin",
@@ -1652,7 +1766,9 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Marine",
@@ -1677,7 +1793,9 @@ window.METIERS_DATA = {
         "Nager"
       ],
       "reputation": "Réputation martiale : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Médecin",
@@ -1703,7 +1821,9 @@ window.METIERS_DATA = {
         "Vétérinaire"
       ],
       "reputation": "Moralité : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Mendiant",
@@ -1729,7 +1849,9 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Missionnaire",
@@ -1754,7 +1876,9 @@ window.METIERS_DATA = {
         "Théologie"
       ],
       "reputation": "Moralité : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Moine",
@@ -1780,7 +1904,9 @@ window.METIERS_DATA = {
         "et une compétence de base d’Artisan au choix"
       ],
       "reputation": "Moralité : +2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Monte-en-l’air",
@@ -1806,7 +1932,9 @@ window.METIERS_DATA = {
         "Sauter"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Navigateur",
@@ -1832,7 +1960,9 @@ window.METIERS_DATA = {
         "Piloter"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Palefrenier",
@@ -1857,7 +1987,9 @@ window.METIERS_DATA = {
         "Soulever"
       ],
       "reputation": "Rang social : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Paysan",
@@ -1883,7 +2015,9 @@ window.METIERS_DATA = {
         "Soulever et une compétence de base d’Artisan au choix"
       ],
       "reputation": "Rang social : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Pêcheur",
@@ -1907,7 +2041,9 @@ window.METIERS_DATA = {
         "Soulever"
       ],
       "reputation": "Rang social : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Piqueux",
@@ -1933,7 +2069,9 @@ window.METIERS_DATA = {
         "Sifflet"
       ],
       "reputation": "Réputation martiale : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Précepteur",
@@ -1958,7 +2096,9 @@ window.METIERS_DATA = {
         "Mode"
       ],
       "reputation": "Rang social : +2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Prêtre",
@@ -1984,7 +2124,9 @@ window.METIERS_DATA = {
         "Premiers secours"
       ],
       "reputation": "Moralité : +2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Professeur",
@@ -2013,7 +2155,9 @@ window.METIERS_DATA = {
         "Théologie"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Prospecteur",
@@ -2038,7 +2182,9 @@ window.METIERS_DATA = {
         "Sciences de la nature"
       ],
       "reputation": "Rang social : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Racketteur",
@@ -2062,7 +2208,9 @@ window.METIERS_DATA = {
         "Orientation citadine (cité)"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Receleur",
@@ -2085,7 +2233,9 @@ window.METIERS_DATA = {
         "Sens des affaires"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Recruteur",
@@ -2108,7 +2258,9 @@ window.METIERS_DATA = {
         "Séduction"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Soldat",
@@ -2133,7 +2285,9 @@ window.METIERS_DATA = {
         "Valet"
       ],
       "reputation": "Réputation martiale : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Souteneur",
@@ -2157,7 +2311,9 @@ window.METIERS_DATA = {
         "Orientation citadine (cité)"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Veneur",
@@ -2183,18 +2339,20 @@ window.METIERS_DATA = {
         "Soins des animaux (au choix)"
       ],
       "reputation": "Rang social : +1 Ces métiers sont limités à des groupes culturels rares ou éloignés de la zone de jeu habituelle (Empire du Croissant ou Cathay). Ils nécessitent donc l’autorisation du MJ pour être choisis par un joueur.",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Baleinier",
       "categories": [
         "Métiers de la Mer"
       ],
-      "description": "Sur Théah, les baleiniers éprouvent les pires difficultés à exercer leur métier. Les baleines sont protégées par les terribles léviathans, qui attaquent non seulement tous ceux qui font du mal à une baleine, mais aussi les navires imprégnés de l’odeur du sang de baleine. Les baleiniers sont généralement très costauds, n’ont peur de rien et constituent de redoutables nageurs.",
+      "description": "Sur Théah, les baleiniers éprouvent les pires difficultés à exercer leur métier. Les baleines sont protégées par les terribles léviathans, qui attaquent non seulement tous ceux qui font du mal à une baleine, mais aussi les navires imprégnés de l’odeur du sang de baleine. Les baleiniers sont généralement très costauds, n’ont peur de rien et constituent de redoutables nageurs.\n\nDu côté de la mer Atabéenne, toute la faune marine est plus monstrueuse et terrifiante que la normale. Poissons et autres créatures maritimes d'ordinaire paisibles sont plus grands et généralement plus agressifs. Les prédateurs que produit cet océan sont d'une taille obscène, dotés de gueules, de pics et de tentacules capables de briser un homme adulte comme un rien, voire de tirer des vaisseaux entiers dans les profondeurs. Parmi les Rahuris, les pêcheurs et les marins sont très respectés et honorés en tant que puissants guerriers et pourvoyeurs. Quiconque choisit de prendre la Mer pour y chasser des monstres exécute la volonté des dieux.",
       "competences_base": [
-        "Connaissance des nœuds",
         "Équilibre",
-        "Estomac"
+        "Estomac",
+        "Lancer (Lance)"
       ],
       "competences_avancees": [
         "Connaissance de la mer",
@@ -2203,10 +2361,14 @@ window.METIERS_DATA = {
         "Perception du temps",
         "Poison",
         "Sauter",
-        "Survie"
+        "Survie",
+        "Connaissance des nœuds",
+        "Attaque (Lance)"
       ],
       "reputation": "Réputation martiale : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "nationalite",
+      "restriction_texte": "Être de nationalité Vesten ou Rahuri (Nations Pirates)."
     },
     {
       "nom": "Barde",
@@ -2234,7 +2396,9 @@ window.METIERS_DATA = {
         "Séduction"
       ],
       "reputation": "Rang social : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "nationalite",
+      "restriction_texte": "Être de nationalité avalonienne, inish ou highlander."
     },
     {
       "nom": "Bonne aventure",
@@ -2262,7 +2426,9 @@ window.METIERS_DATA = {
         "Autre (préciser)"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "nationalite",
+      "restriction_texte": "Être de nationalité cathayane, ou appartenir au peuple des Fidhelis (Sarmatie ou Ussura)."
     },
     {
       "nom": "Cao Yao (Acupuncteur)",
@@ -2284,7 +2450,9 @@ window.METIERS_DATA = {
         "Qui-vive"
       ],
       "reputation": "Moralité : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "nationalite",
+      "restriction_texte": "Être de nationalité cathayane."
     },
     {
       "nom": "Caravanier",
@@ -2313,7 +2481,9 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "nationalite",
+      "restriction_texte": "Être de nationalité cathayane, croissantine, sarmatienne ou ussurane."
     },
     {
       "nom": "Courtisane",
@@ -2345,7 +2515,9 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "reputation": "Rang social : +2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "nationalite",
+      "restriction_texte": "Être une femme, de nationalité vodacce ou croissantine."
     },
     {
       "nom": "Fauconnier",
@@ -2369,7 +2541,9 @@ window.METIERS_DATA = {
         "Tanner"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "nationalite",
+      "restriction_texte": "Être de nationalité ussurane, sarmatienne ou khazari (Cathay)."
     },
     {
       "nom": "Feng Shui Shi (Géomancien)",
@@ -2394,7 +2568,9 @@ window.METIERS_DATA = {
         "Théologie"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "nationalite",
+      "restriction_texte": "Être de nationalité cathayane."
     },
     {
       "nom": "Gitan",
@@ -2422,7 +2598,9 @@ window.METIERS_DATA = {
         "Spectacle de rue et une compétence de base d’Artisan au choix"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "nationalite",
+      "restriction_texte": "Appartenir au peuple des Fidhelis (Sarmatie ou Ussura)."
     },
     {
       "nom": "Guérisseur",
@@ -2444,7 +2622,9 @@ window.METIERS_DATA = {
         "Théologie"
       ],
       "reputation": "Moralité : +2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "nationalite",
+      "restriction_texte": "Être de nationalité rahuri, du Nouveau Monde ou des 1000 Nations."
     },
     {
       "nom": "Gwai Liao (Bureaucrate)",
@@ -2471,7 +2651,9 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "reputation": "Rang social : +2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "nationalite",
+      "restriction_texte": "Être de nationalité cathayane."
     },
     {
       "nom": "Rahib (Moine)",
@@ -2500,7 +2682,9 @@ window.METIERS_DATA = {
         "Théologie"
       ],
       "reputation": "Moralité : +2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "nationalite",
+      "restriction_texte": "Être de nationalité croissantine."
     },
     {
       "nom": "Shirbaz (magicien)",
@@ -2521,7 +2705,9 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "nationalite",
+      "restriction_texte": "Être de nationalité croissantine."
     },
     {
       "nom": "Skalde",
@@ -2547,7 +2733,9 @@ window.METIERS_DATA = {
         "Théologie"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "nationalite",
+      "restriction_texte": "Être de nationalité vesten."
     },
     {
       "nom": "Torero",
@@ -2574,7 +2762,9 @@ window.METIERS_DATA = {
         "Soin des animaux (bovins)"
       ],
       "reputation": "Réputation martiale : +1 Ces métiers sont réservées aux membres de certaines organisations secrètes, ou au moins très discrètes.",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "nationalite",
+      "restriction_texte": "Être de nationalité castillane."
     },
     {
       "nom": "Acolyte",
@@ -2600,7 +2790,9 @@ window.METIERS_DATA = {
         "Valet"
       ],
       "reputation": "Moralité : -1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "societe",
+      "restriction_texte": "Faire partie de la Société Secrète des Kreuzritter."
     },
     {
       "nom": "Archéologue",
@@ -2626,7 +2818,9 @@ window.METIERS_DATA = {
         "Sens de l’orientation"
       ],
       "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "societe",
+      "restriction_texte": "Faire partie de la Société des Explorateurs."
     },
     {
       "nom": "Artificier",
@@ -2650,7 +2844,9 @@ window.METIERS_DATA = {
         "Soulever"
       ],
       "reputation": "Réputation martiale : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Cadet",
@@ -2678,32 +2874,9 @@ window.METIERS_DATA = {
         "Soin des chevaux"
       ],
       "reputation": "Réputation martiale : +1",
-      "restriction_creation": "libre"
-    },
-    {
-      "nom": "Conférencier",
-      "categories": [
-        "Métiers d’Orateurs"
-      ],
-      "description": "Les conférenciers sillonnent les îles d’Émeraude afin de présenter les découvertes de la Société des Aventuriers de Luthon et d’éduquer la population quant aux merveilles du monde. Il leur arrive également souvent de se rendre à l’étranger lorsqu’ils sont invités à présenter les découvertes de leur organisation. Nombre d’entre eux sont d’anciens explorateurs ou des universitaires que la prise de parole en public n’effraye pas.",
-      "competences_base": [
-        "Éloquence",
-        "Narrer",
-        "Recherches"
-      ],
-      "competences_avancees": [
-        "Agitation",
-        "Comédie",
-        "Compère",
-        "Comportementalisme",
-        "Connaissance des routes (nation)",
-        "Diplomatie",
-        "Géographie",
-        "Histoire",
-        "Sincérité"
-      ],
-      "reputation": "Rang social : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Dilettante",
@@ -2724,7 +2897,9 @@ window.METIERS_DATA = {
         "Recherches et deux compétences au choix"
       ],
       "reputation": "Rang social : +2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "societe",
+      "restriction_texte": "Être d'origine noble."
     },
     {
       "nom": "Légionnaire",
@@ -2753,7 +2928,9 @@ window.METIERS_DATA = {
         "Tactique"
       ],
       "reputation": "Réputation martiale : +1",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "nationalite",
+      "restriction_texte": "Être originaire de La Numa (Nations Pirates)."
     },
     {
       "nom": "Pauvre Chevalier",
@@ -2784,32 +2961,9 @@ window.METIERS_DATA = {
         "Tonnelier"
       ],
       "reputation": "Réputation martiale : +2 Ces métiers sont réservées à des personnages très expérimentés, donc à priori, pas des personnages-joueurs débutants. Quant aux métiers Aérostier et Politicien, ils n’existent pas au moment de la création de personnage, que ce soit en 1656 ou en 1668. Ils ne seront donc proposés aux joueurs qu’à la discrétion du MJ.",
-      "restriction_creation": "libre"
-    },
-    {
-      "nom": "Aérostier",
-      "categories": [
-        "Métiers des Belles Lettres"
-      ],
-      "description": "Très peu de gens ont appris ce métier. Ce sont des inventeurs et des bricoleurs qui ont réussi à mettre au point des ballons, des montgolfières ou des dirigeables. Ce métier permet de les mettre en œuvre et de les manœuvrer pour arriver à bon port.",
-      "competences_base": [
-        "Gonflage",
-        "Maintenance",
-        "Piloter"
-      ],
-      "competences_avancees": [
-        "Amortir une chute",
-        "Bricoleur",
-        "Cartographie",
-        "Connaissance des nœuds",
-        "Équilibre",
-        "Lancer",
-        "Perception du temps",
-        "Sens de l’orientation",
-        "Soulever"
-      ],
-      "reputation": "Rang social : +2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "societe",
+      "restriction_texte": "Faire partie de la Société Secrète des Chevaliers de la Rose et de la Croix."
     },
     {
       "nom": "Chevalier",
@@ -2838,7 +2992,9 @@ window.METIERS_DATA = {
         "Tactique"
       ],
       "reputation": "Réputation martiale : +3",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "societe",
+      "restriction_texte": "Être membre d'un Ordre de chevalerie ou mousquetaire de Montaigne."
     },
     {
       "nom": "Maître d’armes",
@@ -2868,7 +3024,9 @@ window.METIERS_DATA = {
         "Roulé-boulé"
       ],
       "reputation": "Réputation martiale : +3",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "societe",
+      "restriction_texte": "Être Maître dans au moins une école d'Escrime."
     },
     {
       "nom": "Politicien",
@@ -2892,7 +3050,9 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "reputation": "Rang social : +2",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "aucune",
+      "restriction_texte": ""
     },
     {
       "nom": "Rasoir",
@@ -2922,34 +3082,9 @@ window.METIERS_DATA = {
         "Tactique"
       ],
       "reputation": "Réputation martiale : +3",
-      "restriction_creation": "libre"
-    },
-    {
-      "nom": "Seigneur du crime",
-      "categories": [
-        "Métiers de la Maraude"
-      ],
-      "description": "Toute organisation humaine tend inexorablement à avoir un homme qui en prend la tête. Il est utopiste de croire qu’une organisation puisse être dirigée par tous ses membres de manière collégiale. Ainsi, même dans les bas-fonds, des hommes parviennent à devenir les leaders de la racaille. Imposant souvent leurs vues par la force, certains y parviennent par l’esprit, mais toujours grâce à la peur. Ils s’appuient généralement sur une organisation bien rôdée et des bras droits qui exécutent le sale boulot pour eux.",
-      "competences_base": [
-        "Commander",
-        "Connaissance des bas-fonds (cité)",
-        "Intimidation"
-      ],
-      "competences_avancees": [
-        "Agitation",
-        "Calcul",
-        "Contacts (cité)",
-        "Corruption",
-        "Droit",
-        "Éloquence",
-        "Estomac",
-        "Galvaniser",
-        "Guet-apens",
-        "Interrogatoire",
-        "Qui-vive"
-      ],
-      "reputation": "Moralité : -3",
-      "restriction_creation": "libre"
+      "restriction_creation": "libre",
+      "restriction_type": "societe",
+      "restriction_texte": "Être membre des Rasoirs."
     }
   ]
 };

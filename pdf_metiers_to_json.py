@@ -233,13 +233,126 @@ def parse_pdf(pdf_path: Path) -> list[dict]:
     return metiers
 
 
+# ============================================================
+# Overrides maison : restrictions, suppressions, modifications
+# ============================================================
+
+METIERS_SUPPRIMES = {"Conférencier", "Aérostier", "Seigneur du crime"}
+
+# Restrictions : (type_filtre, texte_affiché). type = 'nationalite' | 'societe'.
+METIERS_RESTRICTIONS: dict[str, tuple[str, str]] = {
+    # --- Nationalité ---
+    "Baleinier":              ("nationalite", "Être de nationalité Vesten ou Rahuri (Nations Pirates)."),
+    "Barde":                  ("nationalite", "Être de nationalité avalonienne, inish ou highlander."),
+    "Bonne aventure":         ("nationalite", "Être de nationalité cathayane, ou appartenir au peuple des Fidhelis (Sarmatie ou Ussura)."),
+    "Cao Yao (Acupuncteur)":  ("nationalite", "Être de nationalité cathayane."),
+    "Caravanier":             ("nationalite", "Être de nationalité cathayane, croissantine, sarmatienne ou ussurane."),
+    "Courtisane":             ("nationalite", "Être une femme, de nationalité vodacce ou croissantine."),
+    "Fauconnier":             ("nationalite", "Être de nationalité ussurane, sarmatienne ou khazari (Cathay)."),
+    "Feng Shui Shi (Géomancien)": ("nationalite", "Être de nationalité cathayane."),
+    "Gitan":                  ("nationalite", "Appartenir au peuple des Fidhelis (Sarmatie ou Ussura)."),
+    "Guérisseur":             ("nationalite", "Être de nationalité rahuri, du Nouveau Monde ou des 1000 Nations."),
+    "Gwai Liao (Bureaucrate)": ("nationalite", "Être de nationalité cathayane."),
+    "Rahib (Moine)":          ("nationalite", "Être de nationalité croissantine."),
+    "Shirbaz (magicien)":     ("nationalite", "Être de nationalité croissantine."),
+    "Skalde":                 ("nationalite", "Être de nationalité vesten."),
+    "Torero":                 ("nationalite", "Être de nationalité castillane."),
+    "Légionnaire":            ("nationalite", "Être originaire de La Numa (Nations Pirates)."),
+    # --- Société / appartenance ---
+    "Acolyte":                ("societe", "Faire partie de la Société Secrète des Kreuzritter."),
+    "Archéologue":            ("societe", "Faire partie de la Société des Explorateurs."),
+    "Pauvre Chevalier":       ("societe", "Faire partie de la Société Secrète des Chevaliers de la Rose et de la Croix."),
+    "Rasoir":                 ("societe", "Être membre des Rasoirs."),
+    "Chevalier":              ("societe", "Être membre d'un Ordre de chevalerie ou mousquetaire de Montaigne."),
+    "Dilettante":             ("societe", "Être d'origine noble."),
+    "Maître d’armes":         ("societe", "Être Maître dans au moins une école d'Escrime."),
+}
+
+PARAGRAPHE_BALEINIER = (
+    "Du côté de la mer Atabéenne, toute la faune marine est plus monstrueuse et "
+    "terrifiante que la normale. Poissons et autres créatures maritimes d'ordinaire "
+    "paisibles sont plus grands et généralement plus agressifs. Les prédateurs que "
+    "produit cet océan sont d'une taille obscène, dotés de gueules, de pics et de "
+    "tentacules capables de briser un homme adulte comme un rien, voire de tirer des "
+    "vaisseaux entiers dans les profondeurs. Parmi les Rahuris, les pêcheurs et les "
+    "marins sont très respectés et honorés en tant que puissants guerriers et "
+    "pourvoyeurs. Quiconque choisit de prendre la Mer pour y chasser des monstres "
+    "exécute la volonté des dieux."
+)
+
+
+def _nk(s: str) -> str:
+    """Clé de comparaison de nom : sans accents, minuscule, apostrophes normalisées."""
+    nfkd = unicodedata.normalize("NFKD", s or "")
+    no_acc = "".join(c for c in nfkd if not unicodedata.combining(c))
+    return re.sub(r"\s+", " ", no_acc.lower().replace("’", "'").replace("‘", "'")).strip()
+
+
+def appliquer_overrides(metiers: list[dict]) -> list[dict]:
+    """Applique suppressions, restrictions et modifications maison après parsing."""
+    supprimes = {_nk(s) for s in METIERS_SUPPRIMES}
+    restrictions = {_nk(k): v for k, v in METIERS_RESTRICTIONS.items()}
+    vus_restriction: set[str] = set()
+    vus_suppression: set[str] = set()
+
+    result: list[dict] = []
+    for m in metiers:
+        nk = _nk(m["nom"])
+        if nk in supprimes:
+            vus_suppression.add(nk)
+            continue
+        if nk in restrictions:
+            rtype, rtexte = restrictions[nk]
+            m["restriction_type"] = rtype
+            m["restriction_texte"] = rtexte
+            vus_restriction.add(nk)
+        else:
+            m["restriction_type"] = "aucune"
+            m["restriction_texte"] = ""
+        result.append(m)
+
+    # Modifications spéciales : Baleinier
+    for m in result:
+        if _nk(m["nom"]) == _nk("Baleinier"):
+            desc = (m.get("description", "") or "").rstrip()
+            m["description"] = (desc + "\n\n" + PARAGRAPHE_BALEINIER).strip()
+            # Compétence de base : retirer "Connaissance des nœuds", ajouter "Lancer (Lance)"
+            base = [c for c in m.get("competences_base", []) if _nk(c) != _nk("Connaissance des nœuds")]
+            if not any(_nk(c) == _nk("Lancer (Lance)") for c in base):
+                base.append("Lancer (Lance)")
+            m["competences_base"] = base
+            # Compétences avancées : ajouter "Connaissance des nœuds" + "Attaque (Lance)"
+            av = list(m.get("competences_avancees", []))
+            if not any(_nk(c) == _nk("Connaissance des nœuds") for c in av):
+                av.append("Connaissance des nœuds")
+            if not any(_nk(c) == _nk("Attaque (Lance)") for c in av):
+                av.append("Attaque (Lance)")
+            m["competences_avancees"] = av
+
+    # Avertissements si une clé d'override n'a matché aucun métier (typo possible)
+    for k in restrictions:
+        if k not in vus_restriction:
+            print(f"  [!] Restriction non appliquée (métier introuvable) : '{k}'")
+    for s in supprimes:
+        if s not in vus_suppression:
+            print(f"  [!] Suppression non appliquée (métier introuvable) : '{s}'")
+
+    return result
+
+
 def main() -> None:
     print("Parsing PDF Métiers…")
     metiers = parse_pdf(SOURCE_PDF)
     print(f"  {len(metiers)} métiers extraits")
 
+    print("Application des overrides (restrictions, suppressions, Baleinier)…")
+    metiers = appliquer_overrides(metiers)
+    print(f"  {len(metiers)} métiers après suppressions")
+
     # Stats catégories (qui sont DANS chaque métier, pas en pré-passe)
     from collections import Counter
+    rest_count = Counter(m.get("restriction_type", "aucune") for m in metiers)
+    print(f"  Restrictions : {dict(rest_count)}")
     all_cats = Counter()
     for m in metiers:
         for cat in m.get("categories", []):

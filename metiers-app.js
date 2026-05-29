@@ -25,12 +25,22 @@
   }
   function compareFR(a, b) { return a.localeCompare(b, "fr", { sensitivity: "base" }); }
 
-  const state = { search: "", categories: new Set() };
+  const RESTRICTION_LABELS = {
+    nationalite: "Restriction de Nationalité",
+    societe: "Restriction de Société",
+    aucune: "Sans restrictions",
+  };
+
+  const state = { search: "", categories: new Set(), restrictions: new Set() };
 
   function matchMetier(m) {
     if (state.categories.size > 0) {
       const cats = m.categories || [];
       if (!cats.some(c => state.categories.has(c))) return false;
+    }
+    if (state.restrictions.size > 0) {
+      const r = m.restriction_type || "aucune";
+      if (!state.restrictions.has(r)) return false;
     }
     if (state.search) {
       const q = normalize(state.search);
@@ -44,6 +54,12 @@
   function renderCard(m) {
     const cats = m.categories || [];
     const nbComp = (m.competences_base || []).length + (m.competences_avancees || []).length;
+    const r = m.restriction_type || "aucune";
+    const restrictionBadge = r === "nationalite"
+      ? el("span", { class: "badge restriction-nationalite", title: m.restriction_texte || "" }, "🌍 Nationalité")
+      : r === "societe"
+        ? el("span", { class: "badge restriction-societe", title: m.restriction_texte || "" }, "🛡 Société")
+        : null;
     return el("li", {
       class: "ecole-card", tabindex: "0", role: "button",
       "aria-label": "Voir le détail du métier " + m.nom,
@@ -52,7 +68,10 @@
     }, [
       el("h2", null, m.nom),
       el("p", { class: "arme" }, nbComp + " compétences"),
-      el("div", { class: "badges" }, cats.map(c => el("span", { class: "badge nation" }, c.replace("Métiers ", "")))),
+      el("div", { class: "badges" }, [
+        ...cats.map(c => el("span", { class: "badge nation" }, c.replace("Métiers ", ""))),
+        restrictionBadge,
+      ]),
     ]);
   }
 
@@ -70,7 +89,7 @@
       for (const m of filtered) frag.appendChild(renderCard(m));
       grid.appendChild(frag);
     }
-    const t = state.categories.size + (state.search ? 1 : 0);
+    const t = state.categories.size + state.restrictions.size + (state.search ? 1 : 0);
     const counter = document.getElementById("filters-active-count");
     if (t > 0) { counter.textContent = t; counter.hidden = false; } else counter.hidden = true;
   }
@@ -97,6 +116,30 @@
     }
   }
 
+  function buildRestrictionsFilter() {
+    const container = document.getElementById("filter-restrictions");
+    const counts = {};
+    for (const m of data.metiers) {
+      const r = m.restriction_type || "aucune";
+      counts[r] = (counts[r] || 0) + 1;
+    }
+    // Ordre voulu : Nationalité, Société, Sans restrictions
+    for (const r of ["nationalite", "societe", "aucune"]) {
+      if (!counts[r]) continue;
+      const cb = el("input", {
+        type: "checkbox", value: r,
+        onchange: (e) => {
+          if (e.target.checked) state.restrictions.add(r); else state.restrictions.delete(r);
+          renderGrid();
+        },
+      });
+      container.appendChild(el("label", null, [
+        cb, el("span", null, RESTRICTION_LABELS[r]),
+        el("span", { class: "count" }, "(" + counts[r] + ")"),
+      ]));
+    }
+  }
+
   function wireEvents() {
     const search = document.getElementById("search");
     let timer = null;
@@ -105,7 +148,7 @@
       timer = setTimeout(() => { state.search = e.target.value.trim(); renderGrid(); }, 120);
     });
     document.getElementById("reset-filters").addEventListener("click", () => {
-      state.search = ""; state.categories.clear();
+      state.search = ""; state.categories.clear(); state.restrictions.clear();
       document.getElementById("search").value = "";
       document.querySelectorAll(".checkbox-list input[type=checkbox]").forEach(c => (c.checked = false));
       renderGrid();
@@ -119,6 +162,7 @@
   }
 
   buildCategoriesFilter();
+  buildRestrictionsFilter();
   wireEvents();
   renderGrid();
 })();

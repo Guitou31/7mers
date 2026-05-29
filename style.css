@@ -460,6 +460,16 @@ p { margin: 0 0 0.6em; }
   border-left-color: #8b3a8b;
   color: #4a204a;
 }
+.banner-restriction {
+  background: #e6ddc4;
+  border-color: #b89a50;
+  border-left-color: #8a6a20;
+  color: #4a3a10;
+}
+
+/* Badges de restriction métier */
+.badge.restriction-nationalite { background: #cfe0d0; color: #2c4a30; border-color: #8fb595; }
+.badge.restriction-societe { background: #d0d4ec; color: #2c2c5a; border-color: #9098cc; }
 
 .niveau-bloc {
   margin-bottom: 1.2rem;
