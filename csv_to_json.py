@@ -42,6 +42,20 @@ ECOLE_NAME_REMAP: dict[str, str] = {
     "Gauthier": "Gautier",              # coquille dans le récap PDF / CSV
     "La Pointe au cœur": "La Pointe au Coeur",  # œ vs oe (on garde la forme sans œ)
     "Marikk": "Al Marikk",              # doublon dans le CSV (la vraie école est Al'Marikk)
+    "Bernouilli": "Bernoulli",          # le PDF écrit 'Bernouilli', on garde 'Bernoulli'
+}
+
+# Override complet de la liste de techniques d'une école (corrige les coquilles CSV).
+# Clé = nom canonique d'école, valeur = liste de techniques (format "Nom (variante)").
+ECOLE_TECHNIQUES_OVERRIDE: dict[str, list[str]] = {
+    # Coquille CSV : techniques collées sans virgule. Liste correcte fournie par Guillaume.
+    "Bernoulli": [
+        "Exploiter les faiblesses (Sabre)",
+        "Corps à corps",
+        "Coup puissant",
+        "Fente en avant",
+        "Voir le style",
+    ],
 }
 
 
@@ -138,6 +152,7 @@ def normalize(s: str) -> str:
 TECHNIQUE_NOM_ALIASES: dict[str, str] = {
     "charge": "Charge de cavalerie",          # 'Charge' seul = charge de cavalerie (évite confusion)
     "vo voir le style": "Voir le style",      # artefact d'extraction PDF (fragment 'Vo' collé)
+    "feintes de pirate": "Feinte de pirate",  # Rogers écrit au pluriel ; docx au singulier
 }
 
 # Faux noms de techniques à IGNORER (sous-titres capturés à tort dans la police rouge).
@@ -304,8 +319,11 @@ def main() -> None:
                 print(f"  [dédup] '{nom_brut}' ignoré : '{nom}' existe déjà avec une origine plus spécifique")
                 continue
 
-            # Techniques du CSV + éventuellement des enrichissements
-            techniques_raw = split_list(row["Techniques de combat"])
+            # Techniques du CSV (ou override manuel si coquille connue)
+            if nom in ECOLE_TECHNIQUES_OVERRIDE:
+                techniques_raw = list(ECOLE_TECHNIQUES_OVERRIDE[nom])
+            else:
+                techniques_raw = split_list(row["Techniques de combat"])
             techniques_enrichies: list[dict] = []
             seen_keys: set[str] = set()
             for t_raw in techniques_raw:

@@ -2,7 +2,7 @@
 window.TECHNIQUES_CORRIGEES = {
   "_meta": {
     "source": "Liste des Techniques de combat.docx",
-    "nb_techniques": 79,
+    "nb_techniques": 80,
     "categories": [
       "Techniques de combat à distance",
       "Techniques de spadassin avec animaux",
@@ -573,6 +573,15 @@ window.TECHNIQUES_CORRIGEES = {
         "Villanova",
         "Yael",
         "Zar'houni"
+      ],
+      "tables": []
+    },
+    "feinte de pirate": {
+      "nom": "Feinte de pirate",
+      "categorie": "Techniques de spadassin classiques",
+      "description": "Les pirates qui apprennent le style de combat de Rogers emploient toutes sortes d’astuce et d’artifices pour surpasser leur adversaire. Ils peuvent donc choisir ces feintes dans la liste suivante :\n\nÀ l’abordage ! : Durant les actions d’abordage, vous augmentez les jets d’abordage de votre camp d’un point. Jusqu’à trois spadassins de l’école de Rogers peuvent modifier ensemble le jet d’abordage dans un même camp.\n\nAmarre donc ça ! Vous lancez et gardez un dé de dommages supplémentaire lorsque vous attaquez votre adversaire avec un cabillot d’amarrage (votre attaque inflige 2g2 dés de dommages, sans compter la Gaillardise). Vous ne souffrez pas de la pénalité de main non-directrice lorsque vous maniez un tel instrument.\n\nDeux mains droites : vous ne subissez pas de pénalité de main non-directrice lorsque vous utilisez un pistolet.\n\nEmbrasse le bastingage ! Vous recevez une augmentation gratuite quand vous utilisez Corps à corps au moment où votre adversaire se sert d’Équilibre comme compétence de défense.\n\nLa mort fond sur sa proie : si vous vous trouvez à au moins un niveau au-dessus de votre cible, vous pouvez dépenser une action pour vous balancer et l’attaquer dans le même mouvement en effectuant un jet de Panache + Acrobatie. Si vous réussissez votre attaque, elle inflige 3g1 dés de dommages et votre adversaire se retrouve face contre terre. Si elle échoue, vous devez faire un autre jet de Panache + Acrobatie contre un ND de 15 ou vous affaler vous-même.\n\nPied marin : vous lancez et gardez un dé supplémentaire lorsque vous utilisez votre compétence Équilibre. Cela n’augmente pas votre ND pour être touché quand vous l’utilisez comme compétence de défense, mais cela améliore vos jets de défense active.\n\nPorté par la dague : en dépensant une action, vous pouvez planter une dague dans une voile proche pour vous laisser descendre jusqu’au pont, évitant ainsi les dommages de chute. Ce faisant, il vous est possible d’attaquer quelqu’un qui se trouve au-dessous de vous en effectuant un jet de Finesse + Équilibre. Si vous réussissez votre attaque, vous infligez un dé de dommages pour chaque tranche de deux niveaux descendus, en arrondissant à l’inférieur.\n\nSabre au poing : vous pouvez vous saisir d’une épée tombée au sol et attaquer avec en une seule et même action du moment que vous vous teniez prêt d’elle au début de ladite action.\n\nTiens bon la bière ! Vous recevez gratuitement l’avantage Grand Buveur. En outre, vous recevez une augmentation gratuite quand vous attaquez avec une chope de bière (Arme improvisée : dommages de 0g1).\n\nTir éclair : vous pouvez dégainer un pistolet et faire feu en une seule action.",
+      "ecoles_enseignant": [
+        "Rogers"
       ],
       "tables": []
     },

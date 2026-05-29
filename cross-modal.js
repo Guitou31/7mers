@@ -460,8 +460,18 @@
           body.appendChild(table);
         });
       } else {
-        body = el("p", { class: "technique-missing" },
-          "Description non disponible (technique absente du recueil corrigé).");
+        // Pas une technique du recueil : c'est peut-être une COMPÉTENCE accordée
+        // directement par l'école (cas rares : Pas de côté, Coup de pied, Lancer, Parade…).
+        const comp = findCompetence(t.nom_base);
+        if (comp) {
+          body = el("p", { class: "technique-desc technique-competence" }, [
+            el("em", null, "Compétence accordée directement par l'école : "),
+            buildCrossLink("competence", comp.nom, comp.nom),
+          ]);
+        } else {
+          body = el("p", { class: "technique-missing" },
+            "Description non disponible (technique absente du recueil corrigé).");
+        }
       }
       section.appendChild(el("div", { class: "technique-item" }, [title, body]));
     }
