@@ -134,8 +134,10 @@ def parse_pdf(pdf_path: Path) -> list[dict]:
             buffer_text = []
             return
         text = clean_text(" ".join(buffer_text))
+        # 'Supplément d'origine' : section reconnue comme délimiteur mais NON stockée
+        # (info inutile aux joueurs, et certains suppléments sont introuvables).
         if current_section in ("supplement d'origine", "supplément d'origine"):
-            current_metier["supplement_origine"] = text.rstrip(".")
+            pass
         elif current_section in ("categories", "catégories", "categorie", "catégorie"):
             current_metier["categories"] = split_categories(text)
         elif current_section == "description":

@@ -336,7 +336,6 @@
     }
 
     const meta = [];
-    if (m.supplement_origine) meta.push(["Supplément d'origine", m.supplement_origine]);
     if (m.reputation) meta.push(["Réputation", m.reputation]);
     if (meta.length) {
       const dl = el("dl", { class: "detail-meta" });

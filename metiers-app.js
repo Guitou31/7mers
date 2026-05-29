@@ -35,7 +35,7 @@
     if (state.search) {
       const q = normalize(state.search);
       const hay = normalize([m.nom, m.description || "", (m.competences_base || []).join(" "),
-        (m.competences_avancees || []).join(" "), (m.categories || []).join(" "), m.supplement_origine || ""].join(" "));
+        (m.competences_avancees || []).join(" "), (m.categories || []).join(" ")].join(" "));
       if (!hay.includes(q)) return false;
     }
     return true;

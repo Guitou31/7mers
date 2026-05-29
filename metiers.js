@@ -20,7 +20,6 @@ window.METIERS_DATA = {
   "metiers": [
     {
       "nom": "Acrobate",
-      "supplement_origine": "Suppléments Ussura et Cathay",
       "categories": [
         "Métiers des Arts"
       ],
@@ -46,7 +45,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Alchimiste",
-      "supplement_origine": "Suppléments Filles de Sophie et Guilde des Alchimistes",
       "categories": [
         "Métiers des Belles Lettres"
       ],
@@ -72,7 +70,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Antiquaire",
-      "supplement_origine": "Supplément La Guilde des Antiquaires",
       "categories": [
         "Métiers des Belles Lettres",
         "Métiers du Négoce"
@@ -95,7 +92,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Apothicaire",
-      "supplement_origine": "Supplément La Guilde des Apothicaires",
       "categories": [
         "Métiers du Négoce",
         "Métiers du Réconfort"
@@ -121,7 +117,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Appréciateur",
-      "supplement_origine": "Supplément La Guilde des Marchands",
       "categories": [
         "Métiers du Négoce",
         "Métiers d’Orateurs"
@@ -147,7 +142,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Armateur",
-      "supplement_origine": "Supplément La Société des Aventuriers de Luthon et du Lovaine",
       "categories": [
         "Métiers de la Mer",
         "Métiers du Négoce"
@@ -176,7 +170,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Arnaqueur",
-      "supplement_origine": "Supplément Noblesse Oblige",
       "categories": [
         "Métiers d’Orateurs",
         "Métiers de la Maraude"
@@ -208,7 +201,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Artisan",
-      "supplement_origine": "Supplément La Guilde des Marchands",
       "categories": [
         "Métiers des Arts",
         "Métiers du Négoce"
@@ -298,7 +290,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Artiste",
-      "supplement_origine": "Guide du Joueur",
       "categories": [
         "Métiers des Arts"
       ],
@@ -324,7 +315,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Assassin",
-      "supplement_origine": "Supplément Novus Ordum Mundi, les Maîtres du Grand Jeu",
       "categories": [
         "Métiers des Armes",
         "Métiers de la Maraude"
@@ -351,7 +341,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Avoué",
-      "supplement_origine": "Supplément La Guilde des Lettrés",
       "categories": [
         "Métiers des Belles Lettres",
         "Métiers de Police"
@@ -377,7 +366,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Bagnard",
-      "supplement_origine": "Supplément La Maraude",
       "categories": [
         "Métiers de la Maraude"
       ],
@@ -402,7 +390,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Bateleur",
-      "supplement_origine": "Guide du Joueur, suppléments Ussura et Cahtay",
       "categories": [
         "Métiers des Arts"
       ],
@@ -436,7 +423,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Batelier",
-      "supplement_origine": "Supplément Eisen",
       "categories": [
         "Métiers de la Mer"
       ],
@@ -465,7 +451,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Bourreau",
-      "supplement_origine": "Supplément La Guilde des Services Publics",
       "categories": [
         "Métiers de Police"
       ],
@@ -491,7 +476,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Bûcheron",
-      "supplement_origine": "Supplément La Guilde des Bûcherons",
       "categories": [
         "Métiers de la Nature"
       ],
@@ -518,7 +502,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Cambrioleur",
-      "supplement_origine": "Supplément La Maraude",
       "categories": [
         "Métiers de la Maraude"
       ],
@@ -543,7 +526,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Cartographe",
-      "supplement_origine": "Supplément La Guilde des Planiers",
       "categories": [
         "Métiers des Arts",
         "Métiers de la Mer"
@@ -570,7 +552,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Chasseur",
-      "supplement_origine": "Guide du Joueur",
       "categories": [
         "Métiers de la Nature"
       ],
@@ -597,7 +578,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Chasseur de primes",
-      "supplement_origine": "Supplément La Guilde des Chasseurs de Primes",
       "categories": [
         "Métiers des Armes",
         "Métiers de Police"
@@ -625,7 +605,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Chroniqueur",
-      "supplement_origine": "Supplément La Guilde des Chroniqueurs",
       "categories": [
         "Métiers des Belles Lettres",
         "Métiers de Police"
@@ -655,7 +634,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Cocher",
-      "supplement_origine": "Supplément La Guilde des Rouliers",
       "categories": [
         "Métiers de la Nature",
         "Métiers de Serviteurs"
@@ -683,7 +661,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Collecteur d’impôts",
-      "supplement_origine": "Supplément La Guilde des Services Publics",
       "categories": [
         "Métiers de Police"
       ],
@@ -708,7 +685,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Colporteur",
-      "supplement_origine": "Supplément La Guilde des Colporteurs",
       "categories": [
         "Métiers de la Nature",
         "Métiers du Négoce"
@@ -737,7 +713,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Comédien",
-      "supplement_origine": "Supplément Noblesse Oblige",
       "categories": [
         "Métiers des Arts",
         "Métiers d’Orateurs"
@@ -766,7 +741,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Commandement",
-      "supplement_origine": "Guide du Joueur",
       "categories": [
         "Métiers des Armes"
       ],
@@ -798,7 +772,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Contrebandier",
-      "supplement_origine": "Supplément La Société des Aventuriers de Luthon et du Lovaine",
       "categories": [
         "Métiers de la Maraude",
         "Métiers de la Mer",
@@ -829,7 +802,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Courtisan",
-      "supplement_origine": "Guide du Joueur et supplément Ussura",
       "categories": [
         "Métiers d’Orateurs",
         "Métiers de Serviteurs"
@@ -860,7 +832,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Détrousseur",
-      "supplement_origine": "Supplément La Maraude",
       "categories": [
         "Métiers des Armes",
         "Métiers de la Maraude"
@@ -885,7 +856,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Diplomate",
-      "supplement_origine": "Supplément Noblesse Oblige",
       "categories": [
         "Métiers des Belles Lettres",
         "Métiers d’Orateurs"
@@ -914,7 +884,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Domestique",
-      "supplement_origine": "Guide du Joueur et supplément Ussura",
       "categories": [
         "Métiers de Serviteurs"
       ],
@@ -946,7 +915,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Éclaireur",
-      "supplement_origine": "Supplément Les Gens d’Armées",
       "categories": [
         "Métiers des Armes",
         "Métiers de la Nature"
@@ -977,7 +945,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Érudit",
-      "supplement_origine": "Guide du Joueur",
       "categories": [
         "Métiers des Belles Lettres"
       ],
@@ -1012,7 +979,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Escamoteur",
-      "supplement_origine": "Supplément La Maraude",
       "categories": [
         "Métiers de la Maraude"
       ],
@@ -1040,7 +1006,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Espion",
-      "supplement_origine": "Guide du Joueur et supplément Ussura",
       "categories": [
         "Métiers d’Orateurs",
         "Métiers de Police"
@@ -1072,7 +1037,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Estudiant",
-      "supplement_origine": "Supplément La Guilde des Lettrés",
       "categories": [
         "Métiers des Belles Lettres"
       ],
@@ -1102,7 +1066,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Explorateur",
-      "supplement_origine": "Supplément La Société des Aventuriers de Luthon et du Lovaine",
       "categories": [
         "Métiers de la Mer",
         "Métiers de la Nature"
@@ -1132,7 +1095,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Faussaire",
-      "supplement_origine": "Supplément La Rilasciare",
       "categories": [
         "Métiers des Arts",
         "Métiers de la Maraude"
@@ -1159,7 +1121,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Fouineur",
-      "supplement_origine": "Supplément La Guilde des Services Publics",
       "categories": [
         "Métiers de Police"
       ],
@@ -1190,7 +1151,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Fournisseur de drogues",
-      "supplement_origine": "Supplément La Guilde des Apothicaires",
       "categories": [
         "Métiers de la Maraude",
         "Métiers du Négoce"
@@ -1216,7 +1176,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Galérien",
-      "supplement_origine": "Supplément Novus Ordum Mundi, les Maîtres du Grand Jeu",
       "categories": [
         "Métiers de la Mer",
         "Métiers de la Maraude"
@@ -1240,7 +1199,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Galopin",
-      "supplement_origine": "Supplément Eisen",
       "categories": [
         "Métiers de la Maraude",
         "Métiers d’Orateurs"
@@ -1265,7 +1223,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Garde",
-      "supplement_origine": "Supplément La Guilde des Services Publics",
       "categories": [
         "Métiers de Police"
       ],
@@ -1292,7 +1249,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Garde du corps",
-      "supplement_origine": "Supplément Noblesse Oblige",
       "categories": [
         "Métiers des Armes",
         "Métiers de Police",
@@ -1318,7 +1274,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Gérant de comptoir",
-      "supplement_origine": "Supplément La Guilde des Marchands",
       "categories": [
         "Métiers du Négoce",
         "Métiers de la Nature"
@@ -1346,7 +1301,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Guérillero",
-      "supplement_origine": "Supplément Les Gens d’armées",
       "categories": [
         "Métiers des Armes",
         "Métiers de la Nature"
@@ -1372,7 +1326,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Guide",
-      "supplement_origine": "Supplément Vodacce",
       "categories": [
         "Métiers d’Orateurs",
         "Métiers de Serviteurs"
@@ -1403,7 +1356,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Herboriste",
-      "supplement_origine": "Supplément Les Filles de Sophie",
       "categories": [
         "Métiers de la Nature",
         "Métiers du Réconfort"
@@ -1428,7 +1380,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Hors-la-loi",
-      "supplement_origine": "Supplément La Guilde des Rouliers",
       "categories": [
         "Métiers des Armes",
         "Métiers de la Maraude",
@@ -1458,7 +1409,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Incendiaire",
-      "supplement_origine": "Supplément La Rilasciare et la Guilde des Alchimistes",
       "categories": [
         "Métiers de la Maraude"
       ],
@@ -1482,7 +1432,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Ingénieur",
-      "supplement_origine": "Supplément Castille",
       "categories": [
         "Métiers des Arts",
         "Métiers des Belles Lettres"
@@ -1512,7 +1461,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Intendant",
-      "supplement_origine": "Supplément Noblesse Oblige",
       "categories": [
         "Métiers des Belles Lettres",
         "Métiers du Négoce",
@@ -1544,7 +1492,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Jenny",
-      "supplement_origine": "Supplément La Guilde des Jennys",
       "categories": [
         "Métiers de la Maraude",
         "Métiers du Négoce"
@@ -1572,7 +1519,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Juge d’armes",
-      "supplement_origine": "Supplément Noblesse Oblige",
       "categories": [
         "Métiers des Belles Lettres",
         "Métiers de Police"
@@ -1600,7 +1546,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Maistrance",
-      "supplement_origine": "Guide du Joueur",
       "categories": [
         "Métiers de la Mer"
       ],
@@ -1629,7 +1574,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Malandrin",
-      "supplement_origine": "Guide du Joueur",
       "categories": [
         "Métiers de la Maraude"
       ],
@@ -1655,7 +1599,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Marchand",
-      "supplement_origine": "Guide du Joueur et supplément La Guilde des Marchands",
       "categories": [
         "Métiers du Négoce"
       ],
@@ -1684,7 +1627,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Marin",
-      "supplement_origine": "Guide du Joueur",
       "categories": [
         "Métiers de la Mer"
       ],
@@ -1714,7 +1656,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Marine",
-      "supplement_origine": "Supplément La Guilde des Marins",
       "categories": [
         "Métiers des Armes",
         "Métiers de la Mer"
@@ -1740,7 +1681,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Médecin",
-      "supplement_origine": "Guide du Joueur",
       "categories": [
         "Métiers des Belles Lettres",
         "Métiers du Réconfort"
@@ -1767,7 +1707,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Mendiant",
-      "supplement_origine": "Supplément La Maraude",
       "categories": [
         "Métiers d’Orateurs",
         "Métiers de la Maraude"
@@ -1794,7 +1733,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Missionnaire",
-      "supplement_origine": "Supplément L’Église des Prophètes",
       "categories": [
         "Métiers d’Orateurs",
         "Métiers du Réconfort"
@@ -1820,7 +1758,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Moine",
-      "supplement_origine": "Supplément L’Église des Prophètes",
       "categories": [
         "Métiers du Réconfort"
       ],
@@ -1847,7 +1784,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Monte-en-l’air",
-      "supplement_origine": "Supplément La Maraude",
       "categories": [
         "Métiers de la Maraude"
       ],
@@ -1874,7 +1810,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Navigateur",
-      "supplement_origine": "Supplément La Guilde des Planiers",
       "categories": [
         "Métiers des Belles Lettres",
         "Métiers de la Mer"
@@ -1901,7 +1836,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Palefrenier",
-      "supplement_origine": "Supplément La Guilde des Éleveurs",
       "categories": [
         "Métiers de la Nature",
         "Métiers de Serviteurs"
@@ -1927,7 +1861,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Paysan",
-      "supplement_origine": "Supplément La Guilde des Fermiers",
       "categories": [
         "Métiers de la Nature"
       ],
@@ -1954,7 +1887,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Pêcheur",
-      "supplement_origine": "Supplément La Guilde des Marins",
       "categories": [
         "Métiers de la Mer"
       ],
@@ -1979,7 +1911,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Piqueux",
-      "supplement_origine": "Supplément Noblesse Oblige",
       "categories": [
         "Métiers de la Nature",
         "Métiers de Police",
@@ -2006,7 +1937,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Précepteur",
-      "supplement_origine": "Supplément Noblesse Oblige",
       "categories": [
         "Métiers des Belles Lettres",
         "Métiers de Serviteurs"
@@ -2032,7 +1962,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Prêtre",
-      "supplement_origine": "Suppléments Castille et L’Église des Prophètes",
       "categories": [
         "Métiers du Réconfort"
       ],
@@ -2059,7 +1988,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Professeur",
-      "supplement_origine": "Supplément Collège Invisible",
       "categories": [
         "Métiers des Belles Lettres",
         "Métiers d’Orateurs"
@@ -2089,7 +2017,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Prospecteur",
-      "supplement_origine": "Supplément La Guilde des Mineurs",
       "categories": [
         "Métiers de la Nature"
       ],
@@ -2115,7 +2042,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Racketteur",
-      "supplement_origine": "Supplément La Maraude",
       "categories": [
         "Métiers des Armes",
         "Métiers de la Maraude"
@@ -2140,7 +2066,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Receleur",
-      "supplement_origine": "Supplément La Rilasciare",
       "categories": [
         "Métiers de la Maraude",
         "Métiers du Négoce"
@@ -2164,7 +2089,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Recruteur",
-      "supplement_origine": "Supplément Les Gens d’Armées",
       "categories": [
         "Métiers d’Orateurs"
       ],
@@ -2188,7 +2112,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Soldat",
-      "supplement_origine": "Supplément Les Gens d’Armées",
       "categories": [
         "Métiers des Armes"
       ],
@@ -2214,7 +2137,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Souteneur",
-      "supplement_origine": "Supplément La Guilde des Jennys",
       "categories": [
         "Métiers de la Maraude"
       ],
@@ -2239,7 +2161,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Veneur",
-      "supplement_origine": "Supplément Noblesse Oblige",
       "categories": [
         "Métiers de la Nature",
         "Métiers de Police",
@@ -2266,7 +2187,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Baleinier",
-      "supplement_origine": "Supplément Vendel/Vesten",
       "categories": [
         "Métiers de la Mer"
       ],
@@ -2290,7 +2210,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Barde",
-      "supplement_origine": "Supplément Avalon",
       "categories": [
         "Métiers des Arts",
         "Métiers d’Orateurs"
@@ -2319,7 +2238,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Bonne aventure",
-      "supplement_origine": "Suppléments Ussura et Cathay",
       "categories": [
         "Métiers des Arts",
         "Métiers d’Orateurs"
@@ -2348,7 +2266,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Cao Yao (Acupuncteur)",
-      "supplement_origine": "Supplément Cathay",
       "categories": [
         "Métiers du Réconfort"
       ],
@@ -2371,7 +2288,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Caravanier",
-      "supplement_origine": "Supplément La Guilde des Marchands",
       "categories": [
         "Métiers du Négoce",
         "Métiers de la Nature"
@@ -2401,7 +2317,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Courtisane",
-      "supplement_origine": "Suppléments Vodacce et Noblesse oblige",
       "categories": [
         "Métiers des Arts",
         "Métiers d’Orateurs",
@@ -2434,7 +2349,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Fauconnier",
-      "supplement_origine": "Supplément Ussura",
       "categories": [
         "Métiers de la Nature"
       ],
@@ -2459,7 +2373,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Feng Shui Shi (Géomancien)",
-      "supplement_origine": "Supplément Cathay",
       "categories": [
         "Métiers des Belles Lettres",
         "Métiers du Réconfort"
@@ -2485,7 +2398,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Gitan",
-      "supplement_origine": "Supplément Les Fidhelis",
       "categories": [
         "Métiers de la Maraude",
         "Métiers de la Nature"
@@ -2514,7 +2426,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Guérisseur",
-      "supplement_origine": "Supplément Islands of gold",
       "categories": [
         "Métiers de la Nature",
         "Métiers du Réconfort"
@@ -2537,7 +2448,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Gwai Liao (Bureaucrate)",
-      "supplement_origine": "Supplément Cathay",
       "categories": [
         "Métiers d’Orateurs",
         "Métiers des Belles Lettres"
@@ -2565,7 +2475,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Rahib (Moine)",
-      "supplement_origine": "Supplément L’Empire du Croissant",
       "categories": [
         "Métiers du Réconfort"
       ],
@@ -2595,7 +2504,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Shirbaz (magicien)",
-      "supplement_origine": "Supplément L’Empire du Croissant",
       "categories": [
         "Métiers des Arts",
         "Métiers de la Maraude"
@@ -2617,7 +2525,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Skalde",
-      "supplement_origine": "Supplément Vendel/Vesten",
       "categories": [
         "Métiers des Arts"
       ],
@@ -2644,7 +2551,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Torero",
-      "supplement_origine": "Supplément La Guilde des Éleveurs",
       "categories": [
         "Métiers des Arts",
         "Métiers de la Nature"
@@ -2672,7 +2578,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Acolyte",
-      "supplement_origine": "Supplément L’Héritage de la Foi (Legacy of Faith)",
       "categories": [
         "Métiers des Armes",
         "Métiers de Serviteurs"
@@ -2699,7 +2604,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Archéologue",
-      "supplement_origine": "Supplément La Croix d’Erèbe",
       "categories": [
         "Métiers des Belles Lettres"
       ],
@@ -2726,7 +2630,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Artificier",
-      "supplement_origine": "Supplément La Rilasciare",
       "categories": [
         "Métiers des Armes"
       ],
@@ -2751,7 +2654,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Cadet",
-      "supplement_origine": "Supplément Mousquetaires et Chevaliers",
       "categories": [
         "Métiers des Armes",
         "Métiers de Serviteurs"
@@ -2780,7 +2682,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Conférencier",
-      "supplement_origine": "Supplément La Société des Aventuriers de Luthon et du Lovaine",
       "categories": [
         "Métiers d’Orateurs"
       ],
@@ -2806,7 +2707,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Dilettante",
-      "supplement_origine": "Supplément Mousquetaires et Chevaliers",
       "categories": [
         "Métiers d’Orateurs"
       ],
@@ -2828,7 +2728,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Légionnaire",
-      "supplement_origine": "Supplément Numa, Capitale de l’ancien Empire",
       "categories": [
         "Métiers des Armes"
       ],
@@ -2858,7 +2757,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Pauvre Chevalier",
-      "supplement_origine": "Supplément L’Héritage de la Foi (Legacy of Faith)",
       "categories": [
         "Métiers des Armes",
         "Métiers de Serviteurs"
@@ -2890,7 +2788,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Aérostier",
-      "supplement_origine": "Supplément Noblesse Oblige",
       "categories": [
         "Métiers des Belles Lettres"
       ],
@@ -2916,7 +2813,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Chevalier",
-      "supplement_origine": "Supplément Mousquetaires et Chevaliers",
       "categories": [
         "Métiers des Armes",
         "Métiers de Police"
@@ -2946,7 +2842,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Maître d’armes",
-      "supplement_origine": "Supplément La Guilde des Spadassins",
       "categories": [
         "Métiers des Armes",
         "Métiers de Serviteurs"
@@ -2977,7 +2872,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Politicien",
-      "supplement_origine": "Suppléments La Révolution montaginoise et Noblesse oblige",
       "categories": [
         "Métiers d’Orateurs"
       ],
@@ -3002,7 +2896,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Rasoir",
-      "supplement_origine": "Supplément La Guilde des Spadassins",
       "categories": [
         "Métiers des Armes",
         "Métiers de Police"
@@ -3033,7 +2926,6 @@ window.METIERS_DATA = {
     },
     {
       "nom": "Seigneur du crime",
-      "supplement_origine": "Supplément La Maraude",
       "categories": [
         "Métiers de la Maraude"
       ],
