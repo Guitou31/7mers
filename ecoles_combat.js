@@ -76,31 +76,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Désarmer",
           "variante": null,
-          "ref": null,
+          "ref": "desarmer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Couteau",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Feinte",
           "variante": null,
-          "ref": null,
+          "ref": "feinte",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Noyer",
           "variante": null,
-          "ref": null,
+          "ref": "noyer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -160,31 +160,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Corps à corps",
           "variante": null,
-          "ref": null,
+          "ref": "corps a corps",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Double parade",
           "variante": null,
-          "ref": null,
+          "ref": "double parade",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Escrime",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Riposte",
           "variante": null,
-          "ref": null,
+          "ref": "riposte",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -245,31 +245,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Désarmer",
           "variante": null,
-          "ref": null,
+          "ref": "desarmer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Emprisonner",
           "variante": null,
-          "ref": null,
+          "ref": "emprisonner",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Escrime",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Mur d’acier",
           "variante": null,
-          "ref": null,
+          "ref": "mur d'acier",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -328,31 +328,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup d’épaule",
           "variante": null,
-          "ref": null,
+          "ref": "coup d'epaule",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Coup de pommeau",
           "variante": null,
-          "ref": null,
+          "ref": "coup de pommeau",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Pistolet",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir d’adresse",
           "variante": null,
-          "ref": null,
+          "ref": "tir d'adresse",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir d’instinct",
           "variante": null,
-          "ref": null,
+          "ref": "tir d'instinct",
           "source": "pdf_combat"
         }
       ],
@@ -413,31 +413,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Céder la place",
           "variante": null,
-          "ref": null,
+          "ref": "ceder la place",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Lutte",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Feinte de corps",
           "variante": null,
-          "ref": null,
+          "ref": "feinte de corps",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Rompre le combat",
           "variante": null,
-          "ref": null,
+          "ref": "rompre le combat",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -497,25 +497,25 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Pistolet",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Rompre le combat",
           "variante": null,
-          "ref": null,
+          "ref": "rompre le combat",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir à blanc",
           "variante": null,
-          "ref": null,
+          "ref": "tir a blanc",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir d’instinct",
           "variante": null,
-          "ref": null,
+          "ref": "tir d'instinct",
           "source": "pdf_combat"
         },
         {
@@ -580,31 +580,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Attaque de cavalerie",
           "variante": null,
-          "ref": null,
+          "ref": "attaque de cavalerie",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Arc",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir d’adresse",
           "variante": null,
-          "ref": null,
+          "ref": "tir d'adresse",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir d’instinct",
           "variante": null,
-          "ref": null,
+          "ref": "tir d'instinct",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir en V",
           "variante": null,
-          "ref": null,
+          "ref": "tir en v",
           "source": "pdf_combat"
         }
       ],
@@ -674,25 +674,25 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup puissant",
           "variante": null,
-          "ref": null,
+          "ref": "coup puissant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Escrime ou Lance de cavalerie",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Saut de cheval",
           "variante": null,
-          "ref": null,
+          "ref": "saut de cheval",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -761,31 +761,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Attaque combinée",
           "variante": null,
-          "ref": null,
+          "ref": "attaque combinee",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Fouet",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Marquer",
           "variante": null,
-          "ref": null,
+          "ref": "marquer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Meute",
           "variante": null,
-          "ref": null,
+          "ref": "meute",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -858,31 +858,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Épingler",
           "variante": null,
-          "ref": null,
+          "ref": "epingler",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Couteau",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir d’adresse",
           "variante": null,
-          "ref": null,
+          "ref": "tir d'adresse",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir d’instinct",
           "variante": null,
-          "ref": null,
+          "ref": "tir d'instinct",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -943,13 +943,13 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Marquer",
           "variante": null,
-          "ref": null,
+          "ref": "marquer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         },
         {
@@ -1013,31 +1013,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup de pommeau",
           "variante": null,
-          "ref": null,
+          "ref": "coup de pommeau",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Éventail",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Mur d’acier",
           "variante": null,
-          "ref": null,
+          "ref": "mur d'acier",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tourbillon",
           "variante": null,
-          "ref": null,
+          "ref": "tourbillon",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -1095,7 +1095,7 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Attaque de cavalerie",
           "variante": null,
-          "ref": null,
+          "ref": "attaque de cavalerie",
           "source": "pdf_combat"
         },
         {
@@ -1107,19 +1107,19 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Arc",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir d’instinct",
           "variante": null,
-          "ref": null,
+          "ref": "tir d'instinct",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir en cloche",
           "variante": null,
-          "ref": null,
+          "ref": "tir en cloche",
           "source": "pdf_combat"
         }
       ],
@@ -1179,31 +1179,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup d’épaule",
           "variante": null,
-          "ref": null,
+          "ref": "coup d'epaule",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Coup de pommeau",
           "variante": null,
-          "ref": null,
+          "ref": "coup de pommeau",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Désarmer",
           "variante": null,
-          "ref": null,
+          "ref": "desarmer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Couteau",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -1261,31 +1261,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup puissant",
           "variante": null,
-          "ref": null,
+          "ref": "coup puissant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Escrime",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Fente en avant",
           "variante": null,
-          "ref": null,
+          "ref": "fente en avant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Mur d’acier",
           "variante": null,
-          "ref": null,
+          "ref": "mur d'acier",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -1344,31 +1344,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Désarmer",
           "variante": null,
-          "ref": null,
+          "ref": "desarmer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Lutte",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Feinte de corps",
           "variante": null,
-          "ref": null,
+          "ref": "feinte de corps",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Force d’âme",
           "variante": null,
-          "ref": null,
+          "ref": "force d'ame",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -1428,31 +1428,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup de pommeau",
           "variante": null,
-          "ref": null,
+          "ref": "coup de pommeau",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Pistolet",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Marquer",
           "variante": null,
-          "ref": null,
+          "ref": "marquer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir en ricochet",
           "variante": null,
-          "ref": null,
+          "ref": "tir en ricochet",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir par-dessus la jambe",
           "variante": null,
-          "ref": null,
+          "ref": "tir par dessus la jambe",
           "source": "pdf_combat"
         }
       ],
@@ -1512,31 +1512,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Mousquet",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Gros sel",
           "variante": null,
-          "ref": null,
+          "ref": "gros sel",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir d’instinct",
           "variante": null,
-          "ref": null,
+          "ref": "tir d'instinct",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir en mouvement",
           "variante": null,
-          "ref": null,
+          "ref": "tir en mouvement",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -1604,31 +1604,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Corps à corps",
           "variante": null,
-          "ref": null,
+          "ref": "corps a corps",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Coup de pommeau",
           "variante": null,
-          "ref": null,
+          "ref": "coup de pommeau",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Emprisonner",
           "variante": null,
-          "ref": null,
+          "ref": "emprisonner",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Escrime",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -1687,31 +1687,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup de pommeau",
           "variante": null,
-          "ref": null,
+          "ref": "coup de pommeau",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Éventail",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Feinte",
           "variante": null,
-          "ref": null,
+          "ref": "feinte",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Marquer",
           "variante": null,
-          "ref": null,
+          "ref": "marquer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -1773,31 +1773,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Corps à corps",
           "variante": null,
-          "ref": null,
+          "ref": "corps a corps",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Déplacements circulaires",
           "variante": null,
-          "ref": null,
+          "ref": "deplacements circulaires",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Désarmer",
           "variante": null,
-          "ref": null,
+          "ref": "desarmer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Pugilat",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -1858,31 +1858,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup puissant",
           "variante": null,
-          "ref": null,
+          "ref": "coup puissant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Désarmer",
           "variante": null,
-          "ref": null,
+          "ref": "desarmer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Escrime",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Force d’âme",
           "variante": null,
-          "ref": null,
+          "ref": "force d'ame",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -1944,7 +1944,7 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Attaque de cavalerie",
           "variante": null,
-          "ref": null,
+          "ref": "attaque de cavalerie",
           "source": "pdf_combat"
         },
         {
@@ -1956,19 +1956,19 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Escrime",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Feinte",
           "variante": null,
-          "ref": null,
+          "ref": "feinte",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -2034,7 +2034,7 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Mousquet",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
@@ -2046,13 +2046,13 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Tir d’adresse",
           "variante": null,
-          "ref": null,
+          "ref": "tir d'adresse",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir précis",
           "variante": null,
-          "ref": null,
+          "ref": "tir precis",
           "source": "pdf_combat"
         }
       ],
@@ -2112,31 +2112,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup puissant",
           "variante": null,
-          "ref": null,
+          "ref": "coup puissant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Désarçonner",
           "variante": null,
-          "ref": null,
+          "ref": "desarconner",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Arme d’hast",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Maintenir à distance",
           "variante": null,
-          "ref": null,
+          "ref": "maintenir a distance",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -2195,19 +2195,19 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup puissant",
           "variante": null,
-          "ref": null,
+          "ref": "coup puissant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Masse",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Frappe à deux mains",
           "variante": null,
-          "ref": null,
+          "ref": "frappe a deux mains",
           "source": "pdf_combat"
         },
         {
@@ -2219,7 +2219,7 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -2278,31 +2278,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup de pommeau",
           "variante": null,
-          "ref": null,
+          "ref": "coup de pommeau",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Désarmer",
           "variante": null,
-          "ref": null,
+          "ref": "desarmer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Arbalète",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir d’adresse",
           "variante": null,
-          "ref": null,
+          "ref": "tir d'adresse",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir en cloche",
           "variante": null,
-          "ref": null,
+          "ref": "tir en cloche",
           "source": "pdf_combat"
         }
       ],
@@ -2364,31 +2364,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Assommer",
           "variante": null,
-          "ref": null,
+          "ref": "assommer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Pugilat",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Force d’âme",
           "variante": null,
-          "ref": null,
+          "ref": "force d'ame",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Marquer",
           "variante": null,
-          "ref": null,
+          "ref": "marquer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -2454,7 +2454,7 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup de pied réflexe",
           "variante": null,
-          "ref": null,
+          "ref": "coup de pied reflexe",
           "source": "pdf_combat"
         },
         {
@@ -2472,13 +2472,13 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Art martial offensif",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -2536,31 +2536,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup puissant",
           "variante": null,
-          "ref": null,
+          "ref": "coup puissant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Double parade",
           "variante": null,
-          "ref": null,
+          "ref": "double parade",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Escrime",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Prise de bras",
           "variante": null,
-          "ref": null,
+          "ref": "prise de bras",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -2621,13 +2621,13 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Attaque combinée",
           "variante": null,
-          "ref": null,
+          "ref": "attaque combinee",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Coup puissant",
           "variante": null,
-          "ref": null,
+          "ref": "coup puissant",
           "source": "pdf_combat"
         },
         {
@@ -2639,13 +2639,13 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Lance légère",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -2714,25 +2714,25 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup puissant",
           "variante": null,
-          "ref": null,
+          "ref": "coup puissant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Défigurer",
           "variante": null,
-          "ref": null,
+          "ref": "defigurer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Pugilat",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -2793,31 +2793,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Désarmer",
           "variante": null,
-          "ref": null,
+          "ref": "desarmer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Emprisonner",
           "variante": null,
-          "ref": null,
+          "ref": "emprisonner",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Escrime",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Force d’âme",
           "variante": null,
-          "ref": null,
+          "ref": "force d'ame",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -2879,31 +2879,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Escrime",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Fente en avant",
           "variante": null,
-          "ref": null,
+          "ref": "fente en avant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Harceler",
           "variante": null,
-          "ref": null,
+          "ref": "harceler",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Maintenir à distance",
           "variante": null,
-          "ref": null,
+          "ref": "maintenir a distance",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -2963,31 +2963,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Double attaque",
           "variante": null,
-          "ref": null,
+          "ref": "double attaque",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Lance légère",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Fente en avant",
           "variante": null,
-          "ref": null,
+          "ref": "fente en avant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Maintenir à distance",
           "variante": null,
-          "ref": null,
+          "ref": "maintenir a distance",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -3047,31 +3047,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Escrime",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Marquer",
           "variante": null,
-          "ref": null,
+          "ref": "marquer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Rasoir",
           "variante": null,
-          "ref": null,
+          "ref": "rasoir",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Riposte",
           "variante": null,
-          "ref": null,
+          "ref": "riposte",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -3136,31 +3136,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Corps à corps",
           "variante": null,
-          "ref": null,
+          "ref": "corps a corps",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Escrime",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Feinte",
           "variante": null,
-          "ref": null,
+          "ref": "feinte",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Riposte",
           "variante": null,
-          "ref": null,
+          "ref": "riposte",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -3223,31 +3223,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Corps à corps",
           "variante": null,
-          "ref": null,
+          "ref": "corps a corps",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Coup puissant",
           "variante": null,
-          "ref": null,
+          "ref": "coup puissant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Désarmer",
           "variante": null,
-          "ref": null,
+          "ref": "desarmer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Arme improvisée",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -3311,31 +3311,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Double attaque",
           "variante": null,
-          "ref": null,
+          "ref": "double attaque",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Couteau",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Riposte",
           "variante": null,
-          "ref": null,
+          "ref": "riposte",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir d’instinct",
           "variante": null,
-          "ref": null,
+          "ref": "tir d'instinct",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -3395,7 +3395,7 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Fronde",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
@@ -3407,19 +3407,19 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Marquer",
           "variante": null,
-          "ref": null,
+          "ref": "marquer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir d’adresse",
           "variante": null,
-          "ref": null,
+          "ref": "tir d'adresse",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir en ricochet",
           "variante": null,
-          "ref": null,
+          "ref": "tir en ricochet",
           "source": "pdf_combat"
         }
       ],
@@ -3479,31 +3479,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Corps à corps",
           "variante": null,
-          "ref": null,
+          "ref": "corps a corps",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Épingler",
           "variante": null,
-          "ref": null,
+          "ref": "epingler",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Couteau",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Rompre le combat",
           "variante": null,
-          "ref": null,
+          "ref": "rompre le combat",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -3563,31 +3563,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup de pommeau",
           "variante": null,
-          "ref": null,
+          "ref": "coup de pommeau",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Déplacements circulaires",
           "variante": null,
-          "ref": null,
+          "ref": "deplacements circulaires",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Mousquet",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir d’adresse",
           "variante": null,
-          "ref": null,
+          "ref": "tir d'adresse",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir précis",
           "variante": null,
-          "ref": null,
+          "ref": "tir precis",
           "source": "pdf_combat"
         }
       ],
@@ -3646,31 +3646,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Pistolet",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Force d’âme",
           "variante": null,
-          "ref": null,
+          "ref": "force d'ame",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Retourné-tiré",
           "variante": null,
-          "ref": null,
+          "ref": "retourne tire",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir d’adresse",
           "variante": null,
-          "ref": null,
+          "ref": "tir d'adresse",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -3734,31 +3734,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Corps à corps",
           "variante": null,
-          "ref": null,
+          "ref": "corps a corps",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Emprisonner",
           "variante": null,
-          "ref": null,
+          "ref": "emprisonner",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Arme improvisée",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Riposte",
           "variante": null,
-          "ref": null,
+          "ref": "riposte",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -3818,31 +3818,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup puissant",
           "variante": null,
-          "ref": null,
+          "ref": "coup puissant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Couteau",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Feinte",
           "variante": null,
-          "ref": null,
+          "ref": "feinte",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Fente en avant",
           "variante": null,
-          "ref": null,
+          "ref": "fente en avant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -3903,31 +3903,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Double parade",
           "variante": null,
-          "ref": null,
+          "ref": "double parade",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Esquive acrobatique",
           "variante": null,
-          "ref": null,
+          "ref": "esquive acrobatique",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Arme improvisée",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tourbillon",
           "variante": null,
-          "ref": null,
+          "ref": "tourbillon",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -3995,19 +3995,19 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Escrime",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Fente en avant",
           "variante": null,
-          "ref": null,
+          "ref": "fente en avant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Marquer",
           "variante": null,
-          "ref": null,
+          "ref": "marquer",
           "source": "pdf_combat"
         },
         {
@@ -4019,7 +4019,7 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -4081,31 +4081,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup de pommeau",
           "variante": null,
-          "ref": null,
+          "ref": "coup de pommeau",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Pistolet",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir d’adresse",
           "variante": null,
-          "ref": null,
+          "ref": "tir d'adresse",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir d’instinct",
           "variante": null,
-          "ref": null,
+          "ref": "tir d'instinct",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir précis",
           "variante": null,
-          "ref": null,
+          "ref": "tir precis",
           "source": "pdf_combat"
         }
       ],
@@ -4163,31 +4163,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Corps à corps",
           "variante": null,
-          "ref": null,
+          "ref": "corps a corps",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Désarmer",
           "variante": null,
-          "ref": null,
+          "ref": "desarmer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Lutte",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Rompre le combat",
           "variante": null,
-          "ref": null,
+          "ref": "rompre le combat",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -4247,31 +4247,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Arbalète",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Marquer",
           "variante": null,
-          "ref": null,
+          "ref": "marquer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir à carreau spécial",
           "variante": null,
-          "ref": null,
+          "ref": "tir a carreau special",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir d’adresse",
           "variante": null,
-          "ref": null,
+          "ref": "tir d'adresse",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir précis",
           "variante": null,
-          "ref": null,
+          "ref": "tir precis",
           "source": "pdf_combat"
         }
       ],
@@ -4329,31 +4329,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Désarmer",
           "variante": null,
-          "ref": null,
+          "ref": "desarmer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Arc",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Marquer",
           "variante": null,
-          "ref": null,
+          "ref": "marquer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir en cloche",
           "variante": null,
-          "ref": null,
+          "ref": "tir en cloche",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tir précis",
           "variante": null,
-          "ref": null,
+          "ref": "tir precis",
           "source": "pdf_combat"
         }
       ],
@@ -4413,31 +4413,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup puissant",
           "variante": null,
-          "ref": null,
+          "ref": "coup puissant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Escrime",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Feinte de corps",
           "variante": null,
-          "ref": null,
+          "ref": "feinte de corps",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Riposte",
           "variante": null,
-          "ref": null,
+          "ref": "riposte",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -4500,31 +4500,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Érafler",
           "variante": null,
-          "ref": null,
+          "ref": "erafler",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Escrime",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Feinte",
           "variante": null,
-          "ref": null,
+          "ref": "feinte",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Riposte",
           "variante": null,
-          "ref": null,
+          "ref": "riposte",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -4581,7 +4581,7 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Attaque de cavalerie",
           "variante": null,
-          "ref": null,
+          "ref": "attaque de cavalerie",
           "source": "pdf_combat"
         },
         {
@@ -4593,19 +4593,19 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Escrime",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tourbillon",
           "variante": null,
-          "ref": null,
+          "ref": "tourbillon",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -4664,31 +4664,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Corps à corps",
           "variante": null,
-          "ref": null,
+          "ref": "corps a corps",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Coup puissant",
           "variante": null,
-          "ref": null,
+          "ref": "coup puissant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Hache à deux mains",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Fente en avant",
           "variante": null,
-          "ref": null,
+          "ref": "fente en avant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -4751,31 +4751,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Défigurer",
           "variante": null,
-          "ref": null,
+          "ref": "defigurer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Double parade",
           "variante": null,
-          "ref": null,
+          "ref": "double parade",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Gant de combat",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Fente en avant",
           "variante": null,
-          "ref": null,
+          "ref": "fente en avant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -4836,31 +4836,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Attaque combinée",
           "variante": null,
-          "ref": null,
+          "ref": "attaque combinee",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Emprisonner",
           "variante": null,
-          "ref": null,
+          "ref": "emprisonner",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Escrime",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Marquer",
           "variante": null,
-          "ref": null,
+          "ref": "marquer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         },
         {
@@ -4926,7 +4926,7 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Blocage offensif",
           "variante": null,
-          "ref": null,
+          "ref": "blocage offensif",
           "source": "pdf_combat"
         },
         {
@@ -4938,19 +4938,19 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Art martial offensif",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Manchette",
           "variante": null,
-          "ref": null,
+          "ref": "manchette",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -5007,31 +5007,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup de pommeau",
           "variante": null,
-          "ref": null,
+          "ref": "coup de pommeau",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Coup puissant",
           "variante": null,
-          "ref": null,
+          "ref": "coup puissant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Arme d’hast",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Fente en avant",
           "variante": null,
-          "ref": null,
+          "ref": "fente en avant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -5092,31 +5092,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Attaque en dégaine",
           "variante": null,
-          "ref": null,
+          "ref": "attaque en degaine",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Désarmer",
           "variante": null,
-          "ref": null,
+          "ref": "desarmer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Escrime",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Tourbillon",
           "variante": null,
-          "ref": null,
+          "ref": "tourbillon",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -5179,31 +5179,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Corps à corps",
           "variante": null,
-          "ref": null,
+          "ref": "corps a corps",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Coup puissant",
           "variante": null,
-          "ref": null,
+          "ref": "coup puissant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Couteau",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Fente en avant",
           "variante": null,
-          "ref": null,
+          "ref": "fente en avant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -5263,31 +5263,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Corps à corps",
           "variante": null,
-          "ref": null,
+          "ref": "corps a corps",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Désarmer",
           "variante": null,
-          "ref": null,
+          "ref": "desarmer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Masse ou Matraque",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Fente en avant",
           "variante": null,
-          "ref": null,
+          "ref": "fente en avant",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -5345,31 +5345,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Céder la place",
           "variante": null,
-          "ref": null,
+          "ref": "ceder la place",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Art martial défensif",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Marquer",
           "variante": null,
-          "ref": null,
+          "ref": "marquer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Retourner les attaques",
           "variante": null,
-          "ref": null,
+          "ref": "retourner les attaques",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -5432,25 +5432,25 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup de pommeau",
           "variante": null,
-          "ref": null,
+          "ref": "coup de pommeau",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Désarçonner",
           "variante": null,
-          "ref": null,
+          "ref": "desarconner",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Escrime",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -5508,31 +5508,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Défigurer",
           "variante": null,
-          "ref": null,
+          "ref": "defigurer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Art martial offensif",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Feinte de corps",
           "variante": null,
-          "ref": null,
+          "ref": "feinte de corps",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Griffe",
           "variante": null,
-          "ref": null,
+          "ref": "griffe",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -5589,31 +5589,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Assommer",
           "variante": null,
-          "ref": null,
+          "ref": "assommer",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Coup d’épaule",
           "variante": null,
-          "ref": null,
+          "ref": "coup d'epaule",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Lutte",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Force d’âme",
           "variante": null,
-          "ref": null,
+          "ref": "force d'ame",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],
@@ -5670,31 +5670,31 @@ window.ECOLES_COMBAT_DATA = {
         {
           "nom_base": "Coup de pied réflexe",
           "variante": null,
-          "ref": null,
+          "ref": "coup de pied reflexe",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Esquive acrobatique",
           "variante": null,
-          "ref": null,
+          "ref": "esquive acrobatique",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Esquive de projectiles",
           "variante": null,
-          "ref": null,
+          "ref": "esquive de projectiles",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Exploiter les faiblesses",
           "variante": "Art martial défensif et Art martial offensif",
-          "ref": null,
+          "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
         {
           "nom_base": "Voir le style",
           "variante": null,
-          "ref": null,
+          "ref": "voir le style",
           "source": "pdf_combat"
         }
       ],

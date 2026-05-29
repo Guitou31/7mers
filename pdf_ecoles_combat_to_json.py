@@ -23,6 +23,8 @@ from csv_to_json import (
     ajouter_nations_virtuelles,
     canonicaliser_nom_ecole,
     CATEGORIE_TO_RESTRICTION,
+    normalize,
+    load_techniques_corrigees,
 )
 from armes_categories import extract_categories, format_arme_display
 
@@ -44,10 +46,11 @@ def charger_exclusions() -> set[str]:
     return {e["nom"] for e in raw.get("ecoles", [])}
 
 
-def transformer_ecole(nom: str, enrichment: dict) -> dict:
+def transformer_ecole(nom: str, enrichment: dict, techniques_db: dict) -> dict:
     """Convertit la sortie du parser PDF en école au format compatible cross-modal.js.
 
     Format de sortie similaire aux écoles Spadassin enrichies, avec champ details.
+    techniques_db : dict des techniques corrigées (docx) pour résoudre les 'ref'.
     """
     details = {k: v for k, v in enrichment.items()
                if k not in ("techniques_supplementaires", "_source_pdf", "categorie_creation")}
@@ -74,10 +77,13 @@ def transformer_ecole(nom: str, enrichment: dict) -> dict:
         if key in seen or not nom_base:
             continue
         seen.add(key)
+        # Résout la ref vers la base de techniques du docx (même mécanisme que Spadassin).
+        ref_key = normalize(nom_base)
+        ref = ref_key if ref_key in techniques_db else None
         techniques.append({
             "nom_base": nom_base,
             "variante": variante,
-            "ref": None,  # pas de référence directe au docx techniques pour les combat
+            "ref": ref,
             "source": "pdf_combat",
         })
 
@@ -104,6 +110,10 @@ def main() -> None:
     exclusions = charger_exclusions()
     print(f"Exclusions (écoles déjà en Spadassin) : {len(exclusions)}")
 
+    # Base de techniques corrigées (docx) pour résoudre les descriptions.
+    techniques_db = load_techniques_corrigees()
+    print(f"Techniques corrigées chargées : {len(techniques_db)}")
+
     # 2. Parser le PDF Combat (toutes les écoles, sans filtre d'inclusion)
     print(f"Parsing {PDF_COMBAT.name}…")
     raw_ecoles = parse_pdf(PDF_COMBAT, filter_schools=None, tag_source="combat_only")
@@ -118,9 +128,14 @@ def main() -> None:
         if nom_canon in exclusions:
             nb_exclues += 1
             continue
-        ecoles.append(transformer_ecole(nom_canon, enrichment))
+        ecoles.append(transformer_ecole(nom_canon, enrichment, techniques_db))
 
     print(f"  → {len(ecoles)} écoles de combat retenues ({nb_exclues} exclues car déjà en Spadassin)")
+
+    # Stat techniques résolues
+    nb_tech = sum(len(e["techniques_combat"]) for e in ecoles)
+    nb_tech_ok = sum(1 for e in ecoles for t in e["techniques_combat"] if t.get("ref"))
+    print(f"  Techniques : {nb_tech_ok}/{nb_tech} avec description (ref résolue)")
 
     # 4. Stats
     from collections import Counter
