@@ -247,7 +247,7 @@
 
   buildNationsFilter();
   buildArmesFilter();
-  buildOriginesFilter();
+  // Filtre "Origine" retiré de l'UI (le badge reste sur les cartes/fiches).
   buildRestrictionsFilter();
   buildGenresFilter();
   wireEvents();
