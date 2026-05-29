@@ -83,6 +83,7 @@
 
   function buildRestrictionsFilter() {
     const container = document.getElementById("filter-restrictions");
+    if (!container) return;
     const counts = {};
     for (const e of data.entrainements) {
       const r = getRestriction(e);

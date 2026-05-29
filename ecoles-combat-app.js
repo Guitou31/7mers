@@ -106,6 +106,7 @@
 
   function buildNationsFilter() {
     const container = document.getElementById("filter-nations");
+    if (!container) return;
     const counts = {};
     for (const e of data.ecoles) for (const n of e.nations) counts[n] = (counts[n] || 0) + 1;
     const nations = (data._meta && data._meta.nations_uniques) || Object.keys(counts).sort(compareFR);
@@ -126,6 +127,7 @@
 
   function buildArmesFilter() {
     const container = document.getElementById("filter-armes");
+    if (!container) return;
     const counts = (data._meta && data._meta.repartition_armes) || {};
     const order = Object.keys(counts).sort(compareFR);
     for (const cat of order) {
@@ -147,6 +149,7 @@
 
   function buildRestrictionsFilter() {
     const container = document.getElementById("filter-restrictions");
+    if (!container) return;
     const counts = {};
     for (const e of data.ecoles) counts[e.restriction_creation] = (counts[e.restriction_creation] || 0) + 1;
     for (const r of Object.keys(RESTRICTION_LABELS)) {
@@ -167,6 +170,7 @@
 
   function buildGenresFilter() {
     const container = document.getElementById("filter-genres");
+    if (!container) return;
     const counts = {};
     for (const e of data.ecoles) if (e.genre_restriction) counts[e.genre_restriction] = (counts[e.genre_restriction] || 0) + 1;
     if (Object.keys(counts).length === 0) { container.parentElement.style.display = "none"; return; }

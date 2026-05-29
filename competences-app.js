@@ -88,6 +88,7 @@
 
   function buildCategoriesFilter() {
     const container = document.getElementById("filter-categories");
+    if (!container) return;
     const counts = {};
     for (const c of data.competences) {
       const k = c.categorie || "Sans catégorie";

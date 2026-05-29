@@ -96,6 +96,7 @@
 
   function buildCategoriesFilter() {
     const container = document.getElementById("filter-categories");
+    if (!container) return;
     const counts = {};
     for (const m of data.metiers) for (const c of (m.categories || [])) counts[c] = (counts[c] || 0) + 1;
     const order = (data._meta && data._meta.categories) || Object.keys(counts).sort(compareFR);
@@ -118,6 +119,7 @@
 
   function buildRestrictionsFilter() {
     const container = document.getElementById("filter-restrictions");
+    if (!container) return;
     const counts = {};
     for (const m of data.metiers) {
       const r = m.restriction_type || "aucune";
