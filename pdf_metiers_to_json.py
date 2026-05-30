@@ -318,6 +318,39 @@ def parse_pdf(pdf_path: Path) -> list[dict]:
 # Overrides maison : restrictions, suppressions, modifications
 # ============================================================
 
+# Normalisations de noms de compétences référencés par les métiers.
+# Appliqué aux competences_base et competences_avancees + aux options des choix.
+# Patterns :
+#   - 'X (cité…)' → 'X (Nation à préciser)' pour les 3 compétences voyageuses
+#   - Fautes de casse classiques du PDF (Guet- apens, bas- fonds, Pique- assiette)
+COMPETENCES_REF_NORMALISATIONS: list[tuple[str, str]] = [
+    # Cité → Nation (compétence canonique = (Nation à préciser))
+    (r"^Connaissance\s+des\s+bas[-\s]+fonds\s*\(\s*cit[ée]\s*(?:à\s+préciser)?\s*\)$",
+     "Connaissance des bas-fonds (Nation à préciser)"),
+    (r"^Contacts\s*\(\s*cit[ée]\s*(?:à\s+préciser)?\s*\)$",
+     "Contacts (Nation à préciser)"),
+    (r"^Orientation\s+citadine\s*\(\s*cit[ée]\s*(?:à\s+préciser)?\s*\)$",
+     "Orientation citadine (Nation à préciser)"),
+    # Fautes de casse (espace après tiret)
+    (r"^Guet[-\s]+apens$",          "Guet-apens"),
+    (r"^Pique[-\s]+assiette$",      "Pique-assiette"),
+    (r"^Connaissance\s+des\s+bas[-\s]+fonds(\s*\(.+\))?$",
+     r"Connaissance des bas-fonds\1"),
+]
+
+import re as _re_norm
+_COMPETENCES_REF_NORM_RX = [(_re_norm.compile(p), r) for p, r in COMPETENCES_REF_NORMALISATIONS]
+
+
+def normaliser_ref_competence(nom: str) -> str:
+    """Applique les normalisations (cité→Nation, fautes de casse) à un nom de compétence."""
+    for rx, repl in _COMPETENCES_REF_NORM_RX:
+        m = rx.match(nom)
+        if m:
+            return rx.sub(repl, nom)
+    return nom
+
+
 METIERS_SUPPRIMES = {"Conférencier", "Aérostier", "Seigneur du crime"}
 
 # Overrides manuels des compétences pour les métiers atypiques
@@ -450,6 +483,285 @@ METIERS_RESTRICTIONS: dict[str, tuple[str, str]] = {
     "Maître d’armes":         ("societe", "Être Maître dans au moins une école d'Escrime."),
 }
 
+# ============================================================
+# Modifications déclaratives des métiers (corrections du docx "Correction
+# des compétences des métiers"). Appliquées APRÈS la normalisation
+# (cité→Nation, fautes de casse) et APRÈS les COMPETENCES_OVERRIDES.
+#
+# Opérations supportées par métier (toutes optionnelles) :
+#   retirer_base / retirer_av     : liste de noms à supprimer
+#   ajouter_base / ajouter_av     : liste de noms à ajouter (à la fin)
+#   remplacer_base / remplacer_av : liste de (ancien, nouveau)
+#   set_base / set_av             : liste qui REMPLACE entièrement
+#   deplacer_av_vers_base         : liste de noms à déplacer av → base
+#   set_base_choix / set_av_choix : dict {nb, options, note?}
+#   retirer_dans_description      : substring à retirer (paragraphe parasite)
+#   retirer_dans_reputation       : substring à retirer
+# Matching : insensible casse/accents/apostrophes.
+# ============================================================
+
+METIERS_MODIFICATIONS: dict[str, dict] = {
+    "Archéologue": {
+        # Choix 1 parmi 3 (au lieu d'avoir les 3 toutes incluses).
+        "retirer_av": ["Connaissance des pièges", "Connaissance des runes", "Connaissance des Sidhes"],
+        "set_av_choix": {"nb": 1, "options": [
+            "Connaissance des pièges", "Connaissance des runes", "Connaissance des Sidhes",
+        ]},
+    },
+    "Armateur": {
+        "retirer_av": ["Construction navale", "Étiquette", "Banquier"],
+    },
+    "Arnaqueur": {
+        "remplacer_base": [("Sincérité", "Duperie")],
+        "retirer_av": ["Intimidation", "Jouer", "Cancanier", "Étiquette", "Corruption"],
+    },
+    "Barde": {
+        "retirer_av": ["Diplomatie", "Connaissance des plantes"],
+    },
+    "Bateleur": {
+        # Base : ne garder que 'Danse' (suppression de "et Éloquence", Chant, Comédie).
+        "set_base": ["Danse"],
+        "retirer_av": ["Comportementalisme", "Discrétion", "Séduction",
+                       "Conduite d’attelage", "Connaissance des routes (nation)"],
+    },
+    "Batelier": {
+        "retirer_av": ["Diplomatie", "Lancer", "Qui-vive"],
+    },
+    "Bonne aventure": {
+        "retirer_av": ["Autre méthode de prédiction (préciser)", "Autre (préciser)"],
+    },
+    "Cadet": {
+        # Base : 2 fixes + choix (Tâches domestiques académies / Valet autres).
+        "set_base": ["Jeu de jambes", "Ordre serré"],
+        "set_base_choix": {
+            "nb": 1,
+            "options": ["Tâches domestiques", "Valet"],
+            "note": "Tâches domestiques dans les académies, Valet pour les autres.",
+        },
+        # Av : retirer les fragments cassés du split, mettre un choix propre.
+        "retirer_av": [
+            "Orientation citadine (la ville ou se situe l’académie) ou Connaissance des routes (sa nation",
+            "pour les autres)",
+        ],
+        "set_av_choix": {
+            "nb": 1,
+            "options": [
+                "Orientation citadine (Nation à préciser)",
+                "Connaissance des routes (nation à préciser)",
+            ],
+            "note": "Nation de l'Académie pour les deux compétences.",
+        },
+    },
+    "Caravanier": {
+        "retirer_av": ["Guet-apens", "Sincérité"],
+    },
+    "Cao Yao (Acupuncteur)": {
+        "retirer_av": ["Qui-vive"],
+        "ajouter_av": [
+            "Examiner", "Hypnotisme", "Blocage d’articulation", "Comportementalisme",
+            "Connaissance des plantes", "Recherches", "Sciences de la nature",
+        ],
+    },
+    "Chevalier": {
+        "retirer_av": ["Guet-apens", "Mode", "Séduction"],
+    },
+    "Chroniqueur": {
+        # Note : 'Contacts (cité)' déjà renommé 'Contacts (Nation à préciser)' par la normalisation.
+        "retirer_av": ["Comportementalisme", "Étiquette", "Éloquence"],
+    },
+    "Cocher": {
+        "retirer_av": ["Guet-apens"],
+    },
+    "Colporteur": {
+        "retirer_av": ["Sincérité", "Narrer", "Comportementalisme"],
+    },
+    "Comédien": {
+        "retirer_av": ["Linguistique", "Sincérité"],
+    },
+    "Commandement": {
+        "retirer_av": ["Code secret", "Histoire", "Ordre serré", "Intimidation",
+                       "Artillerie", "Lancer de fusée (Cathayan uniquement)"],
+        "set_av_choix": {
+            "nb": 1,
+            "options": ["Artillerie", "Lancer de fusée (Cathayan uniquement)"],
+        },
+    },
+    "Contrebandier": {
+        # Base/av_choix déjà définis dans METIERS_COMPETENCES_OVERRIDES (terrestre/marin).
+        # Reste : retirer Guet-apens des av.
+        "retirer_av": ["Guet-apens"],
+    },
+    "Diplomate": {
+        "retirer_av": ["Économie"],
+    },
+    "Domestique": {
+        "retirer_av": ["Marchandage", "Cancanier", "Couturier",
+                       "Conduite d’attelage", "Conduite de traîneau (Ussura)"],
+        "set_av_choix": {
+            "nb": 1,
+            "options": ["Conduite d’attelage", "Conduite de traîneau (Ussura)"],
+        },
+    },
+    "Courtisan": {
+        "retirer_av": ["Corruption", "Comportementalisme", "Politique", "Héraldique"],
+    },
+    "Courtisane": {
+        "ajouter_av": ["Musique (instrument au choix)", "Dilettantisme"],
+        # Choix base déjà défini (3 parmi 6) dans METIERS_COMPETENCES_OVERRIDES.
+        # Choix supplémentaire en avancées : Compositeur OU Création littéraire.
+        "set_av_choix": {
+            "nb": 1,
+            "options": ["Compositeur", "Création littéraire"],
+        },
+    },
+    "Détrousseur": {
+        "ajouter_av": ["Course de vitesse", "Duperie", "Pickpocket"],
+    },
+    "Éclaireur": {
+        "retirer_av": ["Connaissance des animaux", "Escalade", "Pêche"],
+    },
+    "Érudit": {
+        # Avancées entièrement en choix 10 parmi 18.
+        "set_av": [],
+        "set_av_choix": {
+            "nb": 10,
+            "options": [
+                "Architecture", "Astronomie", "Connaissance des animaux",
+                "Connaissance des plantes", "Connaissance des Syrneths",
+                "Création littéraire", "Droit", "Économie", "Éloquence",
+                "Géographie", "Héraldique", "Linguistique", "Mathématiques",
+                "Numismatique", "Occultisme", "Philosophie",
+                "Sciences de la nature", "Théologie",
+            ],
+        },
+    },
+    "Escamoteur": {
+        "retirer_av": ["Comportementalisme", "Corruption"],
+    },
+    "Espion": {
+        "retirer_av": ["Comportementalisme", "Hypnotisme", "Langage des signes", "Déguisement"],
+        "remplacer_base": [("Sincérité", "Duperie")],
+        "remplacer_av": [("Sincérité", "Duperie")],
+    },
+    "Estudiant": {
+        # Note : 'Orientation citadine (cité)' → renommée par normalisation.
+        # 'Contacts (cité)' → idem.
+        "retirer_av": ["Chant", "Contacts (Nation à préciser)", "Jouer", "Parier"],
+    },
+    "Explorateur": {
+        "retirer_av": ["Qui-vive", "Diplomatie", "Conduite d’attelage", "Équitation"],
+        "set_av_choix": {
+            "nb": 1,
+            "options": ["Conduite d’attelage", "Équitation"],
+        },
+    },
+    "Fouineur": {
+        # Les 3 '(cité)' normalisés en '(Nation à préciser)' par la normalisation.
+        "retirer_av": ["Étiquette", "Héraldique", "Langage des signes",
+                       "Numismatique", "Qui-vive"],
+    },
+    "Fournisseur de drogues": {
+        "retirer_av": ["Évaluation"],
+    },
+    "Galérien": {
+        # Base défini par COMPETENCES_OVERRIDES = [Qui-vive, Une compétence d'artisan…]
+        # On ajoute 'Équilibre' en base, et Course d'endurance + Nager en av.
+        "ajouter_base": ["Équilibre"],
+        "ajouter_av": ["Course d’endurance", "Nager"],
+    },
+    "Galopin": {
+        "ajouter_av": ["Tricher"],
+    },
+    "Garde du corps": {
+        "ajouter_av": ["Prise", "Blocage d’articulation"],
+    },
+    "Guérillero": {
+        "ajouter_av": ["Connaissance des plantes"],
+    },
+    "Guérisseur": {
+        "ajouter_av": ["Examiner", "Hypnotisme", "Jardinier", "Soin des animaux"],
+    },
+    "Guide": {
+        # Base : retirer 'Orientation citadine (cité)' (devient choix), ajouter Marchandage déplacé.
+        # Note : 'Contacts (cité)' déjà normalisée en '(Nation à préciser)'.
+        "retirer_base": ["Orientation citadine (Nation à préciser)"],
+        "deplacer_av_vers_base": ["Marchandage"],
+        "set_base_choix": {
+            "nb": 1,
+            "options": [
+                "Orientation citadine (Nation à préciser)",
+                "Sens de l’orientation",
+            ],
+        },
+        "retirer_av": ["Comportementalisme", "Guet-apens", "Séduction",
+                       "Sens de l’orientation"],
+    },
+    "Hors-la-loi": {
+        "retirer_av": ["Qui-vive"],
+    },
+    "Ingénieur": {
+        "retirer_base": ["Architecture"],
+        "retirer_av": ["Maçon", "Création Littéraire", "Construction navale"],
+        "set_base_choix": {
+            "nb": 1,
+            "options": ["Architecture", "Construction navale"],
+        },
+    },
+    "Intendant": {
+        # 'Contacts (cité)' normalisée en '(Nation à préciser)'.
+        "retirer_av": ["Contacts (Nation à préciser)", "Corruption",
+                       "Intimidation", "Sens des affaires"],
+    },
+    "Jenny": {
+        # Casse de 'bas-fonds' normalisée + cité→Nation.
+        "retirer_av": ["Fouille"],
+    },
+    "Juge d’armes": {
+        "retirer_av": ["Corruption"],
+    },
+    "Légionnaire": {
+        "retirer_av": ["Corruption", "Débrouillardise", "Jouer", "Langage des signes"],
+        "retirer_dans_description": (
+            "Règle spéciale : cette spécialisation coûte 5 PP au lieu de 2 car rares "
+            "sont ceux qui maîtrisent aujourd’hui le métier de Légionnaire de l’ancienne "
+            "Numa. Par contre, ils reçoivent gratuitement l’avantage, entraînement au "
+            "port de l’armure."
+        ),
+    },
+    "Maistrance": {
+        "retirer_av": ["Galvaniser", "Stratégie", "Tactique"],
+    },
+    "Maître d’armes": {
+        "retirer_av": ["Comportementalisme", "Galvaniser", "Guet-apens", "Roulé-boulé"],
+    },
+    "Marchand": {
+        "retirer_av": ["Banquier", "Comportementalisme", "Corruption", "Étiquette"],
+    },
+    "Marin": {
+        "retirer_av": ["Jouer", "Sincérité", "Pêche"],
+    },
+    "Pauvre Chevalier": {
+        "retirer_av": ["Amortir une chute", "Forgeron", "Jeu de jambes", "Potier", "Séduction"],
+        "retirer_dans_reputation": (
+            "Ces métiers sont réservées à des personnages très expérimentés, donc à priori, "
+            "pas des personnages-joueurs débutants. Quant aux métiers Aérostier et Politicien, "
+            "ils n’existent pas au moment de la création de personnage, que ce soit en 1656 ou "
+            "en 1668. Ils ne seront donc proposés aux joueurs qu’à la discrétion du MJ."
+        ),
+    },
+    "Prêtre": {
+        # Casse de 'Pique-assiette' normalisée.
+        "retirer_av": ["Comportementalisme"],
+    },
+    "Rasoir": {
+        "retirer_av": ["Comportementalisme", "Tactique", "Commander"],
+    },
+    "Receleur": {
+        "ajouter_av": ["Dissimulation", "Falsification", "Déplacement silencieux", "Logistique"],
+    },
+}
+
+
 PARAGRAPHE_BALEINIER = (
     "Du côté de la mer Atabéenne, toute la faune marine est plus monstrueuse et "
     "terrifiante que la normale. Poissons et autres créatures maritimes d'ordinaire "
@@ -539,6 +851,168 @@ def appliquer_overrides(metiers: list[dict]) -> list[dict]:
     return result
 
 
+def normaliser_competences_metiers(metiers: list[dict]) -> None:
+    """Applique COMPETENCES_REF_NORMALISATIONS aux noms de compétences
+    dans competences_base, competences_avancees, et options des choix."""
+    def norm_liste(lst):
+        if not lst: return lst
+        return [normaliser_ref_competence(x) for x in lst]
+    def norm_choix(ch):
+        if not ch: return ch
+        if "options" in ch:
+            ch["options"] = norm_liste(ch["options"])
+        return ch
+    for m in metiers:
+        if m.get("competences_base"):
+            m["competences_base"] = norm_liste(m["competences_base"])
+        if m.get("competences_avancees"):
+            m["competences_avancees"] = norm_liste(m["competences_avancees"])
+        if m.get("competences_base_choix"):
+            m["competences_base_choix"] = norm_choix(m["competences_base_choix"])
+        if m.get("competences_avancees_choix"):
+            m["competences_avancees_choix"] = norm_choix(m["competences_avancees_choix"])
+
+
+def appliquer_modifications(metiers: list[dict]) -> None:
+    """Applique METIERS_MODIFICATIONS (retirer/ajouter/remplacer/set/choix/…)
+    aux métiers existants. Matching insensible casse/accents/apostrophes."""
+    mods = {_nk(k): (k, v) for k, v in METIERS_MODIFICATIONS.items()}
+    vus: set[str] = set()
+
+    def _retirer(lst: list[str], a_retirer: list[str]) -> list[str]:
+        keys = {_nk(x) for x in a_retirer}
+        return [x for x in lst if _nk(x) not in keys]
+
+    def _ajouter_unique(lst: list[str], a_ajouter: list[str]) -> list[str]:
+        existing = {_nk(x) for x in lst}
+        result = list(lst)
+        for x in a_ajouter:
+            if _nk(x) not in existing:
+                result.append(x)
+                existing.add(_nk(x))
+        return result
+
+    def _remplacer(lst: list[str], pairs: list[tuple[str, str]]) -> list[str]:
+        if not pairs: return lst
+        mapping = {_nk(o): n for o, n in pairs}
+        return [mapping.get(_nk(x), x) for x in lst]
+
+    for m in metiers:
+        nk = _nk(m["nom"])
+        if nk not in mods:
+            continue
+        vus.add(nk)
+        _, op = mods[nk]
+        base = list(m.get("competences_base", []))
+        av = list(m.get("competences_avancees", []))
+
+        # Set (remplace toute la liste)
+        if "set_base" in op:        base = list(op["set_base"])
+        if "set_av" in op:          av = list(op["set_av"])
+        # Retirer
+        if "retirer_base" in op:    base = _retirer(base, op["retirer_base"])
+        if "retirer_av" in op:      av = _retirer(av, op["retirer_av"])
+        # Remplacer
+        if "remplacer_base" in op:  base = _remplacer(base, op["remplacer_base"])
+        if "remplacer_av" in op:    av = _remplacer(av, op["remplacer_av"])
+        # Déplacer av → base
+        if "deplacer_av_vers_base" in op:
+            keys = {_nk(x) for x in op["deplacer_av_vers_base"]}
+            a_deplacer = [x for x in av if _nk(x) in keys]
+            av = [x for x in av if _nk(x) not in keys]
+            base = _ajouter_unique(base, a_deplacer)
+        # Ajouter
+        if "ajouter_base" in op:    base = _ajouter_unique(base, op["ajouter_base"])
+        if "ajouter_av" in op:      av = _ajouter_unique(av, op["ajouter_av"])
+        # Set choix
+        if "set_base_choix" in op:  m["competences_base_choix"] = dict(op["set_base_choix"])
+        if "set_av_choix" in op:    m["competences_avancees_choix"] = dict(op["set_av_choix"])
+        # Description / Réputation
+        if "retirer_dans_description" in op:
+            sub = op["retirer_dans_description"]
+            desc = m.get("description", "") or ""
+            m["description"] = " ".join(desc.replace(sub, "").split()).strip()
+        if "retirer_dans_reputation" in op:
+            sub = op["retirer_dans_reputation"]
+            rep = m.get("reputation", "") or ""
+            m["reputation"] = " ".join(rep.replace(sub, "").split()).strip()
+
+        m["competences_base"] = base
+        m["competences_avancees"] = av
+
+    for nk, (nom, _) in mods.items():
+        if nk not in vus:
+            print(f"  [!] Modification non appliquée (métier introuvable) : '{nom}'")
+
+
+def sync_competences_acces(metiers: list[dict]) -> None:
+    """Reconstruit donnent_acces_base / donnent_acces_avancee de chaque compétence
+    à partir des métiers (source de vérité après nos modifications).
+    Lit competences.json, met à jour, ré-écrit + competences.js.
+    """
+    comp_path = DEST_DIR / "competences.json"
+    comp_js_path = DEST_DIR / "competences.js"
+    if not comp_path.exists():
+        print("  [!] competences.json absent — sync ignorée")
+        return
+    cdata = json.loads(comp_path.read_text(encoding="utf-8"))
+    competences = cdata.get("competences", [])
+    # Index par clé normalisée → nom canonique (de la base de compétences)
+    canon: dict[str, str] = {_nk(c["nom"]): c["nom"] for c in competences}
+
+    # Construction de l'index inverse : comp_key → ({metiers_base}, {metiers_av})
+    from collections import defaultdict
+    acces_base: dict[str, set[str]] = defaultdict(set)
+    acces_av: dict[str, set[str]] = defaultdict(set)
+
+    def _ajouter(comp_str: str, niveau: str, metier_nom: str):
+        key = _nk(comp_str)
+        if key not in canon:
+            return  # pas de compétence canonique : laisse tel quel (sera affiché en texte)
+        (acces_base if niveau == "base" else acces_av)[key].add(metier_nom)
+
+    for m in metiers:
+        nm = m["nom"]
+        for c in m.get("competences_base", []):
+            _ajouter(c, "base", nm)
+        for c in m.get("competences_avancees", []):
+            _ajouter(c, "av", nm)
+        choix_b = m.get("competences_base_choix") or {}
+        for c in choix_b.get("options", []):
+            _ajouter(c, "base", nm)
+        choix_av = m.get("competences_avancees_choix") or {}
+        for c in choix_av.get("options", []):
+            _ajouter(c, "av", nm)
+
+    # Affecte les listes triées (FR)
+    def _tri(lst):
+        return sorted(lst, key=lambda x: x.lower())
+
+    nb_modif = 0
+    for c in competences:
+        key = _nk(c["nom"])
+        new_base = _tri(list(acces_base.get(key, [])))
+        new_av = _tri(list(acces_av.get(key, [])))
+        old_base = c.get("donnent_acces_base", [])
+        old_av = c.get("donnent_acces_avancee", [])
+        if new_base != old_base or new_av != old_av:
+            c["donnent_acces_base"] = new_base
+            c["donnent_acces_avancee"] = new_av
+            nb_modif += 1
+    print(f"  {nb_modif} compétence(s) avec liste d'accès mise à jour")
+
+    # Réécrit competences.json + competences.js
+    json_text = json.dumps(cdata, ensure_ascii=False, indent=2)
+    comp_path.write_text(json_text, encoding="utf-8")
+    comp_js_path.write_text(
+        f"// Généré par pdf_competences_to_json.py + pdf_metiers_to_json.py (synchro inverse)\n"
+        f"window.COMPETENCES_DATA = {json_text};\n",
+        encoding="utf-8",
+    )
+    print(f"  OK -> {comp_path}")
+    print(f"  OK -> {comp_js_path}")
+
+
 def main() -> None:
     print("Parsing PDF Métiers…")
     metiers = parse_pdf(SOURCE_PDF)
@@ -547,6 +1021,15 @@ def main() -> None:
     print("Application des overrides (restrictions, suppressions, Baleinier)…")
     metiers = appliquer_overrides(metiers)
     print(f"  {len(metiers)} métiers après suppressions")
+
+    print("Normalisation (cité→Nation, fautes de casse)…")
+    normaliser_competences_metiers(metiers)
+
+    print(f"Application de {len(METIERS_MODIFICATIONS)} modifications maison…")
+    appliquer_modifications(metiers)
+
+    print("Synchro inverse : reconstruction de donnent_acces_* dans competences.json…")
+    sync_competences_acces(metiers)
 
     # Stats catégories (qui sont DANS chaque métier, pas en pré-passe)
     from collections import Counter

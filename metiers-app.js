@@ -56,9 +56,10 @@
 
   function renderCard(m) {
     const cats = m.categories || [];
-    // Compteur : compétences fixes + options des éventuels choix (base & avancées).
-    const nbChoixBase = ((m.competences_base_choix && m.competences_base_choix.options) || []).length;
-    const nbChoixAv = ((m.competences_avancees_choix && m.competences_avancees_choix.options) || []).length;
+    // Compteur : compétences fixes + nombre QUE LE JOUEUR PEUT PRENDRE dans les choix
+    // (= choix.nb, pas le nombre d'options). Ex: 'Choisir 3 parmi 6' compte pour 3.
+    const nbChoixBase = (m.competences_base_choix && m.competences_base_choix.nb) || 0;
+    const nbChoixAv = (m.competences_avancees_choix && m.competences_avancees_choix.nb) || 0;
     const nbComp = (m.competences_base || []).length + (m.competences_avancees || []).length
                  + nbChoixBase + nbChoixAv;
     const r = m.restriction_type || "aucune";

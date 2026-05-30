@@ -88,7 +88,7 @@ window.METIERS_DATA = {
         "Banquier",
         "Comptabilité",
         "Connaissance des Syrneths",
-        "Contacts (cité)",
+        "Contacts (Nation à préciser)",
         "Occultisme"
       ],
       "reputation": "Rang social : +1",
@@ -139,7 +139,7 @@ window.METIERS_DATA = {
         "Comptabilité",
         "Droit",
         "Comportementalisme",
-        "Contacts (cité)",
+        "Contacts (Nation à préciser)",
         "Falsification",
         "Marchandage",
         "Recherches"
@@ -162,13 +162,10 @@ window.METIERS_DATA = {
         "Marchandage"
       ],
       "competences_avancees": [
-        "Banquier",
         "Comptabilité",
         "Connaissance de la mer",
-        "Construction navale",
         "Corruption",
         "Éloquence",
-        "Étiquette",
         "Évaluation",
         "Géographie",
         "Logistique",
@@ -189,18 +186,13 @@ window.METIERS_DATA = {
       "competences_base": [
         "Comportementalisme",
         "Comédie",
-        "Sincérité"
+        "Duperie"
       ],
       "competences_avancees": [
-        "Cancanier",
         "Charlatanisme",
-        "Corruption",
         "Déguisement",
         "Discrétion",
-        "Étiquette",
         "Falsification",
-        "Intimidation",
-        "Jouer",
         "Parier",
         "Pique-assiette",
         "Séduction",
@@ -369,7 +361,7 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Comportementalisme",
-        "Connaissance des bas-fonds (cité)",
+        "Connaissance des bas-fonds (Nation à préciser)",
         "Corruption",
         "Création Littéraire",
         "Étiquette",
@@ -395,7 +387,7 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Comportementalisme",
-        "Connaissance des bas-fonds (cité)",
+        "Connaissance des bas-fonds (Nation à préciser)",
         "Corruption",
         "Discrétion",
         "Dissimulation",
@@ -415,17 +407,11 @@ window.METIERS_DATA = {
       ],
       "description": "Ce métier est celui de tous les personnages qui vivent en se produisant devant les foules, afin de les faire rire, pleurer ou s’extasier. Lanceurs de couteaux, acrobates, danseurs, chanteurs et ventriloques forment le gros de cette profession. Ce qu’ils récoltent dans leur chapeau à la fin de la représentation sera bien souvent tout ce qu’ils auront pour manger et dormir. C’est pour cette raison (ou simplement par envie) que certains acteurs utilisent leurs compétences à d’autres fins (moins honnêtes). Ces individus voyagent beaucoup, parfois seuls mais généralement au sein d’une troupe qui se produit dans les villages sur leur route. Les troupes les plus chanceuses ne cessent jamais de travailler et passent parfois plusieurs mois d’affilée dans la même ville. Les autres vivotent bon gré mal gré et sont en quête permanente d’un public susceptible de reconnaître leur talent.",
       "competences_base": [
-        "Chant",
-        "Comédie",
-        "Danse et Éloquence"
+        "Danse"
       ],
       "competences_avancees": [
         "Compère",
-        "Comportementalisme",
-        "Conduite d’attelage",
-        "Connaissance des routes (nation)",
         "Déguisement",
-        "Discrétion",
         "Dressage",
         "Équilibriste",
         "Hypnotisme",
@@ -433,7 +419,6 @@ window.METIERS_DATA = {
         "Musique (instrument)",
         "Narrer",
         "Prestidigitation",
-        "Séduction",
         "Sher Da Shi (Croissantin uniquement)",
         "Spectacle de rue"
       ],
@@ -457,15 +442,12 @@ window.METIERS_DATA = {
         "Cartographie",
         "Connaissance des nœuds",
         "Corruption",
-        "Diplomatie",
         "Équilibre",
         "Gréer",
         "Guet-apens",
-        "Lancer",
         "Nager",
         "Pêche",
-        "Perception du temps",
-        "Qui-vive"
+        "Perception du temps"
       ],
       "reputation": "Rang social : -1",
       "restriction_creation": "libre",
@@ -541,7 +523,7 @@ window.METIERS_DATA = {
       "competences_avancees": [
         "Architecture",
         "Bricoleur",
-        "Connaissance des bas-fonds (cité)",
+        "Connaissance des bas-fonds (Nation à préciser)",
         "Connaissance des pièges",
         "Évaluation",
         "Langage des signes",
@@ -572,7 +554,7 @@ window.METIERS_DATA = {
         "Connaissance des routes (nation)",
         "Étiquette",
         "Falsification",
-        "Orientation citadine (cité)",
+        "Orientation citadine (Nation à préciser)",
         "Papetier",
         "Sens de l’orientation"
       ],
@@ -617,7 +599,7 @@ window.METIERS_DATA = {
       ],
       "description": "Les chasseurs de primes vivent en traquant les criminels recherchés, malfaiteurs et autres indésirables pour les remettre aux mains de la Justice. Les récompenses sont offertes par les souverains, les guildes, l’inquisition ou les ministres de la justice, voire même par les nobles locaux pour se débarrasser des brigands, récupérer un escroc un peu trop malin, ramener une fille en fuite pour son mariage, clore le bec à un agitateur – voire capturer El Vago. Les chasseurs de primes sont des combattants expérimentés capables de traquer leurs proies sans perdre leur piste ; car ils sont d’un caractère obstiné, dur et cynique. Ce sont des tueurs professionnels dans le vrai sens du terme, qui n’hésitent pas, en dernier ressort, à employer tous les moyens, s’ils justifient la fin, pour réussir. Ce sont des solitaires par nature, qui ne se fient à personne et qui ne recherchent la compagnie des autres qu’à partir du moment où elle sert leurs intérêts. Les gens de basse condition les considèrent avec peur et défiance et les autorités les voient comme un mal nécessaire tout en les accueillant froidement.",
       "competences_base": [
-        "Contacts (cité)",
+        "Contacts (Nation à préciser)",
         "Fouille",
         "Guet-apens"
       ],
@@ -652,13 +634,10 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Calligraphie",
-        "Comportementalisme",
-        "Contacts (cité)",
+        "Contacts (Nation à préciser)",
         "Corruption",
         "Discrétion",
         "Écrivain public",
-        "Éloquence",
-        "Étiquette",
         "Histoire",
         "Narrer",
         "Politique",
@@ -685,7 +664,6 @@ window.METIERS_DATA = {
         "Conduite de traineau (Ussura)",
         "Dressage",
         "Équitation",
-        "Guet-apens",
         "Perception du temps",
         "Qui-vive",
         "Sauter",
@@ -739,15 +717,12 @@ window.METIERS_DATA = {
       "competences_avancees": [
         "Cancanier",
         "Charlatanisme",
-        "Comportementalisme",
         "Conduite d’attelage",
         "Connaissance des plantes",
-        "Contacts (cité)",
+        "Contacts (Nation à préciser)",
         "Dissimulation",
         "Évaluation",
-        "Narrer",
-        "Sens des affaires",
-        "Sincérité"
+        "Sens des affaires"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -773,11 +748,9 @@ window.METIERS_DATA = {
         "Création littéraire",
         "Danse",
         "Galvaniser",
-        "Linguistique",
         "Mode",
         "Narrer",
-        "Séduction",
-        "Sincérité"
+        "Séduction"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -796,26 +769,27 @@ window.METIERS_DATA = {
         "Tactique"
       ],
       "competences_avancees": [
-        "Artillerie",
         "Cartographie",
-        "Code secret",
         "Diplomatie",
         "Entraîner",
         "Estomac",
         "Galvaniser",
         "Guet-apens",
         "Héraldique",
-        "Histoire",
-        "Intimidation",
-        "Lancer de fusée (Cathayan uniquement)",
         "Logistique",
-        "Ordre serré",
         "Qui- vive"
       ],
       "reputation": "Réputation martiale : +2",
       "restriction_creation": "libre",
       "restriction_type": "aucune",
-      "restriction_texte": ""
+      "restriction_texte": "",
+      "competences_avancees_choix": {
+        "nb": 1,
+        "options": [
+          "Artillerie",
+          "Lancer de fusée (Cathayan uniquement)"
+        ]
+      }
     },
     {
       "nom": "Contrebandier",
@@ -831,12 +805,11 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Conduite d’attelage",
-        "Connaissance des bas-fonds (cité)",
+        "Connaissance des bas-fonds (Nation à préciser)",
         "Corruption",
         "Dissimulation",
         "Falsification",
         "Fouille",
-        "Guet-apens",
         "Marchandage",
         "Qui-vive"
       ],
@@ -875,16 +848,12 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Cancanier",
-        "Comportementalisme",
-        "Corruption",
         "Diplomatie",
         "Éloquence",
-        "Héraldique",
         "Intrigant",
         "Jouer",
         "Lire sur les lèvres",
         "Pique-assiette",
-        "Politique",
         "Séduction",
         "Sincérité"
       ],
@@ -907,12 +876,15 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Assommer",
-        "Connaissance des bas-fonds (cité)",
+        "Connaissance des bas-fonds (Nation à préciser)",
         "Filature",
         "Fouille",
         "Langage des signes",
-        "Orientation citadine (cité)",
-        "Qui-vive"
+        "Orientation citadine (Nation à préciser)",
+        "Qui-vive",
+        "Course de vitesse",
+        "Duperie",
+        "Pickpocket"
       ],
       "reputation": "Moralité : -2",
       "restriction_creation": "libre",
@@ -935,7 +907,6 @@ window.METIERS_DATA = {
         "Code secret",
         "Comportementalisme",
         "Corruption",
-        "Économie",
         "Éloquence",
         "Géographie",
         "Héraldique",
@@ -961,15 +932,10 @@ window.METIERS_DATA = {
         "Tâches domestiques"
       ],
       "competences_avancees": [
-        "Cancanier",
         "Comptabilité",
-        "Conduite d’attelage",
-        "Conduite de traîneau (Ussura)",
-        "Couturier",
         "Cuisinier",
         "Jardinier",
         "Majordome",
-        "Marchandage",
         "Mode",
         "Qui-vive",
         "Régisseur",
@@ -979,7 +945,14 @@ window.METIERS_DATA = {
       "reputation": "Rang social : -1",
       "restriction_creation": "libre",
       "restriction_type": "aucune",
-      "restriction_texte": ""
+      "restriction_texte": "",
+      "competences_avancees_choix": {
+        "nb": 1,
+        "options": [
+          "Conduite d’attelage",
+          "Conduite de traîneau (Ussura)"
+        ]
+      }
     },
     {
       "nom": "Éclaireur",
@@ -995,14 +968,11 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Cartographie",
-        "Connaissance des animaux",
         "Connaissance des routes (nation)",
         "Course d’endurance",
         "Équitation",
-        "Escalade",
         "Guet-apens",
         "Langage des signes",
-        "Pêche",
         "Perception du temps",
         "Qui-vive",
         "Signes de piste",
@@ -1024,30 +994,34 @@ window.METIERS_DATA = {
         "Histoire",
         "Recherches"
       ],
-      "competences_avancees": [
-        "Architecture",
-        "Astronomie",
-        "Connaissance des animaux",
-        "Connaissance des plantes",
-        "Connaissance des Syrneths",
-        "Création littéraire",
-        "Droit",
-        "Économie",
-        "Éloquence",
-        "Géographie",
-        "Héraldique",
-        "Linguistique",
-        "Mathématiques",
-        "Numismatique",
-        "Occultisme",
-        "Philosophie",
-        "Sciences de la nature",
-        "Théologie"
-      ],
+      "competences_avancees": [],
       "reputation": "Rang social : +1",
       "restriction_creation": "libre",
       "restriction_type": "aucune",
-      "restriction_texte": ""
+      "restriction_texte": "",
+      "competences_avancees_choix": {
+        "nb": 10,
+        "options": [
+          "Architecture",
+          "Astronomie",
+          "Connaissance des animaux",
+          "Connaissance des plantes",
+          "Connaissance des Syrneths",
+          "Création littéraire",
+          "Droit",
+          "Économie",
+          "Éloquence",
+          "Géographie",
+          "Héraldique",
+          "Linguistique",
+          "Mathématiques",
+          "Numismatique",
+          "Occultisme",
+          "Philosophie",
+          "Sciences de la nature",
+          "Théologie"
+        ]
+      }
     },
     {
       "nom": "Escamoteur",
@@ -1057,13 +1031,11 @@ window.METIERS_DATA = {
       "description": "L’escamoteur est un individu particulièrement discret. Il est spécialisé dans la subtilisation des valeurs dans les poches et les bourses. Il n’aime pas du tout la violence et se résout très rarement à l’utiliser, préférant toujours la fuite à une confrontation armée. C’est un tire-laine hors pair, même s’il lui arrive de voler à l’étalage. Il aime la compagnie des autres voleurs et se déplace généralement en groupe de trois ou quatre individus. Le pickpocket est un véritable fléau dans les villes et, les jours de marché, ils sont nombreux à opérer seuls ou en équipe sous le couvert de la foule. La technique favorite et la plus rencontrée consiste à détacher la bourse de la victime à l’aide d’un petit couteau tranchant ou d’un rasoir à manche. L’un d’eux peut aussi déclencher une dispute pour distraire la victime pendant qu’un larron lui fait les poches. Enfin, une minorité d’escamoteurs monte des spectacles de bateleurs et détrousse l’auditoire pendant qu’un acrobate, un singe savant ou un prestidigitateur détourne l’attention. Les bijoux sont une valeur sûre, mais souvent difficiles à dérober discrètement et facilement reconnaissables ; il est souvent ardu de les écouler sans le concours d’un Receleur, qui en profitera d’ailleurs pour escroquer le voleur sur la valeur de sa prise.",
       "competences_base": [
         "Course de vitesse",
-        "Orientation citadine (cité)",
+        "Orientation citadine (Nation à préciser)",
         "Pickpocket"
       ],
       "competences_avancees": [
-        "Comportementalisme",
-        "Connaissance des bas-fonds (cité)",
-        "Corruption",
+        "Connaissance des bas-fonds (Nation à préciser)",
         "Course d’endurance",
         "Discrétion",
         "Dissimulation",
@@ -1091,20 +1063,16 @@ window.METIERS_DATA = {
         "Fouille"
       ],
       "competences_avancees": [
-        "Comportementalisme",
         "Corruption",
         "Crochetage",
-        "Déguisement",
         "Dissimulation",
         "Falsification",
         "Filature",
-        "Hypnotisme",
         "Interrogatoire",
-        "Langage des signes",
         "Lire sur les lèvres",
         "Qui-vive",
         "Séduction",
-        "Sincérité"
+        "Duperie"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -1120,18 +1088,14 @@ window.METIERS_DATA = {
       "competences_base": [
         "Calcul",
         "Débrouillardise",
-        "Orientation citadine (cité)"
+        "Orientation citadine (Nation à préciser)"
       ],
       "competences_avancees": [
         "Astronomie",
-        "Chant",
-        "Contacts (cité)",
         "Droit",
         "Géographie",
         "Héraldique",
         "Histoire",
-        "Jouer",
-        "Parier",
         "Philosophie",
         "Recherches",
         "Sciences de la nature",
@@ -1155,13 +1119,10 @@ window.METIERS_DATA = {
         "Sens de l’orientation"
       ],
       "competences_avancees": [
-        "Conduite d’attelage",
         "Connaissance des animaux",
         "Connaissance des routes (nation)",
         "Déplacement silencieux",
-        "Diplomatie",
         "Éloquence",
-        "Équitation",
         "Linguistique",
         "Marchandage",
         "Perception du temps",
@@ -1171,7 +1132,14 @@ window.METIERS_DATA = {
       "reputation": "Rang social : +1",
       "restriction_creation": "libre",
       "restriction_type": "aucune",
-      "restriction_texte": ""
+      "restriction_texte": "",
+      "competences_avancees_choix": {
+        "nb": 1,
+        "options": [
+          "Conduite d’attelage",
+          "Équitation"
+        ]
+      }
     },
     {
       "nom": "Faussaire",
@@ -1188,7 +1156,7 @@ window.METIERS_DATA = {
       "competences_avancees": [
         "Cartographie",
         "Code secret",
-        "Contacts (cité)",
+        "Contacts (Nation à préciser)",
         "Création littéraire",
         "Dissimulation",
         "Fouille",
@@ -1214,18 +1182,13 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Comportementalisme",
-        "Connaissance des bas-fonds (cité)",
-        "Contacts (cité)",
+        "Connaissance des bas-fonds (Nation à préciser)",
+        "Contacts (Nation à préciser)",
         "Droit",
-        "Étiquette",
         "Examiner",
-        "Héraldique",
         "Intimidation",
-        "Langage des signes",
-        "Numismatique",
-        "Orientation citadine (cité)",
+        "Orientation citadine (Nation à préciser)",
         "Politique",
-        "Qui-vive",
         "Sincérité"
       ],
       "reputation": "Moralité +2",
@@ -1247,10 +1210,10 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Comportementalisme",
-        "Connaissance des bas-fonds (cité)",
+        "Connaissance des bas-fonds (Nation à préciser)",
         "Diagnostic",
         "Dissimulation",
-        "Orientation citadine (cité)",
+        "Orientation citadine (Nation à préciser)",
         "Poison",
         "Premiers secours",
         "Qui-vive"
@@ -1269,7 +1232,8 @@ window.METIERS_DATA = {
       "description": "Voilà bien un métier qui est pratiqué involontairement. Que vous ayez été capturé puis enchaîné à un banc de nage ou puni par la loi et condamné aux galères, vous avez passé un certain nombre d’années à ramer et à tirer l’aviron. Ce sont des années difficiles mais qui forgent un homme, un peu comme le bagne. Traditionnellement, les galériens peuvent créer de petits objets d’art et les revendre au port. Ces babioles follement pittoresques plaisent aux riches et permettent aux forçats d’acheter un peu plus de nourriture. Mais il faut savoir les fabriquer.",
       "competences_base": [
         "Qui-vive",
-        "Une compétence d'artisan au choix"
+        "Une compétence d'artisan au choix",
+        "Équilibre"
       ],
       "competences_avancees": [
         "Connaissance de la mer",
@@ -1278,7 +1242,9 @@ window.METIERS_DATA = {
         "Dissimulation",
         "Estomac",
         "Jeu de jambes",
-        "Soulever"
+        "Soulever",
+        "Course d’endurance",
+        "Nager"
       ],
       "reputation": "Moralité : -2",
       "restriction_creation": "libre",
@@ -1294,17 +1260,18 @@ window.METIERS_DATA = {
       "description": "Lorsqu’on grandit dans la rue ou dans une région sauvage sans personne pour prendre soin de soi, on développe certaines aptitudes comme trouver de la nourriture mise aux ordures ou faire l’aumône. Ce type d’existence enseigne une souplesse morale qui place la survie au-dessus de l’honnêteté.",
       "competences_base": [
         "Déplacement silencieux",
-        "Orientation citadine (cité)",
+        "Orientation citadine (Nation à préciser)",
         "Survie"
       ],
       "competences_avancees": [
-        "Contacts (cité)",
+        "Contacts (Nation à préciser)",
         "Course de vitesse",
         "Débrouillardise",
         "Dissimulation",
         "Mendicité",
         "Pickpocket",
-        "Sincérité"
+        "Sincérité",
+        "Tricher"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -1318,12 +1285,12 @@ window.METIERS_DATA = {
       ],
       "description": "Les gardes sont employés dans toutes les villes de Théah, pour faire fonction de policiers. Leur travail consiste à patrouiller dans les rues et à intervenir en cas de problèmes. Ils sont aussi de garde aux portes des villes, surveillant les environs depuis les tours de garde et vérifiant qui se rend en ville. Ils interrogent et fouillent les visiteurs, s’assurant qu’ils n’ont pas d’armes cachées. Ils sont aussi charger de faire appliquer la loi et de maintenir l’ordre. Les gardes sont employés par les autorités locales et leurs pouvoirs varient suivant les lieux ; dans beaucoup de villes, ils sont absolus (spécialement envers ceux qui sont pauvres et sans défense). C’est le lot du garde d’être impopulaire auprès des gens des villes et des cités ; ils sont recrutés dans les bas-fonds pour combattre les bas-fonds. Rares, parmi eux, sont les vrais fervents des lois.",
       "competences_base": [
-        "Contacts (cité)",
-        "Orientation citadine (cité)",
+        "Contacts (Nation à préciser)",
+        "Orientation citadine (Nation à préciser)",
         "Qui-vive"
       ],
       "competences_avancees": [
-        "Connaissance des bas-fonds (cité)",
+        "Connaissance des bas-fonds (Nation à préciser)",
         "Course d’endurance",
         "Course de vitesse",
         "Discrétion",
@@ -1359,7 +1326,9 @@ window.METIERS_DATA = {
         "Fouille",
         "Guet-apens",
         "Intimidation",
-        "Orientation citadine (cité)"
+        "Orientation citadine (Nation à préciser)",
+        "Prise",
+        "Blocage d’articulation"
       ],
       "reputation": "Réputation martiale : +2",
       "restriction_creation": "libre",
@@ -1415,7 +1384,8 @@ window.METIERS_DATA = {
         "Qui-vive",
         "Sens de l’orientation",
         "Signes de piste",
-        "Tactique"
+        "Tactique",
+        "Connaissance des plantes"
       ],
       "reputation": "Réputation martiale : +1",
       "restriction_creation": "libre",
@@ -1430,29 +1400,31 @@ window.METIERS_DATA = {
       ],
       "description": "Les villes de Théah sont de déroutants dédales de ruelles étroites et de constructions plus ou moins élevées. Les étrangers, et même les autochtones, se plaignent constamment des difficultés qu’ils ont à s’y retrouver, et les visiteurs se perdent le plus souvent dans les minutes qui suivent leur arrivée. Nombre d’habitants proposent leurs services en offrant aux voyageurs de les conduire là où ils le souhaitent. La plupart des guides connaissent une ville en particulier comme le dos de leur main, en particulier l’emplacement des tavernes, bordels et tripots, dont les tenanciers leur reversent une commission. Ils font parfois aussi, dans les villes vodaccies, office de gondoliers ou de cochers lorsque l’activité touristique est faible.",
       "competences_base": [
-        "Contacts (cité)",
+        "Contacts (Nation à préciser)",
         "Éloquence",
-        "Orientation citadine (cité)"
+        "Marchandage"
       ],
       "competences_avancees": [
         "Cartographie",
-        "Comportementalisme",
         "Débrouillardise",
         "Déplacement silencieux",
         "Escalade",
         "Géographie",
-        "Guet- apens",
         "Linguistique",
-        "Marchandage",
         "Qui-vive",
-        "Séduction",
-        "Sens de l’orientation",
         "Sincérité"
       ],
       "reputation": "Rang social : -1",
       "restriction_creation": "libre",
       "restriction_type": "aucune",
-      "restriction_texte": ""
+      "restriction_texte": "",
+      "competences_base_choix": {
+        "nb": 1,
+        "options": [
+          "Orientation citadine (Nation à préciser)",
+          "Sens de l’orientation"
+        ]
+      }
     },
     {
       "nom": "Herboriste",
@@ -1500,7 +1472,6 @@ window.METIERS_DATA = {
         "Fouille",
         "Piéger",
         "Pister",
-        "Qui-vive",
         "Sauter",
         "Sens de l’orientation",
         "Signes de piste",
@@ -1519,7 +1490,7 @@ window.METIERS_DATA = {
       "description": "Il faut plus que quelque instinct meurtrier et un baril de poudre pour détruire un édifice. Vous devez savoir où placer les explosifs, comment se répandra l’incendie, et quels sont les points les plus vulnérables pour passer à l’attaque. Les incendiaires ont une bonne connaissance des produits chimiques inflammables et de la combustibilité des matériaux. Ils s’y connaissent également en fondations et en murs porteurs. L’incendiaire est capable de concevoir des explosifs et sait où les placer pour causer le maximum de dommages. Pour ce qui est de détruire une fortification ennemie, cf. L’Ingénieur, page suivante.",
       "competences_base": [
         "Calcul",
-        "Orientation citadine (cité)",
+        "Orientation citadine (Nation à préciser)",
         "Qui-vive"
       ],
       "competences_avancees": [
@@ -1544,7 +1515,6 @@ window.METIERS_DATA = {
       ],
       "description": "Les ingénieurs sont des personnages extrêmement considérés. Les personnages royaux emploient souvent des ingénieurs pour qu’ils fassent de leurs rêves des réalités. Officier de premier ordre dans le cadre de la poliorcétique (art de la guerre de siège), il peut être amené à honorer des commandes très variées : concevoir le plan d’une gentilhommière, d’un palais, d’une chapelle, d’une église ou de fortifications militaires, organiser la défense d’une place forte ou au contraire les retranchements d’une armée en siège. Tous ces ouvrages sont conçus par des ingénieurs aux horizons divers et variés.",
       "competences_base": [
-        "Architecture",
         "Calcul",
         "Dessin"
       ],
@@ -1553,11 +1523,8 @@ window.METIERS_DATA = {
         "Artillerie navale",
         "Bricoleur",
         "Charpentier",
-        "Construction navale",
-        "Création Littéraire",
         "Fonderie",
         "Géomancie (Cathayans uniquement)",
-        "Maçon",
         "Mathématiques",
         "Recherches",
         "Sciences de la nature"
@@ -1565,7 +1532,14 @@ window.METIERS_DATA = {
       "reputation": "Rang social : +1",
       "restriction_creation": "libre",
       "restriction_type": "aucune",
-      "restriction_texte": ""
+      "restriction_texte": "",
+      "competences_base_choix": {
+        "nb": 1,
+        "options": [
+          "Architecture",
+          "Construction navale"
+        ]
+      }
     },
     {
       "nom": "Intendant",
@@ -1583,17 +1557,13 @@ window.METIERS_DATA = {
       "competences_avancees": [
         "Commander",
         "Comptabilité",
-        "Contacts (cité)",
-        "Corruption",
         "Diplomatie",
         "Droit",
         "Économie",
         "Évaluation",
-        "Intimidation",
         "Logistique",
         "Marchandage",
-        "Politique",
-        "Sens des affaires"
+        "Politique"
       ],
       "reputation": "Rang social : +2",
       "restriction_creation": "libre",
@@ -1615,12 +1585,11 @@ window.METIERS_DATA = {
       "competences_avancees": [
         "Chant",
         "Comportementalisme",
-        "Connaissance des bas- fonds (cité)",
+        "Connaissance des bas-fonds (Nation à préciser)",
         "Corruption",
         "Danse",
         "Discrétion",
         "Dissimulation",
-        "Fouille",
         "Marchandage",
         "Masseur"
       ],
@@ -1643,7 +1612,6 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Code secret",
-        "Corruption",
         "Création littéraire",
         "Dessin",
         "Droit",
@@ -1674,14 +1642,11 @@ window.METIERS_DATA = {
         "Connaissance de la mer",
         "Corruption",
         "Diplomatie",
-        "Galvaniser",
         "Géographie",
         "Guet-apens",
         "Intimidation",
         "Logistique",
-        "Navigation",
-        "Stratégie",
-        "Tactique"
+        "Navigation"
       ],
       "reputation": "Rang social : +1",
       "restriction_creation": "libre",
@@ -1695,12 +1660,12 @@ window.METIERS_DATA = {
       ],
       "description": "Le malandrin connaît sur le bout des doigts la cité qui lui sert de refuge. Il sait où acheter des biens au meilleur prix, où contacter des criminels ou des mercenaires et quel chemin prendre pour semer les gardes de la ville au beau milieu de la nuit. On le trouve aussi souvent dans les groupes de pillards qui maraudent dans le sillage des armées et il est le premier à profiter des émeutes et révoltes pour se remplir les poches des biens de ses victimes.",
       "competences_base": [
-        "Connaissance des bas-fonds (cité)",
-        "Orientation citadine (cité)",
+        "Connaissance des bas-fonds (Nation à préciser)",
+        "Orientation citadine (Nation à préciser)",
         "Qui-vive"
       ],
       "competences_avancees": [
-        "Contacts (cité)",
+        "Contacts (Nation à préciser)",
         "Débrouillardise",
         "Déplacement silencieux",
         "Dissimulation",
@@ -1727,14 +1692,10 @@ window.METIERS_DATA = {
         "Marchandage"
       ],
       "competences_avancees": [
-        "Banquier",
-        "Comportementalisme",
         "Comptabilité",
-        "Contacts (cité)",
-        "Corruption",
+        "Contacts (Nation à préciser)",
         "Économie",
         "Éloquence",
-        "Étiquette",
         "Logistique",
         "Mathématiques",
         "Numismatique",
@@ -1761,15 +1722,12 @@ window.METIERS_DATA = {
         "Cartographie",
         "Connaissance de la mer",
         "Équilibre",
-        "Jouer",
         "Nager",
         "Navigation",
-        "Pêche",
         "Perception du temps",
         "Piloter",
         "Sauter",
-        "Sens de l’orientation",
-        "Sincérité"
+        "Sens de l’orientation"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -1839,9 +1797,9 @@ window.METIERS_DATA = {
       ],
       "description": "Les mendiants sont les parias de la société, des désespérés qui n’ont pas de moyens visibles de subsistance. Ils se regroupent dans les villes et les cités de Théah, car la seule façon pour eux d’éviter les affres de la faim consiste à mendier dans les rues. C’est une activité des plus hasardeuses, surtout depuis que la plupart des villes autorisent que la garde moleste, marque au fer et jette en prison les clochards pratiquement comme il lui plaît. Le mendiant accepte ces risques comme inhérents à son métier et il devient souvent expert dans l’art d’extorquer de l’argent aux passants - certains jouent sur la pitié alors que d’autres offrent leur bénédiction ou menacent de malédictions - tout cela dans l’unique but de remplir leur sébile. Dans certaines grandes cités, les mendiants sont organisés en guildes de mendiants (non reconnues officiellement) qui attribuent les emplacements, s’occupent de détourner l’attention des autorités et éliminent les amateurs ou les mendiants non affiliés. Le plus souvent, la guilde des mendiants travaille conjointement avec la guilde des voleurs, lui fournissant des informations et des guetteurs.",
       "competences_base": [
-        "Connaissance des bas-fonds (cité)",
+        "Connaissance des bas-fonds (Nation à préciser)",
         "Mendicité",
-        "Orientation citadine (cité)"
+        "Orientation citadine (Nation à préciser)"
       ],
       "competences_avancees": [
         "Comédie",
@@ -1927,12 +1885,12 @@ window.METIERS_DATA = {
       "competences_avancees": [
         "Acrobatie",
         "Amortir une chute",
-        "Connaissance des bas-fonds (cité)",
+        "Connaissance des bas-fonds (Nation à préciser)",
         "Connaissance des pièges",
         "Contorsion",
         "Fouille",
         "Langage des signes",
-        "Orientation citadine (cité)",
+        "Orientation citadine (Nation à préciser)",
         "Qui-vive",
         "Sauter"
       ],
@@ -2116,7 +2074,6 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Chant",
-        "Comportementalisme",
         "Création littéraire",
         "Diplomatie",
         "Étiquette",
@@ -2152,7 +2109,7 @@ window.METIERS_DATA = {
         "Géographie",
         "Mathématiques",
         "Occultisme",
-        "Pique- assiette",
+        "Pique-assiette",
         "Politique",
         "Sciences de la nature",
         "Théologie"
@@ -2203,12 +2160,12 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Casser un membre",
-        "Connaissance des bas-fonds (cité)",
+        "Connaissance des bas-fonds (Nation à préciser)",
         "Dissimulation",
         "Estomac",
         "Filature",
         "Guet-apens",
-        "Orientation citadine (cité)"
+        "Orientation citadine (Nation à préciser)"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -2223,7 +2180,7 @@ window.METIERS_DATA = {
       ],
       "description": "Un receleur est un intermédiaire qui trouve un acheteur prêt à acquérir des biens volés. La Gilde de la libération a souvent besoin de receleurs pour écouler le fruit de ses rapines. D’ailleurs, les voleurs traditionnels font également appel à eux. La plupart des receleurs ont une véritable profession et trempent rarement dans le crime. Pour les individus dotés du métier de Receleur, Évaluation est une compétence de base. Gardez à l’esprit que se livrer au recel dans le monde de Théah est bien plus aisé que dans notre monde. La population moins nombreuse, et le manque de moyens de communication efficaces impliquent que les quelques personnes qui verront une œuvre d’art ne sauront sans doute pas si elle est volée ou non. Cela rend le travail de receleur bien plus facile et surtout moins risqué.",
       "competences_base": [
-        "Contacts (cité)",
+        "Contacts (Nation à préciser)",
         "Évaluation",
         "Marchandage"
       ],
@@ -2231,9 +2188,13 @@ window.METIERS_DATA = {
         "Banquier",
         "Calcul",
         "Comportementalisme",
-        "Connaissance des bas-fonds (cité)",
+        "Connaissance des bas-fonds (Nation à préciser)",
         "Numismatique",
-        "Sens des affaires"
+        "Sens des affaires",
+        "Dissimulation",
+        "Falsification",
+        "Déplacement silencieux",
+        "Logistique"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -2306,12 +2267,12 @@ window.METIERS_DATA = {
       "competences_avancees": [
         "Assommer",
         "Comportementalisme",
-        "Connaissance des bas-fonds (cité)",
-        "Contacts (cité)",
+        "Connaissance des bas-fonds (Nation à préciser)",
+        "Contacts (Nation à préciser)",
         "Déplacement silencieux",
         "Filature",
         "Fouille",
-        "Orientation citadine (cité)"
+        "Orientation citadine (Nation à préciser)"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -2386,10 +2347,8 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Cancanier",
-        "Connaissance des plantes",
         "Connaissance des routes (nation)",
         "Connaissance des Sidhes",
-        "Diplomatie",
         "Énigmes",
         "Étiquette",
         "Galvaniser",
@@ -2424,8 +2383,7 @@ window.METIERS_DATA = {
         "I Ching (Cathayans uniquement)",
         "Marchandage",
         "Occultisme",
-        "Osselets",
-        "Autre (préciser)"
+        "Osselets"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -2449,7 +2407,13 @@ window.METIERS_DATA = {
         "Médications",
         "Méditation",
         "Philosophie",
-        "Qui-vive"
+        "Examiner",
+        "Hypnotisme",
+        "Blocage d’articulation",
+        "Comportementalisme",
+        "Connaissance des plantes",
+        "Recherches",
+        "Sciences de la nature"
       ],
       "reputation": "Moralité : +1",
       "restriction_creation": "libre",
@@ -2476,11 +2440,9 @@ window.METIERS_DATA = {
         "Équitation",
         "Évaluation",
         "Géographie",
-        "Guet-apens",
         "Logistique",
         "Qui-vive",
-        "Sens de l’orientation",
-        "Sincérité"
+        "Sens de l’orientation"
       ],
       "reputation": "Rang social : +1",
       "restriction_creation": "libre",
@@ -2503,7 +2465,9 @@ window.METIERS_DATA = {
         "Pique-assiette",
         "Poison",
         "Politique",
-        "Sincérité"
+        "Sincérité",
+        "Musique (instrument au choix)",
+        "Dilettantisme"
       ],
       "reputation": "Rang social : +2",
       "restriction_creation": "libre",
@@ -2518,6 +2482,13 @@ window.METIERS_DATA = {
           "Masseur",
           "Mode",
           "Séduction"
+        ]
+      },
+      "competences_avancees_choix": {
+        "nb": 1,
+        "options": [
+          "Compositeur",
+          "Création littéraire"
         ]
       }
     },
@@ -2624,7 +2595,11 @@ window.METIERS_DATA = {
         "Charlatanisme",
         "Médications",
         "Narrer",
-        "Théologie"
+        "Théologie",
+        "Examiner",
+        "Hypnotisme",
+        "Jardinier",
+        "Soin des animaux"
       ],
       "reputation": "Moralité : +2",
       "restriction_creation": "libre",
@@ -2823,9 +2798,6 @@ window.METIERS_DATA = {
         "Astronomie",
         "Calcul",
         "Code secret",
-        "Connaissance des pièges",
-        "Connaissance des runes",
-        "Connaissance des Sidhes",
         "Connaissance des Syrneths",
         "Examen d’artefact",
         "Qui-vive",
@@ -2834,7 +2806,15 @@ window.METIERS_DATA = {
       "reputation": "Rang social : +1",
       "restriction_creation": "libre",
       "restriction_type": "societe",
-      "restriction_texte": "Faire partie de la Société des Explorateurs."
+      "restriction_texte": "Faire partie de la Société des Explorateurs.",
+      "competences_avancees_choix": {
+        "nb": 1,
+        "options": [
+          "Connaissance des pièges",
+          "Connaissance des runes",
+          "Connaissance des Sidhes"
+        ]
+      }
     },
     {
       "nom": "Artificier",
@@ -2871,8 +2851,7 @@ window.METIERS_DATA = {
       "description": "Les cadets sont des chevaliers en formation. Ils peuvent fréquenter une école formelle telle que l’Académie des mousquetaires ou celles des gardes de fer eisenöres ou bien être sous la tutelle directe d’un chevalier plus expérimenté, solution choisie par les Vigiles vodaccis par exemple. Bien que le cœur de la formation des cadets soit le combat, leur apprentissage ne se limite pas au métier des armes, ils apprennent également à lire et à écrire, des rudiments de droit, l’étiquette et tout ce qui leur sera nécessaire pour faire honneur à leur future unité. Beaucoup obtiennent leur place en raison de leur naissance, d’autres grâce à la fortune de leur famille, mais quelques-uns, les plus respectés, ont gagné leur place par leurs exploits, que ce soit sur un champ de bataille ou en affrontant la racaille dans les sombres ruelles d’une grande cité. NdG : le métier de Cadet se substitue à celui d’Écuyer, mais pas à ceux d’Acolyte ou de Pauvre Chevalier, les Kreuzritters et les Chevaliers de la Rose et de la Croix ont de trop nombreuses spécificités pour pouvoir être assimilés aux cadets des organisations chevaleresques reconnues.",
       "competences_base": [
         "Jeu de jambes",
-        "Ordre serré",
-        "Tâches domestiques (dans les académies) ou Valet (pour les autres)"
+        "Ordre serré"
       ],
       "competences_avancees": [
         "Calcul",
@@ -2882,15 +2861,29 @@ window.METIERS_DATA = {
         "Étiquette",
         "Héraldique",
         "Histoire",
-        "Orientation citadine (la ville ou se situe l’académie) ou Connaissance des routes (sa nation",
-        "pour les autres)",
         "Séduction",
         "Soin des chevaux"
       ],
       "reputation": "Réputation martiale : +1",
       "restriction_creation": "libre",
       "restriction_type": "aucune",
-      "restriction_texte": ""
+      "restriction_texte": "",
+      "competences_base_choix": {
+        "nb": 1,
+        "options": [
+          "Tâches domestiques",
+          "Valet"
+        ],
+        "note": "Tâches domestiques dans les académies, Valet pour les autres."
+      },
+      "competences_avancees_choix": {
+        "nb": 1,
+        "options": [
+          "Orientation citadine (Nation à préciser)",
+          "Connaissance des routes (nation à préciser)"
+        ],
+        "note": "Nation de l'Académie pour les deux compétences."
+      }
     },
     {
       "nom": "Dilettante",
@@ -2899,14 +2892,14 @@ window.METIERS_DATA = {
       ],
       "description": "Tous les enfants de la noblesse ne peuvent hériter du titre et des fonctions de leurs géniteurs. Certains rejoignent alors les rangs de l’église, de la cour du souverain, de l’armée ou d’une organisation plus ou moins reconnue. Toutefois, une part non négligeable d’entre eux préfère vivre de ses rentes, s’adonnant à un travail, à un art, pour son seul plaisir, en amateur et avec une certaine fantaisie. À force d’oisiveté et de touche-à-tout, un dilettante peut se targuer d’avoir des connaissances étendues, quoique superficielles, dans tous les domaines. Vous les trouverez bien souvent hantant les clubs et sociétés de gentilshommes et gentes dames.",
       "competences_base": [
-        "Contacts (cité)",
+        "Contacts (Nation à préciser)",
         "Dilettantisme",
         "Étiquette"
       ],
       "competences_avancees": [
         "Écrivain public",
         "Éloquence",
-        "Orientation citadine (cité)",
+        "Orientation citadine (Nation à préciser)",
         "Pique-assiette"
       ],
       "reputation": "Rang social : +2",
@@ -2919,22 +2912,18 @@ window.METIERS_DATA = {
       "categories": [
         "Métiers des Armes"
       ],
-      "description": "Vous avez subi l’entraînement du légionnaire numain typique : marches forcées, combat en formation rapprochée avec les autres légionnaires, construction de camps militaires, etc. Ce n’est pas un métier habituel dans le Théah de 1670… Vous êtes sans doute un immortel ! Règle spéciale : cette spécialisation coûte 5 PP au lieu de 2 car rares sont ceux qui maîtrisent aujourd’hui le métier de Légionnaire de l’ancienne Numa. Par contre, ils reçoivent gratuitement l’avantage, entraînement au port de l’armure.",
+      "description": "Vous avez subi l’entraînement du légionnaire numain typique : marches forcées, combat en formation rapprochée avec les autres légionnaires, construction de camps militaires, etc. Ce n’est pas un métier habituel dans le Théah de 1670… Vous êtes sans doute un immortel !",
       "competences_base": [
         "Jeu de jambes",
         "Ordre serré",
         "Tâches domestiques"
       ],
       "competences_avancees": [
-        "Corruption",
         "Course d’endurance",
-        "Débrouillardise",
         "Estomac",
         "Galvaniser",
         "Guet-apens",
         "Intimidation",
-        "Jouer",
-        "Langage des signes",
         "Logistique",
         "Qui-vive",
         "Survie",
@@ -2958,22 +2947,17 @@ window.METIERS_DATA = {
         "Tâches domestiques"
       ],
       "competences_avancees": [
-        "Amortir une chute",
         "Cordonnier",
         "Course de vitesse",
         "Débrouillardise",
-        "Forgeron",
-        "Jeu de jambes",
         "Nager",
-        "Potier",
         "Qui-vive",
         "Sauter",
-        "Séduction",
         "Soin des animaux (chevaux)",
         "Tailleur",
         "Tonnelier"
       ],
-      "reputation": "Réputation martiale : +2 Ces métiers sont réservées à des personnages très expérimentés, donc à priori, pas des personnages-joueurs débutants. Quant aux métiers Aérostier et Politicien, ils n’existent pas au moment de la création de personnage, que ce soit en 1656 ou en 1668. Ils ne seront donc proposés aux joueurs qu’à la discrétion du MJ.",
+      "reputation": "Réputation martiale : +2",
       "restriction_creation": "libre",
       "restriction_type": "societe",
       "restriction_texte": "Faire partie de la Société Secrète des Chevaliers de la Rose et de la Croix."
@@ -2994,14 +2978,11 @@ window.METIERS_DATA = {
         "Calcul",
         "Connaissance des routes (la nation de son Ordre)",
         "Équitation",
-        "Guet-apens",
         "Héraldique",
         "Intimidation",
-        "Mode",
         "Politique",
         "Premiers secours",
         "Qui- vive",
-        "Séduction",
         "Tactique"
       ],
       "reputation": "Réputation martiale : +3",
@@ -3023,18 +3004,14 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Commander",
-        "Comportementalisme",
         "Équilibre",
         "Estomac",
         "Étiquette",
-        "Galvaniser",
-        "Guet-apens",
         "Intimidation",
         "Narrer",
         "Pas de côté",
         "Premiers secours",
-        "Recherches",
-        "Roulé-boulé"
+        "Recherches"
       ],
       "reputation": "Réputation martiale : +3",
       "restriction_creation": "libre",
@@ -3048,7 +3025,7 @@ window.METIERS_DATA = {
       ],
       "description": "Si les courtisans estiment être les maîtres de la politique, ils saisissent souvent mieux les ficelles de la mode que le véritable usage du pouvoir. Un politicien, lui, comprend la nature même du pouvoir. Il sait l’acquérir, l’exploiter et le reconnaître chez les autres. Un maître en politique comprend ce que les gens veulent avec un minimum de renseignements, et il sait comment répondre à leurs attentes. Dans le cas contraire, il sait a moins vers qui les orienter. Aussi, tant qu’une certaine organisation des plus discrètes ne se sera pas calmée et que ses effets sur Théah n’auront pas régressé, de plus en plus de courtisans seront obligés de tenir compte des besoins des individus qu’ils gouvernent. Dans le même temps, l’aristocratie de Théah devra apprendre à s’intéresser davantage aux réalités du gouvernement qu’aux mondanités. L’ère des courtisans arrive à son terme. Celle des politiciens ne fait que commencer.",
       "competences_base": [
-        "Contacts (cité)",
+        "Contacts (Nation à préciser)",
         "Éloquence",
         "Étiquette"
       ],
@@ -3080,8 +3057,6 @@ window.METIERS_DATA = {
         "Intimidation"
       ],
       "competences_avancees": [
-        "Commander",
-        "Comportementalisme",
         "Corruption",
         "Course de vitesse",
         "Droit",
@@ -3091,8 +3066,7 @@ window.METIERS_DATA = {
         "Guet-apens",
         "Pas de côté",
         "Premiers secours",
-        "Qui-vive",
-        "Tactique"
+        "Qui-vive"
       ],
       "reputation": "Réputation martiale : +3",
       "restriction_creation": "libre",

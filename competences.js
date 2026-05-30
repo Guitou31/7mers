@@ -1,4 +1,4 @@
-// Généré par pdf_competences_to_json.py — ne pas éditer à la main
+// Généré par pdf_competences_to_json.py + pdf_metiers_to_json.py (synchro inverse)
 window.COMPETENCES_DATA = {
   "_meta": {
     "source": "06 Compétences (15-11-14).pdf",
@@ -24,13 +24,7 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [
         "Galérien"
       ],
-      "donnent_acces_avancee": [
-        "Appréciateur",
-        "Artiste",
-        "Gitan",
-        "Moine",
-        "Paysan"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences artisanales"
     },
     {
@@ -40,7 +34,6 @@ window.COMPETENCES_DATA = {
         "Acrobate"
       ],
       "donnent_acces_avancee": [
-        "Athlétisme",
         "Monte-en-l’air"
       ],
       "categorie": "Compétences physiques"
@@ -50,7 +43,7 @@ window.COMPETENCES_DATA = {
       "description": "En plantant des aiguilles à des points particuliers du corps d’une personne, vous pouvez chasser la douleur, la tension, et la maladie. Pour cela, vous devez effectuer un jet d’Esprit + Acupuncture. Le ND est de 15, plus 5 par dé de pénalité ou par malus de +5 au ND que subit le patient à cause de l’affection que vous tentez de soigner. Un succès retire un dé de pénalité (ou réduit le malus au ND de -5), plus un par Augmentation prise sur le jet. Vous ne pouvez soigner un patient par l’acupuncture qu’une fois par acte. Par exemple, un guérisseur essaie d’utiliser l’acupuncture pour traiter un patient à qui une douleur articulaire cause une pénalité de 2 dés non gardés (2g0). Le ND de ce jet est de 25 et permettrait de retirer 1 dé de pénalité, mais guérir complètement le patient exigera un jet avec un ND de 30.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
-        "Cao Yao"
+        "Cao Yao (Acupuncteur)"
       ],
       "categorie": "Compétences médicales"
     },
@@ -59,9 +52,7 @@ window.COMPETENCES_DATA = {
       "description": "Vous êtes capable de rassembler une foule et de lui insuffler certaines émotions fondamentales. La compétence Agitation diffère de Sincérité et d’Éloquence car elle fait uniquement appel aux sentiments. La foule ne se soucie guère des mots que vous employez et la démagogie est quasi instinctive. Il vous suffit donc de lui instiller un sentiment. Cette compétence peut être utilisée pour rassembler une foule sur une place publique (utilisez le système de répartie pour déterminer si vous parvenez à la faire pencher en votre faveur).",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
-        "Conférencier",
-        "Politicien",
-        "Seigneur du crime"
+        "Politicien"
       ],
       "categorie": "Compétences sociales"
     },
@@ -90,7 +81,7 @@ window.COMPETENCES_DATA = {
       "nom": "Aménagement d’intérieur",
       "description": "Vous avez un certain talent pour aménager l’intérieur d’une maison ou d’autres bâtiments pour les rendre à la fois fonctionnels et agréables.",
       "donnent_acces_base": [
-        "Feng Shui Shi"
+        "Feng Shui Shi (Géomancien)"
       ],
       "donnent_acces_avancee": [],
       "categorie": "Compétences artisanales"
@@ -101,13 +92,8 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Acrobate",
-        "Aérostier",
-        "Arts martiaux défensifs",
-        "Arts martiaux offensifs",
-        "Athlétisme",
         "Hors-la-loi",
-        "Monte-en- l’air",
-        "Pauvre chevalier"
+        "Monte-en-l’air"
       ],
       "categorie": "Compétences physiques"
     },
@@ -119,8 +105,8 @@ window.COMPETENCES_DATA = {
       ],
       "donnent_acces_avancee": [
         "Cambrioleur",
-        "Érudit",
-        "Incendiaire"
+        "Incendiaire",
+        "Érudit"
       ],
       "categorie": "Compétences savantes"
     },
@@ -150,11 +136,9 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Assommer",
       "description": "Les matraques ont plus pour but d’assommer un adversaire que de lui causer de graves blessures. L’assaillant effectue un jet d’Assommer + Gaillardise contre le ND de la victime. En cas de réussite, la victime effectue un jet de Gaillardise avec un ND égal à trois fois les dommages infligés. Si ce jet est un échec, la victime est alors inconsciente. Si le jet est réussie, elle encaisse les dommages et peut continuer le combat. Si l’attaque est effectuée sans que la victime en soit consciente (embuscade, etc.), le ND du jet d’encaissement est incrémenté de deux augmentations.",
-      "donnent_acces_base": [
-        "Détrousseur",
-        "Matraque"
-      ],
+      "donnent_acces_base": [],
       "donnent_acces_avancee": [
+        "Détrousseur",
         "Recruteur",
         "Souteneur"
       ],
@@ -168,9 +152,9 @@ window.COMPETENCES_DATA = {
         "Archéologue",
         "Caravanier",
         "Cartographe",
-        "Érudit",
         "Estudiant",
-        "Feng Shui Shi"
+        "Feng Shui Shi (Géomancien)",
+        "Érudit"
       ],
       "categorie": "Compétences savantes"
     },
@@ -178,40 +162,14 @@ window.COMPETENCES_DATA = {
       "nom": "Atemi",
       "description": "Cette attaque à mains nues inflige 1g1 dé de dommages, mais augmente de 5 le ND que vous essayez d’atteindre. Vous devez déclarer votre intention avant d’effectuer votre jet, et utiliser cette compétence à la place de votre compétence d’attaque normale.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Arts martiaux offensifs"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
       "nom": "Attaque (type d’armes à préciser)",
       "description": "Cette compétence représente la capacité à toucher un adversaire avec un type d’armes. Les concentrations possibles sont : Armes d’hast, Armes exotiques jumelées (Cathayans), Armes improvisées, Art martial offensif (Cathayans), Bâton, Bouclier, Combat de rue, Couteau, Épées à deux mains, Escrime, Éventail, Fléau, Fouet, Gant de combat, Hache à deux mains, Hache, Lance de cavalerie, Lance légère, Masse, Matraque, Pugilat. Certaines concentrations méritent des explications complémentaires.",
-      "donnent_acces_base": [
-        "Arme d’hast",
-        "Armes exotiques jumelées",
-        "Arts martiaux offensifs",
-        "Bâton",
-        "Combat de rue",
-        "Couteau",
-        "Épée à deux mains",
-        "Escrime",
-        "Fléau",
-        "Fouet",
-        "Gant de combat",
-        "Hache",
-        "Hache à deux mains",
-        "Lance de cavalerie",
-        "Lance légère",
-        "Masse",
-        "Matraque",
-        "Pugilat"
-      ],
-      "donnent_acces_avancee": [
-        "Bouclier",
-        "Combat de rue [Armes improvisées]",
-        "Éventail",
-        "Mousquet [Arme d’hast]"
-      ],
+      "donnent_acces_base": [],
+      "donnent_acces_avancee": [],
       "variantes": [
         {
           "nom": "Armes improvisées",
@@ -254,9 +212,7 @@ window.COMPETENCES_DATA = {
       "nom": "Autre méthode de prédiction (préciser)",
       "description": "C’est une compétence fourre-tout qui embrasse de nombreuses méthodes de prédiction de l’avenir, des feuilles de thé aux runes, des entrailles aux bosses qui figurent sur le crâne du consultant, et aussi bien sûr l’astrologie.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Bonne aventure"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences savantes"
     },
     {
@@ -264,7 +220,6 @@ window.COMPETENCES_DATA = {
       "description": "Semblable au Coup aux yeux, cette attaque a pour objectif d’aveugler et d’embrouiller temporairement votre adversaire. Pour l’exploiter, vous devez tenir une cape dans votre main non directrice. Vous déclarez ensuite l’utilisation de cette compétence et effectuez votre jet de dés en l’utilisant comme compétence d’attaque. Si cette dernière est couronnée de succès, vous n’infligez aucun dommage mais obligez votre cible à augmenter son dé d’action suivant de deux points, plus 1 par augmentation réussie. Si le dé d’action passe ainsi au-dessus de 10, il disparaît.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
-        "Cape",
         "Torero"
       ],
       "categorie": "Compétences martiales"
@@ -275,8 +230,6 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Antiquaire",
-        "Armateur",
-        "Marchand",
         "Receleur"
       ],
       "categorie": "Compétences commerciales"
@@ -293,10 +246,7 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Blocage",
       "description": "Le blocage est l’acte de placer votre bras ou votre jambe entre vous et les coups de votre ennemi. Cette compétence peut être utilisée comme compétence de Défense active lorsque vous êtes désarmé.",
-      "donnent_acces_base": [
-        "Arts martiaux défensifs",
-        "Arts martiaux offensifs"
-      ],
+      "donnent_acces_base": [],
       "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
@@ -305,7 +255,8 @@ window.COMPETENCES_DATA = {
       "description": "Un Blocage d’articulation est un type spécial de prise qui peut être utilisé pour soumettre un opposant en appliquant une pression sur l’une de ses articulations de telle manière que s’il cherche à se dégager, il risque de se blesser lui-même. Pour utiliser cette attaque, déclarez que vous tentez d’effectuer un Blocage d’articulation sur votre adversaire et précisez le type de blocage que vous souhaitez obtenir. Effectuez un jet de Finesse + Blocage d’articulation contre le ND de votre cible, en prenant autant d’augmentations que nécessaire pour atteindre l’articulation visée comme s’il s’agissait d’une attaque localisée classique. Si vous réussissez, vous le bloquez momentanément. Tant qu’il est coincé de cette manière, votre ennemi peut seulement tenter de briser votre prise ou effectuer une action qui ne nécessite que peu de mouvement, comme appuyer sur la gâchette d’un pistolet. Contrairement à une Prise, votre opposant ne peut pas utiliser un Coup de tête contre vous. Pour tenter de se libérer de votre prise, il doit dépenser une action (rappelez-vous des règles d’interruption et de mise en réserve), et effectuer un jet d’opposition avec au choix Finesse + Prise ou Finesse + Blocage d’articulation contre votre Finesse + Blocage d’articulation. S’il gagne, la prise est rompue; sinon, elle persiste. Pour votre part, vous pouvez dépenser une action (toujours suivant les règles d’interruption et de mise en réserve) pour raffermir votre prise. Chaque action dépensée vous donne une Augmentation Gratuite lorsque votre adversaire tentera de se libérer de votre blocage. La compétence Se dégager l’aide en annulant ces augmentations comme pour la compétence Prise. Quand votre opposant échoue en tentant de se libérer, il reçoit des dommages en fonction du type de Blocage d’articulation que vous lui appliquez, et votre prise est maintenue. S’il réussit à se libérer, il reçoit les dégâts et n’est plus bloqué. S’il utilise autant d’augmentations que vous avez dû en prendre pour localiser votre blocage, il se libère et ne reçoit aucune blessure. Il est également possible de viser la tête avec cette prise, il s’agit alors d’une guillotine, mais elle est particulièrement difficile à réussir.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
-        "Arts martiaux défensifs"
+        "Cao Yao (Acupuncteur)",
+        "Garde du corps"
       ],
       "categorie": "Compétences martiales"
     },
@@ -353,7 +304,6 @@ window.COMPETENCES_DATA = {
       "description": "Cette compétence représente votre capacité pratique à réparer et construire des objets mécaniques. On s’en sert pour retaper ou améliorer de petits objets comme les pendules et boîtes à musique, mais également pour en réaliser depuis des plans abstraits.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
-        "Aérostier",
         "Artisan",
         "Cambrioleur",
         "Ingénieur",
@@ -369,13 +319,13 @@ window.COMPETENCES_DATA = {
         "Armateur",
         "Artificier",
         "Collecteur d’impôts",
-        "Érudit",
         "Estudiant",
-        "Gwai Liao",
+        "Gwai Liao (Bureaucrate)",
         "Incendiaire",
         "Ingénieur",
         "Intendant",
-        "Marchand"
+        "Marchand",
+        "Érudit"
       ],
       "donnent_acces_avancee": [
         "Alchimiste",
@@ -386,11 +336,10 @@ window.COMPETENCES_DATA = {
         "Chevalier",
         "Gérant de comptoir",
         "Navigateur",
-        "Précepteur",
         "Professeur",
+        "Précepteur",
         "Receleur",
-        "Recruteur",
-        "Seigneur du crime"
+        "Recruteur"
       ],
       "categorie": "Compétences savantes"
     },
@@ -398,10 +347,9 @@ window.COMPETENCES_DATA = {
       "nom": "Calligraphie",
       "description": "Le héros sait écrire de manière précise et décorative pour mettre en valeur un ouvrage. Un héros ne peut utiliser cette compétence qu’avec les langues qu’il sait lire et écrire ou celles qui ont le même alphabet.",
       "donnent_acces_base": [
-        "Artisan",
         "Faussaire",
         "Moine",
-        "Rahib"
+        "Rahib (Moine)"
       ],
       "donnent_acces_avancee": [
         "Cartographe",
@@ -417,13 +365,11 @@ window.COMPETENCES_DATA = {
         "Jenny"
       ],
       "donnent_acces_avancee": [
-        "Arnaqueur",
         "Barde",
         "Chasseur de primes",
         "Colporteur",
         "Courtisan",
         "Courtisane",
-        "Domestique",
         "Paysan"
       ],
       "categorie": "Compétences sociales"
@@ -434,10 +380,10 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [
         "Batelier",
         "Contrebandier",
-        "Galérien",
         "Pêcheur"
       ],
       "donnent_acces_avancee": [
+        "Contrebandier",
         "Marin",
         "Marine",
         "Navigateur"
@@ -454,16 +400,15 @@ window.COMPETENCES_DATA = {
         "Navigateur"
       ],
       "donnent_acces_avancee": [
-        "Aérostier",
         "Batelier",
         "Caravanier",
         "Commandement",
-        "Éclaireur",
         "Faussaire",
-        "Feng Shui Shi",
+        "Feng Shui Shi (Géomancien)",
         "Guide",
         "Incendiaire",
-        "Marin"
+        "Marin",
+        "Éclaireur"
       ],
       "categorie": "Compétences savantes"
     },
@@ -481,7 +426,6 @@ window.COMPETENCES_DATA = {
       "description": "Cette compétence permet, à certaines conditions, de briser un membre à un adversaire. Votre héros doit tout d’abord être parvenu à empoigner son adversaire (voir la compétence Prise), puis vous devez désigner le membre qu’il va tenter de briser et enfin faire un jet d’attaque en utilisant cette compétence. Le ND pour être touché de la victime est augmenté de 10 lorsque vous utilisez cette compétence, mais si l’attaque porte, vous lui infligez automatiquement une blessure grave au lieu de faire un jet de dommage. La prise en cours est brisée si ce jet de compétence est réussi.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
-        "Lutte",
         "Racketteur"
       ],
       "categorie": "Compétences martiales"
@@ -509,19 +453,17 @@ window.COMPETENCES_DATA = {
       "description": "Le héros a une voix pure comme le cristal, mais ce n’est que la partie visible de son talent ; le contrôle de la respiration, ainsi que la qualité de l’élocution sont aussi importants. Cette compétence permet au héros de tirer le maximum de ses capacités vocales. Cette compétence peut également être utilisé avec le système de répartie.",
       "donnent_acces_base": [
         "Artiste",
-        "Bateleur",
         "Barde",
-        "Rahib"
+        "Rahib (Moine)",
+        "Skalde"
       ],
       "donnent_acces_avancee": [
         "Comédien",
-        "Estudiant",
-        "Feng Shui Shi",
+        "Feng Shui Shi (Géomancien)",
         "Guérisseur",
         "Jenny",
         "Moine",
-        "Prêtre",
-        "Skalde"
+        "Prêtre"
       ],
       "categorie": "Compétences artistiques"
     },
@@ -545,7 +487,7 @@ window.COMPETENCES_DATA = {
         "Alchimiste",
         "Apothicaire",
         "Arnaqueur",
-        "Cao Yao",
+        "Cao Yao (Acupuncteur)",
         "Colporteur",
         "Gitan",
         "Guérisseur",
@@ -596,9 +538,7 @@ window.COMPETENCES_DATA = {
       "nom": "Claque sur l’oreille",
       "description": "Cette compétence permet d’asséner un coup sec sur l’oreille d’un adversaire, de manière à le désorienter et à temporairement lui faire perdre le sens de l’équilibre. Déclarez votre intention, puis faites votre jet d’attaque en utilisant cette compétence. Le ND pour être touché de votre adversaire est augmenté de 15 lorsque vous utilisez cette compétence, mais si l’attaque porte (si elle n’est donc pas évitée par une défense active), votre héros inflige automatiquement la perte d’une action à son adversaire au lieu de faire un jet de dommages.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Pugilat"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
@@ -610,7 +550,6 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Archéologue",
         "Cartographe",
-        "Commandement",
         "Diplomate",
         "Faussaire",
         "Juge d’armes"
@@ -622,15 +561,12 @@ window.COMPETENCES_DATA = {
       "description": "Le héros sait se glisser à la perfection dans la peau de divers personnages. Il peut très facilement se faire passer pour un représentant de n’importe quelle couche sociale, jouant tour à tour l’humilité d’un mendiant ou l’arrogance d’un noble. Bien évidemment, la supercherie a plus de poids quand on porte le costume approprié. Cette compétence peut également être utilisé avec le système de répartie.",
       "donnent_acces_base": [
         "Arnaqueur",
-        "Bateleur",
-        "Comédien",
-        "Courtisane"
+        "Comédien"
       ],
       "donnent_acces_avancee": [
-        "Conférencier",
-        "Mendiant",
         "Bonne aventure",
-        "Shirbaz"
+        "Mendiant",
+        "Shirbaz (magicien)"
       ],
       "categorie": "Compétences artistiques"
     },
@@ -639,13 +575,11 @@ window.COMPETENCES_DATA = {
       "description": "Une fois que le héros aura galvanisé ses hommes, cette compétence lui permettra de se montrer à la hauteur de leurs aspirations. Elle lui permettra aussi de répartir les différentes tâches au mieux des aptitudes de ses hommes et de les conseiller afin qu’ils s’améliorent sans leur donner l’impression de se mettre constamment dans leurs pattes. On utilise (principalement) cette compétence avec les règles de combat de masse décrites dans l’aide de jeu du même nom.",
       "donnent_acces_base": [
         "Commandement",
-        "Maistrance",
-        "Seigneur du crime"
+        "Maistrance"
       ],
       "donnent_acces_avancee": [
         "Intendant",
-        "Maître d’armes",
-        "Rasoir"
+        "Maître d’armes"
       ],
       "categorie": "Compétences sociales"
     },
@@ -655,8 +589,7 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Bateleur",
-        "Comédien",
-        "Conférencier"
+        "Comédien"
       ],
       "categorie": "Compétences artistiques"
     },
@@ -674,33 +607,22 @@ window.COMPETENCES_DATA = {
         "Artiste",
         "Avoué",
         "Bagnard",
-        "Bateleur",
+        "Cao Yao (Acupuncteur)",
         "Chasseur de primes",
-        "Chroniqueur",
         "Collecteur d’impôts",
-        "Colporteur",
         "Comédien",
-        "Conférencier",
-        "Courtisan",
         "Courtisane",
         "Diplomate",
-        "Escamoteur",
-        "Espion",
         "Fouineur",
         "Fournisseur de drogues",
         "Garde du corps",
         "Gérant de comptoir",
-        "Guide",
         "Jenny",
-        "Maître d’armes",
-        "Marchand",
         "Mendiant",
         "Missionnaire",
         "Politicien",
-        "Prêtre",
-        "Rasoir",
         "Receleur",
-        "Shirbaz",
+        "Shirbaz (magicien)",
         "Souteneur"
       ],
       "categorie": "Compétences sociales"
@@ -711,7 +633,9 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [
         "Artiste"
       ],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Courtisane"
+      ],
       "categorie": "Compétences artistiques"
     },
     {
@@ -725,10 +649,11 @@ window.COMPETENCES_DATA = {
         "Appréciateur",
         "Armateur",
         "Domestique",
+        "Gwai Liao (Bureaucrate)",
         "Gérant de comptoir",
-        "Gwai Liao",
         "Intendant",
-        "Marchand"
+        "Marchand",
+        "Professeur"
       ],
       "categorie": "Compétences commerciales"
     },
@@ -743,8 +668,8 @@ window.COMPETENCES_DATA = {
       ],
       "donnent_acces_avancee": [
         "Artisan",
-        "Bateleur",
         "Bûcheron",
+        "Colporteur",
         "Contrebandier",
         "Domestique",
         "Explorateur",
@@ -758,13 +683,7 @@ window.COMPETENCES_DATA = {
       "nom": "Conduite de traîneau",
       "description": "Conduire un traîneau n’a rien à voir avec monter un cheval ou conduire un attelage. Les animaux doivent être harnachés, ne pas pousser le traîneau contre des obstacles et apprendre à travailler en équipe. Pire, il est parfois difficile d’arrêter un traîneau, et ceux qui se trouvent sur son chemin ont intérêt à être vifs. Vous savez donc gérer tous ces détails.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Caravanier",
-        "Cocher",
-        "Domestique",
-        "Palefrenier",
-        "Piqueux"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences rurales"
     },
     {
@@ -779,9 +698,7 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Connaissance de la mer",
       "description": "Le héros connaît les légendes et les histoires que les marins aiment à se narrer. Si on raconte qu’une île est hantée, il est fort probable qu’il en connaîtra la légende. Il connaît également les us et coutumes des gens de la mer.",
-      "donnent_acces_base": [
-        "Pêcheur"
-      ],
+      "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Armateur",
         "Baleinier",
@@ -801,23 +718,21 @@ window.COMPETENCES_DATA = {
       ],
       "donnent_acces_avancee": [
         "Bûcheron",
-        "Éclaireur",
-        "Érudit",
         "Explorateur",
         "Fauconnier",
         "Paysan",
         "Piqueux",
-        "Torero"
+        "Torero",
+        "Érudit"
       ],
       "categorie": "Compétences rurales"
     },
     {
-      "nom": "Connaissance des bas-fonds (cité à préciser)",
+      "nom": "Connaissance des bas-fonds (Nation à préciser)",
       "description": "Dans chaque cité, il existe un quartier dans lequel les membres de la garde ont peur de s’aventurer. Les bandits, assassins et détrousseurs en ont fait leur domaine, et c’est là que le héros pourra les contacter. Si vous réussissez votre jet de compétence, votre héros trouvera la personne qu’il recherche. Vous faites votre jet de compétence en gardant deux dés de moins quand votre héros fait appel à cette compétence dans une ville qu’il ne connaît pas. Les concentrations possibles sont toutes les grandes cités de Théah.",
       "donnent_acces_base": [
         "Malandrin",
-        "Mendiant",
-        "Seigneur du crime"
+        "Mendiant"
       ],
       "donnent_acces_avancee": [
         "Avoué",
@@ -841,11 +756,10 @@ window.COMPETENCES_DATA = {
       "nom": "Connaissance des nœuds",
       "description": "Grâce à cette compétence, le héros peut faire la plupart des nœuds nécessaires aux marins. Il pourra ainsi faire la différence entre un nœud de chaise et une double clé.",
       "donnent_acces_base": [
-        "Baleinier",
         "Marin"
       ],
       "donnent_acces_avancee": [
-        "Aérostier",
+        "Baleinier",
         "Batelier",
         "Galérien",
         "Marine",
@@ -875,12 +789,13 @@ window.COMPETENCES_DATA = {
       ],
       "donnent_acces_avancee": [
         "Apothicaire",
-        "Barde",
+        "Cao Yao (Acupuncteur)",
         "Colporteur",
-        "Érudit",
         "Gitan",
+        "Guérillero",
         "Moine",
-        "Paysan"
+        "Paysan",
+        "Érudit"
       ],
       "categorie": "Compétences rurales"
     },
@@ -888,25 +803,11 @@ window.COMPETENCES_DATA = {
       "nom": "Connaissance des routes (nation à préciser)",
       "description": "Vous connaissez parfaitement les routes d’un pays pour les avoir arpentées dans tous les sens. Vous savez où elles mènent, celles qui sont inondées au printemps, celles qui sont infestées de hors-la-loi et les raccourcis qui permettent de gagner du temps. Suivant votre profession, vous pouvez également connaître les chemins de chèvre afin d’éviter les douaniers ou les forces de police. Les concentrations possibles sont toutes les nations de Théah.",
       "donnent_acces_base": [
-        "Caravanier",
-        "Cocher",
-        "Colporteur",
-        "Contrebandier",
-        "Missionnaire"
+        "Contrebandier"
       ],
       "donnent_acces_avancee": [
-        "Barde",
-        "Bateleur",
         "Cadet",
-        "Cartographe",
-        "Chevalier",
-        "Conférencier",
-        "Éclaireur",
-        "Explorateur",
-        "Gitan",
-        "Guérillero",
-        "Hors-la-loi",
-        "Skalde"
+        "Contrebandier"
       ],
       "categorie": "Compétences savantes"
     },
@@ -945,23 +846,21 @@ window.COMPETENCES_DATA = {
       "nom": "Construction navale",
       "description": "Cette compétence est utilisée pour construire et modifier des bateaux.",
       "donnent_acces_base": [
-        "Artisan"
-      ],
-      "donnent_acces_avancee": [
-        "Armateur",
+        "Artisan",
         "Ingénieur"
       ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences maritimes"
     },
     {
-      "nom": "Contacts (cité à préciser)",
+      "nom": "Contacts (Nation à préciser)",
       "description": "Savoir où rencontrer les bonnes personnes peut se révéler vital. Votre héros semble savoir où chaque diplomate va boire une bière et dans quelle taverne recruter un équipage. Cette compétence est différente de Connaissance des bas-fonds, qui concerne les individus les moins recommandables d’une ville. Si vous réussissez votre jet de Contacts, votre héros trouvera la personne qu’il cherche. Vous faites votre jet de compétence en gardant deux dés de moins quand votre héros fait appel à cette compétence dans une ville qu’il ne connaît pas. Les concentrations possibles sont toutes les cités de Théah.",
       "donnent_acces_base": [
-        "Armateur",
         "Chasseur de primes",
         "Dilettante",
         "Garde",
         "Guide",
+        "Politicien",
         "Receleur"
       ],
       "donnent_acces_avancee": [
@@ -969,15 +868,11 @@ window.COMPETENCES_DATA = {
         "Appréciateur",
         "Chroniqueur",
         "Colporteur",
-        "Estudiant",
         "Faussaire",
         "Fouineur",
         "Galopin",
-        "Intendant",
         "Malandrin",
         "Marchand",
-        "Politicien",
-        "Seigneur du crime",
         "Souteneur"
       ],
       "categorie": "Compétences sociales"
@@ -989,7 +884,7 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Acrobate",
         "Monte-en-l’air",
-        "Rahib"
+        "Rahib (Moine)"
       ],
       "categorie": "Compétences physiques"
     },
@@ -1000,7 +895,7 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [
-        "Pauvre chevalier"
+        "Pauvre Chevalier"
       ],
       "categorie": "Compétences artisanales"
     },
@@ -1008,9 +903,7 @@ window.COMPETENCES_DATA = {
       "nom": "Corps à corps",
       "description": "Cette compétence recouvre l’art du combat rapproché avec une arme. Vous devez annoncer que votre PJ utilise cette compétence à la place de sa compétence d’attaque habituelle. Si l’attaque porte, vous n’infligez que 0g1 de dommages en attaque à mains nues, mais votre adversaire peut tomber à terre. Vous devez pour cela lui infliger au moins 5 x Gaillardise points de dommages. S’il chute, votre adversaire perd toutes ses actions gardées et il devra dépenser une action pour se relever. Au sol, ses défenses actives et passives sont basées sur la compétence Roulé-boulé. S’il essaie d’attaquer en étant au sol, il ne peut le faire qu’en utilisant une augmentation (à moins d’utiliser la compétence coup de pied) et le MJ est le seul juge de ce qui est possible ou non (pas de Corps à corps ou de Coup de pommeau par exemple). Pendant la phase au cours de laquelle il se relève, sa défense passive tombe à 5, mais il peut tout de même effectuer une défense active avec deux augmentations. S’il subit une blessure grave alors qu’il se relève, il retombe aussitôt. Cette action ne peut permettre d’envoyer au sol un adversaire dont le poids est au moins trois fois supérieur au vôtre.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Arts martiaux offensifs"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
@@ -1021,27 +914,19 @@ window.COMPETENCES_DATA = {
       ],
       "donnent_acces_avancee": [
         "Armateur",
-        "Arnaqueur",
         "Avoué",
         "Bagnard",
         "Batelier",
         "Chroniqueur",
         "Collecteur d’impôts",
         "Contrebandier",
-        "Courtisan",
         "Diplomate",
-        "Escamoteur",
         "Espion",
         "Gérant de comptoir",
-        "Intendant",
         "Jenny",
-        "Juge d’armes",
-        "Légionnaire",
         "Maistrance",
-        "Marchand",
         "Politicien",
-        "Rasoir",
-        "Seigneur du crime"
+        "Rasoir"
       ],
       "categorie": "Compétences commerciales"
     },
@@ -1049,38 +934,28 @@ window.COMPETENCES_DATA = {
       "nom": "Coup à la gorge",
       "description": "Déclarez votre intention avant d’utiliser cette compétence, puis faites votre jet d’attaque en utilisant cette compétence. Le ND pour être touché de l’adversaire de votre héros est augmenté de 15 lorsque vous utilisez cette compétence, mais si l’attaque porte (et n’est donc pas évitée par une défense active), vous infligez automatiquement une blessure grave à l’adversaire au lieu de faire un jet de dommages. Vous pouvez utiliser cette compétence avec tout ce qui vous tombe sous la main, ce qui inclut une arme généralement utilisée pour des coups plus “nobles”, comme la rapière ou la main gauche, mais cela ne change en rien les dommages. On reste sur une blessure grave, que l’attaque (qui de toute façon est basée sur la compétence Coup à la gorge) soit effectuée avec une arme ou à mains nues.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Arts martiaux offensifs",
-        "Combat de rue"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
       "nom": "Coup aux yeux",
       "description": "Cette compétence permet de porter un coup destiné à aveugler temporairement un adversaire (le héros doit obligatoirement avoir une main libre pour pouvoir l’utiliser). Vous devez déclarer votre intention avant de faire votre jet d’attaque en utilisant cette compétence. Si l’attaque porte, l’adversaire de votre héros subira 0g1 dé de dommages (mains nues) et devra augmenter la valeur de son prochain dé d’action de 1, plus 1 par augmentation utilisée. Si la valeur du dé dépasse 10, le dé est abandonné.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Combat de rue"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
       "nom": "Coup de pied",
       "description": "Un coup de pied inflige 0g2, mais le ND pour toucher est augmenté de 10. Vous devez déclarer votre intention avant de faire votre jet d’attaque en utilisant cette compétence.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Arts martiaux offensifs",
-        "Combat de rue"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
       "nom": "Coup de tête",
       "description": "Ce coup peut handicaper terriblement l’adversaire du héros, mais ce dernier devra aussi accepter de souffrir. Vous ne pouvez attaquer de la sorte que si votre héros emprisonne son adversaire par une prise ou l’inverse. Si l’attaque porte, votre héros inflige 3g1 dés de dommages à son adversaire et encaisse 1g1 pour lui- même (n’oubliez pas d’ajouter son rang de Gaillardise à ce jet). Si l’adversaire tenait votre héros dans sa prise et subit une blessure grave à la suite de ce coup de tête, sa prise est brisée. Attention, n’oubliez pas qu’en ce qui concerne votre personnage, vous avez tout intérêt à choisir le dé de dommages le plus faible afin d’encaisser le moins de dégâts possibles.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Lutte"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
@@ -1088,13 +963,13 @@ window.COMPETENCES_DATA = {
       "description": "Le héros peut courir sur de longues distances sans s’effondrer ; il sait trouver son rythme et régler sa respiration en course.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
-        "Athlétisme",
-        "Éclaireur",
         "Escamoteur",
+        "Galérien",
         "Garde",
         "Légionnaire",
         "Piqueux",
-        "Soldat"
+        "Soldat",
+        "Éclaireur"
       ],
       "categorie": "Compétences physiques"
     },
@@ -1102,7 +977,6 @@ window.COMPETENCES_DATA = {
       "nom": "Course de vitesse",
       "description": "Quand le danger est trop grand, le héros peut courir à une vitesse phénoménale. Il ne pourra pas maintenir un tel rythme très longtemps, mais durant ce court laps de temps, peu d’hommes sont capables de rivaliser avec lui. La durée maximale d’une course de vitesse est de (rang de Gaillardise) tours de jeu. Au-delà de cette limite physique, c’est la compétence Course d’endurance qui prend le relais. Lorsqu’il court, cette compétence lui sert de défense passive.",
       "donnent_acces_base": [
-        "Athlétisme",
         "Escamoteur",
         "Racketteur",
         "Torero"
@@ -1110,9 +984,10 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Cadet",
         "Chasseur de primes",
+        "Détrousseur",
         "Galopin",
         "Garde",
-        "Pauvre chevalier",
+        "Pauvre Chevalier",
         "Rasoir"
       ],
       "categorie": "Compétences physiques"
@@ -1123,9 +998,7 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [
         "Artisan"
       ],
-      "donnent_acces_avancee": [
-        "Domestique"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences artisanales"
     },
     {
@@ -1133,20 +1006,21 @@ window.COMPETENCES_DATA = {
       "description": "La plume du héros effleure et survole les pages blanches. Il manie la prose comme nul autre et ses phrases peuvent amuser le lecteur, offusquer la noblesse, ou pousser le peuple à prendre les armes. D’une sentence, il peut transformer des mendiants en rois et provoquer la chute du tyran le mieux installé. Cette compétence regroupe toutes les formes de littérature (poésie, théâtre…). Cette compétence peut également être utilisé avec le système de répartie.",
       "donnent_acces_base": [
         "Artiste",
+        "Chroniqueur",
+        "Gwai Liao (Bureaucrate)",
         "Professeur",
-        "Rahib"
+        "Rahib (Moine)"
       ],
       "donnent_acces_avancee": [
         "Avoué",
         "Comédien",
-        "Érudit",
+        "Courtisane",
         "Faussaire",
-        "Gwai Liao",
-        "Ingénieur",
         "Juge d’armes",
         "Moine",
         "Prêtre",
-        "Skalde"
+        "Skalde",
+        "Érudit"
       ],
       "categorie": "Compétences artistiques"
     },
@@ -1198,17 +1072,16 @@ window.COMPETENCES_DATA = {
       ],
       "donnent_acces_avancee": [
         "Artiste",
-        "Galérien",
         "Galopin",
-        "Gérant de comptoir",
+        "Galérien",
         "Gitan",
         "Guide",
-        "Légionnaire",
+        "Gérant de comptoir",
         "Malandrin",
         "Mendiant",
-        "Pauvre chevalier",
+        "Pauvre Chevalier",
         "Prospecteur",
-        "Rahib"
+        "Rahib (Moine)"
       ],
       "categorie": "Compétences larronnes"
     },
@@ -1223,7 +1096,6 @@ window.COMPETENCES_DATA = {
         "Assassin",
         "Bateleur",
         "Bonne aventure",
-        "Espion",
         "Mendiant"
       ],
       "categorie": "Compétences larronnes"
@@ -1246,12 +1118,13 @@ window.COMPETENCES_DATA = {
         "Cambrioleur",
         "Chasseur",
         "Contrebandier",
-        "Éclaireur",
+        "Détrousseur",
         "Espion",
         "Galopin",
         "Guérillero",
-        "Hors- la-loi",
-        "Monte-en-l’air"
+        "Hors-la-loi",
+        "Monte-en-l’air",
+        "Éclaireur"
       ],
       "donnent_acces_avancee": [
         "Bûcheron",
@@ -1262,6 +1135,7 @@ window.COMPETENCES_DATA = {
         "Malandrin",
         "Mendiant",
         "Palefrenier",
+        "Receleur",
         "Souteneur",
         "Veneur"
       ],
@@ -1271,9 +1145,7 @@ window.COMPETENCES_DATA = {
       "nom": "Désarmer (Mains nues)",
       "description": "Vous ne pouvez utiliser cette compétence que si l’attaque de votre adversaire vient d’échouer contre votre défense passive. Utilisez un dé d’action afin d’effectuer un jet d’opposition entre votre Gaillardise + Désarmer et Gaillardise + Attaque (Arme utilisée) de votre adversaire. Si vous remportez l’opposition, vous lui faites sauter son arme des mains. Si vous remportez l’opposition en utilisant deux augmentations, vous pouvez même vous retrouver avec l’arme de votre adversaire en main si vous le désirez.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Arts martiaux défensifs"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
@@ -1294,7 +1166,7 @@ window.COMPETENCES_DATA = {
       "description": "Détecter une fracture d’un membre ou un poumon percé fait partie des compétences les plus élémentaires d’un médecin. Comment en effet soigner les gens si l’on ne peut pas diagnostiquer leurs affections ? Le ND du jet de Diagnostic est égal à 5 + (blessures graves du patient) x 5. Réussir ce jet de compétence permettra de diminuer le ND d’un éventuel jet de Chirurgie. L’utilisation de cette compétence requiert une action ; un même patient ne peut être soigné, par un même médecin, qu’une seule fois par Acte.",
       "donnent_acces_base": [
         "Apothicaire",
-        "Cao Yao",
+        "Cao Yao (Acupuncteur)",
         "Guérisseur",
         "Herboriste",
         "Médecin"
@@ -1312,7 +1184,9 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [
         "Dilettante"
       ],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Courtisane"
+      ],
       "categorie": "Compétences savantes"
     },
     {
@@ -1323,19 +1197,16 @@ window.COMPETENCES_DATA = {
         "Rasoir"
       ],
       "donnent_acces_avancee": [
-        "Barde",
-        "Batelier",
         "Commandement",
-        "Conférencier",
-        "Explorateur",
+        "Courtisan",
+        "Gwai Liao (Bureaucrate)",
         "Gérant de comptoir",
-        "Gwai Liao",
         "Intendant",
         "Maistrance",
         "Missionnaire",
         "Politicien",
         "Prêtre",
-        "Rahib",
+        "Rahib (Moine)",
         "Skalde"
       ],
       "categorie": "Compétences sociales"
@@ -1343,10 +1214,7 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Direct",
       "description": "Lorsque vous utilisez cette compétence, votre héros effectue deux attaques à mains nues rapides contre son adversaire. Vous devez déclarer votre intention, puis effectuer vos deux jets d’attaque en utilisant cette compétence. Le ND pour toucher l’adversaire de votre héros est augmenté de 10 lorsque vous utilisez cette compétence.",
-      "donnent_acces_base": [
-        "Arts martiaux offensifs",
-        "Pugilat"
-      ],
+      "donnent_acces_base": [],
       "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
@@ -1354,15 +1222,13 @@ window.COMPETENCES_DATA = {
       "nom": "Discrétion",
       "description": "La plus grande qualité d’un domestique est parfois de passer inaperçu quand son maître est, par exemple, en proie à un violent accès de colère. Pas de se cacher, mais plutôt de se fondre dans le paysage. Cette compétence joue sur la tendance naturelle des nobles à ignorer les domestiques et produit donc les meilleurs effets sur eux. À l’instar de la compétence Déplacement silencieux, cette compétence est utilisée, pour fixer le ND, en opposition du Panache des personnes qui tentent de repérer le domestique concerné.",
       "donnent_acces_base": [
-        "Courtisane",
         "Domestique",
         "Garde du corps",
-        "Rahib"
+        "Rahib (Moine)"
       ],
       "donnent_acces_avancee": [
         "Arnaqueur",
         "Bagnard",
-        "Bateleur",
         "Bourreau",
         "Chroniqueur",
         "Escamoteur",
@@ -1388,8 +1254,8 @@ window.COMPETENCES_DATA = {
         "Espion",
         "Faussaire",
         "Fournisseur de drogues",
-        "Galérien",
         "Galopin",
+        "Galérien",
         "Garde du corps",
         "Gérant de comptoir",
         "Incendiaire",
@@ -1397,7 +1263,8 @@ window.COMPETENCES_DATA = {
         "Malandrin",
         "Mendiant",
         "Racketteur",
-        "Shirbaz"
+        "Receleur",
+        "Shirbaz (magicien)"
       ],
       "categorie": "Compétences larronnes"
     },
@@ -1405,9 +1272,7 @@ window.COMPETENCES_DATA = {
       "nom": "Double parade (Armes exotiques jumelées)",
       "description": "Une double parade s’effectue en croisant vos armes devant vous. Vous devez déclarer que vous utilisez cette compétence au lieu de votre compétence de Parade pour votre Défense Active. Vous devez alors prendre deux Augmentations pour faire votre jet. Un succès vous donne un dé d’Héroïsme, qui peut être utilisé pendant un nombre de phases égal à votre rang de Double Parade. Ce dé est perdu si vous ne l’utilisez pas avant la fin de ce délai.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Armes exotiques jumelées"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
@@ -1421,7 +1286,6 @@ window.COMPETENCES_DATA = {
       ],
       "donnent_acces_avancee": [
         "Bateleur",
-        "Cavalier",
         "Chasseur",
         "Cocher",
         "Paysan"
@@ -1432,21 +1296,21 @@ window.COMPETENCES_DATA = {
       "nom": "Droit",
       "description": "Les lois diffèrent de pays à pays, parfois de jour en jour et même les plus claires peuvent être retournées contre vous si vous ne les comprenez pas. Grâce à cette compétence, le héros non seulement connaît les lois en vigueur dans son pays, mais sait également les utiliser à son avantage afin de se sortir de situations délicates. Cette compétence peut également être utilisé avec le système de répartie.",
       "donnent_acces_base": [
+        "Avoué",
         "Chevalier",
         "Collecteur d’impôts"
       ],
       "donnent_acces_avancee": [
         "Appréciateur",
         "Cadet",
-        "Érudit",
         "Estudiant",
         "Fouineur",
-        "Gwai Liao",
+        "Gwai Liao (Bureaucrate)",
         "Intendant",
         "Juge d’armes",
         "Professeur",
         "Rasoir",
-        "Seigneur du crime"
+        "Érudit"
       ],
       "categorie": "Compétences savantes"
     },
@@ -1465,10 +1329,9 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Collecteur d’impôts",
-        "Diplomate",
-        "Érudit",
         "Intendant",
-        "Marchand"
+        "Marchand",
+        "Érudit"
       ],
       "categorie": "Compétences savantes"
     },
@@ -1491,34 +1354,30 @@ window.COMPETENCES_DATA = {
         "Appréciateur",
         "Avoué",
         "Barde",
-        "Bateleur",
         "Comédien",
-        "Conférencier",
         "Guide",
-        "Gwai Liao",
+        "Gwai Liao (Bureaucrate)",
         "Missionnaire",
         "Politicien",
-        "Prêtre",
         "Professeur",
+        "Prêtre",
+        "Shirbaz (magicien)",
         "Skalde"
       ],
       "donnent_acces_avancee": [
         "Armateur",
         "Artiste",
-        "Chroniqueur",
         "Collecteur d’impôts",
         "Courtisan",
         "Dilettante",
         "Diplomate",
-        "Érudit",
         "Explorateur",
-        "Feng Shui Shi",
+        "Feng Shui Shi (Géomancien)",
         "Marchand",
         "Précepteur",
-        "Rahib",
+        "Rahib (Moine)",
         "Recruteur",
-        "Seigneur du crime",
-        "Shirbaz"
+        "Érudit"
       ],
       "categorie": "Compétences sociales"
     },
@@ -1534,9 +1393,7 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Emmêler",
       "description": "Vous utilisez votre fouet pour qu’il s’enroule autour du bras de votre adversaire afin de le gêner (surtout si vous tirez dessus). On ne peut se défendre contre un emmêlement par une parade (à moins de vouloir perdre son arme, en effet, il suffira au fouetteur de réussir un jet d’opposition de Gaillardise + Emmêler contre la Gaillardise du pareur pour lui arracher son arme dans ces circonstances). Bien entendu, on ne peut emmêler qu’une seule personne à la fois. Celle-ci se bat alors avec 1 dé de moins (à jeter et à garder), voire 2 dés si le fouetteur ne fait rien d’autre que tirer sur la poignée du fouet.",
-      "donnent_acces_base": [
-        ": Fouet"
-      ],
+      "donnent_acces_base": [],
       "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
@@ -1544,9 +1401,7 @@ window.COMPETENCES_DATA = {
       "nom": "Empêtrer",
       "description": "Vous pouvez utiliser votre filet en le jetant sur votre adversaire ; ainsi empêtré, il subit un malus de 2 dés (à jeter et à garder) sur toutes ses défenses et ne peut plus attaquer. Il peut essayer de l’éviter en réussissant un jet de défense active, sinon, il se retrouve empêtré dans les rets. Un jet de Finesse contre un ND de 30 et la dépense d’un dé d’action permettront à la victime de se sortir de ce guêpier.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Filet"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
@@ -1578,18 +1433,16 @@ window.COMPETENCES_DATA = {
       "description": "Lorsque le navire est ballotté par la tempête et que le capitaine ordonne au héros de monter dans le gréement pour soulager le mât, cette compétence lui sauvera peut-être la vie. Dit simplement, elle évite de tomber dans des circonstances délicates. Cette compétence est utilisée comme compétence de défense passive par ceux qui combattent à bord d’un navire en mer ou qui se retrouvent dans une situation d’équilibre instable. Le MJ vous indiquera le ND des jets correspondant à certaines actions effectuées à bord d’un navire en mer ou sur des surfaces instables.",
       "donnent_acces_base": [
         "Acrobate",
-        "Arts martiaux défensifs",
-        "Arts martiaux offensifs",
         "Baleinier",
         "Cocher",
+        "Galérien",
         "Monte-en-l’air"
       ],
       "donnent_acces_avancee": [
-        "Aérostier",
         "Batelier",
-        "Maître d’armes",
         "Marin",
         "Marine",
+        "Maître d’armes",
         "Navigateur",
         "Pêcheur"
       ],
@@ -1608,42 +1461,22 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)",
       "description": "Cette compétence représente le fait de monter un animal dans ses aspects les plus basiques. Le MJ pourra vous faire faire des jets de compétence si votre héros veut accomplir des actions plus difficiles ou se retrouve dans des situations inhabituelles : galoper (ND 10), rester en selle sur un cheval qui se cabre (ND 15) ou faire franchir une haie à sa monture (ND 20). Une monture particulièrement bien dressée peut permettre de réduire ces ND de 5. Les concentrations possibles sont, entre autres : : chevaux, mules et autres ânes. : taureaux, vaches, bisons et autres yacks. : dans l’Empire du Croissant. : au Cathay.",
-      "donnent_acces_base": [
-        "Cavalier"
-      ],
-      "donnent_acces_avancee": [
-        "Acolyte",
-        "Cadet",
-        "Caravanier",
-        "Chevalier",
-        "Cocher",
-        "Éclaireur",
-        "Explorateur",
-        "Fauconnier",
-        "Guérillero",
-        "Palefrenier",
-        "Précepteur",
-        "Rasoir",
-        "Recruteur",
-        "Torero",
-        "Veneur"
-      ],
+      "donnent_acces_base": [],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences rurales"
     },
     {
       "nom": "Escalade",
       "description": "Le héros trouve naturellement les endroits où s’agripper des mains et des pieds lors d’une ascension, sait utiliser du matériel d’escalade et déterminer la meilleure voie d’accès à une hauteur. S’il est attaqué lors d’une ascension, cette compétence lui servira de compétence de défense passive.",
       "donnent_acces_base": [
-        "Athlétisme",
         "Bûcheron",
         "Hors-la-loi",
         "Marin",
-        "Monte-en- l’air"
+        "Monte-en-l’air"
       ],
       "donnent_acces_avancee": [
         "Assassin",
         "Bagnard",
-        "Éclaireur",
         "Escamoteur",
         "Guide",
         "Marine",
@@ -1655,9 +1488,7 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Esquive",
       "description": "Plutôt que d’attaquer vos adversaires, vous préférez retourner leurs attaques contre eux. Au lieu de bloquer une attaque, vous l’entraînez dans la direction qu’elle prenait déjà, et vous en écartez. Le mouvement de votre ennemi et le fait qu’il ne rencontre pas la résistance à laquelle il s’attendait provoqueront son déséquilibre. Vous ne pouvez utiliser Esquive comme compétence de défense que contre des attaques au corps à corps, et uniquement comme Défense Active. Elle n’est pas utilisée pour déterminer votre ND. Vous pouvez aussi choisir d’utiliser Esquive sur une attaque qui n’a pas réussi à atteindre votre ND pour être touché. Si vous réussissez votre jet d’Esprit + Esquive, l’attaque échoue et votre adversaire se retrouve au sol face contre terre à l’opposé de sa position initiale par rapport à vous. Si vous utilisez deux augmentations sur votre jet d’Esquive, votre ennemi reçoit en plus les dégâts de sa propre attaque (vous lancez le jet de dommages). S’il en est ainsi, les augmentations qu’il a pu prendre pour vous faire plus de dégâts ne sont pas prises en compte dans votre jet de dommages. Toutefois, vous pouvez vous-même prendre des augmentations sur votre défense active pour lui faire plus de dégâts, comme pour une attaque normale contre quelqu’un d’autre.",
-      "donnent_acces_base": [
-        "Arts martiaux défensifs"
-      ],
+      "donnent_acces_base": [],
       "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
@@ -1684,7 +1515,6 @@ window.COMPETENCES_DATA = {
         "Maître d’armes",
         "Médecin",
         "Racketteur",
-        "Seigneur du crime",
         "Torero"
       ],
       "categorie": "Compétences physiques"
@@ -1696,30 +1526,25 @@ window.COMPETENCES_DATA = {
         "Chevalier",
         "Courtisan",
         "Courtisane",
+        "Dilettante",
         "Diplomate",
         "Domestique",
-        "Gwai Liao",
+        "Gwai Liao (Bureaucrate)",
         "Intendant",
-        "Pauvre chevalier",
+        "Pauvre Chevalier",
         "Politicien",
         "Précepteur",
-        "Shirbaz"
+        "Shirbaz (magicien)"
       ],
       "donnent_acces_avancee": [
-        "Armateur",
-        "Arnaqueur",
         "Avoué",
         "Barde",
         "Cadet",
         "Cartographe",
-        "Chroniqueur",
-        "Dilettante",
         "Fauconnier",
-        "Fouineur",
         "Garde",
         "Juge d’armes",
         "Maître d’armes",
-        "Marchand",
         "Prêtre",
         "Rasoir",
         "Torero",
@@ -1731,9 +1556,7 @@ window.COMPETENCES_DATA = {
       "nom": "Étreinte",
       "description": "Si l’adversaire de votre héros tente de briser une prise et s’il échoue ou si le tour s’achève, lancez (rang d’Étreinte) dés et n’en gardez qu’un. L’adversaire de votre héros subit immédiatement (résultat de ce jet) points de dommages et doit aussitôt faire un jet de blessures (comme toute attaque normale).",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Lutte"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
@@ -1745,6 +1568,7 @@ window.COMPETENCES_DATA = {
         "Artisan",
         "Contrebandier",
         "Gérant de comptoir",
+        "Marchand",
         "Receleur"
       ],
       "donnent_acces_avancee": [
@@ -1754,7 +1578,6 @@ window.COMPETENCES_DATA = {
         "Collecteur d’impôts",
         "Colporteur",
         "Intendant",
-        "Marchand",
         "Prospecteur"
       ],
       "categorie": "Compétences commerciales"
@@ -1765,9 +1588,7 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [
         "Artisan"
       ],
-      "donnent_acces_avancee": [
-        "Éventail"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences artisanales"
     },
     {
@@ -1785,7 +1606,9 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Bourreau",
+        "Cao Yao (Acupuncteur)",
         "Fouineur",
+        "Guérisseur",
         "Médecin"
       ],
       "categorie": "Compétences médicales"
@@ -1793,20 +1616,14 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Fabricant d’arme à feu",
       "description": "Le héros sait fabriquer et réparer pistolets et mousquets. Il ne fabrique pas la poudre de ces armes, ce travail incombe au poudrier.",
-      "donnent_acces_base": [
-        "Artisan"
-      ],
-      "donnent_acces_avancee": [
-        "Artificier"
-      ],
+      "donnent_acces_base": [],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences artisanales"
     },
     {
       "nom": "Fabricant de cerfs-volants",
       "description": "Le héros sait fabriquer toutes sortes de cerfs-volants.",
-      "donnent_acces_base": [
-        "Artisan"
-      ],
+      "donnent_acces_base": [],
       "donnent_acces_avancee": [],
       "categorie": "Compétences artisanales"
     },
@@ -1814,8 +1631,7 @@ window.COMPETENCES_DATA = {
       "nom": "Fabricant de dards",
       "description": "Vous savez comment fabriquer ou réparer des dards pour une sarbacane. Après chaque combat dans lequel vous en avez tiré, vous pouvez faire un jet d’Esprit + Fabricant de dards. Pour chaque tranche de 15 points au résultat, vous retrouvez un des dards que vous avez tiré en bon état.",
       "donnent_acces_base": [
-        "Artisan",
-        "Sarbacane"
+        "Artisan"
       ],
       "donnent_acces_avancee": [],
       "categorie": "Compétences artisanales"
@@ -1823,9 +1639,7 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Fabricant de feux d’artifice",
       "description": "Non seulement le héros sait fabriquer et utiliser des “fleurs de feu”, mais il sait aussi préparer et mettre en place de véritables spectacles pour des festivals et des occasions spéciales.",
-      "donnent_acces_base": [
-        "Artisan"
-      ],
+      "donnent_acces_base": [],
       "donnent_acces_avancee": [],
       "categorie": "Compétences artisanales"
     },
@@ -1851,12 +1665,9 @@ window.COMPETENCES_DATA = {
       "nom": "Facteur d’arcs",
       "description": "Le héros sait fabriquer et réparer arcs, arbalètes et flèches. Cette compétence ne regroupe que la fabrication de l’empennage et du corps de la flèche ; les pointes sont obtenues auprès des forgerons. Cette compétence, particulièrement utile aux archers, leur permet d’entretenir leur réserve de flèches. À l’issue de chaque combat au cours duquel votre héros a utilisé son arc, faites un jet d’Esprit + Facteur d’arcs : votre héros récupère une flèche en bon état par tranche de 10 obtenue.",
       "donnent_acces_base": [
-        "Arbalète",
-        "Arc",
         "Artisan"
       ],
       "donnent_acces_avancee": [
-        "Assassin",
         "Hors-la-loi"
       ],
       "categorie": "Compétences artisanales"
@@ -1873,7 +1684,8 @@ window.COMPETENCES_DATA = {
         "Cartographe",
         "Collecteur d’impôts",
         "Contrebandier",
-        "Espion"
+        "Espion",
+        "Receleur"
       ],
       "categorie": "Compétences larronnes"
     },
@@ -1934,8 +1746,7 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [
-        "Palefrenier",
-        "Pauvre chevalier"
+        "Palefrenier"
       ],
       "categorie": "Compétences artisanales"
     },
@@ -1943,9 +1754,9 @@ window.COMPETENCES_DATA = {
       "nom": "Fouille",
       "description": "Le héros sait effectuer une fouille minutieuse, que ce soit d’une personne ou d’un lieu. Il connaît les endroits et les méthodes utilisées pour dissimuler quelque chose.",
       "donnent_acces_base": [
+        "Archéologue",
         "Cambrioleur",
         "Chasseur de primes",
-        "Courtisane",
         "Espion",
         "Fouineur",
         "Prospecteur",
@@ -1958,7 +1769,6 @@ window.COMPETENCES_DATA = {
         "Garde",
         "Garde du corps",
         "Hors-la-loi",
-        "Jenny",
         "Malandrin",
         "Marine",
         "Monte-en-l’air",
@@ -1982,14 +1792,11 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Barde",
-        "Comédien",
         "Commandement",
+        "Comédien",
         "Légionnaire",
-        "Maistrance",
-        "Maître d’armes",
         "Politicien",
         "Prêtre",
-        "Seigneur du crime",
         "Skalde"
       ],
       "categorie": "Compétences sociales"
@@ -1998,21 +1805,21 @@ window.COMPETENCES_DATA = {
       "nom": "Géographie",
       "description": "Cette compétence recouvre bien entendu la connaissance du monde, de l’emplacement de la cité de Freiburg, au nom du cours d’eau que vous traversez en passant par la hauteur des principaux sommets de Montaigne et autres éléments géographiques d’importance. Mais elle comprend également l’étude et la mesure de la planète (géodésie), ses terres, ses caractéristiques, ses habitants et ses phénomènes. Ainsi, contrairement à la cartographie qui relève simplement les lieux et les distances sur une carte, la géographie cherche à comprendre les phénomènes naturels ou humains et à en expliquer les causes et les conséquences.",
       "donnent_acces_base": [
-        "Cartographe"
+        "Cartographe",
+        "Explorateur"
       ],
       "donnent_acces_avancee": [
         "Armateur",
         "Caravanier",
-        "Conférencier",
         "Diplomate",
-        "Érudit",
         "Estudiant",
         "Guide",
         "Juge d’armes",
         "Maistrance",
         "Navigateur",
+        "Professeur",
         "Précepteur",
-        "Professeur"
+        "Érudit"
       ],
       "categorie": "Compétences savantes"
     },
@@ -2021,17 +1828,14 @@ window.COMPETENCES_DATA = {
       "description": "Le héros a mémorisé les règles qui indiquent quels aspects d’un lieu affectent son feng shui, et il sait si un endroit possède une énergie positive ou négative en fonction des formes et des angles du lieu. Effectuez un jet d’Esprit + Géomancie contre un ND de 20 pour jauger les énergies d’un endroit. Vous pouvez également tenter de les réguler en plaçant des miroirs spéciaux pour les réfléchir et en ajustant ses contours. Cela prend du temps, et vous ne pouvez augmenter ou réduire le Rang de Feng Shui (voir le paragraphe sur le Feng Shui) de plus de un point. Cela demande un jet d’Esprit + Géomancie contre un ND de 40. Ce processus prend une semaine, plus un nombre de semaines égal à l’actuel Rang de Feng Shui du lieu.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
-        "Feng Shui Shi",
-        "Ingénieur"
+        "Feng Shui Shi (Géomancien)"
       ],
       "categorie": "Compétences artistiques"
     },
     {
       "nom": "Gonflage",
       "description": "C’est l’aptitude à préparer un ballon pour le vol sans qu’il s’enflamme. C’est aussi la capacité à obtenir un feu assez chaud pour gonfler correctement l’enveloppe et réduire la durée de cette étape.",
-      "donnent_acces_base": [
-        "Aérostier"
-      ],
+      "donnent_acces_base": [],
       "donnent_acces_avancee": [],
       "categorie": "Compétences savantes"
     },
@@ -2060,23 +1864,16 @@ window.COMPETENCES_DATA = {
         "Acolyte",
         "Artificier",
         "Batelier",
-        "Caravanier",
         "Chasseur",
-        "Chevalier",
-        "Cocher",
         "Commandement",
-        "Contrebandier",
-        "Éclaireur",
         "Garde du corps",
-        "Guide",
         "Légionnaire",
         "Maistrance",
-        "Maître d’armes",
         "Malandrin",
         "Piqueux",
         "Racketteur",
         "Rasoir",
-        "Seigneur du crime"
+        "Éclaireur"
       ],
       "categorie": "Compétences larronnes"
     },
@@ -2102,13 +1899,11 @@ window.COMPETENCES_DATA = {
         "Cadet",
         "Chevalier",
         "Commandement",
-        "Courtisan",
         "Diplomate",
-        "Érudit",
         "Estudiant",
         "Faussaire",
-        "Fouineur",
-        "Précepteur"
+        "Précepteur",
+        "Érudit"
       ],
       "categorie": "Compétences savantes"
     },
@@ -2118,16 +1913,14 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [
         "Antiquaire",
         "Barde",
-        "Érudit",
         "Juge d’armes",
-        "Rahib",
-        "Skalde"
+        "Rahib (Moine)",
+        "Skalde",
+        "Érudit"
       ],
       "donnent_acces_avancee": [
         "Cadet",
         "Chroniqueur",
-        "Commandement",
-        "Conférencier",
         "Diplomate",
         "Estudiant",
         "Précepteur"
@@ -2149,7 +1942,8 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Bateleur",
-        "Espion",
+        "Cao Yao (Acupuncteur)",
+        "Guérisseur",
         "Médecin"
       ],
       "categorie": "Compétences médicales"
@@ -2158,9 +1952,7 @@ window.COMPETENCES_DATA = {
       "nom": "I Ching",
       "description": "Vous connaissez la signification de chacun des 64 Hexagrammes et des 8 Trigrammes de base dont ils sont tirés. Vous êtes conscient des nuances subtiles de l’utilisation de ces éléments comme moyen de divination.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Bonne aventure"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences savantes"
     },
     {
@@ -2192,8 +1984,7 @@ window.COMPETENCES_DATA = {
         "Avoué",
         "Chasseur de primes",
         "Espion",
-        "Garde",
-        "Seigneur du crime"
+        "Garde"
       ],
       "categorie": "Compétences sociales"
     },
@@ -2205,26 +1996,22 @@ window.COMPETENCES_DATA = {
         "Détrousseur",
         "Racketteur",
         "Rasoir",
-        "Seigneur du crime"
+        "Souteneur"
       ],
       "donnent_acces_avancee": [
         "Acolyte",
-        "Arnaqueur",
         "Bagnard",
         "Chasseur de primes",
         "Chevalier",
         "Collecteur d’impôts",
-        "Commandement",
-        "Fléau",
-        "Fouet",
         "Fouineur",
         "Garde",
         "Garde du corps",
         "Gitan",
         "Légionnaire",
         "Maistrance",
-        "Maître d’armes",
         "Marine",
+        "Maître d’armes",
         "Missionnaire",
         "Piqueux",
         "Précepteur",
@@ -2239,7 +2026,7 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Courtisan",
         "Diplomate",
-        "Gwai Liao",
+        "Gwai Liao (Bureaucrate)",
         "Politicien"
       ],
       "categorie": "Compétences sociales"
@@ -2249,11 +2036,11 @@ window.COMPETENCES_DATA = {
       "description": "Le héros sait dessiner, créer et entretenir un jardin.",
       "donnent_acces_base": [
         "Artisan",
-        "Feng Shui Shi"
+        "Feng Shui Shi (Géomancien)"
       ],
       "donnent_acces_avancee": [
-        "Arnaqueur",
-        "Domestique"
+        "Domestique",
+        "Guérisseur"
       ],
       "categorie": "Compétences rurales"
     },
@@ -2272,17 +2059,12 @@ window.COMPETENCES_DATA = {
       "description": "Cette compétence permet d’éviter la trajectoire de l’arme d’un adversaire. Cette compétence peut servir de défense passive, même si le héros attaqué n’est pas armé.",
       "donnent_acces_base": [
         "Acrobate",
-        "Arts martiaux défensifs",
-        "Arts martiaux offensifs",
-        "Athlétisme",
         "Cadet",
         "Légionnaire",
-        "Maître d’armes",
-        "Pugilat"
+        "Maître d’armes"
       ],
       "donnent_acces_avancee": [
         "Galérien",
-        "Pauvre chevalier",
         "Soldat",
         "Torero"
       ],
@@ -2313,9 +2095,6 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Courtisan",
-        "Estudiant",
-        "Légionnaire",
-        "Marin",
         "Prospecteur",
         "Recruteur"
       ],
@@ -2324,14 +2103,8 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Lancer",
       "description": "Le héros lance plus loin et avec plus de précision que les personnes ne maîtrisant pas cette compétence, laquelle peut s’avérer particulièrement utile s’il veut lancer une pierre avec un message à travers une fenêtre. Mais attention, cette compétence permet de lancer des objets de façon “utilitaire” mais jamais pour causer des dommages (comme couper une corde à distance, lancer un pistolet à un ami désarmé, etc. mais pas lancer un couteau ou une pierre à la tête d’un ennemi). Pour lancer un couteau, il vous faudra la compétence Lancer (couteau) issue de l’entraînement Couteau et pour lancer un objet dans le but de faire des dommages à un adversaire, il vous faudra la compétence Lancer (arme improvisée) issue de l’entraînement Combat de rue. La portée de l’objet variera en fonction de son poids mais sera généralement de 5 mètres + (rang de Gaillardise x 2 mètres).",
-      "donnent_acces_base": [
-        "Athlétisme",
-        "Fauconnier"
-      ],
+      "donnent_acces_base": [],
       "donnent_acces_avancee": [
-        "Aérostier",
-        "Batelier",
-        "Marine",
         "Piqueux"
       ],
       "categorie": "Compétences physiques"
@@ -2339,17 +2112,8 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Lancer (type d’armes à préciser)",
       "description": "Quand le héros lance une arme de jet, il doit utiliser cette compétence pour effectuer son attaque. La portée du tir est déterminée par le type de l’arme lancée. Les concentrations possibles sont : Armes de jet exotiques (Cathayans), Armes improvisées, Bolas, Couteaux, Grenades, Haches, Lances légères. La concentration ci-dessous mérite des explications complémentaires.",
-      "donnent_acces_base": [
-        "Arme de jet exotique",
-        "Bolas",
-        "Couteau",
-        "Grenade",
-        "Lance légère"
-      ],
-      "donnent_acces_avancee": [
-        "Combat de rue [armes improvisées]",
-        "Hache"
-      ],
+      "donnent_acces_base": [],
+      "donnent_acces_avancee": [],
       "variantes": [
         {
           "nom": "Armes improvisées",
@@ -2362,29 +2126,22 @@ window.COMPETENCES_DATA = {
       "nom": "Lancer de fusée",
       "description": "Lorsqu’un détachement met à feu des fusées, la compétence de Lancer de fusées de son commandant est utilisée pour effectuer le jet d’attaque.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Commandement"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
       "nom": "Langage des signes",
       "description": "On pouvait entendre vos paroles et lire sur vos lèvres, jusqu’à l’apparition d’un système de communication, développé par les natifs de Vodacce et reposant sur de discrets mouvements de doigts. Votre héros sait donc, grâce à cette compétence, communiquer des informations sans avoir à prononcer ou écrire un mot.",
-      "donnent_acces_base": [
-        "Détrousseur"
-      ],
+      "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Cambrioleur",
         "Chasseur",
-        "Éclaireur",
+        "Détrousseur",
         "Escamoteur",
-        "Espion",
-        "Fouineur",
         "Garde",
-        "Gérant de comptoir",
         "Guérillero",
-        "Légionnaire",
-        "Monte-en-l’air"
+        "Monte-en-l’air",
+        "Éclaireur"
       ],
       "categorie": "Compétences larronnes"
     },
@@ -2393,12 +2150,11 @@ window.COMPETENCES_DATA = {
       "description": "Grâce à sa connaissance des langues, de leur fonctionnement grammatical, des relations qui existent entre elle et de leurs origines communes, un personnage féru de Linguistique est capable d’en savoir beaucoup sur son interlocuteur rien qu’en l’écoutant parler ou en examinant l’une de ses correspondances. Il peut ainsi déterminer l’origine d’un mot, identifier l’origine géographique de son interlocuteur grâce à son accent et bien d’autres éléments de langage.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
-        "Comédien",
         "Diplomate",
-        "Érudit",
         "Explorateur",
         "Guide",
-        "Juge d’armes"
+        "Juge d’armes",
+        "Érudit"
       ],
       "categorie": "Compétences savantes"
     },
@@ -2411,7 +2167,7 @@ window.COMPETENCES_DATA = {
         "Bourreau",
         "Courtisan",
         "Espion",
-        "Shirbaz"
+        "Shirbaz (magicien)"
       ],
       "categorie": "Compétences larronnes"
     },
@@ -2427,7 +2183,8 @@ window.COMPETENCES_DATA = {
         "Intendant",
         "Légionnaire",
         "Maistrance",
-        "Marchand"
+        "Marchand",
+        "Receleur"
       ],
       "categorie": "Compétences commerciales"
     },
@@ -2446,17 +2203,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [
         "Artisan"
       ],
-      "donnent_acces_avancee": [
-        "Ingénieur"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences artisanales"
     },
     {
       "nom": "Maintenance",
       "description": "C’est la capacité à plier, emballer correctement, transporter sans dommages, déplier et mettre en place un ballon. C’est aussi la capacité à rechercher et réparer les déchirures de l’enveloppe du ballon, les cordes effilochées et les paniers instables.",
-      "donnent_acces_base": [
-        "Aérostier"
-      ],
+      "donnent_acces_base": [],
       "donnent_acces_avancee": [],
       "categorie": "Compétences savantes"
     },
@@ -2478,6 +2231,8 @@ window.COMPETENCES_DATA = {
         "Armateur",
         "Caravanier",
         "Colporteur",
+        "Fournisseur de drogues",
+        "Guide",
         "Gérant de comptoir",
         "Marchand",
         "Receleur"
@@ -2488,10 +2243,7 @@ window.COMPETENCES_DATA = {
         "Artisan",
         "Bonne aventure",
         "Contrebandier",
-        "Domestique",
         "Explorateur",
-        "Fournisseur de drogues",
-        "Guide",
         "Intendant",
         "Jenny",
         "Prospecteur",
@@ -2504,7 +2256,7 @@ window.COMPETENCES_DATA = {
       "description": "Le héros pratique l’art du massage, une compétence très appréciée des représentants de la noblesse. Cette compétence peut également être utilisé avec le système de répartie.",
       "donnent_acces_base": [
         "Artisan",
-        "Cao Yao",
+        "Cao Yao (Acupuncteur)",
         "Courtisane"
       ],
       "donnent_acces_avancee": [
@@ -2517,10 +2269,10 @@ window.COMPETENCES_DATA = {
       "description": "Les mathématiciens ont percé le secret des mathématiques les plus abstraites. Vous connaissez les concepts fondamentaux tels que le calcul intégral ou différentiel, ce qui inclut les intégrales, les limites et les dérivées, le calcul des valeurs minimales et maximales et la géométrie analytique. Votre rang dans cette compétence ne peut être supérieur à celui que vous avez en Calcul.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
-        "Érudit",
         "Ingénieur",
         "Marchand",
-        "Professeur"
+        "Professeur",
+        "Érudit"
       ],
       "categorie": "Compétences savantes"
     },
@@ -2529,8 +2281,7 @@ window.COMPETENCES_DATA = {
       "description": "Vous savez comment fonctionnent les mèches à canon et pouvez dire lesquelles brûlent le plus rapidement. Les mèches à combustion rapide ne laissent aucun droit à l’erreur et vous savez quelle longueur leur donner pour parvenir au résultat escompté. Pour chaque rang que vous possédez dans cette compétence, vous pouvez ajouter ou retrancher une phase au temps de combustion de toute mèche sur laquelle vous avez travaillé pendant au moins dix minutes. Quant aux mèches à combustion lente, vous pouvez ajouter ou retrancher une minute par rang de compétence au temps de combustion. Le MJ peut infliger des pénalités à cette compétence en fonction des circonstances (vous ne pouvez par exemple allonger une mèche courte sans matériel).",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
-        "Artificier",
-        "Incendiaire"
+        "Artificier"
       ],
       "categorie": "Compétences martiales"
     },
@@ -2541,11 +2292,11 @@ window.COMPETENCES_DATA = {
         "Apothicaire"
       ],
       "donnent_acces_avancee": [
-        "Cao Yao",
+        "Cao Yao (Acupuncteur)",
         "Guérisseur",
         "Herboriste",
-        "Médecin",
-        "Moine"
+        "Moine",
+        "Médecin"
       ],
       "categorie": "Compétences médicales"
     },
@@ -2554,9 +2305,8 @@ window.COMPETENCES_DATA = {
       "description": "Votre quête de paix intérieure vous donne une perception de votre balance émotionnelle et une aptitude à rester calme et rationnel. Vous pouvez utiliser cette compétence pour résister à toute utilisation du Système de Répartie à votre encontre.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
-        "Arts martiaux défensifs",
-        "Cao Yao",
-        "Feng Shui Shi"
+        "Cao Yao (Acupuncteur)",
+        "Feng Shui Shi (Géomancien)"
       ],
       "categorie": "Compétences savantes"
     },
@@ -2595,11 +2345,10 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [
         "Courtisan",
         "Courtisane",
-        "Gwai Liao",
-        "Shirbaz"
+        "Gwai Liao (Bureaucrate)",
+        "Shirbaz (magicien)"
       ],
       "donnent_acces_avancee": [
-        "Chevalier",
         "Comédien",
         "Domestique",
         "Précepteur"
@@ -2609,14 +2358,8 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Musique (type d’instrument à préciser)",
       "description": "Lorsqu’il joue de l’instrument concerné, le héros peut transporter son auditoire vers d’autres mondes ou faire naître une grande variété d’émotions, du ravissement le plus pur au désespoir le plus tragique. Aucune soirée ou dîner n’est inaccessible aux héros qui savent jouer d’un instrument. Les concentrations possibles sont : : les cordes comprennent la viole de gambe, la viola da braccio, la citole, la guiterne, la lyre, la harpe, le luth, la cithare, la trompette marine, la vièle, le psaltérion, la vihuela, le violon, la vielle à roue, l’oud, le kouitra, le qanum, l’outar, le guembri, le rbab, le zheng, le guzheng, le pipa, le sanxian, le qin, l’erhu, le jinghu, le banhu, le yang qin. : les instruments à vent comprennent la flûte à bec, la flûte traversière, le frestel (flûte de pan), la chalemie, le chalumeau, la bombarde, le dulciane (basson de la Renaissance), le cromorne, la cornemuse, la veuze, le cornet à bouquin, le sacqueboute, le trombone, la trompette, le zorna, le zammara, le ney, la nira, le mezoued, le xun, le dizi, le xiao, le suona, le sheng. : les instruments à clavier comprennent le clavecin, le virginal, l’orgue, l’orgue de barbarie, le bianzhong. : les instruments de percussions comprennent le tambourin, le tambour, les castagnettes, le bendir, la derbouka, la taârija, le riq, la tabla tijaniya, le tbel, le guedra, le daff, le naqqarat, les krabeb, les sagattes, le bangu, le gong, les penglings, les bans.",
-      "donnent_acces_base": [
-        "Artiste"
-      ],
-      "donnent_acces_avancee": [
-        "Barde",
-        "Bateleur",
-        "Skalde"
-      ],
+      "donnent_acces_base": [],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences artistiques"
     },
     {
@@ -2624,13 +2367,13 @@ window.COMPETENCES_DATA = {
       "description": "Le héros, s’il n’est pas trop lourdement chargé, parvient plutôt bien à se maintenir à flot (nonobstant les tempêtes et les requins, bien sûr). Les règles concernant la nage (et la noyade) figurent dans l’aide de jeu .",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
-        "Athlétisme",
         "Baleinier",
         "Batelier",
+        "Galérien",
         "Marin",
         "Marine",
         "Navigateur",
-        "Pauvre chevalier",
+        "Pauvre Chevalier",
         "Pêcheur"
       ],
       "categorie": "Compétences physiques"
@@ -2638,21 +2381,18 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Narrer",
       "description": "Assis autour d’un feu crépitant, le héros est au centre des regards. Il joue sur sa voix et ses expressions afin de mieux captiver son auditoire. Les grands narrateurs peuvent parfois gagner un peu d’argent en se servant de leur talent. Cette compétence peut également être utilisé avec le système de répartie.",
-      "donnent_acces_base": [
-        "Conférencier"
-      ],
+      "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Bateleur",
         "Chroniqueur",
-        "Colporteur",
         "Comédien",
         "Guérisseur",
         "Juge d’armes",
         "Maître d’armes",
         "Missionnaire",
-        "Prêtre",
         "Prospecteur",
-        "Rahib",
+        "Prêtre",
+        "Rahib (Moine)",
         "Skalde",
         "Soldat"
       ],
@@ -2676,11 +2416,10 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Collecteur d’impôts",
-        "Érudit",
         "Faussaire",
-        "Fouineur",
         "Marchand",
-        "Receleur"
+        "Receleur",
+        "Érudit"
       ],
       "categorie": "Compétences savantes"
     },
@@ -2694,11 +2433,11 @@ window.COMPETENCES_DATA = {
         "Alchimiste",
         "Antiquaire",
         "Bonne aventure",
-        "Érudit",
-        "Feng Shui Shi",
+        "Feng Shui Shi (Géomancien)",
         "Herboriste",
         "Professeur",
-        "Rahib"
+        "Rahib (Moine)",
+        "Érudit"
       ],
       "categorie": "Compétences savantes"
     },
@@ -2711,7 +2450,6 @@ window.COMPETENCES_DATA = {
         "Soldat"
       ],
       "donnent_acces_avancee": [
-        "Commandement",
         "Garde"
       ],
       "categorie": "Compétences martiales"
@@ -2726,7 +2464,7 @@ window.COMPETENCES_DATA = {
       "categorie": "Compétences artisanales"
     },
     {
-      "nom": "Orientation citadine (cité à préciser)",
+      "nom": "Orientation citadine (Nation à préciser)",
       "description": "Ce n’est pas quand le héros sera pourchassé en pleine nuit dans les rues d’une ville qu’il aura l’occasion de se familiariser avec la disposition de ces rues. Sans cette compétence, il va en effet se perdre très vite ou s’engouffrer dans un cul-de-sac. Si vous réussissez votre jet de compétence, votre héros disposera d’informations sur les lieux, à la discrétion du MJ. Vous faites votre jet de compétence en lançant deux dés de moins quand votre héros fait appel à cette compétence dans une ville qu’il ne connaît pas (le nombre de dés que vous gardez est toujours le même). Les concentrations possibles sont toutes les cités de Théah.",
       "donnent_acces_base": [
         "Escamoteur",
@@ -2741,12 +2479,12 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Cadet",
         "Cartographe",
-        "Détrousseur",
         "Dilettante",
+        "Détrousseur",
         "Fouineur",
         "Fournisseur de drogues",
         "Garde du corps",
-        "Monte- en-l’air",
+        "Monte-en-l’air",
         "Racketteur",
         "Souteneur"
       ],
@@ -2776,28 +2514,8 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Parade (Type d’armes à préciser)",
       "description": "Un héros peut utiliser cette compétence, qui sert à bloquer le coup d’un adversaire au moyen d’une arme, comme compétence de défense active. Les concentrations possibles sont : Armes improvisées, Bâtons, Cape, Bouclier, Couteau, Épée à deux mains, Escrime, Éventail, Filet, Fléau, Gant de combat, Hache à deux mains, Hache, Lance légère, Masse, Matraque. La concentration ci-dessous mérite des explications complémentaires.",
-      "donnent_acces_base": [
-        "Arme d’hast",
-        "Armes exotiques jumelées",
-        "Bâton",
-        "Bouclier",
-        "Cape",
-        "Couteau",
-        "Épée à deux mains",
-        "Escrime",
-        "Éventail",
-        "Filet",
-        "Hache",
-        "Hache à deux mains"
-      ],
-      "donnent_acces_avancee": [
-        "Combat de rue [armes improvisées]",
-        "Fléau",
-        "Gant de combat",
-        "Lance légère",
-        "Masse",
-        "Matraque"
-      ],
+      "donnent_acces_base": [],
+      "donnent_acces_avancee": [],
       "variantes": [
         {
           "nom": "Armes exotiques jumelées",
@@ -2823,7 +2541,6 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Arnaqueur",
-        "Estudiant",
         "Malandrin"
       ],
       "categorie": "Compétences larronnes"
@@ -2835,8 +2552,6 @@ window.COMPETENCES_DATA = {
         "Torero"
       ],
       "donnent_acces_avancee": [
-        "Arts martiaux défensifs",
-        "Athlétisme",
         "Maître d’armes",
         "Rasoir"
       ],
@@ -2849,6 +2564,10 @@ window.COMPETENCES_DATA = {
         "Pêcheur"
       ],
       "donnent_acces_avancee": [
+        "Baleinier",
+        "Batelier",
+        "Bûcheron",
+        "Chasseur de primes",
         "Paysan"
       ],
       "categorie": "Compétences maritimes"
@@ -2858,19 +2577,18 @@ window.COMPETENCES_DATA = {
       "description": "Que ce soit parce que ses vieilles blessures ou ses articulations le font souffrir ou parce qu’il a appris à reconnaître les signes avant-coureurs d’un changement de temps, le héros sait quand un orage menace et peut facilement prédire sa violence. Les règles concernant le temps figurent dans l’aide de jeu .",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
-        "Aérostier",
         "Alchimiste",
         "Baleinier",
         "Batelier",
         "Bûcheron",
         "Cocher",
-        "Éclaireur",
         "Explorateur",
         "Incendiaire",
         "Marin",
         "Navigateur",
         "Paysan",
-        "Pêcheur"
+        "Pêcheur",
+        "Éclaireur"
       ],
       "categorie": "Compétences rurales"
     },
@@ -2887,18 +2605,18 @@ window.COMPETENCES_DATA = {
       "nom": "Philosophie",
       "description": "Au-delà des faits, il y a les idées, et les idées peuvent changer la face du monde. Votre héros adore les grandes discussions philosophiques et fait souvent triompher son point de vue grâce à cette compétence. Cette compétence peut également être utilisé avec le système de répartie.",
       "donnent_acces_base": [
-        "Feng Shui Shi",
-        "Prêtre"
+        "Feng Shui Shi (Géomancien)",
+        "Prêtre",
+        "Rahib (Moine)"
       ],
       "donnent_acces_avancee": [
         "Alchimiste",
-        "Cao Yao",
-        "Érudit",
+        "Cao Yao (Acupuncteur)",
         "Estudiant",
-        "Médecin",
         "Missionnaire",
         "Moine",
-        "Rahib"
+        "Médecin",
+        "Érudit"
       ],
       "categorie": "Compétences savantes"
     },
@@ -2909,10 +2627,11 @@ window.COMPETENCES_DATA = {
         "Escamoteur"
       ],
       "donnent_acces_avancee": [
+        "Détrousseur",
         "Galopin",
         "Gitan",
         "Mendiant",
-        "Shirbaz"
+        "Shirbaz (magicien)"
       ],
       "categorie": "Compétences larronnes"
     },
@@ -2934,7 +2653,6 @@ window.COMPETENCES_DATA = {
       "nom": "Piloter",
       "description": "En utilisant un compas et le soleil ou les étoiles comme points de repère, le héros est capable de suivre la route qui lui a été indiquée par le navigateur. Cette compétence lui permet également de repérer les récifs et les eaux peu profondes. Votre héros sait aussi manœuvrer un navire afin d’éviter qu’il ne fasse naufrage dans une tempête. Votre MJ dispose des règles concernant le pilotage dans l’aide de jeu Batailles navales. Concernant l’Aérostier, cette compétence ne s’utilise que pour les ballons, dirigeables et aéronefs. Dans tous les autres cas, il s’agit de navires.",
       "donnent_acces_base": [
-        "Aérostier",
         "Batelier",
         "Maistrance"
       ],
@@ -2953,20 +2671,21 @@ window.COMPETENCES_DATA = {
         "Courtisan",
         "Courtisane",
         "Dilettante",
-        "Prêtre",
         "Professeur",
-        "Rahib"
+        "Prêtre",
+        "Rahib (Moine)"
       ],
       "categorie": "Compétences sociales"
     },
     {
       "nom": "Pister",
       "description": "Le héros sait reconnaître les traces que laissent les animaux ou les hommes dans les bois : une brindille cassée, une feuille écrasée ou l’empreinte boueuse d’une trace de pas. Plus difficile à déterminer, mais bien plus impressionnant, le héros peut également dire à quand remontent ces traces. Pour utiliser cette compétence, vous ferez d’ordinaire votre jet contre un ND égal au résultat du jet de Pister de celui que vous essayez de suivre (quand on sait suivre une piste, on sait aussi camoufler ses traces).",
-      "donnent_acces_base": [],
+      "donnent_acces_base": [
+        "Éclaireur"
+      ],
       "donnent_acces_avancee": [
         "Chasseur",
         "Chasseur de primes",
-        "Éclaireur",
         "Fauconnier",
         "Hors-la-loi",
         "Piqueux",
@@ -2988,8 +2707,7 @@ window.COMPETENCES_DATA = {
         "Baleinier",
         "Courtisane",
         "Fournisseur de drogues",
-        "Herboriste",
-        "Sarbacane"
+        "Herboriste"
       ],
       "categorie": "Compétences larronnes"
     },
@@ -3003,10 +2721,9 @@ window.COMPETENCES_DATA = {
         "Avoué",
         "Chevalier",
         "Chroniqueur",
-        "Courtisan",
         "Courtisane",
         "Fouineur",
-        "Gwai Liao",
+        "Gwai Liao (Bureaucrate)",
         "Intendant",
         "Juge d’armes",
         "Politicien",
@@ -3017,13 +2734,8 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Potamologie (fleuve à préciser)",
       "description": "Vous avez appris tout ce qu’il y a d’important à connaître au sujet d’une étendue de 75 kilomètres d’une rivière en particulier. Vous savez où se trouvent les rondins et rochers immergés, et il ne vous est jamais nécessaire d’effectuer un jet de Piloter lorsque vous manœuvrez dans cette zone. Vous connaissez 75 kilomètres de berges supplémentaires par rang dans cette compétence. Les concentrations possibles sont toutes les fleuves de Théah.",
-      "donnent_acces_base": [
-        "Batelier",
-        "Pêcheur"
-      ],
-      "donnent_acces_avancee": [
-        "Prospecteur"
-      ],
+      "donnent_acces_base": [],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences maritimes"
     },
     {
@@ -3032,9 +2744,7 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [
         "Artisan"
       ],
-      "donnent_acces_avancee": [
-        "Pauvre chevalier"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences artisanales"
     },
     {
@@ -3052,9 +2762,7 @@ window.COMPETENCES_DATA = {
       "nom": "Pousser (bâton)",
       "description": "Cette attaque d'estoc avec un bâton est réalisée en lançant Gaillardise + Pousser. Si le jet passe le ND pour être touché de l'adversaire, celui-ci doit faire un test de Finesse + Équilibre (ou Jeu de jambes) contre un ND égal au résultat d'attaque pour ne pas chuter.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Bâton"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
@@ -3063,11 +2771,10 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [
         "Acolyte",
         "Apothicaire",
-        "Cao Yao",
         "Guérisseur",
         "Herboriste",
         "Médecin",
-        "Pauvre chevalier",
+        "Pauvre Chevalier",
         "Soldat"
       ],
       "donnent_acces_avancee": [
@@ -3088,27 +2795,24 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Bateleur",
-        "Shirbaz"
+        "Shirbaz (magicien)"
       ],
       "categorie": "Compétences artistiques"
     },
     {
       "nom": "Prise",
       "description": "Cette compétence permet d’effectuer le mouvement de base utilisé par tous les lutteurs. Ils s’approchent au corps à corps puis tentent de s’agripper et de s’immobiliser l’un l’autre. Pour utiliser cette attaque, vous devez déclarer votre intention puis faire un jet de (Finesse + Prise) contre le ND pour être touché de l’adversaire de votre héros. Si vous réussissez votre jet, votre héros est parvenu à empoigner son adversaire ; ce dernier ne peut que tenter de briser la prise qui l’emprisonne, donner un coup de tête ou accomplir une action qui requiert très peu de mouvement (comme appuyer sur la détente d’un pistolet, par exemple). Pour tenter de se dégager, cet adversaire doit utiliser un dé d’action (reportez- vous aux règles sur les interruptions et les actions de réserve dans l’aide de jeu ) et faire un jet d’opposition de (Gaillardise + Prise) contre (Gaillardise + Prise) de votre héros. S’il remporte l’opposition, il parvient à se dégager ; si ce n’est pas le cas, le héros maintient sa prise et peut même, en utilisant un dé d’action, renforcer sa prise. Chaque dé d’action utilisé dans ce but vous fera bénéficier d’une augmentation gratuite lorsque l’adversaire de votre héros tentera de briser son étreinte.",
-      "donnent_acces_base": [
-        "Arts martiaux défensifs",
-        "Lutte"
+      "donnent_acces_base": [],
+      "donnent_acces_avancee": [
+        "Garde du corps"
       ],
-      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
       "nom": "Projection",
       "description": "Une fois que vous avez agrippé quelqu’un, vous pouvez choisir de le relâcher d’une manière plus dynamique qu’en le lâchant simplement. Au lieu de cela, vous pouvez le projeter loin de vous et sur le sol ou contre un mur ou tout autre obstacle. Pour projeter quelqu’un, vous devez d’abord le saisir avec une Prise. Effectuez un jet de Finesse + Projection contre un ND égal à 5 fois la Gaillardise de votre adversaire, plus 10. Vous pouvez projeter une personne à un nombre de mètres égal à votre Gaillardise. Si elle est Grande, retirez un mètre, et ajoutez en un si elle Petite. Vous pouvez augmenter cette distance de un mètre par augmentation prise sur votre jet. Si vous réussissez, vous lancez votre adversaire au sol et il reçoit des dégâts comme s’il avait chuté de 2 fois votre Gaillardise en mètres, et tombe face contre terre. Vous pouvez tenter de viser autre chose que le sol en prenant des augmentations pour cela. Heurter un mur ou une autre structure (comme une table) demandera une augmentation ; lancer une personne contre une autre augmentera le ND de la Projection du ND pour être touché de la personne visée. Un échec sur votre jet de Finesse + Projection signifiera que vous avez lâché votre opposant, qu’il ne subit pas de dommages et ne se retrouve pas au sol.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Arts martiaux défensifs"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
@@ -3121,46 +2825,39 @@ window.COMPETENCES_DATA = {
         "Garde",
         "Garde du corps",
         "Incendiaire",
-        "Maître d’armes",
         "Malandrin",
+        "Maître d’armes",
         "Piqueux",
-        "Souteneur"
+        "Souteneur",
+        "Torero"
       ],
       "donnent_acces_avancee": [
         "Acolyte",
         "Archéologue",
         "Artificier",
         "Assassin",
-        "Batelier",
         "Bourreau",
         "Cambrioleur",
-        "Cao Yao",
         "Caravanier",
         "Chasseur",
         "Chasseur de primes",
-        "Chevalier",
         "Cocher",
-        "Commandement",
         "Contrebandier",
-        "Détrousseur",
         "Domestique",
-        "Éclaireur",
+        "Détrousseur",
         "Escamoteur",
         "Espion",
-        "Explorateur",
         "Fauconnier",
-        "Fouineur",
         "Fournisseur de drogues",
-        "Guérillero",
         "Guide",
-        "Hors- la-loi",
+        "Guérillero",
         "Légionnaire",
         "Monte-en-l’air",
-        "Pauvre chevalier",
+        "Pauvre Chevalier",
         "Rasoir",
-        "Seigneur du crime",
+        "Shirbaz (magicien)",
         "Soldat",
-        "Shirbaz"
+        "Éclaireur"
       ],
       "categorie": "Compétences physiques"
     },
@@ -3168,22 +2865,14 @@ window.COMPETENCES_DATA = {
       "nom": "Réception de charge",
       "description": "Si votre héros utilise une arme d’hast contre un adversaire qui le charge, qu’il soit à pied ou à cheval, vous pouvez utiliser cette compétence à la place de votre compétence d’attaque habituelle ; vous devez annoncer votre intention avant de faire votre jet d’attaque. Si l’attaque porte, vous pouvez ajouter votre valeur actuelle totale d’initiative aux dommages.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Arme d’hast",
-        "Lance de cavalerie",
-        "Lance légère"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
       "nom": "Recharger (Type d’armes à préciser)",
       "description": "Cette compétence permet de recharger une arme de tir plus rapidement. Les concentrations possibles sont :",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Arbalète",
-        "Mousquet",
-        "Pistolet"
-      ],
+      "donnent_acces_avancee": [],
       "variantes": [
         {
           "nom": "Arbalète",
@@ -3211,20 +2900,20 @@ window.COMPETENCES_DATA = {
         "Alchimiste",
         "Archéologue",
         "Chroniqueur",
-        "Conférencier",
-        "Érudit",
         "Faussaire",
-        "Gwai Liao",
+        "Gwai Liao (Bureaucrate)",
         "Juge d’armes",
-        "Professeur"
+        "Professeur",
+        "Érudit"
       ],
       "donnent_acces_avancee": [
         "Appréciateur",
         "Avoué",
-        "Dilettante",
+        "Cao Yao (Acupuncteur)",
         "Estudiant",
         "Ingénieur",
-        "Maître d’armes"
+        "Maître d’armes",
+        "Moine"
       ],
       "categorie": "Compétences savantes"
     },
@@ -3232,11 +2921,11 @@ window.COMPETENCES_DATA = {
       "nom": "Régisseur",
       "description": "Le héros sait diriger une maison : acheter la nourriture, diriger les domestiques…",
       "donnent_acces_base": [
-        "Artisan"
+        "Artisan",
+        "Intendant"
       ],
       "donnent_acces_avancee": [
-        "Domestique",
-        "Intendant"
+        "Domestique"
       ],
       "categorie": "Compétences commerciales"
     },
@@ -3244,9 +2933,7 @@ window.COMPETENCES_DATA = {
       "nom": "Retour à l’envoyeur",
       "description": "Cette compétence peut être utilisée pour renvoyer une grenade à celui qui l’a jetée. Pour y parvenir, le personnage doit disposer d’une action en réserve ou postérieure (avec un décalage maximal correspondant à son rang de compétence) à celle du lanceur. Ensuite, il faut réussir un jet de Retour à l’envoyeur + Panache contre un ND égal au jet du lanceur. Dans ce cas, la grenade est renvoyée avant son explosion.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Grenade"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
@@ -3255,8 +2942,6 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Acrobate",
-        "Athlétisme",
-        "Maître d’armes",
         "Torero"
       ],
       "categorie": "Compétences physiques"
@@ -3274,9 +2959,7 @@ window.COMPETENCES_DATA = {
       "nom": "Saisir un objet",
       "description": "Le héros peut utiliser son fouet pour attraper un objet particulier comme la fiole que votre adversaire s’apprête à lancer au sol, le collier de la reine ou la fleur que votre rival s’apprête à offrir à la dame de votre cœur.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Fouet"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
@@ -3287,9 +2970,6 @@ window.COMPETENCES_DATA = {
       ],
       "donnent_acces_avancee": [
         "Acrobate",
-        "Arts martiaux défensifs",
-        "Arts martiaux offensifs",
-        "Athlétisme",
         "Baleinier",
         "Bûcheron",
         "Cocher",
@@ -3297,6 +2977,7 @@ window.COMPETENCES_DATA = {
         "Hors-la-loi",
         "Marin",
         "Monte-en-l’air",
+        "Pauvre Chevalier",
         "Pêcheur",
         "Torero"
       ],
@@ -3307,7 +2988,6 @@ window.COMPETENCES_DATA = {
       "description": "Il est parfois nécessaire de sauter sur son cheval et de partir au grand galop le plus rapidement possible. Cette compétence permet de sauter sur un cheval en courant (ND 15) ou du premier étage d’un bâtiment (ND 20).",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
-        "Cavalier",
         "Cocher"
       ],
       "categorie": "Compétences physiques"
@@ -3330,12 +3010,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Alchimiste",
         "Artificier",
-        "Érudit",
+        "Cao Yao (Acupuncteur)",
         "Estudiant",
         "Incendiaire",
         "Ingénieur",
         "Professeur",
-        "Prospecteur"
+        "Prospecteur",
+        "Érudit"
       ],
       "categorie": "Compétences savantes"
     },
@@ -3352,19 +3033,14 @@ window.COMPETENCES_DATA = {
       "nom": "Se balancer",
       "description": "Lorsque le héros utilise cette compétence, il peut utiliser son fouet et l’enrouler autour d’une branche, d’un lustre, etc. puis s’en servir comme d’une corde afin de se balancer jusqu’à l’endroit qu’il veut atteindre. Enfin, d’un mouvement du poignet, il pourra le décrocher.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Fouet"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences physiques"
     },
     {
       "nom": "Se dégager",
       "description": "Lorsque le héros tente de se dégager d’une prise de son adversaire, chaque rang dans cette compétence vous permet d’annuler une augmentation gratuite gagnée par son adversaire en renforçant sa prise.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Arts martiaux défensifs",
-        "Lutte"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
@@ -3379,16 +3055,12 @@ window.COMPETENCES_DATA = {
         "Arnaqueur",
         "Artiste",
         "Barde",
-        "Bateleur",
         "Cadet",
-        "Chevalier",
         "Comédien",
         "Courtisan",
         "Espion",
-        "Guide",
-        "Pauvre chevalier",
         "Recruteur",
-        "Shirbaz",
+        "Shirbaz (magicien)",
         "Skalde",
         "Torero"
       ],
@@ -3409,23 +3081,23 @@ window.COMPETENCES_DATA = {
       "nom": "Sens de l’orientation",
       "description": "En observant les étoiles ou le soleil, votre héros sait toujours où est le nord. Cela lui permet également de revenir sur ses pas dans une ville ou une forêt qu’il ne connaît pas. Par contre, il est difficile de s’y retrouver dans des passages identiques ou sombres.",
       "donnent_acces_base": [
-        "Éclaireur",
+        "Colporteur",
+        "Explorateur",
         "Gitan",
+        "Guide",
         "Navigateur",
-        "Prospecteur"
+        "Prospecteur",
+        "Éclaireur"
       ],
       "donnent_acces_avancee": [
-        "Aérostier",
         "Archéologue",
         "Bûcheron",
         "Caravanier",
         "Cartographe",
         "Chasseur",
         "Cocher",
-        "Explorateur",
         "Fauconnier",
         "Guérillero",
-        "Guide",
         "Hors-la-loi",
         "Marin",
         "Missionnaire",
@@ -3444,7 +3116,6 @@ window.COMPETENCES_DATA = {
         "Arnaqueur",
         "Artisan",
         "Colporteur",
-        "Intendant",
         "Malandrin",
         "Marchand",
         "Receleur"
@@ -3475,9 +3146,7 @@ window.COMPETENCES_DATA = {
       "nom": "Sher da Shi (Charmeur de serpents)",
       "description": "Vous pouvez vous asseoir près d’un dangereux serpent et bouger avec le rythme et les mouvements appropriés qui le rendront attentif envers vous, sans qu’il cherche à vous attaquer. Ceci requiert un jet d’opposition de votre Esprit + Charmeur de Serpent contre la Détermination + Jeu de Jambes du serpent. Si vous gagnez, vous pouvez mener un spectacle avec lui. Si le serpent gagne, il essaie de vous mordre.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Bateleur"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences physiques"
     },
     {
@@ -3495,12 +3164,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Bûcheron",
-        "Éclaireur",
+        "Chasseur",
         "Fauconnier",
         "Gitan",
         "Guérillero",
         "Hors-la-loi",
-        "Veneur"
+        "Veneur",
+        "Éclaireur"
       ],
       "categorie": "Compétences rurales"
     },
@@ -3515,53 +3185,30 @@ window.COMPETENCES_DATA = {
         "Recruteur"
       ],
       "donnent_acces_avancee": [
-        "Appréciateur",
-        "Arnaqueur",
         "Assassin",
         "Bourreau",
-        "Caravanier",
         "Chroniqueur",
-        "Colporteur",
-        "Comédien",
-        "Conférencier",
         "Courtisan",
         "Courtisane",
         "Diplomate",
         "Domestique",
-        "Espion",
         "Fouineur",
         "Galopin",
-        "Gérant de comptoir",
         "Guide",
-        "Gwai Liao",
+        "Gwai Liao (Bureaucrate)",
+        "Gérant de comptoir",
         "Malandrin",
-        "Marin",
         "Mendiant",
         "Politicien",
-        "Shirbaz"
+        "Shirbaz (magicien)"
       ],
       "categorie": "Compétences sociales"
     },
     {
       "nom": "Soin des animaux (type d’animal à préciser)",
       "description": "Cette compétence vous permet de prendre soin d’un type d’animal précis, pour toutes les nécessités du quotidien (pansage, nourriture, etc.) et soigner ses petites blessures du quotidien (ses blessures légères). Pour des blessures plus graves, vous aurez besoin de la compétence Vétérinaire. Elle mesure aussi vos connaissances de l’animal et la maîtrise des techniques d’utilisation des outils du métier (laisse ou muselière pour le chien, chaperon et gant pour le faucon, selle, étrier et mors pour le cheval) Les concentrations les plus courantes sont : Bovins, Chameaux, Chevaux, Chiens, Éléphants, Furets, Moutons, Oiseaux, mais il en existe de nombreuses autres.",
-      "donnent_acces_base": [
-        "Cavalier",
-        "Fauconnier",
-        "Palefrenier",
-        "Piqueux"
-      ],
-      "donnent_acces_avancee": [
-        "Acolyte",
-        "Cadet",
-        "Chasseur",
-        "Cocher",
-        "Gitan",
-        "Pauvre chevalier",
-        "Paysan",
-        "Torero",
-        "Veneur"
-      ],
+      "donnent_acces_base": [],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences rurales"
     },
     {
@@ -3582,14 +3229,11 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Acrobate",
-        "Aérostier",
         "Artificier",
         "Artisan",
-        "Athlétisme",
         "Bûcheron",
         "Galérien",
         "Palefrenier",
-        "Paysan",
         "Pêcheur"
       ],
       "categorie": "Compétences physiques"
@@ -3600,8 +3244,7 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Acrobate",
-        "Bateleur",
-        "Gitan"
+        "Bateleur"
       ],
       "categorie": "Compétences artistiques"
     },
@@ -3611,9 +3254,7 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [
         "Commandement"
       ],
-      "donnent_acces_avancee": [
-        "Maistrance"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
@@ -3622,17 +3263,17 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [
         "Galopin",
         "Guérillero",
+        "Missionnaire",
         "Prospecteur"
       ],
       "donnent_acces_avancee": [
         "Baleinier",
         "Bûcheron",
         "Chasseur",
-        "Éclaireur",
         "Explorateur",
         "Hors-la-loi",
         "Légionnaire",
-        "Missionnaire"
+        "Éclaireur"
       ],
       "categorie": "Compétences rurales"
     },
@@ -3646,8 +3287,7 @@ window.COMPETENCES_DATA = {
         "Légionnaire",
         "Moine",
         "Palefrenier",
-        "Pauvre chevalier",
-        "Rahib"
+        "Pauvre Chevalier"
       ],
       "donnent_acces_avancee": [],
       "categorie": "Compétences artisanales"
@@ -3662,8 +3302,6 @@ window.COMPETENCES_DATA = {
         "Chevalier",
         "Guérillero",
         "Légionnaire",
-        "Maistrance",
-        "Rasoir",
         "Soldat"
       ],
       "categorie": "Compétences martiales"
@@ -3675,16 +3313,14 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [
-        "Pauvre chevalier"
+        "Pauvre Chevalier"
       ],
       "categorie": "Compétences artisanales"
     },
     {
       "nom": "Tailleur de pierre",
       "description": "Le héros sait tailler les blocs de pierre et les rochers.",
-      "donnent_acces_base": [
-        "Artisan"
-      ],
+      "donnent_acces_base": [],
       "donnent_acces_avancee": [],
       "categorie": "Compétences artisanales"
     },
@@ -3713,17 +3349,18 @@ window.COMPETENCES_DATA = {
       "nom": "Théologie",
       "description": "Les desseins divins sont un délicat sujet d’étude – tant tout le monde est persuadé d’avoir raison. Votre héros, lui, a étudié toutes les croyances avec recul et sérénité, cherchant les corrélations et les liens invisibles qui les unissent, en mettant de côté ses propres croyances. Il sait comment les autres prient, comment ils font leurs dévotions et l’influence de leur religion sur leur vie quotidienne. Cette compétence peut également être utilisé avec le système de répartie.",
       "donnent_acces_base": [
-        "Moine"
+        "Moine",
+        "Prêtre"
       ],
       "donnent_acces_avancee": [
-        "Érudit",
         "Estudiant",
-        "Feng Shui Shi",
+        "Feng Shui Shi (Géomancien)",
         "Guérisseur",
         "Missionnaire",
         "Professeur",
-        "Rahib",
-        "Skalde"
+        "Rahib (Moine)",
+        "Skalde",
+        "Érudit"
       ],
       "categorie": "Compétences savantes"
     },
@@ -3731,42 +3368,27 @@ window.COMPETENCES_DATA = {
       "nom": "Tir à l’arc monté",
       "description": "On utilise cette compétence à la place d’Attaque (Arc) quand on tire à l’arc depuis un cheval.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Arc"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
       "nom": "Tir d’adresse",
       "description": "Cette compétence vous permet de réduire les pénalités gênant le tir (portée, cible cachée, etc.) de votre rang en Tir d’adresse * 5. L’utilisation de cette compétence ne permet pas de faire tomber votre ND en dessous du ND pour être touché de base.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Arme de jet exotique",
-        "Sarbacane"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
       "nom": "Tir réflexe",
       "description": "Les archers et frondeurs les plus aguerris parviennent à se concentrer tout autant (si ce n’est plus) sur la vitesse de leur tir que sur la précision. Grâce à cette compétence, on peut bander un arc (ou armer une fronde ou une sarbacane) et tirer en une seule action, mais vous devrez réussir votre jet avec deux augmentations pour y parvenir. Si vous y parvenez, cette compétence remplacera alors votre compétence Attaque (Arc, Fronde ou Sarbacane). Cette compétence ne peut pas être utilisée à cheval.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Arc",
-        "Fronde"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
       "nom": "Tirer (Type d’armes à préciser)",
       "description": "Cette compétence représente la capacité à toucher un adversaire avec une arbalète. Il faut six actions pour recharger une arbalète. Les concentrations possibles sont :",
-      "donnent_acces_base": [
-        "Arbalète",
-        "Arc",
-        "Fronde",
-        "Mousquet",
-        "Pistolet",
-        "Sarbacane"
-      ],
+      "donnent_acces_base": [],
       "donnent_acces_avancee": [],
       "variantes": [
         {
@@ -3809,7 +3431,7 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [
-        "Pauvre chevalier"
+        "Pauvre Chevalier"
       ],
       "categorie": "Compétences artisanales"
     },
@@ -3827,7 +3449,8 @@ window.COMPETENCES_DATA = {
       "description": "Le héros est hanté par des visions de ruelles sombres où les hommes jettent inlassablement les dés. En utilisant des dés pipés, des cartes marquées, en faisant appel à des techniques simples de manipulation ou plus simplement en détournant l’attention des autres joueurs, le héros sait faire tourner la chance en sa faveur. Votre MJ trouvera les règles concernant le jeu et la triche dans l’aide de jeu .",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
-        "Arnaqueur"
+        "Arnaqueur",
+        "Galopin"
       ],
       "categorie": "Compétences larronnes"
     },
@@ -3835,10 +3458,7 @@ window.COMPETENCES_DATA = {
       "nom": "Uppercut",
       "description": "Cette compétence permet de porter une brutale attaque à mains nues pendant laquelle la garde du spadassin est ouverte. Déclarez l’utilisation de cette compétence et servez-vous-en pour faire le jet d’attaque : si le coup porte, vous ferez votre jet de dommages en lançant (sans les garder) deux dés de dommages supplémentaires. En contrepartie, le ND pour être touché de votre héros passe à 5 pendant cette phase et vous ne pouvez pas utiliser de défense active jusqu’à la fin de cette phase. Attention, pour les gants de combat, cette compétence n’est pas utilisable avec un katar ou des griffes.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Gant de combat",
-        "Pugilat"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
     {
@@ -3888,18 +3508,14 @@ window.COMPETENCES_DATA = {
       "nom": "Virevolte",
       "description": "Une virevolte est une manœuvre agressive où le bastonneur fait tourner rapidement son bâton au- dessus et autour de lui afin de détourner l’attention de son adversaire (un peu à la manière des utilisateurs de nunchakus). Vous devez déclarer effectuer une Virevolte à la place de votre attaque classique. Vous effectuez votre jet de dés en l’utilisant comme compétence d’attaque. Si cette dernière est couronnée de succès, vous n’infligez aucun dommage mais obligez votre cible à augmenter son dé d’action suivant de deux points, plus 1 par augmentation réussie. Si le dé d’action passe ainsi au-dessus de 10, il disparaît.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Bâton"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences physiques"
     },
     {
       "nom": "Voltige",
       "description": "Cette compétence permet d’effectuer un certain nombre d’acrobaties, telles que se tenir debout sur un cheval durant une chevauchée (ND 15), glisser sur le côté du cheval afin de bénéficier d’une certaine protection (ND 20)… Une monture particulièrement bien dressée peut permettre de réduire ces ND de 5.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [
-        "Cavalier"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences physiques"
     },
     {
@@ -3907,9 +3523,13 @@ window.COMPETENCES_DATA = {
       "categorie": "Compétences sociales",
       "description": "Cette compétence permet d'user de mensonges pour convaincre son interlocuteur. Le mensonge le plus élaboré est inutile face à un interlocuteur capable de discerner un frisson d'appréhension ou un éclair de nervosité dans le regard. La compétence Duperie permet au héros de donner à ses mensonges toutes les apparences de la vérité et de dissimuler le mensonge le plus patent derrière un masque de parfaite honnêteté. Cette compétence peut également être utilisée avec le système de répartie.",
       "donnent_acces_base": [
+        "Arnaqueur",
         "Gitan"
       ],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Détrousseur",
+        "Espion"
+      ],
       "variantes": []
     }
   ]

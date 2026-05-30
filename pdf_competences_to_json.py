@@ -32,6 +32,15 @@ DEST_DIR = Path(__file__).parent
 DEST_JSON = DEST_DIR / "competences.json"
 DEST_JS = DEST_DIR / "competences.js"
 
+# Renommage de compétences (maison) : applique après parsing + categorie.
+# Les héros voyagent — les compétences "(cité)" deviennent "(Nation)".
+COMPETENCES_NOM_REMAP: dict[str, str] = {
+    "Connaissance des bas-fonds (cité à préciser)": "Connaissance des bas-fonds (Nation à préciser)",
+    "Contacts (cité à préciser)":                   "Contacts (Nation à préciser)",
+    "Orientation citadine (cité à préciser)":       "Orientation citadine (Nation à préciser)",
+}
+
+
 # Overrides de description (maison) : remplacent le texte du PDF pour une compétence donnée.
 # Matching insensible casse/accents/apostrophes (clé = nom exact tel qu'il sort du parser).
 COMPETENCES_DESCRIPTION_OVERRIDES: dict[str, str] = {
@@ -407,6 +416,15 @@ def main() -> None:
         competences.append(dict(ajout))  # copie pour ne pas muter la source
     if COMPETENCES_AJOUTS:
         print(f"  Ajouts maison : {len(COMPETENCES_AJOUTS)} compétence(s)")
+
+    # Renommage maison (Cité → Nation pour les compétences voyageuses)
+    nb_remap = 0
+    for c in competences:
+        if c["nom"] in COMPETENCES_NOM_REMAP:
+            c["nom"] = COMPETENCES_NOM_REMAP[c["nom"]]
+            nb_remap += 1
+    if nb_remap:
+        print(f"  Renommages 'Cité→Nation' : {nb_remap} compétence(s)")
 
     # Stats
     categories_uniques = sorted({c["categorie"] for c in competences if c.get("categorie")})
