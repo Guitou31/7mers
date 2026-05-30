@@ -184,12 +184,13 @@
     ]);
     document.body.appendChild(dialog);
 
-    // Click outside to close
+    // Click outside (backdrop) to close.
+    // Pattern canonique : un clic sur le backdrop natif d'un <dialog> a target === dialog.
+    // Un clic sur un enfant a target === enfant. On ne peut PAS utiliser
+    // getBoundingClientRect ici : openItem() peut redimensionner la modal entre le clic
+    // et le bubble, faisant tomber le clic hors du nouveau rect (= fermeture parasite).
     dialog.addEventListener("click", (e) => {
-      const rect = dialog.getBoundingClientRect();
-      const inside = e.clientX >= rect.left && e.clientX <= rect.right &&
-        e.clientY >= rect.top && e.clientY <= rect.bottom;
-      if (!inside) closeModal();
+      if (e.target === dialog) closeModal();
     });
     return dialog;
   }

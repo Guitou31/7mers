@@ -142,8 +142,7 @@ window.METIERS_DATA = {
         "Contacts (cité)",
         "Falsification",
         "Marchandage",
-        "Recherches",
-        "Sincérité et une compétence de base d’Artisan au choix"
+        "Recherches"
       ],
       "reputation": "Rang social : +1",
       "restriction_creation": "libre",
@@ -221,7 +220,8 @@ window.METIERS_DATA = {
       ],
       "description": "Les artisans fabriquent tous les biens utilisés par les habitants de Théah, du manteau en soie au pot en terre cuite, en passant par la cotte de mailles. Ceux qui peuplent l’univers des Secrets de la Septième Mer se sont regroupés au sein de puissantes organisations plus ou moins contrôlées par la ligue de Vendel et/ou les princes-marchands de Vodacce. Ils créent des biens que les marchands leur achètent souvent pour revendre ensuite et jouent l’un des rôles les plus importants de l’économie de Théah.",
       "competences_base": [
-        "Évaluation et une compétence artisanale au rang 2 parmi : Aubergiste",
+        "Évaluation",
+        "Aubergiste",
         "Barbier",
         "Boucher",
         "Bouilleur de cru",
@@ -305,7 +305,7 @@ window.METIERS_DATA = {
       ],
       "description": "Votre personnage maîtrise les techniques de l’un des beaux-arts : peut-être compose-t-il des sonnets d’amour pour sa bien-aimée, à moins qu’il ne fasse des portraits pour la noblesse. Les artistes sont des êtres à part : ils vivent de leur art et leurs œuvres peuvent bouleverser et influencer les foules ou n’être destinées qu’à un seul individu et changer son cœur à jamais.",
       "competences_base": [
-        "Une compétence artistique au rang 3 parmi : Chant",
+        "Chant",
         "Compositeur",
         "Création littéraire",
         "Dessin",
@@ -316,8 +316,7 @@ window.METIERS_DATA = {
         "Comportementalisme",
         "Débrouillardise",
         "Éloquence",
-        "Séduction et une compétence de base d’artisan (de type Luthier",
-        "Papetier ou Tailleur de pierre) en fonction de la compétence de base principale"
+        "Séduction"
       ],
       "reputation": "Rang social : +1",
       "restriction_creation": "libre",
@@ -412,7 +411,7 @@ window.METIERS_DATA = {
       ],
       "description": "Ce métier est celui de tous les personnages qui vivent en se produisant devant les foules, afin de les faire rire, pleurer ou s’extasier. Lanceurs de couteaux, acrobates, danseurs, chanteurs et ventriloques forment le gros de cette profession. Ce qu’ils récoltent dans leur chapeau à la fin de la représentation sera bien souvent tout ce qu’ils auront pour manger et dormir. C’est pour cette raison (ou simplement par envie) que certains acteurs utilisent leurs compétences à d’autres fins (moins honnêtes). Ces individus voyagent beaucoup, parfois seuls mais généralement au sein d’une troupe qui se produit dans les villages sur leur route. Les troupes les plus chanceuses ne cessent jamais de travailler et passent parfois plusieurs mois d’affilée dans la même ville. Les autres vivotent bon gré mal gré et sont en quête permanente d’un public susceptible de reconnaître leur talent.",
       "competences_base": [
-        "3 compétences au rang 1 parmi : Chant",
+        "Chant",
         "Comédie",
         "Danse et Éloquence"
       ],
@@ -949,7 +948,6 @@ window.METIERS_DATA = {
         "Cancanier",
         "Comptabilité",
         "Conduite d’attelage",
-        "Conduite d’attelage",
         "Conduite de traîneau (Ussura)",
         "Couturier",
         "Cuisinier",
@@ -1254,8 +1252,7 @@ window.METIERS_DATA = {
       ],
       "description": "Voilà bien un métier qui est pratiqué involontairement. Que vous ayez été capturé puis enchaîné à un banc de nage ou puni par la loi et condamné aux galères, vous avez passé un certain nombre d’années à ramer et à tirer l’aviron. Ce sont des années difficiles mais qui forgent un homme, un peu comme le bagne. Traditionnellement, les galériens peuvent créer de petits objets d’art et les revendre au port. Ces babioles follement pittoresques plaisent aux riches et permettent aux forçats d’acheter un peu plus de nourriture. Mais il faut savoir les fabriquer.",
       "competences_base": [
-        "Canotage",
-        "Qui-vive et une compétence de base d’Artisan au choix"
+        "Canotage"
       ],
       "competences_avancees": [
         "Connaissance de la mer",
@@ -1892,8 +1889,7 @@ window.METIERS_DATA = {
         "Médications",
         "Recherches",
         "Philosophie",
-        "Premiers secours",
-        "et une compétence de base d’Artisan au choix"
+        "Premiers secours"
       ],
       "reputation": "Moralité : +2",
       "restriction_creation": "libre",
@@ -2002,9 +1998,7 @@ window.METIERS_DATA = {
         "Pêche",
         "Perception du temps",
         "Piéger",
-        "Sens de l’orientation",
-        "Soin des animaux (type d’animal au choix)",
-        "Soulever et une compétence de base d’Artisan au choix"
+        "Sens de l’orientation"
       ],
       "reputation": "Rang social : -1",
       "restriction_creation": "libre",
@@ -2327,8 +2321,7 @@ window.METIERS_DATA = {
         "Piéger",
         "Pister",
         "Sens de l’orientation",
-        "Signes de piste",
-        "Soins des animaux (au choix)"
+        "Signes de piste"
       ],
       "reputation": "Rang social : +1 Ces métiers sont limités à des groupes culturels rares ou éloignés de la zone de jeu habituelle (Empire du Croissant ou Cathay). Ils nécessitent donc l’autorisation du MJ pour être choisis par un joueur.",
       "restriction_creation": "libre",
@@ -2486,7 +2479,7 @@ window.METIERS_DATA = {
       ],
       "description": "Les courtisanes sont plus que de simples jennys. Intelligentes, pleines d’esprit et cultivées, elles conseillent, séduisent et divertissent leurs clients en leur proposant leur compagnie à tous les niveaux. Elles apprennent également à manipuler autrui pour en tirer parti car elles ne disposent pas de la protection d’une famille ou d’un mariage. Les courtisanes vodaccies sont charmantes à l’excès, et aussi dangereuses que séduisantes. Leur pendant masculin n’existe pas ; les hommes n’apprennent pas cette spécialisation.",
       "competences_base": [
-        "3 compétences au rang 1 parmi : Comédie",
+        "Comédie",
         "Danse",
         "Discrétion",
         "Étiquette",
@@ -2571,7 +2564,7 @@ window.METIERS_DATA = {
       ],
       "description": "Manouches, tziganes, romanichels, bohémiens, gitans, les gens du voyage qui parcourent Théah doivent à leurs voisins plus établis toute une série d’appellations qui sont, dans l’ensemble, plutôt péjoratives. Par tradition, il règne, dans les pays traversés, une absence de confiance entre les populations sédentaires et les gitans souvent accusés de tous les vols, disparitions et autres malheurs qui se sont produits dans la région au cours des semaines précédant et suivant leur passage. Citoyens de nulle part en particulier, ils font d’excellents boucs émissaires. Cette hostilité est généralement renvoyée avec des intérêts et presque tous apprécient les plaisanteries faites aux dépens de ceux qui n’appartiennent pas à leur communauté : les Gadjo.",
       "competences_base": [
-        "3 compétences au rang 1 parmi : Conduite d’attelage",
+        "Conduite d’attelage",
         "Danse",
         "Sens de l’orientation",
         "Sincérité"
@@ -2584,8 +2577,7 @@ window.METIERS_DATA = {
         "Intimidation",
         "Pickpocket",
         "Signes de piste",
-        "Soin des chevaux",
-        "Spectacle de rue et une compétence de base d’Artisan au choix"
+        "Soin des chevaux"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -2624,7 +2616,7 @@ window.METIERS_DATA = {
       ],
       "description": "Un gwai liao est à la fois un courtisan, un politicien, un érudit, et surtout un fonctionnaire. Vous avez étudié pour passer les concours de la fonction publique, et vous utilisez votre connaissance d’une large variété de sujets et votre tact au service du gouvernement.",
       "competences_base": [
-        "3 compétences au rang 1 parmi : Calcul",
+        "Calcul",
         "Création littéraire",
         "Éloquence",
         "Étiquette",
@@ -2651,7 +2643,7 @@ window.METIERS_DATA = {
       ],
       "description": "Un rahib (féminin rahib’i, pluriel ruhban) est un membre de l’un des nombreux ordres religieux qui font vœux d’humilité, de pauvreté et de chasteté et qui cherchent à atteindre l’illumination spirituelle. En raison de leur style de vie, les habitants de l’Empire du Croissant les estiment comme des hommes saints et sages. Les ruhban gagnent leurs repas grâce à leurs conseils spirituels, comme professeurs pour les hommes du peuple, en priant ou en effectuant des travaux physiques et manuels si nécessaire. La plupart des ordres de ruhban se rasent la tête, cependant quelques-uns, particulièrement parmi le Jadur’rihad, laissent une longue tresse pousser à l’arrière de leur tête.",
       "competences_base": [
-        "3 compétences au rang 1 parmi : Calligraphie",
+        "Calligraphie",
         "Chant",
         "Création littéraire",
         "Discrétion",
@@ -2774,7 +2766,6 @@ window.METIERS_DATA = {
         "Intimidation",
         "Poison",
         "Qui-vive",
-        "Soin des animaux (au choix)",
         "Valet"
       ],
       "reputation": "Moralité : -1",
@@ -2881,8 +2872,7 @@ window.METIERS_DATA = {
         "Écrivain public",
         "Éloquence",
         "Orientation citadine (cité)",
-        "Pique-assiette",
-        "Recherches et deux compétences au choix"
+        "Pique-assiette"
       ],
       "reputation": "Rang social : +2",
       "restriction_creation": "libre",

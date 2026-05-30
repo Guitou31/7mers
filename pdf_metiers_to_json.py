@@ -114,6 +114,8 @@ _PHRASE_PARASITE_KEYWORDS = (
     "competences sont",
     "compétence sont",
     "au prix de",
+    "en fonction de",   # 'en fonction de la compétence de base' (séquelle parens cassées)
+    "au choix",         # 'une compétence de base d'Artisan au choix' (Gitan av.)
 )
 
 
@@ -128,12 +130,61 @@ def _is_phrase_parasite(s: str) -> bool:
     return any(pat in s_low for pat in _PHRASE_PARASITE_KEYWORDS)
 
 
+# 'parmi :' marque une liste de choix dans le PDF.
+_PARMI_RE = re.compile(r"\bparmi\s*:\s*", re.IGNORECASE)
+# Capture 'Vraie compétence et une|N compétence(s)…' (instruction collée à une vraie comp).
+_ET_COMPETENCE_INSTRUCTION_RE = re.compile(
+    r"^(.+?)\s+et\s+(?:une|deux|trois|plusieurs|\d+)\s+comp[eé]tences?\b",
+    re.IGNORECASE,
+)
+
+
+def _strip_competence_instruction(p: str) -> list[str]:
+    """Nettoie un fragment du type :
+    - 'X compétences au rang Y parmi : NomA' → ['NomA']
+    - 'Évaluation et une compétence artisanale au rang 2 parmi : Aubergiste' → ['Évaluation', 'Aubergiste']
+    - 'Spectacle de rue et une compétence de base d'Artisan au choix' → ['Spectacle de rue']
+    - sinon : [fragment] inchangé.
+    """
+    m_parmi = _PARMI_RE.search(p)
+    if m_parmi:
+        before = p[:m_parmi.start()].strip()
+        after = p[m_parmi.end():].strip()
+        out = []
+        m_et = _ET_COMPETENCE_INSTRUCTION_RE.match(before)
+        if m_et:
+            real = m_et.group(1).strip()
+            if real and not _is_phrase_parasite(real):
+                out.append(real)
+        if after and not _is_phrase_parasite(after):
+            out.append(after)
+        return out
+    # Pas de "parmi :" mais éventuellement "X et une|N compétence…" en suffixe d'instruction.
+    m_et2 = _ET_COMPETENCE_INSTRUCTION_RE.match(p)
+    if m_et2:
+        real = m_et2.group(1).strip()
+        return [real] if real and not _is_phrase_parasite(real) else []
+    return [p]
+
+
 def split_competences(text: str) -> list[str]:
     if not text or not text.strip():
         return []
     text = text.strip().rstrip(".").rstrip(",")
     parts = re.split(r"\s*[,.]\s*", text)
-    return [clean_text(p) for p in parts if clean_text(p) and not _is_phrase_parasite(p)]
+    out: list[str] = []
+    seen: set[str] = set()
+    for p in parts:
+        p_clean = clean_text(p)
+        if not p_clean or _is_phrase_parasite(p_clean):
+            continue
+        for sub in _strip_competence_instruction(p_clean):
+            sub = clean_text(sub)
+            key = sub.lower()
+            if sub and not _is_phrase_parasite(sub) and key not in seen:
+                seen.add(key)
+                out.append(sub)
+    return out
 
 
 def iter_spans(pdf_path: Path):
