@@ -182,6 +182,23 @@ p { margin: 0 0 0.6em; }
   text-decoration: line-through dotted rgba(0,0,0,0.3);
 }
 
+/* Liste des écoles enseignantes regroupées par arme (ex: Exploiter les faiblesses). */
+.ecoles-groupees-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+.ecoles-groupees-list .ecoles-groupees-arme {
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(60,30,10,0.08);
+  line-height: 1.7;
+}
+.ecoles-groupees-list .ecoles-groupees-arme:last-child { border-bottom: none; }
+.ecoles-groupees-list .ecoles-groupees-arme strong {
+  color: var(--accent);
+  margin-right: 0.15rem;
+}
+
 /* ===== Titre de section sous la topbar (pages internes) ===== */
 .page-section-title {
   max-width: 1280px;

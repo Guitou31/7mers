@@ -463,28 +463,44 @@
       container.appendChild(descSec);
     }
 
-    // Écoles enseignant cette technique
+    // Helper : transforme un nom d'école en lien (ou texte selon le cas).
+    function ecoleNode(nomEc) {
+      if (/^toutes les /i.test(nomEc)) return el("em", null, nomEc);
+      const r = findEcoleAny(nomEc);
+      if (r) return buildCrossLink(r.type, r.ecole.nom, r.ecole.nom);
+      return el("span", { class: "ecole-inconnue", title: "École non trouvée dans la base" }, nomEc);
+    }
+    function appendInlineList(parent, items) {
+      items.forEach((it, i) => {
+        if (i > 0) parent.appendChild(document.createTextNode(", "));
+        parent.appendChild(ecoleNode(it));
+      });
+    }
+
+    // Écoles enseignant cette technique : format groupé par arme si fourni, sinon plat.
+    const groupees = t.ecoles_enseignant_groupees;
     const ecoles = t.ecoles_enseignant || [];
-    if (ecoles.length > 0) {
+    if (groupees && Object.keys(groupees).length > 0) {
+      const totalEcoles = ecoles.length;
+      const sec = el("div", { class: "detail-section" }, [
+        el("h3", null, "Écoles enseignant cette technique (" + totalEcoles + ", regroupées par arme)"),
+      ]);
+      const list = el("ul", { class: "ecoles-groupees-list" });
+      for (const arme of Object.keys(groupees)) {
+        const ecs = groupees[arme];
+        const li = el("li", { class: "ecoles-groupees-arme" });
+        li.appendChild(el("strong", null, arme + " : "));
+        appendInlineList(li, ecs);
+        list.appendChild(li);
+      }
+      sec.appendChild(list);
+      container.appendChild(sec);
+    } else if (ecoles.length > 0) {
       const sec = el("div", { class: "detail-section" }, [
         el("h3", null, "Écoles enseignant cette technique (" + ecoles.length + ")"),
       ]);
       const line = el("p", { class: "specialisations-line" });
-      ecoles.forEach((nomEc, i) => {
-        if (i > 0) line.appendChild(document.createTextNode(", "));
-        // Cas spécial : 'Toutes les écoles' (Voir le style)
-        if (/^toutes les /i.test(nomEc)) {
-          line.appendChild(el("em", null, nomEc));
-          return;
-        }
-        const r = findEcoleAny(nomEc);
-        if (r) {
-          line.appendChild(buildCrossLink(r.type, r.ecole.nom, r.ecole.nom));
-        } else {
-          // École inconnue (typo non aliasée, ou école supprimée) → texte simple
-          line.appendChild(el("span", { class: "ecole-inconnue", title: "École non trouvée dans la base" }, nomEc));
-        }
-      });
+      appendInlineList(line, ecoles);
       sec.appendChild(line);
       container.appendChild(sec);
     }

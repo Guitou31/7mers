@@ -607,6 +607,188 @@ window.ECOLES_DATA = {
         "Vigilare",
         "Yesukai"
       ],
+      "ecoles_enseignant_groupees": {
+        "Arbalète": [
+          "Höpken",
+          "Ricardo"
+        ],
+        "Arc": [
+          "Buslayevich",
+          "Chima Gongjian Shou",
+          "Robin Goodfellow"
+        ],
+        "Armes d’hast": [
+          "Haagen",
+          "Rossini",
+          "Tréville"
+        ],
+        "Armes improvisées": [
+          "Monastic Order of Avalon",
+          "Pavois",
+          "Qor’qunq",
+          "Quinn",
+          "Qurra",
+          "Scarron"
+        ],
+        "Art martial défensif": [
+          "Wu Tsain",
+          "Zheng Yi Quan"
+        ],
+        "Art martial offensif": [
+          "Ki Kwanji",
+          "Tie Xiong Kung",
+          "Ying Sun Wo",
+          "Zheng Yi Quan"
+        ],
+        "Bâton": [
+          "Caldwell",
+          "Peecke"
+        ],
+        "Couteau": [
+          "Angelo",
+          "Bahol",
+          "Boucher",
+          "Courtepointe",
+          "Mortis",
+          "Mullooney",
+          "Necare",
+          "Vipereus Morsus"
+        ],
+        "Épée": [
+          "Desco Numanaius",
+          "Donovan",
+          "Épées de Salomon",
+          "Hua Shao Ren Te",
+          "Kemmler",
+          "Kippe",
+          "Kjemper",
+          "Leibwächter",
+          "Lucani",
+          "Mac Lellan",
+          "Urostifter"
+        ],
+        "Épée à deux mains": [
+          "Drexel",
+          "Mac Donald",
+          "Sersemlik",
+          "Shan Dian Dao Te"
+        ],
+        "Éventail": [
+          "Charmine",
+          "Falisci"
+        ],
+        "Fléau": [
+          "Chin Te"
+        ],
+        "Fouet": [
+          "Canis",
+          "Malone",
+          "Zepeda"
+        ],
+        "Fronde": [
+          "Nadja’hari"
+        ],
+        "Gant de combat": [
+          "Al’Marikk",
+          "Eisenfaust",
+          "Keiferhund",
+          "Smirnov"
+        ],
+        "Haches": [
+          "Bogatyr",
+          "Leegstra",
+          "Siggursdottir",
+          "Skollvfesson"
+        ],
+        "Lances": [
+          "Halfdansson",
+          "Kiriakin",
+          "Mac Codrum",
+          "Nahgem",
+          "Pösen",
+          "Zar’houni"
+        ],
+        "Lutte": [
+          "Braslyn",
+          "Dobrynya",
+          "Fadh-Righ",
+          "Rees"
+        ],
+        "Masse": [
+          "Hammer",
+          "Winckler"
+        ],
+        "Mousquet": [
+          "Durante",
+          "Guzman",
+          "O’Faolain"
+        ],
+        "Pistolet": [
+          "Bouffe-Doublons",
+          "Bricquébec",
+          "Donnerwetter",
+          "Overmars",
+          "Rasmussen"
+        ],
+        "Pugilat": [
+          "Finnegan",
+          "Kensington"
+        ],
+        "Rapière": [
+          "Aldana",
+          "Ambrogia",
+          "Blitzen",
+          "Délicatesse",
+          "Desaix",
+          "Escuela Pater Noster",
+          "Faileas",
+          "Gautier",
+          "Gosling",
+          "Hainzl",
+          "Hirojosa",
+          "La Guêpe",
+          "La Pointe au cœur",
+          "Larsen",
+          "Léon des Gueux",
+          "Les Cadets",
+          "Marchenko",
+          "Ottenheim",
+          "Provolone",
+          "Rachecourt",
+          "Robertson",
+          "Rochefort",
+          "Scarlatti",
+          "Scola Carnavale",
+          "Snedig",
+          "Swanson",
+          "Tom Morel",
+          "Torres",
+          "Trecy",
+          "Valroux",
+          "Villanova"
+        ],
+        "Sabre": [
+          "Al-Aïfa",
+          "Basulde",
+          "Bernoulli",
+          "Bonita",
+          "Caballo Rojo",
+          "Daphan",
+          "El Puñal Oculto",
+          "Gallegos",
+          "Guannazar",
+          "Hennessey",
+          "Marcina",
+          "Rogers",
+          "Rojando & Wilcox",
+          "Salinas",
+          "Sanders",
+          "Soldano",
+          "Teginbek",
+          "Vigilare",
+          "Yesukai"
+        ]
+      },
       "tables": []
     },
     "feinte": {

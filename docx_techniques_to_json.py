@@ -34,10 +34,11 @@ W = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 NBSP = " "
 
 _ECOLES_HEADER_RE = re.compile(
-    r"^\s*Ecoles?\s+l'enseignant(?:\s*\([^)]*\))?\s*:\s*(.*)$",
+    r"^\s*Ecoles?\s+l'enseignant(?:\s*\(([^)]*)\))?\s*:\s*(.*)$",
     re.IGNORECASE,
 )
-_CONTINUATION_RE = re.compile(r"^\s*[^:]{1,40}\s*:\s*(.+)$")
+# Capture l'arme (groupe 1) ET la liste d'écoles (groupe 2). Tolère puce '•' ou '-' initial.
+_CONTINUATION_RE = re.compile(r"^\s*[•\-]?\s*([^:]{1,40})\s*:\s*(.+)$")
 
 # Renommage des catégories (sortie du parser).
 CATEGORIE_RENAMES = {
@@ -132,21 +133,30 @@ def main() -> None:
     current_tech: dict | None = None
     current_paras: list[str] = []
     current_ecoles: list[str] = []
+    current_ecoles_groupees: dict[str, list[str]] = {}
     current_tables: list[list[list[str]]] = []
-    in_ecoles_section = False  # True quand on a vu l'en-tête "Ecoles l'enseignant"
+    in_ecoles_section = False     # True après en-tête "Ecoles l'enseignant"
+    grouped_mode = False          # True si en-tête indique 'regroupées par catégories d'armes'
+
+    def reset_state():
+        nonlocal current_tech, current_paras, current_ecoles, current_ecoles_groupees
+        nonlocal current_tables, in_ecoles_section, grouped_mode
+        current_tech = None
+        current_paras = []
+        current_ecoles = []
+        current_ecoles_groupees = {}
+        current_tables = []
+        in_ecoles_section = False
+        grouped_mode = False
 
     def flush():
-        nonlocal current_tech, current_paras, current_ecoles, current_tables, in_ecoles_section
+        nonlocal current_tech
         if current_tech is None:
             return
         key = normalize(current_tech["nom"])
         # Filtre 1 : faux titres (intro de catégorie capturée comme Titre3)
         if any(key.startswith(pref) for pref in TITRES_IGNORES_PREFIX):
-            current_tech = None
-            current_paras = []
-            current_ecoles = []
-            current_tables = []
-            in_ecoles_section = False
+            reset_state()
             return
         description = "\n\n".join(p.strip() for p in current_paras if p.strip())
         current_tech["description"] = description
@@ -158,13 +168,18 @@ def main() -> None:
             current_tech["ecoles_enseignant"] = [
                 e for e in current_ecoles if normalize(e) not in ECOLE_NAMES_FILTER_OUT
             ]
+            # Si groupé par arme : conserver aussi la structure groupée (filtrée).
+            if grouped_mode and current_ecoles_groupees:
+                groupees_filtered = {}
+                for arme, ecoles in current_ecoles_groupees.items():
+                    keep = [e for e in ecoles if normalize(e) not in ECOLE_NAMES_FILTER_OUT]
+                    if keep:
+                        groupees_filtered[arme] = keep
+                if groupees_filtered:
+                    current_tech["ecoles_enseignant_groupees"] = groupees_filtered
         current_tech["tables"] = current_tables
         techniques[key] = current_tech
-        current_tech = None
-        current_paras = []
-        current_ecoles = []
-        current_tables = []
-        in_ecoles_section = False
+        reset_state()
 
     for kind, element in iter_body_elements(root):
         if kind == "tbl":
@@ -204,7 +219,10 @@ def main() -> None:
         m = _ECOLES_HEADER_RE.match(normalized)
         if m:
             in_ecoles_section = True
-            ecoles_inline = parse_ecoles_list(m.group(1))
+            paren = (m.group(1) or "").lower()
+            if "regroup" in paren or "categor" in paren or "catégor" in paren:
+                grouped_mode = True
+            ecoles_inline = parse_ecoles_list(m.group(2))
             current_ecoles.extend(ecoles_inline)
             continue
 
@@ -212,11 +230,15 @@ def main() -> None:
             # Lignes "Arme : École1, École2" qui suivent l'en-tête
             m2 = _CONTINUATION_RE.match(text)
             if m2:
-                ecoles = parse_ecoles_list(m2.group(1))
+                arme = m2.group(1).strip()
+                ecoles = parse_ecoles_list(m2.group(2))
                 current_ecoles.extend(ecoles)
+                if grouped_mode:
+                    current_ecoles_groupees.setdefault(arme, []).extend(ecoles)
                 continue
             # Sinon : on quitte le mode ecoles et on reprend en description
             in_ecoles_section = False
+            grouped_mode = False
             current_paras.append(text)
         else:
             current_paras.append(text)
