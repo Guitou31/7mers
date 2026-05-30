@@ -116,6 +116,64 @@ p { margin: 0 0 0.6em; }
   font-style: italic;
 }
 
+/* ===== Dropdown du menu horizontal (groupe d'items) ===== */
+.menu-dropdown { position: relative; display: inline-block; }
+.menu-dropdown-button {
+  background: transparent;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+.menu-dropdown-caret {
+  display: inline-block;
+  margin-left: 0.15rem;
+  font-size: 0.75em;
+  opacity: 0.85;
+  transition: transform 0.15s;
+}
+.menu-dropdown.is-open .menu-dropdown-caret,
+.menu-dropdown:hover .menu-dropdown-caret { transform: rotate(180deg); }
+.menu-dropdown-panel {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 50;
+  flex-direction: column;
+  min-width: 230px;
+  background: #3a2418;
+  border: 1px solid #1a0a04;
+  padding: 0.25rem 0;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+.menu-dropdown:hover .menu-dropdown-panel,
+.menu-dropdown.is-open .menu-dropdown-panel,
+.menu-dropdown:focus-within .menu-dropdown-panel { display: flex; }
+.menu-dropdown-item {
+  display: block;
+  padding: 0.55rem 1rem;
+  color: #e8d4a8;
+  text-decoration: none;
+  font-size: 0.92rem;
+  white-space: nowrap;
+  border-left: 3px solid transparent;
+}
+.menu-dropdown-item:hover:not(.is-disabled) {
+  background: rgba(255,255,255,0.07);
+  color: #fff8e0;
+}
+.menu-dropdown-item.is-current {
+  color: #fff8e0;
+  background: rgba(0,0,0,0.25);
+  border-left-color: var(--accent-soft);
+  font-weight: 600;
+}
+.menu-dropdown-item.is-disabled {
+  color: #7a5a40;
+  cursor: not-allowed;
+  font-style: italic;
+}
+
 /* ===== Titre de section sous la topbar (pages internes) ===== */
 .page-section-title {
   max-width: 1280px;
@@ -641,6 +699,31 @@ p { margin: 0 0 0.6em; }
   }
   .main-menu .menu-item.is-current {
     border-bottom-color: var(--accent-soft);
+  }
+
+  /* Dropdown mobile : aplati en accordéon visuel dans le hamburger. */
+  .menu-dropdown { display: block; }
+  .menu-dropdown-button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid #2c1810;
+  }
+  .menu-dropdown-panel {
+    display: flex;
+    position: static;
+    min-width: 0;
+    background: rgba(0,0,0,0.18);
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  .menu-dropdown .menu-dropdown-caret { display: none; }
+  .menu-dropdown-item {
+    padding: 0.7rem 1rem 0.7rem 2rem;
+    border-bottom: 1px solid #2c1810;
+    white-space: normal;
   }
 }
 

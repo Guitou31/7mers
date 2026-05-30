@@ -11,6 +11,8 @@
 
   // Catégories logiques pour grouper le menu (sur l'accueil et le menu).
   // Chaque section a : id (URL), label, available (false = grisé "à venir"), category.
+  // Champ optionnel `group` : sections partageant la même valeur sont regroupées
+  // sous un même bouton dropdown dans le menu horizontal (libellé via GROUP_LABELS).
   const SECTIONS = [
     { id: "index",                 file: "index.html",                label: "Accueil",                available: true,  category: "home"     },
     { id: "creation-personnage",   file: "creation-personnage.html",  label: "Création de personnage", available: false, category: "creation" },
@@ -19,8 +21,9 @@
     { id: "entrainements",         file: "entrainements.html",        label: "Entraînements",          available: true,  category: "creation" },
     { id: "competences",           file: "competences.html",          label: "Compétences",            available: true,  category: "creation" },
     { id: "avantages",             file: "avantages.html",            label: "Avantages",              available: false, category: "creation" },
-    { id: "ecoles-spadassin",      file: "ecoles-spadassin.html",     label: "Écoles de Spadassin",    available: true,  category: "combat"   },
-    { id: "ecoles-combat",         file: "ecoles-combat.html",        label: "Écoles de Combat",       available: true,  category: "combat"   },
+    { id: "ecoles-spadassin",      file: "ecoles-spadassin.html",     label: "Écoles de Spadassin",    available: true,  category: "combat",   group: "ecoles_techniques" },
+    { id: "ecoles-combat",         file: "ecoles-combat.html",        label: "Écoles de Combat",       available: true,  category: "combat",   group: "ecoles_techniques" },
+    { id: "techniques",            file: "techniques.html",           label: "Liste des techniques",   available: false, category: "combat",   group: "ecoles_techniques" },
     { id: "ecoles-pro",            file: "ecoles-pro.html",           label: "Écoles Professionnelles",available: false, category: "combat"   },
     { id: "sorcelleries",          file: "sorcelleries.html",         label: "Sorcelleries",           available: false, category: "magie"    },
     { id: "societes-secretes",     file: "societes-secretes.html",    label: "Sociétés Secrètes",      available: false, category: "monde"    },
@@ -31,6 +34,11 @@
     combat:   "Combat & Écoles",
     magie:    "Surnaturel",
     monde:    "Monde de Théah",
+  };
+
+  // Libellés des groupes (bouton dropdown dans le menu horizontal).
+  const GROUP_LABELS = {
+    ecoles_techniques: "Écoles & Techniques",
   };
 
   function el(tag, attrs, children) {
@@ -83,11 +91,11 @@
       ]),
     ]);
 
-    // Menu horizontal
-    const menuItems = SECTIONS.map((s) => {
+    // Helper : crée l'élément <a> ou <span> pour une section.
+    function renderSectionLink(s, extraClass) {
       const isCurrent = s.id === currentId;
-      const cls =
-        "menu-item" +
+      const baseCls = extraClass || "menu-item";
+      const cls = baseCls +
         (s.available ? "" : " is-disabled") +
         (isCurrent ? " is-current" : "");
       const attrs = { class: cls, "data-category": s.category };
@@ -100,7 +108,41 @@
         attrs["aria-disabled"] = "true";
         return el("span", attrs, s.label);
       }
-    });
+    }
+
+    // Menu horizontal : itère les sections, regroupe par `group` en dropdown.
+    const menuItems = [];
+    const emittedGroups = new Set();
+    for (const s of SECTIONS) {
+      if (s.group) {
+        if (emittedGroups.has(s.group)) continue;
+        emittedGroups.add(s.group);
+        const groupSections = SECTIONS.filter((x) => x.group === s.group);
+        const hasCurrent = groupSections.some((x) => x.id === currentId);
+        const label = GROUP_LABELS[s.group] || s.group;
+        const button = el(
+          "button",
+          {
+            type: "button",
+            class: "menu-item menu-dropdown-button" + (hasCurrent ? " is-current" : ""),
+            "aria-haspopup": "true",
+            "aria-expanded": "false",
+            "data-category": s.category,
+          },
+          [label, el("span", { class: "menu-dropdown-caret", "aria-hidden": "true" }, " ▾")]
+        );
+        const panel = el(
+          "div",
+          { class: "menu-dropdown-panel", role: "menu" },
+          groupSections.map((gs) => renderSectionLink(gs, "menu-dropdown-item"))
+        );
+        menuItems.push(
+          el("div", { class: "menu-dropdown" + (hasCurrent ? " is-active" : "") }, [button, panel])
+        );
+      } else {
+        menuItems.push(renderSectionLink(s));
+      }
+    }
 
     const menu = el("nav", { class: "main-menu", id: "main-menu", "aria-label": "Navigation principale" },
       menuItems
@@ -130,6 +172,34 @@
         toggle.setAttribute("aria-expanded", open ? "true" : "false");
       });
     }
+
+    // Dropdowns du menu (click + clavier + click extérieur).
+    const dropdowns = document.querySelectorAll(".menu-dropdown");
+    function closeAllDropdowns(except) {
+      dropdowns.forEach((d) => {
+        if (d === except) return;
+        d.classList.remove("is-open");
+        const btn = d.querySelector(".menu-dropdown-button");
+        if (btn) btn.setAttribute("aria-expanded", "false");
+      });
+    }
+    dropdowns.forEach((d) => {
+      const btn = d.querySelector(".menu-dropdown-button");
+      if (!btn) return;
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const willOpen = !d.classList.contains("is-open");
+        closeAllDropdowns(d);
+        d.classList.toggle("is-open", willOpen);
+        btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      });
+    });
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".menu-dropdown")) closeAllDropdowns(null);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeAllDropdowns(null);
+    });
   }
 
   if (document.readyState === "loading") {
