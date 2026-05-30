@@ -47,7 +47,8 @@
   }
 
   function shortCategorie(cat) {
-    return (cat || "Technique").replace(/^Techniques (de |à )?/i, "").toUpperCase();
+    // Affiche la catégorie telle que définie (sentence case), sans tronquer ni uppercase.
+    return cat || "Technique";
   }
 
   function renderCard(t) {

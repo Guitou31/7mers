@@ -437,7 +437,7 @@
 
   // ===== Renderer Technique =====
   function renderTechnique(t, container) {
-    const catShort = (t.categorie || "Technique").replace(/^Techniques (de |à )?/i, "").toUpperCase();
+    const catShort = t.categorie || "Technique";
     container.appendChild(el("div", { class: "detail-header" }, [
       el("h2", { id: "cross-modal-title" }, t.nom),
       el("div", { class: "badges" }, [el("span", { class: "badge nation" }, catShort)]),

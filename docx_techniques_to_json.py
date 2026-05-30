@@ -39,6 +39,31 @@ _ECOLES_HEADER_RE = re.compile(
 )
 _CONTINUATION_RE = re.compile(r"^\s*[^:]{1,40}\s*:\s*(.+)$")
 
+# Renommage des catégories (sortie du parser).
+CATEGORIE_RENAMES = {
+    "Techniques de spadassin à mains nues": "Techniques de combat à mains nues",
+    "Techniques de spadassin avec animaux": "Techniques de combat avec animaux",
+    "Techniques de spadassin d'assassinat": "Techniques d'assassinat",
+    "Techniques de spadassin d’assassinat": "Techniques d'assassinat",
+}
+
+# Faux titres de techniques (paragraphes en Titre3 qui ne sont pas des techniques).
+# Matching par clé normalisée (préfixe).
+TITRES_IGNORES_PREFIX = (
+    "ces techniques sont basees",  # paragraphe d'intro de catégorie en Titre3
+)
+
+# Override des écoles enseignantes (corrige les oublis/erreurs du docx).
+# Clé = nom normalisé de la technique, valeur = liste d'écoles à FORCER.
+TECHNIQUE_ECOLES_OVERRIDE: dict[str, list[str]] = {
+    "gros sel": ["Durante"],
+    "tir a carreau special": ["Ricardo"],
+}
+
+# Écoles à RETIRER de la liste 'ecoles_enseignant' partout où elles apparaissent
+# (mentions erronées dans le docx — Tulwar est un type de sabre, pas une école).
+ECOLE_NAMES_FILTER_OUT = {"tulwar"}
+
 
 def normalize(s: str) -> str:
     if not s:
@@ -114,11 +139,26 @@ def main() -> None:
         nonlocal current_tech, current_paras, current_ecoles, current_tables, in_ecoles_section
         if current_tech is None:
             return
+        key = normalize(current_tech["nom"])
+        # Filtre 1 : faux titres (intro de catégorie capturée comme Titre3)
+        if any(key.startswith(pref) for pref in TITRES_IGNORES_PREFIX):
+            current_tech = None
+            current_paras = []
+            current_ecoles = []
+            current_tables = []
+            in_ecoles_section = False
+            return
         description = "\n\n".join(p.strip() for p in current_paras if p.strip())
         current_tech["description"] = description
-        current_tech["ecoles_enseignant"] = current_ecoles
+        # Override des écoles (corrections manuelles)
+        if key in TECHNIQUE_ECOLES_OVERRIDE:
+            current_tech["ecoles_enseignant"] = list(TECHNIQUE_ECOLES_OVERRIDE[key])
+        else:
+            # Filtre les noms d'écoles non-valides (Tulwar, etc.)
+            current_tech["ecoles_enseignant"] = [
+                e for e in current_ecoles if normalize(e) not in ECOLE_NAMES_FILTER_OUT
+            ]
         current_tech["tables"] = current_tables
-        key = normalize(current_tech["nom"])
         techniques[key] = current_tech
         current_tech = None
         current_paras = []
@@ -143,7 +183,9 @@ def main() -> None:
 
         if style == "Titre1":
             flush()
-            current_categorie = text
+            # Renomme la catégorie au passage (mapping pour normaliser le vocabulaire).
+            text_norm = text.replace("’", "'")
+            current_categorie = CATEGORIE_RENAMES.get(text_norm, text_norm)
             continue
 
         if style == "Titre3":

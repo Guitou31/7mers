@@ -9,7 +9,7 @@ window.ECOLES_DATA = {
     ],
     "nb_ecoles": 89,
     "nb_ecoles_enrichies": 72,
-    "nb_techniques_definies": 80,
+    "nb_techniques_definies": 79,
     "nations_uniques": [
       "Avalon",
       "Castille",
@@ -604,7 +604,6 @@ window.ECOLES_DATA = {
         "Sanders",
         "Soldano",
         "Teginbek",
-        "Tulwar",
         "Vigilare",
         "Yesukai"
       ],
@@ -1012,7 +1011,7 @@ window.ECOLES_DATA = {
     },
     "assommer": {
       "nom": "Assommer",
-      "categorie": "Techniques de spadassin à mains nues",
+      "categorie": "Techniques de combat à mains nues",
       "description": "Pour assommer son adversaire, l’assaillant effectue un jet d’Assommer + Gaillardise contre le ND de la victime. En cas de réussite, la victime effectue un jet de Gaillardise avec un ND égal à trois fois les dommages infligés. Si ce jet est un échec, la victime est alors inconsciente. Si le jet est réussi, elle encaisse les dommages et peut continuer le combat. Si l’attaque est effectuée sans que la victime en soit consciente (embuscade, etc.), le ND est incrémenté de deux augmentations.",
       "ecoles_enseignant": [
         "Kensington",
@@ -1022,7 +1021,7 @@ window.ECOLES_DATA = {
     },
     "blocage offensif": {
       "nom": "Blocage offensif",
-      "categorie": "Techniques de spadassin à mains nues",
+      "categorie": "Techniques de combat à mains nues",
       "description": "Le blocage est l'art de placer votre bras ou votre jambe entre vous et les coups de votre ennemi. Le blocage offensif est l'acte de frapper le bras ou la jambe de votre ennemi alors qu'il vous porte une attaque à mains nues, votre défense devenant ainsi une attaque. Vous pouvez vous en servir en Défense Active contre toute attaque à mains nues, comme Attaque (Combat de rue), Attaque (Pugilat), Prise, Coup de pied, etc. Si vous réussissez votre Défense Active, vous infligez 1g1 dé de dommages à votre adversaire (vous n'y ajoutez pas votre Gaillardise). Vous pouvez prendre des augmentations pour accroître les dommages infligés comme s'il s'agissait d'une attaque normale, mais vous ne pouvez pas localiser vos coups.",
       "ecoles_enseignant": [
         "Tie Xiong Kung"
@@ -1031,7 +1030,7 @@ window.ECOLES_DATA = {
     },
     "coup de pied saute": {
       "nom": "Coup de pied sauté",
-      "categorie": "Techniques de spadassin à mains nues",
+      "categorie": "Techniques de combat à mains nues",
       "description": "Cette technique de combat nécessite la dépense d’un autre dé d’action en plus de celui de l’action en cours, sans quoi vous ne pourrez pas effectuer cette action. Vous effectuez un violent bond vers le haut, en gardant la jambe repliée et en la détendant violemment dans le visage de votre adversaire. Pour cela, vous devez effectuer un coup visé au visage (+ 4 augmentations). Si vous réussissez, votre adversaire encaisse une blessure. De plus, vous lancez les dés de dommages comme d’habitude. Ensuite, la victime effectue un jet de Gaillardise avec un ND égal à votre résultat du jet d’attaque. Si ce jet est un échec, la victime est alors temporairement sonnée et perd toutes ses actions du round en cours. Si le jet est réussi, elle encaisse les dommages et peut continuer le combat. Si l’attaque est effectuée sans que la victime en soit consciente (embuscade, etc.), le jet d’attaque est de 2 augmentations au lieu de 4.",
       "ecoles_enseignant": [
         "Ki Kwanji",
@@ -1041,7 +1040,7 @@ window.ECOLES_DATA = {
     },
     "esquive de projectiles": {
       "nom": "Esquive de projectiles",
-      "categorie": "Techniques de spadassin à mains nues",
+      "categorie": "Techniques de combat à mains nues",
       "description": "Vous avez appris à dévier les flèches et autres projectiles tirés dans votre direction sans être blessé par eux. Vous pouvez l'utiliser comme compétence de défense quand vous devez vous défendre contre des armes lancées, des flèches, des pierres de fronde, des carreaux d'arbalète, mais pas contre des armes à feu, des attaques au corps à corps, ou des tirs d'artillerie. Si vous choisissez d'utiliser cette technique de combat comme défense active, vous ajoutez votre rang dans cette technique à la Défense Active et Passive. De plus, vous pouvez utiliser deux Augmentations sur votre jet d'Esprit + Esquive de projectiles pour attraper le projectile plutôt que de le dévier. Si vous parvenez à l'attraper, vous gagnez un dé d'héroïsme qui disparaîtra à la fin du round si vous ne l'utilisez pas.",
       "ecoles_enseignant": [
         "Zheng Yi Quan"
@@ -1050,7 +1049,7 @@ window.ECOLES_DATA = {
     },
     "griffe": {
       "nom": "Griffe",
-      "categorie": "Techniques de spadassin à mains nues",
+      "categorie": "Techniques de combat à mains nues",
       "description": "Une griffe est un type d'attaque à mains nues qui utilise vos doigts pour appliquer une forte pression sur la peau de votre adversaire. Bien qu'il en résulte une prise momentanée, elle est relâchée immédiatement. Pour réaliser une telle attaque, faites un jet de Finesse + Griffe contre le ND pour être touché de votre ennemi, plus 10. Les dégâts d'une Griffe sont les mêmes que pour une attaque à mains nues ordinaire, mais comme vous agissez sur des points de pression de votre opposant, il sera aussi étourdi, et perdra son prochain dé d'action, s'il lui en reste un dans le round courant.",
       "ecoles_enseignant": [
         "Ying Sun Wo"
@@ -1059,7 +1058,7 @@ window.ECOLES_DATA = {
     },
     "manchette": {
       "nom": "Manchette",
-      "categorie": "Techniques de spadassin à mains nues",
+      "categorie": "Techniques de combat à mains nues",
       "description": "Cette attaque à mains nues inflige 1g1 dé de dommages, mais augmente de 5 le ND que vous essayez d'atteindre. Vous devez déclarer votre intention avant d'effectuer votre jet, et utiliser cette technique de combat à la place de votre technique de combat d'attaque normale.",
       "ecoles_enseignant": [
         "Tie Xiong Kung"
@@ -1068,7 +1067,7 @@ window.ECOLES_DATA = {
     },
     "attaque combinee": {
       "nom": "Attaque combinée",
-      "categorie": "Techniques de spadassin avec animaux",
+      "categorie": "Techniques de combat avec animaux",
       "description": "Votre PJ attaque conjointement à son animal, empêchant, par la même, son adversaire de se défendre efficacement. Pour cela, vous devez retarder votre dé d’action pour intervenir lors de la même phase que votre animal. Vous attaquez alors en même temps que votre animal. Si vous et votre animal passez ensemble la défense passive de votre cible, elle ne pourra utiliser pleinement sa défense active que contre vous ou votre animal.",
       "ecoles_enseignant": [
         "Canis",
@@ -1078,7 +1077,7 @@ window.ECOLES_DATA = {
     },
     "attaque de cavalerie": {
       "nom": "Attaque de cavalerie",
-      "categorie": "Techniques de spadassin avec animaux",
+      "categorie": "Techniques de combat avec animaux",
       "description": "Le personnage tente de frapper tôt et souvent, puis se replie pour se mettre à l’abri. Vous pouvez diminuer deux de vos dés d’action de votre rang dans cette technique de combat (jusqu’à un minimum de 1) juste avant la première phase de chaque tour de combat lorsque vous êtes à cheval, ce qui vous permettra d’attaquer puis de vous replier avant que votre adversaire ne puisse faire quoi que ce soit excepté se défendre.",
       "ecoles_enseignant": [
         "Buslayevich",
@@ -1090,7 +1089,7 @@ window.ECOLES_DATA = {
     },
     "charge de cavalerie": {
       "nom": "Charge de cavalerie",
-      "categorie": "Techniques de spadassin avec animaux",
+      "categorie": "Techniques de combat avec animaux",
       "description": "Le cavalier charge son adversaire en galopant sur une distance d’au moins 50 mètres en ligne droite. Cette manœuvre est très impressionnante, en particulier si l’adversaire est à pied. Cette attaque étant une charge comme à pied, vous lancez [Finesse + Charge de Cavalerie] mais retirez -1g1 puisque cette attaque est considérée comme une charge à pied. Si la charge est un succès, le cavalier ajoute un dé (lancé et gardé) aux dégâts, plus un toutes les deux augmentations.",
       "ecoles_enseignant": [
         "Caballo Rojo",
@@ -1104,7 +1103,7 @@ window.ECOLES_DATA = {
     },
     "detourner l'attention": {
       "nom": "Détourner l’attention",
-      "categorie": "Techniques de spadassin avec animaux",
+      "categorie": "Techniques de combat avec animaux",
       "description": "À l’aide de cette technique de combat vous effectuez toute une série de passes d’arme, de coups d’estoc et de bottes pour attirer l’attention de votre adversaire et permettre ainsi à votre animal de porter instinctivement sa prochaine attaque contre un ND de défense passive réduit de [Rang dans cette technique x2], sans que votre adversaire ne puisse effectuer de défense active : il n’a pas remarqué les mouvements de votre allié animal.",
       "ecoles_enseignant": [
         "Kiriakin"
@@ -1113,7 +1112,7 @@ window.ECOLES_DATA = {
     },
     "meute": {
       "nom": "Meute",
-      "categorie": "Techniques de spadassin avec animaux",
+      "categorie": "Techniques de combat avec animaux",
       "description": "Cette technique de combat permet de donner des ordres aux chiens sur un champ de bataille afin qu’ils suivent leur maître. Un maître-chien peut ainsi être accompagné de (rang dans la technique de combat Meute) chiens de combat en plus de son chien de tête. Ces chiens sont considérés comme des brutes niveau 1 au rang d’apprenti, niveau 2 au rang de compagnon et niveau 3 au rang de maître.",
       "ecoles_enseignant": [
         "Canis"
@@ -1122,23 +1121,16 @@ window.ECOLES_DATA = {
     },
     "saut de cheval": {
       "nom": "Saut de cheval",
-      "categorie": "Techniques de spadassin avec animaux",
+      "categorie": "Techniques de combat avec animaux",
       "description": "Cette technique vous permet de sauter sur un adversaire, monté ou à pied, tout en lui portant un coup d’épée au moment de l’impact. Le cavalier arrivant à hauteur de sa cible saute vigoureusement, pointe en avant sur son adversaire. Si sa monture a été dressée au sein de l’école, elle reviendra immédiatement vers lui après son saut, lui permettant de remonter en selle dès l’action suivante. Si elle réussit, cette attaque a un double effet : d’une part l’adversaire ne peut pas tenter de défense active, d’autre part, il ajoute trois à son prochain dé d’action à cause du choc reçu (si cela l’amène à un résultat supérieur à 10, l’action est perdue).",
       "ecoles_enseignant": [
         "Caballo Rojo"
       ],
       "tables": []
     },
-    "ces techniques sont basees sur l'art de l'assassinat et le meurtre silencieux. elles sont donc enseignees par des ecoles de combat basees sur les frappes furtives, la dissimulation et le maniement des poisons.": {
-      "nom": "Ces techniques sont basées sur l'art de l'assassinat et le meurtre silencieux. Elles sont donc enseignées par des écoles de combat basées sur les frappes furtives, la Dissimulation et le maniement des poisons.",
-      "categorie": "Techniques de spadassin d’assassinat",
-      "description": "",
-      "ecoles_enseignant": [],
-      "tables": []
-    },
     "enchainement": {
       "nom": "Enchaînement",
-      "categorie": "Techniques de spadassin d’assassinat",
+      "categorie": "Techniques d'assassinat",
       "description": "Grâce à cette technique de combat, le personnage peut enchaîner une multitude de coups rapides sur son adversaire. Il peut ainsi enchaîner sur un dé d’action, [rang en Enchaînement] attaques avec le ND pour être touché de l’adversaire qui augmente de 5 par attaque après de la première. Les dommages sont également réduits de 1 dé lancé par attaque au-delà de la première (minimum 1g1). Les attaques possibles par enchaînement sont les suivantes : attaque (arts martiaux défensifs, arts martiaux offensifs, combat de rue, pugilat), coup de pied, coup de tête, direct ou uppercut.",
       "ecoles_enseignant": [
         "Ki Kwanji"
@@ -1147,7 +1139,7 @@ window.ECOLES_DATA = {
     },
     "erafler": {
       "nom": "Érafler",
-      "categorie": "Techniques de spadassin d’assassinat",
+      "categorie": "Techniques d'assassinat",
       "description": "Cette technique de combat permet au spadassin d’érafler la peau de son adversaire sur une grande longueur. Cette aptitude semble de peu d’utilité, en effet, les dégâts sont peu importants (0g1), et la manœuvre est difficile (ND + 5, surtout si l’adversaire porte une armure, les malus seront alors à la discrétion du MJ suivant les protections de l’adversaire), mais elle permet une meilleure infiltration de la substance qui recouvre l’arme dans le corps de sa victime (vitesse d’action du poison augmentée, à la discrétion du MJ). De plus, elle peut permettre d’infliger une balafre facilement reconnaissable à un ennemi que l’on voudrait pouvoir reconnaître et accuser aisément plus tard.",
       "ecoles_enseignant": [
         "Scarlatti"
@@ -1156,7 +1148,7 @@ window.ECOLES_DATA = {
     },
     "garrotter": {
       "nom": "Garrotter",
-      "categorie": "Techniques de spadassin d’assassinat",
+      "categorie": "Techniques d'assassinat",
       "description": "Cette technique de combat permet à un assassin de tuer sa cible dans un silence presque total. À cette fin, il utilise une lanière de cuir ou un fil de métal, se glisse silencieusement derrière sa proie, lui passe le fil autour du cou et l’étrangle. La victime ne peut alors ni crier (à cause du filin qui lui écrase la trachée), ni se défendre (l’assassin se gardant d’être trop proche de sa cible).Cette technique de combat ne peut être utilisée qu’après que le spadassin ait réussi un jet de Discrétion ou Déplacement silencieux (en bref, sa cible ne doit pas se rendre compte de ses intentions, sinon son attaque est vouée l’échec). Le garrotteur effectue ensuite son attaque en utilisant sa technique de combat Garrotter contre un ND diminué de 5 en raison du fait que sa victime ne s’y attend pas. Cette dernière n’a ensuite plus qu’une option, essayer d’échapper à la mort. Pour cela, elle doit réussir un jet de [Finesse + Contorsionnisme] ou [Gaillardise + Se dégager] contre un ND de [10 + (Technique de combat Garrotter de l’assassin x 5)]. Si elle n’y parvient pas, elle est victime des règles de noyade dès le deuxième round de combat Il vaudrait mieux qu’elle arrive à échapper à la prise de l’assassin très rapidement !",
       "ecoles_enseignant": [
         "Nadja'hari"
@@ -1165,7 +1157,7 @@ window.ECOLES_DATA = {
     },
     "noyer": {
       "nom": "Noyer",
-      "categorie": "Techniques de spadassin d’assassinat",
+      "categorie": "Techniques d'assassinat",
       "description": "Cette technique de combat, après avoir réussi à saisir son adversaire, permet de noyer ce dernier dans n’importe quel récipient d’eau pouvant contenir son visage (et plus). Pour ce faire, le personnage usant de cette technique de combat doit avoir réussi un jet de Finesse + Noyer contre un ND égale à (Esprit de l’adversaire x 5). Une fois ce jet réussi, l’assassin a pu plonger son adversaire partiellement ou totalement dans l’eau. Évidemment, la victime peut tenter de se dégager comme pour une prise normale mais doit le faire avec un malus de 5 sur son ND. En outre, pour savoir si l’adversaire est noyé, il est nécessaire de se référer aux règles sur la noyade.",
       "ecoles_enseignant": [
         "Bahol"
@@ -1196,8 +1188,7 @@ window.ECOLES_DATA = {
       "categorie": "Techniques de combat à distance",
       "description": "Un tireur de l’école Durante peut utiliser cette technique pour tirer des plombs de la taille du gros sel plutôt que des balles classiques. Cela lui permet, en raison de la quantité de projectiles insérés dans le canon, d’étendre la zone de dispersion de son tir, multipliant les victimes. Toutefois, les dégâts sont moindres. Lorsqu’il veut faire usage de cette technique de combat, le joueur doit le préciser avant de charger son arme, il effectuera ensuite un tir normal et il pourra toucher un nombre de cibles supplémentaire égal à son rang dans la technique de combat Gros sel. Par contre, les victimes ne subiront que 2g1 dégâts. Mais elles devront également faire face à une douleur cuisante et handicapante qui les privera d’un dé lancé et gardé sur tous leurs jets tant que ces blessures légères n’auront pas disparues (transformées en blessures graves ou soignées grâce à la compétence Premier secours).",
       "ecoles_enseignant": [
-        "Cappuntina",
-        "Necare"
+        "Durante"
       ],
       "tables": []
     },
@@ -1232,7 +1223,9 @@ window.ECOLES_DATA = {
       "nom": "Tir à carreau spécial",
       "categorie": "Techniques de combat à distance",
       "description": "Cette technique de combat permet à l’arbalétrier d’utiliser des carreaux spéciaux à la place des normaux. Il en connaît toutes les variétés et est capable d’adapter son tir à leur poids, leur forme, leur longueur. Malgré cela, le ND de sa cible augmente de 5 en raison de la grande variété de ses projectiles. Cette technique de combat remplace celle d’Attaque (Arbalète) quand le tireur utilise des carreaux spéciaux. Voici les principaux carreaux de Ricardo que l’on peut trouver :\n\nCarreau assommant : un petit sac de sable remplace la pointe et permet d’assommer la victime si le tireur a réussi à toucher la tête (4 augmentations) et que la cible rate un jet de Détermination contre un ND de 25. Elle choit alors au sol, assommée.\n\nCarreau d’artifice : ce carreau est utilisé de nuit, on le tire presque à la verticale. Il explose en fusées multicolores en arrivant à une certaine hauteur.\n\nCarreau éclairant : ce carreau, comme le carreau d’artifice est surtout utilisé de nuit, on le tire en l’air. Il explose et permet d’éclairer une vaste zone pendant une minute ou une phase, autorisant le tireur à tirer ses carreaux suivants sans pénalités ou presque sur ses cibles, maintenant éclairées.\n\nCarreau empoisonné : le carreau est évidé, on peut y glisser une ampoule en verre contenant généralement du poison, ce dernier s’écoule, de l’intérieur, jusqu’à la pointe permettant à la substance de se répandre immédiatement dans l’organisme de sa cible si elle subit au moins un point de santé.\n\nCarreau explosif : la pointe est remplacée par des explosifs qui entre en action au premier choc, infligeant 4g4 dés de dommages à la cible mais sans compter les attributs de perforation de l’arme.\n\nCarreau extincteur : la pointe est remplacée par un petit sac étanche rempli d’eau. Ce carreau est idéal pour éteindre une torche ou une lanterne (dont il casse la vitre) à distance et de plonger ainsi ses adversaires dans le noir. Afin de disparaître plus facilement bien évidemment.\n\nCarreau filet : ce carreau, au corps très épais, ne peut se tirer qu’à courte portée. Il contient un filet aux mailles fines et solides qui empêtrera sa victime (voir la technique de combat du même nom).\n\nCarreau fumée : ce carreau explose au premier choc dans un grand nuage de fumée. L’arbalétrier l’utilisera souvent en tirant à ses pieds afin de se camoufler au regard d’un autre tireur (+15 à son ND pour un tir à distance, +5 au corps à corps) ou de s’enfuir.\n\nCarreau marqueur : un petit sac remplace la pointe et explose au contact permettant de répandre une poudre luminescente sur la cible, facilitant le tir de nuit (pénalités annulées).\n\nCarreau perceur d’armure : une pointe métallique renforcée et très pointue facilite l’insertion dans les armures. Elle augmente de 5 l’attribut « Perforant » (à l’exception du Dracheneisen) mais diminue les portées moyennes et longues de 30 et 60.\n\nCarreau rasoir : la pointe de ce carreau se prolonge le long du corps du missile et est effilée comme un rasoir, infligeant 1 lancé et gardé de dommages supplémentaires sur les personnes sans armure. Sur celles qui ont une armure, par contre, il inflige 1 dé de moins à lancer et garder.\n\nCarreau séparateur : ce projectile se sépare en deux carreaux distincts dix mètres après avoir quitté l’arbalète. Il inflige donc deux fois des dommages, mais chacun d’eux avec un dé (à lancer et à garder) en moins.\n\nCarreau volant : ce carreau à la forme allongée est adapté au tir à longue portée, il permet de diminuer de 5 le ND à de telles distances.\n\nCarreau zigzag : ce carreau avance en zigzag, ne permettant pas à sa cible de vraiment se protéger. Ses défenses passives et actives sont diminuées de 5 lorsque l’on utilise ce genre de carreau.\n\nCarreau-grappin : le corps de ce carreau renferme trois bras métalliques inversés qui s’ouvre dès leur départ de l’arbalète. Une cordelette est attachée à un anneau à l’arrière du carreau, permettant de servir de grappin.",
-      "ecoles_enseignant": [],
+      "ecoles_enseignant": [
+        "Ricardo"
+      ],
       "tables": []
     },
     "tir d'adresse": {
