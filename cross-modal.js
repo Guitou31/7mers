@@ -21,8 +21,26 @@
 
   // ===== Helpers de base =====
   function normalize(s) {
-    return (s || "").toString().normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase();
+    return (s || "").toString()
+      .replace(/œ/g, "oe").replace(/Œ/g, "OE")
+      .replace(/æ/g, "ae").replace(/Æ/g, "AE")
+      .replace(/[''`]/g, "'")        // apostrophes typo. → apostrophe ASCII
+      .normalize("NFKD").replace(/[̀-ͯ]/g, "")
+      .toLowerCase();
   }
+
+  // Alias d'écoles (corrige les fautes de saisie dans le docx techniques).
+  // Clé = nom tel qu'écrit (n'importe quelle casse), valeur = nom canonique attendu dans la base.
+  const ECOLE_NAME_ALIASES = {
+    "donnerwette": "Donnerwetter",
+    "ottenheim rasmussen": "Ottenheim",
+    "quinn snedig": "Quinn",
+    "al'marikk": "Al Marikk",
+    "bernouilli": "Bernoulli",
+    "la pointe au coeur": "La Pointe au Coeur",
+    // 'Tulwar' et 'Rachecourt' : volontairement non aliasés
+    // → s'afficheront en texte (école introuvable / supprimée).
+  };
   function slugify(s) {
     return normalize(s).replace(/['']/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   }
@@ -98,12 +116,35 @@
     const k = normalize(nom);
     return data.ecoles.find(e => normalize(e.nom) === k) || null;
   }
+  // Cherche dans Spadassin puis Combat (avec alias de fautes de saisie docx).
+  // Retourne { type: 'ecole' | 'ecole_combat', ecole } ou null.
+  function findEcoleAny(nom) {
+    const aliased = ECOLE_NAME_ALIASES[normalize(nom)] || nom;
+    const e1 = findEcole(aliased);
+    if (e1) return { type: "ecole", ecole: e1 };
+    const e2 = findEcoleCombat(aliased);
+    if (e2) return { type: "ecole_combat", ecole: e2 };
+    return null;
+  }
+  function findTechnique(nom) {
+    const data = window.ECOLES_DATA;
+    if (!data || !data.techniques) return null;
+    const k = normalize(nom);
+    // Les clés de techniques sont déjà normalisées (lowercase, sans accents).
+    if (data.techniques[k]) return data.techniques[k];
+    // Fallback : recherche par nom complet
+    for (const key in data.techniques) {
+      if (normalize(data.techniques[key].nom) === k) return data.techniques[key];
+    }
+    return null;
+  }
   function findByTypeAndNom(type, nom) {
     if (type === "competence") return findCompetence(nom);
     if (type === "metier") return findMetier(nom);
     if (type === "entrainement") return findEntrainement(nom);
     if (type === "ecole") return findEcole(nom);
     if (type === "ecole_combat") return findEcoleCombat(nom);
+    if (type === "technique") return findTechnique(nom);
     return null;
   }
 
@@ -225,6 +266,7 @@
     else if (top.type === "entrainement") renderEntrainement(item, container);
     else if (top.type === "ecole") renderEcole(item, container);
     else if (top.type === "ecole_combat") renderEcole(item, container);  // même renderer
+    else if (top.type === "technique") renderTechnique(item, container);
     history.replaceState(null, "", "#" + top.type + "/" + slugify(top.nom));
     updateBackButtonVisibility();
   }
@@ -393,6 +435,61 @@
     ]));
   }
 
+  // ===== Renderer Technique =====
+  function renderTechnique(t, container) {
+    const catShort = (t.categorie || "Technique").replace(/^Techniques (de |à )?/i, "").toUpperCase();
+    container.appendChild(el("div", { class: "detail-header" }, [
+      el("h2", { id: "cross-modal-title" }, t.nom),
+      el("div", { class: "badges" }, [el("span", { class: "badge nation" }, catShort)]),
+    ]));
+
+    // Description (paragraphes séparés par lignes vides)
+    if (t.description) {
+      const descSec = el("div", { class: "detail-section" }, [el("h3", null, "Description")]);
+      const paras = t.description.split(/\n{2,}/).filter(Boolean);
+      paras.forEach(p => descSec.appendChild(el("p", { class: "description-paragraph" }, p)));
+      // Tables éventuelles
+      (t.tables || []).forEach(tbl => {
+        const table = el("table", { class: "technique-table" });
+        const tbody = el("tbody");
+        tbl.forEach((row, idx) => {
+          const tr = el("tr");
+          row.forEach(cell => tr.appendChild(el(idx === 0 ? "th" : "td", null, cell)));
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        descSec.appendChild(table);
+      });
+      container.appendChild(descSec);
+    }
+
+    // Écoles enseignant cette technique
+    const ecoles = t.ecoles_enseignant || [];
+    if (ecoles.length > 0) {
+      const sec = el("div", { class: "detail-section" }, [
+        el("h3", null, "Écoles enseignant cette technique (" + ecoles.length + ")"),
+      ]);
+      const line = el("p", { class: "specialisations-line" });
+      ecoles.forEach((nomEc, i) => {
+        if (i > 0) line.appendChild(document.createTextNode(", "));
+        // Cas spécial : 'Toutes les écoles' (Voir le style)
+        if (/^toutes les /i.test(nomEc)) {
+          line.appendChild(el("em", null, nomEc));
+          return;
+        }
+        const r = findEcoleAny(nomEc);
+        if (r) {
+          line.appendChild(buildCrossLink(r.type, r.ecole.nom, r.ecole.nom));
+        } else {
+          // École inconnue (typo non aliasée, ou école supprimée) → texte simple
+          line.appendChild(el("span", { class: "ecole-inconnue", title: "École non trouvée dans la base" }, nomEc));
+        }
+      });
+      sec.appendChild(line);
+      container.appendChild(sec);
+    }
+  }
+
   function renderCompetencesSection(label, items, cssClass) {
     if (!items || items.length === 0) {
       return el("div", { class: "competence-section " + cssClass }, [
@@ -439,8 +536,12 @@
     const section = el("div", { class: "detail-section" }, [el("h3", null, "Techniques de combat")]);
     for (const t of ecole.techniques_combat) {
       const techDef = t.ref ? techniquesDB[t.ref] : null;
+      // Si la technique a une fiche, son nom devient un lien cliquable vers la fiche technique.
+      const nomNode = techDef
+        ? buildCrossLink("technique", techDef.nom, t.nom_base)
+        : document.createTextNode(t.nom_base);
       const title = el("div", { class: "technique-nom" }, [
-        t.nom_base,
+        nomNode,
         t.variante ? el("span", { class: "technique-variante" }, " (" + t.variante + ")") : null,
       ]);
       let body;
@@ -593,6 +694,8 @@
         item = window.ECOLES_DATA.ecoles.find(e => slugify(e.nom) === slug);
       } else if (type === "ecole_combat" && window.ECOLES_COMBAT_DATA) {
         item = window.ECOLES_COMBAT_DATA.ecoles.find(e => slugify(e.nom) === slug);
+      } else if (type === "technique" && window.ECOLES_DATA && window.ECOLES_DATA.techniques) {
+        item = Object.values(window.ECOLES_DATA.techniques).find(t => slugify(t.nom) === slug);
       }
       if (item) openItem(type, item, { resetStack: true });
     } else {
@@ -604,11 +707,13 @@
       else if (page === "entrainements") type = "entrainement";
       else if (page === "ecoles-spadassin") type = "ecole";
       else if (page === "ecoles-combat") type = "ecole_combat";
+      else if (page === "techniques") type = "technique";
       if (type) {
         const data = type === "competence" ? window.COMPETENCES_DATA?.competences :
                      type === "metier" ? window.METIERS_DATA?.metiers :
                      type === "entrainement" ? window.ENTRAINEMENTS_DATA?.entrainements :
                      type === "ecole_combat" ? window.ECOLES_COMBAT_DATA?.ecoles :
+                     type === "technique" ? Object.values(window.ECOLES_DATA?.techniques || {}) :
                      window.ECOLES_DATA?.ecoles;
         const item = data?.find(x => slugify(x.nom) === hash);
         if (item) openItem(type, item, { resetStack: true });

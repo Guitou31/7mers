@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liste des techniques — Bréviaire 7ème Mer V2.1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="techniques">
+  <div id="page-layout"></div>
+
+  <div class="page-section-title">
+    <h2>Liste des techniques de combat</h2>
+    <p class="page-section-sub">
+      Recueil corrigé (1ère édition). Chaque fiche liste les écoles enseignant la technique :
+      cliquez sur une école pour ouvrir sa fiche complète.
+    </p>
+  </div>
+
+  <div class="layout">
+    <button class="filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="filters">
+      <span class="filters-toggle-label">Filtres</span>
+      <span class="filters-toggle-count" id="filters-active-count" hidden></span>
+    </button>
+
+    <aside class="filters" id="filters" aria-label="Filtres">
+      <div class="filter-group">
+        <label for="search">Recherche</label>
+        <input type="search" id="search" placeholder="Nom, description, école enseignante…" autocomplete="off">
+      </div>
+
+      <div class="filter-group">
+        <h3>Catégorie</h3>
+        <div class="checkbox-list" id="filter-categories"></div>
+      </div>
+
+      <button class="btn-reset" id="reset-filters" type="button">Réinitialiser les filtres</button>
+    </aside>
+
+    <main class="results">
+      <div class="results-bar">
+        <span class="results-count" id="results-count"></span>
+      </div>
+      <ul class="ecoles-grid" id="techniques-grid"></ul>
+      <p class="empty-state" id="empty-state" hidden>
+        Aucune technique ne correspond à ces critères.
+      </p>
+    </main>
+  </div>
+
+  <script src="layout.js"></script>
+  <script src="ecoles.js"></script>
+  <script src="ecoles_combat.js"></script>
+  <script src="entrainements.js"></script>
+  <script src="metiers.js"></script>
+  <script src="competences.js"></script>
+  <script src="cross-modal.js"></script>
+  <script src="techniques-app.js"></script>
+</body>
+</html>
