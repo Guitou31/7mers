@@ -98,12 +98,42 @@ def clean_text(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
+# Mots-clés indiquant qu'un fragment est une phrase explicative (encart N.B.)
+# et non une vraie compétence. Matching insensible à la casse.
+_PHRASE_PARASITE_KEYWORDS = (
+    "indicat",          # 'toutes ces compétences sont indicatives'
+    "il en existe",     # 'il en existe de nombreuses autres'
+    "acquérir",         # 'vous pouvez acquérir d'autres…'
+    "acquerir",
+    "vous pouvez",      # 'vous pouvez en acquérir d'autres…'
+    "pp par rang",      # 'à raison d'un PP par rang'
+    "pp chacune",
+    "rang 1 pour",      # 'rang 1 pour 1 PP'
+    "1 pp",             # 'au prix de 1 PP par rang'
+    "compétences sont",
+    "competences sont",
+    "compétence sont",
+    "au prix de",
+)
+
+
+def _is_phrase_parasite(s: str) -> bool:
+    """Détecte un fragment qui est en réalité un morceau de note 'N.B.'
+    (ex: 'Toutes ces compétences sont indicatives', 'N', 'B', 'PP par rang')."""
+    if len(s) < 3:  # filtre fragments 'N', 'B' (issus de 'N.B.')
+        return True
+    s_low = s.lower().strip()
+    if s_low in ("etc", "etc."):  # 'etc' n'est pas une compétence
+        return True
+    return any(pat in s_low for pat in _PHRASE_PARASITE_KEYWORDS)
+
+
 def split_competences(text: str) -> list[str]:
     if not text or not text.strip():
         return []
     text = text.strip().rstrip(".").rstrip(",")
     parts = re.split(r"\s*[,.]\s*", text)
-    return [clean_text(p) for p in parts if clean_text(p)]
+    return [clean_text(p) for p in parts if clean_text(p) and not _is_phrase_parasite(p)]
 
 
 def iter_spans(pdf_path: Path):

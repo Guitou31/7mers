@@ -282,13 +282,7 @@ window.METIERS_DATA = {
         "Tisserand",
         "Tonnelier",
         "Vannier",
-        "Vigneron",
-        "etc",
-        "Toutes ces compétences sont indicatives",
-        "il en existe de nombreuses autres",
-        "N",
-        "B",
-        "Vous pouvez acquérir d’autres compétences de base à raison d’un PP par rang"
+        "Vigneron"
       ],
       "competences_avancees": [
         "Bricoleur",
@@ -316,8 +310,7 @@ window.METIERS_DATA = {
         "Création littéraire",
         "Dessin",
         "Musique (instrument)",
-        "Sculpture",
-        "Vous pouvez en acquérir d’autres au prix de 1 PP par rang"
+        "Sculpture"
       ],
       "competences_avancees": [
         "Comportementalisme",
@@ -421,8 +414,7 @@ window.METIERS_DATA = {
       "competences_base": [
         "3 compétences au rang 1 parmi : Chant",
         "Comédie",
-        "Danse et Éloquence",
-        "Vous pouvez acquérir la dernière compétence de base au rang 1 pour 1 PP"
+        "Danse et Éloquence"
       ],
       "competences_avancees": [
         "Compère",
@@ -2502,8 +2494,7 @@ window.METIERS_DATA = {
         "Jenny",
         "Masseur",
         "Mode",
-        "Séduction",
-        "Vous pouvez acquérir les autres compétences de base au rang 1 pour 1 PP chacune"
+        "Séduction"
       ],
       "competences_avancees": [
         "Cancanier",
@@ -2583,8 +2574,7 @@ window.METIERS_DATA = {
         "3 compétences au rang 1 parmi : Conduite d’attelage",
         "Danse",
         "Sens de l’orientation",
-        "Sincérité",
-        "Vous pouvez acquérir la dernière compétence au rang 1 pour 1 PP"
+        "Sincérité"
       ],
       "competences_avancees": [
         "Charlatanisme",
@@ -2639,8 +2629,7 @@ window.METIERS_DATA = {
         "Éloquence",
         "Étiquette",
         "Mode",
-        "Recherches",
-        "Vous pouvez acquérir les autres compétences au rang 1 pour 1 PP"
+        "Recherches"
       ],
       "competences_avancees": [
         "Comptabilité",
@@ -2668,8 +2657,7 @@ window.METIERS_DATA = {
         "Discrétion",
         "Histoire",
         "Philosophie",
-        "Tâches domestiques",
-        "Vous pouvez acquérir les autres compétences au rang 1 pour 1 PP"
+        "Tâches domestiques"
       ],
       "competences_avancees": [
         "Contorsion",

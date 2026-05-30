@@ -408,6 +408,9 @@
       el("h3", null, "Compétences accessibles"),
       renderCompetencesSection("Compétences de base", m.competences_base, "competence-base"),
       renderCompetencesSection("Compétences avancées", m.competences_avancees, "competence-avancee"),
+      el("p", { class: "metier-note-pp" }, [
+        el("em", null, "Toutes ces compétences sont indicatives — vous pouvez en demander d'autres (achetables au coût standard d'1 PP par rang)."),
+      ]),
     ]));
   }
 
