@@ -2,7 +2,7 @@
 window.COMPETENCES_DATA = {
   "_meta": {
     "source": "06 Compétences (15-11-14).pdf",
-    "nb_competences": 265,
+    "nb_competences": 266,
     "categories": [
       "Compétences artisanales",
       "Compétences artistiques",
@@ -3506,7 +3506,7 @@ window.COMPETENCES_DATA = {
     },
     {
       "nom": "Sincérité",
-      "description": "Le mensonge le plus élaboré est inutile face à un interlocuteur capable de discerner un frisson d’appréhension ou un éclair de nervosité dans le regard. Si la compétence Éloquence permet de noyer son auditoire sous un déluge de mots, afin de l’amuser ou de l’interpeller, cette compétence permet au héros de donner à ses paroles toutes les apparences de la vérité et donc de dissimuler le mensonge le plus patent derrière un masque de parfaite honnêteté. Cette compétence peut également être utilisé avec le système de répartie.",
+      "description": "Cette compétence permet de convaincre un interlocuteur de sa bonne foi par la posture, le regard et le ton, sans nécessairement avancer d'argument élaboré. À distinguer de Duperie, qui repose sur le mensonge délibéré. Cette compétence peut également être utilisée avec le système de répartie.",
       "donnent_acces_base": [
         "Avoué",
         "Bonne aventure",
@@ -3901,6 +3901,16 @@ window.COMPETENCES_DATA = {
         "Cavalier"
       ],
       "categorie": "Compétences physiques"
+    },
+    {
+      "nom": "Duperie",
+      "categorie": "Compétences sociales",
+      "description": "Cette compétence permet d'user de mensonges pour convaincre son interlocuteur. Le mensonge le plus élaboré est inutile face à un interlocuteur capable de discerner un frisson d'appréhension ou un éclair de nervosité dans le regard. La compétence Duperie permet au héros de donner à ses mensonges toutes les apparences de la vérité et de dissimuler le mensonge le plus patent derrière un masque de parfaite honnêteté. Cette compétence peut également être utilisée avec le système de répartie.",
+      "donnent_acces_base": [
+        "Gitan"
+      ],
+      "donnent_acces_avancee": [],
+      "variantes": []
     }
   ]
 };

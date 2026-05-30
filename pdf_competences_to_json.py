@@ -32,6 +32,39 @@ DEST_DIR = Path(__file__).parent
 DEST_JSON = DEST_DIR / "competences.json"
 DEST_JS = DEST_DIR / "competences.js"
 
+# Overrides de description (maison) : remplacent le texte du PDF pour une compétence donnée.
+# Matching insensible casse/accents/apostrophes (clé = nom exact tel qu'il sort du parser).
+COMPETENCES_DESCRIPTION_OVERRIDES: dict[str, str] = {
+    "Sincérité": (
+        "Cette compétence permet de convaincre un interlocuteur de sa bonne foi par la "
+        "posture, le regard et le ton, sans nécessairement avancer d'argument élaboré. "
+        "À distinguer de Duperie, qui repose sur le mensonge délibéré. "
+        "Cette compétence peut également être utilisée avec le système de répartie."
+    ),
+}
+
+# Ajouts maison : nouvelles compétences à insérer dans la base après parsing.
+# Structure identique au reste : nom, categorie, description, donnent_acces_base, donnent_acces_avancee.
+COMPETENCES_AJOUTS: list[dict] = [
+    {
+        "nom": "Duperie",
+        "categorie": "Compétences sociales",
+        "description": (
+            "Cette compétence permet d'user de mensonges pour convaincre son interlocuteur. "
+            "Le mensonge le plus élaboré est inutile face à un interlocuteur capable de discerner "
+            "un frisson d'appréhension ou un éclair de nervosité dans le regard. La compétence "
+            "Duperie permet au héros de donner à ses mensonges toutes les apparences de la vérité "
+            "et de dissimuler le mensonge le plus patent derrière un masque de parfaite honnêteté. "
+            "Cette compétence peut également être utilisée avec le système de répartie."
+        ),
+        # Le mapping des métiers est fait à part : Duperie commence avec Gitan (override métier),
+        # à enrichir au fur et à mesure par le MJ.
+        "donnent_acces_base": ["Gitan"],
+        "donnent_acces_avancee": [],
+        "variantes": [],
+    },
+]
+
 # Overrides manuels : pour les compétences génériques absentes du "Classement par catégories"
 # (typiquement les compétences "(... à préciser)" qui sont des méta-compétences).
 COMPETENCE_CATEGORIE_OVERRIDE: dict[str, str] = {
@@ -355,6 +388,25 @@ def main() -> None:
         else:
             c["categorie"] = None
             nb_sans_cat += 1
+
+    # Overrides de description (maison)
+    nb_desc_override = 0
+    for c in competences:
+        if c["nom"] in COMPETENCES_DESCRIPTION_OVERRIDES:
+            c["description"] = COMPETENCES_DESCRIPTION_OVERRIDES[c["nom"]]
+            nb_desc_override += 1
+    if nb_desc_override:
+        print(f"  Overrides de description : {nb_desc_override} compétence(s)")
+
+    # Ajouts maison (nouvelles compétences)
+    noms_existants = {c["nom"] for c in competences}
+    for ajout in COMPETENCES_AJOUTS:
+        if ajout["nom"] in noms_existants:
+            print(f"  [!] Ajout ignoré (déjà présent) : '{ajout['nom']}'")
+            continue
+        competences.append(dict(ajout))  # copie pour ne pas muter la source
+    if COMPETENCES_AJOUTS:
+        print(f"  Ajouts maison : {len(COMPETENCES_AJOUTS)} compétence(s)")
 
     # Stats
     categories_uniques = sorted({c["categorie"] for c in competences if c.get("categorie")})
