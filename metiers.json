@@ -303,14 +303,7 @@
         "Métiers des Arts"
       ],
       "description": "Votre personnage maîtrise les techniques de l’un des beaux-arts : peut-être compose-t-il des sonnets d’amour pour sa bien-aimée, à moins qu’il ne fasse des portraits pour la noblesse. Les artistes sont des êtres à part : ils vivent de leur art et leurs œuvres peuvent bouleverser et influencer les foules ou n’être destinées qu’à un seul individu et changer son cœur à jamais.",
-      "competences_base": [
-        "Chant",
-        "Compositeur",
-        "Création littéraire",
-        "Dessin",
-        "Musique (instrument)",
-        "Sculpture"
-      ],
+      "competences_base": [],
       "competences_avancees": [
         "Comportementalisme",
         "Débrouillardise",
@@ -320,7 +313,18 @@
       "reputation": "Rang social : +1",
       "restriction_creation": "libre",
       "restriction_type": "aucune",
-      "restriction_texte": ""
+      "restriction_texte": "",
+      "competences_base_choix": {
+        "nb": 3,
+        "options": [
+          "Chant",
+          "Compositeur",
+          "Création littéraire",
+          "Dessin",
+          "Musique (instrument)",
+          "Sculpture"
+        ]
+      }
     },
     {
       "nom": "Assassin",
@@ -821,14 +825,10 @@
       ],
       "description": "La plupart des grandes voies maritimes et terrestres empruntées par les marchands sont soumises à des droits et des taxes aux limites des pays, villes, fiefs – en fait, partout où les autorités locales ont décidé de taxer la circulation des marchandises. Dans les grands ports, presque tout ce qui entre ou qui sort est imposé de la même manière. Pour éviter de payer ces charges supplémentaires, certains esprits déterminés s’occupent de faire passer les marchandises en fraude. Dans certains villages côtiers isolés, la population entière se consacre à cette activité tout à fait ouvertement. Les contrebandiers sont souvent des gens très respectables qui ont trouvé la façon de déjouer les lois. Il existe aussi des contrebandiers amateurs que les professionnels considèrent plus comme des commerçants libéraux que comme de véritables criminels.",
       "competences_base": [
-        "Canotage (s’il s’agit d’un contrebandier marin) ou Connaissance des routes (nation à préciser",
-        "s’il s’agit d’un contrebandier terrestre)",
         "Déplacement silencieux",
         "Évaluation"
       ],
       "competences_avancees": [
-        "Canotage (s’il s’agit d’un contrebandier terrestre) ou Connaissance des routes (nation à préciser",
-        "s’il s’agit d’un contrebandier marin)",
         "Conduite d’attelage",
         "Connaissance des bas-fonds (cité)",
         "Corruption",
@@ -842,7 +842,23 @@
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
       "restriction_type": "aucune",
-      "restriction_texte": ""
+      "restriction_texte": "",
+      "competences_base_choix": {
+        "nb": 1,
+        "options": [
+          "Connaissance des routes (nation à préciser)",
+          "Canotage"
+        ],
+        "note": "Connaissance des routes pour un contrebandier terrestre, Canotage pour un contrebandier marin (Nation à préciser dans les deux cas)."
+      },
+      "competences_avancees_choix": {
+        "nb": 1,
+        "options": [
+          "Connaissance des routes (nation à préciser)",
+          "Canotage"
+        ],
+        "note": "Permet de choisir une deuxième Nation (alternative à la compétence de base ci-dessus)."
+      }
     },
     {
       "nom": "Courtisan",
@@ -1251,7 +1267,8 @@
       ],
       "description": "Voilà bien un métier qui est pratiqué involontairement. Que vous ayez été capturé puis enchaîné à un banc de nage ou puni par la loi et condamné aux galères, vous avez passé un certain nombre d’années à ramer et à tirer l’aviron. Ce sont des années difficiles mais qui forgent un homme, un peu comme le bagne. Traditionnellement, les galériens peuvent créer de petits objets d’art et les revendre au port. Ces babioles follement pittoresques plaisent aux riches et permettent aux forçats d’acheter un peu plus de nourriture. Mais il faut savoir les fabriquer.",
       "competences_base": [
-        "Canotage"
+        "Qui-vive",
+        "Une compétence d'artisan au choix"
       ],
       "competences_avancees": [
         "Connaissance de la mer",
@@ -2477,17 +2494,7 @@
         "Métiers de Serviteurs"
       ],
       "description": "Les courtisanes sont plus que de simples jennys. Intelligentes, pleines d’esprit et cultivées, elles conseillent, séduisent et divertissent leurs clients en leur proposant leur compagnie à tous les niveaux. Elles apprennent également à manipuler autrui pour en tirer parti car elles ne disposent pas de la protection d’une famille ou d’un mariage. Les courtisanes vodaccies sont charmantes à l’excès, et aussi dangereuses que séduisantes. Leur pendant masculin n’existe pas ; les hommes n’apprennent pas cette spécialisation.",
-      "competences_base": [
-        "Comédie",
-        "Danse",
-        "Discrétion",
-        "Étiquette",
-        "Fouille",
-        "Jenny",
-        "Masseur",
-        "Mode",
-        "Séduction"
-      ],
+      "competences_base": [],
       "competences_avancees": [
         "Cancanier",
         "Comportementalisme",
@@ -2500,7 +2507,18 @@
       "reputation": "Rang social : +2",
       "restriction_creation": "libre",
       "restriction_type": "nationalite",
-      "restriction_texte": "Être une femme, de nationalité vodacce ou croissantine."
+      "restriction_texte": "Être une femme, de nationalité vodacce ou croissantine.",
+      "competences_base_choix": {
+        "nb": 3,
+        "options": [
+          "Danse",
+          "Étiquette",
+          "Jenny",
+          "Masseur",
+          "Mode",
+          "Séduction"
+        ]
+      }
     },
     {
       "nom": "Fauconnier",
@@ -2562,12 +2580,7 @@
         "Métiers de la Nature"
       ],
       "description": "Manouches, tziganes, romanichels, bohémiens, gitans, les gens du voyage qui parcourent Théah doivent à leurs voisins plus établis toute une série d’appellations qui sont, dans l’ensemble, plutôt péjoratives. Par tradition, il règne, dans les pays traversés, une absence de confiance entre les populations sédentaires et les gitans souvent accusés de tous les vols, disparitions et autres malheurs qui se sont produits dans la région au cours des semaines précédant et suivant leur passage. Citoyens de nulle part en particulier, ils font d’excellents boucs émissaires. Cette hostilité est généralement renvoyée avec des intérêts et presque tous apprécient les plaisanteries faites aux dépens de ceux qui n’appartiennent pas à leur communauté : les Gadjo.",
-      "competences_base": [
-        "Conduite d’attelage",
-        "Danse",
-        "Sens de l’orientation",
-        "Sincérité"
-      ],
+      "competences_base": [],
       "competences_avancees": [
         "Charlatanisme",
         "Connaissance des plantes",
@@ -2581,7 +2594,17 @@
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
       "restriction_type": "nationalite",
-      "restriction_texte": "Appartenir au peuple des Fidhelis (Sarmatie ou Ussura)."
+      "restriction_texte": "Appartenir au peuple des Fidhelis (Sarmatie ou Ussura).",
+      "competences_base_choix": {
+        "nb": 3,
+        "options": [
+          "Conduite d’attelage",
+          "Danse",
+          "Sens de l’orientation",
+          "Sincérité",
+          "Duperie"
+        ]
+      }
     },
     {
       "nom": "Guérisseur",
@@ -2614,14 +2637,7 @@
         "Métiers des Belles Lettres"
       ],
       "description": "Un gwai liao est à la fois un courtisan, un politicien, un érudit, et surtout un fonctionnaire. Vous avez étudié pour passer les concours de la fonction publique, et vous utilisez votre connaissance d’une large variété de sujets et votre tact au service du gouvernement.",
-      "competences_base": [
-        "Calcul",
-        "Création littéraire",
-        "Éloquence",
-        "Étiquette",
-        "Mode",
-        "Recherches"
-      ],
+      "competences_base": [],
       "competences_avancees": [
         "Comptabilité",
         "Diplomatie",
@@ -2633,7 +2649,18 @@
       "reputation": "Rang social : +2",
       "restriction_creation": "libre",
       "restriction_type": "nationalite",
-      "restriction_texte": "Être de nationalité cathayane."
+      "restriction_texte": "Être de nationalité cathayane.",
+      "competences_base_choix": {
+        "nb": 3,
+        "options": [
+          "Calcul",
+          "Création littéraire",
+          "Éloquence",
+          "Étiquette",
+          "Mode",
+          "Recherches"
+        ]
+      }
     },
     {
       "nom": "Rahib (Moine)",
@@ -2641,15 +2668,7 @@
         "Métiers du Réconfort"
       ],
       "description": "Un rahib (féminin rahib’i, pluriel ruhban) est un membre de l’un des nombreux ordres religieux qui font vœux d’humilité, de pauvreté et de chasteté et qui cherchent à atteindre l’illumination spirituelle. En raison de leur style de vie, les habitants de l’Empire du Croissant les estiment comme des hommes saints et sages. Les ruhban gagnent leurs repas grâce à leurs conseils spirituels, comme professeurs pour les hommes du peuple, en priant ou en effectuant des travaux physiques et manuels si nécessaire. La plupart des ordres de ruhban se rasent la tête, cependant quelques-uns, particulièrement parmi le Jadur’rihad, laissent une longue tresse pousser à l’arrière de leur tête.",
-      "competences_base": [
-        "Calligraphie",
-        "Chant",
-        "Création littéraire",
-        "Discrétion",
-        "Histoire",
-        "Philosophie",
-        "Tâches domestiques"
-      ],
+      "competences_base": [],
       "competences_avancees": [
         "Contorsion",
         "Débrouillardise",
@@ -2663,7 +2682,18 @@
       "reputation": "Moralité : +2",
       "restriction_creation": "libre",
       "restriction_type": "nationalite",
-      "restriction_texte": "Être de nationalité croissantine."
+      "restriction_texte": "Être de nationalité croissantine.",
+      "competences_base_choix": {
+        "nb": 3,
+        "options": [
+          "Calligraphie",
+          "Chant",
+          "Création littéraire",
+          "Discrétion",
+          "Histoire",
+          "Philosophie"
+        ]
+      }
     },
     {
       "nom": "Shirbaz (magicien)",
@@ -2686,7 +2716,12 @@
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
       "restriction_type": "nationalite",
-      "restriction_texte": "Être de nationalité croissantine."
+      "restriction_texte": "Être de nationalité croissantine.",
+      "competences_base": [
+        "Éloquence",
+        "Étiquette",
+        "Mode"
+      ]
     },
     {
       "nom": "Skalde",

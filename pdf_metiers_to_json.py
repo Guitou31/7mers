@@ -320,6 +320,107 @@ def parse_pdf(pdf_path: Path) -> list[dict]:
 
 METIERS_SUPPRIMES = {"Conférencier", "Aérostier", "Seigneur du crime"}
 
+# Overrides manuels des compétences pour les métiers atypiques
+# (parsing PDF imparfait OU structure 'X compétences au choix parmi N').
+#
+# Format par métier (toutes les clés sont optionnelles) :
+#   competences_base / competences_avancees : liste FIXE qui REMPLACE la valeur parsée.
+#   competences_base_choix / competences_avancees_choix : structure 'choix' :
+#     { "nb": N, "options": [...], "note": "..." (optionnel) }
+#
+# Lookup côté UI : 'Une compétence d'artisan au choix' = vrai nom dans
+# competences.json, donc rendu cliquable via findCompetence.
+METIERS_COMPETENCES_OVERRIDES: dict[str, dict] = {
+    "Shirbaz (magicien)": {
+        # Mal lues par le parser (capturées comme description).
+        "competences_base": ["Éloquence", "Étiquette", "Mode"],
+    },
+    "Galérien": {
+        # Idem : seul Qui-vive + un choix d'artisan.
+        "competences_base": ["Qui-vive", "Une compétence d'artisan au choix"],
+    },
+    "Contrebandier": {
+        # 2 base fixes + 1 choix (contrebandier terrestre OU marin).
+        "competences_base": ["Déplacement silencieux", "Évaluation"],
+        "competences_base_choix": {
+            "nb": 1,
+            "options": [
+                "Connaissance des routes (nation à préciser)",
+                "Canotage",
+            ],
+            "note": "Connaissance des routes pour un contrebandier terrestre, "
+                    "Canotage pour un contrebandier marin (Nation à préciser dans les deux cas).",
+        },
+        # 10 avancées + le même choix (pour ajouter une 2ème Nation).
+        "competences_avancees": [
+            "Conduite d’attelage",
+            "Connaissance des bas-fonds (cité)",
+            "Corruption",
+            "Dissimulation",
+            "Falsification",
+            "Fouille",
+            "Guet-apens",
+            "Marchandage",
+            "Qui-vive",
+        ],
+        "competences_avancees_choix": {
+            "nb": 1,
+            "options": [
+                "Connaissance des routes (nation à préciser)",
+                "Canotage",
+            ],
+            "note": "Permet de choisir une deuxième Nation (alternative à la compétence de base ci-dessus).",
+        },
+    },
+    "Gitan": {
+        "competences_base": [],
+        "competences_base_choix": {
+            "nb": 3,
+            "options": [
+                "Conduite d’attelage", "Danse", "Sens de l’orientation", "Sincérité", "Duperie",
+            ],
+        },
+    },
+    "Artiste": {
+        "competences_base": [],
+        "competences_base_choix": {
+            "nb": 3,
+            "options": [
+                "Chant", "Compositeur", "Création littéraire", "Dessin",
+                "Musique (instrument)", "Sculpture",
+            ],
+        },
+    },
+    "Gwai Liao (Bureaucrate)": {
+        "competences_base": [],
+        "competences_base_choix": {
+            "nb": 3,
+            "options": [
+                "Calcul", "Création littéraire", "Éloquence", "Étiquette", "Mode", "Recherches",
+            ],
+        },
+    },
+    "Rahib (Moine)": {
+        "competences_base": [],
+        "competences_base_choix": {
+            "nb": 3,
+            "options": [
+                "Calligraphie", "Chant", "Création littéraire", "Discrétion",
+                "Histoire", "Philosophie",
+            ],
+        },
+    },
+    "Courtisane": {
+        "competences_base": [],
+        "competences_base_choix": {
+            "nb": 3,
+            "options": [
+                "Danse", "Étiquette", "Jenny", "Masseur", "Mode", "Séduction",
+            ],
+        },
+    },
+}
+
 # Restrictions : (type_filtre, texte_affiché). type = 'nationalite' | 'societe'.
 METIERS_RESTRICTIONS: dict[str, tuple[str, str]] = {
     # --- Nationalité ---
@@ -409,6 +510,23 @@ def appliquer_overrides(metiers: list[dict]) -> list[dict]:
             if not any(_nk(c) == _nk("Attaque (Lance)") for c in av):
                 av.append("Attaque (Lance)")
             m["competences_avancees"] = av
+
+    # Overrides de compétences (Shirbaz, Galérien, Contrebandier, Gitan, Artiste,
+    # Gwai Liao, Rahib, Courtisane) — voir METIERS_COMPETENCES_OVERRIDES.
+    comp_overrides = {_nk(k): (k, v) for k, v in METIERS_COMPETENCES_OVERRIDES.items()}
+    vus_comp: set[str] = set()
+    for m in result:
+        nk = _nk(m["nom"])
+        if nk in comp_overrides:
+            vus_comp.add(nk)
+            _, override = comp_overrides[nk]
+            for key in ("competences_base", "competences_avancees",
+                        "competences_base_choix", "competences_avancees_choix"):
+                if key in override:
+                    m[key] = override[key]
+    for nk, (k, _) in comp_overrides.items():
+        if nk not in vus_comp:
+            print(f"  [!] Override compétences non appliqué (métier introuvable) : '{k}'")
 
     # Avertissements si une clé d'override n'a matché aucun métier (typo possible)
     for k in restrictions:

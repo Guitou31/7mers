@@ -405,14 +405,55 @@
       container.appendChild(el("div", { class: "detail-section" }, dl));
     }
 
-    container.appendChild(el("div", { class: "detail-section" }, [
+    const compSection = el("div", { class: "detail-section" }, [
       el("h3", null, "Compétences accessibles"),
-      renderCompetencesSection("Compétences de base", m.competences_base, "competence-base"),
-      renderCompetencesSection("Compétences avancées", m.competences_avancees, "competence-avancee"),
-      el("p", { class: "metier-note-pp" }, [
+    ]);
+    compSection.appendChild(renderCompetencesGroup(
+      "Compétences de base", m.competences_base, m.competences_base_choix, "competence-base"
+    ));
+    compSection.appendChild(renderCompetencesGroup(
+      "Compétences avancées", m.competences_avancees, m.competences_avancees_choix, "competence-avancee"
+    ));
+    // Encart 'indicatives' réservé au métier d'Artisan (cas particulier).
+    if (m.nom === "Artisan") {
+      compSection.appendChild(el("p", { class: "metier-note-pp" }, [
         el("em", null, "Toutes ces compétences sont indicatives — vous pouvez en demander d'autres (achetables au coût standard d'1 PP par rang)."),
-      ]),
-    ]));
+      ]));
+    }
+    container.appendChild(compSection);
+  }
+
+  // Rendu d'un groupe (base ou avancées) : liste fixe + éventuelle structure 'choix'.
+  function renderCompetencesGroup(label, items, choix, cssClass) {
+    const group = el("div", { class: "competence-section " + cssClass });
+    group.appendChild(el("h4", null, label));
+    const hasItems = items && items.length > 0;
+    const hasChoix = choix && choix.options && choix.options.length > 0;
+    if (!hasItems && !hasChoix) {
+      group.appendChild(el("p", { class: "avantage-vide" }, "Aucune"));
+      return group;
+    }
+    if (hasItems) {
+      group.appendChild(el("ul", { class: "competence-list" },
+        items.map(c => el("li", null, [buildCompetenceLink(c)]))));
+    }
+    if (hasChoix) {
+      const intro = "Choisir " + choix.nb + " compétence" + (choix.nb > 1 ? "s" : "")
+        + " parmi :";
+      const div = el("div", { class: "competence-choix" }, [
+        el("p", { class: "competence-choix-intro" }, intro),
+      ]);
+      const ul = el("ul", { class: "competence-list competence-choix-options" });
+      choix.options.forEach(opt => ul.appendChild(el("li", null, [buildCompetenceLink(opt)])));
+      div.appendChild(ul);
+      if (choix.note) {
+        div.appendChild(el("p", { class: "competence-choix-note" }, [
+          el("em", null, choix.note),
+        ]));
+      }
+      group.appendChild(div);
+    }
+    return group;
   }
 
   // --- Entraînement ---

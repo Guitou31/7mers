@@ -182,6 +182,27 @@ p { margin: 0 0 0.6em; }
   text-decoration: line-through dotted rgba(0,0,0,0.3);
 }
 
+/* Choix de compétences dans une fiche métier ('Choisir N parmi : …'). */
+.competence-choix {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.7rem;
+  background: rgba(232, 212, 168, 0.08);
+  border-left: 3px solid var(--accent-soft);
+  border-radius: 0 4px 4px 0;
+}
+.competence-choix-intro {
+  margin: 0 0 0.3rem;
+  font-weight: 600;
+  color: #5a4030;
+  font-size: 0.92rem;
+}
+.competence-choix-options { margin: 0; }
+.competence-choix-note {
+  margin: 0.4rem 0 0;
+  font-size: 0.85rem;
+  color: #6b5040;
+}
+
 /* Note 'compétences indicatives' sur les fiches métiers. */
 .metier-note-pp {
   margin: 0.75rem 0 0;

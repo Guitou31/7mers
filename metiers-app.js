@@ -44,8 +44,11 @@
     }
     if (state.search) {
       const q = normalize(state.search);
+      const choixBaseOpts = ((m.competences_base_choix && m.competences_base_choix.options) || []);
+      const choixAvOpts = ((m.competences_avancees_choix && m.competences_avancees_choix.options) || []);
       const hay = normalize([m.nom, m.description || "", (m.competences_base || []).join(" "),
-        (m.competences_avancees || []).join(" "), (m.categories || []).join(" ")].join(" "));
+        (m.competences_avancees || []).join(" "), choixBaseOpts.join(" "), choixAvOpts.join(" "),
+        (m.categories || []).join(" ")].join(" "));
       if (!hay.includes(q)) return false;
     }
     return true;
@@ -53,7 +56,11 @@
 
   function renderCard(m) {
     const cats = m.categories || [];
-    const nbComp = (m.competences_base || []).length + (m.competences_avancees || []).length;
+    // Compteur : compétences fixes + options des éventuels choix (base & avancées).
+    const nbChoixBase = ((m.competences_base_choix && m.competences_base_choix.options) || []).length;
+    const nbChoixAv = ((m.competences_avancees_choix && m.competences_avancees_choix.options) || []).length;
+    const nbComp = (m.competences_base || []).length + (m.competences_avancees || []).length
+                 + nbChoixBase + nbChoixAv;
     const r = m.restriction_type || "aucune";
     const restrictionBadge = r === "nationalite"
       ? el("span", { class: "badge restriction-nationalite", title: m.restriction_texte || "" }, "🌍 Nationalité")
