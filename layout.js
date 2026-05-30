@@ -24,7 +24,6 @@
     { id: "ecoles-spadassin",      file: "ecoles-spadassin.html",     label: "Écoles de Spadassin",    available: true,  category: "combat",   group: "ecoles_techniques" },
     { id: "ecoles-combat",         file: "ecoles-combat.html",        label: "Écoles de Combat",       available: true,  category: "combat",   group: "ecoles_techniques" },
     { id: "techniques",            file: "techniques.html",           label: "Liste des techniques",   available: true,  category: "combat",   group: "ecoles_techniques" },
-    { id: "ecoles-pro",            file: "ecoles-pro.html",           label: "Écoles Professionnelles",available: false, category: "combat"   },
     { id: "sorcelleries",          file: "sorcelleries.html",         label: "Sorcelleries",           available: false, category: "magie"    },
     { id: "societes-secretes",     file: "societes-secretes.html",    label: "Sociétés Secrètes",      available: false, category: "monde"    },
   ];
