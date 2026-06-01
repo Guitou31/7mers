@@ -945,6 +945,134 @@ def appliquer_modifications(metiers: list[dict]) -> None:
             print(f"  [!] Modification non appliquée (métier introuvable) : '{nom}'")
 
 
+# ============================================================
+# Corrections v2 : lecture d'un fichier Markdown éditable par Guillaume
+# Format : un bloc par métier avec un code block contenant :
+#   base: A, B, C
+#   av: X, Y, Z
+#   base_choix: nb=1; options=A, B, C; note=...  (vide = pas de choix)
+#   av_choix:   nb=1; options=A, B, C
+# Lignes manquantes = pas de changement sur ce champ.
+# ============================================================
+
+CORRECTIONS_MD_V2 = Path(
+    r"D:\Utilisateur\Guillaume\Bureau\JDR Papier\7ème Mer"
+    r"\Corrections des compétences des métiers v2.md"
+)
+
+_METIER_HEADER_V2_RE = re.compile(r"^###\s+(.+?)\s+—\s+", re.MULTILINE)
+_CODE_BLOCK_V2_RE = re.compile(r"```\s*\n(.*?)```", re.DOTALL)
+
+
+def _parse_choix_str(s: str) -> dict | None:
+    """'nb=1; options=A, B, C; note=texte' → {'nb':1, 'options':[A,B,C], 'note':'texte'}"""
+    s = s.strip()
+    if not s:
+        return None
+    result: dict = {}
+    for part in s.split(";"):
+        part = part.strip()
+        if "=" not in part:
+            continue
+        k, v = part.split("=", 1)
+        k, v = k.strip(), v.strip()
+        if k == "nb":
+            try:
+                result["nb"] = int(v)
+            except ValueError:
+                pass
+        elif k == "options":
+            result["options"] = [x.strip() for x in v.split(",") if x.strip()]
+        elif k == "note":
+            result["note"] = v
+    if "nb" not in result or "options" not in result or not result["options"]:
+        return None
+    return result
+
+
+def parse_corrections_v2(text: str) -> dict[str, dict]:
+    """Parse le markdown → {metier_nom: {base|av|base_choix|av_choix: ...}}"""
+    result: dict[str, dict] = {}
+    headers = list(_METIER_HEADER_V2_RE.finditer(text))
+    for i, hdr in enumerate(headers):
+        nom = hdr.group(1).strip()
+        start = hdr.end()
+        end = headers[i + 1].start() if i + 1 < len(headers) else len(text)
+        block_section = text[start:end]
+        m_code = _CODE_BLOCK_V2_RE.search(block_section)
+        if not m_code:
+            continue
+        entry: dict = {}
+        for line in m_code.group(1).splitlines():
+            line = line.strip()
+            if not line or ":" not in line:
+                continue
+            k, v = line.split(":", 1)
+            k = k.strip().lower()
+            v = v.strip()
+            if k == "base":
+                entry["base"] = [x.strip() for x in v.split(",") if x.strip()]
+            elif k == "av":
+                entry["av"] = [x.strip() for x in v.split(",") if x.strip()]
+            elif k == "base_choix":
+                entry["base_choix"] = _parse_choix_str(v)
+            elif k == "av_choix":
+                entry["av_choix"] = _parse_choix_str(v)
+        if entry:
+            result[nom] = entry
+    return result
+
+
+def appliquer_corrections_v2(metiers: list[dict]) -> None:
+    if not CORRECTIONS_MD_V2.exists():
+        print(f"  (Pas de fichier {CORRECTIONS_MD_V2.name} — étape v2 ignorée)")
+        return
+    text = CORRECTIONS_MD_V2.read_text(encoding="utf-8")
+    corrections = parse_corrections_v2(text)
+    print(f"  {len(corrections)} bloc(s) parsé(s) dans le fichier v2")
+
+    by_key = {_nk(m["nom"]): m for m in metiers}
+    nb_changed = 0
+    nb_introuvables = 0
+    for nom, c in corrections.items():
+        nk = _nk(nom)
+        if nk not in by_key:
+            print(f"  [!] '{nom}' introuvable")
+            nb_introuvables += 1
+            continue
+        m = by_key[nk]
+        changed = False
+        if "base" in c and c["base"] != m.get("competences_base", []):
+            m["competences_base"] = c["base"]
+            changed = True
+        if "av" in c and c["av"] != m.get("competences_avancees", []):
+            m["competences_avancees"] = c["av"]
+            changed = True
+        if "base_choix" in c:
+            cur = m.get("competences_base_choix")
+            new = c["base_choix"]
+            if new != cur:
+                if new:
+                    m["competences_base_choix"] = new
+                else:
+                    m.pop("competences_base_choix", None)
+                changed = True
+        if "av_choix" in c:
+            cur = m.get("competences_avancees_choix")
+            new = c["av_choix"]
+            if new != cur:
+                if new:
+                    m["competences_avancees_choix"] = new
+                else:
+                    m.pop("competences_avancees_choix", None)
+                changed = True
+        if changed:
+            nb_changed += 1
+    print(f"  {nb_changed} métier(s) effectivement modifié(s) par v2")
+    if nb_introuvables:
+        print(f"  ⚠ {nb_introuvables} bloc(s) sans métier correspondant")
+
+
 def sync_competences_acces(metiers: list[dict]) -> None:
     """Reconstruit donnent_acces_base / donnent_acces_avancee de chaque compétence
     à partir des métiers (source de vérité après nos modifications).
@@ -1027,6 +1155,9 @@ def main() -> None:
 
     print(f"Application de {len(METIERS_MODIFICATIONS)} modifications maison…")
     appliquer_modifications(metiers)
+
+    print(f"Application des corrections v2 ({CORRECTIONS_MD_V2.name})…")
+    appliquer_corrections_v2(metiers)
 
     print("Synchro inverse : reconstruction de donnent_acces_* dans competences.json…")
     sync_competences_acces(metiers)
