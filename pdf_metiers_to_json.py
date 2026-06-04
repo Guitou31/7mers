@@ -348,6 +348,10 @@ COMPETENCES_REF_NORMALISATIONS: list[tuple[str, str]] = [
      "Contacts (Nation à préciser)"),
     (r"^Potamologie\s*\(\s*fleuve\s*\)$",
      "Potamologie (fleuve à préciser)"),
+    # Soin(s) des [animal X] → compétence canonique unique
+    # (toutes les variantes : chevaux, chiens, oiseaux, bovins, etc. + sans suffixe)
+    (r"^Soins?\s+des?\s+(?:animaux|chevaux|chiens|oiseaux|bovins|chats|rats)(?:\s*\([^)]*\))?$",
+     "Soin des animaux (type d’animal à préciser)"),
     # Qualificatifs "(X uniquement)" : la compétence canonique n'en a pas
     (r"^Géomancie\s*\(.+?uniquement\)$",                              "Géomancie"),
     (r"^I\s+Ching\s*\(.+?uniquement\)$",                              "I Ching"),

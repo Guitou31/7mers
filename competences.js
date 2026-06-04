@@ -395,8 +395,7 @@ window.COMPETENCES_DATA = {
         "Faussaire",
         "Feng Shui Shi (Géomancien)",
         "Guide",
-        "Incendiaire",
-        "Marin"
+        "Incendiaire"
       ],
       "categorie": "Compétences savantes"
     },
@@ -645,6 +644,7 @@ window.COMPETENCES_DATA = {
         "Contrebandier",
         "Domestique",
         "Explorateur",
+        "Palefrenier",
         "Prospecteur",
         "Soldat"
       ],
@@ -657,6 +657,7 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Caravanier",
         "Domestique",
+        "Palefrenier",
         "Piqueux"
       ],
       "categorie": "Compétences rurales"
@@ -674,7 +675,8 @@ window.COMPETENCES_DATA = {
       "nom": "Connaissance de la mer",
       "description": "Le héros connaît les légendes et les histoires que les marins aiment à se narrer. Si on raconte qu’une île est hantée, il est fort probable qu’il en connaîtra la légende. Il connaît également les us et coutumes des gens de la mer.",
       "donnent_acces_base": [
-        "Navigateur"
+        "Navigateur",
+        "Pêcheur"
       ],
       "donnent_acces_avancee": [
         "Armateur",
@@ -1227,7 +1229,6 @@ window.COMPETENCES_DATA = {
         "Fournisseur de drogues",
         "Galopin",
         "Galérien",
-        "Garde du corps",
         "Incendiaire",
         "Jenny",
         "Malandrin",
@@ -1513,6 +1514,7 @@ window.COMPETENCES_DATA = {
         "Shirbaz (magicien)"
       ],
       "donnent_acces_avancee": [
+        "Artiste",
         "Avoué",
         "Barde",
         "Cadet",
@@ -1838,7 +1840,6 @@ window.COMPETENCES_DATA = {
         "Acolyte",
         "Artificier",
         "Chasseur",
-        "Garde du corps",
         "Maistrance",
         "Malandrin",
         "Piqueux",
@@ -2353,6 +2354,7 @@ window.COMPETENCES_DATA = {
         "Bateleur"
       ],
       "donnent_acces_avancee": [
+        "Artiste",
         "Chroniqueur",
         "Comédien",
         "Guérisseur",
@@ -2370,8 +2372,7 @@ window.COMPETENCES_DATA = {
         "Navigateur"
       ],
       "donnent_acces_avancee": [
-        "Maistrance",
-        "Marin"
+        "Maistrance"
       ],
       "categorie": "Compétences maritimes"
     },
@@ -2622,8 +2623,8 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Arnaqueur",
+        "Artiste",
         "Courtisan",
-        "Courtisane",
         "Dilettante",
         "Rahib (Moine)"
       ],
@@ -2681,7 +2682,8 @@ window.COMPETENCES_DATA = {
       "nom": "Potamologie (fleuve à préciser)",
       "description": "Vous avez appris tout ce qu’il y a d’important à connaître au sujet d’une étendue de 75 kilomètres d’une rivière en particulier. Vous savez où se trouvent les rondins et rochers immergés, et il ne vous est jamais nécessaire d’effectuer un jet de Piloter lorsque vous manœuvrez dans cette zone. Vous connaissez 75 kilomètres de berges supplémentaires par rang dans cette compétence. Les concentrations possibles sont toutes les fleuves de Théah.",
       "donnent_acces_base": [
-        "Batelier"
+        "Batelier",
+        "Pêcheur"
       ],
       "donnent_acces_avancee": [
         "Prospecteur"
@@ -2860,9 +2862,7 @@ window.COMPETENCES_DATA = {
         "Artisan",
         "Intendant"
       ],
-      "donnent_acces_avancee": [
-        "Domestique"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences commerciales"
     },
     {
@@ -3020,7 +3020,6 @@ window.COMPETENCES_DATA = {
         "Cocher",
         "Fauconnier",
         "Hors-la-loi",
-        "Marin",
         "Missionnaire",
         "Paysan",
         "Pêcheur",
@@ -3122,8 +3121,19 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Soin des animaux (type d’animal à préciser)",
       "description": "Cette compétence vous permet de prendre soin d’un type d’animal précis, pour toutes les nécessités du quotidien (pansage, nourriture, etc.) et soigner ses petites blessures du quotidien (ses blessures légères). Pour des blessures plus graves, vous aurez besoin de la compétence Vétérinaire. Elle mesure aussi vos connaissances de l’animal et la maîtrise des techniques d’utilisation des outils du métier (laisse ou muselière pour le chien, chaperon et gant pour le faucon, selle, étrier et mors pour le cheval) Les concentrations les plus courantes sont : Bovins, Chameaux, Chevaux, Chiens, Éléphants, Furets, Moutons, Oiseaux, mais il en existe de nombreuses autres.",
-      "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_base": [
+        "Fauconnier",
+        "Palefrenier",
+        "Piqueux"
+      ],
+      "donnent_acces_avancee": [
+        "Cadet",
+        "Chasseur",
+        "Gitan",
+        "Guérisseur",
+        "Pauvre Chevalier",
+        "Torero"
+      ],
       "categorie": "Compétences rurales"
     },
     {

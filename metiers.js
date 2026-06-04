@@ -295,7 +295,10 @@ window.METIERS_DATA = {
         "Comportementalisme",
         "Débrouillardise",
         "Éloquence",
-        "Séduction"
+        "Séduction",
+        "Etiquette",
+        "Pique-assiette",
+        "Narrer"
       ],
       "reputation": "Rang social : +1",
       "restriction_creation": "libre",
@@ -578,7 +581,7 @@ window.METIERS_DATA = {
         "Guet-apens",
         "Pister",
         "Signes de piste",
-        "Soins des chiens",
+        "Soin des animaux (type d’animal à préciser)",
         "Survie",
         "Tanner"
       ],
@@ -909,7 +912,6 @@ window.METIERS_DATA = {
         "Jardinier",
         "Majordome",
         "Mode",
-        "Régisseur",
         "Sincérité"
       ],
       "reputation": "Rang social : -1",
@@ -1284,10 +1286,8 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Comportementalisme",
-        "Dissimulation",
         "Estomac",
         "Fouille",
-        "Guet-apens",
         "Intimidation",
         "Orientation citadine (Nation à préciser)",
         "Prise",
@@ -1666,15 +1666,12 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Canotage",
-        "Cartographie",
         "Connaissance de la mer",
         "Équilibre",
         "Nager",
-        "Navigation",
         "Perception du temps",
         "Piloter",
-        "Sauter",
-        "Sens de l’orientation"
+        "Sauter"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -1870,7 +1867,7 @@ window.METIERS_DATA = {
       "description": "Le palefrenier est la personne préposée aux écuries et au soin des chevaux : pansage, nourriture, réparation des selles, etc. Ce métier vous permet de prendre soin de votre cheval en toutes circonstances… Ou presque…",
       "competences_base": [
         "Dressage",
-        "Soins des chevaux",
+        "Soin des animaux (type d’animal à préciser)",
         "Tâches domestiques"
       ],
       "competences_avancees": [
@@ -1884,7 +1881,14 @@ window.METIERS_DATA = {
       "reputation": "Rang social : -1",
       "restriction_creation": "libre",
       "restriction_type": "aucune",
-      "restriction_texte": ""
+      "restriction_texte": "",
+      "competences_avancees_choix": {
+        "nb": 1,
+        "options": [
+          "Conduite d’attelage",
+          "Conduite de traîneau"
+        ]
+      }
     },
     {
       "nom": "Paysan",
@@ -1919,7 +1923,6 @@ window.METIERS_DATA = {
       "description": "Beaucoup de ceux qui vivent dans les régions côtières et autour des plans d’eau gagnent leur vie en pêchant. Être pêcheur n’est pas un si mauvais métier ; on est assuré de manger à sa faim la plupart du temps, même si le menu ne varie pas souvent. Pourtant, dans les périodes difficiles où il fait si chaud que le poisson s’abîme avant qu’il puisse être transporté au marché, les pêcheurs se réunissent souvent sur les quais et dans les auberges avoisinantes, où ils rêvent d’une vie d’aventures, comme explorateurs ou riches marins.",
       "competences_base": [
         "Canotage",
-        "Connaissance de la mer ou Potamologie (fleuve)",
         "Pêche"
       ],
       "competences_avancees": [
@@ -1934,7 +1937,14 @@ window.METIERS_DATA = {
       "reputation": "Rang social : -1",
       "restriction_creation": "libre",
       "restriction_type": "aucune",
-      "restriction_texte": ""
+      "restriction_texte": "",
+      "competences_base_choix": {
+        "nb": 1,
+        "options": [
+          "Connaissance de la mer",
+          "Potamologie (fleuve à préciser)"
+        ]
+      }
     },
     {
       "nom": "Piqueux",
@@ -1947,7 +1957,7 @@ window.METIERS_DATA = {
       "competences_base": [
         "Dressage",
         "Qui-vive",
-        "Soins des chiens"
+        "Soin des animaux (type d’animal à préciser)"
       ],
       "competences_avancees": [
         "Conduite de traîneau",
@@ -2378,7 +2388,6 @@ window.METIERS_DATA = {
       "competences_avancees": [
         "Cancanier",
         "Dissimulation",
-        "Pique-assiette",
         "Poison",
         "Sincérité",
         "Musique (type d’instrument à préciser)",
@@ -2416,7 +2425,7 @@ window.METIERS_DATA = {
       "competences_base": [
         "Dressage",
         "Lancer",
-        "Soin des oiseaux"
+        "Soin des animaux (type d’animal à préciser)"
       ],
       "competences_avancees": [
         "Connaissance des animaux",
@@ -2473,7 +2482,7 @@ window.METIERS_DATA = {
         "Débrouillardise",
         "Pickpocket",
         "Signes de piste",
-        "Soin des chevaux"
+        "Soin des animaux (type d’animal à préciser)"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -2509,7 +2518,7 @@ window.METIERS_DATA = {
         "Examiner",
         "Hypnotisme",
         "Jardinier",
-        "Soin des animaux"
+        "Soin des animaux (type d’animal à préciser)"
       ],
       "reputation": "Moralité : +2",
       "restriction_creation": "libre",
@@ -2651,7 +2660,7 @@ window.METIERS_DATA = {
         "Galvaniser",
         "Jeu de jambes",
         "Roulé-boulé",
-        "Soin des animaux (bovins)"
+        "Soin des animaux (type d’animal à préciser)"
       ],
       "reputation": "Réputation martiale : +1 Ces métiers sont réservées aux membres de certaines organisations secrètes, ou au moins très discrètes.",
       "restriction_creation": "libre",
@@ -2758,7 +2767,7 @@ window.METIERS_DATA = {
         "Étiquette",
         "Héraldique",
         "Histoire",
-        "Soin des chevaux"
+        "Soin des animaux (type d’animal à préciser)"
       ],
       "reputation": "Réputation martiale : +1",
       "restriction_creation": "libre",
@@ -2849,7 +2858,7 @@ window.METIERS_DATA = {
         "Débrouillardise",
         "Nager",
         "Qui-vive",
-        "Soin des animaux (chevaux)",
+        "Soin des animaux (type d’animal à préciser)",
         "Tailleur"
       ],
       "reputation": "Réputation martiale : +2",
