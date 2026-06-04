@@ -1121,17 +1121,22 @@ def sync_competences_acces(metiers: list[dict]) -> None:
     # Index par clé normalisée → nom canonique (de la base de compétences)
     canon: dict[str, str] = {_nk(c["nom"]): c["nom"] for c in competences}
 
-    # Construction de l'index inverse : comp_key → ({sources_base}, {sources_av})
-    # Source = nom de métier OU nom d'entraînement (findSpecialisation côté JS résout).
+    # Construction de l'index inverse, séparé par TYPE de source (métier vs entraînement)
+    # ET par niveau (base vs avancée). 4 dicts au total.
     from collections import defaultdict
-    acces_base: dict[str, set[str]] = defaultdict(set)
-    acces_av: dict[str, set[str]] = defaultdict(set)
+    metiers_base: dict[str, set[str]] = defaultdict(set)
+    metiers_av: dict[str, set[str]] = defaultdict(set)
+    ent_base: dict[str, set[str]] = defaultdict(set)
+    ent_av: dict[str, set[str]] = defaultdict(set)
 
-    def _ajouter(comp_str: str, niveau: str, source_nom: str):
+    def _ajouter(comp_str: str, niveau: str, source_type: str, source_nom: str):
         key = _nk(comp_str)
         if key not in canon:
             return  # pas de compétence canonique : laisse tel quel (sera affiché en texte)
-        (acces_base if niveau == "base" else acces_av)[key].add(source_nom)
+        if source_type == "metier":
+            (metiers_base if niveau == "base" else metiers_av)[key].add(source_nom)
+        else:
+            (ent_base if niveau == "base" else ent_av)[key].add(source_nom)
 
     # Métiers
     nb_metiers = 0
@@ -1139,15 +1144,15 @@ def sync_competences_acces(metiers: list[dict]) -> None:
         nb_metiers += 1
         nm = m["nom"]
         for c in m.get("competences_base", []):
-            _ajouter(c, "base", nm)
+            _ajouter(c, "base", "metier", nm)
         for c in m.get("competences_avancees", []):
-            _ajouter(c, "av", nm)
+            _ajouter(c, "av", "metier", nm)
         choix_b = m.get("competences_base_choix") or {}
         for c in choix_b.get("options", []):
-            _ajouter(c, "base", nm)
+            _ajouter(c, "base", "metier", nm)
         choix_av = m.get("competences_avancees_choix") or {}
         for c in choix_av.get("options", []):
-            _ajouter(c, "av", nm)
+            _ajouter(c, "av", "metier", nm)
 
     # Entraînements (Pugilat, Pistolet, etc. donnent accès à des compétences)
     ent_path = DEST_DIR / "entrainements.json"
@@ -1158,10 +1163,19 @@ def sync_competences_acces(metiers: list[dict]) -> None:
             nb_entrainements += 1
             en = e["nom"]
             for c in e.get("competences_base", []):
-                _ajouter(c, "base", en)
+                _ajouter(c, "base", "entrainement", en)
             for c in e.get("competences_avancees", []):
-                _ajouter(c, "av", en)
+                _ajouter(c, "av", "entrainement", en)
     print(f"  Sources scannées : {nb_metiers} métiers + {nb_entrainements} entraînements")
+
+    # Pour la rétro-compat, on garde aussi les listes 'donnent_acces_base'
+    # et 'donnent_acces_avancee' fusionnées (utilisé en fallback côté UI si besoin).
+    acces_base: dict[str, set[str]] = defaultdict(set)
+    acces_av: dict[str, set[str]] = defaultdict(set)
+    for k, v in metiers_base.items():    acces_base[k] |= v
+    for k, v in ent_base.items():        acces_base[k] |= v
+    for k, v in metiers_av.items():      acces_av[k] |= v
+    for k, v in ent_av.items():          acces_av[k] |= v
 
     # Affecte les listes triées (FR)
     def _tri(lst):
@@ -1170,11 +1184,26 @@ def sync_competences_acces(metiers: list[dict]) -> None:
     nb_modif = 0
     for c in competences:
         key = _nk(c["nom"])
+        new_m_b = _tri(list(metiers_base.get(key, [])))
+        new_m_a = _tri(list(metiers_av.get(key, [])))
+        new_e_b = _tri(list(ent_base.get(key, [])))
+        new_e_a = _tri(list(ent_av.get(key, [])))
         new_base = _tri(list(acces_base.get(key, [])))
         new_av = _tri(list(acces_av.get(key, [])))
-        old_base = c.get("donnent_acces_base", [])
-        old_av = c.get("donnent_acces_avancee", [])
-        if new_base != old_base or new_av != old_av:
+        changed = (
+            new_m_b != c.get("donnent_acces_metiers_base", []) or
+            new_m_a != c.get("donnent_acces_metiers_avancee", []) or
+            new_e_b != c.get("donnent_acces_entrainements_base", []) or
+            new_e_a != c.get("donnent_acces_entrainements_avancee", []) or
+            new_base != c.get("donnent_acces_base", []) or
+            new_av != c.get("donnent_acces_avancee", [])
+        )
+        if changed:
+            c["donnent_acces_metiers_base"] = new_m_b
+            c["donnent_acces_metiers_avancee"] = new_m_a
+            c["donnent_acces_entrainements_base"] = new_e_b
+            c["donnent_acces_entrainements_avancee"] = new_e_a
+            # Rétro-compat : liste fusionnée (métiers + entraînements)
             c["donnent_acces_base"] = new_base
             c["donnent_acces_avancee"] = new_av
             nb_modif += 1

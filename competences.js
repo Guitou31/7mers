@@ -25,7 +25,13 @@ window.COMPETENCES_DATA = {
         "Galérien"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Galérien"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Acrobatie",
@@ -37,7 +43,17 @@ window.COMPETENCES_DATA = {
         "Athlétisme",
         "Monte-en-l’air"
       ],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [
+        "Acrobate"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Monte-en-l’air"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Athlétisme"
+      ]
     },
     {
       "nom": "Acupuncture",
@@ -46,7 +62,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Cao Yao (Acupuncteur)"
       ],
-      "categorie": "Compétences médicales"
+      "categorie": "Compétences médicales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Cao Yao (Acupuncteur)"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Agitation",
@@ -55,7 +77,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Politicien"
       ],
-      "categorie": "Compétences sociales"
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Politicien"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Agriculture",
@@ -67,7 +95,16 @@ window.COMPETENCES_DATA = {
         "Herboriste",
         "Moine"
       ],
-      "categorie": "Compétences rurales"
+      "categorie": "Compétences rurales",
+      "donnent_acces_metiers_base": [
+        "Paysan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Herboriste",
+        "Moine"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Alchimie",
@@ -78,7 +115,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Estudiant"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [
+        "Alchimiste"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Estudiant"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Aménagement d’intérieur",
@@ -87,7 +132,13 @@ window.COMPETENCES_DATA = {
         "Feng Shui Shi (Géomancien)"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Feng Shui Shi (Géomancien)"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Amortir une chute",
@@ -101,7 +152,19 @@ window.COMPETENCES_DATA = {
         "Hors-la-loi",
         "Monte-en-l’air"
       ],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Acrobate",
+        "Hors-la-loi",
+        "Monte-en-l’air"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Arts martiaux défensifs",
+        "Arts martiaux offensifs",
+        "Athlétisme"
+      ]
     },
     {
       "nom": "Architecture",
@@ -114,7 +177,17 @@ window.COMPETENCES_DATA = {
         "Incendiaire",
         "Érudit"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [
+        "Ingénieur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Estudiant",
+        "Incendiaire",
+        "Érudit"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Artillerie",
@@ -125,7 +198,15 @@ window.COMPETENCES_DATA = {
         "Ingénieur",
         "Soldat"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Commandement",
+        "Ingénieur",
+        "Soldat"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Artillerie navale",
@@ -136,7 +217,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Ingénieur"
       ],
-      "categorie": "Compétences maritimes"
+      "categorie": "Compétences maritimes",
+      "donnent_acces_metiers_base": [
+        "Marine"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Ingénieur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Assommer",
@@ -149,7 +238,17 @@ window.COMPETENCES_DATA = {
         "Recruteur",
         "Souteneur"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Détrousseur",
+        "Recruteur",
+        "Souteneur"
+      ],
+      "donnent_acces_entrainements_base": [
+        "Masses"
+      ],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Astronomie",
@@ -161,7 +260,16 @@ window.COMPETENCES_DATA = {
         "Feng Shui Shi (Géomancien)",
         "Érudit"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Archéologue",
+        "Estudiant",
+        "Feng Shui Shi (Géomancien)",
+        "Érudit"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Atemi",
@@ -170,7 +278,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Arts martiaux offensifs"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Arts martiaux offensifs"
+      ]
     },
     {
       "nom": "Attaque (type d’armes à préciser)",
@@ -204,7 +318,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Augures",
@@ -213,7 +333,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Bonne aventure"
       ],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Bonne aventure"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Autre méthode de prédiction (préciser)",
@@ -230,7 +356,15 @@ window.COMPETENCES_DATA = {
         "Cape",
         "Torero"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Torero"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Cape"
+      ]
     },
     {
       "nom": "Banquier",
@@ -246,7 +380,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Blocage",
@@ -264,7 +404,16 @@ window.COMPETENCES_DATA = {
         "Cao Yao (Acupuncteur)",
         "Garde du corps"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Cao Yao (Acupuncteur)",
+        "Garde du corps"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Arts martiaux défensifs"
+      ]
     },
     {
       "nom": "Boucher",
@@ -273,7 +422,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Bouilleur de cru",
@@ -285,7 +440,16 @@ window.COMPETENCES_DATA = {
         "Alchimiste",
         "Apothicaire"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Alchimiste",
+        "Apothicaire"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Boulanger",
@@ -294,7 +458,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Brasseur",
@@ -303,7 +473,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Bricoleur",
@@ -314,7 +490,15 @@ window.COMPETENCES_DATA = {
         "Cambrioleur",
         "Ingénieur"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Artisan",
+        "Cambrioleur",
+        "Ingénieur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Calcul",
@@ -341,7 +525,31 @@ window.COMPETENCES_DATA = {
         "Receleur",
         "Recruteur"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [
+        "Appréciateur",
+        "Armateur",
+        "Artificier",
+        "Collecteur d’impôts",
+        "Estudiant",
+        "Gwai Liao (Bureaucrate)",
+        "Incendiaire",
+        "Ingénieur",
+        "Intendant",
+        "Marchand",
+        "Érudit"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Alchimiste",
+        "Artisan",
+        "Gérant de comptoir",
+        "Navigateur",
+        "Professeur",
+        "Receleur",
+        "Recruteur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Calligraphie",
@@ -355,7 +563,18 @@ window.COMPETENCES_DATA = {
         "Cartographe",
         "Chroniqueur"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Faussaire",
+        "Moine",
+        "Rahib (Moine)"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Cartographe",
+        "Chroniqueur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Cancanier",
@@ -371,7 +590,20 @@ window.COMPETENCES_DATA = {
         "Jenny",
         "Paysan"
       ],
-      "categorie": "Compétences sociales"
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [
+        "Chroniqueur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Barde",
+        "Colporteur",
+        "Courtisan",
+        "Courtisane",
+        "Jenny",
+        "Paysan"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Canotage",
@@ -387,7 +619,20 @@ window.COMPETENCES_DATA = {
         "Marine",
         "Navigateur"
       ],
-      "categorie": "Compétences maritimes"
+      "categorie": "Compétences maritimes",
+      "donnent_acces_metiers_base": [
+        "Batelier",
+        "Contrebandier",
+        "Pêcheur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Contrebandier",
+        "Marin",
+        "Marine",
+        "Navigateur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Cartographie",
@@ -407,7 +652,24 @@ window.COMPETENCES_DATA = {
         "Guide",
         "Incendiaire"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [
+        "Cartographe",
+        "Explorateur",
+        "Maistrance",
+        "Navigateur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Batelier",
+        "Caravanier",
+        "Commandement",
+        "Faussaire",
+        "Feng Shui Shi (Géomancien)",
+        "Guide",
+        "Incendiaire"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Cartomancie",
@@ -416,7 +678,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Bonne aventure"
       ],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Bonne aventure"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Casser un membre",
@@ -426,7 +694,15 @@ window.COMPETENCES_DATA = {
         "Lutte",
         "Racketteur"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Racketteur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Lutte"
+      ]
     },
     {
       "nom": "Céramiste",
@@ -435,7 +711,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Chandelon",
@@ -444,7 +726,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Chant",
@@ -461,7 +749,21 @@ window.COMPETENCES_DATA = {
         "Feng Shui Shi (Géomancien)",
         "Prêtre"
       ],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [
+        "Artiste",
+        "Barde",
+        "Jenny",
+        "Rahib (Moine)",
+        "Skalde"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Comédien",
+        "Feng Shui Shi (Géomancien)",
+        "Prêtre"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Chapelier",
@@ -470,7 +772,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Charlatanisme",
@@ -486,7 +794,20 @@ window.COMPETENCES_DATA = {
         "Gitan",
         "Herboriste"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [
+        "Fournisseur de drogues",
+        "Gérant de comptoir"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Alchimiste",
+        "Arnaqueur",
+        "Colporteur",
+        "Gitan",
+        "Herboriste"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Charpentier",
@@ -497,7 +818,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Ingénieur"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Ingénieur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Chaudronnier",
@@ -506,7 +835,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Chiromancie",
@@ -515,7 +850,13 @@ window.COMPETENCES_DATA = {
         "Bonne aventure"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [
+        "Bonne aventure"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Chirurgie",
@@ -524,7 +865,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Médecin"
       ],
-      "categorie": "Compétences médicales"
+      "categorie": "Compétences médicales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Médecin"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Claque sur l’oreille",
@@ -533,7 +880,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Pugilat"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Pugilat"
+      ]
     },
     {
       "nom": "Code secret",
@@ -548,7 +901,19 @@ window.COMPETENCES_DATA = {
         "Faussaire",
         "Juge d’armes"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [
+        "Espion"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Archéologue",
+        "Cartographe",
+        "Diplomate",
+        "Faussaire",
+        "Juge d’armes"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Comédie",
@@ -562,7 +927,18 @@ window.COMPETENCES_DATA = {
         "Mendiant",
         "Shirbaz (magicien)"
       ],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [
+        "Arnaqueur",
+        "Comédien"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Bonne aventure",
+        "Mendiant",
+        "Shirbaz (magicien)"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Commander",
@@ -575,7 +951,17 @@ window.COMPETENCES_DATA = {
         "Intendant",
         "Maître d’armes"
       ],
-      "categorie": "Compétences sociales"
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [
+        "Commandement",
+        "Maistrance"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Intendant",
+        "Maître d’armes"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Compère",
@@ -584,7 +970,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Bateleur"
       ],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Bateleur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Comportementalisme",
@@ -609,7 +1001,29 @@ window.COMPETENCES_DATA = {
         "Politicien",
         "Receleur"
       ],
-      "categorie": "Compétences sociales"
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [
+        "Arnaqueur",
+        "Bonne aventure",
+        "Bourreau",
+        "Recruteur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Appréciateur",
+        "Artiste",
+        "Avoué",
+        "Collecteur d’impôts",
+        "Comédien",
+        "Fouineur",
+        "Fournisseur de drogues",
+        "Garde du corps",
+        "Jenny",
+        "Missionnaire",
+        "Politicien",
+        "Receleur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Compositeur",
@@ -620,7 +1034,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Courtisane"
       ],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [
+        "Artiste"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Courtisane"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Comptabilité",
@@ -639,7 +1061,23 @@ window.COMPETENCES_DATA = {
         "Marchand",
         "Professeur"
       ],
-      "categorie": "Compétences commerciales"
+      "categorie": "Compétences commerciales",
+      "donnent_acces_metiers_base": [
+        "Collecteur d’impôts"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Antiquaire",
+        "Appréciateur",
+        "Armateur",
+        "Domestique",
+        "Gwai Liao (Bureaucrate)",
+        "Gérant de comptoir",
+        "Intendant",
+        "Marchand",
+        "Professeur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Conduite d’attelage",
@@ -661,7 +1099,26 @@ window.COMPETENCES_DATA = {
         "Prospecteur",
         "Soldat"
       ],
-      "categorie": "Compétences rurales"
+      "categorie": "Compétences rurales",
+      "donnent_acces_metiers_base": [
+        "Cocher",
+        "Gitan",
+        "Paysan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Artisan",
+        "Bûcheron",
+        "Caravanier",
+        "Colporteur",
+        "Contrebandier",
+        "Domestique",
+        "Explorateur",
+        "Palefrenier",
+        "Prospecteur",
+        "Soldat"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Conduite de traîneau",
@@ -673,7 +1130,16 @@ window.COMPETENCES_DATA = {
         "Palefrenier",
         "Piqueux"
       ],
-      "categorie": "Compétences rurales"
+      "categorie": "Compétences rurales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Caravanier",
+        "Domestique",
+        "Palefrenier",
+        "Piqueux"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Confiseur",
@@ -682,7 +1148,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Connaissance de la mer",
@@ -698,7 +1170,20 @@ window.COMPETENCES_DATA = {
         "Maistrance",
         "Marin"
       ],
-      "categorie": "Compétences maritimes"
+      "categorie": "Compétences maritimes",
+      "donnent_acces_metiers_base": [
+        "Navigateur",
+        "Pêcheur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Armateur",
+        "Baleinier",
+        "Galérien",
+        "Maistrance",
+        "Marin"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Connaissance des animaux",
@@ -715,7 +1200,21 @@ window.COMPETENCES_DATA = {
         "Torero",
         "Érudit"
       ],
-      "categorie": "Compétences rurales"
+      "categorie": "Compétences rurales",
+      "donnent_acces_metiers_base": [
+        "Chasseur",
+        "Paysan",
+        "Veneur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Bûcheron",
+        "Fauconnier",
+        "Piqueux",
+        "Torero",
+        "Érudit"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Connaissance des bas-fonds (Nation à préciser)",
@@ -739,7 +1238,28 @@ window.COMPETENCES_DATA = {
         "Receleur",
         "Souteneur"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [
+        "Malandrin",
+        "Mendiant"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Avoué",
+        "Bagnard",
+        "Cambrioleur",
+        "Contrebandier",
+        "Détrousseur",
+        "Escamoteur",
+        "Fouineur",
+        "Fournisseur de drogues",
+        "Jenny",
+        "Monte-en-l’air",
+        "Racketteur",
+        "Receleur",
+        "Souteneur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Connaissance des nœuds",
@@ -754,7 +1274,19 @@ window.COMPETENCES_DATA = {
         "Marine",
         "Pêcheur"
       ],
-      "categorie": "Compétences maritimes"
+      "categorie": "Compétences maritimes",
+      "donnent_acces_metiers_base": [
+        "Marin"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Baleinier",
+        "Batelier",
+        "Galérien",
+        "Marine",
+        "Pêcheur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Connaissance des pièges",
@@ -764,7 +1296,14 @@ window.COMPETENCES_DATA = {
         "Archéologue",
         "Cambrioleur"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Archéologue",
+        "Cambrioleur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Connaissance des plantes",
@@ -784,7 +1323,24 @@ window.COMPETENCES_DATA = {
         "Paysan",
         "Érudit"
       ],
-      "categorie": "Compétences rurales"
+      "categorie": "Compétences rurales",
+      "donnent_acces_metiers_base": [
+        "Bûcheron",
+        "Fournisseur de drogues",
+        "Guérisseur",
+        "Herboriste"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Apothicaire",
+        "Cao Yao (Acupuncteur)",
+        "Gitan",
+        "Guérillero",
+        "Moine",
+        "Paysan",
+        "Érudit"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Connaissance des routes (nation à préciser)",
@@ -808,7 +1364,28 @@ window.COMPETENCES_DATA = {
         "Skalde",
         "Éclaireur"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [
+        "Caravanier",
+        "Cocher",
+        "Colporteur",
+        "Contrebandier",
+        "Missionnaire"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Barde",
+        "Cadet",
+        "Cartographe",
+        "Contrebandier",
+        "Explorateur",
+        "Gitan",
+        "Guérillero",
+        "Hors-la-loi",
+        "Skalde",
+        "Éclaireur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Connaissance des runes",
@@ -819,7 +1396,15 @@ window.COMPETENCES_DATA = {
         "Archéologue",
         "Skalde"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Antiquaire",
+        "Archéologue",
+        "Skalde"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Connaissance des Sidhes",
@@ -829,7 +1414,14 @@ window.COMPETENCES_DATA = {
         "Archéologue",
         "Barde"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Archéologue",
+        "Barde"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Connaissance des Syrneths",
@@ -840,7 +1432,15 @@ window.COMPETENCES_DATA = {
         "Archéologue",
         "Érudit"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Antiquaire",
+        "Archéologue",
+        "Érudit"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Construction navale",
@@ -850,7 +1450,14 @@ window.COMPETENCES_DATA = {
         "Ingénieur"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences maritimes"
+      "categorie": "Compétences maritimes",
+      "donnent_acces_metiers_base": [
+        "Artisan",
+        "Ingénieur"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Contacts (Nation à préciser)",
@@ -876,7 +1483,30 @@ window.COMPETENCES_DATA = {
         "Marchand",
         "Souteneur"
       ],
-      "categorie": "Compétences sociales"
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [
+        "Armateur",
+        "Chasseur de primes",
+        "Dilettante",
+        "Garde",
+        "Guide",
+        "Politicien",
+        "Receleur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Antiquaire",
+        "Appréciateur",
+        "Chroniqueur",
+        "Colporteur",
+        "Faussaire",
+        "Fouineur",
+        "Galopin",
+        "Malandrin",
+        "Marchand",
+        "Souteneur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Contorsion",
@@ -886,7 +1516,14 @@ window.COMPETENCES_DATA = {
         "Acrobate",
         "Monte-en-l’air"
       ],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Acrobate",
+        "Monte-en-l’air"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Cordonnier",
@@ -897,7 +1534,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Pauvre Chevalier"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Pauvre Chevalier"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Corps à corps",
@@ -906,7 +1551,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Arts martiaux offensifs"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Arts martiaux offensifs"
+      ]
     },
     {
       "nom": "Corruption",
@@ -926,7 +1577,24 @@ window.COMPETENCES_DATA = {
         "Politicien",
         "Rasoir"
       ],
-      "categorie": "Compétences commerciales"
+      "categorie": "Compétences commerciales",
+      "donnent_acces_metiers_base": [
+        "Recruteur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Antiquaire",
+        "Armateur",
+        "Bagnard",
+        "Collecteur d’impôts",
+        "Contrebandier",
+        "Diplomate",
+        "Gérant de comptoir",
+        "Maistrance",
+        "Politicien",
+        "Rasoir"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Coup à la gorge",
@@ -936,7 +1604,14 @@ window.COMPETENCES_DATA = {
         "Arts martiaux offensifs",
         "Combat de rue"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Arts martiaux offensifs",
+        "Combat de rue"
+      ]
     },
     {
       "nom": "Coup aux yeux",
@@ -945,7 +1620,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Combat de rue"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Combat de rue"
+      ]
     },
     {
       "nom": "Coup de pied",
@@ -955,7 +1636,14 @@ window.COMPETENCES_DATA = {
         "Arts martiaux offensifs",
         "Combat de rue"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Arts martiaux offensifs",
+        "Combat de rue"
+      ]
     },
     {
       "nom": "Coup de tête",
@@ -964,7 +1652,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Lutte"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Lutte"
+      ]
     },
     {
       "nom": "Course d’endurance",
@@ -979,7 +1673,20 @@ window.COMPETENCES_DATA = {
         "Piqueux",
         "Éclaireur"
       ],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [
+        "Soldat"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Galérien",
+        "Légionnaire",
+        "Piqueux",
+        "Éclaireur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Athlétisme"
+      ]
     },
     {
       "nom": "Course de vitesse",
@@ -999,7 +1706,25 @@ window.COMPETENCES_DATA = {
         "Pauvre Chevalier",
         "Rasoir"
       ],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [
+        "Escamoteur",
+        "Racketteur",
+        "Torero"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Cadet",
+        "Chasseur de primes",
+        "Détrousseur",
+        "Galopin",
+        "Garde",
+        "Pauvre Chevalier",
+        "Rasoir"
+      ],
+      "donnent_acces_entrainements_base": [
+        "Athlétisme"
+      ],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Couturier",
@@ -1008,7 +1733,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Création littéraire",
@@ -1031,7 +1762,27 @@ window.COMPETENCES_DATA = {
         "Skalde",
         "Érudit"
       ],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [
+        "Artiste",
+        "Chroniqueur",
+        "Gwai Liao (Bureaucrate)",
+        "Professeur",
+        "Rahib (Moine)"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Avoué",
+        "Comédien",
+        "Courtisane",
+        "Faussaire",
+        "Juge d’armes",
+        "Moine",
+        "Prêtre",
+        "Skalde",
+        "Érudit"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Crochetage",
@@ -1042,7 +1793,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Espion"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [
+        "Cambrioleur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Espion"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Cuisinier",
@@ -1054,7 +1813,16 @@ window.COMPETENCES_DATA = {
         "Domestique",
         "Herboriste"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Domestique",
+        "Herboriste"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Danse",
@@ -1070,7 +1838,20 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Comédien"
       ],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [
+        "Bateleur",
+        "Courtisan",
+        "Courtisane",
+        "Gitan",
+        "Jenny",
+        "Précepteur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Comédien"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Débrouillardise",
@@ -1091,7 +1872,25 @@ window.COMPETENCES_DATA = {
         "Prospecteur",
         "Rahib (Moine)"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [
+        "Bagnard",
+        "Estudiant"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Artiste",
+        "Galopin",
+        "Galérien",
+        "Gitan",
+        "Guide",
+        "Malandrin",
+        "Mendiant",
+        "Pauvre Chevalier",
+        "Prospecteur",
+        "Rahib (Moine)"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Déguisement",
@@ -1104,7 +1903,17 @@ window.COMPETENCES_DATA = {
         "Bateleur",
         "Mendiant"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [
+        "Comédien"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Assassin",
+        "Bateleur",
+        "Mendiant"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Dentiste",
@@ -1113,7 +1922,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Médecin"
       ],
-      "categorie": "Compétences médicales"
+      "categorie": "Compétences médicales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Médecin"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Déplacement silencieux",
@@ -1142,7 +1957,33 @@ window.COMPETENCES_DATA = {
         "Souteneur",
         "Veneur"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [
+        "Acolyte",
+        "Assassin",
+        "Cambrioleur",
+        "Chasseur",
+        "Contrebandier",
+        "Détrousseur",
+        "Espion",
+        "Galopin",
+        "Guérillero",
+        "Hors-la-loi",
+        "Monte-en-l’air",
+        "Éclaireur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Chasseur de primes",
+        "Guide",
+        "Incendiaire",
+        "Malandrin",
+        "Mendiant",
+        "Palefrenier",
+        "Souteneur",
+        "Veneur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Désarmer (Mains nues)",
@@ -1151,7 +1992,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Arts martiaux défensifs"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Arts martiaux défensifs"
+      ]
     },
     {
       "nom": "Dessin",
@@ -1166,7 +2013,19 @@ window.COMPETENCES_DATA = {
         "Dilettante",
         "Juge d’armes"
       ],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [
+        "Artiste",
+        "Cartographe",
+        "Ingénieur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Antiquaire",
+        "Dilettante",
+        "Juge d’armes"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Diagnostic",
@@ -1182,7 +2041,20 @@ window.COMPETENCES_DATA = {
         "Bourreau",
         "Fournisseur de drogues"
       ],
-      "categorie": "Compétences médicales"
+      "categorie": "Compétences médicales",
+      "donnent_acces_metiers_base": [
+        "Apothicaire",
+        "Cao Yao (Acupuncteur)",
+        "Guérisseur",
+        "Herboriste",
+        "Médecin"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Bourreau",
+        "Fournisseur de drogues"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Dilettantisme",
@@ -1193,7 +2065,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Courtisane"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [
+        "Dilettante"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Courtisane"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Diplomatie",
@@ -1214,7 +2094,25 @@ window.COMPETENCES_DATA = {
         "Prêtre",
         "Rahib (Moine)"
       ],
-      "categorie": "Compétences sociales"
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [
+        "Diplomate",
+        "Rasoir"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Commandement",
+        "Courtisan",
+        "Gwai Liao (Bureaucrate)",
+        "Gérant de comptoir",
+        "Intendant",
+        "Maistrance",
+        "Missionnaire",
+        "Politicien",
+        "Prêtre",
+        "Rahib (Moine)"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Direct",
@@ -1224,7 +2122,14 @@ window.COMPETENCES_DATA = {
         "Pugilat"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [
+        "Arts martiaux offensifs",
+        "Pugilat"
+      ],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Discrétion",
@@ -1244,7 +2149,24 @@ window.COMPETENCES_DATA = {
         "Jenny",
         "Palefrenier"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [
+        "Domestique",
+        "Garde du corps",
+        "Rahib (Moine)"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Arnaqueur",
+        "Bagnard",
+        "Bateleur",
+        "Chroniqueur",
+        "Escamoteur",
+        "Garde",
+        "Jenny",
+        "Palefrenier"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Dissimulation",
@@ -1269,7 +2191,29 @@ window.COMPETENCES_DATA = {
         "Receleur",
         "Shirbaz (magicien)"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Assassin",
+        "Bagnard",
+        "Bourreau",
+        "Colporteur",
+        "Contrebandier",
+        "Courtisane",
+        "Escamoteur",
+        "Fournisseur de drogues",
+        "Galopin",
+        "Galérien",
+        "Incendiaire",
+        "Jenny",
+        "Malandrin",
+        "Mendiant",
+        "Racketteur",
+        "Receleur",
+        "Shirbaz (magicien)"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Double parade (Armes exotiques jumelées)",
@@ -1278,7 +2222,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Armes exotiques jumelées"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Armes exotiques jumelées"
+      ]
     },
     {
       "nom": "Dressage",
@@ -1296,7 +2246,23 @@ window.COMPETENCES_DATA = {
         "Cocher",
         "Paysan"
       ],
-      "categorie": "Compétences rurales"
+      "categorie": "Compétences rurales",
+      "donnent_acces_metiers_base": [
+        "Fauconnier",
+        "Palefrenier",
+        "Piqueux",
+        "Veneur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Bateleur",
+        "Chasseur",
+        "Cocher",
+        "Paysan"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Cavalier"
+      ]
     },
     {
       "nom": "Droit",
@@ -1317,7 +2283,25 @@ window.COMPETENCES_DATA = {
         "Rasoir",
         "Érudit"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [
+        "Avoué",
+        "Chevalier",
+        "Collecteur d’impôts"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Appréciateur",
+        "Estudiant",
+        "Fouineur",
+        "Gwai Liao (Bureaucrate)",
+        "Intendant",
+        "Juge d’armes",
+        "Professeur",
+        "Rasoir",
+        "Érudit"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Ébéniste",
@@ -1326,7 +2310,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Économie",
@@ -1338,7 +2328,16 @@ window.COMPETENCES_DATA = {
         "Marchand",
         "Érudit"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Collecteur d’impôts",
+        "Estudiant",
+        "Marchand",
+        "Érudit"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Écrivain public",
@@ -1350,7 +2349,16 @@ window.COMPETENCES_DATA = {
         "Chroniqueur",
         "Dilettante"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Chroniqueur",
+        "Dilettante"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Éloquence",
@@ -1381,7 +2389,35 @@ window.COMPETENCES_DATA = {
         "Recruteur",
         "Érudit"
       ],
-      "categorie": "Compétences sociales"
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [
+        "Appréciateur",
+        "Avoué",
+        "Barde",
+        "Comédien",
+        "Gwai Liao (Bureaucrate)",
+        "Missionnaire",
+        "Politicien",
+        "Professeur",
+        "Prêtre",
+        "Shirbaz (magicien)",
+        "Skalde"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Artiste",
+        "Collecteur d’impôts",
+        "Courtisan",
+        "Dilettante",
+        "Diplomate",
+        "Explorateur",
+        "Marchand",
+        "Précepteur",
+        "Rahib (Moine)",
+        "Recruteur",
+        "Érudit"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Embaumeur",
@@ -1390,7 +2426,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Emmêler",
@@ -1399,7 +2441,13 @@ window.COMPETENCES_DATA = {
         "Fouet"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [
+        "Fouet"
+      ],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Empêtrer",
@@ -1408,7 +2456,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Filet"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Filet"
+      ]
     },
     {
       "nom": "Énigmes",
@@ -1418,7 +2472,14 @@ window.COMPETENCES_DATA = {
         "Bonne aventure",
         "Skalde"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Bonne aventure",
+        "Skalde"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Entraîner",
@@ -1431,7 +2492,17 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Commandement"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [
+        "Maître d’armes",
+        "Professeur",
+        "Précepteur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Commandement"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Équilibre",
@@ -1452,7 +2523,26 @@ window.COMPETENCES_DATA = {
         "Navigateur",
         "Pêcheur"
       ],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [
+        "Acrobate",
+        "Baleinier",
+        "Cocher",
+        "Galérien",
+        "Monte-en-l’air"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Batelier",
+        "Marin",
+        "Marine",
+        "Navigateur",
+        "Pêcheur"
+      ],
+      "donnent_acces_entrainements_base": [
+        "Arts martiaux défensifs",
+        "Arts martiaux offensifs"
+      ],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Équilibriste",
@@ -1463,7 +2553,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Acrobate"
       ],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [
+        "Bateleur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Acrobate"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)",
@@ -1486,7 +2584,27 @@ window.COMPETENCES_DATA = {
         "Veneur",
         "Éclaireur"
       ],
-      "categorie": "Compétences rurales"
+      "categorie": "Compétences rurales",
+      "donnent_acces_metiers_base": [
+        "Caravanier"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Acolyte",
+        "Cadet",
+        "Chevalier",
+        "Cocher",
+        "Explorateur",
+        "Fauconnier",
+        "Palefrenier",
+        "Précepteur",
+        "Rasoir",
+        "Recruteur",
+        "Torero",
+        "Veneur",
+        "Éclaireur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Escalade",
@@ -1505,7 +2623,24 @@ window.COMPETENCES_DATA = {
         "Guide",
         "Marine"
       ],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [
+        "Bûcheron",
+        "Hors-la-loi",
+        "Marin",
+        "Monte-en-l’air"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Assassin",
+        "Bagnard",
+        "Escamoteur",
+        "Guide",
+        "Marine"
+      ],
+      "donnent_acces_entrainements_base": [
+        "Athlétisme"
+      ],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Esquive",
@@ -1514,7 +2649,13 @@ window.COMPETENCES_DATA = {
         "Arts martiaux défensifs"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [
+        "Arts martiaux défensifs"
+      ],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Estomac",
@@ -1538,7 +2679,28 @@ window.COMPETENCES_DATA = {
         "Paysan",
         "Racketteur"
       ],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [
+        "Bagnard",
+        "Baleinier",
+        "Chevalier",
+        "Marine",
+        "Soldat"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Acolyte",
+        "Assassin",
+        "Bourreau",
+        "Commandement",
+        "Garde du corps",
+        "Légionnaire",
+        "Maître d’armes",
+        "Médecin",
+        "Paysan",
+        "Racketteur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Étiquette",
@@ -1571,7 +2733,37 @@ window.COMPETENCES_DATA = {
         "Rasoir",
         "Veneur"
       ],
-      "categorie": "Compétences sociales"
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [
+        "Chevalier",
+        "Courtisan",
+        "Courtisane",
+        "Dilettante",
+        "Diplomate",
+        "Domestique",
+        "Gwai Liao (Bureaucrate)",
+        "Intendant",
+        "Pauvre Chevalier",
+        "Politicien",
+        "Précepteur",
+        "Shirbaz (magicien)"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Artiste",
+        "Avoué",
+        "Barde",
+        "Cadet",
+        "Cartographe",
+        "Fauconnier",
+        "Garde",
+        "Juge d’armes",
+        "Maître d’armes",
+        "Prêtre",
+        "Rasoir",
+        "Veneur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Étreinte",
@@ -1580,7 +2772,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Lutte"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Lutte"
+      ]
     },
     {
       "nom": "Évaluation",
@@ -1602,7 +2800,26 @@ window.COMPETENCES_DATA = {
         "Colporteur",
         "Prospecteur"
       ],
-      "categorie": "Compétences commerciales"
+      "categorie": "Compétences commerciales",
+      "donnent_acces_metiers_base": [
+        "Antiquaire",
+        "Appréciateur",
+        "Artisan",
+        "Contrebandier",
+        "Gérant de comptoir",
+        "Marchand",
+        "Receleur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Armateur",
+        "Cambrioleur",
+        "Caravanier",
+        "Collecteur d’impôts",
+        "Colporteur",
+        "Prospecteur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Éventailliste",
@@ -1613,7 +2830,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Éventail"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Éventail"
+      ]
     },
     {
       "nom": "Examen d’artefact",
@@ -1623,7 +2848,14 @@ window.COMPETENCES_DATA = {
         "Antiquaire",
         "Archéologue"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Antiquaire",
+        "Archéologue"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Examiner",
@@ -1636,7 +2868,17 @@ window.COMPETENCES_DATA = {
         "Guérisseur",
         "Médecin"
       ],
-      "categorie": "Compétences médicales"
+      "categorie": "Compétences médicales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Bourreau",
+        "Cao Yao (Acupuncteur)",
+        "Fouineur",
+        "Guérisseur",
+        "Médecin"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Fabricant d’arme à feu",
@@ -1647,7 +2889,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Artificier"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Artificier"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Fabricant de cerfs-volants",
@@ -1656,7 +2906,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Fabricant de dards",
@@ -1666,7 +2922,15 @@ window.COMPETENCES_DATA = {
         "Sarbacane"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [
+        "Sarbacane"
+      ],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Fabricant de feux d’artifice",
@@ -1675,7 +2939,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Fabricant de vitraux",
@@ -1684,7 +2954,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Fabricant de voiles",
@@ -1693,7 +2969,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Facteur d’arcs",
@@ -1706,7 +2988,18 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Hors-la-loi"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Hors-la-loi"
+      ],
+      "donnent_acces_entrainements_base": [
+        "Arbalète",
+        "Arc"
+      ],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Falsification",
@@ -1721,7 +3014,19 @@ window.COMPETENCES_DATA = {
         "Espion",
         "Receleur"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [
+        "Faussaire"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Appréciateur",
+        "Arnaqueur",
+        "Contrebandier",
+        "Espion",
+        "Receleur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Filature",
@@ -1739,7 +3044,22 @@ window.COMPETENCES_DATA = {
         "Racketteur",
         "Souteneur"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [
+        "Fouineur",
+        "Rasoir"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Assassin",
+        "Chasseur de primes",
+        "Détrousseur",
+        "Escamoteur",
+        "Mendiant",
+        "Racketteur",
+        "Souteneur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Fileur",
@@ -1748,7 +3068,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Fleuriste",
@@ -1757,7 +3083,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Fonderie",
@@ -1767,7 +3099,14 @@ window.COMPETENCES_DATA = {
         "Ingénieur",
         "Prospecteur"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Ingénieur",
+        "Prospecteur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Forgeron",
@@ -1779,7 +3118,16 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Palefrenier"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artificier",
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Palefrenier"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Fouille",
@@ -1801,7 +3149,26 @@ window.COMPETENCES_DATA = {
         "Soldat",
         "Souteneur"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [
+        "Archéologue",
+        "Cambrioleur",
+        "Chasseur de primes",
+        "Espion",
+        "Fouineur",
+        "Prospecteur",
+        "Racketteur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Détrousseur",
+        "Garde",
+        "Garde du corps",
+        "Monte-en-l’air",
+        "Soldat",
+        "Souteneur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Fourreur",
@@ -1810,7 +3177,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Galvaniser",
@@ -1825,7 +3198,19 @@ window.COMPETENCES_DATA = {
         "Skalde",
         "Torero"
       ],
-      "categorie": "Compétences sociales"
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Barde",
+        "Commandement",
+        "Comédien",
+        "Politicien",
+        "Prêtre",
+        "Skalde",
+        "Torero"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Géographie",
@@ -1846,7 +3231,25 @@ window.COMPETENCES_DATA = {
         "Précepteur",
         "Érudit"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [
+        "Cartographe",
+        "Explorateur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Armateur",
+        "Caravanier",
+        "Diplomate",
+        "Estudiant",
+        "Guide",
+        "Juge d’armes",
+        "Navigateur",
+        "Professeur",
+        "Précepteur",
+        "Érudit"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Géomancie",
@@ -1857,7 +3260,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Feng Shui Shi (Géomancien)"
       ],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [
+        "Ingénieur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Feng Shui Shi (Géomancien)"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Gonflage",
@@ -1875,7 +3286,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Batelier"
       ],
-      "categorie": "Compétences maritimes"
+      "categorie": "Compétences maritimes",
+      "donnent_acces_metiers_base": [
+        "Marin"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Batelier"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Guet-apens",
@@ -1898,7 +3317,27 @@ window.COMPETENCES_DATA = {
         "Rasoir",
         "Éclaireur"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [
+        "Assassin",
+        "Chasseur de primes",
+        "Détrousseur",
+        "Guérillero",
+        "Hors-la-loi"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Acolyte",
+        "Artificier",
+        "Chasseur",
+        "Maistrance",
+        "Malandrin",
+        "Piqueux",
+        "Racketteur",
+        "Rasoir",
+        "Éclaireur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Haubergier",
@@ -1909,7 +3348,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Acolyte"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Acolyte"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Héraldique",
@@ -1926,7 +3373,21 @@ window.COMPETENCES_DATA = {
         "Précepteur",
         "Érudit"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [
+        "Juge d’armes"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Barde",
+        "Cadet",
+        "Chevalier",
+        "Estudiant",
+        "Faussaire",
+        "Précepteur",
+        "Érudit"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Histoire",
@@ -1945,7 +3406,23 @@ window.COMPETENCES_DATA = {
         "Estudiant",
         "Précepteur"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [
+        "Antiquaire",
+        "Barde",
+        "Juge d’armes",
+        "Rahib (Moine)",
+        "Skalde",
+        "Érudit"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Cadet",
+        "Chroniqueur",
+        "Estudiant",
+        "Précepteur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Horloger",
@@ -1954,7 +3431,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Hypnotisme",
@@ -1965,7 +3448,15 @@ window.COMPETENCES_DATA = {
         "Guérisseur",
         "Médecin"
       ],
-      "categorie": "Compétences médicales"
+      "categorie": "Compétences médicales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Bateleur",
+        "Guérisseur",
+        "Médecin"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "I Ching",
@@ -1974,7 +3465,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Bonne aventure"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Bonne aventure"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Imprimeur",
@@ -1983,7 +3480,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Interposition",
@@ -1992,7 +3495,13 @@ window.COMPETENCES_DATA = {
         "Garde du corps"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [
+        "Garde du corps"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Interrogatoire",
@@ -2007,7 +3516,19 @@ window.COMPETENCES_DATA = {
         "Espion",
         "Garde"
       ],
-      "categorie": "Compétences sociales"
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [
+        "Bourreau",
+        "Fouineur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Avoué",
+        "Chasseur de primes",
+        "Espion",
+        "Garde"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Intimidation",
@@ -2036,7 +3557,34 @@ window.COMPETENCES_DATA = {
         "Maître d’armes",
         "Précepteur"
       ],
-      "categorie": "Compétences sociales"
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [
+        "Bourreau",
+        "Détrousseur",
+        "Racketteur",
+        "Rasoir",
+        "Souteneur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Acolyte",
+        "Bagnard",
+        "Chasseur de primes",
+        "Chevalier",
+        "Collecteur d’impôts",
+        "Fouineur",
+        "Garde",
+        "Garde du corps",
+        "Légionnaire",
+        "Maistrance",
+        "Marine",
+        "Maître d’armes",
+        "Précepteur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Fléau",
+        "Fouet"
+      ]
     },
     {
       "nom": "Intrigant",
@@ -2048,7 +3596,16 @@ window.COMPETENCES_DATA = {
         "Gwai Liao (Bureaucrate)",
         "Politicien"
       ],
-      "categorie": "Compétences sociales"
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Courtisan",
+        "Diplomate",
+        "Gwai Liao (Bureaucrate)",
+        "Politicien"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Jardinier",
@@ -2061,7 +3618,17 @@ window.COMPETENCES_DATA = {
         "Domestique",
         "Guérisseur"
       ],
-      "categorie": "Compétences rurales"
+      "categorie": "Compétences rurales",
+      "donnent_acces_metiers_base": [
+        "Artisan",
+        "Feng Shui Shi (Géomancien)"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Domestique",
+        "Guérisseur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Jenny",
@@ -2071,7 +3638,14 @@ window.COMPETENCES_DATA = {
         "Jenny"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Courtisane",
+        "Jenny"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Jeu de jambes",
@@ -2089,7 +3663,23 @@ window.COMPETENCES_DATA = {
         "Soldat",
         "Torero"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [
+        "Cadet",
+        "Légionnaire",
+        "Maître d’armes"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Soldat",
+        "Torero"
+      ],
+      "donnent_acces_entrainements_base": [
+        "Arts martiaux défensifs",
+        "Arts martiaux offensifs",
+        "Athlétisme",
+        "Pugilat"
+      ],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Joaillier",
@@ -2098,7 +3688,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Jonglerie",
@@ -2109,7 +3705,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Acrobate"
       ],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [
+        "Bateleur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Acrobate"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Jouer",
@@ -2118,7 +3722,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Recruteur"
       ],
-      "categorie": "Compétences sociales"
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Recruteur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Lancer",
@@ -2131,7 +3741,18 @@ window.COMPETENCES_DATA = {
         "Marine",
         "Piqueux"
       ],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [
+        "Fauconnier"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Marine",
+        "Piqueux"
+      ],
+      "donnent_acces_entrainements_base": [
+        "Athlétisme"
+      ],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Lancer (type d’armes à préciser)",
@@ -2153,7 +3774,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Commandement"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Commandement"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Langage des signes",
@@ -2165,7 +3792,16 @@ window.COMPETENCES_DATA = {
         "Guérillero",
         "Gérant de comptoir"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Cambrioleur",
+        "Escamoteur",
+        "Guérillero",
+        "Gérant de comptoir"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Linguistique",
@@ -2177,7 +3813,16 @@ window.COMPETENCES_DATA = {
         "Guide",
         "Érudit"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Diplomate",
+        "Explorateur",
+        "Guide",
+        "Érudit"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Lire sur les lèvres",
@@ -2187,7 +3832,14 @@ window.COMPETENCES_DATA = {
         "Espion",
         "Shirbaz (magicien)"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Espion",
+        "Shirbaz (magicien)"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Logistique",
@@ -2203,7 +3855,20 @@ window.COMPETENCES_DATA = {
         "Marchand",
         "Receleur"
       ],
-      "categorie": "Compétences commerciales"
+      "categorie": "Compétences commerciales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Armateur",
+        "Caravanier",
+        "Gérant de comptoir",
+        "Intendant",
+        "Légionnaire",
+        "Maistrance",
+        "Marchand",
+        "Receleur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Luthier",
@@ -2212,7 +3877,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Maçon",
@@ -2221,7 +3892,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Maintenance",
@@ -2238,7 +3915,14 @@ window.COMPETENCES_DATA = {
         "Domestique",
         "Moine"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Domestique",
+        "Moine"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Marchandage",
@@ -2266,7 +3950,32 @@ window.COMPETENCES_DATA = {
         "Prospecteur",
         "Recruteur"
       ],
-      "categorie": "Compétences commerciales"
+      "categorie": "Compétences commerciales",
+      "donnent_acces_metiers_base": [
+        "Antiquaire",
+        "Armateur",
+        "Caravanier",
+        "Colporteur",
+        "Fournisseur de drogues",
+        "Guide",
+        "Gérant de comptoir",
+        "Marchand",
+        "Receleur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Apothicaire",
+        "Appréciateur",
+        "Artisan",
+        "Bonne aventure",
+        "Contrebandier",
+        "Explorateur",
+        "Intendant",
+        "Jenny",
+        "Prospecteur",
+        "Recruteur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Masseur",
@@ -2279,7 +3988,17 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Jenny"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan",
+        "Cao Yao (Acupuncteur)",
+        "Courtisane"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Jenny"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Mathématiques",
@@ -2291,7 +4010,16 @@ window.COMPETENCES_DATA = {
         "Professeur",
         "Érudit"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Estudiant",
+        "Ingénieur",
+        "Professeur",
+        "Érudit"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Mèches",
@@ -2301,7 +4029,14 @@ window.COMPETENCES_DATA = {
         "Artificier",
         "Incendiaire"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Artificier",
+        "Incendiaire"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Médications",
@@ -2316,7 +4051,19 @@ window.COMPETENCES_DATA = {
         "Moine",
         "Médecin"
       ],
-      "categorie": "Compétences médicales"
+      "categorie": "Compétences médicales",
+      "donnent_acces_metiers_base": [
+        "Apothicaire"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Cao Yao (Acupuncteur)",
+        "Guérisseur",
+        "Herboriste",
+        "Moine",
+        "Médecin"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Méditation",
@@ -2327,7 +4074,16 @@ window.COMPETENCES_DATA = {
         "Cao Yao (Acupuncteur)",
         "Feng Shui Shi (Géomancien)"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Cao Yao (Acupuncteur)",
+        "Feng Shui Shi (Géomancien)"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Arts martiaux défensifs"
+      ]
     },
     {
       "nom": "Mendicité",
@@ -2338,7 +4094,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Galopin"
       ],
-      "categorie": "Compétences sociales"
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [
+        "Mendiant"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Galopin"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Meunier",
@@ -2347,7 +4111,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Miroitier",
@@ -2356,7 +4126,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Mode",
@@ -2373,7 +4149,21 @@ window.COMPETENCES_DATA = {
         "Gwai Liao (Bureaucrate)",
         "Précepteur"
       ],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [
+        "Courtisan",
+        "Courtisane",
+        "Shirbaz (magicien)"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Comédien",
+        "Dilettante",
+        "Domestique",
+        "Gwai Liao (Bureaucrate)",
+        "Précepteur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Musique (type d’instrument à préciser)",
@@ -2388,7 +4178,19 @@ window.COMPETENCES_DATA = {
         "Dilettante",
         "Skalde"
       ],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [
+        "Artiste"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Barde",
+        "Bateleur",
+        "Courtisane",
+        "Dilettante",
+        "Skalde"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Nager",
@@ -2405,7 +4207,22 @@ window.COMPETENCES_DATA = {
         "Pauvre Chevalier",
         "Pêcheur"
       ],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Baleinier",
+        "Batelier",
+        "Galérien",
+        "Marin",
+        "Marine",
+        "Navigateur",
+        "Pauvre Chevalier",
+        "Pêcheur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Athlétisme"
+      ]
     },
     {
       "nom": "Narrer",
@@ -2423,7 +4240,22 @@ window.COMPETENCES_DATA = {
         "Rahib (Moine)",
         "Skalde"
       ],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [
+        "Bateleur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Artiste",
+        "Chroniqueur",
+        "Comédien",
+        "Guérisseur",
+        "Missionnaire",
+        "Prêtre",
+        "Rahib (Moine)",
+        "Skalde"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Navigation",
@@ -2434,7 +4266,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Maistrance"
       ],
-      "categorie": "Compétences maritimes"
+      "categorie": "Compétences maritimes",
+      "donnent_acces_metiers_base": [
+        "Navigateur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Maistrance"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Numismatique",
@@ -2446,7 +4286,16 @@ window.COMPETENCES_DATA = {
         "Marchand",
         "Érudit"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Collecteur d’impôts",
+        "Faussaire",
+        "Marchand",
+        "Érudit"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Occultisme",
@@ -2462,7 +4311,20 @@ window.COMPETENCES_DATA = {
         "Rahib (Moine)",
         "Érudit"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [
+        "Archéologue"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Alchimiste",
+        "Bonne aventure",
+        "Feng Shui Shi (Géomancien)",
+        "Herboriste",
+        "Rahib (Moine)",
+        "Érudit"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Ordre serré",
@@ -2475,7 +4337,17 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Garde"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [
+        "Cadet",
+        "Légionnaire",
+        "Soldat"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Garde"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Orfèvre",
@@ -2484,7 +4356,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Orientation citadine (Nation à préciser)",
@@ -2511,7 +4389,31 @@ window.COMPETENCES_DATA = {
         "Racketteur",
         "Souteneur"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [
+        "Escamoteur",
+        "Estudiant",
+        "Galopin",
+        "Garde",
+        "Guide",
+        "Incendiaire",
+        "Malandrin",
+        "Mendiant"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Cadet",
+        "Cartographe",
+        "Dilettante",
+        "Détrousseur",
+        "Fouineur",
+        "Fournisseur de drogues",
+        "Garde du corps",
+        "Monte-en-l’air",
+        "Racketteur",
+        "Souteneur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Osselets",
@@ -2520,7 +4422,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Bonne aventure"
       ],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Bonne aventure"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Papetier",
@@ -2532,7 +4440,16 @@ window.COMPETENCES_DATA = {
         "Cartographe",
         "Faussaire"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Cartographe",
+        "Faussaire"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Parade (Type d’armes à préciser)",
@@ -2556,7 +4473,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Apothicaire"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Apothicaire"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Parier",
@@ -2566,7 +4491,14 @@ window.COMPETENCES_DATA = {
         "Arnaqueur",
         "Bagnard"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Arnaqueur",
+        "Bagnard"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Pas de côté",
@@ -2580,7 +4512,19 @@ window.COMPETENCES_DATA = {
         "Maître d’armes",
         "Rasoir"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [
+        "Torero"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Maître d’armes",
+        "Rasoir"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Arts martiaux défensifs",
+        "Athlétisme"
+      ]
     },
     {
       "nom": "Pêche",
@@ -2593,7 +4537,17 @@ window.COMPETENCES_DATA = {
         "Batelier",
         "Paysan"
       ],
-      "categorie": "Compétences maritimes"
+      "categorie": "Compétences maritimes",
+      "donnent_acces_metiers_base": [
+        "Pêcheur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Baleinier",
+        "Batelier",
+        "Paysan"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Perception du temps",
@@ -2613,7 +4567,24 @@ window.COMPETENCES_DATA = {
         "Pêcheur",
         "Éclaireur"
       ],
-      "categorie": "Compétences rurales"
+      "categorie": "Compétences rurales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Alchimiste",
+        "Baleinier",
+        "Batelier",
+        "Bûcheron",
+        "Cocher",
+        "Explorateur",
+        "Incendiaire",
+        "Marin",
+        "Navigateur",
+        "Paysan",
+        "Pêcheur",
+        "Éclaireur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Perruquier",
@@ -2622,7 +4593,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Philosophie",
@@ -2638,7 +4615,20 @@ window.COMPETENCES_DATA = {
         "Moine",
         "Érudit"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [
+        "Feng Shui Shi (Géomancien)",
+        "Prêtre",
+        "Rahib (Moine)"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Estudiant",
+        "Missionnaire",
+        "Moine",
+        "Érudit"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Pickpocket",
@@ -2651,7 +4641,17 @@ window.COMPETENCES_DATA = {
         "Gitan",
         "Shirbaz (magicien)"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [
+        "Escamoteur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Galopin",
+        "Gitan",
+        "Shirbaz (magicien)"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Piéger",
@@ -2664,7 +4664,17 @@ window.COMPETENCES_DATA = {
         "Hors-la-loi",
         "Veneur"
       ],
-      "categorie": "Compétences rurales"
+      "categorie": "Compétences rurales",
+      "donnent_acces_metiers_base": [
+        "Chasseur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Guérillero",
+        "Hors-la-loi",
+        "Veneur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Piloter",
@@ -2677,7 +4687,17 @@ window.COMPETENCES_DATA = {
         "Marin",
         "Navigateur"
       ],
-      "categorie": "Compétences maritimes"
+      "categorie": "Compétences maritimes",
+      "donnent_acces_metiers_base": [
+        "Batelier",
+        "Maistrance"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Marin",
+        "Navigateur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Pique-assiette",
@@ -2690,7 +4710,17 @@ window.COMPETENCES_DATA = {
         "Dilettante",
         "Rahib (Moine)"
       ],
-      "categorie": "Compétences sociales"
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Arnaqueur",
+        "Artiste",
+        "Courtisan",
+        "Dilettante",
+        "Rahib (Moine)"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Pister",
@@ -2705,7 +4735,19 @@ window.COMPETENCES_DATA = {
         "Piqueux",
         "Veneur"
       ],
-      "categorie": "Compétences rurales"
+      "categorie": "Compétences rurales",
+      "donnent_acces_metiers_base": [
+        "Éclaireur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Chasseur",
+        "Chasseur de primes",
+        "Fauconnier",
+        "Piqueux",
+        "Veneur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Poison",
@@ -2722,7 +4764,22 @@ window.COMPETENCES_DATA = {
         "Herboriste",
         "Sarbacane"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [
+        "Alchimiste"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Apothicaire",
+        "Artificier",
+        "Assassin",
+        "Courtisane",
+        "Fournisseur de drogues",
+        "Herboriste"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Sarbacane"
+      ]
     },
     {
       "nom": "Politique",
@@ -2739,7 +4796,21 @@ window.COMPETENCES_DATA = {
         "Politicien",
         "Professeur"
       ],
-      "categorie": "Compétences sociales"
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [
+        "Diplomate"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Avoué",
+        "Chevalier",
+        "Gwai Liao (Bureaucrate)",
+        "Intendant",
+        "Juge d’armes",
+        "Politicien",
+        "Professeur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Potamologie (fleuve à préciser)",
@@ -2751,7 +4822,16 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Prospecteur"
       ],
-      "categorie": "Compétences maritimes"
+      "categorie": "Compétences maritimes",
+      "donnent_acces_metiers_base": [
+        "Batelier",
+        "Pêcheur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Prospecteur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Potier",
@@ -2760,7 +4840,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Poudrier",
@@ -2771,7 +4857,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Artificier"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Artificier"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Pousser (bâton)",
@@ -2780,7 +4874,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Bâton"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Bâton"
+      ]
     },
     {
       "nom": "Premiers secours",
@@ -2801,7 +4901,25 @@ window.COMPETENCES_DATA = {
         "Missionnaire",
         "Prêtre"
       ],
-      "categorie": "Compétences médicales"
+      "categorie": "Compétences médicales",
+      "donnent_acces_metiers_base": [
+        "Acolyte",
+        "Apothicaire",
+        "Cao Yao (Acupuncteur)",
+        "Guérisseur",
+        "Herboriste",
+        "Médecin",
+        "Pauvre Chevalier"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Bourreau",
+        "Fournisseur de drogues",
+        "Maître d’armes",
+        "Missionnaire",
+        "Prêtre"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Prestidigitation",
@@ -2812,7 +4930,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Shirbaz (magicien)"
       ],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [
+        "Bateleur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Shirbaz (magicien)"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Prise",
@@ -2824,7 +4950,16 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Garde du corps"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Garde du corps"
+      ],
+      "donnent_acces_entrainements_base": [
+        "Arts martiaux défensifs",
+        "Lutte"
+      ],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Projection",
@@ -2833,7 +4968,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Arts martiaux défensifs"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Arts martiaux défensifs"
+      ]
     },
     {
       "nom": "Qui-vive",
@@ -2867,7 +5008,38 @@ window.COMPETENCES_DATA = {
         "Soldat",
         "Éclaireur"
       ],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [
+        "Bagnard",
+        "Galérien",
+        "Garde",
+        "Garde du corps",
+        "Incendiaire",
+        "Malandrin",
+        "Maître d’armes",
+        "Piqueux",
+        "Souteneur",
+        "Torero"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Acolyte",
+        "Archéologue",
+        "Bourreau",
+        "Cambrioleur",
+        "Caravanier",
+        "Chasseur de primes",
+        "Chevalier",
+        "Cocher",
+        "Commandement",
+        "Espion",
+        "Guérillero",
+        "Légionnaire",
+        "Pauvre Chevalier",
+        "Soldat",
+        "Éclaireur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Réception de charge",
@@ -2877,7 +5049,14 @@ window.COMPETENCES_DATA = {
         "Arme d’hast",
         "Lances"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Arme d’hast",
+        "Lances"
+      ]
     },
     {
       "nom": "Recharger (Type d’armes à préciser)",
@@ -2926,7 +5105,28 @@ window.COMPETENCES_DATA = {
         "Moine",
         "Professeur"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [
+        "Alchimiste",
+        "Archéologue",
+        "Chroniqueur",
+        "Faussaire",
+        "Gwai Liao (Bureaucrate)",
+        "Juge d’armes",
+        "Érudit"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Appréciateur",
+        "Avoué",
+        "Cao Yao (Acupuncteur)",
+        "Estudiant",
+        "Ingénieur",
+        "Maître d’armes",
+        "Moine",
+        "Professeur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Régisseur",
@@ -2936,7 +5136,14 @@ window.COMPETENCES_DATA = {
         "Intendant"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences commerciales"
+      "categorie": "Compétences commerciales",
+      "donnent_acces_metiers_base": [
+        "Artisan",
+        "Intendant"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Retour à l’envoyeur",
@@ -2945,7 +5152,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Grenade"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Grenade"
+      ]
     },
     {
       "nom": "Roulé-boulé",
@@ -2956,7 +5169,16 @@ window.COMPETENCES_DATA = {
         "Athlétisme",
         "Torero"
       ],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Acrobate",
+        "Torero"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Athlétisme"
+      ]
     },
     {
       "nom": "Sabotier",
@@ -2965,7 +5187,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Saisir un objet",
@@ -2974,7 +5202,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Fouet"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Fouet"
+      ]
     },
     {
       "nom": "Sauter",
@@ -2994,7 +5228,25 @@ window.COMPETENCES_DATA = {
         "Monte-en-l’air",
         "Pêcheur"
       ],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [
+        "Marine"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Baleinier",
+        "Cocher",
+        "Escamoteur",
+        "Hors-la-loi",
+        "Marin",
+        "Monte-en-l’air",
+        "Pêcheur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Arts martiaux défensifs",
+        "Arts martiaux offensifs",
+        "Athlétisme"
+      ]
     },
     {
       "nom": "Sauter en selle",
@@ -3004,7 +5256,15 @@ window.COMPETENCES_DATA = {
         "Cavalier",
         "Cocher"
       ],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Cocher"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Cavalier"
+      ]
     },
     {
       "nom": "Savonnier",
@@ -3015,7 +5275,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Apothicaire"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Apothicaire"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Sciences de la nature",
@@ -3030,7 +5298,19 @@ window.COMPETENCES_DATA = {
         "Prospecteur",
         "Érudit"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Alchimiste",
+        "Artificier",
+        "Estudiant",
+        "Incendiaire",
+        "Professeur",
+        "Prospecteur",
+        "Érudit"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Sculpture",
@@ -3039,7 +5319,13 @@ window.COMPETENCES_DATA = {
         "Artiste"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [
+        "Artiste"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Se balancer",
@@ -3048,7 +5334,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Fouet"
       ],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Fouet"
+      ]
     },
     {
       "nom": "Se dégager",
@@ -3058,7 +5350,14 @@ window.COMPETENCES_DATA = {
         "Arts martiaux défensifs",
         "Lutte"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Arts martiaux défensifs",
+        "Lutte"
+      ]
     },
     {
       "nom": "Séduction",
@@ -3075,7 +5374,21 @@ window.COMPETENCES_DATA = {
         "Recruteur",
         "Shirbaz (magicien)"
       ],
-      "categorie": "Compétences sociales"
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [
+        "Courtisane",
+        "Jenny",
+        "Souteneur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Artiste",
+        "Courtisan",
+        "Espion",
+        "Recruteur",
+        "Shirbaz (magicien)"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Sellier",
@@ -3086,7 +5399,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Palefrenier"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Palefrenier"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Sens de l’orientation",
@@ -3112,7 +5433,30 @@ window.COMPETENCES_DATA = {
         "Pêcheur",
         "Veneur"
       ],
-      "categorie": "Compétences rurales"
+      "categorie": "Compétences rurales",
+      "donnent_acces_metiers_base": [
+        "Colporteur",
+        "Explorateur",
+        "Gitan",
+        "Guide",
+        "Prospecteur",
+        "Éclaireur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Archéologue",
+        "Bûcheron",
+        "Caravanier",
+        "Cartographe",
+        "Cocher",
+        "Fauconnier",
+        "Hors-la-loi",
+        "Missionnaire",
+        "Paysan",
+        "Pêcheur",
+        "Veneur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Sens des affaires",
@@ -3127,7 +5471,19 @@ window.COMPETENCES_DATA = {
         "Marchand",
         "Receleur"
       ],
-      "categorie": "Compétences commerciales"
+      "categorie": "Compétences commerciales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Armateur",
+        "Arnaqueur",
+        "Artisan",
+        "Colporteur",
+        "Malandrin",
+        "Marchand",
+        "Receleur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Serrurier",
@@ -3138,7 +5494,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Cambrioleur"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Cambrioleur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Service",
@@ -3147,7 +5511,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Artisan"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Artisan"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Sher da Shi (Charmeur de serpents)",
@@ -3156,7 +5526,13 @@ window.COMPETENCES_DATA = {
         "Bateleur"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [
+        "Bateleur"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Sifflet",
@@ -3165,7 +5541,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Piqueux"
       ],
-      "categorie": "Compétences rurales"
+      "categorie": "Compétences rurales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Piqueux"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Signes de piste",
@@ -3180,7 +5562,19 @@ window.COMPETENCES_DATA = {
         "Veneur",
         "Éclaireur"
       ],
-      "categorie": "Compétences rurales"
+      "categorie": "Compétences rurales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Bûcheron",
+        "Chasseur",
+        "Fauconnier",
+        "Gitan",
+        "Guérillero",
+        "Veneur",
+        "Éclaireur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Sincérité",
@@ -3203,7 +5597,27 @@ window.COMPETENCES_DATA = {
         "Gwai Liao (Bureaucrate)",
         "Gérant de comptoir"
       ],
-      "categorie": "Compétences sociales"
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [
+        "Avoué",
+        "Bonne aventure",
+        "Gitan",
+        "Médecin",
+        "Recruteur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Bourreau",
+        "Chroniqueur",
+        "Courtisan",
+        "Courtisane",
+        "Diplomate",
+        "Domestique",
+        "Guide",
+        "Gwai Liao (Bureaucrate)",
+        "Gérant de comptoir"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Soin des animaux (type d’animal à préciser)",
@@ -3221,7 +5635,22 @@ window.COMPETENCES_DATA = {
         "Pauvre Chevalier",
         "Torero"
       ],
-      "categorie": "Compétences rurales"
+      "categorie": "Compétences rurales",
+      "donnent_acces_metiers_base": [
+        "Fauconnier",
+        "Palefrenier",
+        "Piqueux"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Cadet",
+        "Chasseur",
+        "Gitan",
+        "Guérisseur",
+        "Pauvre Chevalier",
+        "Torero"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Souffleur de verre",
@@ -3233,7 +5662,16 @@ window.COMPETENCES_DATA = {
         "Alchimiste",
         "Apothicaire"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Alchimiste",
+        "Apothicaire"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Soulever",
@@ -3250,7 +5688,22 @@ window.COMPETENCES_DATA = {
         "Palefrenier",
         "Pêcheur"
       ],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [
+        "Bûcheron"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Acrobate",
+        "Artificier",
+        "Artisan",
+        "Galérien",
+        "Palefrenier",
+        "Pêcheur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Athlétisme"
+      ]
     },
     {
       "nom": "Spectacle de rue",
@@ -3261,7 +5714,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Bateleur"
       ],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [
+        "Acrobate"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Bateleur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Stratégie",
@@ -3270,7 +5731,13 @@ window.COMPETENCES_DATA = {
         "Commandement"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [
+        "Commandement"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Survie",
@@ -3289,7 +5756,23 @@ window.COMPETENCES_DATA = {
         "Légionnaire",
         "Éclaireur"
       ],
-      "categorie": "Compétences rurales"
+      "categorie": "Compétences rurales",
+      "donnent_acces_metiers_base": [
+        "Galopin",
+        "Guérillero",
+        "Missionnaire",
+        "Prospecteur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Bûcheron",
+        "Chasseur",
+        "Explorateur",
+        "Hors-la-loi",
+        "Légionnaire",
+        "Éclaireur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Tâches domestiques",
@@ -3304,7 +5787,19 @@ window.COMPETENCES_DATA = {
         "Pauvre Chevalier"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Acolyte",
+        "Cadet",
+        "Domestique",
+        "Légionnaire",
+        "Moine",
+        "Palefrenier",
+        "Pauvre Chevalier"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Tactique",
@@ -3318,7 +5813,18 @@ window.COMPETENCES_DATA = {
         "Légionnaire",
         "Soldat"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [
+        "Commandement"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Chevalier",
+        "Guérillero",
+        "Légionnaire",
+        "Soldat"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Tailleur",
@@ -3329,7 +5835,15 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Pauvre Chevalier"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Pauvre Chevalier"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Tailleur de pierre",
@@ -3338,7 +5852,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Tanner",
@@ -3350,7 +5870,16 @@ window.COMPETENCES_DATA = {
         "Chasseur",
         "Fauconnier"
       ],
-      "categorie": "Compétences rurales"
+      "categorie": "Compétences rurales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Chasseur",
+        "Fauconnier"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Teinturier",
@@ -3359,7 +5888,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Théologie",
@@ -3377,7 +5912,22 @@ window.COMPETENCES_DATA = {
         "Rahib (Moine)",
         "Érudit"
       ],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [
+        "Moine",
+        "Prêtre"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Estudiant",
+        "Feng Shui Shi (Géomancien)",
+        "Guérisseur",
+        "Missionnaire",
+        "Professeur",
+        "Rahib (Moine)",
+        "Érudit"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Tir à l’arc monté",
@@ -3386,7 +5936,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Arc"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Arc"
+      ]
     },
     {
       "nom": "Tir d’adresse",
@@ -3404,7 +5960,16 @@ window.COMPETENCES_DATA = {
         "Assassin",
         "Fronde"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Assassin"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Arc",
+        "Fronde"
+      ]
     },
     {
       "nom": "Tirer (Type d’armes à préciser)",
@@ -3442,7 +6007,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Tonnelier",
@@ -3452,7 +6023,14 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artificier",
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Tour de force",
@@ -3461,7 +6039,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Acrobate"
       ],
-      "categorie": "Compétences artistiques"
+      "categorie": "Compétences artistiques",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Acrobate"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Tricher",
@@ -3471,7 +6055,14 @@ window.COMPETENCES_DATA = {
         "Arnaqueur",
         "Galopin"
       ],
-      "categorie": "Compétences larronnes"
+      "categorie": "Compétences larronnes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Arnaqueur",
+        "Galopin"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Uppercut",
@@ -3480,7 +6071,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Pugilat"
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Pugilat"
+      ]
     },
     {
       "nom": "Valet",
@@ -3492,7 +6089,16 @@ window.COMPETENCES_DATA = {
         "Acolyte",
         "Soldat"
       ],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Cadet"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Acolyte",
+        "Soldat"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Vannier",
@@ -3501,7 +6107,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences artisanales"
+      "categorie": "Compétences artisanales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Vétérinaire",
@@ -3513,7 +6125,16 @@ window.COMPETENCES_DATA = {
         "Herboriste",
         "Médecin"
       ],
-      "categorie": "Compétences médicales"
+      "categorie": "Compétences médicales",
+      "donnent_acces_metiers_base": [
+        "Veneur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Herboriste",
+        "Médecin"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Vigneron",
@@ -3522,7 +6143,13 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences rurales"
+      "categorie": "Compétences rurales",
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Virevolte",
@@ -3531,7 +6158,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Bâton"
       ],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Bâton"
+      ]
     },
     {
       "nom": "Voltige",
@@ -3540,7 +6173,13 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Cavalier"
       ],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": [
+        "Cavalier"
+      ]
     },
     {
       "nom": "Duperie",
@@ -3557,7 +6196,20 @@ window.COMPETENCES_DATA = {
         "Mendiant",
         "Shirbaz (magicien)"
       ],
-      "variantes": []
+      "variantes": [],
+      "donnent_acces_metiers_base": [
+        "Arnaqueur",
+        "Gitan"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Détrousseur",
+        "Espion",
+        "Malandrin",
+        "Mendiant",
+        "Shirbaz (magicien)"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     }
   ]
 };

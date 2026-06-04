@@ -333,21 +333,83 @@
       ]));
     }
 
-    const base = c.donnent_acces_base || [];
-    container.appendChild(el("div", { class: "detail-section" }, [
-      el("h3", null, "Spécialisations qui donnent Base"),
-      base.length
-        ? el("p", { class: "specialisations-line" }, inlineSpecialisations(base))
-        : el("p", { class: "avantage-vide" }, "Aucune"),
-    ]));
+    // 4 sources possibles : métiers/entraînements × base/avancée.
+    // On utilise les listes séparées si présentes, sinon on retombe sur le
+    // donnent_acces_base/_avancee fusionné (rétro-compat).
+    const hasSeparated = (
+      Array.isArray(c.donnent_acces_metiers_base) ||
+      Array.isArray(c.donnent_acces_entrainements_base)
+    );
+    let metiers_b, metiers_a, ent_b, ent_a;
+    if (hasSeparated) {
+      metiers_b = c.donnent_acces_metiers_base || [];
+      metiers_a = c.donnent_acces_metiers_avancee || [];
+      ent_b     = c.donnent_acces_entrainements_base || [];
+      ent_a     = c.donnent_acces_entrainements_avancee || [];
+    } else {
+      // Fallback : split l'ancienne liste fusionnée via findSpecialisation
+      const splitMixed = (lst) => {
+        const m = [], e = [];
+        (lst || []).forEach(n => {
+          const f = findSpecialisation(n);
+          if (f && f.type === "entrainement") e.push(n);
+          else m.push(n);
+        });
+        return [m, e];
+      };
+      [metiers_b, ent_b] = splitMixed(c.donnent_acces_base);
+      [metiers_a, ent_a] = splitMixed(c.donnent_acces_avancee);
+    }
 
-    const av = c.donnent_acces_avancee || [];
-    container.appendChild(el("div", { class: "detail-section" }, [
-      el("h3", null, "Spécialisations qui donnent Avancée"),
-      av.length
-        ? el("p", { class: "specialisations-line" }, inlineSpecialisations(av))
-        : el("p", { class: "avantage-vide" }, "Aucune"),
-    ]));
+    // Bloc "Base" : 2 sous-sections (Métiers + Entraînements), masquées si vides
+    if (metiers_b.length || ent_b.length) {
+      const blocBase = el("div", { class: "detail-section" }, [
+        el("h3", null, "Donne accès en Base"),
+      ]);
+      if (metiers_b.length) {
+        blocBase.appendChild(el("h4", { class: "acces-sous-titre" },
+          "Métiers (" + metiers_b.length + ")"));
+        blocBase.appendChild(el("p", { class: "specialisations-line" },
+          inlineSpecialisations(metiers_b)));
+      }
+      if (ent_b.length) {
+        blocBase.appendChild(el("h4", { class: "acces-sous-titre" },
+          "Entraînements (" + ent_b.length + ")"));
+        blocBase.appendChild(el("p", { class: "specialisations-line" },
+          inlineSpecialisations(ent_b)));
+      }
+      container.appendChild(blocBase);
+    } else {
+      container.appendChild(el("div", { class: "detail-section" }, [
+        el("h3", null, "Donne accès en Base"),
+        el("p", { class: "avantage-vide" }, "Aucune source"),
+      ]));
+    }
+
+    // Bloc "Avancée" : idem
+    if (metiers_a.length || ent_a.length) {
+      const blocAv = el("div", { class: "detail-section" }, [
+        el("h3", null, "Donne accès en Avancée"),
+      ]);
+      if (metiers_a.length) {
+        blocAv.appendChild(el("h4", { class: "acces-sous-titre" },
+          "Métiers (" + metiers_a.length + ")"));
+        blocAv.appendChild(el("p", { class: "specialisations-line" },
+          inlineSpecialisations(metiers_a)));
+      }
+      if (ent_a.length) {
+        blocAv.appendChild(el("h4", { class: "acces-sous-titre" },
+          "Entraînements (" + ent_a.length + ")"));
+        blocAv.appendChild(el("p", { class: "specialisations-line" },
+          inlineSpecialisations(ent_a)));
+      }
+      container.appendChild(blocAv);
+    } else {
+      container.appendChild(el("div", { class: "detail-section" }, [
+        el("h3", null, "Donne accès en Avancée"),
+        el("p", { class: "avantage-vide" }, "Aucune source"),
+      ]));
+    }
 
     if (c.variantes && c.variantes.length) {
       const section = el("div", { class: "detail-section" }, [

@@ -182,6 +182,15 @@ p { margin: 0 0 0.6em; }
   text-decoration: line-through dotted rgba(0,0,0,0.3);
 }
 
+/* Sous-titre 'Métiers (N)' / 'Entraînements (N)' sur fiche compétence. */
+.acces-sous-titre {
+  margin: 0.6rem 0 0.2rem;
+  font-size: 0.95rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+.acces-sous-titre:first-child { margin-top: 0; }
+
 /* Choix de compétences dans une fiche métier ('Choisir N parmi : …'). */
 .competence-choix {
   margin-top: 0.5rem;
