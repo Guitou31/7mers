@@ -33,6 +33,7 @@
         "Acrobate"
       ],
       "donnent_acces_avancee": [
+        "Athlétisme",
         "Monte-en-l’air"
       ],
       "categorie": "Compétences physiques"
@@ -93,6 +94,9 @@
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Acrobate",
+        "Arts martiaux défensifs",
+        "Arts martiaux offensifs",
+        "Athlétisme",
         "Hors-la-loi",
         "Monte-en-l’air"
       ],
@@ -136,7 +140,9 @@
     {
       "nom": "Assommer",
       "description": "Les matraques ont plus pour but d’assommer un adversaire que de lui causer de graves blessures. L’assaillant effectue un jet d’Assommer + Gaillardise contre le ND de la victime. En cas de réussite, la victime effectue un jet de Gaillardise avec un ND égal à trois fois les dommages infligés. Si ce jet est un échec, la victime est alors inconsciente. Si le jet est réussie, elle encaisse les dommages et peut continuer le combat. Si l’attaque est effectuée sans que la victime en soit consciente (embuscade, etc.), le ND du jet d’encaissement est incrémenté de deux augmentations.",
-      "donnent_acces_base": [],
+      "donnent_acces_base": [
+        "Masses"
+      ],
       "donnent_acces_avancee": [
         "Détrousseur",
         "Recruteur",
@@ -160,7 +166,9 @@
       "nom": "Atemi",
       "description": "Cette attaque à mains nues inflige 1g1 dé de dommages, mais augmente de 5 le ND que vous essayez d’atteindre. Vous devez déclarer votre intention avant d’effectuer votre jet, et utiliser cette compétence à la place de votre compétence d’attaque normale.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Arts martiaux offensifs"
+      ],
       "categorie": "Compétences martiales"
     },
     {
@@ -218,6 +226,7 @@
       "description": "Semblable au Coup aux yeux, cette attaque a pour objectif d’aveugler et d’embrouiller temporairement votre adversaire. Pour l’exploiter, vous devez tenir une cape dans votre main non directrice. Vous déclarez ensuite l’utilisation de cette compétence et effectuez votre jet de dés en l’utilisant comme compétence d’attaque. Si cette dernière est couronnée de succès, vous n’infligez aucun dommage mais obligez votre cible à augmenter son dé d’action suivant de deux points, plus 1 par augmentation réussie. Si le dé d’action passe ainsi au-dessus de 10, il disparaît.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
+        "Cape",
         "Torero"
       ],
       "categorie": "Compétences martiales"
@@ -250,6 +259,7 @@
       "description": "Un Blocage d’articulation est un type spécial de prise qui peut être utilisé pour soumettre un opposant en appliquant une pression sur l’une de ses articulations de telle manière que s’il cherche à se dégager, il risque de se blesser lui-même. Pour utiliser cette attaque, déclarez que vous tentez d’effectuer un Blocage d’articulation sur votre adversaire et précisez le type de blocage que vous souhaitez obtenir. Effectuez un jet de Finesse + Blocage d’articulation contre le ND de votre cible, en prenant autant d’augmentations que nécessaire pour atteindre l’articulation visée comme s’il s’agissait d’une attaque localisée classique. Si vous réussissez, vous le bloquez momentanément. Tant qu’il est coincé de cette manière, votre ennemi peut seulement tenter de briser votre prise ou effectuer une action qui ne nécessite que peu de mouvement, comme appuyer sur la gâchette d’un pistolet. Contrairement à une Prise, votre opposant ne peut pas utiliser un Coup de tête contre vous. Pour tenter de se libérer de votre prise, il doit dépenser une action (rappelez-vous des règles d’interruption et de mise en réserve), et effectuer un jet d’opposition avec au choix Finesse + Prise ou Finesse + Blocage d’articulation contre votre Finesse + Blocage d’articulation. S’il gagne, la prise est rompue; sinon, elle persiste. Pour votre part, vous pouvez dépenser une action (toujours suivant les règles d’interruption et de mise en réserve) pour raffermir votre prise. Chaque action dépensée vous donne une Augmentation Gratuite lorsque votre adversaire tentera de se libérer de votre blocage. La compétence Se dégager l’aide en annulant ces augmentations comme pour la compétence Prise. Quand votre opposant échoue en tentant de se libérer, il reçoit des dommages en fonction du type de Blocage d’articulation que vous lui appliquez, et votre prise est maintenue. S’il réussit à se libérer, il reçoit les dégâts et n’est plus bloqué. S’il utilise autant d’augmentations que vous avez dû en prendre pour localiser votre blocage, il se libère et ne reçoit aucune blessure. Il est également possible de viser la tête avec cette prise, il s’agit alors d’une guillotine, mais elle est particulièrement difficile à réussir.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
+        "Arts martiaux défensifs",
         "Cao Yao (Acupuncteur)",
         "Garde du corps"
       ],
@@ -412,6 +422,7 @@
       "description": "Cette compétence permet, à certaines conditions, de briser un membre à un adversaire. Votre héros doit tout d’abord être parvenu à empoigner son adversaire (voir la compétence Prise), puis vous devez désigner le membre qu’il va tenter de briser et enfin faire un jet d’attaque en utilisant cette compétence. Le ND pour être touché de la victime est augmenté de 10 lorsque vous utilisez cette compétence, mais si l’attaque porte, vous lui infligez automatiquement une blessure grave au lieu de faire un jet de dommage. La prise en cours est brisée si ce jet de compétence est réussi.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
+        "Lutte",
         "Racketteur"
       ],
       "categorie": "Compétences martiales"
@@ -518,7 +529,9 @@
       "nom": "Claque sur l’oreille",
       "description": "Cette compétence permet d’asséner un coup sec sur l’oreille d’un adversaire, de manière à le désorienter et à temporairement lui faire perdre le sens de l’équilibre. Déclarez votre intention, puis faites votre jet d’attaque en utilisant cette compétence. Le ND pour être touché de votre adversaire est augmenté de 15 lorsque vous utilisez cette compétence, mais si l’attaque porte (si elle n’est donc pas évitée par une défense active), votre héros inflige automatiquement la perte d’une action à son adversaire au lieu de faire un jet de dommages.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Pugilat"
+      ],
       "categorie": "Compétences martiales"
     },
     {
@@ -889,7 +902,9 @@
       "nom": "Corps à corps",
       "description": "Cette compétence recouvre l’art du combat rapproché avec une arme. Vous devez annoncer que votre PJ utilise cette compétence à la place de sa compétence d’attaque habituelle. Si l’attaque porte, vous n’infligez que 0g1 de dommages en attaque à mains nues, mais votre adversaire peut tomber à terre. Vous devez pour cela lui infliger au moins 5 x Gaillardise points de dommages. S’il chute, votre adversaire perd toutes ses actions gardées et il devra dépenser une action pour se relever. Au sol, ses défenses actives et passives sont basées sur la compétence Roulé-boulé. S’il essaie d’attaquer en étant au sol, il ne peut le faire qu’en utilisant une augmentation (à moins d’utiliser la compétence coup de pied) et le MJ est le seul juge de ce qui est possible ou non (pas de Corps à corps ou de Coup de pommeau par exemple). Pendant la phase au cours de laquelle il se relève, sa défense passive tombe à 5, mais il peut tout de même effectuer une défense active avec deux augmentations. S’il subit une blessure grave alors qu’il se relève, il retombe aussitôt. Cette action ne peut permettre d’envoyer au sol un adversaire dont le poids est au moins trois fois supérieur au vôtre.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Arts martiaux offensifs"
+      ],
       "categorie": "Compétences martiales"
     },
     {
@@ -916,28 +931,38 @@
       "nom": "Coup à la gorge",
       "description": "Déclarez votre intention avant d’utiliser cette compétence, puis faites votre jet d’attaque en utilisant cette compétence. Le ND pour être touché de l’adversaire de votre héros est augmenté de 15 lorsque vous utilisez cette compétence, mais si l’attaque porte (et n’est donc pas évitée par une défense active), vous infligez automatiquement une blessure grave à l’adversaire au lieu de faire un jet de dommages. Vous pouvez utiliser cette compétence avec tout ce qui vous tombe sous la main, ce qui inclut une arme généralement utilisée pour des coups plus “nobles”, comme la rapière ou la main gauche, mais cela ne change en rien les dommages. On reste sur une blessure grave, que l’attaque (qui de toute façon est basée sur la compétence Coup à la gorge) soit effectuée avec une arme ou à mains nues.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Arts martiaux offensifs",
+        "Combat de rue"
+      ],
       "categorie": "Compétences martiales"
     },
     {
       "nom": "Coup aux yeux",
       "description": "Cette compétence permet de porter un coup destiné à aveugler temporairement un adversaire (le héros doit obligatoirement avoir une main libre pour pouvoir l’utiliser). Vous devez déclarer votre intention avant de faire votre jet d’attaque en utilisant cette compétence. Si l’attaque porte, l’adversaire de votre héros subira 0g1 dé de dommages (mains nues) et devra augmenter la valeur de son prochain dé d’action de 1, plus 1 par augmentation utilisée. Si la valeur du dé dépasse 10, le dé est abandonné.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Combat de rue"
+      ],
       "categorie": "Compétences martiales"
     },
     {
       "nom": "Coup de pied",
       "description": "Un coup de pied inflige 0g2, mais le ND pour toucher est augmenté de 10. Vous devez déclarer votre intention avant de faire votre jet d’attaque en utilisant cette compétence.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Arts martiaux offensifs",
+        "Combat de rue"
+      ],
       "categorie": "Compétences martiales"
     },
     {
       "nom": "Coup de tête",
       "description": "Ce coup peut handicaper terriblement l’adversaire du héros, mais ce dernier devra aussi accepter de souffrir. Vous ne pouvez attaquer de la sorte que si votre héros emprisonne son adversaire par une prise ou l’inverse. Si l’attaque porte, votre héros inflige 3g1 dés de dommages à son adversaire et encaisse 1g1 pour lui- même (n’oubliez pas d’ajouter son rang de Gaillardise à ce jet). Si l’adversaire tenait votre héros dans sa prise et subit une blessure grave à la suite de ce coup de tête, sa prise est brisée. Attention, n’oubliez pas qu’en ce qui concerne votre personnage, vous avez tout intérêt à choisir le dé de dommages le plus faible afin d’encaisser le moins de dégâts possibles.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Lutte"
+      ],
       "categorie": "Compétences martiales"
     },
     {
@@ -947,6 +972,7 @@
         "Soldat"
       ],
       "donnent_acces_avancee": [
+        "Athlétisme",
         "Galérien",
         "Légionnaire",
         "Piqueux",
@@ -958,6 +984,7 @@
       "nom": "Course de vitesse",
       "description": "Quand le danger est trop grand, le héros peut courir à une vitesse phénoménale. Il ne pourra pas maintenir un tel rythme très longtemps, mais durant ce court laps de temps, peu d’hommes sont capables de rivaliser avec lui. La durée maximale d’une course de vitesse est de (rang de Gaillardise) tours de jeu. Au-delà de cette limite physique, c’est la compétence Course d’endurance qui prend le relais. Lorsqu’il court, cette compétence lui sert de défense passive.",
       "donnent_acces_base": [
+        "Athlétisme",
         "Escamoteur",
         "Racketteur",
         "Torero"
@@ -1120,7 +1147,9 @@
       "nom": "Désarmer (Mains nues)",
       "description": "Vous ne pouvez utiliser cette compétence que si l’attaque de votre adversaire vient d’échouer contre votre défense passive. Utilisez un dé d’action afin d’effectuer un jet d’opposition entre votre Gaillardise + Désarmer et Gaillardise + Attaque (Arme utilisée) de votre adversaire. Si vous remportez l’opposition, vous lui faites sauter son arme des mains. Si vous remportez l’opposition en utilisant deux augmentations, vous pouvez même vous retrouver avec l’arme de votre adversaire en main si vous le désirez.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Arts martiaux défensifs"
+      ],
       "categorie": "Compétences martiales"
     },
     {
@@ -1189,7 +1218,10 @@
     {
       "nom": "Direct",
       "description": "Lorsque vous utilisez cette compétence, votre héros effectue deux attaques à mains nues rapides contre son adversaire. Vous devez déclarer votre intention, puis effectuer vos deux jets d’attaque en utilisant cette compétence. Le ND pour toucher l’adversaire de votre héros est augmenté de 10 lorsque vous utilisez cette compétence.",
-      "donnent_acces_base": [],
+      "donnent_acces_base": [
+        "Arts martiaux offensifs",
+        "Pugilat"
+      ],
       "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
@@ -1242,7 +1274,9 @@
       "nom": "Double parade (Armes exotiques jumelées)",
       "description": "Une double parade s’effectue en croisant vos armes devant vous. Vous devez déclarer que vous utilisez cette compétence au lieu de votre compétence de Parade pour votre Défense Active. Vous devez alors prendre deux Augmentations pour faire votre jet. Un succès vous donne un dé d’Héroïsme, qui peut être utilisé pendant un nombre de phases égal à votre rang de Double Parade. Ce dé est perdu si vous ne l’utilisez pas avant la fin de ce délai.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Armes exotiques jumelées"
+      ],
       "categorie": "Compétences martiales"
     },
     {
@@ -1256,6 +1290,7 @@
       ],
       "donnent_acces_avancee": [
         "Bateleur",
+        "Cavalier",
         "Chasseur",
         "Cocher",
         "Paysan"
@@ -1359,7 +1394,9 @@
     {
       "nom": "Emmêler",
       "description": "Vous utilisez votre fouet pour qu’il s’enroule autour du bras de votre adversaire afin de le gêner (surtout si vous tirez dessus). On ne peut se défendre contre un emmêlement par une parade (à moins de vouloir perdre son arme, en effet, il suffira au fouetteur de réussir un jet d’opposition de Gaillardise + Emmêler contre la Gaillardise du pareur pour lui arracher son arme dans ces circonstances). Bien entendu, on ne peut emmêler qu’une seule personne à la fois. Celle-ci se bat alors avec 1 dé de moins (à jeter et à garder), voire 2 dés si le fouetteur ne fait rien d’autre que tirer sur la poignée du fouet.",
-      "donnent_acces_base": [],
+      "donnent_acces_base": [
+        "Fouet"
+      ],
       "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
@@ -1367,7 +1404,9 @@
       "nom": "Empêtrer",
       "description": "Vous pouvez utiliser votre filet en le jetant sur votre adversaire ; ainsi empêtré, il subit un malus de 2 dés (à jeter et à garder) sur toutes ses défenses et ne peut plus attaquer. Il peut essayer de l’éviter en réussissant un jet de défense active, sinon, il se retrouve empêtré dans les rets. Un jet de Finesse contre un ND de 30 et la dépense d’un dé d’action permettront à la victime de se sortir de ce guêpier.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Filet"
+      ],
       "categorie": "Compétences martiales"
     },
     {
@@ -1398,6 +1437,8 @@
       "description": "Lorsque le navire est ballotté par la tempête et que le capitaine ordonne au héros de monter dans le gréement pour soulager le mât, cette compétence lui sauvera peut-être la vie. Dit simplement, elle évite de tomber dans des circonstances délicates. Cette compétence est utilisée comme compétence de défense passive par ceux qui combattent à bord d’un navire en mer ou qui se retrouvent dans une situation d’équilibre instable. Le MJ vous indiquera le ND des jets correspondant à certaines actions effectuées à bord d’un navire en mer ou sur des surfaces instables.",
       "donnent_acces_base": [
         "Acrobate",
+        "Arts martiaux défensifs",
+        "Arts martiaux offensifs",
         "Baleinier",
         "Cocher",
         "Galérien",
@@ -1450,6 +1491,7 @@
       "nom": "Escalade",
       "description": "Le héros trouve naturellement les endroits où s’agripper des mains et des pieds lors d’une ascension, sait utiliser du matériel d’escalade et déterminer la meilleure voie d’accès à une hauteur. S’il est attaqué lors d’une ascension, cette compétence lui servira de compétence de défense passive.",
       "donnent_acces_base": [
+        "Athlétisme",
         "Bûcheron",
         "Hors-la-loi",
         "Marin",
@@ -1467,7 +1509,9 @@
     {
       "nom": "Esquive",
       "description": "Plutôt que d’attaquer vos adversaires, vous préférez retourner leurs attaques contre eux. Au lieu de bloquer une attaque, vous l’entraînez dans la direction qu’elle prenait déjà, et vous en écartez. Le mouvement de votre ennemi et le fait qu’il ne rencontre pas la résistance à laquelle il s’attendait provoqueront son déséquilibre. Vous ne pouvez utiliser Esquive comme compétence de défense que contre des attaques au corps à corps, et uniquement comme Défense Active. Elle n’est pas utilisée pour déterminer votre ND. Vous pouvez aussi choisir d’utiliser Esquive sur une attaque qui n’a pas réussi à atteindre votre ND pour être touché. Si vous réussissez votre jet d’Esprit + Esquive, l’attaque échoue et votre adversaire se retrouve au sol face contre terre à l’opposé de sa position initiale par rapport à vous. Si vous utilisez deux augmentations sur votre jet d’Esquive, votre ennemi reçoit en plus les dégâts de sa propre attaque (vous lancez le jet de dommages). S’il en est ainsi, les augmentations qu’il a pu prendre pour vous faire plus de dégâts ne sont pas prises en compte dans votre jet de dommages. Toutefois, vous pouvez vous-même prendre des augmentations sur votre défense active pour lui faire plus de dégâts, comme pour une attaque normale contre quelqu’un d’autre.",
-      "donnent_acces_base": [],
+      "donnent_acces_base": [
+        "Arts martiaux défensifs"
+      ],
       "donnent_acces_avancee": [],
       "categorie": "Compétences martiales"
     },
@@ -1532,7 +1576,9 @@
       "nom": "Étreinte",
       "description": "Si l’adversaire de votre héros tente de briser une prise et s’il échoue ou si le tour s’achève, lancez (rang d’Étreinte) dés et n’en gardez qu’un. L’adversaire de votre héros subit immédiatement (résultat de ce jet) points de dommages et doit aussitôt faire un jet de blessures (comme toute attaque normale).",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Lutte"
+      ],
       "categorie": "Compétences martiales"
     },
     {
@@ -1563,7 +1609,9 @@
       "donnent_acces_base": [
         "Artisan"
       ],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Éventail"
+      ],
       "categorie": "Compétences artisanales"
     },
     {
@@ -1613,7 +1661,8 @@
       "nom": "Fabricant de dards",
       "description": "Vous savez comment fabriquer ou réparer des dards pour une sarbacane. Après chaque combat dans lequel vous en avez tiré, vous pouvez faire un jet d’Esprit + Fabricant de dards. Pour chaque tranche de 15 points au résultat, vous retrouvez un des dards que vous avez tiré en bon état.",
       "donnent_acces_base": [
-        "Artisan"
+        "Artisan",
+        "Sarbacane"
       ],
       "donnent_acces_avancee": [],
       "categorie": "Compétences artisanales"
@@ -1649,6 +1698,8 @@
       "nom": "Facteur d’arcs",
       "description": "Le héros sait fabriquer et réparer arcs, arbalètes et flèches. Cette compétence ne regroupe que la fabrication de l’empennage et du corps de la flèche ; les pointes sont obtenues auprès des forgerons. Cette compétence, particulièrement utile aux archers, leur permet d’entretenir leur réserve de flèches. À l’issue de chaque combat au cours duquel votre héros a utilisé son arc, faites un jet d’Esprit + Facteur d’arcs : votre héros récupère une flèche en bon état par tranche de 10 obtenue.",
       "donnent_acces_base": [
+        "Arbalète",
+        "Arc",
         "Artisan"
       ],
       "donnent_acces_avancee": [
@@ -1973,6 +2024,8 @@
         "Chasseur de primes",
         "Chevalier",
         "Collecteur d’impôts",
+        "Fléau",
+        "Fouet",
         "Fouineur",
         "Garde",
         "Garde du corps",
@@ -2023,9 +2076,13 @@
       "nom": "Jeu de jambes",
       "description": "Cette compétence permet d’éviter la trajectoire de l’arme d’un adversaire. Cette compétence peut servir de défense passive, même si le héros attaqué n’est pas armé.",
       "donnent_acces_base": [
+        "Arts martiaux défensifs",
+        "Arts martiaux offensifs",
+        "Athlétisme",
         "Cadet",
         "Légionnaire",
-        "Maître d’armes"
+        "Maître d’armes",
+        "Pugilat"
       ],
       "donnent_acces_avancee": [
         "Soldat",
@@ -2066,6 +2123,7 @@
       "nom": "Lancer",
       "description": "Le héros lance plus loin et avec plus de précision que les personnes ne maîtrisant pas cette compétence, laquelle peut s’avérer particulièrement utile s’il veut lancer une pierre avec un message à travers une fenêtre. Mais attention, cette compétence permet de lancer des objets de façon “utilitaire” mais jamais pour causer des dommages (comme couper une corde à distance, lancer un pistolet à un ami désarmé, etc. mais pas lancer un couteau ou une pierre à la tête d’un ennemi). Pour lancer un couteau, il vous faudra la compétence Lancer (couteau) issue de l’entraînement Couteau et pour lancer un objet dans le but de faire des dommages à un adversaire, il vous faudra la compétence Lancer (arme improvisée) issue de l’entraînement Combat de rue. La portée de l’objet variera en fonction de son poids mais sera généralement de 5 mètres + (rang de Gaillardise x 2 mètres).",
       "donnent_acces_base": [
+        "Athlétisme",
         "Fauconnier"
       ],
       "donnent_acces_avancee": [
@@ -2264,6 +2322,7 @@
       "description": "Votre quête de paix intérieure vous donne une perception de votre balance émotionnelle et une aptitude à rester calme et rationnel. Vous pouvez utiliser cette compétence pour résister à toute utilisation du Système de Répartie à votre encontre.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
+        "Arts martiaux défensifs",
         "Cao Yao (Acupuncteur)",
         "Feng Shui Shi (Géomancien)"
       ],
@@ -2335,6 +2394,7 @@
       "description": "Le héros, s’il n’est pas trop lourdement chargé, parvient plutôt bien à se maintenir à flot (nonobstant les tempêtes et les requins, bien sûr). Les règles concernant la nage (et la noyade) figurent dans l’aide de jeu .",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
+        "Athlétisme",
         "Baleinier",
         "Batelier",
         "Galérien",
@@ -2514,6 +2574,8 @@
         "Torero"
       ],
       "donnent_acces_avancee": [
+        "Arts martiaux défensifs",
+        "Athlétisme",
         "Maître d’armes",
         "Rasoir"
       ],
@@ -2656,7 +2718,8 @@
         "Assassin",
         "Courtisane",
         "Fournisseur de drogues",
-        "Herboriste"
+        "Herboriste",
+        "Sarbacane"
       ],
       "categorie": "Compétences larronnes"
     },
@@ -2713,7 +2776,9 @@
       "nom": "Pousser (bâton)",
       "description": "Cette attaque d'estoc avec un bâton est réalisée en lançant Gaillardise + Pousser. Si le jet passe le ND pour être touché de l'adversaire, celui-ci doit faire un test de Finesse + Équilibre (ou Jeu de jambes) contre un ND égal au résultat d'attaque pour ne pas chuter.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Bâton"
+      ],
       "categorie": "Compétences martiales"
     },
     {
@@ -2751,7 +2816,10 @@
     {
       "nom": "Prise",
       "description": "Cette compétence permet d’effectuer le mouvement de base utilisé par tous les lutteurs. Ils s’approchent au corps à corps puis tentent de s’agripper et de s’immobiliser l’un l’autre. Pour utiliser cette attaque, vous devez déclarer votre intention puis faire un jet de (Finesse + Prise) contre le ND pour être touché de l’adversaire de votre héros. Si vous réussissez votre jet, votre héros est parvenu à empoigner son adversaire ; ce dernier ne peut que tenter de briser la prise qui l’emprisonne, donner un coup de tête ou accomplir une action qui requiert très peu de mouvement (comme appuyer sur la détente d’un pistolet, par exemple). Pour tenter de se dégager, cet adversaire doit utiliser un dé d’action (reportez- vous aux règles sur les interruptions et les actions de réserve dans l’aide de jeu ) et faire un jet d’opposition de (Gaillardise + Prise) contre (Gaillardise + Prise) de votre héros. S’il remporte l’opposition, il parvient à se dégager ; si ce n’est pas le cas, le héros maintient sa prise et peut même, en utilisant un dé d’action, renforcer sa prise. Chaque dé d’action utilisé dans ce but vous fera bénéficier d’une augmentation gratuite lorsque l’adversaire de votre héros tentera de briser son étreinte.",
-      "donnent_acces_base": [],
+      "donnent_acces_base": [
+        "Arts martiaux défensifs",
+        "Lutte"
+      ],
       "donnent_acces_avancee": [
         "Garde du corps"
       ],
@@ -2761,7 +2829,9 @@
       "nom": "Projection",
       "description": "Une fois que vous avez agrippé quelqu’un, vous pouvez choisir de le relâcher d’une manière plus dynamique qu’en le lâchant simplement. Au lieu de cela, vous pouvez le projeter loin de vous et sur le sol ou contre un mur ou tout autre obstacle. Pour projeter quelqu’un, vous devez d’abord le saisir avec une Prise. Effectuez un jet de Finesse + Projection contre un ND égal à 5 fois la Gaillardise de votre adversaire, plus 10. Vous pouvez projeter une personne à un nombre de mètres égal à votre Gaillardise. Si elle est Grande, retirez un mètre, et ajoutez en un si elle Petite. Vous pouvez augmenter cette distance de un mètre par augmentation prise sur votre jet. Si vous réussissez, vous lancez votre adversaire au sol et il reçoit des dégâts comme s’il avait chuté de 2 fois votre Gaillardise en mètres, et tombe face contre terre. Vous pouvez tenter de viser autre chose que le sol en prenant des augmentations pour cela. Heurter un mur ou une autre structure (comme une table) demandera une augmentation ; lancer une personne contre une autre augmentera le ND de la Projection du ND pour être touché de la personne visée. Un échec sur votre jet de Finesse + Projection signifiera que vous avez lâché votre opposant, qu’il ne subit pas de dommages et ne se retrouve pas au sol.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Arts martiaux défensifs"
+      ],
       "categorie": "Compétences martiales"
     },
     {
@@ -2802,7 +2872,10 @@
       "nom": "Réception de charge",
       "description": "Si votre héros utilise une arme d’hast contre un adversaire qui le charge, qu’il soit à pied ou à cheval, vous pouvez utiliser cette compétence à la place de votre compétence d’attaque habituelle ; vous devez annoncer votre intention avant de faire votre jet d’attaque. Si l’attaque porte, vous pouvez ajouter votre valeur actuelle totale d’initiative aux dommages.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Arme d’hast",
+        "Lances"
+      ],
       "categorie": "Compétences martiales"
     },
     {
@@ -2868,7 +2941,9 @@
       "nom": "Retour à l’envoyeur",
       "description": "Cette compétence peut être utilisée pour renvoyer une grenade à celui qui l’a jetée. Pour y parvenir, le personnage doit disposer d’une action en réserve ou postérieure (avec un décalage maximal correspondant à son rang de compétence) à celle du lanceur. Ensuite, il faut réussir un jet de Retour à l’envoyeur + Panache contre un ND égal au jet du lanceur. Dans ce cas, la grenade est renvoyée avant son explosion.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Grenade"
+      ],
       "categorie": "Compétences martiales"
     },
     {
@@ -2877,6 +2952,7 @@
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Acrobate",
+        "Athlétisme",
         "Torero"
       ],
       "categorie": "Compétences physiques"
@@ -2894,7 +2970,9 @@
       "nom": "Saisir un objet",
       "description": "Le héros peut utiliser son fouet pour attraper un objet particulier comme la fiole que votre adversaire s’apprête à lancer au sol, le collier de la reine ou la fleur que votre rival s’apprête à offrir à la dame de votre cœur.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Fouet"
+      ],
       "categorie": "Compétences martiales"
     },
     {
@@ -2904,6 +2982,9 @@
         "Marine"
       ],
       "donnent_acces_avancee": [
+        "Arts martiaux défensifs",
+        "Arts martiaux offensifs",
+        "Athlétisme",
         "Baleinier",
         "Cocher",
         "Escamoteur",
@@ -2919,6 +3000,7 @@
       "description": "Il est parfois nécessaire de sauter sur son cheval et de partir au grand galop le plus rapidement possible. Cette compétence permet de sauter sur un cheval en courant (ND 15) ou du premier étage d’un bâtiment (ND 20).",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
+        "Cavalier",
         "Cocher"
       ],
       "categorie": "Compétences physiques"
@@ -2962,14 +3044,19 @@
       "nom": "Se balancer",
       "description": "Lorsque le héros utilise cette compétence, il peut utiliser son fouet et l’enrouler autour d’une branche, d’un lustre, etc. puis s’en servir comme d’une corde afin de se balancer jusqu’à l’endroit qu’il veut atteindre. Enfin, d’un mouvement du poignet, il pourra le décrocher.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Fouet"
+      ],
       "categorie": "Compétences physiques"
     },
     {
       "nom": "Se dégager",
       "description": "Lorsque le héros tente de se dégager d’une prise de son adversaire, chaque rang dans cette compétence vous permet d’annuler une augmentation gratuite gagnée par son adversaire en renforçant sa prise.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Arts martiaux défensifs",
+        "Lutte"
+      ],
       "categorie": "Compétences martiales"
     },
     {
@@ -3157,6 +3244,7 @@
         "Acrobate",
         "Artificier",
         "Artisan",
+        "Athlétisme",
         "Galérien",
         "Palefrenier",
         "Pêcheur"
@@ -3294,7 +3382,9 @@
       "nom": "Tir à l’arc monté",
       "description": "On utilise cette compétence à la place d’Attaque (Arc) quand on tire à l’arc depuis un cheval.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Arc"
+      ],
       "categorie": "Compétences martiales"
     },
     {
@@ -3309,7 +3399,9 @@
       "description": "Les archers et frondeurs les plus aguerris parviennent à se concentrer tout autant (si ce n’est plus) sur la vitesse de leur tir que sur la précision. Grâce à cette compétence, on peut bander un arc (ou armer une fronde ou une sarbacane) et tirer en une seule action, mais vous devrez réussir votre jet avec deux augmentations pour y parvenir. Si vous y parvenez, cette compétence remplacera alors votre compétence Attaque (Arc, Fronde ou Sarbacane). Cette compétence ne peut pas être utilisée à cheval.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
-        "Assassin"
+        "Arc",
+        "Assassin",
+        "Fronde"
       ],
       "categorie": "Compétences martiales"
     },
@@ -3384,7 +3476,9 @@
       "nom": "Uppercut",
       "description": "Cette compétence permet de porter une brutale attaque à mains nues pendant laquelle la garde du spadassin est ouverte. Déclarez l’utilisation de cette compétence et servez-vous-en pour faire le jet d’attaque : si le coup porte, vous ferez votre jet de dommages en lançant (sans les garder) deux dés de dommages supplémentaires. En contrepartie, le ND pour être touché de votre héros passe à 5 pendant cette phase et vous ne pouvez pas utiliser de défense active jusqu’à la fin de cette phase. Attention, pour les gants de combat, cette compétence n’est pas utilisable avec un katar ou des griffes.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Pugilat"
+      ],
       "categorie": "Compétences martiales"
     },
     {
@@ -3433,14 +3527,18 @@
       "nom": "Virevolte",
       "description": "Une virevolte est une manœuvre agressive où le bastonneur fait tourner rapidement son bâton au- dessus et autour de lui afin de détourner l’attention de son adversaire (un peu à la manière des utilisateurs de nunchakus). Vous devez déclarer effectuer une Virevolte à la place de votre attaque classique. Vous effectuez votre jet de dés en l’utilisant comme compétence d’attaque. Si cette dernière est couronnée de succès, vous n’infligez aucun dommage mais obligez votre cible à augmenter son dé d’action suivant de deux points, plus 1 par augmentation réussie. Si le dé d’action passe ainsi au-dessus de 10, il disparaît.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Bâton"
+      ],
       "categorie": "Compétences physiques"
     },
     {
       "nom": "Voltige",
       "description": "Cette compétence permet d’effectuer un certain nombre d’acrobaties, telles que se tenir debout sur un cheval durant une chevauchée (ND 15), glisser sur le côté du cheval afin de bénéficier d’une certaine protection (ND 20)… Une monture particulièrement bien dressée peut permettre de réduire ces ND de 5.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Cavalier"
+      ],
       "categorie": "Compétences physiques"
     },
     {

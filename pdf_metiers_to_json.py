@@ -1108,8 +1108,8 @@ def appliquer_corrections_v2(metiers: list[dict]) -> None:
 
 def sync_competences_acces(metiers: list[dict]) -> None:
     """Reconstruit donnent_acces_base / donnent_acces_avancee de chaque compétence
-    à partir des métiers (source de vérité après nos modifications).
-    Lit competences.json, met à jour, ré-écrit + competences.js.
+    à partir des métiers ET des entraînements (sources de vérité après modifs).
+    Lit competences.json + entrainements.json, met à jour, ré-écrit + competences.js.
     """
     comp_path = DEST_DIR / "competences.json"
     comp_js_path = DEST_DIR / "competences.js"
@@ -1121,18 +1121,22 @@ def sync_competences_acces(metiers: list[dict]) -> None:
     # Index par clé normalisée → nom canonique (de la base de compétences)
     canon: dict[str, str] = {_nk(c["nom"]): c["nom"] for c in competences}
 
-    # Construction de l'index inverse : comp_key → ({metiers_base}, {metiers_av})
+    # Construction de l'index inverse : comp_key → ({sources_base}, {sources_av})
+    # Source = nom de métier OU nom d'entraînement (findSpecialisation côté JS résout).
     from collections import defaultdict
     acces_base: dict[str, set[str]] = defaultdict(set)
     acces_av: dict[str, set[str]] = defaultdict(set)
 
-    def _ajouter(comp_str: str, niveau: str, metier_nom: str):
+    def _ajouter(comp_str: str, niveau: str, source_nom: str):
         key = _nk(comp_str)
         if key not in canon:
             return  # pas de compétence canonique : laisse tel quel (sera affiché en texte)
-        (acces_base if niveau == "base" else acces_av)[key].add(metier_nom)
+        (acces_base if niveau == "base" else acces_av)[key].add(source_nom)
 
+    # Métiers
+    nb_metiers = 0
     for m in metiers:
+        nb_metiers += 1
         nm = m["nom"]
         for c in m.get("competences_base", []):
             _ajouter(c, "base", nm)
@@ -1144,6 +1148,20 @@ def sync_competences_acces(metiers: list[dict]) -> None:
         choix_av = m.get("competences_avancees_choix") or {}
         for c in choix_av.get("options", []):
             _ajouter(c, "av", nm)
+
+    # Entraînements (Pugilat, Pistolet, etc. donnent accès à des compétences)
+    ent_path = DEST_DIR / "entrainements.json"
+    nb_entrainements = 0
+    if ent_path.exists():
+        edata = json.loads(ent_path.read_text(encoding="utf-8"))
+        for e in edata.get("entrainements", []):
+            nb_entrainements += 1
+            en = e["nom"]
+            for c in e.get("competences_base", []):
+                _ajouter(c, "base", en)
+            for c in e.get("competences_avancees", []):
+                _ajouter(c, "av", en)
+    print(f"  Sources scannées : {nb_metiers} métiers + {nb_entrainements} entraînements")
 
     # Affecte les listes triées (FR)
     def _tri(lst):
