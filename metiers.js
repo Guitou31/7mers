@@ -27,7 +27,7 @@ window.METIERS_DATA = {
       "competences_base": [
         "Acrobatie",
         "Équilibre",
-        "Jeu de jambes"
+        "Spectacle de rue"
       ],
       "competences_avancees": [
         "Amortir une chute",
@@ -35,9 +35,7 @@ window.METIERS_DATA = {
         "Équilibriste",
         "Jonglerie",
         "Roulé-boulé",
-        "Sauter",
         "Soulever",
-        "Spectacle de rue",
         "Tour de force"
       ],
       "reputation": "Moralité : -1",
@@ -53,8 +51,8 @@ window.METIERS_DATA = {
       "description": "Les alchimistes connaissent les théories chimiques ésotériques censées transformer un matériau vil en un autre. La plupart des notions alchimiques ont été remplacées par des concepts modernes de chimie et de sciences de la nature mais les Filles de Sophie y ont encore parfois recours. Veuillez noter que ce métier est bien distinct de l’avantage Alchimiste qui correspond plus à une vision pratique fondamentale. Il s’agit ici plus d’un recueil de théories dont la plupart ont été supplantées.",
       "competences_base": [
         "Alchimie",
-        "Fonderie",
-        "Recherches"
+        "Recherches",
+        "Poison"
       ],
       "competences_avancees": [
         "Bouilleur de cru",
@@ -62,8 +60,6 @@ window.METIERS_DATA = {
         "Charlatanisme",
         "Occultisme",
         "Perception du temps",
-        "Philosophie",
-        "Poison",
         "Sciences de la nature",
         "Souffleur de verre"
       ],
@@ -85,11 +81,13 @@ window.METIERS_DATA = {
         "Marchandage"
       ],
       "competences_avancees": [
-        "Banquier",
         "Comptabilité",
         "Connaissance des Syrneths",
         "Contacts (Nation à préciser)",
-        "Occultisme"
+        "Connaissance des runes",
+        "Corruption",
+        "Dessin",
+        "Examen d'artefact"
       ],
       "reputation": "Rang social : +1",
       "restriction_creation": "libre",
@@ -110,7 +108,6 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Bouilleur de cru",
-        "Charlatanisme",
         "Connaissance des plantes",
         "Marchandage",
         "Parfumeur",
@@ -158,14 +155,13 @@ window.METIERS_DATA = {
       "description": "Un armateur, ou affréteur, est un notable qui arme un navire, c’est-à-dire qui fournit le matériel et le ravitaillement de toutes sortes en vue de ses voyages et de son exploitation, et qui fait le lien entre l’équipage (dont le capitaine) et le commanditaire de l’expédition. C’est donc lui qui décide de l’utilisation du navire, quelles seront ses missions et dans quelles conditions vivra et travaillera l’équipage. Dans le cas d’un navire de pêche, l’armateur est souvent le propriétaire ou il partage cette propriété avec un ou plusieurs associés. On trouve également des patrons armateurs, qui en sont aussi les capitaines et les signataires des contrats maritimes avec les marchands. De plus, l’armateur peut être représenté par un agent dans les ports que relie le navire. À la construction du navire, il est d’usage de réserver une cabine à bord sous le nom de cabine d’armateur.",
       "competences_base": [
         "Calcul",
-        "Contacts (Cité)",
+        "Contacts (Nation à préciser)",
         "Marchandage"
       ],
       "competences_avancees": [
         "Comptabilité",
         "Connaissance de la mer",
         "Corruption",
-        "Éloquence",
         "Évaluation",
         "Géographie",
         "Logistique",
@@ -190,12 +186,10 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Charlatanisme",
-        "Déguisement",
         "Discrétion",
         "Falsification",
         "Parier",
         "Pique-assiette",
-        "Séduction",
         "Sens des affaires",
         "Tricher"
       ],
@@ -234,10 +228,10 @@ window.METIERS_DATA = {
         "Écrivain public",
         "Embaumeur",
         "Éventailliste",
-        "Fabricant d’Armes à feu",
-        "Fabricant de cerfs-volants (Cathayan uniquement)",
+        "Fabricant d’arme à feu",
+        "Fabricant de cerfs-volants",
         "Fabricant de dards",
-        "Fabricant de feux d’artifice (Cathayan uniquement)",
+        "Fabricant de feux d’artifice",
         "Fabricant de vitraux",
         "Fabricant de voiles",
         "Facteur d’arcs",
@@ -268,7 +262,7 @@ window.METIERS_DATA = {
         "Serrurier",
         "Souffleur de verre",
         "Tailleur",
-        "Tailleur de pierres",
+        "Tailleur de pierre",
         "Tanner",
         "Teinturier",
         "Tisserand",
@@ -314,7 +308,7 @@ window.METIERS_DATA = {
           "Compositeur",
           "Création littéraire",
           "Dessin",
-          "Musique (instrument)",
+          "Musique (type d’instrument à préciser)",
           "Sculpture"
         ]
       }
@@ -328,24 +322,36 @@ window.METIERS_DATA = {
       "description": "Les assassins sont des tueurs à gages, des professionnels consciencieux et d’excellents combattants. Ils sont experts dans le maniement d’une grande variété d’armes et leur niveau d’entraînement se situe bien au-delà de la majorité des gardes, soldats, brigands et autres tueurs à la manque. Ils sont très habiles, également, à l’utilisation des poisons et à la construction de pièges. Ces talents leur permettent de se louer au plus offrant et il arrive qu’un assassin soit engagé par deux partis opposés pour éliminer les deux chefs adverses respectifs. Dans Théah, l’assassin est une arme très efficace en cas de conflit, utilisée indistinctement par les grandes familles nobles, l’église des Prophètes ou les sociétés secrètes.",
       "competences_base": [
         "Déplacement silencieux",
-        "Guet-apens",
-        "Poison"
+        "Guet-apens"
       ],
       "competences_avancees": [
         "Déguisement",
-        "Diagnostic",
         "Dissimulation",
         "Escalade",
         "Estomac",
-        "Facteur d’arc",
         "Filature",
-        "Qui-vive",
-        "Sincérité"
+        "Poison"
       ],
       "reputation": "Moralité : -2",
       "restriction_creation": "libre",
       "restriction_type": "aucune",
-      "restriction_texte": ""
+      "restriction_texte": "",
+      "competences_base_choix": {
+        "nb": 1,
+        "options": [
+          "Tirer (Arbalète)",
+          "Tirer (Arc)",
+          "Attaque (Couteau)"
+        ]
+      },
+      "competences_avancees_choix": {
+        "nb": 1,
+        "options": [
+          "Recharger (Arbalète)",
+          "Tir réflexe",
+          "Lancer (Couteau)"
+        ]
+      }
     },
     {
       "nom": "Avoué",
@@ -362,7 +368,6 @@ window.METIERS_DATA = {
       "competences_avancees": [
         "Comportementalisme",
         "Connaissance des bas-fonds (Nation à préciser)",
-        "Corruption",
         "Création Littéraire",
         "Étiquette",
         "Interrogatoire",
@@ -386,14 +391,13 @@ window.METIERS_DATA = {
         "Qui-vive"
       ],
       "competences_avancees": [
-        "Comportementalisme",
         "Connaissance des bas-fonds (Nation à préciser)",
         "Corruption",
         "Discrétion",
         "Dissimulation",
         "Escalade",
         "Intimidation",
-        "Lire sur les lèvres"
+        "Parier"
       ],
       "reputation": "Moralité : -2",
       "restriction_creation": "libre",
@@ -406,26 +410,31 @@ window.METIERS_DATA = {
         "Métiers des Arts"
       ],
       "description": "Ce métier est celui de tous les personnages qui vivent en se produisant devant les foules, afin de les faire rire, pleurer ou s’extasier. Lanceurs de couteaux, acrobates, danseurs, chanteurs et ventriloques forment le gros de cette profession. Ce qu’ils récoltent dans leur chapeau à la fin de la représentation sera bien souvent tout ce qu’ils auront pour manger et dormir. C’est pour cette raison (ou simplement par envie) que certains acteurs utilisent leurs compétences à d’autres fins (moins honnêtes). Ces individus voyagent beaucoup, parfois seuls mais généralement au sein d’une troupe qui se produit dans les villages sur leur route. Les troupes les plus chanceuses ne cessent jamais de travailler et passent parfois plusieurs mois d’affilée dans la même ville. Les autres vivotent bon gré mal gré et sont en quête permanente d’un public susceptible de reconnaître leur talent.",
-      "competences_base": [
-        "Danse"
-      ],
+      "competences_base": [],
       "competences_avancees": [
         "Compère",
         "Déguisement",
         "Dressage",
-        "Équilibriste",
+        "Discrétion",
         "Hypnotisme",
-        "Jonglerie",
-        "Musique (instrument)",
-        "Narrer",
-        "Prestidigitation",
-        "Sher Da Shi (Croissantin uniquement)",
+        "Musique (type d’instrument à préciser)",
         "Spectacle de rue"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
       "restriction_type": "aucune",
-      "restriction_texte": ""
+      "restriction_texte": "",
+      "competences_base_choix": {
+        "nb": 3,
+        "options": [
+          "Danse",
+          "Équilibriste",
+          "Jonglerie",
+          "Narrer",
+          "Prestidigitation",
+          "Sher da Shi (Charmeur de serpents)"
+        ]
+      }
     },
     {
       "nom": "Batelier",
@@ -436,15 +445,13 @@ window.METIERS_DATA = {
       "competences_base": [
         "Canotage",
         "Piloter",
-        "Potamologie (fleuve)"
+        "Potamologie (fleuve à préciser)"
       ],
       "competences_avancees": [
         "Cartographie",
         "Connaissance des nœuds",
-        "Corruption",
         "Équilibre",
         "Gréer",
-        "Guet-apens",
         "Nager",
         "Pêche",
         "Perception du temps"
@@ -467,11 +474,9 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Diagnostic",
-        "Discrétion",
         "Dissimulation",
         "Estomac",
         "Examiner",
-        "Lire sur les lèvres",
         "Premiers secours",
         "Sincérité",
         "Qui-vive"
@@ -490,19 +495,16 @@ window.METIERS_DATA = {
       "competences_base": [
         "Connaissance des plantes",
         "Escalade",
-        "Qui-vive"
+        "Soulever"
       ],
       "competences_avancees": [
         "Conduite d’attelage",
         "Connaissance des animaux",
-        "Déplacement silencieux",
-        "Pêche",
         "Perception du temps",
-        "Sauter",
         "Sens de l’orientation",
         "Signes de piste",
-        "Soulever",
-        "Survie"
+        "Survie",
+        "Attaque (Haches)"
       ],
       "reputation": "Rang social : -1",
       "restriction_creation": "libre",
@@ -521,7 +523,6 @@ window.METIERS_DATA = {
         "Fouille"
       ],
       "competences_avancees": [
-        "Architecture",
         "Bricoleur",
         "Connaissance des bas-fonds (Nation à préciser)",
         "Connaissance des pièges",
@@ -548,12 +549,10 @@ window.METIERS_DATA = {
         "Géographie"
       ],
       "competences_avancees": [
-        "Astronomie",
         "Calligraphie",
         "Code secret",
-        "Connaissance des routes (nation)",
+        "Connaissance des routes (nation à préciser)",
         "Étiquette",
-        "Falsification",
         "Orientation citadine (Nation à préciser)",
         "Papetier",
         "Sens de l’orientation"
@@ -577,10 +576,7 @@ window.METIERS_DATA = {
       "competences_avancees": [
         "Dressage",
         "Guet-apens",
-        "Langage des signes",
         "Pister",
-        "Qui-vive",
-        "Sens de l’orientation",
         "Signes de piste",
         "Soins des chiens",
         "Survie",
@@ -604,14 +600,11 @@ window.METIERS_DATA = {
         "Guet-apens"
       ],
       "competences_avancees": [
-        "Cancanier",
-        "Comportementalisme",
         "Course de vitesse",
         "Déplacement silencieux",
         "Filature",
         "Interrogatoire",
         "Intimidation",
-        "Pêche",
         "Pister",
         "Qui-vive"
       ],
@@ -635,12 +628,10 @@ window.METIERS_DATA = {
       "competences_avancees": [
         "Calligraphie",
         "Contacts (Nation à préciser)",
-        "Corruption",
         "Discrétion",
         "Écrivain public",
         "Histoire",
         "Narrer",
-        "Politique",
         "Sincérité"
       ],
       "reputation": "Moralité : -1",
@@ -657,19 +648,17 @@ window.METIERS_DATA = {
       "description": "Voyager sur les routes de Théah est hasardeux et ceux qui en font leur métier ne sont pas n’importe qui. Le cocher doit faire face à de nombreuses difficultés, on peut même dire qu’il risque sa vie quotidiennement ; les routes sont dangereuses car très mal entretenues et les voyageurs peuvent s’attendre à faire de mauvaises rencontres telles que des bandes organisées, bandits de grands chemins, péagers irascibles et patrouilleurs ruraux inquisiteurs, sans parler de rencontres surnaturelles plus hasardeuses. C’est le travail peu enviable du cocher de mener passagers et cargaison en lieu sûr “contre vents et marées”, et d’acheminer les messages officiels ou leurs porteurs quand on les sollicite.",
       "competences_base": [
         "Conduite d’attelage",
-        "Connaissance des routes (nation)",
+        "Connaissance des routes (nation à préciser)",
         "Équilibre"
       ],
       "competences_avancees": [
-        "Conduite de traineau (Ussura)",
         "Dressage",
-        "Équitation",
+        "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)",
         "Perception du temps",
         "Qui-vive",
         "Sauter",
         "Sauter en selle",
-        "Sens de l’orientation",
-        "Soin des chevaux"
+        "Sens de l’orientation"
       ],
       "reputation": "Rang social : -1",
       "restriction_creation": "libre",
@@ -693,7 +682,6 @@ window.METIERS_DATA = {
         "Économie",
         "Éloquence",
         "Évaluation",
-        "Falsification",
         "Intimidation",
         "Numismatique"
       ],
@@ -710,7 +698,7 @@ window.METIERS_DATA = {
       ],
       "description": "Peu de villages possèdent leurs propres boutiques ou comptoirs de commerce ; aussi tous sont dépendants du colporteur, insignifiant marchand ambulant. Après avoir acheté des marchandises facilement transportables à la foire ou dans les boutiques citadines, le colporteur va d’un village à l’autre, vendant ces produits tout en diffusant les nouvelles et potins de la ville. Le chargement du colporteur est constitué de tout ce qui peut se transporter facilement, comme des pots, casseroles, accessoires de vêtements, bourses, épingles, couteaux... Dans les régions plus peuplées, les colporteurs sont souvent patentés et peuvent avoir leur propre guilde chargée de protéger leurs intérêts et de décourager d’éventuels concurrents d’empiéter sur leurs prérogatives. Beaucoup ont une vie de nomade et croient résolument dans la fraternité de leur profession, même s’ils sont de races différentes et qu’ils n’ont ni culture, tradition ou langage commun. Beaucoup acquièrent des connaissances d’herboriste. À peu près tout le monde se méfie d’eux, spécialement les gardes, les patrouilleurs ruraux et gardes-frontières. Certains colporteurs vendent des livres, ce qui fait d’eux des vecteurs de culture, mais aussi des hors-la- loi s’il s’agit d’ouvrages interdits.",
       "competences_base": [
-        "Connaissance des routes (nation)",
+        "Connaissance des routes (nation à préciser)",
         "Marchandage",
         "Sens de l’orientation"
       ],
@@ -718,7 +706,6 @@ window.METIERS_DATA = {
         "Cancanier",
         "Charlatanisme",
         "Conduite d’attelage",
-        "Connaissance des plantes",
         "Contacts (Nation à préciser)",
         "Dissimulation",
         "Évaluation",
@@ -743,14 +730,12 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Chant",
-        "Compère",
         "Comportementalisme",
         "Création littéraire",
         "Danse",
         "Galvaniser",
         "Mode",
-        "Narrer",
-        "Séduction"
+        "Narrer"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -774,10 +759,7 @@ window.METIERS_DATA = {
         "Entraîner",
         "Estomac",
         "Galvaniser",
-        "Guet-apens",
-        "Héraldique",
-        "Logistique",
-        "Qui- vive"
+        "Qui-vive"
       ],
       "reputation": "Réputation martiale : +2",
       "restriction_creation": "libre",
@@ -787,7 +769,7 @@ window.METIERS_DATA = {
         "nb": 1,
         "options": [
           "Artillerie",
-          "Lancer de fusée (Cathayan uniquement)"
+          "Lancer de fusée"
         ]
       }
     },
@@ -809,9 +791,7 @@ window.METIERS_DATA = {
         "Corruption",
         "Dissimulation",
         "Falsification",
-        "Fouille",
-        "Marchandage",
-        "Qui-vive"
+        "Marchandage"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -851,8 +831,6 @@ window.METIERS_DATA = {
         "Diplomatie",
         "Éloquence",
         "Intrigant",
-        "Jouer",
-        "Lire sur les lèvres",
         "Pique-assiette",
         "Séduction",
         "Sincérité"
@@ -879,12 +857,9 @@ window.METIERS_DATA = {
         "Connaissance des bas-fonds (Nation à préciser)",
         "Filature",
         "Fouille",
-        "Langage des signes",
         "Orientation citadine (Nation à préciser)",
-        "Qui-vive",
         "Course de vitesse",
-        "Duperie",
-        "Pickpocket"
+        "Duperie"
       ],
       "reputation": "Moralité : -2",
       "restriction_creation": "libre",
@@ -905,12 +880,9 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Code secret",
-        "Comportementalisme",
         "Corruption",
         "Éloquence",
         "Géographie",
-        "Héraldique",
-        "Histoire",
         "Intrigant",
         "Linguistique",
         "Sincérité"
@@ -937,10 +909,8 @@ window.METIERS_DATA = {
         "Jardinier",
         "Majordome",
         "Mode",
-        "Qui-vive",
         "Régisseur",
-        "Sincérité",
-        "Valet"
+        "Sincérité"
       ],
       "reputation": "Rang social : -1",
       "restriction_creation": "libre",
@@ -950,7 +920,7 @@ window.METIERS_DATA = {
         "nb": 1,
         "options": [
           "Conduite d’attelage",
-          "Conduite de traîneau (Ussura)"
+          "Conduite de traîneau"
         ]
       }
     },
@@ -967,12 +937,8 @@ window.METIERS_DATA = {
         "Sens de l’orientation"
       ],
       "competences_avancees": [
-        "Cartographie",
-        "Connaissance des routes (nation)",
-        "Course d’endurance",
-        "Équitation",
+        "Connaissance des routes (nation à préciser)",
         "Guet-apens",
-        "Langage des signes",
         "Perception du temps",
         "Qui-vive",
         "Signes de piste",
@@ -981,7 +947,14 @@ window.METIERS_DATA = {
       "reputation": "Réputation martiale : +1",
       "restriction_creation": "libre",
       "restriction_type": "aucune",
-      "restriction_texte": ""
+      "restriction_texte": "",
+      "competences_avancees_choix": {
+        "nb": 1,
+        "options": [
+          "Course d’endurance",
+          "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)"
+        ]
+      }
     },
     {
       "nom": "Érudit",
@@ -1000,7 +973,7 @@ window.METIERS_DATA = {
       "restriction_type": "aucune",
       "restriction_texte": "",
       "competences_avancees_choix": {
-        "nb": 10,
+        "nb": 7,
         "options": [
           "Architecture",
           "Astronomie",
@@ -1036,13 +1009,11 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Connaissance des bas-fonds (Nation à préciser)",
-        "Course d’endurance",
         "Discrétion",
         "Dissimulation",
         "Escalade",
         "Filature",
         "Langage des signes",
-        "Qui-vive",
         "Sauter"
       ],
       "reputation": "Moralité : -1",
@@ -1063,11 +1034,8 @@ window.METIERS_DATA = {
         "Fouille"
       ],
       "competences_avancees": [
-        "Corruption",
         "Crochetage",
-        "Dissimulation",
         "Falsification",
-        "Filature",
         "Interrogatoire",
         "Lire sur les lèvres",
         "Qui-vive",
@@ -1091,20 +1059,29 @@ window.METIERS_DATA = {
         "Orientation citadine (Nation à préciser)"
       ],
       "competences_avancees": [
-        "Astronomie",
-        "Droit",
-        "Géographie",
-        "Héraldique",
-        "Histoire",
-        "Philosophie",
-        "Recherches",
-        "Sciences de la nature",
-        "Théologie"
+        "Recherches"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
       "restriction_type": "aucune",
-      "restriction_texte": ""
+      "restriction_texte": "",
+      "competences_avancees_choix": {
+        "nb": 6,
+        "options": [
+          "Astronomie",
+          "Droit",
+          "Héraldique",
+          "Sciences de la nature",
+          "Théologie",
+          "Alchimie",
+          "Architecture",
+          "Économie",
+          "Philosophie",
+          "Mathématiques",
+          "Géographie",
+          "Histoire"
+        ]
+      }
     },
     {
       "nom": "Explorateur",
@@ -1119,14 +1096,11 @@ window.METIERS_DATA = {
         "Sens de l’orientation"
       ],
       "competences_avancees": [
-        "Connaissance des animaux",
-        "Connaissance des routes (nation)",
-        "Déplacement silencieux",
+        "Connaissance des routes (nation à préciser)",
         "Éloquence",
         "Linguistique",
         "Marchandage",
         "Perception du temps",
-        "Qui- vive",
         "Survie"
       ],
       "reputation": "Rang social : +1",
@@ -1137,7 +1111,7 @@ window.METIERS_DATA = {
         "nb": 1,
         "options": [
           "Conduite d’attelage",
-          "Équitation"
+          "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)"
         ]
       }
     },
@@ -1158,8 +1132,6 @@ window.METIERS_DATA = {
         "Code secret",
         "Contacts (Nation à préciser)",
         "Création littéraire",
-        "Dissimulation",
-        "Fouille",
         "Héraldique",
         "Numismatique",
         "Papetier"
@@ -1187,9 +1159,7 @@ window.METIERS_DATA = {
         "Droit",
         "Examiner",
         "Intimidation",
-        "Orientation citadine (Nation à préciser)",
-        "Politique",
-        "Sincérité"
+        "Orientation citadine (Nation à préciser)"
       ],
       "reputation": "Moralité +2",
       "restriction_creation": "libre",
@@ -1215,8 +1185,7 @@ window.METIERS_DATA = {
         "Dissimulation",
         "Orientation citadine (Nation à préciser)",
         "Poison",
-        "Premiers secours",
-        "Qui-vive"
+        "Premiers secours"
       ],
       "reputation": "Moralité : -2",
       "restriction_creation": "libre",
@@ -1240,8 +1209,6 @@ window.METIERS_DATA = {
         "Connaissance des nœuds",
         "Débrouillardise",
         "Dissimulation",
-        "Estomac",
-        "Jeu de jambes",
         "Soulever",
         "Course d’endurance",
         "Nager"
@@ -1270,7 +1237,6 @@ window.METIERS_DATA = {
         "Dissimulation",
         "Mendicité",
         "Pickpocket",
-        "Sincérité",
         "Tricher"
       ],
       "reputation": "Moralité : -1",
@@ -1290,15 +1256,12 @@ window.METIERS_DATA = {
         "Qui-vive"
       ],
       "competences_avancees": [
-        "Connaissance des bas-fonds (Nation à préciser)",
-        "Course d’endurance",
         "Course de vitesse",
         "Discrétion",
         "Étiquette",
         "Fouille",
         "Interrogatoire",
         "Intimidation",
-        "Langage des signes",
         "Ordre serré"
       ],
       "reputation": "Réputation martiale : +1",
@@ -1349,13 +1312,10 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Calcul",
-        "Comportementalisme",
         "Comptabilité",
         "Corruption",
-        "Débrouillardise",
         "Diplomatie",
-        "Dissimulation",
-        "Langage des signes (pour se faire comprendre quand on ne parle pas la même langue)",
+        "Langage des signes",
         "Logistique",
         "Sincérité"
       ],
@@ -1377,12 +1337,10 @@ window.METIERS_DATA = {
         "Survie"
       ],
       "competences_avancees": [
-        "Connaissance des routes (nation)",
-        "Équitation",
+        "Connaissance des routes (nation à préciser)",
         "Langage des signes",
         "Piéger",
         "Qui-vive",
-        "Sens de l’orientation",
         "Signes de piste",
         "Tactique",
         "Connaissance des plantes"
@@ -1401,7 +1359,6 @@ window.METIERS_DATA = {
       "description": "Les villes de Théah sont de déroutants dédales de ruelles étroites et de constructions plus ou moins élevées. Les étrangers, et même les autochtones, se plaignent constamment des difficultés qu’ils ont à s’y retrouver, et les visiteurs se perdent le plus souvent dans les minutes qui suivent leur arrivée. Nombre d’habitants proposent leurs services en offrant aux voyageurs de les conduire là où ils le souhaitent. La plupart des guides connaissent une ville en particulier comme le dos de leur main, en particulier l’emplacement des tavernes, bordels et tripots, dont les tenanciers leur reversent une commission. Ils font parfois aussi, dans les villes vodaccies, office de gondoliers ou de cochers lorsque l’activité touristique est faible.",
       "competences_base": [
         "Contacts (Nation à préciser)",
-        "Éloquence",
         "Marchandage"
       ],
       "competences_avancees": [
@@ -1411,7 +1368,6 @@ window.METIERS_DATA = {
         "Escalade",
         "Géographie",
         "Linguistique",
-        "Qui-vive",
         "Sincérité"
       ],
       "reputation": "Rang social : -1",
@@ -1467,14 +1423,11 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Amortir une chute",
-        "Connaissance des routes (nation)",
+        "Connaissance des routes (nation à préciser)",
         "Facteur d’arcs",
-        "Fouille",
         "Piéger",
-        "Pister",
         "Sauter",
         "Sens de l’orientation",
-        "Signes de piste",
         "Survie"
       ],
       "reputation": "Moralité : -1",
@@ -1498,7 +1451,7 @@ window.METIERS_DATA = {
         "Cartographie",
         "Déplacement silencieux",
         "Dissimulation",
-        "Mèche",
+        "Mèches",
         "Perception du temps",
         "Sciences de la nature"
       ],
@@ -1524,10 +1477,8 @@ window.METIERS_DATA = {
         "Bricoleur",
         "Charpentier",
         "Fonderie",
-        "Géomancie (Cathayans uniquement)",
         "Mathématiques",
-        "Recherches",
-        "Sciences de la nature"
+        "Recherches"
       ],
       "reputation": "Rang social : +1",
       "restriction_creation": "libre",
@@ -1537,7 +1488,8 @@ window.METIERS_DATA = {
         "nb": 1,
         "options": [
           "Architecture",
-          "Construction navale"
+          "Construction navale",
+          "Géomancie"
         ]
       }
     },
@@ -1559,8 +1511,6 @@ window.METIERS_DATA = {
         "Comptabilité",
         "Diplomatie",
         "Droit",
-        "Économie",
-        "Évaluation",
         "Logistique",
         "Marchandage",
         "Politique"
@@ -1578,25 +1528,29 @@ window.METIERS_DATA = {
       ],
       "description": "Les jennys sont les prostituées du monde de Théah. C’est la gueuse des bas-quartiers ; c’est la fille de joie qui rôde dans le sillage des armées et vend son corps aux soldats, c’est la servante des maisons de bains qui aguiche les clients et se fait verser un généreux pourboire pour partager leur baquet, c’est l’accorte chambrière d’auberge qui finit dans le lit de l’hôte de passage et fait les poches de ses vêtements avant de disparaître au matin… Elles se sont organisées en guilde et sont aujourd’hui une organisation prospère même si leur métier est toujours, et restera toujours, dangereux à pratiquer.",
       "competences_base": [
-        "Cancanier",
         "Jenny",
         "Séduction"
       ],
       "competences_avancees": [
-        "Chant",
         "Comportementalisme",
         "Connaissance des bas-fonds (Nation à préciser)",
-        "Corruption",
-        "Danse",
         "Discrétion",
         "Dissimulation",
         "Marchandage",
+        "Cancanier",
         "Masseur"
       ],
       "reputation": "Moralité : -2",
       "restriction_creation": "libre",
       "restriction_type": "aucune",
-      "restriction_texte": ""
+      "restriction_texte": "",
+      "competences_base_choix": {
+        "nb": 1,
+        "options": [
+          "Chant",
+          "Danse"
+        ]
+      }
     },
     {
       "nom": "Juge d’armes",
@@ -1617,8 +1571,6 @@ window.METIERS_DATA = {
         "Droit",
         "Étiquette",
         "Géographie",
-        "Linguistique",
-        "Narrer",
         "Politique"
       ],
       "reputation": "Rang social : +2",
@@ -1638,11 +1590,9 @@ window.METIERS_DATA = {
         "Piloter"
       ],
       "competences_avancees": [
-        "Artillerie navale",
         "Connaissance de la mer",
         "Corruption",
         "Diplomatie",
-        "Géographie",
         "Guet-apens",
         "Intimidation",
         "Logistique",
@@ -1669,11 +1619,9 @@ window.METIERS_DATA = {
         "Débrouillardise",
         "Déplacement silencieux",
         "Dissimulation",
-        "Fouille",
         "Guet-apens",
-        "Parier",
         "Sens des affaires",
-        "Sincérité"
+        "Duperie"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -1697,7 +1645,6 @@ window.METIERS_DATA = {
         "Économie",
         "Éloquence",
         "Logistique",
-        "Mathématiques",
         "Numismatique",
         "Sens des affaires"
       ],
@@ -1751,9 +1698,8 @@ window.METIERS_DATA = {
         "Connaissance des nœuds",
         "Équilibre",
         "Escalade",
-        "Fouille",
         "Intimidation",
-        "Lancer (en particulier les grappins)",
+        "Lancer",
         "Nager"
       ],
       "reputation": "Réputation martiale : +1",
@@ -1774,14 +1720,12 @@ window.METIERS_DATA = {
         "Sincérité"
       ],
       "competences_avancees": [
-        "Charlatanisme",
         "Chirurgie",
         "Dentiste",
         "Estomac",
         "Examiner",
         "Hypnotisme",
         "Médications",
-        "Philosophie",
         "Vétérinaire"
       ],
       "reputation": "Moralité : +1",
@@ -1803,14 +1747,12 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Comédie",
-        "Comportementalisme",
         "Débrouillardise",
         "Déguisement",
         "Déplacement silencieux",
         "Dissimulation",
         "Filature",
-        "Pickpocket",
-        "Sincérité"
+        "Duperie"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -1825,14 +1767,13 @@ window.METIERS_DATA = {
       ],
       "description": "Un missionnaire est un prêtre chargé de porter les préceptes des Prophètes dans les régions encore païennes. Cela ne s’applique donc plus qu’à quelques zones de Théah. Nombre de missionnaires se sont rendus dans l’Empire du Croissant de Lune avec l’autorisation de l’Église. Ces dernières années, un grand nombre de jeunes prêtres ont pris la mer pour relier les mystérieuses îles occidentales dans l’espoir d’offrir la gloire de Theus à de nouvelles peuplades. Quelques âmes courageuses se sont établies dans le grand Nord pour tenter de convertir les Vestens. Enfin, une ou deux fois par siècle, un missionnaire nouvellement ordonné se sent irrésistiblement attiré vers le Cathay. Aucun n’est jamais revenu d’un tel périple. Un missionnaire peut être de n’importe quelle confession mais la plupart sont vaticins ou protestataires. Des personnages armés de courage peuvent être les missionnaires de religions marginales, comme les druides avaloniens ou les adorateurs de Vieux Père, au Vestenmannavnjar. De tels personnages ont de toute évidence beaucoup de travail.",
       "competences_base": [
-        "Connaissance des routes (nation)",
+        "Connaissance des routes (nation à préciser)",
         "Éloquence",
         "Survie"
       ],
       "competences_avancees": [
         "Comportementalisme",
         "Diplomatie",
-        "Intimidation",
         "Narrer",
         "Philosophie",
         "Premiers secours",
@@ -1857,14 +1798,12 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Agriculture",
-        "Chant",
         "Connaissance des plantes",
         "Création littéraire",
         "Majordome",
         "Médications",
         "Recherches",
-        "Philosophie",
-        "Premiers secours"
+        "Philosophie"
       ],
       "reputation": "Moralité : +2",
       "restriction_creation": "libre",
@@ -1886,12 +1825,9 @@ window.METIERS_DATA = {
         "Acrobatie",
         "Amortir une chute",
         "Connaissance des bas-fonds (Nation à préciser)",
-        "Connaissance des pièges",
         "Contorsion",
         "Fouille",
-        "Langage des signes",
         "Orientation citadine (Nation à préciser)",
-        "Qui-vive",
         "Sauter"
       ],
       "reputation": "Moralité : -1",
@@ -1909,14 +1845,12 @@ window.METIERS_DATA = {
       "competences_base": [
         "Cartographie",
         "Navigation",
-        "Sens de l’orientation"
+        "Connaissance de la mer"
       ],
       "competences_avancees": [
         "Calcul",
         "Canotage",
-        "Connaissance de la mer",
         "Équilibre",
-        "Escalade",
         "Géographie",
         "Nager",
         "Perception du temps",
@@ -1940,11 +1874,9 @@ window.METIERS_DATA = {
         "Tâches domestiques"
       ],
       "competences_avancees": [
-        "Conduite d’attelage",
-        "Conduite de traîneaux (Ussura)",
         "Déplacement silencieux",
         "Discrétion",
-        "Équitation",
+        "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)",
         "Forgeron",
         "Sellier",
         "Soulever"
@@ -1963,17 +1895,16 @@ window.METIERS_DATA = {
       "competences_base": [
         "Agriculture",
         "Conduite d’attelage",
-        "Estomac"
+        "Connaissance des animaux"
       ],
       "competences_avancees": [
         "Cancanier",
-        "Connaissance des animaux",
         "Connaissance des plantes",
         "Dressage",
         "Pêche",
         "Perception du temps",
-        "Piéger",
-        "Sens de l’orientation"
+        "Sens de l’orientation",
+        "Estomac"
       ],
       "reputation": "Rang social : -1",
       "restriction_creation": "libre",
@@ -1994,7 +1925,6 @@ window.METIERS_DATA = {
       "competences_avancees": [
         "Connaissance des nœuds",
         "Équilibre",
-        "Escalade",
         "Nager",
         "Perception du temps",
         "Sauter",
@@ -2020,11 +1950,10 @@ window.METIERS_DATA = {
         "Soins des chiens"
       ],
       "competences_avancees": [
-        "Conduite de traîneaux (Ussura)",
+        "Conduite de traîneau",
         "Connaissance des animaux",
         "Course d’endurance",
         "Guet-apens",
-        "Intimidation",
         "Lancer",
         "Pister",
         "Sifflet"
@@ -2047,9 +1976,8 @@ window.METIERS_DATA = {
         "Étiquette"
       ],
       "competences_avancees": [
-        "Calcul",
         "Éloquence",
-        "Équitation",
+        "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)",
         "Géographie",
         "Héraldique",
         "Histoire",
@@ -2078,9 +2006,7 @@ window.METIERS_DATA = {
         "Diplomatie",
         "Étiquette",
         "Galvaniser",
-        "Intimidation",
         "Narrer",
-        "Pique-assiette",
         "Premiers secours"
       ],
       "reputation": "Moralité : +2",
@@ -2098,26 +2024,28 @@ window.METIERS_DATA = {
       "competences_base": [
         "Création littéraire",
         "Éloquence",
-        "Recherches"
+        "Entraîner"
       ],
       "competences_avancees": [
-        "Bricoleur",
-        "Calcul",
-        "Comptabilité",
-        "Droit",
-        "Entraîner",
-        "Géographie",
-        "Mathématiques",
-        "Occultisme",
-        "Pique-assiette",
-        "Politique",
-        "Sciences de la nature",
-        "Théologie"
+        "Recherches"
       ],
       "reputation": "Rang social : +1",
       "restriction_creation": "libre",
       "restriction_type": "aucune",
-      "restriction_texte": ""
+      "restriction_texte": "",
+      "competences_avancees_choix": {
+        "nb": 6,
+        "options": [
+          "Calcul",
+          "Comptabilité",
+          "Droit",
+          "Géographie",
+          "Mathématiques",
+          "Politique",
+          "Sciences de la nature",
+          "Théologie"
+        ]
+      }
     },
     {
       "nom": "Prospecteur",
@@ -2135,10 +2063,8 @@ window.METIERS_DATA = {
         "Débrouillardise",
         "Évaluation",
         "Fonderie",
-        "Jouer",
         "Marchandage",
-        "Narrer",
-        "Potamologie (fleuve)",
+        "Potamologie (fleuve à préciser)",
         "Sciences de la nature"
       ],
       "reputation": "Rang social : -1",
@@ -2185,15 +2111,12 @@ window.METIERS_DATA = {
         "Marchandage"
       ],
       "competences_avancees": [
-        "Banquier",
         "Calcul",
         "Comportementalisme",
         "Connaissance des bas-fonds (Nation à préciser)",
-        "Numismatique",
         "Sens des affaires",
         "Dissimulation",
         "Falsification",
-        "Déplacement silencieux",
         "Logistique"
       ],
       "reputation": "Moralité : -1",
@@ -2216,7 +2139,7 @@ window.METIERS_DATA = {
         "Assommer",
         "Calcul",
         "Éloquence",
-        "Équitation",
+        "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)",
         "Jouer",
         "Marchandage",
         "Séduction"
@@ -2235,15 +2158,13 @@ window.METIERS_DATA = {
       "competences_base": [
         "Estomac",
         "Ordre serré",
-        "Premiers secours"
+        "Course d’endurance"
       ],
       "competences_avancees": [
         "Artillerie",
         "Conduite d’attelage",
-        "Course d’endurance",
         "Fouille",
         "Jeu de jambes",
-        "Narrer",
         "Qui-vive",
         "Tactique",
         "Valet"
@@ -2266,7 +2187,6 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Assommer",
-        "Comportementalisme",
         "Connaissance des bas-fonds (Nation à préciser)",
         "Contacts (Nation à préciser)",
         "Déplacement silencieux",
@@ -2294,7 +2214,7 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Déplacement silencieux",
-        "Équitation",
+        "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)",
         "Étiquette",
         "Piéger",
         "Pister",
@@ -2322,9 +2242,7 @@ window.METIERS_DATA = {
         "Nager",
         "Pêche",
         "Perception du temps",
-        "Poison",
         "Sauter",
-        "Survie",
         "Connaissance des nœuds",
         "Attaque (Lance)"
       ],
@@ -2347,14 +2265,12 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Cancanier",
-        "Connaissance des routes (nation)",
+        "Connaissance des routes (nation à préciser)",
         "Connaissance des Sidhes",
-        "Énigmes",
         "Étiquette",
         "Galvaniser",
         "Héraldique",
-        "Musique (instrument)",
-        "Séduction"
+        "Musique (type d’instrument à préciser)"
       ],
       "reputation": "Rang social : -1",
       "restriction_creation": "libre",
@@ -2377,18 +2293,21 @@ window.METIERS_DATA = {
         "Augures",
         "Cartomancie",
         "Comédie",
-        "Déguisement",
-        "Dissimulation",
         "Énigmes",
-        "I Ching (Cathayans uniquement)",
         "Marchandage",
-        "Occultisme",
-        "Osselets"
+        "Occultisme"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
       "restriction_type": "nationalite",
-      "restriction_texte": "Être de nationalité cathayane, ou appartenir au peuple des Fidhelis (Sarmatie ou Ussura)."
+      "restriction_texte": "Être de nationalité cathayane, ou appartenir au peuple des Fidhelis (Sarmatie ou Ussura).",
+      "competences_avancees_choix": {
+        "nb": 1,
+        "options": [
+          "I Ching",
+          "Osselets"
+        ]
+      }
     },
     {
       "nom": "Cao Yao (Acupuncteur)",
@@ -2399,21 +2318,16 @@ window.METIERS_DATA = {
       "competences_base": [
         "Diagnostic",
         "Masseur",
-        "Premier Secours"
+        "Premiers secours"
       ],
       "competences_avancees": [
         "Acupuncture",
-        "Charlatanisme",
         "Médications",
         "Méditation",
-        "Philosophie",
         "Examiner",
-        "Hypnotisme",
         "Blocage d’articulation",
-        "Comportementalisme",
         "Connaissance des plantes",
-        "Recherches",
-        "Sciences de la nature"
+        "Recherches"
       ],
       "reputation": "Moralité : +1",
       "restriction_creation": "libre",
@@ -2428,16 +2342,12 @@ window.METIERS_DATA = {
       ],
       "description": "Les caravaniers sont des commerçants qui parcourent de longues distances afin de s’enrichir par la revente de produits exotiques d’une région à l’autre. Un caravanier pourra partir d’Ekaternava, ses mulets chargés de biens manufacturés en provenance des pays de l’ouest de Théah qu’il revendra en territoire kosar. Là, il achètera des poneys, des arcs composites et des faucons qu’il revendra aux commerçants cathayans traversant le Mur de Feu. En échange, il acquerra de la soie, des épices et des animaux exotiques qu’il ramènera à Ekaternava pour les monnayer aux marchands de l’ouest venus avec leurs mousquets, leurs vins et leurs broderies. Il existe de multiples routes de commerce aussi bien en Ussura que dans l’Empire du Croissant. Mais ces routes sont dangereuses et les caravaniers doivent régulièrement affronter des hors-la-loi et des brigands de grands chemins.",
       "competences_base": [
-        "Conduite d’attelage",
-        "Connaissance des routes (nation)",
-        "Marchandage"
+        "Connaissance des routes (nation à préciser)",
+        "Marchandage",
+        "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)"
       ],
       "competences_avancees": [
-        "Astronomie",
-        "Calcul",
         "Cartographie",
-        "Conduite de traîneau (Ussura)",
-        "Équitation",
         "Évaluation",
         "Géographie",
         "Logistique",
@@ -2447,7 +2357,14 @@ window.METIERS_DATA = {
       "reputation": "Rang social : +1",
       "restriction_creation": "libre",
       "restriction_type": "nationalite",
-      "restriction_texte": "Être de nationalité cathayane, croissantine, sarmatienne ou ussurane."
+      "restriction_texte": "Être de nationalité cathayane, croissantine, sarmatienne ou ussurane.",
+      "competences_avancees_choix": {
+        "nb": 1,
+        "options": [
+          "Conduite de traîneau",
+          "Conduite d’attelage"
+        ]
+      }
     },
     {
       "nom": "Courtisane",
@@ -2460,13 +2377,11 @@ window.METIERS_DATA = {
       "competences_base": [],
       "competences_avancees": [
         "Cancanier",
-        "Comportementalisme",
         "Dissimulation",
         "Pique-assiette",
         "Poison",
-        "Politique",
         "Sincérité",
-        "Musique (instrument au choix)",
+        "Musique (type d’instrument à préciser)",
         "Dilettantisme"
       ],
       "reputation": "Rang social : +2",
@@ -2500,15 +2415,14 @@ window.METIERS_DATA = {
       "description": "Le sport antique qu’est la fauconnerie se meurt dans tout Théah, sauf au sein de la classe des boïars ussurans. Vous êtes capable de manipuler et de dresser des faucons et autres oiseaux de proie. Vous savez donc vous en occuper, les élever et faire en sorte qu’ils restent en bonne santé. Vous savez chasser en leur compagnie et donc vous procurer de la viande dans les étendues les plus désolées. Vous pouvez également convaincre votre oiseau de réaliser des tours comme passer dans un cerceau (ou par une fenêtre).",
       "competences_base": [
         "Dressage",
-        "Lancer (en particulier les leurres)",
+        "Lancer",
         "Soin des oiseaux"
       ],
       "competences_avancees": [
         "Connaissance des animaux",
-        "Équitation",
+        "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)",
         "Étiquette",
         "Pister",
-        "Qui-vive",
         "Sens de l’orientation",
         "Signes de piste",
         "Tanner"
@@ -2534,7 +2448,6 @@ window.METIERS_DATA = {
         "Astronomie",
         "Cartographie",
         "Chant",
-        "Éloquence",
         "Géomancie",
         "Méditation",
         "Occultisme",
@@ -2556,9 +2469,8 @@ window.METIERS_DATA = {
       "competences_avancees": [
         "Charlatanisme",
         "Connaissance des plantes",
-        "Connaissance des routes (nation)",
+        "Connaissance des routes (nation à préciser)",
         "Débrouillardise",
-        "Intimidation",
         "Pickpocket",
         "Signes de piste",
         "Soin des chevaux"
@@ -2591,8 +2503,6 @@ window.METIERS_DATA = {
         "Premiers secours"
       ],
       "competences_avancees": [
-        "Chant",
-        "Charlatanisme",
         "Médications",
         "Narrer",
         "Théologie",
@@ -2613,28 +2523,29 @@ window.METIERS_DATA = {
         "Métiers des Belles Lettres"
       ],
       "description": "Un gwai liao est à la fois un courtisan, un politicien, un érudit, et surtout un fonctionnaire. Vous avez étudié pour passer les concours de la fonction publique, et vous utilisez votre connaissance d’une large variété de sujets et votre tact au service du gouvernement.",
-      "competences_base": [],
+      "competences_base": [
+        "Recherches",
+        "Étiquette"
+      ],
       "competences_avancees": [
         "Comptabilité",
         "Diplomatie",
         "Droit",
         "Intrigant",
         "Politique",
-        "Sincérité"
+        "Sincérité",
+        "Mode"
       ],
       "reputation": "Rang social : +2",
       "restriction_creation": "libre",
       "restriction_type": "nationalite",
       "restriction_texte": "Être de nationalité cathayane.",
       "competences_base_choix": {
-        "nb": 3,
+        "nb": 1,
         "options": [
           "Calcul",
           "Création littéraire",
-          "Éloquence",
-          "Étiquette",
-          "Mode",
-          "Recherches"
+          "Éloquence"
         ]
       }
     },
@@ -2646,7 +2557,6 @@ window.METIERS_DATA = {
       "description": "Un rahib (féminin rahib’i, pluriel ruhban) est un membre de l’un des nombreux ordres religieux qui font vœux d’humilité, de pauvreté et de chasteté et qui cherchent à atteindre l’illumination spirituelle. En raison de leur style de vie, les habitants de l’Empire du Croissant les estiment comme des hommes saints et sages. Les ruhban gagnent leurs repas grâce à leurs conseils spirituels, comme professeurs pour les hommes du peuple, en priant ou en effectuant des travaux physiques et manuels si nécessaire. La plupart des ordres de ruhban se rasent la tête, cependant quelques-uns, particulièrement parmi le Jadur’rihad, laissent une longue tresse pousser à l’arrière de leur tête.",
       "competences_base": [],
       "competences_avancees": [
-        "Contorsion",
         "Débrouillardise",
         "Diplomatie",
         "Éloquence",
@@ -2680,14 +2590,12 @@ window.METIERS_DATA = {
       "description": "Un shirbaz est un prestidigitateur très habile de ses mains qui prépare soigneusement ses tours afin de faire croire qu’il dispose de l’appui de puissances surnaturelles. Certains exécutent leurs tours pour amuser l’assistance ; d’autres pour faire croire qu’ils sont plus puissants qu’ils ne paraissent. Certains sont des bateleurs de rue ou des comédiens de théâtre, alors que d’autres mettent leurs talents à la disposition de ceux qui payent bien une telle représentation. Éloquence, Étiquette, Mode.",
       "competences_avancees": [
         "Comédie",
-        "Comportementalisme",
         "Dissimulation",
         "Lire sur les lèvres",
         "Pickpocket",
         "Prestidigitation",
-        "Qui-vive",
         "Séduction",
-        "Sincérité"
+        "Duperie"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -2711,16 +2619,13 @@ window.METIERS_DATA = {
         "Histoire"
       ],
       "competences_avancees": [
-        "Connaissance des routes (nation)",
+        "Connaissance des routes (nation à préciser)",
         "Connaissance des runes",
         "Création littéraire",
-        "Diplomatie",
         "Énigmes",
         "Galvaniser",
-        "Musique (instrument)",
-        "Narrer",
-        "Séduction",
-        "Théologie"
+        "Musique (type d’instrument à préciser)",
+        "Narrer"
       ],
       "reputation": "Rang social : +1",
       "restriction_creation": "libre",
@@ -2742,13 +2647,10 @@ window.METIERS_DATA = {
       "competences_avancees": [
         "Aveugler",
         "Connaissance des animaux",
-        "Équitation",
-        "Estomac",
-        "Étiquette",
+        "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)",
+        "Galvaniser",
         "Jeu de jambes",
         "Roulé-boulé",
-        "Sauter",
-        "Séduction",
         "Soin des animaux (bovins)"
       ],
       "reputation": "Réputation martiale : +1 Ces métiers sont réservées aux membres de certaines organisations secrètes, ou au moins très discrètes.",
@@ -2769,12 +2671,11 @@ window.METIERS_DATA = {
         "Tâches domestiques"
       ],
       "competences_avancees": [
-        "Équitation",
+        "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)",
         "Estomac",
         "Guet-apens",
         "Haubergier",
         "Intimidation",
-        "Poison",
         "Qui-vive",
         "Valet"
       ],
@@ -2796,9 +2697,8 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Astronomie",
-        "Calcul",
         "Code secret",
-        "Connaissance des Syrneths",
+        "Connaissance des pièges",
         "Examen d’artefact",
         "Qui-vive",
         "Sens de l’orientation"
@@ -2810,7 +2710,7 @@ window.METIERS_DATA = {
       "competences_avancees_choix": {
         "nb": 1,
         "options": [
-          "Connaissance des pièges",
+          "Connaissance des Syrneths",
           "Connaissance des runes",
           "Connaissance des Sidhes"
         ]
@@ -2828,12 +2728,11 @@ window.METIERS_DATA = {
         "Tonnelier"
       ],
       "competences_avancees": [
-        "Fabrication d’armes à feu",
+        "Fabricant d’arme à feu",
         "Guet-apens",
         "Mèches",
         "Poison",
         "Poudrier",
-        "Qui-vive",
         "Sciences de la nature",
         "Soulever"
       ],
@@ -2854,14 +2753,11 @@ window.METIERS_DATA = {
         "Ordre serré"
       ],
       "competences_avancees": [
-        "Calcul",
         "Course de vitesse",
-        "Droit",
-        "Équitation",
+        "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)",
         "Étiquette",
         "Héraldique",
         "Histoire",
-        "Séduction",
         "Soin des chevaux"
       ],
       "reputation": "Réputation martiale : +1",
@@ -2900,7 +2796,10 @@ window.METIERS_DATA = {
         "Écrivain public",
         "Éloquence",
         "Orientation citadine (Nation à préciser)",
-        "Pique-assiette"
+        "Pique-assiette",
+        "Musique (type d’instrument à préciser)",
+        "Mode",
+        "Dessin"
       ],
       "reputation": "Rang social : +2",
       "restriction_creation": "libre",
@@ -2921,8 +2820,6 @@ window.METIERS_DATA = {
       "competences_avancees": [
         "Course d’endurance",
         "Estomac",
-        "Galvaniser",
-        "Guet-apens",
         "Intimidation",
         "Logistique",
         "Qui-vive",
@@ -2952,10 +2849,8 @@ window.METIERS_DATA = {
         "Débrouillardise",
         "Nager",
         "Qui-vive",
-        "Sauter",
         "Soin des animaux (chevaux)",
-        "Tailleur",
-        "Tonnelier"
+        "Tailleur"
       ],
       "reputation": "Réputation martiale : +2",
       "restriction_creation": "libre",
@@ -2975,14 +2870,12 @@ window.METIERS_DATA = {
         "Étiquette"
       ],
       "competences_avancees": [
-        "Calcul",
         "Connaissance des routes (la nation de son Ordre)",
-        "Équitation",
+        "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)",
         "Héraldique",
         "Intimidation",
         "Politique",
-        "Premiers secours",
-        "Qui- vive",
+        "Qui-vive",
         "Tactique"
       ],
       "reputation": "Réputation martiale : +3",
@@ -3004,11 +2897,9 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Commander",
-        "Équilibre",
         "Estomac",
         "Étiquette",
         "Intimidation",
-        "Narrer",
         "Pas de côté",
         "Premiers secours",
         "Recherches"
@@ -3036,8 +2927,7 @@ window.METIERS_DATA = {
         "Diplomatie",
         "Galvaniser",
         "Intrigant",
-        "Politique",
-        "Sincérité"
+        "Politique"
       ],
       "reputation": "Rang social : +2",
       "restriction_creation": "libre",
@@ -3053,20 +2943,17 @@ window.METIERS_DATA = {
       "description": "Les Rasoirs font partie de l’organisation du même nom qui fait respecter la Loi de la Guilde au sein de la belliqueuse Guilde des Spadassins. En plus de perfectionner leurs qualités martiales, ils reçoivent également une formation dans le domaine du droit et de la diplomatie pour ne pas froisser les autorités locales lors de leurs diverses interventions.",
       "competences_base": [
         "Diplomatie",
-        "Estomac",
+        "Filature",
         "Intimidation"
       ],
       "competences_avancees": [
         "Corruption",
         "Course de vitesse",
         "Droit",
-        "Équitation",
+        "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)",
         "Étiquette",
-        "Filature",
         "Guet-apens",
-        "Pas de côté",
-        "Premiers secours",
-        "Qui-vive"
+        "Pas de côté"
       ],
       "reputation": "Réputation martiale : +3",
       "restriction_creation": "libre",

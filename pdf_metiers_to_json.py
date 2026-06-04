@@ -336,6 +336,35 @@ COMPETENCES_REF_NORMALISATIONS: list[tuple[str, str]] = [
     (r"^Pique[-\s]+assiette$",      "Pique-assiette"),
     (r"^Connaissance\s+des\s+bas[-\s]+fonds(\s*\(.+\))?$",
      r"Connaissance des bas-fonds\1"),
+    (r"^Qui[-\s]+vive$",            "Qui-vive"),
+    # Méta-compétences "à préciser" : forme abrégée → canonique cliquable
+    (r"^Équitation$",
+     "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)"),
+    (r"^Musique\s*\(\s*instrument(?:\s+au\s+choix)?\s*\)$",
+     "Musique (type d’instrument à préciser)"),
+    (r"^Connaissance\s+des\s+routes\s*\(\s*[Nn]ation\s*\)$",
+     "Connaissance des routes (nation à préciser)"),
+    (r"^Contacts\s*\(\s*Nation\s*\)$",
+     "Contacts (Nation à préciser)"),
+    (r"^Potamologie\s*\(\s*fleuve\s*\)$",
+     "Potamologie (fleuve à préciser)"),
+    # Qualificatifs "(X uniquement)" : la compétence canonique n'en a pas
+    (r"^Géomancie\s*\(.+?uniquement\)$",                              "Géomancie"),
+    (r"^I\s+Ching\s*\(.+?uniquement\)$",                              "I Ching"),
+    (r"^Lancer\s+de\s+fusée\s*\(.+?uniquement\)$",                    "Lancer de fusée"),
+    (r"^Sher\s+[Dd]a\s+Shi(\s*\(.+?\))?$",
+     "Sher da Shi (Charmeur de serpents)"),
+    (r"^Conduite\s+de\s+traîneaux?(\s*\(.+?\))?$",                    "Conduite de traîneau"),
+    (r"^Fabricant\s+de\s+cerfs-volants\s*\(.+?uniquement\)$",         "Fabricant de cerfs-volants"),
+    (r"^Fabricant\s+de\s+feux\s+d[’']artifice\s*\(.+?uniquement\)$",  "Fabricant de feux d’artifice"),
+    (r"^Fabricant\s+d[’']Armes?\s+à\s+feu$",                          "Fabricant d’arme à feu"),
+    # Pluriel/singulier + fautes courantes
+    (r"^Mèche$",                                                       "Mèches"),
+    (r"^Tailleur\s+de\s+pierres$",                                     "Tailleur de pierre"),
+    (r"^Premier\s+[Ss]ecours$",                                        "Premiers secours"),
+    (r"^Fabrication\s+d[’']armes?\s+à\s+feu$",                         "Fabricant d’arme à feu"),
+    # Espaces manquants/excessifs autour des parenthèses (X(Arc) → X (Arc))
+    (r"^(Attaque|Tirer|Recharger|Lancer)\s*\(\s*([^)]+?)\s*\)$",      r"\1 (\2)"),
 ]
 
 import re as _re_norm
@@ -1158,6 +1187,9 @@ def main() -> None:
 
     print(f"Application des corrections v2 ({CORRECTIONS_MD_V2.name})…")
     appliquer_corrections_v2(metiers)
+
+    print("Normalisation finale (cité→Nation, méta-compétences, qualificatifs)…")
+    normaliser_competences_metiers(metiers)
 
     print("Synchro inverse : reconstruction de donnent_acces_* dans competences.json…")
     sync_competences_acces(metiers)
