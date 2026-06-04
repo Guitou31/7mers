@@ -763,7 +763,7 @@
       // Ancien format : #slug, fallback selon la page courante
       const page = (document.body && document.body.dataset && document.body.dataset.page) || "";
       let type = null;
-      if (page === "competences") type = "competence";
+      if (page === "competences" || page === "competences-artisanales") type = "competence";
       else if (page === "metiers") type = "metier";
       else if (page === "entrainements") type = "entrainement";
       else if (page === "ecoles-spadassin") type = "ecole";

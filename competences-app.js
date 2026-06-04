@@ -1,10 +1,25 @@
 (function () {
   "use strict";
-  const data = window.COMPETENCES_DATA;
-  if (!data) {
+  const rawData = window.COMPETENCES_DATA;
+  if (!rawData) {
     document.body.innerHTML = "<p style='padding:2rem;color:#8b3a3a'>Erreur : competences.js introuvable.</p>";
     return;
   }
+
+  // Filtrage par page : 'competences' = toutes sauf artisanales,
+  // 'competences-artisanales' = uniquement les artisanales.
+  const pageId = (document.body && document.body.dataset && document.body.dataset.page) || "competences";
+  const isArtisanalesPage = pageId === "competences-artisanales";
+  const isArtisanale = (c) => /artisanal/i.test(c.categorie || "");
+  const filteredCompetences = rawData.competences.filter(c =>
+    isArtisanalesPage ? isArtisanale(c) : !isArtisanale(c)
+  );
+  const filteredCategories = (rawData._meta && rawData._meta.categories || [])
+    .filter(cat => isArtisanalesPage ? /artisanal/i.test(cat) : !/artisanal/i.test(cat));
+  const data = {
+    _meta: { ...(rawData._meta || {}), categories: filteredCategories },
+    competences: filteredCompetences,
+  };
 
   function normalize(s) {
     return (s || "").toString().normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase();
