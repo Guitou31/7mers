@@ -372,6 +372,10 @@ COMPETENCES_REF_NORMALISATIONS: list[tuple[str, str]] = [
     # Recharger (X) : règle maison universelle → display 'Recharger' simple
     # (lien résolu vers la canonique 'Recharger (Type d'armes à préciser)' via findCompetence).
     (r"^Recharger\s*\(.+?\)$",                                          "Recharger"),
+    # Calligraphe = nom de profession ; la compétence canonique est Calligraphie.
+    (r"^Calligraphe$",                                                  "Calligraphie"),
+    # Uppercut avec un suffixe descriptif parasite → canonique seule.
+    (r"^Uppercut\s*\(.+?\)$",                                           "Uppercut"),
 ]
 
 import re as _re_norm

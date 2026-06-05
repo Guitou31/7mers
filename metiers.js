@@ -239,7 +239,7 @@ window.METIERS_DATA = {
             "Bouilleur de cru",
             "Boulanger",
             "Brasseur",
-            "Calligraphe",
+            "Calligraphie",
             "Céramiste",
             "Chandelon",
             "Chapelier",

@@ -366,6 +366,34 @@ def appliquer_modifs_guillaume(entries: list[dict]) -> list[dict]:
             base.append("Recharger (Arc)")
             a["competences_base"] = base
 
+    # ---- Pugilat : filtrer 2 phrases parasites capturées comme compétences
+    #      (paragraphe explicatif mal coupé par le parser PDF). ----
+    if "Pugilat" in by_nom:
+        p = by_nom["Pugilat"]
+        PARASITES_PREFIXES = (
+            "ces entraînements sont limités",
+            "ils nécessitent donc l",
+            "ce sont des entraînements",
+            "autorisation du mj",
+        )
+        def _est_parasite(c: str) -> bool:
+            cl = c.lower().strip()
+            return any(cl.startswith(p) for p in PARASITES_PREFIXES) or len(cl) > 80
+        p["competences_avancees"] = [c for c in p.get("competences_avancees", [])
+                                     if not _est_parasite(c)]
+
+    # ---- Normalisation finale : applique COMPETENCES_REF_NORMALISATIONS
+    #      du module métiers (Calligraphe→Calligraphie, Équitation→canonique,
+    #      Soin des chevaux→Soin des animaux, Uppercut suffixe, etc.). ----
+    try:
+        from pdf_metiers_to_json import normaliser_ref_competence
+        for e in entries:
+            for k in ("competences_base", "competences_avancees"):
+                if e.get(k):
+                    e[k] = [normaliser_ref_competence(c) for c in e[k]]
+    except ImportError:
+        pass  # autonomie : si pdf_metiers indisponible, pas grave
+
     return entries
 
 

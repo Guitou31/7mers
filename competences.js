@@ -571,6 +571,7 @@ window.COMPETENCES_DATA = {
       "nom": "Calligraphie",
       "description": "Le héros sait écrire de manière précise et décorative pour mettre en valeur un ouvrage. Un héros ne peut utiliser cette compétence qu’avec les langues qu’il sait lire et écrire ou celles qui ont le même alphabet.",
       "donnent_acces_base": [
+        "Artisan",
         "Faussaire",
         "Moine",
         "Rahib (Moine)"
@@ -581,6 +582,7 @@ window.COMPETENCES_DATA = {
       ],
       "categorie": "Compétences artisanales",
       "donnent_acces_metiers_base": [
+        "Artisan",
         "Faussaire",
         "Moine",
         "Rahib (Moine)"
@@ -2585,7 +2587,8 @@ window.COMPETENCES_DATA = {
       "nom": "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)",
       "description": "Cette compétence représente le fait de monter un animal dans ses aspects les plus basiques. Le MJ pourra vous faire faire des jets de compétence si votre héros veut accomplir des actions plus difficiles ou se retrouve dans des situations inhabituelles : galoper (ND 10), rester en selle sur un cheval qui se cabre (ND 15) ou faire franchir une haie à sa monture (ND 20). Une monture particulièrement bien dressée peut permettre de réduire ces ND de 5. Les concentrations possibles sont, entre autres : : chevaux, mules et autres ânes. : taureaux, vaches, bisons et autres yacks. : dans l’Empire du Croissant. : au Cathay.",
       "donnent_acces_base": [
-        "Caravanier"
+        "Caravanier",
+        "Cavalier"
       ],
       "donnent_acces_avancee": [
         "Acolyte",
@@ -2621,7 +2624,9 @@ window.COMPETENCES_DATA = {
         "Veneur",
         "Éclaireur"
       ],
-      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_base": [
+        "Cavalier"
+      ],
       "donnent_acces_entrainements_avancee": []
     },
     {
@@ -5682,6 +5687,7 @@ window.COMPETENCES_DATA = {
       "nom": "Soin des animaux (type d’animal à préciser)",
       "description": "Cette compétence vous permet de prendre soin d’un type d’animal précis, pour toutes les nécessités du quotidien (pansage, nourriture, etc.) et soigner ses petites blessures du quotidien (ses blessures légères). Pour des blessures plus graves, vous aurez besoin de la compétence Vétérinaire. Elle mesure aussi vos connaissances de l’animal et la maîtrise des techniques d’utilisation des outils du métier (laisse ou muselière pour le chien, chaperon et gant pour le faucon, selle, étrier et mors pour le cheval) Les concentrations les plus courantes sont : Bovins, Chameaux, Chevaux, Chiens, Éléphants, Furets, Moutons, Oiseaux, mais il en existe de nombreuses autres.",
       "donnent_acces_base": [
+        "Cavalier",
         "Fauconnier",
         "Palefrenier",
         "Piqueux"
@@ -5708,7 +5714,9 @@ window.COMPETENCES_DATA = {
         "Pauvre Chevalier",
         "Torero"
       ],
-      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_base": [
+        "Cavalier"
+      ],
       "donnent_acces_entrainements_avancee": []
     },
     {
@@ -6136,6 +6144,7 @@ window.COMPETENCES_DATA = {
       "description": "Cette compétence permet de porter une brutale attaque à mains nues pendant laquelle la garde du spadassin est ouverte. Déclarez l’utilisation de cette compétence et servez-vous-en pour faire le jet d’attaque : si le coup porte, vous ferez votre jet de dommages en lançant (sans les garder) deux dés de dommages supplémentaires. En contrepartie, le ND pour être touché de votre héros passe à 5 pendant cette phase et vous ne pouvez pas utiliser de défense active jusqu’à la fin de cette phase. Attention, pour les gants de combat, cette compétence n’est pas utilisable avec un katar ou des griffes.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
+        "Gant de combat",
         "Pugilat"
       ],
       "categorie": "Compétences martiales",
@@ -6143,6 +6152,7 @@ window.COMPETENCES_DATA = {
       "donnent_acces_metiers_avancee": [],
       "donnent_acces_entrainements_base": [],
       "donnent_acces_entrainements_avancee": [
+        "Gant de combat",
         "Pugilat"
       ]
     },

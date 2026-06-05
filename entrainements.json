@@ -26,7 +26,7 @@
       ],
       "competences_avancees": [
         "Recharger (Arbalète)",
-        "Recharger (chu-ko-nu) (Cathayan uniquement)"
+        "Recharger"
       ],
       "categorie_creation": "Entraînements autorisés sans restriction à la création"
     },
@@ -116,8 +116,8 @@
       "nom": "Cavalier",
       "description": "Avec cet entraînement, un personnage peut monter sur n’importe quel cheval domestique et peut le diriger avec un minimum d’efforts. Bien évidemment, un entraînement poussé permet d’accomplir des tours d’adresse beaucoup plus spectaculaires.",
       "competences_base": [
-        "Équitation",
-        "Soins des chevaux"
+        "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)",
+        "Soin des animaux (type d’animal à préciser)"
       ],
       "competences_avancees": [
         "Dressage",
@@ -231,7 +231,7 @@
       ],
       "competences_avancees": [
         "Parade (gant de combat)",
-        "Uppercut (utilisable avec tous sauf le katar et les griffes)"
+        "Uppercut"
       ],
       "categorie_creation": "Entraînements autorisés sans restriction à la création"
     },
@@ -330,9 +330,7 @@
       ],
       "competences_avancees": [
         "Claque sur l’oreille",
-        "Uppercut",
-        "Ces entraînements sont limités à des groupes culturels rares ou éloignés de la zone de jeu habituelle (Empire du Croissant ou Cathay)",
-        "Ils nécessitent donc l’autorisation du MJ pour être choisis par un joueur"
+        "Uppercut"
       ],
       "categorie_creation": "Entraînements autorisés sans restriction à la création"
     },
