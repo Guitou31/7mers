@@ -277,6 +277,15 @@ p { margin: 0 0 0.6em; }
   padding: 1rem 1.2rem;
   margin: 1.2rem 0;
 }
+.creation-intro-bloc {
+  background: rgba(195, 70, 70, 0.06);
+  border-left-color: var(--accent);
+}
+.creation-intro-bloc .creation-paragraph {
+  margin: 0 0 0.8rem;
+  line-height: 1.6;
+}
+.creation-intro-bloc .creation-paragraph:last-child { margin-bottom: 0; }
 .creation-block h4 { margin: 0 0 0.5rem; color: var(--accent); }
 .creation-note {
   font-size: 0.92rem;

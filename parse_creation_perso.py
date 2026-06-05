@@ -104,6 +104,31 @@ TYPO_CORRECTIONS = {
     "résolution": "détermination",
 }
 
+# Le bloc d'intro 'Un Héros commence avec un score…' est collé à tort à la
+# description du Trait Panache dans le PDF — on le retire de Panache (voir
+# extraire_traits) et on le place dans etape_1_intro (texte ci-dessous,
+# reformulé par Guillaume).
+ETAPE_1_INTRO = (
+    "Un Héros commence avec un score de 2 dans toutes ses Caractéristiques.\n"
+    "Vous disposez en plus de 1 points à distribuer dans la Caractéristique "
+    "de votre choix.\n"
+    "Vous pouvez réduire un de vos Traits à 1 pour en augmenter une autre à 3. "
+    "Soyez prévenus qu’en faisant ainsi, le Trait en question sera généralement "
+    "un handicap (un seul dès gardé), et l’augmenter plus tard de 1 à 2 aura le "
+    "même coût que l’augmenter de 2 à 3.\n"
+    "\n"
+    "Ajoutez ensuite le Bonus de Nation en choisissant une Nation, qui consiste "
+    "à Augmenter un Trait parmi deux proposés.\n"
+    "\n"
+    "Aucun trait ne peut dépasser 4 à la création, et le maximum « normal » "
+    "pendant l’aventure est à 5. Pendant l’aventure et via l’XP, la somme des "
+    "traits ne peut dépasser 20 (ceux qui sont à 6 ou 7 grâce à un Avantage ou "
+    "autre seront considérées comme étant à 5 dans le calcul)."
+)
+
+# Marqueur de troncature dans la description Panache du PDF.
+PANACHE_TRUNCATE_AFTER = "le nombre d’actions que le héros pourra entreprendre durant un tour."
+
 
 def corriger_typos(text: str) -> str:
     for old, new in TYPO_CORRECTIONS.items():
@@ -165,6 +190,12 @@ def extraire_traits(doc) -> dict:
         # Strip 'est ' / 'sont ' initial + nettoyage
         desc = re.sub(r"^(?:est|sont)\s+", "", desc).strip()
         desc = re.sub(r"\s+", " ", desc)
+        # Pour Panache : tronquer le bloc 'Un Héros commence avec…' qui
+        # a été collé à tort par le PDF (sert d'intro d'étape, pas de description).
+        if nom_trait == "Panache":
+            idx = desc.find(PANACHE_TRUNCATE_AFTER)
+            if idx >= 0:
+                desc = desc[: idx + len(PANACHE_TRUNCATE_AFTER)].strip()
         traits[nom_trait] = desc
     return traits
 
@@ -313,6 +344,7 @@ def main() -> None:
             "corrections_typos": TYPO_CORRECTIONS,
         },
         "intro": intro,
+        "etape_1_intro": ETAPE_1_INTRO,
         "traits_ordre": ["Gaillardise", "Finesse", "Détermination", "Esprit", "Panache"],
         "traits_descriptions": traits,
         "continents_ordre": CONTINENTS_ORDER,

@@ -51,6 +51,24 @@
     paragraphs.forEach(p => container.appendChild(el("p", { class: "creation-paragraph" }, p)));
   }
 
+  // ===== Étape 1 : intro (paragraphes + sauts de ligne simples) =====
+  // Convention : '\n\n' = nouveau paragraphe, '\n' simple = <br> dans paragraphe.
+  function renderEtape1Intro() {
+    const container = document.getElementById("step-1-intro");
+    if (!container) return;
+    const text = data.etape_1_intro || "";
+    const paragraphs = text.split(/\n{2,}/).map(p => p.trim()).filter(Boolean);
+    paragraphs.forEach(para => {
+      const lines = para.split("\n").map(l => l.trim()).filter(Boolean);
+      const p = el("p", { class: "creation-paragraph" });
+      lines.forEach((line, i) => {
+        if (i > 0) p.appendChild(el("br"));
+        p.appendChild(document.createTextNode(line));
+      });
+      container.appendChild(p);
+    });
+  }
+
   // ===== Étape 1 : Traits + Nations =====
   // Sélecteur radio style 7ème Mer : 5 cercles, 'TRAIT_BASE' remplis, +1 cliquable si Nation choisie
   function renderTraitRow(traitNom) {
@@ -214,6 +232,7 @@
 
   // ===== Init =====
   renderIntro();
+  renderEtape1Intro();
   renderTraits();
   renderNations();
 })();
