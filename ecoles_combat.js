@@ -152,7 +152,7 @@ window.ECOLES_COMBAT_DATA = {
       "arme_display": "Katzbalger et pistolet ou pistolet de duel",
       "armes_categories": [],
       "specialisations": [
-        "Escrime",
+        "Escrime (Épées)",
         "Commandement"
       ],
       "description_courte": "Blitzen (“éclair”) est un style de combat particulièrement détesté par la Guilde des Spadassins pour la bonne raison qu’il mélange allègrement escrime classique et armes à feu, une hérésie de la pire ",
@@ -238,7 +238,7 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Athlétisme",
-        "Escrime (Sabre)"
+        "Escrime (Sabres)"
       ],
       "description_courte": "Le style Bonita enseigne à ses élèves à tenir ferme contre plusieurs adversaires dans l’attente de trouver une chance de fuir. Il est conçu dans le but de tenir les inquisiteurs vindicatifs à distance",
       "techniques_combat": [
@@ -661,7 +661,7 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Cavalier",
-        "Escrime (Sabre)",
+        "Escrime (Sabres)",
         "Lances"
       ],
       "description_courte": "L’élève passe trois années complètes en formation. Durant les premiers mois, il essaie diverses montures puis son tuteur décide de celle qui lui convient le mieux. Celle-ci ne le quittera plus durant ",
@@ -1590,7 +1590,7 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Couteau",
-        "Escrime (Sabre)"
+        "Escrime (Sabres)"
       ],
       "description_courte": "El Puñal Oculto est basé sur la célèbre école d’Aldana mais dote d’une seconde arme les manœuvres et bottes rythmiques de ce style, qu’il s’agisse d’un puñal (un poignard à simple tranchant) manié de ",
       "techniques_combat": [
@@ -1844,7 +1844,7 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Bourreau",
-        "Escrime (Sabre)"
+        "Escrime (Sabres)"
       ],
       "description_courte": "Javier Guannazar de Torres fut l’un des sadiques les plus infâmes de toute la Castille jusqu’à sa mort prématurée entre les mains des envahisseurs montaginois. Il développa un style d’escrime qui soul",
       "techniques_combat": [
@@ -1930,7 +1930,7 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Cavalier",
-        "Escrime (Sabre)"
+        "Escrime (Sabres)"
       ],
       "description_courte": "Les fiers cavaliers de Castille sont d’excellents bretteurs, même à cheval. L’école de Gustavo naquit du désir de former des escrimeurs aussi efficaces à pied qu’à cheval. Elle apprend donc à ses élèv",
       "techniques_combat": [
@@ -3123,7 +3123,7 @@ window.ECOLES_COMBAT_DATA = {
       "specialisations": [
         "Athlétisme",
         "Escrime (Rapières)",
-        "Escrime (Sabre)"
+        "Escrime (Sabres)"
       ],
       "description_courte": "L’École de Marcina a été développée par et pour les colons de cette île de l’Archipel de Minuit. Elle combine les fortes traditions continentales castillianes relatives à l’escrime avec le bon sens in",
       "techniques_combat": [
@@ -4309,7 +4309,7 @@ window.ECOLES_COMBAT_DATA = {
         "Escrime (Sabre)"
       ],
       "specialisations": [
-        "Escrime (Sabre)",
+        "Escrime (Sabres)",
         "Marin"
       ],
       "description_courte": "Cette école a été créée par le grand duelliste Roberto Salinas, connu pour sa grande connaissance des styles castillians et son bourlingage à travers le monde. Elle a pris naissance alors que Salinas ",
@@ -4477,7 +4477,7 @@ window.ECOLES_COMBAT_DATA = {
       "arme_display": "Tulwar",
       "armes_categories": [],
       "specialisations": [
-        "Escrime",
+        "Escrime (Sabres)",
         "Cavalier"
       ],
       "description_courte": "Shaktishaalee enseigne l’usage du tulwar, l’arme nationale du Tashil. Le tulwar est une arme à grande lame courbe, conçue pour frapper de taille. Les étudiants de cette école attaquent avec une grande",
@@ -4732,7 +4732,7 @@ window.ECOLES_COMBAT_DATA = {
         "Escrime (Sabre)"
       ],
       "specialisations": [
-        "Escrime (Sabre)",
+        "Escrime (Sabres)",
         "Fauconnier"
       ],
       "description_courte": "Cette féroce école d’escrime est très ancienne chez les Kosars, mais elle a toujours un grand succès parmi la jeunesse. C’est un mélange de fauconnerie traditionnelle et de techniques de duel qui est ",
@@ -5318,7 +5318,7 @@ window.ECOLES_COMBAT_DATA = {
       "armes_categories": [],
       "specialisations": [
         "Cavalier",
-        "Escrime"
+        "Escrime (Sabres)"
       ],
       "description_courte": "Les Kosars sont parmi les meilleurs cavaliers de Théah, mais également des bandits impitoyables capables de raser une petite ville ussurane en moins d’une journée !",
       "techniques_combat": [

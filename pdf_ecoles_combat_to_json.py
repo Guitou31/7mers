@@ -87,28 +87,42 @@ def _est_spec_parasite(s: str) -> bool:
     return False
 
 
-# Normalisation des sous-catégories d'Escrime : Sabre = singulier, Épées + Rapières = pluriel
-# (forme préférée par Guillaume pour le display, cohérente avec la fiche Escrime).
+# Normalisation des sous-catégories d'Escrime : toutes au pluriel (Sabres,
+# Rapières, Épées) pour cohérence avec la fiche Escrime et préférence Guillaume.
 ESCRIME_SUBCAT_DISPLAY = {
-    "Escrime (Sabre)":   "Escrime (Sabre)",
-    "Escrime (Sabres)":  "Escrime (Sabre)",
+    "Escrime (Sabre)":   "Escrime (Sabres)",
+    "Escrime (Sabres)":  "Escrime (Sabres)",
     "Escrime (Rapière)": "Escrime (Rapières)",
     "Escrime (Rapières)":"Escrime (Rapières)",
     "Escrime (Épée)":    "Escrime (Épées)",
     "Escrime (Épées)":   "Escrime (Épées)",
 }
 
+# Armes spécifiques non répertoriées par le PDF dans armes_categories
+# mais qui correspondent à une sous-catégorie d'Escrime canonique.
+# Matching insensible casse, par mot-clé contenu dans 'arme'.
+WEAPON_TO_ESCRIME_SUB = {
+    "katzbalger": "Escrime (Épées)",   # Blitzen — épée courte allemande
+    "yatagan":    "Escrime (Sabres)",  # Yesukai, Teginbek — sabre courbe oriental
+    "tulwar":     "Escrime (Sabres)",  # Shaktishaalee — sabre indien
+}
 
-def preciser_escrime(specs: list[str], armes_cats: list[str]) -> list[str]:
-    """Si une école liste 'Escrime' en spécialisation et qu'elle a une sous-catégorie
-    précise dans armes_categories ('Escrime (Sabre/Rapière/Épée)'), remplace
-    'Escrime' par la (ou les) sous-catégorie(s) — normalisées (Sabre singulier,
-    Épées/Rapières pluriel). Préserve le clic vers la fiche Escrime via
-    SPECIALISATION_PATTERN_ALIASES côté JS.
+
+def preciser_escrime(specs: list[str], armes_cats: list[str], arme: str = "") -> list[str]:
+    """Si une école liste 'Escrime' en spécialisation et qu'on peut identifier
+    une sous-catégorie (via armes_categories OU via le nom d'arme),
+    remplace 'Escrime' par la (ou les) sous-catégorie(s) précise(s).
+    Préserve le clic vers la fiche Escrime via SPECIALISATION_PATTERN_ALIASES.
     """
     sub_escrime = [ESCRIME_SUBCAT_DISPLAY.get(c, c)
                    for c in (armes_cats or [])
                    if c.startswith("Escrime (")]
+    # Fallback : recherche par nom d'arme si pas de sous-cat dans armes_categories
+    if not sub_escrime and arme:
+        arme_low = arme.lower()
+        for kw, sub in WEAPON_TO_ESCRIME_SUB.items():
+            if kw in arme_low and sub not in sub_escrime:
+                sub_escrime.append(sub)
     if not sub_escrime:
         return specs
     out: list[str] = []
@@ -230,6 +244,7 @@ def transformer_ecole(nom: str, enrichment: dict, techniques_db: dict) -> dict:
         "specialisations": preciser_escrime(
             nettoyer_specialisations(enrichment.get("specialisations_pdf", [])),
             armes_cats,
+            arme,
         ),
         "description_courte": (details.get("description_longue") or [""])[0][:200],
         "techniques_combat": techniques,
