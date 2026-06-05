@@ -113,8 +113,7 @@
         el("span", { class: "redacted-text" }, blockedArme),
       ]),
       el("div", { class: "badges" }, [
-        el("span", { class: "badge organisation-antagoniste",
-                     title: "Organisation antagoniste" }, "🔒 Classifiée"),
+        el("span", { class: "badge organisation-antagoniste" }, "🔒 Classifiée"),
       ]),
     ]);
   }

@@ -708,7 +708,7 @@
 
     // Bannière d'alerte
     container.appendChild(el("div", { class: "ecole-redacted-banner" }, [
-      "⛔ Accès refusé — Document classifié — Organisation antagoniste",
+      "⛔ Accès refusé — Document classifié",
     ]));
 
     // Sections génériques redactées (description, méta, techniques) :
