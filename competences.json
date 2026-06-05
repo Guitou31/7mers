@@ -503,7 +503,6 @@
         "Artisan"
       ],
       "donnent_acces_avancee": [
-        "Artisan",
         "Cambrioleur",
         "Ingénieur"
       ],
@@ -512,7 +511,6 @@
         "Artisan"
       ],
       "donnent_acces_metiers_avancee": [
-        "Artisan",
         "Cambrioleur",
         "Ingénieur"
       ],
@@ -1073,6 +1071,7 @@
         "Antiquaire",
         "Appréciateur",
         "Armateur",
+        "Artisan",
         "Domestique",
         "Gwai Liao (Bureaucrate)",
         "Gérant de comptoir",
@@ -1088,6 +1087,7 @@
         "Antiquaire",
         "Appréciateur",
         "Armateur",
+        "Artisan",
         "Domestique",
         "Gwai Liao (Bureaucrate)",
         "Gérant de comptoir",
@@ -2812,6 +2812,7 @@
       ],
       "donnent_acces_avancee": [
         "Armateur",
+        "Artisan",
         "Cambrioleur",
         "Caravanier",
         "Collecteur d’impôts",
@@ -2829,6 +2830,7 @@
       ],
       "donnent_acces_metiers_avancee": [
         "Armateur",
+        "Artisan",
         "Cambrioleur",
         "Caravanier",
         "Collecteur d’impôts",
@@ -3872,6 +3874,7 @@
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Armateur",
+        "Artisan",
         "Caravanier",
         "Gérant de comptoir",
         "Intendant",
@@ -3884,6 +3887,7 @@
       "donnent_acces_metiers_base": [],
       "donnent_acces_metiers_avancee": [
         "Armateur",
+        "Artisan",
         "Caravanier",
         "Gérant de comptoir",
         "Intendant",
@@ -4407,6 +4411,7 @@
         "Mendiant"
       ],
       "donnent_acces_avancee": [
+        "Artisan",
         "Cadet",
         "Cartographe",
         "Dilettante",
@@ -4430,6 +4435,7 @@
         "Mendiant"
       ],
       "donnent_acces_metiers_avancee": [
+        "Artisan",
         "Cadet",
         "Cartographe",
         "Dilettante",
@@ -5519,7 +5525,6 @@
       "donnent_acces_avancee": [
         "Armateur",
         "Arnaqueur",
-        "Artisan",
         "Colporteur",
         "Malandrin",
         "Marchand",
@@ -5532,7 +5537,6 @@
       "donnent_acces_metiers_avancee": [
         "Armateur",
         "Arnaqueur",
-        "Artisan",
         "Colporteur",
         "Malandrin",
         "Marchand",

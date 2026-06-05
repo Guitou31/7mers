@@ -504,7 +504,6 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [
-        "Artisan",
         "Cambrioleur",
         "Ingénieur"
       ],
@@ -513,7 +512,6 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_metiers_avancee": [
-        "Artisan",
         "Cambrioleur",
         "Ingénieur"
       ],
@@ -1074,6 +1072,7 @@ window.COMPETENCES_DATA = {
         "Antiquaire",
         "Appréciateur",
         "Armateur",
+        "Artisan",
         "Domestique",
         "Gwai Liao (Bureaucrate)",
         "Gérant de comptoir",
@@ -1089,6 +1088,7 @@ window.COMPETENCES_DATA = {
         "Antiquaire",
         "Appréciateur",
         "Armateur",
+        "Artisan",
         "Domestique",
         "Gwai Liao (Bureaucrate)",
         "Gérant de comptoir",
@@ -2813,6 +2813,7 @@ window.COMPETENCES_DATA = {
       ],
       "donnent_acces_avancee": [
         "Armateur",
+        "Artisan",
         "Cambrioleur",
         "Caravanier",
         "Collecteur d’impôts",
@@ -2830,6 +2831,7 @@ window.COMPETENCES_DATA = {
       ],
       "donnent_acces_metiers_avancee": [
         "Armateur",
+        "Artisan",
         "Cambrioleur",
         "Caravanier",
         "Collecteur d’impôts",
@@ -3873,6 +3875,7 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [],
       "donnent_acces_avancee": [
         "Armateur",
+        "Artisan",
         "Caravanier",
         "Gérant de comptoir",
         "Intendant",
@@ -3885,6 +3888,7 @@ window.COMPETENCES_DATA = {
       "donnent_acces_metiers_base": [],
       "donnent_acces_metiers_avancee": [
         "Armateur",
+        "Artisan",
         "Caravanier",
         "Gérant de comptoir",
         "Intendant",
@@ -4408,6 +4412,7 @@ window.COMPETENCES_DATA = {
         "Mendiant"
       ],
       "donnent_acces_avancee": [
+        "Artisan",
         "Cadet",
         "Cartographe",
         "Dilettante",
@@ -4431,6 +4436,7 @@ window.COMPETENCES_DATA = {
         "Mendiant"
       ],
       "donnent_acces_metiers_avancee": [
+        "Artisan",
         "Cadet",
         "Cartographe",
         "Dilettante",
@@ -5520,7 +5526,6 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Armateur",
         "Arnaqueur",
-        "Artisan",
         "Colporteur",
         "Malandrin",
         "Marchand",
@@ -5533,7 +5538,6 @@ window.COMPETENCES_DATA = {
       "donnent_acces_metiers_avancee": [
         "Armateur",
         "Arnaqueur",
-        "Artisan",
         "Colporteur",
         "Malandrin",
         "Marchand",

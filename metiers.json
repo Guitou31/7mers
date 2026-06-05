@@ -208,13 +208,15 @@
         "Sens des affaires"
       ],
       "competences_avancees": [
-        "Bricoleur",
         "Calcul",
         "Conduite d’attelage",
         "Marchandage",
-        "Sens des affaires",
         "Service",
-        "Soulever"
+        "Soulever",
+        "Évaluation",
+        "Comptabilité",
+        "Logistique",
+        "Orientation citadine (Nation à préciser)"
       ],
       "reputation": "Rang social : +1",
       "restriction_creation": "libre",
