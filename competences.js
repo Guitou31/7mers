@@ -403,12 +403,18 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Blocage",
       "description": "Le blocage est l’acte de placer votre bras ou votre jambe entre vous et les coups de votre ennemi. Cette compétence peut être utilisée comme compétence de Défense active lorsque vous êtes désarmé.",
-      "donnent_acces_base": [],
+      "donnent_acces_base": [
+        "Arts martiaux défensifs",
+        "Arts martiaux offensifs"
+      ],
       "donnent_acces_avancee": [],
       "categorie": "Compétences martiales",
       "donnent_acces_metiers_base": [],
       "donnent_acces_metiers_avancee": [],
-      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_base": [
+        "Arts martiaux défensifs",
+        "Arts martiaux offensifs"
+      ],
       "donnent_acces_entrainements_avancee": []
     },
     {
@@ -1376,6 +1382,7 @@ window.COMPETENCES_DATA = {
         "Barde",
         "Cadet",
         "Cartographe",
+        "Chevalier",
         "Contrebandier",
         "Explorateur",
         "Gitan",
@@ -1396,6 +1403,7 @@ window.COMPETENCES_DATA = {
         "Barde",
         "Cadet",
         "Cartographe",
+        "Chevalier",
         "Contrebandier",
         "Explorateur",
         "Gitan",
@@ -4493,8 +4501,26 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Parade (Type d’armes à préciser)",
       "description": "Un héros peut utiliser cette compétence, qui sert à bloquer le coup d’un adversaire au moyen d’une arme, comme compétence de défense active. Les concentrations possibles sont : Armes improvisées, Bâtons, Cape, Bouclier, Couteau, Épée à deux mains, Escrime, Éventail, Filet, Fléau, Gant de combat, Hache à deux mains, Hache, Lance légère, Masse, Matraque. La concentration ci-dessous mérite des explications complémentaires.",
-      "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_base": [
+        "Arme d’hast",
+        "Armes exotiques jumelées",
+        "Bouclier",
+        "Bâton",
+        "Cape",
+        "Couteau",
+        "Escrime",
+        "Filet",
+        "Haches",
+        "Épée à deux mains",
+        "Éventail"
+      ],
+      "donnent_acces_avancee": [
+        "Combat de rue",
+        "Fléau",
+        "Gant de combat",
+        "Lances",
+        "Masses"
+      ],
       "variantes": [
         {
           "nom": "Armes exotiques jumelées",
@@ -4504,8 +4530,26 @@ window.COMPETENCES_DATA = {
       "categorie": "Compétences martiales",
       "donnent_acces_metiers_base": [],
       "donnent_acces_metiers_avancee": [],
-      "donnent_acces_entrainements_base": [],
-      "donnent_acces_entrainements_avancee": []
+      "donnent_acces_entrainements_base": [
+        "Arme d’hast",
+        "Armes exotiques jumelées",
+        "Bouclier",
+        "Bâton",
+        "Cape",
+        "Couteau",
+        "Escrime",
+        "Filet",
+        "Haches",
+        "Épée à deux mains",
+        "Éventail"
+      ],
+      "donnent_acces_entrainements_avancee": [
+        "Combat de rue",
+        "Fléau",
+        "Gant de combat",
+        "Lances",
+        "Masses"
+      ]
     },
     {
       "nom": "Parfumeur",
@@ -6015,12 +6059,18 @@ window.COMPETENCES_DATA = {
       "nom": "Tir d’adresse",
       "description": "Cette compétence vous permet de réduire les pénalités gênant le tir (portée, cible cachée, etc.) de votre rang en Tir d’adresse * 5. L’utilisation de cette compétence ne permet pas de faire tomber votre ND en dessous du ND pour être touché de base.",
       "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "donnent_acces_avancee": [
+        "Arme de jet exotique",
+        "Sarbacane"
+      ],
       "categorie": "Compétences martiales",
       "donnent_acces_metiers_base": [],
       "donnent_acces_metiers_avancee": [],
       "donnent_acces_entrainements_base": [],
-      "donnent_acces_entrainements_avancee": []
+      "donnent_acces_entrainements_avancee": [
+        "Arme de jet exotique",
+        "Sarbacane"
+      ]
     },
     {
       "nom": "Tir réflexe",

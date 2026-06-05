@@ -80,8 +80,14 @@
     "recharger": "Recharger (Type d’armes à préciser)",
   };
   // Patterns pour les variantes (ex: 'Recharger (Arc)' → fiche canonique unique).
+  // Le display reste tel quel ; seul le clic résout vers la canonique.
   const COMPETENCE_PATTERN_ALIASES = [
-    { pattern: /^recharger\s*\(.+?\)$/i, target: "Recharger (Type d’armes à préciser)" },
+    { pattern: /^recharger\s*\(.+?\)$/i,        target: "Recharger (Type d’armes à préciser)" },
+    { pattern: /^parade\s*\(.+?\)$/i,           target: "Parade (Type d’armes à préciser)" },
+    { pattern: /^blocage\s*\(.+?\)$/i,          target: "Blocage" },
+    { pattern: /^tir\s+d['’]adresse\s*\(.+?\)$/i, target: "Tir d’adresse" },
+    { pattern: /^connaissance\s+des\s+routes\s*\(.+?\)$/i,
+      target: "Connaissance des routes (nation à préciser)" },
   ];
 
   function findCompetence(nom) {

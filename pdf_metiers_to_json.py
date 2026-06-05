@@ -1216,16 +1216,29 @@ def sync_competences_acces(metiers: list[dict]) -> None:
     COMPETENCE_ALIASES_NK = {
         _nk("Recharger"): _nk("Recharger (Type d’armes à préciser)"),
     }
-    # Patterns : 'Recharger (Arc)' / 'Recharger (Arbalète)' → fiche canonique unique
-    RECHARGER_PATTERN = re.compile(r"^recharger\s*\(.+?\)$", re.IGNORECASE)
-    canon_recharger_nk = _nk("Recharger (Type d’armes à préciser)")
+    # Patterns : 'X (variante)' → fiche canonique unique (display reste tel quel).
+    PATTERN_ALIASES_NK: list[tuple[re.Pattern, str]] = [
+        (re.compile(r"^recharger\s*\(.+?\)$", re.I),
+         _nk("Recharger (Type d’armes à préciser)")),
+        (re.compile(r"^parade\s*\(.+?\)$", re.I),
+         _nk("Parade (Type d’armes à préciser)")),
+        (re.compile(r"^blocage\s*\(.+?\)$", re.I),
+         _nk("Blocage")),
+        (re.compile(r"^tir\s+d['’]adresse\s*\(.+?\)$", re.I),
+         _nk("Tir d’adresse")),
+        (re.compile(r"^connaissance\s+des\s+routes\s*\(.+?\)$", re.I),
+         _nk("Connaissance des routes (nation à préciser)")),
+    ]
 
     def _ajouter(comp_str: str, niveau: str, source_type: str, source_nom: str):
         key = _nk(comp_str)
         if key in COMPETENCE_ALIASES_NK:
             key = COMPETENCE_ALIASES_NK[key]
-        elif RECHARGER_PATTERN.match(key):
-            key = canon_recharger_nk
+        else:
+            for rx, target in PATTERN_ALIASES_NK:
+                if rx.match(key):
+                    key = target
+                    break
         if key not in canon:
             return  # pas de compétence canonique : laisse tel quel (sera affiché en texte)
         if source_type == "metier":
