@@ -28,8 +28,15 @@ CIBLE_BASE = 3
 CIBLE_AV = 7
 
 
-def fmt_choix(ch: dict | None) -> str:
-    """Formate un choix en chaîne 'nb=N; options=A, B, C; note=...'."""
+def _iter_choix(v):
+    if not v: return []
+    if isinstance(v, dict): return [v]
+    if isinstance(v, list): return [c for c in v if c]
+    return []
+
+
+def fmt_choix(ch: dict) -> str:
+    """Formate UN choix en chaîne 'nb=N; options=A, B, C; note=...'."""
     if not ch:
         return ""
     parts = [f"nb={ch['nb']}"]
@@ -40,11 +47,11 @@ def fmt_choix(ch: dict | None) -> str:
 
 
 def metier_status(m: dict) -> tuple[int, int, str]:
-    nb_base = len(m.get("competences_base", [])) + (
-        (m.get("competences_base_choix") or {}).get("nb") or 0
+    nb_base = len(m.get("competences_base", [])) + sum(
+        (ch.get("nb") or 0) for ch in _iter_choix(m.get("competences_base_choix"))
     )
-    nb_av = len(m.get("competences_avancees", [])) + (
-        (m.get("competences_avancees_choix") or {}).get("nb") or 0
+    nb_av = len(m.get("competences_avancees", [])) + sum(
+        (ch.get("nb") or 0) for ch in _iter_choix(m.get("competences_avancees_choix"))
     )
     if m["nom"] == "Artisan":
         marker = "⭐ (cas particulier)"
@@ -119,14 +126,24 @@ def main() -> None:
 
         base = m.get("competences_base", [])
         av = m.get("competences_avancees", [])
-        ch_b = m.get("competences_base_choix")
-        ch_a = m.get("competences_avancees_choix")
+        ch_bs = _iter_choix(m.get("competences_base_choix"))
+        ch_as = _iter_choix(m.get("competences_avancees_choix"))
 
         out.append("```\n")
         out.append(f"base: {', '.join(base)}\n")
         out.append(f"av: {', '.join(av)}\n")
-        out.append(f"base_choix: {fmt_choix(ch_b)}\n")
-        out.append(f"av_choix: {fmt_choix(ch_a)}\n")
+        # Une ligne par bloc choix. Toujours afficher au moins une ligne vide
+        # pour faciliter l'édition par Guillaume.
+        if ch_bs:
+            for ch in ch_bs:
+                out.append(f"base_choix: {fmt_choix(ch)}\n")
+        else:
+            out.append("base_choix: \n")
+        if ch_as:
+            for ch in ch_as:
+                out.append(f"av_choix: {fmt_choix(ch)}\n")
+        else:
+            out.append("av_choix: \n")
         out.append("```\n\n")
 
     text = "".join(out)

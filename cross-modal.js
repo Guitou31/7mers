@@ -508,13 +508,17 @@
     container.appendChild(compSection);
   }
 
-  // Rendu d'un groupe (base ou avancées) : liste fixe + éventuelle structure 'choix'.
-  function renderCompetencesGroup(label, items, choix, cssClass) {
+  // Rendu d'un groupe (base ou avancées) : liste fixe + un ou plusieurs blocs 'choix'.
+  function renderCompetencesGroup(label, items, choixOrList, cssClass) {
     const group = el("div", { class: "competence-section " + cssClass });
     group.appendChild(el("h4", null, label));
     const hasItems = items && items.length > 0;
-    const hasChoix = choix && choix.options && choix.options.length > 0;
-    if (!hasItems && !hasChoix) {
+    // Support dict (legacy) ou list[dict] (nouveau Artisan).
+    const choixList = !choixOrList ? []
+      : Array.isArray(choixOrList) ? choixOrList
+      : [choixOrList];
+    const validChoix = choixList.filter(c => c && c.options && c.options.length > 0);
+    if (!hasItems && validChoix.length === 0) {
       group.appendChild(el("p", { class: "avantage-vide" }, "Aucune"));
       return group;
     }
@@ -522,7 +526,7 @@
       group.appendChild(el("ul", { class: "competence-list" },
         items.map(c => el("li", null, [buildCompetenceLink(c)]))));
     }
-    if (hasChoix) {
+    validChoix.forEach(choix => {
       const intro = "Choisir " + choix.nb + " compétence" + (choix.nb > 1 ? "s" : "")
         + " parmi :";
       const div = el("div", { class: "competence-choix" }, [
@@ -537,7 +541,7 @@
         ]));
       }
       group.appendChild(div);
-    }
+    });
     return group;
   }
 

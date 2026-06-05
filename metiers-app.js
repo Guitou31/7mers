@@ -44,8 +44,12 @@
     }
     if (state.search) {
       const q = normalize(state.search);
-      const choixBaseOpts = ((m.competences_base_choix && m.competences_base_choix.options) || []);
-      const choixAvOpts = ((m.competences_avancees_choix && m.competences_avancees_choix.options) || []);
+      // Choix peut être dict (legacy) ou list[dict] (nouveau).
+      const choixIter = (v) => !v ? [] : Array.isArray(v) ? v : [v];
+      const choixBaseOpts = choixIter(m.competences_base_choix)
+        .flatMap(c => c.options || []);
+      const choixAvOpts = choixIter(m.competences_avancees_choix)
+        .flatMap(c => c.options || []);
       const hay = normalize([m.nom, m.description || "", (m.competences_base || []).join(" "),
         (m.competences_avancees || []).join(" "), choixBaseOpts.join(" "), choixAvOpts.join(" "),
         (m.categories || []).join(" ")].join(" "));
@@ -56,10 +60,11 @@
 
   function renderCard(m) {
     const cats = m.categories || [];
-    // Compteur : compétences fixes + nombre QUE LE JOUEUR PEUT PRENDRE dans les choix
-    // (= choix.nb, pas le nombre d'options). Ex: 'Choisir 3 parmi 6' compte pour 3.
-    const nbChoixBase = (m.competences_base_choix && m.competences_base_choix.nb) || 0;
-    const nbChoixAv = (m.competences_avancees_choix && m.competences_avancees_choix.nb) || 0;
+    // Compteur : compétences fixes + somme des nb des choix (liste possiblement
+    // multiple : Artisan a 2 choix de base par ex).
+    const choixIter = (v) => !v ? [] : Array.isArray(v) ? v : [v];
+    const nbChoixBase = choixIter(m.competences_base_choix).reduce((s, c) => s + (c.nb || 0), 0);
+    const nbChoixAv = choixIter(m.competences_avancees_choix).reduce((s, c) => s + (c.nb || 0), 0);
     const nbComp = (m.competences_base || []).length + (m.competences_avancees || []).length
                  + nbChoixBase + nbChoixAv;
     const r = m.restriction_type || "aucune";

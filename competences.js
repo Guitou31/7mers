@@ -500,14 +500,18 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Bricoleur",
       "description": "Cette compétence représente votre capacité pratique à réparer et construire des objets mécaniques. On s’en sert pour retaper ou améliorer de petits objets comme les pendules et boîtes à musique, mais également pour en réaliser depuis des plans abstraits.",
-      "donnent_acces_base": [],
+      "donnent_acces_base": [
+        "Artisan"
+      ],
       "donnent_acces_avancee": [
         "Artisan",
         "Cambrioleur",
         "Ingénieur"
       ],
       "categorie": "Compétences artisanales",
-      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
       "donnent_acces_metiers_avancee": [
         "Artisan",
         "Cambrioleur",
@@ -2802,7 +2806,6 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [
         "Antiquaire",
         "Appréciateur",
-        "Artisan",
         "Contrebandier",
         "Gérant de comptoir",
         "Marchand",
@@ -2820,7 +2823,6 @@ window.COMPETENCES_DATA = {
       "donnent_acces_metiers_base": [
         "Antiquaire",
         "Appréciateur",
-        "Artisan",
         "Contrebandier",
         "Gérant de comptoir",
         "Marchand",
@@ -5512,7 +5514,9 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Sens des affaires",
       "description": "Le héros a un sens inné des affaires. D’instinct, il sait quels marchands lui consentiront remises, ristournes et rabais. Il s’agit plus ou moins d’une version du Comportementalisme appliquée au commerce. Si on y ajoute un peu de marchandage, cette compétence peut permettre au héros de faire d’excellentes affaires. Vous faites votre jet de compétence en gardant deux dés de moins quand votre héros fait appel à cette compétence dans une ville qu’il ne connaît pas.",
-      "donnent_acces_base": [],
+      "donnent_acces_base": [
+        "Artisan"
+      ],
       "donnent_acces_avancee": [
         "Armateur",
         "Arnaqueur",
@@ -5523,7 +5527,9 @@ window.COMPETENCES_DATA = {
         "Receleur"
       ],
       "categorie": "Compétences commerciales",
-      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
       "donnent_acces_metiers_avancee": [
         "Armateur",
         "Arnaqueur",
@@ -5558,12 +5564,16 @@ window.COMPETENCES_DATA = {
     {
       "nom": "Service",
       "description": "Le héros, en tant que propriétaire d’une taverne, sait servir des boissons à ses clients, non seulement avec efficacité et diligence, mais aussi avec un certain style. Cette compétence sous-estimée permet non seulement de diriger un établissement servant des boissons, mais aussi et surtout de développer suffisamment de flair pour se faire une réputation dans le métier.",
-      "donnent_acces_base": [],
+      "donnent_acces_base": [
+        "Artisan"
+      ],
       "donnent_acces_avancee": [
         "Artisan"
       ],
       "categorie": "Compétences artisanales",
-      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_base": [
+        "Artisan"
+      ],
       "donnent_acces_metiers_avancee": [
         "Artisan"
       ],

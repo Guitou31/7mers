@@ -399,7 +399,41 @@ METIERS_SUPPRIMES = {"Conférencier", "Aérostier", "Seigneur du crime"}
 #
 # Lookup côté UI : 'Une compétence d'artisan au choix' = vrai nom dans
 # competences.json, donc rendu cliquable via findCompetence.
+ARTISAN_SPECIALITES = [
+    "Aubergiste", "Barbier", "Boucher", "Bouilleur de cru", "Boulanger", "Brasseur",
+    "Calligraphe", "Céramiste", "Chandelon", "Chapelier", "Charpentier", "Chaudronnier",
+    "Confiseur", "Construction navale", "Cordonnier", "Couturier", "Cuisinier",
+    "Ébéniste", "Écrivain public", "Embaumeur", "Éventailliste",
+    "Fabricant d’arme à feu", "Fabricant de cerfs-volants", "Fabricant de dards",
+    "Fabricant de feux d’artifice", "Fabricant de vitraux", "Fabricant de voiles",
+    "Facteur d’arcs", "Fileur", "Fleuriste", "Forgeron", "Fourreur", "Haubergier",
+    "Horloger", "Imprimeur", "Jardinier", "Joaillier", "Luthier", "Masseur", "Maçon",
+    "Meunier", "Miroitier", "Orfèvre", "Papetier", "Parfumeur", "Perruquier", "Potier",
+    "Poudrier", "Régisseur", "Sabotier", "Savonnier", "Sellier", "Serrurier",
+    "Souffleur de verre", "Tailleur", "Tailleur de pierre", "Tanner", "Teinturier",
+    "Tisserand", "Tonnelier", "Vannier", "Vigneron",
+]
+
+
 METIERS_COMPETENCES_OVERRIDES: dict[str, dict] = {
+    "Artisan": {
+        # 1 fixe + 2 choix : Service/Bricoleur (selon le métier exercé) + 1 spécialité
+        "competences_base": ["Sens des affaires"],
+        "competences_base_choix": [
+            {
+                "nb": 1,
+                "options": ["Service", "Bricoleur"],
+                "note": "Selon le métier exercé (Service pour les artisans à clientèle, "
+                        "Bricoleur pour les fabricants).",
+            },
+            {
+                "nb": 1,
+                "options": list(ARTISAN_SPECIALITES),
+                "note": "Liste non exhaustive — choisis ta spécialité artisanale.",
+            },
+        ],
+        # Les avancées ne sont pas encore définies par Guillaume — on laisse celles du PDF.
+    },
     "Shirbaz (magicien)": {
         # Mal lues par le parser (capturées comme description).
         "competences_base": ["Éloquence", "Étiquette", "Mode"],
@@ -818,6 +852,21 @@ def _nk(s: str) -> str:
     return re.sub(r"\s+", " ", no_acc.lower().replace("’", "'").replace("‘", "'")).strip()
 
 
+def _iter_choix(value) -> list[dict]:
+    """Helper : un champ competences_*_choix peut être :
+    - None / absent → []
+    - dict {nb, options, note?} (legacy) → [dict]
+    - list[dict] (nouveau, supporte plusieurs blocs choix) → tel quel.
+    """
+    if not value:
+        return []
+    if isinstance(value, dict):
+        return [value]
+    if isinstance(value, list):
+        return [c for c in value if c]
+    return []
+
+
 def appliquer_overrides(metiers: list[dict]) -> list[dict]:
     """Applique suppressions, restrictions et modifications maison après parsing."""
     supprimes = {_nk(s) for s in METIERS_SUPPRIMES}
@@ -860,7 +909,7 @@ def appliquer_overrides(metiers: list[dict]) -> list[dict]:
             m["competences_avancees"] = av
 
     # Overrides de compétences (Shirbaz, Galérien, Contrebandier, Gitan, Artiste,
-    # Gwai Liao, Rahib, Courtisane) — voir METIERS_COMPETENCES_OVERRIDES.
+    # Gwai Liao, Rahib, Courtisane, Artisan) — voir METIERS_COMPETENCES_OVERRIDES.
     comp_overrides = {_nk(k): (k, v) for k, v in METIERS_COMPETENCES_OVERRIDES.items()}
     vus_comp: set[str] = set()
     for m in result:
@@ -868,10 +917,19 @@ def appliquer_overrides(metiers: list[dict]) -> list[dict]:
         if nk in comp_overrides:
             vus_comp.add(nk)
             _, override = comp_overrides[nk]
-            for key in ("competences_base", "competences_avancees",
-                        "competences_base_choix", "competences_avancees_choix"):
+            for key in ("competences_base", "competences_avancees"):
                 if key in override:
                     m[key] = override[key]
+            # Choix : auto-wrap dict → liste pour cohérence
+            for key in ("competences_base_choix", "competences_avancees_choix"):
+                if key in override:
+                    v = override[key]
+                    if isinstance(v, dict):
+                        m[key] = [v]
+                    elif isinstance(v, list):
+                        m[key] = list(v)
+                    else:
+                        m[key] = []
     for nk, (k, _) in comp_overrides.items():
         if nk not in vus_comp:
             print(f"  [!] Override compétences non appliqué (métier introuvable) : '{k}'")
@@ -893,20 +951,23 @@ def normaliser_competences_metiers(metiers: list[dict]) -> None:
     def norm_liste(lst):
         if not lst: return lst
         return [normaliser_ref_competence(x) for x in lst]
-    def norm_choix(ch):
-        if not ch: return ch
-        if "options" in ch:
-            ch["options"] = norm_liste(ch["options"])
-        return ch
+    def norm_choix_list(ch_list):
+        if not ch_list: return ch_list
+        if isinstance(ch_list, dict):  # legacy auto-wrap
+            ch_list = [ch_list]
+        for ch in ch_list:
+            if ch and "options" in ch:
+                ch["options"] = norm_liste(ch["options"])
+        return ch_list
     for m in metiers:
         if m.get("competences_base"):
             m["competences_base"] = norm_liste(m["competences_base"])
         if m.get("competences_avancees"):
             m["competences_avancees"] = norm_liste(m["competences_avancees"])
         if m.get("competences_base_choix"):
-            m["competences_base_choix"] = norm_choix(m["competences_base_choix"])
+            m["competences_base_choix"] = norm_choix_list(m["competences_base_choix"])
         if m.get("competences_avancees_choix"):
-            m["competences_avancees_choix"] = norm_choix(m["competences_avancees_choix"])
+            m["competences_avancees_choix"] = norm_choix_list(m["competences_avancees_choix"])
 
 
 def appliquer_modifications(metiers: list[dict]) -> None:
@@ -960,9 +1021,13 @@ def appliquer_modifications(metiers: list[dict]) -> None:
         # Ajouter
         if "ajouter_base" in op:    base = _ajouter_unique(base, op["ajouter_base"])
         if "ajouter_av" in op:      av = _ajouter_unique(av, op["ajouter_av"])
-        # Set choix
-        if "set_base_choix" in op:  m["competences_base_choix"] = dict(op["set_base_choix"])
-        if "set_av_choix" in op:    m["competences_avancees_choix"] = dict(op["set_av_choix"])
+        # Set choix : accepte dict (auto-wrap en liste à 1 élément) ou list.
+        if "set_base_choix" in op:
+            v = op["set_base_choix"]
+            m["competences_base_choix"] = [dict(v)] if isinstance(v, dict) else [dict(x) for x in v]
+        if "set_av_choix" in op:
+            v = op["set_av_choix"]
+            m["competences_avancees_choix"] = [dict(v)] if isinstance(v, dict) else [dict(x) for x in v]
         # Description / Réputation
         if "retirer_dans_description" in op:
             sub = op["retirer_dans_description"]
@@ -1039,6 +1104,9 @@ def parse_corrections_v2(text: str) -> dict[str, dict]:
         if not m_code:
             continue
         entry: dict = {}
+        # base_choix et av_choix peuvent apparaître plusieurs fois (chaque ligne
+        # ajoute un bloc de choix). Si une ligne est vide, on retient juste qu'on a
+        # vu la clé (pour distinguer 'pas de choix' de 'champ absent').
         for line in m_code.group(1).splitlines():
             line = line.strip()
             if not line or ":" not in line:
@@ -1051,9 +1119,15 @@ def parse_corrections_v2(text: str) -> dict[str, dict]:
             elif k == "av":
                 entry["av"] = [x.strip() for x in v.split(",") if x.strip()]
             elif k == "base_choix":
-                entry["base_choix"] = _parse_choix_str(v)
+                entry.setdefault("base_choix", [])
+                parsed = _parse_choix_str(v)
+                if parsed:
+                    entry["base_choix"].append(parsed)
             elif k == "av_choix":
-                entry["av_choix"] = _parse_choix_str(v)
+                entry.setdefault("av_choix", [])
+                parsed = _parse_choix_str(v)
+                if parsed:
+                    entry["av_choix"].append(parsed)
         if entry:
             result[nom] = entry
     return result
@@ -1085,8 +1159,10 @@ def appliquer_corrections_v2(metiers: list[dict]) -> None:
             m["competences_avancees"] = c["av"]
             changed = True
         if "base_choix" in c:
-            cur = m.get("competences_base_choix")
-            new = c["base_choix"]
+            # c["base_choix"] est une liste (possiblement vide). On normalise la
+            # comparaison en convertissant la valeur courante en liste aussi.
+            cur = _iter_choix(m.get("competences_base_choix"))
+            new = c["base_choix"]  # déjà une liste
             if new != cur:
                 if new:
                     m["competences_base_choix"] = new
@@ -1094,7 +1170,7 @@ def appliquer_corrections_v2(metiers: list[dict]) -> None:
                     m.pop("competences_base_choix", None)
                 changed = True
         if "av_choix" in c:
-            cur = m.get("competences_avancees_choix")
+            cur = _iter_choix(m.get("competences_avancees_choix"))
             new = c["av_choix"]
             if new != cur:
                 if new:
@@ -1162,12 +1238,12 @@ def sync_competences_acces(metiers: list[dict]) -> None:
             _ajouter(c, "base", "metier", nm)
         for c in m.get("competences_avancees", []):
             _ajouter(c, "av", "metier", nm)
-        choix_b = m.get("competences_base_choix") or {}
-        for c in choix_b.get("options", []):
-            _ajouter(c, "base", "metier", nm)
-        choix_av = m.get("competences_avancees_choix") or {}
-        for c in choix_av.get("options", []):
-            _ajouter(c, "av", "metier", nm)
+        for choix_b in _iter_choix(m.get("competences_base_choix")):
+            for c in choix_b.get("options", []):
+                _ajouter(c, "base", "metier", nm)
+        for choix_av in _iter_choix(m.get("competences_avancees_choix")):
+            for c in choix_av.get("options", []):
+                _ajouter(c, "av", "metier", nm)
 
     # Entraînements (Pugilat, Pistolet, etc. donnent accès à des compétences)
     ent_path = DEST_DIR / "entrainements.json"

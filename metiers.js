@@ -206,69 +206,7 @@ window.METIERS_DATA = {
       ],
       "description": "Les artisans fabriquent tous les biens utilisés par les habitants de Théah, du manteau en soie au pot en terre cuite, en passant par la cotte de mailles. Ceux qui peuplent l’univers des Secrets de la Septième Mer se sont regroupés au sein de puissantes organisations plus ou moins contrôlées par la ligue de Vendel et/ou les princes-marchands de Vodacce. Ils créent des biens que les marchands leur achètent souvent pour revendre ensuite et jouent l’un des rôles les plus importants de l’économie de Théah.",
       "competences_base": [
-        "Évaluation",
-        "Aubergiste",
-        "Barbier",
-        "Boucher",
-        "Bouilleur de cru",
-        "Boulanger",
-        "Brasseur",
-        "Calligraphe",
-        "Céramiste",
-        "Chandelon",
-        "Chapelier",
-        "Charpentier",
-        "Chaudronnier",
-        "Confiseur",
-        "Construction navale",
-        "Cordonnier",
-        "Couturier",
-        "Cuisinier",
-        "Ébéniste",
-        "Écrivain public",
-        "Embaumeur",
-        "Éventailliste",
-        "Fabricant d’arme à feu",
-        "Fabricant de cerfs-volants",
-        "Fabricant de dards",
-        "Fabricant de feux d’artifice",
-        "Fabricant de vitraux",
-        "Fabricant de voiles",
-        "Facteur d’arcs",
-        "Fileur",
-        "Fleuriste",
-        "Forgeron",
-        "Fourreur",
-        "Haubergier",
-        "Horloger",
-        "Imprimeur",
-        "Jardinier",
-        "Joaillier",
-        "Luthier",
-        "Masseur",
-        "Maçon",
-        "Meunier",
-        "Miroitier",
-        "Orfèvre",
-        "Papetier",
-        "Parfumeur",
-        "Perruquier",
-        "Potier",
-        "Poudrier",
-        "Régisseur",
-        "Sabotier",
-        "Savonnier",
-        "Sellier",
-        "Serrurier",
-        "Souffleur de verre",
-        "Tailleur",
-        "Tailleur de pierre",
-        "Tanner",
-        "Teinturier",
-        "Tisserand",
-        "Tonnelier",
-        "Vannier",
-        "Vigneron"
+        "Sens des affaires"
       ],
       "competences_avancees": [
         "Bricoleur",
@@ -282,7 +220,85 @@ window.METIERS_DATA = {
       "reputation": "Rang social : +1",
       "restriction_creation": "libre",
       "restriction_type": "aucune",
-      "restriction_texte": ""
+      "restriction_texte": "",
+      "competences_base_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Service",
+            "Bricoleur"
+          ],
+          "note": "Selon le métier exercé (Service pour les artisans à clientèle, Bricoleur pour les fabricants)."
+        },
+        {
+          "nb": 1,
+          "options": [
+            "Aubergiste",
+            "Barbier",
+            "Boucher",
+            "Bouilleur de cru",
+            "Boulanger",
+            "Brasseur",
+            "Calligraphe",
+            "Céramiste",
+            "Chandelon",
+            "Chapelier",
+            "Charpentier",
+            "Chaudronnier",
+            "Confiseur",
+            "Construction navale",
+            "Cordonnier",
+            "Couturier",
+            "Cuisinier",
+            "Ébéniste",
+            "Écrivain public",
+            "Embaumeur",
+            "Éventailliste",
+            "Fabricant d’arme à feu",
+            "Fabricant de cerfs-volants",
+            "Fabricant de dards",
+            "Fabricant de feux d’artifice",
+            "Fabricant de vitraux",
+            "Fabricant de voiles",
+            "Facteur d’arcs",
+            "Fileur",
+            "Fleuriste",
+            "Forgeron",
+            "Fourreur",
+            "Haubergier",
+            "Horloger",
+            "Imprimeur",
+            "Jardinier",
+            "Joaillier",
+            "Luthier",
+            "Masseur",
+            "Maçon",
+            "Meunier",
+            "Miroitier",
+            "Orfèvre",
+            "Papetier",
+            "Parfumeur",
+            "Perruquier",
+            "Potier",
+            "Poudrier",
+            "Régisseur",
+            "Sabotier",
+            "Savonnier",
+            "Sellier",
+            "Serrurier",
+            "Souffleur de verre",
+            "Tailleur",
+            "Tailleur de pierre",
+            "Tanner",
+            "Teinturier",
+            "Tisserand",
+            "Tonnelier",
+            "Vannier",
+            "Vigneron"
+          ],
+          "note": "Liste non exhaustive — choisis ta spécialité artisanale."
+        }
+      ]
     },
     {
       "nom": "Artiste",
@@ -304,17 +320,19 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "aucune",
       "restriction_texte": "",
-      "competences_base_choix": {
-        "nb": 3,
-        "options": [
-          "Chant",
-          "Compositeur",
-          "Création littéraire",
-          "Dessin",
-          "Musique (type d’instrument à préciser)",
-          "Sculpture"
-        ]
-      }
+      "competences_base_choix": [
+        {
+          "nb": 3,
+          "options": [
+            "Chant",
+            "Compositeur",
+            "Création littéraire",
+            "Dessin",
+            "Musique (type d’instrument à préciser)",
+            "Sculpture"
+          ]
+        }
+      ]
     },
     {
       "nom": "Assassin",
@@ -339,22 +357,26 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "aucune",
       "restriction_texte": "",
-      "competences_base_choix": {
-        "nb": 1,
-        "options": [
-          "Tirer (Arbalète)",
-          "Tirer (Arc)",
-          "Attaque (Couteau)"
-        ]
-      },
-      "competences_avancees_choix": {
-        "nb": 1,
-        "options": [
-          "Recharger (Arbalète)",
-          "Tir réflexe",
-          "Lancer (Couteau)"
-        ]
-      }
+      "competences_base_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Tirer (Arbalète)",
+            "Tirer (Arc)",
+            "Attaque (Couteau)"
+          ]
+        }
+      ],
+      "competences_avancees_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Recharger (Arbalète)",
+            "Tir réflexe",
+            "Lancer (Couteau)"
+          ]
+        }
+      ]
     },
     {
       "nom": "Avoué",
@@ -427,17 +449,19 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "aucune",
       "restriction_texte": "",
-      "competences_base_choix": {
-        "nb": 3,
-        "options": [
-          "Danse",
-          "Équilibriste",
-          "Jonglerie",
-          "Narrer",
-          "Prestidigitation",
-          "Sher da Shi (Charmeur de serpents)"
-        ]
-      }
+      "competences_base_choix": [
+        {
+          "nb": 3,
+          "options": [
+            "Danse",
+            "Équilibriste",
+            "Jonglerie",
+            "Narrer",
+            "Prestidigitation",
+            "Sher da Shi (Charmeur de serpents)"
+          ]
+        }
+      ]
     },
     {
       "nom": "Batelier",
@@ -768,13 +792,15 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "aucune",
       "restriction_texte": "",
-      "competences_avancees_choix": {
-        "nb": 1,
-        "options": [
-          "Artillerie",
-          "Lancer de fusée"
-        ]
-      }
+      "competences_avancees_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Artillerie",
+            "Lancer de fusée"
+          ]
+        }
+      ]
     },
     {
       "nom": "Contrebandier",
@@ -800,22 +826,26 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "aucune",
       "restriction_texte": "",
-      "competences_base_choix": {
-        "nb": 1,
-        "options": [
-          "Connaissance des routes (nation à préciser)",
-          "Canotage"
-        ],
-        "note": "Connaissance des routes pour un contrebandier terrestre, Canotage pour un contrebandier marin (Nation à préciser dans les deux cas)."
-      },
-      "competences_avancees_choix": {
-        "nb": 1,
-        "options": [
-          "Connaissance des routes (nation à préciser)",
-          "Canotage"
-        ],
-        "note": "Permet de choisir une deuxième Nation (alternative à la compétence de base ci-dessus)."
-      }
+      "competences_base_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Connaissance des routes (nation à préciser)",
+            "Canotage"
+          ],
+          "note": "Connaissance des routes pour un contrebandier terrestre, Canotage pour un contrebandier marin (Nation à préciser dans les deux cas)."
+        }
+      ],
+      "competences_avancees_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Connaissance des routes (nation à préciser)",
+            "Canotage"
+          ],
+          "note": "Permet de choisir une deuxième Nation (alternative à la compétence de base ci-dessus)."
+        }
+      ]
     },
     {
       "nom": "Courtisan",
@@ -918,13 +948,15 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "aucune",
       "restriction_texte": "",
-      "competences_avancees_choix": {
-        "nb": 1,
-        "options": [
-          "Conduite d’attelage",
-          "Conduite de traîneau"
-        ]
-      }
+      "competences_avancees_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Conduite d’attelage",
+            "Conduite de traîneau"
+          ]
+        }
+      ]
     },
     {
       "nom": "Éclaireur",
@@ -950,13 +982,15 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "aucune",
       "restriction_texte": "",
-      "competences_avancees_choix": {
-        "nb": 1,
-        "options": [
-          "Course d’endurance",
-          "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)"
-        ]
-      }
+      "competences_avancees_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Course d’endurance",
+            "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)"
+          ]
+        }
+      ]
     },
     {
       "nom": "Érudit",
@@ -974,29 +1008,31 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "aucune",
       "restriction_texte": "",
-      "competences_avancees_choix": {
-        "nb": 7,
-        "options": [
-          "Architecture",
-          "Astronomie",
-          "Connaissance des animaux",
-          "Connaissance des plantes",
-          "Connaissance des Syrneths",
-          "Création littéraire",
-          "Droit",
-          "Économie",
-          "Éloquence",
-          "Géographie",
-          "Héraldique",
-          "Linguistique",
-          "Mathématiques",
-          "Numismatique",
-          "Occultisme",
-          "Philosophie",
-          "Sciences de la nature",
-          "Théologie"
-        ]
-      }
+      "competences_avancees_choix": [
+        {
+          "nb": 7,
+          "options": [
+            "Architecture",
+            "Astronomie",
+            "Connaissance des animaux",
+            "Connaissance des plantes",
+            "Connaissance des Syrneths",
+            "Création littéraire",
+            "Droit",
+            "Économie",
+            "Éloquence",
+            "Géographie",
+            "Héraldique",
+            "Linguistique",
+            "Mathématiques",
+            "Numismatique",
+            "Occultisme",
+            "Philosophie",
+            "Sciences de la nature",
+            "Théologie"
+          ]
+        }
+      ]
     },
     {
       "nom": "Escamoteur",
@@ -1067,23 +1103,25 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "aucune",
       "restriction_texte": "",
-      "competences_avancees_choix": {
-        "nb": 6,
-        "options": [
-          "Astronomie",
-          "Droit",
-          "Héraldique",
-          "Sciences de la nature",
-          "Théologie",
-          "Alchimie",
-          "Architecture",
-          "Économie",
-          "Philosophie",
-          "Mathématiques",
-          "Géographie",
-          "Histoire"
-        ]
-      }
+      "competences_avancees_choix": [
+        {
+          "nb": 6,
+          "options": [
+            "Astronomie",
+            "Droit",
+            "Héraldique",
+            "Sciences de la nature",
+            "Théologie",
+            "Alchimie",
+            "Architecture",
+            "Économie",
+            "Philosophie",
+            "Mathématiques",
+            "Géographie",
+            "Histoire"
+          ]
+        }
+      ]
     },
     {
       "nom": "Explorateur",
@@ -1109,13 +1147,15 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "aucune",
       "restriction_texte": "",
-      "competences_avancees_choix": {
-        "nb": 1,
-        "options": [
-          "Conduite d’attelage",
-          "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)"
-        ]
-      }
+      "competences_avancees_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Conduite d’attelage",
+            "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)"
+          ]
+        }
+      ]
     },
     {
       "nom": "Faussaire",
@@ -1374,13 +1414,15 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "aucune",
       "restriction_texte": "",
-      "competences_base_choix": {
-        "nb": 1,
-        "options": [
-          "Orientation citadine (Nation à préciser)",
-          "Sens de l’orientation"
-        ]
-      }
+      "competences_base_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Orientation citadine (Nation à préciser)",
+            "Sens de l’orientation"
+          ]
+        }
+      ]
     },
     {
       "nom": "Herboriste",
@@ -1484,14 +1526,16 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "aucune",
       "restriction_texte": "",
-      "competences_base_choix": {
-        "nb": 1,
-        "options": [
-          "Architecture",
-          "Construction navale",
-          "Géomancie"
-        ]
-      }
+      "competences_base_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Architecture",
+            "Construction navale",
+            "Géomancie"
+          ]
+        }
+      ]
     },
     {
       "nom": "Intendant",
@@ -1544,13 +1588,15 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "aucune",
       "restriction_texte": "",
-      "competences_base_choix": {
-        "nb": 1,
-        "options": [
-          "Chant",
-          "Danse"
-        ]
-      }
+      "competences_base_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Chant",
+            "Danse"
+          ]
+        }
+      ]
     },
     {
       "nom": "Juge d’armes",
@@ -1882,13 +1928,15 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "aucune",
       "restriction_texte": "",
-      "competences_avancees_choix": {
-        "nb": 1,
-        "options": [
-          "Conduite d’attelage",
-          "Conduite de traîneau"
-        ]
-      }
+      "competences_avancees_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Conduite d’attelage",
+            "Conduite de traîneau"
+          ]
+        }
+      ]
     },
     {
       "nom": "Paysan",
@@ -1938,13 +1986,15 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "aucune",
       "restriction_texte": "",
-      "competences_base_choix": {
-        "nb": 1,
-        "options": [
-          "Connaissance de la mer",
-          "Potamologie (fleuve à préciser)"
-        ]
-      }
+      "competences_base_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Connaissance de la mer",
+            "Potamologie (fleuve à préciser)"
+          ]
+        }
+      ]
     },
     {
       "nom": "Piqueux",
@@ -2043,19 +2093,21 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "aucune",
       "restriction_texte": "",
-      "competences_avancees_choix": {
-        "nb": 6,
-        "options": [
-          "Calcul",
-          "Comptabilité",
-          "Droit",
-          "Géographie",
-          "Mathématiques",
-          "Politique",
-          "Sciences de la nature",
-          "Théologie"
-        ]
-      }
+      "competences_avancees_choix": [
+        {
+          "nb": 6,
+          "options": [
+            "Calcul",
+            "Comptabilité",
+            "Droit",
+            "Géographie",
+            "Mathématiques",
+            "Politique",
+            "Sciences de la nature",
+            "Théologie"
+          ]
+        }
+      ]
     },
     {
       "nom": "Prospecteur",
@@ -2311,13 +2363,15 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "nationalite",
       "restriction_texte": "Être de nationalité cathayane, ou appartenir au peuple des Fidhelis (Sarmatie ou Ussura).",
-      "competences_avancees_choix": {
-        "nb": 1,
-        "options": [
-          "I Ching",
-          "Osselets"
-        ]
-      }
+      "competences_avancees_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "I Ching",
+            "Osselets"
+          ]
+        }
+      ]
     },
     {
       "nom": "Cao Yao (Acupuncteur)",
@@ -2368,13 +2422,15 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "nationalite",
       "restriction_texte": "Être de nationalité cathayane, croissantine, sarmatienne ou ussurane.",
-      "competences_avancees_choix": {
-        "nb": 1,
-        "options": [
-          "Conduite de traîneau",
-          "Conduite d’attelage"
-        ]
-      }
+      "competences_avancees_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Conduite de traîneau",
+            "Conduite d’attelage"
+          ]
+        }
+      ]
     },
     {
       "nom": "Courtisane",
@@ -2397,24 +2453,28 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "nationalite",
       "restriction_texte": "Être une femme, de nationalité vodacce ou croissantine.",
-      "competences_base_choix": {
-        "nb": 3,
-        "options": [
-          "Danse",
-          "Étiquette",
-          "Jenny",
-          "Masseur",
-          "Mode",
-          "Séduction"
-        ]
-      },
-      "competences_avancees_choix": {
-        "nb": 1,
-        "options": [
-          "Compositeur",
-          "Création littéraire"
-        ]
-      }
+      "competences_base_choix": [
+        {
+          "nb": 3,
+          "options": [
+            "Danse",
+            "Étiquette",
+            "Jenny",
+            "Masseur",
+            "Mode",
+            "Séduction"
+          ]
+        }
+      ],
+      "competences_avancees_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Compositeur",
+            "Création littéraire"
+          ]
+        }
+      ]
     },
     {
       "nom": "Fauconnier",
@@ -2488,16 +2548,18 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "nationalite",
       "restriction_texte": "Appartenir au peuple des Fidhelis (Sarmatie ou Ussura).",
-      "competences_base_choix": {
-        "nb": 3,
-        "options": [
-          "Conduite d’attelage",
-          "Danse",
-          "Sens de l’orientation",
-          "Sincérité",
-          "Duperie"
-        ]
-      }
+      "competences_base_choix": [
+        {
+          "nb": 3,
+          "options": [
+            "Conduite d’attelage",
+            "Danse",
+            "Sens de l’orientation",
+            "Sincérité",
+            "Duperie"
+          ]
+        }
+      ]
     },
     {
       "nom": "Guérisseur",
@@ -2549,14 +2611,16 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "nationalite",
       "restriction_texte": "Être de nationalité cathayane.",
-      "competences_base_choix": {
-        "nb": 1,
-        "options": [
-          "Calcul",
-          "Création littéraire",
-          "Éloquence"
-        ]
-      }
+      "competences_base_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Calcul",
+            "Création littéraire",
+            "Éloquence"
+          ]
+        }
+      ]
     },
     {
       "nom": "Rahib (Moine)",
@@ -2578,17 +2642,19 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "nationalite",
       "restriction_texte": "Être de nationalité croissantine.",
-      "competences_base_choix": {
-        "nb": 3,
-        "options": [
-          "Calligraphie",
-          "Chant",
-          "Création littéraire",
-          "Discrétion",
-          "Histoire",
-          "Philosophie"
-        ]
-      }
+      "competences_base_choix": [
+        {
+          "nb": 3,
+          "options": [
+            "Calligraphie",
+            "Chant",
+            "Création littéraire",
+            "Discrétion",
+            "Histoire",
+            "Philosophie"
+          ]
+        }
+      ]
     },
     {
       "nom": "Shirbaz (magicien)",
@@ -2716,14 +2782,16 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "societe",
       "restriction_texte": "Faire partie de la Société des Explorateurs.",
-      "competences_avancees_choix": {
-        "nb": 1,
-        "options": [
-          "Connaissance des Syrneths",
-          "Connaissance des runes",
-          "Connaissance des Sidhes"
-        ]
-      }
+      "competences_avancees_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Connaissance des Syrneths",
+            "Connaissance des runes",
+            "Connaissance des Sidhes"
+          ]
+        }
+      ]
     },
     {
       "nom": "Artificier",
@@ -2773,22 +2841,26 @@ window.METIERS_DATA = {
       "restriction_creation": "libre",
       "restriction_type": "aucune",
       "restriction_texte": "",
-      "competences_base_choix": {
-        "nb": 1,
-        "options": [
-          "Tâches domestiques",
-          "Valet"
-        ],
-        "note": "Tâches domestiques dans les académies, Valet pour les autres."
-      },
-      "competences_avancees_choix": {
-        "nb": 1,
-        "options": [
-          "Orientation citadine (Nation à préciser)",
-          "Connaissance des routes (nation à préciser)"
-        ],
-        "note": "Nation de l'Académie pour les deux compétences."
-      }
+      "competences_base_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Tâches domestiques",
+            "Valet"
+          ],
+          "note": "Tâches domestiques dans les académies, Valet pour les autres."
+        }
+      ],
+      "competences_avancees_choix": [
+        {
+          "nb": 1,
+          "options": [
+            "Orientation citadine (Nation à préciser)",
+            "Connaissance des routes (nation à préciser)"
+          ],
+          "note": "Nation de l'Académie pour les deux compétences."
+        }
+      ]
     },
     {
       "nom": "Dilettante",
