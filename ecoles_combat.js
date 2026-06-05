@@ -572,8 +572,8 @@ window.ECOLES_COMBAT_DATA = {
       "arme_display": "Arc court ou arc dissymétrique",
       "armes_categories": [],
       "specialisations": [
-        "Arc (la compétence avancée Tir à l’arc monté passe  compétence de base)",
-        "Cavalier (la compétence avancée  Voltige passe compétence de base)"
+        "Arc",
+        "Cavalier"
       ],
       "description_courte": "Les archers ussurans sont respectés dans tout Théah. Non pas parce qu’ils ont développé une école de tir à l’arc particulière comme celle de RobinWood en Avalon, mais parce que l’archerie est bel et b",
       "techniques_combat": [
@@ -660,8 +660,9 @@ window.ECOLES_COMBAT_DATA = {
         "Lances"
       ],
       "specialisations": [
-        "Équitation",
-        "Escrime ou Lance de cavalerie (au choix du  joueur entre ces deux derniers)"
+        "Cavalier",
+        "Escrime",
+        "Lances"
       ],
       "description_courte": "L’élève passe trois années complètes en formation. Durant les premiers mois, il essaie diverses montures puis son tuteur décide de celle qui lui convient le mieux. Celle-ci ne le quittera plus durant ",
       "techniques_combat": [
@@ -746,15 +747,7 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Combat de rue",
-        "Piqueux. \n\n “Chien de tête” typique de l’école Canis \n\n (Homme de Main à 15 points) \n\n ND  : 15 \n\n Traits  : Gaillardise 3",
-        "Dextérité 2",
-        "Esprit 1 (Perspicacité  5)",
-        "Détermination 1",
-        "Panache 1 \n\n Qualité d’obéissance  : Stable ou Immuable \n\n Coefficient d’apprentissage  : Rapide ou Appliqué \n\n Compétences  : Attaque (morsure) 4g2",
-        "Jeu de jambes 2",
-        "Dommages (morsure 3g2). \n\n Tours et talents  : au minimum",
-        "Attaquer  sur  commande et Répondre à la voix",
-        "mais il peut en  connaître encore trois autres compte-tenu de sa  Perspicacité"
+        "Piqueux"
       ],
       "description_courte": "Originaire de Casigula Rosa, sur les terres Falisci, Sergio Perroni s’est installé sur les terres Bernouilli il y a quelques années à la demande de la guilde des marchands de cette principauté. Là, il",
       "techniques_combat": [
@@ -851,7 +844,7 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Bateleur",
-        "Couteau (la compétence avancée Lancer  [Couteau] passe compétence de base)"
+        "Couteau"
       ],
       "description_courte": "Bien que la guilde des spadassins et beaucoup d’autres cercles ne la reconnaissent pas comme une véritable école, les femmes de Vodacce restent persuadées que le style Cappuntina est un outil très pré",
       "techniques_combat": [
@@ -1336,7 +1329,7 @@ window.ECOLES_COMBAT_DATA = {
       "arme_display": "Lutte",
       "armes_categories": [],
       "specialisations": [
-        "Athlétisme (la compétence avancée Étreinte passe  compétence de base)",
+        "Athlétisme",
         "Lutte"
       ],
       "description_courte": "Les Ussurans sont célèbres pour leur résistance et leur robustesse. Les guerriers qui choisissent d’étudier au sein de l’école Dobrynya décident d’incarner ces qualités. Leur style de combat ne requie",
@@ -1505,7 +1498,7 @@ window.ECOLES_COMBAT_DATA = {
       "armes_categories": [],
       "specialisations": [
         "Marine",
-        "Mousquet"
+        "Fusils"
       ],
       "description_courte": "Durante di Vestini est l’un des oncles du prince Marco Edorado di Vestini, mais il n’a que quatre ans de plus que son seigneur et l’on pourrait presque les prendre pour des frères. Durante a toujours ",
       "techniques_combat": [
@@ -1936,7 +1929,7 @@ window.ECOLES_COMBAT_DATA = {
         "Escrime (Sabre)"
       ],
       "specialisations": [
-        "Cavalier (la compétence avancée Voltige passe  compétence de base)",
+        "Cavalier",
         "Escrime"
       ],
       "description_courte": "Les fiers cavaliers de Castille sont d’excellents bretteurs, même à cheval. L’école de Gustavo naquit du désir de former des escrimeurs aussi efficaces à pied qu’à cheval. Elle apprend donc à ses élèv",
@@ -2021,7 +2014,7 @@ window.ECOLES_COMBAT_DATA = {
       "armes_categories": [],
       "specialisations": [
         "Guérillero",
-        "Mousquet"
+        "Fusils"
       ],
       "description_courte": "Spadassin confirmé et tireur d’élite d’exception, Javier Gallegos de Guzman lutta avec acharnement contre l’envahisseur montaginois. Vu ses faibles effectifs, chaque mort était une catastrophe, et il ",
       "techniques_combat": [
@@ -2187,7 +2180,7 @@ window.ECOLES_COMBAT_DATA = {
       "arme_display": "Marteau de guerre",
       "armes_categories": [],
       "specialisations": [
-        "Masse",
+        "Masses",
         "Pugilat"
       ],
       "description_courte": "Cette école d’escrime a été développée par les Nibelungen, les forgerons qui travaillent le Dracheneisen. On y apprend à utiliser de la manière la plus efficace et meurtrière possible le monstrueux ma",
@@ -2356,8 +2349,8 @@ window.ECOLES_COMBAT_DATA = {
         "Pugilat"
       ],
       "specialisations": [
-        "Combat  de  rues",
-        "Pugilat  (Uppercut  devient  une  compétence de base)"
+        "Combat de rue",
+        "Pugilat"
       ],
       "description_courte": "Un seul type de combattant à mains nues vous décrira les boxeurs Finnegan comme un style immoral : les pugilistes de l’École Kensington (aucun boxeur de Finnegan ne dira qu’il combat de manière malhon",
       "techniques_combat": [
@@ -2613,7 +2606,7 @@ window.ECOLES_COMBAT_DATA = {
         "Lances"
       ],
       "specialisations": [
-        "Lance légère",
+        "Lances",
         "Veneur"
       ],
       "description_courte": "Ce style de combat a été développé par Andréï Nikolaïevitch Kiriakin, le grand veneur du Gaius. Le spadassin combat à l’aide d’un épieu de chasse et d’un compagnon à quatre pattes, le plus souvent un ",
@@ -2700,7 +2693,7 @@ window.ECOLES_COMBAT_DATA = {
         "Pugilat"
       ],
       "specialisations": [
-        "Combat de rue (la compétence avancée Casser un  membre passe compétence de base)",
+        "Combat de rue",
         "Pugilat"
       ],
       "description_courte": "C’est un style de combat très particulier qui a été développé par les bûcherons, chasseurs et trappeurs de Podshiversk en Ussura. Ces individus durs aux conditions de vie impitoyables sont connus pour",
@@ -2955,7 +2948,7 @@ window.ECOLES_COMBAT_DATA = {
       "arme_display": "Rets et trident",
       "armes_categories": [],
       "specialisations": [
-        "Lance légère",
+        "Lances",
         "Filet"
       ],
       "description_courte": "Les Mac Codrum sont bien connus dans les Highlands pour leurs liens avec les selkies, les Sidhes venus de la mer. Ces derniers leurs enseignèrent une manière de combattre dans l’eau bien particulière ",
@@ -3215,7 +3208,7 @@ window.ECOLES_COMBAT_DATA = {
         "Atypique / Accessoire"
       ],
       "specialisations": [
-        "Combat de rue (la compétence Attaque [Arme  improvisée] passe de base)",
+        "Combat de rue",
         "Pugilat"
       ],
       "description_courte": "Les Frères constituent un groupe d’individus roublards qui semblent incarner les penchants bagarreurs de leur nation d’adoption. L’ordre existe depuis plus longtemps que l’Église d’Avalon mais a intég",
@@ -3304,7 +3297,7 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Assassin",
-        "Couteau (la compétence avancée Lancer  [Couteau] passe compétence de base)"
+        "Couteau"
       ],
       "description_courte": "Lorsqu’elle se détacha de l’école de Boucher, il y a de cela des années, l’école Mortis s’intéressa de plus près à son utilisation dans le cadre d’assassinats. Les élèves du style Mortis ont dans chaq",
       "techniques_combat": [
@@ -3472,7 +3465,7 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Couteau",
-        "Espion (les compétences avancées Dissimulation et  Poison passent compétences de base)"
+        "Espion"
       ],
       "description_courte": "Le style de Necare est une école d’assassins, spécialisée dans le maniement de petits poignards bien cachés sur soi. Comme il s’agit d’armes légères, elles ne sont guère meurtrières en combat. Mais po",
       "techniques_combat": [
@@ -3555,7 +3548,7 @@ window.ECOLES_COMBAT_DATA = {
       "arme_display": "Mousquet",
       "armes_categories": [],
       "specialisations": [
-        "Mousquet",
+        "Fusils",
         "Pugilat"
       ],
       "description_courte": "Meaghan O’Faolain était une fermière sans éducation d’Inismore. Lorsque son mari fut tué par son Seigneur, Sir Ryan O’Really, en raison de son incapacité à régler les taxes, elle décida qu’il était te",
@@ -3896,7 +3889,7 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Acrobate",
-        "Combat de rues"
+        "Combat de rue"
       ],
       "description_courte": "C’est une situation malheureuse mais indéniable que la grande majorité des marins des bateaux croissantins n’ont pas choisi cette vie. Certains ont été victimes d’un enlèvement, d’autres furent captur",
       "techniques_combat": [
@@ -4567,7 +4560,7 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Athlétisme",
-        "Hache à deux mains"
+        "Haches"
       ],
       "description_courte": "Cette technique de combat a été développée il y a des centaines d’années par les pillards vestens qui ravageaient les côtes des mondes civilisés de Théah comme l’Avalon, l’Ussura, la Montaigne, l’Eise",
       "techniques_combat": [
@@ -4904,7 +4897,7 @@ window.ECOLES_COMBAT_DATA = {
       "armes_categories": [],
       "specialisations": [
         "Arme d’hast",
-        "Mousquet"
+        "Fusils"
       ],
       "description_courte": "Les techniques relatives aux Mousquets de la famille Tréville sont assez récentes. On les mit au point plus particulièrement pour les mousquetaires mais elles se sont depuis démocratisées dans le rest",
       "techniques_combat": [
@@ -5160,7 +5153,8 @@ window.ECOLES_COMBAT_DATA = {
       "arme_display": "Masse d’armes ou matraque",
       "armes_categories": [],
       "specialisations": [
-        "Garde du corps et Masse ou Matraque"
+        "Garde du corps",
+        "Masses"
       ],
       "description_courte": "À travers tout Théah, on trouve de nombreux nobles et bourgeois exposés à de multiples risques. Très vite, ils ressentirent le besoin d’être efficacement protégés. C’est ainsi qu’il y a soixante-quatr",
       "techniques_combat": [
@@ -5242,7 +5236,7 @@ window.ECOLES_COMBAT_DATA = {
       "armes_categories": [],
       "specialisations": [
         "Arts martiaux défensifs",
-        "Feng shui shi"
+        "Feng Shui Shi (Géomancien)"
       ],
       "description_courte": "Dire que Wu Tsain est un art martial pacifique est largement en dessous de la vérité. Non seulement il enseigne l’utilisation de mouvements de défense, mais il est en plus non violent. Un étudiant con",
       "techniques_combat": [
@@ -5322,7 +5316,7 @@ window.ECOLES_COMBAT_DATA = {
       "arme_display": "Yatagan",
       "armes_categories": [],
       "specialisations": [
-        "Cavalier (Voltige devient une compétence de base)",
+        "Cavalier",
         "Escrime"
       ],
       "description_courte": "Les Kosars sont parmi les meilleurs cavaliers de Théah, mais également des bandits impitoyables capables de raser une petite ville ussurane en moins d’une journée !",

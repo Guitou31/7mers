@@ -29,6 +29,93 @@ from csv_to_json import (
 )
 from armes_categories import extract_categories, format_arme_display
 
+
+# ============================================================
+# Nettoyage des spécialisations (renoms maison vers entraînements/métiers,
+# strip suffixes informatifs, filtre parasites de Canis, split 'X ou Y').
+# ============================================================
+SPEC_RENAMES = {
+    "mousquet":              "Fusils",
+    "lance legere":          "Lances",
+    "lance de cavalerie":    "Lances",
+    "hache a deux mains":    "Haches",
+    "masse":                 "Masses",
+    "matraque":              "Masses",
+    "combat de rues":        "Combat de rue",
+    "feng shui shi":         "Feng Shui Shi (Géomancien)",
+    "equitation":            "Cavalier",  # discipline → entraînement Cavalier
+}
+
+# Suffixes parenthétiques 'X (la compétence avancée Y passe/devient...)'
+# ou '(au choix du joueur entre...)' à retirer pour ne garder que X.
+SPEC_STRIP_SUFFIX_RE = re.compile(
+    r"\s*\([^)]*(?:pass[a-z]+|devie[a-z]+|au\s+choix)[^)]*\)$",
+    re.IGNORECASE | re.DOTALL,
+)
+
+# Mots-clés qui marquent un fragment de stat-block (école Canis, chien de meute)
+# capturé à tort comme spécialisation par le parser PDF.
+SPEC_PARASITE_KEYWORDS = (
+    "trait", "dommages", "qualité d'obéissance", "qualite d'obeissance",
+    "coefficient", "compte-tenu", "perspicacité", "perspicacite",
+    "morsure", "tours et talents", "obéissance", "obeissance",
+    "sur commande", "à la voix", "a la voix",  # tours du chien (Canis)
+)
+
+
+def _pre_clean_spec(s: str) -> str:
+    """Si la spec contient un saut de ligne ou un '. ' avec suite longue,
+    ne garde que la première partie (ex: 'Piqueux. \\n\\nChien...' → 'Piqueux')."""
+    s = s.split("\n", 1)[0].strip()
+    if ". " in s:
+        head = s.split(". ", 1)[0].strip()
+        if head and len(head) < len(s):
+            s = head
+    return s
+
+
+def _est_spec_parasite(s: str) -> bool:
+    if len(s) > 60:
+        return True
+    s_low = s.lower()
+    if any(kw in s_low for kw in SPEC_PARASITE_KEYWORDS):
+        return True
+    # Pattern stat-block : '<Mot> <chiffre>' (Dextérité 2, Esprit 1, Jeu de jambes 2…)
+    if re.match(r"^[A-Za-zÀ-ÿ' ]+\s+\d+(\s*\([^)]*\))?$", s):
+        return True
+    return False
+
+
+def nettoyer_specialisations(specs: list[str]) -> list[str]:
+    """Applique nettoyage + normalisation + split à une liste de spécialisations
+    brutes (issues du parser PDF) pour produire une liste cliquable."""
+    out: list[str] = []
+    seen: set[str] = set()
+    for raw in specs or []:
+        s = _pre_clean_spec(raw)
+        if not s:
+            continue
+        # Strip suffixe informatif (la compétence avancée X passe…) AVANT
+        # le test parasite, sinon les entrées longues mais valides sont filtrées.
+        s = SPEC_STRIP_SUFFIX_RE.sub("", s).strip(" .")
+        if _est_spec_parasite(s):
+            continue
+        # Split sur ' ou ' et ' et ' → plusieurs spécialisations
+        for part in re.split(r"\s+(?:ou|et)\s+", s):
+            p = part.strip(" .")
+            if not p or _est_spec_parasite(p):
+                continue
+            # Rename canonique
+            k = normalize(p)
+            if k in SPEC_RENAMES:
+                p = SPEC_RENAMES[k]
+            kp = normalize(p)
+            if kp in seen:
+                continue
+            seen.add(kp)
+            out.append(p)
+    return out
+
 # Écoles de combat à exclure totalement (en plus des doublons Spadassin).
 ECOLES_COMBAT_SUPPRIMEES = {"Rachecourt"}  # technique trop spécifique (sorcier Porté)
 
@@ -102,7 +189,7 @@ def transformer_ecole(nom: str, enrichment: dict, techniques_db: dict) -> dict:
         "arme": arme,
         "arme_display": arme_display,
         "armes_categories": armes_cats,
-        "specialisations": enrichment.get("specialisations_pdf", []),
+        "specialisations": nettoyer_specialisations(enrichment.get("specialisations_pdf", [])),
         "description_courte": (details.get("description_longue") or [""])[0][:200],
         "techniques_combat": techniques,
         "avantages_courts": {"apprenti": "", "compagnon": "", "maitre": ""},
