@@ -15,7 +15,7 @@
   // sous un même bouton dropdown dans le menu horizontal (libellé via GROUP_LABELS).
   const SECTIONS = [
     { id: "index",                 file: "index.html",                label: "Accueil",                available: true,  category: "home"     },
-    { id: "creation-personnage",   file: "creation-personnage.html",  label: "Création de personnage", available: false, category: "creation" },
+    { id: "creation-personnage",   file: "creation-personnage.html",  label: "Création de personnage", available: true,  category: "creation" },
     { id: "appartenance",          file: "appartenance.html",         label: "Appartenance",           available: false, category: "creation" },
     { id: "metiers",               file: "metiers.html",              label: "Métiers",                available: true,  category: "creation" },
     { id: "entrainements",         file: "entrainements.html",        label: "Entraînements",          available: true,  category: "creation" },

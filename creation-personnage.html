@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Création de personnage — Bréviaire 7ème Mer V2.1</title>
+  <link rel="icon" type="image/png" href="Favicon.png">
+  <link rel="apple-touch-icon" href="Favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="creation-personnage">
+  <div id="page-layout"></div>
+
+  <div class="page-section-title">
+    <h2>Création de personnage</h2>
+    <p class="page-section-sub">
+      Suivez les étapes pour bâtir votre Héros.
+    </p>
+  </div>
+
+  <main class="creation-main">
+    <nav class="creation-stepper" aria-label="Étapes">
+      <button class="creation-step is-active" data-step="0">
+        <span class="creation-step-num">0</span>
+        <span class="creation-step-label">Introduction</span>
+      </button>
+      <button class="creation-step" data-step="1">
+        <span class="creation-step-num">1</span>
+        <span class="creation-step-label">Nationalité &amp; Traits</span>
+      </button>
+    </nav>
+
+    <section class="creation-step-content" data-step-content="0" aria-labelledby="step-0-title">
+      <h3 id="step-0-title">Conception d'un Héros</h3>
+      <div id="step-0-intro"></div>
+    </section>
+
+    <section class="creation-step-content" data-step-content="1" hidden aria-labelledby="step-1-title">
+      <h3 id="step-1-title">Étape 1 : Nationalité &amp; Traits</h3>
+
+      <div class="creation-block">
+        <h4>Les 5 Traits</h4>
+        <p class="creation-note">
+          Chaque Héros possède 5 Traits, démarrant à <strong>2 de base</strong>.
+          Un bonus de <strong>+1</strong> sera ajouté à un Trait au choix selon la Nation.
+        </p>
+        <div id="traits-grid" class="traits-grid"></div>
+      </div>
+
+      <div class="creation-block">
+        <h4>Choisissez la Nation de votre Héros</h4>
+        <p class="creation-note">
+          Cliquez sur une Nation pour découvrir sa description et choisir son bonus de Trait.
+        </p>
+        <div id="nations-table" class="nations-table"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="layout.js"></script>
+  <script src="creation_perso.js"></script>
+  <script src="cross-modal.js"></script>
+  <script src="creation-personnage-app.js"></script>
+</body>
+</html>

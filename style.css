@@ -212,6 +212,188 @@ p { margin: 0 0 0.6em; }
   color: #6b5040;
 }
 
+/* ====== Création de personnage ====== */
+.creation-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.creation-stepper {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0 1.5rem;
+  flex-wrap: wrap;
+}
+.creation-step {
+  flex: 1 1 200px;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: rgba(232, 212, 168, 0.1);
+  border: 1px solid rgba(232, 212, 168, 0.3);
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--text);
+  border-radius: 4px;
+  transition: background 0.15s, border-color 0.15s;
+}
+.creation-step:hover { background: rgba(232, 212, 168, 0.18); }
+.creation-step.is-active {
+  background: rgba(232, 212, 168, 0.25);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+.creation-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  font-weight: 700;
+}
+.creation-step.is-active .creation-step-num {
+  background: var(--accent-soft);
+  color: var(--bg);
+}
+.creation-step-content { animation: fadein 0.2s ease-in; }
+@keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.creation-block {
+  background: rgba(232, 212, 168, 0.05);
+  border-left: 3px solid var(--accent-soft);
+  border-radius: 0 6px 6px 0;
+  padding: 1rem 1.2rem;
+  margin: 1.2rem 0;
+}
+.creation-block h4 { margin: 0 0 0.5rem; color: var(--accent); }
+.creation-note {
+  font-size: 0.92rem;
+  color: var(--text);
+  opacity: 0.85;
+  margin: 0 0 0.8rem;
+}
+.creation-paragraph {
+  line-height: 1.6;
+  margin: 0 0 0.7rem;
+}
+/* Traits — sélecteur radio style 7ème Mer */
+.traits-grid { display: grid; gap: 0.5rem; }
+.trait-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.7rem;
+  background: rgba(232, 212, 168, 0.06);
+  border-radius: 4px;
+}
+.trait-label strong {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+.trait-desc {
+  margin: 0.3rem 0 0;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+.trait-cercles {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+.trait-cercle {
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  border: 2px solid var(--accent-soft);
+  background: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+}
+.trait-cercle.is-filled {
+  background: #000;
+  border-color: #000;
+}
+.trait-cercle.is-bonus {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(195, 70, 70, 0.4);
+}
+/* Tableau des Nations */
+.nations-continent { margin-bottom: 1.5rem; }
+.nations-continent-titre {
+  font-family: 'Cinzel', Georgia, serif;
+  color: var(--accent);
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(232, 212, 168, 0.25);
+}
+.nations-tbl { width: 100%; border-collapse: collapse; }
+.nations-tbl th, .nations-tbl td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(232, 212, 168, 0.15);
+}
+.nations-tbl th {
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+.nation-row {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.nation-row:hover, .nation-row:focus {
+  background: rgba(232, 212, 168, 0.12);
+  outline: none;
+}
+.nation-row.is-selected {
+  background: rgba(195, 70, 70, 0.12);
+  font-weight: 600;
+}
+.nation-row.is-selected .nation-nom::before {
+  content: "✓ ";
+  color: var(--accent);
+}
+.nation-nom { font-weight: 600; }
+.nation-bonus { font-style: italic; }
+.nation-equiv { opacity: 0.75; font-size: 0.9rem; }
+/* Modal : boutons trait dans la fiche Nation */
+.trait-bouton-row {
+  display: flex;
+  gap: 0.7rem;
+  margin: 0.5rem 0;
+  flex-wrap: wrap;
+}
+.trait-bouton {
+  flex: 1 1 auto;
+  background: rgba(232, 212, 168, 0.15);
+  border: 2px solid var(--accent-soft);
+  color: var(--text);
+  font: inherit;
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.trait-bouton:hover {
+  background: rgba(232, 212, 168, 0.3);
+  border-color: var(--accent);
+}
+.trait-bouton.is-selected {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
 /* ====== École classifiée style CIA (Quinn) ======
    Texte remplacé par █ et caché par couleur de fond pour empêcher le
    copié-collé du contenu réel (le DOM ne contient que les blocs). */
