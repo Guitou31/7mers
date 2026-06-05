@@ -50,9 +50,9 @@ NATIONS = [
     ("Castille",              "Europe",              ["Finesse", "Esprit"],        "Espagne",                          8),
     ("Eisen",                 "Europe",              ["Gaillardise", "Détermination"], "Empire germanique",            10),
     ("Montaigne",             "Europe",              ["Finesse", "Panache"],       "France (Pré-Révolution)",          11),
-    ("Sarmatie",              "Europe",              ["Gaillardise", "Panache"],   "Tchéquie / Prussie / Ex-Bohème",   None),
+    ("Sarmatie",              "Europe",              ["Gaillardise", "Panache"],   "Tchéquie / Prussie / Ex-Bohème",   13),
     ("Ussura",                "Europe",              ["Détermination", "Esprit"],  "Russie",                           15),
-    ("Khazaris",              "Europe",              ["Gaillardise", "Finesse"],   "Huns",                             None),
+    ("Khazaris",              "Europe",              ["Gaillardise", "Finesse"],   "Huns",                             40),  # partage description avec Khazari (Cathay)
     ("Tamatama",              "Europe",              ["Esprit", "Panache"],        "Tziganes",                         None),
     ("Vestenmannavnjar",      "Europe",              ["Gaillardise", "Esprit"],    "Scandinavie + Hollande",           16),
     ("Vodacce",               "Europe",              ["Finesse", "Détermination"], "Italie",                           18),
@@ -61,7 +61,7 @@ NATIONS = [
     ("Jaragua",               "Nations Pirates",     ["Gaillardise", "Finesse"],   "Haïti",                            35),
     ("La Bucca",              "Nations Pirates",     ["Panache", "Esprit"],        "Les Açores",                       33),
     ("Numa",                  "Nations Pirates",     ["Détermination", "Esprit"],  "Grèce (en archipel)",              32),
-    ("Rahuri",                "Nations Pirates",     ["Gaillardise", "Détermination"], "Caraïbes indigènes",           None),
+    ("Rahuri",                "Nations Pirates",     ["Gaillardise", "Détermination"], "Caraïbes indigènes",           35),  # partage description avec Jaragua
     # Cathay
     ("Agnivarsie",            "Cathay",              ["Esprit", "Panache"],        "Inde Mongole (Perse)",             37),
     ("Fuso",                  "Cathay",              ["Gaillardise", "Détermination"], "Japon",                        38),
@@ -88,8 +88,9 @@ NATIONS = [
 # Ici, on indique pour chaque nation la (les) page(s) de continuation.
 NATIONS_CONTINUATION_PAGES = {
     "Castille":         [9],
-    "Eisen":            [],    # pas de continuation claire
-    "Montaigne":        [12, 13],
+    "Eisen":            [],
+    "Montaigne":        [12],            # page 13/14 = Sarmatie (cf. ci-dessous)
+    "Sarmatie":         [14],            # quote en encart sur p.14
     "Vestenmannavnjar": [17],
     "Khémet":           [25],
 }
@@ -112,6 +113,9 @@ def corriger_typos(text: str) -> str:
 
 def nettoyer_text(text: str) -> str:
     """Retire le caractère décoratif 'ç' en tête de page + normalise les espaces."""
+    # Header de page parasite '7E MER LIVRE DE BASE NNN'
+    text = re.sub(r"^7E\s*MER\s+LIVRE\s+DE\s+BASE\s+\d+\s*\n", "", text,
+                  flags=re.MULTILINE | re.IGNORECASE)
     # Remplace les puces décoratives en début de paragraphe
     text = re.sub(r"^ç\s*", "", text, flags=re.MULTILINE)
     # Tirets cadratins/conditionnels du PDF
