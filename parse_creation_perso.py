@@ -169,26 +169,110 @@ def extraire_traits(doc) -> dict:
     return traits
 
 
+# Sous-titres récurrents du PDF (listés dans toutes les nations).
+SOUS_TITRES_CONNUS = {
+    "Apparence", "Religion", "Religions", "Professions typiques", "Sorcellerie",
+    "Politique", "Nourriture et boisson", "Vêtements", "Note du MJ", "Histoire",
+    "Géographie", "Société", "Régime politique", "Culture", "Langue", "Linguistique",
+    "Cuisine", "Loisirs", "Tenue vestimentaire", "Population", "Étiquette",
+    "Le Royaume", "Le Pays", "Architecture", "Coutumes",
+}
+
+
+def _est_titre_section(text: str) -> bool:
+    """Détecte un sous-titre : présent dans la liste blanche OU heuristique
+    (court, pas de point final)."""
+    t = text.strip()
+    if t in SOUS_TITRES_CONNUS:
+        return True
+    if len(t) < 35 and not t.endswith(".") and "\n" not in t and " " not in t.lstrip():
+        # Mot unique court (ex: Apparence) → titre probable
+        return True
+    return False
+
+
+def _est_titre_nation(text: str, nation_nom: str) -> bool:
+    """Vrai si le texte ne contient QUE le titre de la nation (et rien d'autre).
+    Ex: 'L'Avalon' avant le 1er paragraphe."""
+    t = text.strip().lower()
+    n = nation_nom.lower()
+    # 'l'avalon', 'avalon', 'le shenzhou', 'la castille', 'la fédération sarmatienne', etc.
+    prefixes = ("l'", "le ", "la ", "les ", "l’")
+    for p in prefixes:
+        if t == p + n: return True
+    if t == n: return True
+    # Cas 'la fédération sarmatienne' qui contient 'sarmatie'
+    if "fédération" in t and "sarmatie" in n: return True
+    return False
+
+
+def _nettoyer_bloc(text: str) -> str:
+    """Joint les lignes wrappées du PDF en un paragraphe propre."""
+    # Retire les sauts de ligne internes (wrap visuel du PDF) : on garde une
+    # seule ligne propre. Les tirets conditionnels et 'ç' sont déjà retirés
+    # par nettoyer_text en amont.
+    out = re.sub(r"\s*\n\s*", " ", text)
+    out = re.sub(r"[ \t]+", " ", out)
+    return out.strip()
+
+
 def extraire_description_nation(doc, nation_nom: str, page_num: int,
                                 continuation_pages: list[int]) -> str:
     """Extrait la description d'une nation à partir d'une page principale +
-    pages de continuation. page_num est 1-indexed."""
+    pages de continuation, en utilisant get_text('blocks') pour préserver les
+    vrais paragraphes. Sous-titres préfixés par '### ' (rendu en h4 côté UI).
+    """
     if page_num is None:
         return ""
     pages = [page_num] + (continuation_pages or [])
-    morceaux = []
+    blocs_collectes: list[str] = []
     for p in pages:
-        if 1 <= p <= doc.page_count:
-            text = doc[p - 1].get_text("text")
-            morceaux.append(text)
-    full = "\n".join(morceaux)
-    full = nettoyer_text(full)
+        if not (1 <= p <= doc.page_count):
+            continue
+        for b in doc[p - 1].get_text("blocks"):
+            # b = (x0, y0, x1, y1, text, block_no, block_type)
+            raw = b[4]
+            if not raw or not raw.strip():
+                continue
+            # Filtre le header 'ç' (caractère décoratif seul)
+            stripped = raw.strip()
+            if stripped == "ç" or stripped == "":
+                continue
+            # Filtre header de page '7E MER LIVRE DE BASE NNN' (avec ou sans 'ç' qui suit)
+            if re.match(r"^7E\s*MER\s+LIVRE\s+DE\s+BASE\s+\d+(\s*ç)?\s*$",
+                        stripped, re.I | re.MULTILINE):
+                continue
+            # Filtre 'V', 'A', autres caractères décoratifs solitaires en début
+            if len(stripped) <= 2 and not stripped.isalnum():
+                continue
+            blocs_collectes.append(raw)
+
+    # Reformatage : on traite chaque bloc, possiblement en l'éclatant si la
+    # 1ère ligne est un sous-titre collé au paragraphe qui suit.
+    paragraphes: list[str] = []
+    for raw in blocs_collectes:
+        first_nl = raw.find("\n")
+        if first_nl > 0:
+            tete = raw[:first_nl].strip()
+            queue = raw[first_nl+1:]
+            # Cas 1 : titre de la nation en tête de bloc → on le retire
+            if _est_titre_nation(tete, nation_nom):
+                raw = queue
+            # Cas 2 : sous-titre connu en tête de bloc → on le sépare en h4
+            elif tete in SOUS_TITRES_CONNUS or _est_titre_section(tete):
+                paragraphes.append("### " + tete)
+                raw = queue
+        # Si le bloc tout entier est un sous-titre (cas où il a son propre bloc)
+        raw_oneline = _nettoyer_bloc(raw)
+        if not raw_oneline:
+            continue
+        if _est_titre_section(raw_oneline):
+            paragraphes.append("### " + raw_oneline)
+        else:
+            paragraphes.append(raw_oneline)
+
+    full = "\n\n".join(paragraphes)
     full = corriger_typos(full)
-    # Retire la 1ère ligne si elle correspond au nom de la nation (titre)
-    lines = full.split("\n", 1)
-    if lines and re.fullmatch(rf"L[ae'’]?\s*{re.escape(nation_nom)}|Les?\s+{re.escape(nation_nom)}|{re.escape(nation_nom)}",
-                              lines[0].strip(), re.IGNORECASE):
-        full = lines[1].strip() if len(lines) > 1 else ""
     return full
 
 

@@ -160,11 +160,17 @@
       ]),
     ]));
 
-    // Description
+    // Description : préserve les sous-titres (préfixe '### ' = h4 sous-section).
     if (nation.description) {
       const paras = nation.description.split(/\n{2,}/).map(p => p.trim()).filter(Boolean);
       const sec = el("div", { class: "detail-section" }, [el("h3", null, "Description")]);
-      paras.forEach(p => sec.appendChild(el("p", { class: "description-paragraph" }, p)));
+      paras.forEach(p => {
+        if (p.startsWith("### ")) {
+          sec.appendChild(el("h4", { class: "nation-sous-titre" }, p.substring(4).trim()));
+        } else {
+          sec.appendChild(el("p", { class: "description-paragraph" }, p));
+        }
+      });
       content.appendChild(sec);
     } else {
       content.appendChild(el("div", { class: "detail-section" }, [

@@ -212,6 +212,15 @@ p { margin: 0 0 0.6em; }
   color: #6b5040;
 }
 
+.nation-sous-titre {
+  margin: 1rem 0 0.4rem;
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 1.05rem;
+  color: var(--accent);
+  border-bottom: 1px solid rgba(232, 212, 168, 0.25);
+  padding-bottom: 0.2rem;
+}
+
 /* ====== Création de personnage ====== */
 .creation-main {
   max-width: 1100px;
