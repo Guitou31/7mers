@@ -50,6 +50,16 @@ COMPETENCES_DESCRIPTION_OVERRIDES: dict[str, str] = {
         "À distinguer de Duperie, qui repose sur le mensonge délibéré. "
         "Cette compétence peut également être utilisée avec le système de répartie."
     ),
+    # Règle maison universelle pour le rechargement (arcs, arbalètes, armes à feu).
+    "Recharger (Type d’armes à préciser)": (
+        "Une arme avec l'attribut « Rechargement » (arcs, arbalètes, armes à feu) "
+        "nécessite d'être rechargée d'un nombre d'actions égal au chiffre indiqué après "
+        "cet attribut.\n\n"
+        "Chaque action de rechargement retire (votre rang dans Recharger de l'arme + 1) "
+        "à ce nombre.\n\n"
+        "Ajoutez encore 2 à ce nombre si vous décidez de ne pas vous déplacer pendant "
+        "cette action."
+    ),
 }
 
 # Ajouts maison : nouvelles compétences à insérer dans la base après parsing.

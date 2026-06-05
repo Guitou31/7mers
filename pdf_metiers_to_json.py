@@ -369,6 +369,9 @@ COMPETENCES_REF_NORMALISATIONS: list[tuple[str, str]] = [
     (r"^Fabrication\s+d[’']armes?\s+à\s+feu$",                         "Fabricant d’arme à feu"),
     # Espaces manquants/excessifs autour des parenthèses (X(Arc) → X (Arc))
     (r"^(Attaque|Tirer|Recharger|Lancer)\s*\(\s*([^)]+?)\s*\)$",      r"\1 (\2)"),
+    # Recharger (X) : règle maison universelle → display 'Recharger' simple
+    # (lien résolu vers la canonique 'Recharger (Type d'armes à préciser)' via findCompetence).
+    (r"^Recharger\s*\(.+?\)$",                                          "Recharger"),
 ]
 
 import re as _re_norm
@@ -1129,8 +1132,20 @@ def sync_competences_acces(metiers: list[dict]) -> None:
     ent_base: dict[str, set[str]] = defaultdict(set)
     ent_av: dict[str, set[str]] = defaultdict(set)
 
+    # Alias pour le lookup (display court → canonique).
+    COMPETENCE_ALIASES_NK = {
+        _nk("Recharger"): _nk("Recharger (Type d’armes à préciser)"),
+    }
+    # Patterns : 'Recharger (Arc)' / 'Recharger (Arbalète)' → fiche canonique unique
+    RECHARGER_PATTERN = re.compile(r"^recharger\s*\(.+?\)$", re.IGNORECASE)
+    canon_recharger_nk = _nk("Recharger (Type d’armes à préciser)")
+
     def _ajouter(comp_str: str, niveau: str, source_type: str, source_nom: str):
         key = _nk(comp_str)
+        if key in COMPETENCE_ALIASES_NK:
+            key = COMPETENCE_ALIASES_NK[key]
+        elif RECHARGER_PATTERN.match(key):
+            key = canon_recharger_nk
         if key not in canon:
             return  # pas de compétence canonique : laisse tel quel (sera affiché en texte)
         if source_type == "metier":

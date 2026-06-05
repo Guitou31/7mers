@@ -35,7 +35,8 @@
       "description": "L’archer a passé de longues années à perfectionner sa maîtrise du tir à l’arc. Sa spécialité le rend précieux dans toutes les armées et il n’aura jamais de mal à se nourrir. Les archers originaires d’Avalon sont les plus réputés. Le projectile des arcs a toujours une trajectoire en cloche à longue portée, rendant l’arme plus difficile à utiliser qu’une arbalète. L’arc ne sert normalement qu’au tir ; en situation d’urgence, un héros peut s’en servir comme d’un bâton (en utilisant la compétence Bâton et les caractéristiques de base d’un bâton), mais comme ce n’est pas la vocation première de l’arc, il sera pénalisé par un malus d’une augmentation tant en attaque qu’en parade. Les arcs sont assez fragiles, et leur corde doit être absolument maintenue au sec, car un arc est inutilisable tant que sa corde est humide.",
       "competences_base": [
         "Tirer (Arc)",
-        "Facteur d’arcs"
+        "Facteur d’arcs",
+        "Recharger (Arc)"
       ],
       "competences_avancees": [
         "Tir à l’arc monté",

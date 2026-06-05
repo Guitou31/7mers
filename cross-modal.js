@@ -75,12 +75,35 @@
   const NIVEAU_LABELS = { apprenti: "Apprenti", compagnon: "Compagnon", maitre: "Maître" };
 
   // ===== Lookup helpers =====
+  // Aliases d'affichage → nom canonique (display court ↔ vraie compétence).
+  const COMPETENCE_ALIASES = {
+    "recharger": "Recharger (Type d’armes à préciser)",
+  };
+  // Patterns pour les variantes (ex: 'Recharger (Arc)' → fiche canonique unique).
+  const COMPETENCE_PATTERN_ALIASES = [
+    { pattern: /^recharger\s*\(.+?\)$/i, target: "Recharger (Type d’armes à préciser)" },
+  ];
+
   function findCompetence(nom) {
     const data = window.COMPETENCES_DATA;
     if (!data) return null;
     const k = normalize(nom);
     let found = data.competences.find(c => normalize(c.nom) === k);
     if (found) return found;
+    // Alias court → canonique
+    if (COMPETENCE_ALIASES[k]) {
+      const target = normalize(COMPETENCE_ALIASES[k]);
+      found = data.competences.find(c => normalize(c.nom) === target);
+      if (found) return found;
+    }
+    // Patterns (Recharger (X) → canonique)
+    for (const a of COMPETENCE_PATTERN_ALIASES) {
+      if (a.pattern.test(k)) {
+        const target = normalize(a.target);
+        found = data.competences.find(c => normalize(c.nom) === target);
+        if (found) return found;
+      }
+    }
     // Fallback : strip parenthèse finale
     const sansParen = nom.replace(/\s*\([^)]*\)\s*$/, "").trim();
     if (sansParen !== nom) {

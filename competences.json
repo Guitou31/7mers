@@ -308,7 +308,11 @@
           "description": "Cette compétence représente la capacité à toucher un adversaire que l’on affronte à mains nues. Vous l’utiliserez quand votre héros fera une attaque qui n’est couverte par aucune compétence particulière. Une attaque à mains nues inflige 0g1 dés de dommages."
         }
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Aubergiste",
@@ -345,7 +349,11 @@
       "description": "C’est une compétence fourre-tout qui embrasse de nombreuses méthodes de prédiction de l’avenir, des feuilles de thé aux runes, des entrailles aux bosses qui figurent sur le crâne du consultant, et aussi bien sûr l’astrologie.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Aveugler",
@@ -370,7 +378,11 @@
       "description": "Le héros sait s’occuper d’une banque, évaluer la valeur d’un patrimoine, pratiquer des taux d’intérêts…",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences commerciales"
+      "categorie": "Compétences commerciales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Barbier",
@@ -392,7 +404,11 @@
       "description": "Le blocage est l’acte de placer votre bras ou votre jambe entre vous et les coups de votre ennemi. Cette compétence peut être utilisée comme compétence de Défense active lorsque vous êtes désarmé.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Blocage d’articulation",
@@ -3274,7 +3290,11 @@
       "description": "C’est l’aptitude à préparer un ballon pour le vol sans qu’il s’enflamme. C’est aussi la capacité à obtenir un feu assez chaud pour gonfler correctement l’enveloppe et réduire la durée de cette étape.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Gréer",
@@ -3764,7 +3784,11 @@
           "description": "Le héros lance plus loin et avec plus de précision que les personnes ne maîtrisant pas cette compétence, laquelle peut s’avérer particulièrement utile s’il veut lancer un pistolet au visage d’un adversaire ou arrimer un grappin à une prise précise. Si le héros attaque un adversaire en lui lançant un objet, cette compétence lui servira de compétence d’attaque. La portée de l’arme variera en fonction de son poids, mais sera généralement (pour les objets jusqu’à la taille d’une bouteille de vin) de 5 mètres + (rang de Gaillardise x 2 mètres)."
         }
       ],
-      "categorie": "Compétences physiques"
+      "categorie": "Compétences physiques",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Lancer de fusée",
@@ -3904,7 +3928,11 @@
       "description": "C’est la capacité à plier, emballer correctement, transporter sans dommages, déplier et mettre en place un ballon. C’est aussi la capacité à rechercher et réparer les déchirures de l’enveloppe du ballon, les cordes effilochées et les paniers instables.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences savantes"
+      "categorie": "Compétences savantes",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Majordome",
@@ -4461,7 +4489,11 @@
           "description": "Avec cette compétence, vous n’avez pas besoin de manier deux armes exotiques pour pouvoir parer, une seule suffit."
         }
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Parfumeur",
@@ -5059,9 +5091,16 @@
     },
     {
       "nom": "Recharger (Type d’armes à préciser)",
-      "description": "Cette compétence permet de recharger une arme de tir plus rapidement. Les concentrations possibles sont :",
-      "donnent_acces_base": [],
-      "donnent_acces_avancee": [],
+      "description": "Une arme avec l'attribut « Rechargement » (arcs, arbalètes, armes à feu) nécessite d'être rechargée d'un nombre d'actions égal au chiffre indiqué après cet attribut.\n\nChaque action de rechargement retire (votre rang dans Recharger de l'arme + 1) à ce nombre.\n\nAjoutez encore 2 à ce nombre si vous décidez de ne pas vous déplacer pendant cette action.",
+      "donnent_acces_base": [
+        "Arc"
+      ],
+      "donnent_acces_avancee": [
+        "Arbalète",
+        "Assassin",
+        "Fusils",
+        "Pistolet"
+      ],
       "variantes": [
         {
           "nom": "Arbalète",
@@ -5080,7 +5119,19 @@
           "description": "Pour chaque rang dans cette compétence, le temps nécessaire pour recharger un mousquet est réduit de trois actions."
         }
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Assassin"
+      ],
+      "donnent_acces_entrainements_base": [
+        "Arc"
+      ],
+      "donnent_acces_entrainements_avancee": [
+        "Arbalète",
+        "Fusils",
+        "Pistolet"
+      ]
     },
     {
       "nom": "Recherches",
@@ -5948,7 +5999,11 @@
       "description": "Cette compétence vous permet de réduire les pénalités gênant le tir (portée, cible cachée, etc.) de votre rang en Tir d’adresse * 5. L’utilisation de cette compétence ne permet pas de faire tomber votre ND en dessous du ND pour être touché de base.",
       "donnent_acces_base": [],
       "donnent_acces_avancee": [],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Tir réflexe",
@@ -5997,7 +6052,11 @@
           "description": "Cette compétence représente la capacité à toucher un adversaire avec une sarbacane."
         }
       ],
-      "categorie": "Compétences martiales"
+      "categorie": "Compétences martiales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
     },
     {
       "nom": "Tisserand",

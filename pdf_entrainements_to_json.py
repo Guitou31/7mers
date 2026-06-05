@@ -356,6 +356,16 @@ def appliquer_modifs_guillaume(entries: list[dict]) -> list[dict]:
             m.get("competences_avancees", []), remplacements_fusils
         )
 
+    # ---- Arc : ajouter Recharger (Arc) en base (règle maison universelle de
+    #      rechargement applicable aussi aux arcs, même si la valeur de
+    #      rechargement y est dérisoire). ----
+    if "Arc" in by_nom:
+        a = by_nom["Arc"]
+        base = list(a.get("competences_base", []))
+        if not any("recharger" in c.lower() and "arc" in c.lower() for c in base):
+            base.append("Recharger (Arc)")
+            a["competences_base"] = base
+
     return entries
 
 
