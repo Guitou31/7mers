@@ -56,7 +56,19 @@
     return true;
   }
 
+  // Helper : remplace les caractères non-espaces par █ (CIA-style).
+  // Le DOM contient littéralement les █, donc le copié-collé ne récupère
+  // que des blocs et jamais le texte d'origine.
+  function redactText(text, keepFirst) {
+    if (!text) return "";
+    const t = String(text);
+    const k = keepFirst || 0;
+    if (t.length <= k) return t;
+    return t.substring(k).replace(/\S/g, "█");
+  }
+
   function renderCard(ecole) {
+    if (ecole.redacted) return renderRedactedCard(ecole);
     const nationsBadges = ecole.nations.map(n => el("span", { class: "badge nation" }, n));
     const restrictionBadge = ecole.restriction_creation === "interdite"
       ? el("span", { class: "badge restriction-interdite" }, "⛔ Interdite à la création")
@@ -78,6 +90,32 @@
       el("h2", null, ecole.nom),
       el("p", { class: "arme" }, ecole.arme_display || ecole.arme || "—"),
       el("div", { class: "badges" }, [...nationsBadges, restrictionBadge, genreBadge]),
+    ]);
+  }
+
+  // Carte redactée style CIA : seule la 1ère lettre du nom est visible.
+  function renderRedactedCard(ecole) {
+    const firstLetter = ecole.nom.charAt(0);
+    const blockedName = redactText(ecole.nom, 1);  // tout sauf la 1ère lettre
+    const blockedArme = redactText(ecole.arme_display || ecole.arme || "Données classifiées");
+    return el("li", {
+      class: "ecole-card is-enrichie is-redacted",
+      tabindex: "0", role: "button",
+      "aria-label": "École classifiée",
+      onclick: () => window.openItem("ecole_combat", ecole, { resetStack: true }),
+      onkeydown: (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); window.openItem("ecole_combat", ecole, { resetStack: true }); } },
+    }, [
+      el("h2", null, [
+        firstLetter,
+        el("span", { class: "redacted-text" }, blockedName),
+      ]),
+      el("p", { class: "arme" }, [
+        el("span", { class: "redacted-text" }, blockedArme),
+      ]),
+      el("div", { class: "badges" }, [
+        el("span", { class: "badge organisation-antagoniste",
+                     title: "Organisation antagoniste" }, "🔒 Classifiée"),
+      ]),
     ]);
   }
 

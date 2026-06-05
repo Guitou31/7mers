@@ -289,6 +289,14 @@ def main() -> None:
 
     print(f"  → {len(ecoles)} écoles de combat retenues ({nb_exclues} exclues car déjà en Spadassin)")
 
+    # Marquer Quinn comme école 'classifiée' (organisation antagoniste N.O.M.).
+    # L'UI affichera tout en noir style document CIA, sauf la 1ère lettre 'Q'.
+    for ec in ecoles:
+        if ec["nom"] == "Quinn":
+            ec["redacted"] = True
+            ec["nations"] = []  # n'appartient à aucune Nation Pirate
+            ec["organisation_antagoniste"] = "Organisation antagoniste"
+
     # Stat techniques résolues
     nb_tech = sum(len(e["techniques_combat"]) for e in ecoles)
     nb_tech_ok = sum(1 for e in ecoles for t in e["techniques_combat"] if t.get("ref"))

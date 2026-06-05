@@ -212,6 +212,52 @@ p { margin: 0 0 0.6em; }
   color: #6b5040;
 }
 
+/* ====== École classifiée style CIA (Quinn) ======
+   Texte remplacé par █ et caché par couleur de fond pour empêcher le
+   copié-collé du contenu réel (le DOM ne contient que les blocs). */
+.redacted-text {
+  display: inline-block;
+  background: #000;
+  color: #000; /* texte █ invisible : seul le rectangle noir est vu */
+  font-family: 'Courier New', Consolas, monospace;
+  letter-spacing: -0.05em;
+  padding: 0 0.15em;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  pointer-events: none;
+  cursor: not-allowed;
+  vertical-align: baseline;
+}
+.ecole-redacted-banner {
+  background: linear-gradient(90deg, #000 0, #1a0a04 100%);
+  color: #c33;
+  padding: 0.5rem 0.9rem;
+  margin: 0 0 1rem;
+  border: 2px dashed #c33;
+  font-family: 'Courier New', Consolas, monospace;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.badge.organisation-antagoniste {
+  background: #000;
+  color: #c33;
+  border: 1px dashed #c33;
+  font-family: 'Courier New', Consolas, monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+.ecole-card.is-redacted {
+  background: #1a0a04;
+  border-left: 4px solid #c33;
+}
+.ecole-card.is-redacted .arme {
+  font-family: 'Courier New', Consolas, monospace;
+}
+
 /* Note 'compétences indicatives' sur les fiches métiers. */
 .metier-note-pp {
   margin: 0.75rem 0 0;

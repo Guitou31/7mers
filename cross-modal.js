@@ -679,8 +679,66 @@
 
   // --- École ---
   function renderEcole(ecole, container) {
-    if (ecole.enrichie) renderEcoleEnrichie(ecole, container);
+    if (ecole.redacted) renderEcoleRedacted(ecole, container);
+    else if (ecole.enrichie) renderEcoleEnrichie(ecole, container);
     else renderEcoleCompacte(ecole, container);
+  }
+
+  // Helper : remplace les caractères visibles par █ pour le style CIA.
+  function _redact(text, keepFirst) {
+    if (!text) return "";
+    const t = String(text);
+    const k = keepFirst || 0;
+    return t.substring(k).replace(/\S/g, "█");
+  }
+
+  // École classifiée : tout en noir sauf la 1ère lettre du nom.
+  function renderEcoleRedacted(ecole, container) {
+    const firstLetter = ecole.nom.charAt(0);
+    const titleBlocks = _redact(ecole.nom, 1);
+    container.appendChild(el("div", { class: "detail-header" }, [
+      el("h2", { id: "cross-modal-title" }, [
+        firstLetter,
+        el("span", { class: "redacted-text" }, titleBlocks),
+      ]),
+      el("div", { class: "badges" }, [
+        el("span", { class: "badge organisation-antagoniste" }, "🔒 Classifiée"),
+      ]),
+    ]));
+
+    // Bannière d'alerte
+    container.appendChild(el("div", { class: "ecole-redacted-banner" }, [
+      "⛔ Accès refusé — Document classifié — Organisation antagoniste",
+    ]));
+
+    // Sections génériques redactées (description, méta, techniques) :
+    // on remplace chaque texte par sa version █.
+    const sections = [
+      { titre: "Description", body: ecole.description_courte || "Données classifiées" },
+      { titre: "Arme(s) de prédilection", body: ecole.arme_display || ecole.arme || "?" },
+      { titre: "Origine / Académies", body:
+        (ecole.details && (ecole.details.academies || ecole.details.origine_texte)) || "?" },
+    ];
+    for (const s of sections) {
+      const blocked = _redact(s.body);
+      container.appendChild(el("div", { class: "detail-section" }, [
+        el("h3", null, s.titre),
+        el("p", { class: "description-paragraph" }, [
+          el("span", { class: "redacted-text" }, blocked),
+        ]),
+      ]));
+    }
+
+    // Techniques : section vide remplie de blocs (3 lignes)
+    container.appendChild(el("div", { class: "detail-section" }, [
+      el("h3", null, "Techniques de combat"),
+      ...["████████████████████████████████████████████",
+          "███████████ ██████████████████ ████████████████ ████████████",
+          "██████████████████████ ██████████████ ███████████████████"]
+        .map(line => el("p", { class: "description-paragraph" }, [
+          el("span", { class: "redacted-text" }, line),
+        ])),
+    ]));
   }
 
   function renderEcoleHeader(ecole) {

@@ -3795,9 +3795,7 @@ window.ECOLES_COMBAT_DATA = {
     {
       "nom": "Quinn",
       "origine": "officielle",
-      "nations": [
-        "Nations Pirates"
-      ],
+      "nations": [],
       "arme": "Dague, miséricorde, poignard et sgain dubh",
       "arme_display": "Dague, miséricorde (Couteau), poignard et sgain dubh",
       "armes_categories": [
@@ -3875,7 +3873,9 @@ window.ECOLES_COMBAT_DATA = {
       },
       "enrichie": true,
       "restriction_creation": "interdite",
-      "genre_restriction": null
+      "genre_restriction": null,
+      "redacted": true,
+      "organisation_antagoniste": "Organisation antagoniste"
     },
     {
       "nom": "Qurra",
