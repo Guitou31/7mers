@@ -87,6 +87,43 @@ def _est_spec_parasite(s: str) -> bool:
     return False
 
 
+# Normalisation des sous-catégories d'Escrime : Sabre = singulier, Épées + Rapières = pluriel
+# (forme préférée par Guillaume pour le display, cohérente avec la fiche Escrime).
+ESCRIME_SUBCAT_DISPLAY = {
+    "Escrime (Sabre)":   "Escrime (Sabre)",
+    "Escrime (Sabres)":  "Escrime (Sabre)",
+    "Escrime (Rapière)": "Escrime (Rapières)",
+    "Escrime (Rapières)":"Escrime (Rapières)",
+    "Escrime (Épée)":    "Escrime (Épées)",
+    "Escrime (Épées)":   "Escrime (Épées)",
+}
+
+
+def preciser_escrime(specs: list[str], armes_cats: list[str]) -> list[str]:
+    """Si une école liste 'Escrime' en spécialisation et qu'elle a une sous-catégorie
+    précise dans armes_categories ('Escrime (Sabre/Rapière/Épée)'), remplace
+    'Escrime' par la (ou les) sous-catégorie(s) — normalisées (Sabre singulier,
+    Épées/Rapières pluriel). Préserve le clic vers la fiche Escrime via
+    SPECIALISATION_PATTERN_ALIASES côté JS.
+    """
+    sub_escrime = [ESCRIME_SUBCAT_DISPLAY.get(c, c)
+                   for c in (armes_cats or [])
+                   if c.startswith("Escrime (")]
+    if not sub_escrime:
+        return specs
+    out: list[str] = []
+    seen_lower = {s.lower() for s in specs}
+    for s in specs:
+        if s.lower() == "escrime":
+            for sub in sub_escrime:
+                if sub.lower() not in seen_lower:
+                    seen_lower.add(sub.lower())
+                    out.append(sub)
+        else:
+            out.append(s)
+    return out
+
+
 def nettoyer_specialisations(specs: list[str]) -> list[str]:
     """Applique nettoyage + normalisation + split à une liste de spécialisations
     brutes (issues du parser PDF) pour produire une liste cliquable."""
@@ -190,7 +227,10 @@ def transformer_ecole(nom: str, enrichment: dict, techniques_db: dict) -> dict:
         "arme": arme,
         "arme_display": arme_display,
         "armes_categories": armes_cats,
-        "specialisations": nettoyer_specialisations(enrichment.get("specialisations_pdf", [])),
+        "specialisations": preciser_escrime(
+            nettoyer_specialisations(enrichment.get("specialisations_pdf", [])),
+            armes_cats,
+        ),
         "description_courte": (details.get("description_longue") or [""])[0][:200],
         "techniques_combat": techniques,
         "avantages_courts": {"apprenti": "", "compagnon": "", "maitre": ""},

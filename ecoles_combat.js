@@ -238,7 +238,7 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Athlétisme",
-        "Escrime"
+        "Escrime (Sabre)"
       ],
       "description_courte": "Le style Bonita enseigne à ses élèves à tenir ferme contre plusieurs adversaires dans l’attente de trouver une chance de fuir. Il est conçu dans le but de tenir les inquisiteurs vindicatifs à distance",
       "techniques_combat": [
@@ -661,7 +661,7 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Cavalier",
-        "Escrime",
+        "Escrime (Sabre)",
         "Lances"
       ],
       "description_courte": "L’élève passe trois années complètes en formation. Durant les premiers mois, il essaie diverses montures puis son tuteur décide de celle qui lui convient le mieux. Celle-ci ne le quittera plus durant ",
@@ -929,7 +929,7 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Bateleur",
-        "Escrime"
+        "Escrime (Rapières)"
       ],
       "description_courte": "Le Chariot de Thespis rassemble de nombreuses troupes théâtrales qui mettent en scène des pièces historiques ponctuées de féroces duels à travers toute la Montaigne. Le réalisme des scènes d’action et",
       "techniques_combat": [
@@ -1590,7 +1590,7 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Couteau",
-        "Escrime"
+        "Escrime (Sabre)"
       ],
       "description_courte": "El Puñal Oculto est basé sur la célèbre école d’Aldana mais dote d’une seconde arme les manœuvres et bottes rythmiques de ce style, qu’il s’agisse d’un puñal (un poignard à simple tranchant) manié de ",
       "techniques_combat": [
@@ -1844,7 +1844,7 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Bourreau",
-        "Escrime"
+        "Escrime (Sabre)"
       ],
       "description_courte": "Javier Guannazar de Torres fut l’un des sadiques les plus infâmes de toute la Castille jusqu’à sa mort prématurée entre les mains des envahisseurs montaginois. Il développa un style d’escrime qui soul",
       "techniques_combat": [
@@ -1930,7 +1930,7 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Cavalier",
-        "Escrime"
+        "Escrime (Sabre)"
       ],
       "description_courte": "Les fiers cavaliers de Castille sont d’excellents bretteurs, même à cheval. L’école de Gustavo naquit du désir de former des escrimeurs aussi efficaces à pied qu’à cheval. Elle apprend donc à ses élèv",
       "techniques_combat": [
@@ -2521,7 +2521,7 @@ window.ECOLES_COMBAT_DATA = {
         "Escrime (Épée)"
       ],
       "specialisations": [
-        "Escrime",
+        "Escrime (Épées)",
         "Combat de rue"
       ],
       "description_courte": "Cette école située en Pösen forme les mercenaires les plus aguerris d’Eisen. Polyvalence et pragmatisme en sont les maîtres mots de cette école et transparaissent dans leur style de combat. En effet, ",
@@ -2864,7 +2864,7 @@ window.ECOLES_COMBAT_DATA = {
         "Escrime (Rapière)"
       ],
       "specialisations": [
-        "Escrime",
+        "Escrime (Rapières)",
         "Malandrin"
       ],
       "description_courte": "Ce style de combat a été mis au point par Léon Denisard Rivaille, dit Léon des Gueux, un ancien mousquetaire expulsé après un complot dont il était le bouc émissaire. Également membre des chevaliers d",
@@ -3033,7 +3033,7 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Acrobate",
-        "Escrime"
+        "Escrime (Rapières)"
       ],
       "description_courte": "Marchenko est le résultat de l’une des manigances d’Aleksi Pavtlow Markov v’Novgorov. Après la retraite d’Ussura du général Montègue, il décida de créer un style d’escrime ussuran. Pour cela il rassem",
       "techniques_combat": [
@@ -3122,7 +3122,8 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Athlétisme",
-        "Escrime"
+        "Escrime (Rapières)",
+        "Escrime (Sabre)"
       ],
       "description_courte": "L’École de Marcina a été développée par et pour les colons de cette île de l’Archipel de Minuit. Elle combine les fortes traditions continentales castillianes relatives à l’escrime avec le bon sens in",
       "techniques_combat": [
@@ -4308,7 +4309,7 @@ window.ECOLES_COMBAT_DATA = {
         "Escrime (Sabre)"
       ],
       "specialisations": [
-        "Escrime",
+        "Escrime (Sabre)",
         "Marin"
       ],
       "description_courte": "Cette école a été créée par le grand duelliste Roberto Salinas, connu pour sa grande connaissance des styles castillians et son bourlingage à travers le monde. Elle a pris naissance alors que Salinas ",
@@ -4396,7 +4397,7 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "specialisations": [
         "Assassin",
-        "Escrime"
+        "Escrime (Rapières)"
       ],
       "description_courte": "Si l’on comparait les différents styles d’escrime à des animaux, celui qui correspondrait le plus à l’école Scarlatti serait sans nul doute le serpent. En effet, les spadassins de cette école utilisen",
       "techniques_combat": [
@@ -4731,7 +4732,7 @@ window.ECOLES_COMBAT_DATA = {
         "Escrime (Sabre)"
       ],
       "specialisations": [
-        "Escrime",
+        "Escrime (Sabre)",
         "Fauconnier"
       ],
       "description_courte": "Cette féroce école d’escrime est très ancienne chez les Kosars, mais elle a toujours un grand succès parmi la jeunesse. C’est un mélange de fauconnerie traditionnelle et de techniques de duel qui est ",
@@ -4981,7 +4982,7 @@ window.ECOLES_COMBAT_DATA = {
         "Escrime (Épée)"
       ],
       "specialisations": [
-        "Escrime",
+        "Escrime (Épées)",
         "Garde du corps"
       ],
       "description_courte": "Les dirigeants des Filles de Sophie complotent depuis des millénaires et planifient leurs intrigues politiques sur des siècles. Elles ont appris assez rapidement qu’une simple flèche ou lame tuant l’u",
