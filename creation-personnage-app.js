@@ -9,7 +9,8 @@
   // État (session, en mémoire — pas de sauvegarde pour l'instant)
   const state = {
     nation: null,            // nom de la nation choisie
-    trait_bonus: null,       // trait choisi pour le +1
+    trait_bonus_nation: null, // trait choisi pour le +1 de Nation
+    trait_libre: null,       // trait choisi pour le +1 'à répartir librement'
   };
   // Base 2 dans chaque Trait (règle de jeu)
   const TRAIT_BASE = 2;
@@ -70,28 +71,61 @@
   }
 
   // ===== Étape 1 : Traits + Nations =====
-  // Sélecteur radio style 7ème Mer : 5 cercles, 'TRAIT_BASE' remplis, +1 cliquable si Nation choisie
+  // Sélecteur radio style 7ème Mer :
+  //  - 2 cercles noirs : base 2
+  //  - +1 cercle 'rouge accent' si le Trait reçoit le point libre
+  //  - +1 cercle 'doré' si le Trait reçoit le bonus de Nation
+  //  - Cliquer sur la ligne d'un Trait pose/déplace le +1 libre.
+  function calcValeurTrait(traitNom) {
+    let v = TRAIT_BASE;
+    if (state.trait_libre === traitNom) v += 1;
+    if (state.trait_bonus_nation === traitNom) v += 1;
+    return v;
+  }
+
   function renderTraitRow(traitNom) {
     const desc = (data.traits_descriptions && data.traits_descriptions[traitNom]) || "";
-    const isBonus = state.trait_bonus === traitNom;
-    const valeur = TRAIT_BASE + (isBonus ? 1 : 0);
-    // Génère 5 cercles (rangs 1 à 5)
+    const isLibre = state.trait_libre === traitNom;
+    const isNation = state.trait_bonus_nation === traitNom;
+    const valeur = calcValeurTrait(traitNom);
+    // Génère 5 cercles ; le rang détermine la couleur :
+    // - <= TRAIT_BASE : base (noir)
+    // - rang du +1 libre : rouge
+    // - rang du +1 nation : doré
     const cercles = el("div", { class: "trait-cercles" });
+    let rangCourant = TRAIT_BASE;
     for (let rang = 1; rang <= 5; rang++) {
-      const filled = rang <= valeur;
-      cercles.appendChild(el("span", {
-        class: "trait-cercle" + (filled ? " is-filled" : "")
-                              + (rang === valeur && isBonus ? " is-bonus" : ""),
-        title: filled ? "Rang " + rang : "",
-      }));
+      let cls = "trait-cercle";
+      if (rang <= TRAIT_BASE) {
+        cls += " is-filled is-base";
+      } else if (isLibre && rang === TRAIT_BASE + 1) {
+        cls += " is-filled is-libre";
+      } else if (isNation && rang === valeur) {
+        cls += " is-filled is-nation";
+      }
+      cercles.appendChild(el("span", { class: cls }));
     }
-    return el("div", { class: "trait-row" }, [
+    const valeurLabel = el("span", { class: "trait-valeur" }, String(valeur));
+    return el("button", {
+      class: "trait-row trait-row-button"
+             + (isLibre ? " has-libre" : "")
+             + (isNation ? " has-nation" : ""),
+      type: "button",
+      "aria-label": "Donner le point libre à " + traitNom,
+      onclick: () => toggleTraitLibre(traitNom),
+    }, [
       el("div", { class: "trait-label" }, [
         el("strong", null, traitNom),
         el("p", { class: "trait-desc" }, desc),
       ]),
-      cercles,
+      el("div", { class: "trait-droite" }, [cercles, valeurLabel]),
     ]);
+  }
+
+  function toggleTraitLibre(traitNom) {
+    // Cliquer sur le trait déjà choisi : annule. Sinon : déplace.
+    state.trait_libre = (state.trait_libre === traitNom) ? null : traitNom;
+    renderTraits();
   }
 
   function renderTraits() {
@@ -205,7 +239,7 @@
     ]);
     const boutons = el("div", { class: "trait-bouton-row" });
     nation.bonus_traits.forEach(t => {
-      const isCurrent = state.nation === nation.nom && state.trait_bonus === t;
+      const isCurrent = state.nation === nation.nom && state.trait_bonus_nation === t;
       boutons.appendChild(el("button", {
         class: "trait-bouton" + (isCurrent ? " is-selected" : ""),
         type: "button",
@@ -221,7 +255,7 @@
 
   function selectionnerNationEtTrait(nationNom, trait, dialog) {
     state.nation = nationNom;
-    state.trait_bonus = trait;
+    state.trait_bonus_nation = trait;
     renderTraits();
     renderNations();
     if (dialog) {

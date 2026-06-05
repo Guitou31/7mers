@@ -297,7 +297,7 @@ p { margin: 0 0 0.6em; }
   line-height: 1.6;
   margin: 0 0 0.7rem;
 }
-/* Traits — sélecteur radio style 7ème Mer */
+/* Traits — sélecteur style 7ème Mer (cliquable pour +1 libre) */
 .traits-grid { display: grid; gap: 0.5rem; }
 .trait-row {
   display: grid;
@@ -307,6 +307,30 @@ p { margin: 0 0 0.6em; }
   padding: 0.7rem;
   background: rgba(232, 212, 168, 0.06);
   border-radius: 4px;
+  text-align: left;
+}
+.trait-row-button {
+  width: 100%;
+  border: 2px solid transparent;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.trait-row-button:hover {
+  background: rgba(232, 212, 168, 0.12);
+  border-color: rgba(195, 70, 70, 0.35);
+}
+.trait-row-button:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.trait-row.has-libre {
+  border-color: var(--accent);
+  background: rgba(195, 70, 70, 0.10);
+}
+.trait-row.has-nation {
+  border-left: 4px solid #c9a861;
 }
 .trait-label strong {
   font-family: 'Cinzel', Georgia, serif;
@@ -318,6 +342,11 @@ p { margin: 0 0 0.6em; }
   font-size: 0.85rem;
   opacity: 0.8;
   line-height: 1.5;
+}
+.trait-droite {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
 }
 .trait-cercles {
   display: flex;
@@ -332,15 +361,33 @@ p { margin: 0 0 0.6em; }
   background: rgba(255, 255, 255, 0.5);
   display: inline-block;
 }
-.trait-cercle.is-filled {
-  background: #000;
-  border-color: #000;
-}
-.trait-cercle.is-bonus {
+.trait-cercle.is-filled { background: #000; border-color: #000; }
+.trait-cercle.is-libre {
   background: var(--accent);
   border-color: var(--accent);
   box-shadow: 0 0 0 2px rgba(195, 70, 70, 0.4);
 }
+.trait-cercle.is-nation {
+  background: #c9a861;
+  border-color: #c9a861;
+  box-shadow: 0 0 0 2px rgba(201, 168, 97, 0.4);
+}
+.trait-valeur {
+  min-width: 1.6rem;
+  text-align: center;
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--accent);
+}
+/* Légendes inline dans le texte d'aide */
+.legende-libre, .legende-nation {
+  font-weight: 700;
+  padding: 0 0.25em;
+  border-radius: 3px;
+}
+.legende-libre { background: rgba(195, 70, 70, 0.18); color: var(--accent); }
+.legende-nation { background: rgba(201, 168, 97, 0.22); color: #8a6a26; }
 /* Tableau des Nations */
 .nations-continent { margin-bottom: 1.5rem; }
 .nations-continent-titre {
