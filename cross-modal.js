@@ -179,11 +179,29 @@
 
   // Pour les liens "spécialisation" depuis une école/compétence : cherche
   // dans entraînements puis métiers, renvoie {type, nom} ou null.
+  // Pattern alias : 'Escrime (Épées)' / 'Escrime (Sabres)' / 'Escrime (Rapières)'
+  // → résolu vers l'entraînement 'Escrime' (sous-catégories internes au PDF).
+  const SPECIALISATION_PATTERN_ALIASES = [
+    { pattern: /^escrime\s*\(.+?\)$/i, target: "Escrime", type: "entrainement" },
+  ];
   function findSpecialisation(nom) {
     const e = findEntrainement(nom);
     if (e) return { type: "entrainement", nom: e.nom };
     const m = findMetier(nom);
     if (m) return { type: "metier", nom: m.nom };
+    // Aliases : display préservé, lookup résolu vers la cible
+    const k = normalize(nom);
+    for (const a of SPECIALISATION_PATTERN_ALIASES) {
+      if (a.pattern.test(k)) {
+        if (a.type === "entrainement") {
+          const e2 = findEntrainement(a.target);
+          if (e2) return { type: "entrainement", nom: e2.nom };
+        } else {
+          const m2 = findMetier(a.target);
+          if (m2) return { type: "metier", nom: m2.nom };
+        }
+      }
+    }
     return null;
   }
 

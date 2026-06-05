@@ -1246,7 +1246,7 @@ window.ECOLES_COMBAT_DATA = {
       "arme_display": "Glaive",
       "armes_categories": [],
       "specialisations": [
-        "Épée courte",
+        "Escrime (Épées)",
         "Légionnaire"
       ],
       "description_courte": "Cette école a été développée il y a très longtemps comme une méthode de combat des troupes d’élite de l’Empire numain. Si tous les légionnaires numains savaient se battre, ceux formés au sein de l’éco",

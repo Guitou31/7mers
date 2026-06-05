@@ -44,6 +44,7 @@ SPEC_RENAMES = {
     "combat de rues":        "Combat de rue",
     "feng shui shi":         "Feng Shui Shi (Géomancien)",
     "equitation":            "Cavalier",  # discipline → entraînement Cavalier
+    "epee courte":           "Escrime (Épées)",  # sous-catégorie d'Escrime
 }
 
 # Suffixes parenthétiques 'X (la compétence avancée Y passe/devient...)'
