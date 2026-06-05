@@ -536,7 +536,6 @@ window.COMPETENCES_DATA = {
       ],
       "donnent_acces_avancee": [
         "Alchimiste",
-        "Artisan",
         "Gérant de comptoir",
         "Navigateur",
         "Professeur",
@@ -559,7 +558,6 @@ window.COMPETENCES_DATA = {
       ],
       "donnent_acces_metiers_avancee": [
         "Alchimiste",
-        "Artisan",
         "Gérant de comptoir",
         "Navigateur",
         "Professeur",
@@ -5571,16 +5569,12 @@ window.COMPETENCES_DATA = {
       "donnent_acces_base": [
         "Artisan"
       ],
-      "donnent_acces_avancee": [
-        "Artisan"
-      ],
+      "donnent_acces_avancee": [],
       "categorie": "Compétences artisanales",
       "donnent_acces_metiers_base": [
         "Artisan"
       ],
-      "donnent_acces_metiers_avancee": [
-        "Artisan"
-      ],
+      "donnent_acces_metiers_avancee": [],
       "donnent_acces_entrainements_base": [],
       "donnent_acces_entrainements_avancee": []
     },

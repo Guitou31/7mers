@@ -209,10 +209,8 @@ window.METIERS_DATA = {
         "Sens des affaires"
       ],
       "competences_avancees": [
-        "Calcul",
         "Conduite d’attelage",
         "Marchandage",
-        "Service",
         "Soulever",
         "Évaluation",
         "Comptabilité",
