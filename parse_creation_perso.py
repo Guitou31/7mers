@@ -129,6 +129,37 @@ ETAPE_1_INTRO = (
 # Marqueur de troncature dans la description Panache du PDF.
 PANACHE_TRUNCATE_AFTER = "le nombre d’actions que le héros pourra entreprendre durant un tour."
 
+# Intro 'Conception d'un Héros' aérée par Guillaume — remplace l'extraction PDF.
+INTRO_OVERRIDE = (
+    "Avant de vous lancer dans 7e Mer, il vous faut un Héros. Pas le Héros de "
+    "quelqu’un d’autre… votre Héros. Ce chapitre vous décrira comment le concevoir. "
+    "C’est l’occasion de créer un Héros à l’image de vos personnages préférés. "
+    "Pour ça, il ne suffit pas de remplir sa feuille de Héros ; il faut lui donner "
+    "une substance au-delà de ses Caractéristiques et de ses Rangs. Vous devrez "
+    "d’abord répondre à quelques questions importantes afin que d’une caricature "
+    "en deux dimensions, votre Héros devienne un personnage en trois dimensions. "
+    "Chaque Nation a une acception sensiblement différente du mot « Héros ». Le "
+    "lieu de naissance de votre Héros influencera donc beaucoup l’image qu’il "
+    "aura de son propre rôle."
+    "\n\n"
+    "Cette partie fournit une vision d’ensemble de chaque Nation. Elle définit "
+    "également à quoi ressemble un Héros de telle ou telle Nation, afin que vous "
+    "puissiez déterminer d’où vous voulez que votre Héros vienne. Chaque Nation "
+    "a sa propre culture, sa propre ambiance, ses propres thèmes. En choisissant "
+    "la Nation natale de votre Héros, vous en adoptez la culture, l’ambiance, "
+    "les thèmes. Un Eisenör pourra avoir beaucoup en commun avec un Castillian "
+    "ou un Sarmatien, mais il viendra toujours d’Eisen. Et il fera partie de "
+    "l’Eisen. Toujours."
+    "\n\n"
+    "Chaque Nation a sa propre vision d’un Héros. Quelles sont les caractéristiques "
+    "propres d’un Héros ? Lesquelles sont les plus importantes ? Lesquelles sont "
+    "incompatibles avec cette vision ? Chaque Nation a ses propres réponses à ce "
+    "sujet. En choisissant votre Nation, vous choisissez une image particulière "
+    "de ce qu’est un « Héros ». Vous pouvez y adhérer, aller à son encontre ou "
+    "faire à votre guise. S’opposer à un stéréotype pourra vous valoir d’être "
+    "bien vu à l’étranger, mais chez vous, vous ferez figure d’antihéros."
+)
+
 
 def corriger_typos(text: str) -> str:
     for old, new in TYPO_CORRECTIONS.items():
@@ -154,9 +185,10 @@ def nettoyer_text(text: str) -> str:
 
 
 def extraire_intro(doc) -> str:
-    """Page 2 : intro 'Conception d'un Héros'."""
-    text = doc[1].get_text("text")
-    return corriger_typos(nettoyer_text(text))
+    """Intro Étape 0 : version aérée fournie par Guillaume (override).
+    Le PDF source est ignoré ; la mise en forme paragraphée est meilleure.
+    """
+    return INTRO_OVERRIDE
 
 
 TRAITS_NOMS = ("Gaillardise", "Finesse", "Détermination", "Esprit", "Panache")
