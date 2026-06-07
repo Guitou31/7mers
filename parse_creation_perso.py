@@ -115,6 +115,15 @@ TYPO_CORRECTIONS = {
     "résolution": "détermination",
 }
 
+# Corrections regex : le PDF a un caractère 'T' (ligature décorative ?) qui se
+# perd à l'extraction, laissant 'éan/éans/éah' au lieu de 'Théan/Théans/Théah'.
+TYPO_REGEX_CORRECTIONS: list[tuple[str, str]] = [
+    (r"(?<![a-zA-ZÀ-ÿ])éans\b", "Théans"),
+    (r"(?<![a-zA-ZÀ-ÿ])éan\b",  "Théan"),
+    (r"(?<![a-zA-ZÀ-ÿ])éah\b",  "Théah"),
+]
+_TYPO_REGEX_COMPILED = [(re.compile(p), r) for p, r in TYPO_REGEX_CORRECTIONS]
+
 # Le bloc d'intro 'Un Héros commence avec un score…' est collé à tort à la
 # description du Trait Panache dans le PDF — on le retire de Panache (voir
 # extraire_traits) et on le place dans etape_1_intro (texte ci-dessous,
@@ -175,6 +184,8 @@ INTRO_OVERRIDE = (
 def corriger_typos(text: str) -> str:
     for old, new in TYPO_CORRECTIONS.items():
         text = text.replace(old, new)
+    for rx, repl in _TYPO_REGEX_COMPILED:
+        text = rx.sub(repl, text)
     return text
 
 
