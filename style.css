@@ -658,6 +658,117 @@ p { margin: 0 0 0.6em; }
   }
 }
 
+/* ====== Carte 'Compétences' (étape 3) : bloc compétences disponibles ====== */
+.spec-comp-dispo {
+  margin: 0.7rem 0 0.5rem 0;
+}
+.spec-comp-dispo-details {
+  background: rgba(232, 212, 168, 0.05);
+  border: 1px solid rgba(232, 212, 168, 0.18);
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem 0.7rem 0.8rem;
+}
+.spec-comp-dispo-details[open] {
+  padding-bottom: 0.9rem;
+}
+.spec-comp-dispo-summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  padding: 0.25rem 0;
+  user-select: none;
+}
+.spec-comp-dispo-summary::-webkit-details-marker { display: none; }
+.spec-comp-dispo-summary::before {
+  content: "▸";
+  color: var(--accent-soft);
+  transition: transform 0.15s;
+  display: inline-block;
+}
+.spec-comp-dispo-details[open] .spec-comp-dispo-summary::before {
+  transform: rotate(90deg);
+}
+.spec-comp-dispo-titre {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 0.95rem;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  flex: 1 1 auto;
+}
+.spec-comp-dispo-stats {
+  display: inline-flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+.spec-comp-dispo-section {
+  margin-top: 0.7rem;
+}
+.spec-comp-dispo-section-titre {
+  margin: 0 0 0.35rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+}
+.spec-comp-dispo-count {
+  color: var(--accent-soft);
+  opacity: 0.75;
+  font-size: 0.8rem;
+}
+.spec-comp-dispo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.spec-comp-dispo-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  padding: 0.2rem 0.3rem;
+  border-radius: 4px;
+  transition: background 0.12s;
+}
+.spec-comp-dispo-item:hover {
+  background: rgba(232, 212, 168, 0.08);
+}
+.spec-comp-dispo-nom {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  text-align: left;
+  border-bottom: 1px dotted rgba(232, 212, 168, 0.35);
+  transition: color 0.12s, border-color 0.12s;
+}
+.spec-comp-dispo-nom:hover,
+.spec-comp-dispo-nom:focus {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  outline: none;
+}
+.spec-comp-dispo-sep {
+  color: var(--accent-soft);
+  opacity: 0.55;
+}
+.spec-comp-dispo-source {
+  font-size: 0.82rem;
+  color: var(--accent-soft);
+  opacity: 0.85;
+  font-style: italic;
+}
+
 /* ====== Sélecteur de rang de compétence (dans modale) ====== */
 .comp-rang-selector {
   display: flex;

@@ -867,6 +867,88 @@
     ]);
   }
 
+  // Construit le bloc 'Compétences disponibles à coût réduit', listant
+  // toutes les compétences que les Métiers / Entraînements / Écoles déjà
+  // choisis font passer à coût base ou avancée, avec la source en regard.
+  // Cliquer sur une compétence ouvre sa fiche (modal cross-page).
+  function buildCompetencesDispoBloc() {
+    const wrapper = el("div", { class: "spec-comp-dispo" });
+    if (!window.CreationState || !window.CreationState.getMesCompetencesSets) {
+      return wrapper;
+    }
+    const { base, avancee, sources } = window.CreationState.getMesCompetencesSets();
+    const nbBase = base.size, nbAv = avancee.size;
+    const total = nbBase + nbAv;
+
+    if (total === 0) {
+      wrapper.appendChild(el("p", { class: "spec-empty-list" },
+        "Ajoutez des Métiers, Entraînements ou Écoles pour voir ici les " +
+        "compétences qui deviendront accessibles à coût réduit."));
+      return wrapper;
+    }
+
+    // En-tête repliable
+    const summary = el("summary", { class: "spec-comp-dispo-summary" }, [
+      el("span", { class: "spec-comp-dispo-titre" },
+        "Compétences à coût réduit grâce à vos spécialités"),
+      el("span", { class: "spec-comp-dispo-stats" }, [
+        el("span", { class: "rang-typecout rang-typecout-base" }, nbBase + " base"),
+        el("span", { class: "rang-typecout rang-typecout-avancee" }, nbAv + " avancée" + (nbAv > 1 ? "s" : "")),
+      ]),
+    ]);
+
+    const detailsEl = el("details", { class: "spec-comp-dispo-details", open: true }, [summary]);
+
+    function buildSection(titre, classMod, set, level) {
+      if (set.size === 0) return null;
+      const noms = Array.from(set).sort((a, b) => a.localeCompare(b, "fr", { sensitivity: "base" }));
+      const ul = el("ul", { class: "spec-comp-dispo-list" });
+      noms.forEach(nom => {
+        const srcList = sources[level + ":" + nom] || [];
+        const srcTxt = srcList.length
+          ? srcList.join(" · ")
+          : "Source inconnue";
+        ul.appendChild(el("li", { class: "spec-comp-dispo-item" }, [
+          el("button", {
+            class: "spec-comp-dispo-nom",
+            type: "button",
+            title: "Ouvrir la fiche de la compétence",
+            onclick: () => {
+              // Ouvre la fiche compétence via le module cross-modal
+              if (window.openItem && window.COMPETENCES_DATA) {
+                const c = (window.COMPETENCES_DATA.competences || [])
+                  .find(x => x.nom === nom);
+                if (c) {
+                  window.openItem("competence", c, { resetStack: true });
+                  return;
+                }
+              }
+              // Fallback : un lien vers la page compétences
+              window.open("competences.html", "_blank");
+            },
+          }, nom),
+          el("span", { class: "spec-comp-dispo-sep" }, "—"),
+          el("span", { class: "spec-comp-dispo-source" }, srcTxt),
+        ]));
+      });
+      return el("div", { class: "spec-comp-dispo-section " + classMod }, [
+        el("h6", { class: "spec-comp-dispo-section-titre" }, [
+          el("span", { class: "rang-typecout rang-typecout-" + level }, titre),
+          el("span", { class: "spec-comp-dispo-count" }, "(" + set.size + ")"),
+        ]),
+        ul,
+      ]);
+    }
+
+    const secBase = buildSection("De base (1 PP / rang)", "is-base", base, "base");
+    const secAv = buildSection("Avancées (2 PP / rang)", "is-avancee", avancee, "avancee");
+    if (secBase) detailsEl.appendChild(secBase);
+    if (secAv) detailsEl.appendChild(secAv);
+
+    wrapper.appendChild(detailsEl);
+    return wrapper;
+  }
+
   function renderEtape3Specificites() {
     const e3 = data.etape_3;
     if (!e3 || !e3.specificites) return;
@@ -1045,6 +1127,10 @@
           el("span", { class: "spec-cout-pp" }, v.pp + " PP"),
         ])));
         card.appendChild(ul);
+
+        // Compétences disponibles à coût réduit grâce aux Métiers /
+        // Entraînements / Écoles déjà choisis (avec source en regard).
+        card.appendChild(buildCompetencesDispoBloc());
 
         // Liste des compétences choisies via les sélecteurs de rang
         const comps = (state.competences_choisies || []).filter(c => (c.rang || 0) > 0);

@@ -133,28 +133,52 @@
 
   // ===== Compétences : type_cout (base / avancee / hors) =====
   // Calcule l'ensemble des noms de compétences qui sont 'de base' ou 'avancées'
-  // dans au moins un des métiers/entraînements choisis par le joueur.
+  // dans au moins un des métiers/entraînements choisis par le joueur, plus
+  // les spécialisations des écoles choisies (comptées comme 'base').
   // Inclut les options des choix.
+  //
+  // Le 2e retour `sources` mappe chaque compétence (clé "base:Nom" ou
+  // "avancee:Nom") vers la liste des spécialités qui lui donnent accès :
+  //   { "base:Athlétisme": ["Métier Soldat", "École Al Aïfa"], ... }
   function getMesCompetencesSets() {
     const state = load();
     const baseSet = new Set();
     const avSet = new Set();
+    const sources = {};
 
-    function ajouterDe(source) {
-      (source.competences_base || []).forEach(c => baseSet.add(c));
-      (source.competences_avancees || []).forEach(c => avSet.add(c));
+    function pushSource(level, nom, sourceLabel) {
+      const key = level + ":" + nom;
+      if (!sources[key]) sources[key] = [];
+      if (sources[key].indexOf(sourceLabel) === -1) sources[key].push(sourceLabel);
+    }
+
+    function ajouterDe(source, sourceLabel) {
+      (source.competences_base || []).forEach(c => {
+        baseSet.add(c); pushSource("base", c, sourceLabel);
+      });
+      (source.competences_avancees || []).forEach(c => {
+        avSet.add(c); pushSource("avancee", c, sourceLabel);
+      });
       // Choix : peut être dict (legacy) ou list[dict]
       const choixBase = source.competences_base_choix;
       if (Array.isArray(choixBase)) {
-        choixBase.forEach(ch => (ch.options || []).forEach(o => baseSet.add(o)));
+        choixBase.forEach(ch => (ch.options || []).forEach(o => {
+          baseSet.add(o); pushSource("base", o, sourceLabel + " (au choix)");
+        }));
       } else if (choixBase && choixBase.options) {
-        choixBase.options.forEach(o => baseSet.add(o));
+        choixBase.options.forEach(o => {
+          baseSet.add(o); pushSource("base", o, sourceLabel + " (au choix)");
+        });
       }
       const choixAv = source.competences_avancees_choix;
       if (Array.isArray(choixAv)) {
-        choixAv.forEach(ch => (ch.options || []).forEach(o => avSet.add(o)));
+        choixAv.forEach(ch => (ch.options || []).forEach(o => {
+          avSet.add(o); pushSource("avancee", o, sourceLabel + " (au choix)");
+        }));
       } else if (choixAv && choixAv.options) {
-        choixAv.options.forEach(o => avSet.add(o));
+        choixAv.options.forEach(o => {
+          avSet.add(o); pushSource("avancee", o, sourceLabel + " (au choix)");
+        });
       }
     }
 
@@ -162,15 +186,30 @@
     const mData = window.METIERS_DATA && window.METIERS_DATA.metiers || [];
     (state.metiers_choisis || []).forEach(m => {
       const src = mData.find(x => x.nom === m.nom);
-      if (src) ajouterDe(src);
+      if (src) ajouterDe(src, "Métier " + m.nom);
     });
     // Entraînements
     const eData = window.ENTRAINEMENTS_DATA && window.ENTRAINEMENTS_DATA.entrainements || [];
     (state.entrainements_choisis || []).forEach(e => {
       const src = eData.find(x => x.nom === e.nom);
-      if (src) ajouterDe(src);
+      if (src) ajouterDe(src, "Entraînement " + e.nom);
     });
-    return { base: baseSet, avancee: avSet };
+    // Écoles : leurs `specialisations` sont des compétences de base
+    // (sémantique 7ème Mer : compétences enseignées par le style).
+    const ecData = (window.ECOLES_DATA && window.ECOLES_DATA.ecoles) || [];
+    const ecCombatData = (window.ECOLES_COMBAT_DATA && window.ECOLES_COMBAT_DATA.ecoles) || [];
+    (state.ecoles_choisies || []).forEach(e => {
+      const src = ecData.find(x => x.nom === e.nom)
+              || ecCombatData.find(x => x.nom === e.nom);
+      if (src && Array.isArray(src.specialisations)) {
+        const label = "École " + (e.type ? "(" + e.type + ") " : "") + e.nom;
+        src.specialisations.forEach(c => {
+          baseSet.add(c);
+          pushSource("base", c, label);
+        });
+      }
+    });
+    return { base: baseSet, avancee: avSet, sources: sources };
   }
 
   function typeCoutCompetence(compNom) {
