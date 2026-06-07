@@ -62,10 +62,21 @@
   function resetState() {
     if (!confirm("Réinitialiser tous les choix de création ?")) return;
     Object.keys(state).forEach(k => state[k] = defaultState[k]);
-    saveState();
+    // Utilise CreationState.reset() pour nettoyer le storage ET notifier les
+    // autres composants (notamment la barre PP globale, qui doit disparaître).
+    if (window.CreationState && window.CreationState.reset) {
+      window.CreationState.reset();
+    } else {
+      saveState();
+    }
     location.reload();
   }
   loadState();
+  // Marque la création comme 'démarrée' : à partir de maintenant, la barre
+  // PP globale s'affichera sur toutes les pages tant qu'on n'a pas reset.
+  if (window.CreationState && window.CreationState.markStarted) {
+    window.CreationState.markStarted();
+  }
 
   // Calcul du total PP dépensés.
   // Priorité aux listes (noms persistés) ; fallback compteurs si liste vide.
@@ -112,7 +123,12 @@
   function refreshPPBar() {
     const bar = document.getElementById("pp-bar");
     if (!bar) return;
-    const total = calculerPP();
+    // On préfère le calcul du module global (inclut les compétences chiffrées
+    // via les sélecteurs de rang et les avantages choisis) ; fallback sur le
+    // calcul local si le module n'est pas chargé.
+    const total = (window.CreationState && window.CreationState.calculerPP)
+      ? window.CreationState.calculerPP(state)
+      : calculerPP();
     const restant = PP_BUDGET - total;
     bar.classList.toggle("is-overspent", restant < 0);
     bar.classList.toggle("is-exact", restant === 0);

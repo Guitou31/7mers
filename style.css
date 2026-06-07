@@ -575,6 +575,89 @@ p { margin: 0 0 0.6em; }
   border-color: var(--accent);
 }
 
+/* ====== Barre PP globale (toutes pages hors création) ====== */
+.pp-bar-global {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 600;
+  background: #1c1612;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  font-family: inherit;
+  animation: pp-bar-global-in 0.25s ease-out;
+}
+@keyframes pp-bar-global-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.pp-bar-global-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 0.9rem;
+  text-decoration: none;
+  color: var(--text);
+  border-radius: 10px;
+  transition: background 0.15s;
+}
+.pp-bar-global-link:hover {
+  background: rgba(232, 212, 168, 0.06);
+}
+.pp-bar-global-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+  font-weight: 700;
+}
+.pp-bar-global-chiffres {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.15rem;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
+}
+.pp-bar-global-depenses { color: #fff8e0; }
+.pp-bar-global-sep      { color: var(--accent-soft); opacity: 0.5; }
+.pp-bar-global-budget   { color: var(--accent-soft); font-size: 0.9rem; }
+.pp-bar-global-restant {
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 5px;
+  background: rgba(232, 212, 168, 0.10);
+}
+.pp-bar-global.is-leftover .pp-bar-global-restant {
+  color: #9fd28b;
+  background: rgba(127, 190, 112, 0.14);
+}
+.pp-bar-global.is-exact .pp-bar-global-restant {
+  color: #e8d4a8;
+}
+.pp-bar-global.is-overspent {
+  border-color: #c34646;
+}
+.pp-bar-global.is-overspent .pp-bar-global-restant {
+  color: #fff;
+  background: #c34646;
+}
+.pp-bar-global.is-overspent .pp-bar-global-depenses {
+  color: #ff9b9b;
+}
+@media (max-width: 640px) {
+  .pp-bar-global {
+    bottom: 0.6rem;
+    right: 0.6rem;
+  }
+  .pp-bar-global-link {
+    padding: 0.45rem 0.7rem;
+    gap: 0.4rem;
+  }
+}
+
 /* ====== Sélecteur de rang de compétence (dans modale) ====== */
 .comp-rang-selector {
   display: flex;

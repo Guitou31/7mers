@@ -9,9 +9,14 @@
   "use strict";
 
   const STORAGE_KEY = "creation_perso_state_v1";
+  const PP_BUDGET = 60;
 
   // Forme par défaut (utilisée pour les pages qui n'ont pas encore d'état)
   const DEFAULT_STATE = {
+    // Drapeau : true dès que la page Création de personnage a été ouverte
+    // au moins une fois depuis le dernier reset. Sert à n'afficher la
+    // barre PP globale que si une création est effectivement en cours.
+    _started: false,
     // Étape 1
     nation: null,
     trait_bonus_nation: null,
@@ -204,6 +209,22 @@
 
   function reset() {
     try { localStorage.removeItem(STORAGE_KEY); } catch {}
+    // Notifie les autres composants (pp-bar globale, boutons d'ajout, etc.)
+    // pour qu'ils se mettent à jour / se cachent.
+    window.dispatchEvent(new CustomEvent("creation-state-changed",
+      { detail: Object.assign({}, DEFAULT_STATE) }));
+  }
+
+  function markStarted() {
+    const state = load();
+    if (!state._started) {
+      state._started = true;
+      save(state);
+    }
+  }
+
+  function isStarted(state) {
+    return !!(state && state._started);
   }
 
   // Calcul du total PP (utilisable depuis n'importe quelle page si besoin)
@@ -269,6 +290,7 @@
   // Exposition globale
   window.CreationState = {
     STORAGE_KEY,
+    PP_BUDGET,
     load,
     save,
     toggleMetier,
@@ -276,6 +298,8 @@
     toggleEcole,
     isInCreation,
     reset,
+    markStarted,
+    isStarted,
     calculerPP,
     buildToggleButton,
     // Compétences
