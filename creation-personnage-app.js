@@ -322,12 +322,33 @@
 
   // ===== Étape 2 : Main du Destin (Arcanes) =====
   const arcanesData = window.ARCANES_DATA || null;
-  // Mapping carte → image disponible (12 illustrations sur 22 arcanes).
-  // Les pages PDF où l'image apparaît correspondent à des cartes spécifiques.
-  // Pour l'instant on associe par numéro : utilisateur pourra raffiner.
+  // Mapping numéro Arcane 7ème Mer → fichier image (numérotation tarot
+  // français traditionnel : le Mat est n°22 dans le jeu, mais Arcane 0
+  // en 7ème Mer ; certaines cartes sont à des numéros différents — par ex.
+  // La Force est n°11 en tarot mais n°8 en 7ème Mer).
   const ARCANE_IMAGES = {
-    // numero → nom fichier dans images/arcanes/
-    // (laissé vide par défaut — Guillaume associera s'il veut)
+    0:  "images/arcanes/22-le-mat.jpg",
+    1:  "images/arcanes/1-le-bateleur.jpg",
+    2:  "images/arcanes/2-la-papesse.jpg",
+    3:  "images/arcanes/3-l-imperatrice.jpg",
+    4:  "images/arcanes/4-l-empereur.jpg",
+    5:  "images/arcanes/5-le-pape.jpg",
+    6:  "images/arcanes/6-l-amoureux.jpg",
+    7:  "images/arcanes/7-le-chariot.jpg",
+    8:  "images/arcanes/11-la-force.jpg",
+    9:  "images/arcanes/9-l-hermite.jpg",
+    10: "images/arcanes/10-la-roue-de-fortune.jpg",
+    11: "images/arcanes/8-la-justice.jpg",
+    12: "images/arcanes/12-le-pendu.jpg",
+    13: "images/arcanes/13-l-arcane-sans-nom.jpg",
+    14: "images/arcanes/14-la-temperance.jpg",
+    15: "images/arcanes/15-le-diable.jpg",
+    16: "images/arcanes/16-la-maison-dieu.jpg",
+    17: "images/arcanes/17-l-etoile.jpg",
+    18: "images/arcanes/18-la-lune.jpg",
+    19: "images/arcanes/19-le-soleil.jpg",
+    20: "images/arcanes/20-le-jugement.jpg",
+    21: "images/arcanes/21-le-monde.jpg",
   };
 
   function renderEtape2Intro() {
@@ -346,12 +367,17 @@
     grid.innerHTML = "";
     (arcanesData.arcanes || []).forEach(a => {
       const isSelected = state.arcane === a.numero;
-      const carte = el("button", {
-        class: "arcane-carte" + (isSelected ? " is-selected" : ""),
-        type: "button",
-        "aria-label": "Arcane " + a.numero + " — " + a.nom,
-        onclick: () => selectionnerArcane(a.numero),
-      }, [
+      const imgPath = ARCANE_IMAGES[a.numero];
+      const children = [];
+      if (imgPath) {
+        children.push(el("img", {
+          class: "arcane-img-mini",
+          src: imgPath,
+          alt: a.nom,
+          loading: "lazy",
+        }));
+      }
+      children.push(
         el("div", { class: "arcane-numero" }, String(a.numero)),
         el("div", { class: "arcane-nom" }, a.nom),
         el("div", { class: "arcane-paire" }, [
@@ -359,9 +385,31 @@
           el("span", { class: "arcane-sep" }, "·"),
           el("span", { class: "arcane-travers" }, a.travers),
         ]),
-      ]);
+      );
+      const carte = el("button", {
+        class: "arcane-carte" + (isSelected ? " is-selected" : ""),
+        type: "button",
+        "aria-label": "Arcane " + a.numero + " — " + a.nom,
+        onclick: () => selectionnerArcane(a.numero),
+      }, children);
       grid.appendChild(carte);
     });
+  }
+
+  function tirageAleatoire() {
+    if (!arcanesData || !arcanesData.arcanes || !arcanesData.arcanes.length) return;
+    // Tire un arcane différent de l'actuel si possible
+    const n = arcanesData.arcanes.length;
+    let candidat;
+    do {
+      candidat = Math.floor(Math.random() * n);
+    } while (state.arcane === candidat && n > 1);
+    state.arcane = candidat;
+    renderArcanes();
+    renderArcaneSelection();
+    // Scroll vers le détail pour rendre visible le résultat
+    const bloc = document.getElementById("arcane-selection-bloc");
+    if (bloc) setTimeout(() => bloc.scrollIntoView({ behavior: "smooth", block: "center" }), 50);
   }
 
   function selectionnerArcane(numero) {
@@ -386,13 +434,22 @@
     const vertu = arcanesData.vertus.find(v => v.nom === a.vertu);
     const travers = arcanesData.travers.find(t => t.nom === a.travers);
 
-    container.appendChild(el("div", { class: "arcane-tirage-header" }, [
+    const imgPath = ARCANE_IMAGES[a.numero];
+    const headerChildren = [
       el("div", { class: "arcane-tirage-numero" }, String(a.numero)),
       el("div", { class: "arcane-tirage-titre" }, [
         el("h5", null, a.nom),
         el("p", { class: "creation-note" }, "Arcane tiré"),
       ]),
-    ]));
+    ];
+    if (imgPath) {
+      headerChildren.push(el("img", {
+        class: "arcane-img-grande",
+        src: imgPath,
+        alt: a.nom,
+      }));
+    }
+    container.appendChild(el("div", { class: "arcane-tirage-header" }, headerChildren));
 
     // Vertu
     container.appendChild(el("div", { class: "arcane-pair-bloc arcane-vertu-bloc" }, [
@@ -430,4 +487,6 @@
   renderEtape2Intro();
   renderArcanes();
   renderArcaneSelection();
+  const btnTirage = document.getElementById("btn-tirage-aleatoire");
+  if (btnTirage) btnTirage.addEventListener("click", tirageAleatoire);
 })();

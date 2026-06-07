@@ -389,12 +389,56 @@ p { margin: 0 0 0.6em; }
 .legende-vertu   { background: rgba(107, 139, 91, 0.22); color: #4a6a3a; }
 .legende-travers { background: rgba(139, 72, 68, 0.22); color: #8b3a3a; }
 
+/* Étape 2 — Actions (bouton tirage aléatoire) */
+.arcanes-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin: 0.5rem 0 1rem;
+  flex-wrap: wrap;
+}
+.btn-tirage {
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  font-family: 'Cinzel', Georgia, serif;
+  border: 2px solid var(--accent);
+  padding: 0.7rem 1.3rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+.btn-tirage:hover {
+  background: #a23a3a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(195, 70, 70, 0.4);
+}
+.btn-tirage:active { transform: translateY(0); }
+
 /* Étape 2 — Arcanes (grille de cartes) */
 .arcanes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 0.7rem;
   margin-top: 0.5rem;
+}
+.arcane-img-mini {
+  width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: contain;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.05);
+  margin-bottom: 0.3rem;
+}
+.arcane-img-grande {
+  max-width: 200px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  border: 2px solid var(--accent);
 }
 .arcane-carte {
   display: flex;
