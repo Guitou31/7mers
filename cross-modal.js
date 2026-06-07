@@ -487,6 +487,18 @@
       ]),
     ]));
 
+    // Bouton 'Ajouter à ma création' (si module CreationState chargé)
+    if (window.CreationState) {
+      container.appendChild(window.CreationState.buildToggleButton({
+        categorie: "metiers_choisis",
+        nom: m.nom,
+        toggleFn: () => window.CreationState.toggleMetier(m.nom),
+        labelAdd:    "Ajouter ce Métier à ma création",
+        labelRemove: "Métier dans ma création",
+        prix: 3,
+      }));
+    }
+
     // Encart de restriction (texte explicite)
     if (m.restriction_texte) {
       container.appendChild(el("div", { class: "detail-banner banner-restriction" }, [
@@ -580,6 +592,17 @@
       el("h2", { id: "cross-modal-title" }, entry.nom),
       el("div", { class: "badges" }, [restrictionBadge]),
     ]));
+    // Bouton 'Ajouter à ma création'
+    if (window.CreationState) {
+      container.appendChild(window.CreationState.buildToggleButton({
+        categorie: "entrainements_choisis",
+        nom: entry.nom,
+        toggleFn: () => window.CreationState.toggleEntrainement(entry.nom),
+        labelAdd:    "Ajouter cet Entraînement à ma création",
+        labelRemove: "Entraînement dans ma création",
+        prix: 3,
+      }));
+    }
     if (entry.description) {
       container.appendChild(el("div", { class: "detail-section" }, [
         el("h3", null, "Description"),
@@ -847,6 +870,28 @@
   function renderEcoleEnrichie(ecole, container) {
     const d = ecole.details || {};
     container.appendChild(renderEcoleHeader(ecole));
+    // Bouton 'Ajouter à ma création' — type déduit du modalStack courant
+    if (window.CreationState) {
+      const top = modalStack[modalStack.length - 1] || {};
+      const ecoleType = top.type === "ecole_combat" ? "Combat" : "Spadassin";
+      const prix = ecoleType === "Spadassin" ? 20 : 15;
+      container.appendChild(window.CreationState.buildToggleButton({
+        categorie: "ecoles_choisies",
+        nom: ecole.nom,
+        toggleFn: () => window.CreationState.toggleEcole(ecole.nom, ecoleType, ecole.nations || []),
+        labelAdd:    "Ajouter cette École à ma création",
+        labelRemove: "École dans ma création",
+        prix: prix,
+      }));
+      // Info dynamique sur le hors-Nation
+      const st = window.CreationState.load();
+      if (st.nation && ecole.nations && ecole.nations.length && !ecole.nations.includes(st.nation)) {
+        container.appendChild(el("p", { class: "creation-info-hors-nation" }, [
+          "⚠ ", el("em", null, "Cette école n'est pas de votre Nation (" + st.nation + ") : "),
+          "majoration de ", el("strong", null, "+5 PP"), " si vous l'ajoutez.",
+        ]));
+      }
+    }
     if (d.appartenance_requise) {
       container.appendChild(el("div", { class: "detail-banner banner-appartenance" }, [
         el("strong", null, "Appartenance requise : "),

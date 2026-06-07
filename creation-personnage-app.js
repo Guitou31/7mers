@@ -18,16 +18,24 @@
     // Étape 2
     arcane: null,
     // Étape 3
-    age_plage: null,           // "15-25" | "26-35" | "36-50"
-    sorcellerie: null,         // null | "demi-sang" | "sang-pur" | "sang-mele"
+    age_plage: null,
+    sorcellerie: null,
+    // Nouvelle shape : listes avec noms (alimentées depuis les pages externes)
+    ecoles_choisies: [],          // [{nom, type, hors_nation}]
+    metiers_choisis: [],          // [{nom}]
+    entrainements_choisis: [],    // [{nom}]
+    langues_choisies: [],         // [{nom}]
+    societe_secrete: null,        // null | {nom}
+    // Saisies manuelles libres
+    pp_avantages: 0,
+    pp_competences: 0,
+    // Fallback ancienne shape (compteurs)
     nb_ecoles_spadassin: 0,
-    nb_ecoles_autres: 0,       // Combat / Courtisan / Professionnelle
-    nb_ecoles_hors_nation: 0,  // sous-ensemble : majoration +5 chacune
+    nb_ecoles_autres: 0,
+    nb_ecoles_hors_nation: 0,
     nb_metiers_entrainements: 0,
-    nb_langues_extra: 0,       // langues supplémentaires (Théan ou autres, 1 PP/u)
+    nb_langues_extra: 0,
     has_societe_secrete: false,
-    pp_avantages: 0,           // saisie manuelle (variable)
-    pp_competences: 0,         // saisie manuelle (1/2/3 PP × rang selon base/avancée/hors)
   };
 
   const state = Object.assign({}, defaultState);
@@ -60,22 +68,41 @@
   loadState();
 
   // Calcul du total PP dépensés.
+  // Priorité aux listes (noms persistés) ; fallback compteurs si liste vide.
   function calculerPP() {
     let total = 0;
     // Sorcellerie
     if (state.sorcellerie === "demi-sang") total += 15;
     if (state.sorcellerie === "sang-pur")  total += 25;
     if (state.sorcellerie === "sang-mele") total += 35;
-    // Écoles
-    total += state.nb_ecoles_spadassin * 20;
-    total += state.nb_ecoles_autres * 15;
-    total += state.nb_ecoles_hors_nation * 5;
-    // Métiers / Entraînements
-    total += state.nb_metiers_entrainements * 3;
-    // Langues (Théan + autres, 1 PP chacune)
-    total += state.nb_langues_extra * 1;
+    // Écoles : depuis la liste si présente, sinon compteurs
+    if (state.ecoles_choisies && state.ecoles_choisies.length) {
+      state.ecoles_choisies.forEach(e => {
+        let cout = e.type === "Spadassin" ? 20 : 15;
+        if (e.hors_nation) cout += 5;
+        total += cout;
+      });
+    } else {
+      total += (state.nb_ecoles_spadassin || 0) * 20;
+      total += (state.nb_ecoles_autres || 0) * 15;
+      total += (state.nb_ecoles_hors_nation || 0) * 5;
+    }
+    // Métiers + Entraînements : sommes des deux listes OU compteur fallback
+    const nbMet = (state.metiers_choisis || []).length;
+    const nbEnt = (state.entrainements_choisis || []).length;
+    if (nbMet || nbEnt) {
+      total += (nbMet + nbEnt) * 3;
+    } else {
+      total += (state.nb_metiers_entrainements || 0) * 3;
+    }
+    // Langues
+    if (state.langues_choisies && state.langues_choisies.length) {
+      total += state.langues_choisies.length;
+    } else {
+      total += (state.nb_langues_extra || 0);
+    }
     // Société Secrète
-    if (state.has_societe_secrete) total += 5;
+    if (state.societe_secrete || state.has_societe_secrete) total += 5;
     // Avantages + Compétences (saisie manuelle)
     total += (parseInt(state.pp_avantages, 10) || 0);
     total += (parseInt(state.pp_competences, 10) || 0);
@@ -709,27 +736,114 @@
         card.appendChild(optsRow);
 
       } else if (spec.id === "ecoles") {
-        card.appendChild(el("div", { class: "spec-interactif" }, [
-          el("label", { class: "spec-mini-label" }, "Spadassin (20 PP) :"),
-          counterControl("nb_ecoles_spadassin", 0, 2),
-        ]));
-        card.appendChild(el("div", { class: "spec-interactif" }, [
-          el("label", { class: "spec-mini-label" }, "Combat / Courtisan / Pro (15 PP) :"),
-          counterControl("nb_ecoles_autres", 0, 2),
-        ]));
-        card.appendChild(el("div", { class: "spec-interactif" }, [
-          el("label", { class: "spec-mini-label" }, "Hors Nation (+5 PP / école) :"),
-          counterControl("nb_ecoles_hors_nation", 0, 2),
-        ]));
+        // Liste des écoles ajoutées depuis les pages dédiées (clic dans le modal)
+        const ecoles = state.ecoles_choisies || [];
+        if (ecoles.length === 0) {
+          card.appendChild(el("p", { class: "spec-empty-list" },
+            "Aucune école choisie. Cliquez sur le bouton 'Ajouter' depuis une fiche école."));
+          // Fallback : compteurs anciens si présents
+          if ((state.nb_ecoles_spadassin || 0) + (state.nb_ecoles_autres || 0) > 0) {
+            card.appendChild(el("p", { class: "spec-max" }, "(Compteurs historiques en cours : utilisez plutôt les boutons des fiches.)"));
+            card.appendChild(el("div", { class: "spec-interactif" }, [
+              el("label", { class: "spec-mini-label" }, "Spadassin (20 PP) :"),
+              counterControl("nb_ecoles_spadassin", 0, 2),
+            ]));
+            card.appendChild(el("div", { class: "spec-interactif" }, [
+              el("label", { class: "spec-mini-label" }, "Autres (15 PP) :"),
+              counterControl("nb_ecoles_autres", 0, 2),
+            ]));
+            card.appendChild(el("div", { class: "spec-interactif" }, [
+              el("label", { class: "spec-mini-label" }, "Hors Nation (+5 PP) :"),
+              counterControl("nb_ecoles_hors_nation", 0, 2),
+            ]));
+          }
+        } else {
+          const ul = el("ul", { class: "spec-chosen-list" });
+          ecoles.forEach((e, i) => {
+            const cout = (e.type === "Spadassin" ? 20 : 15) + (e.hors_nation ? 5 : 0);
+            ul.appendChild(el("li", null, [
+              el("span", { class: "chosen-item-name" }, e.nom),
+              el("span", { class: "chosen-item-meta" }, [
+                el("span", { class: "chosen-tag" }, e.type),
+                e.hors_nation ? el("span", { class: "chosen-tag chosen-tag-warn" }, "hors-Nation") : null,
+                el("span", { class: "chosen-pp" }, cout + " PP"),
+              ]),
+              el("button", {
+                class: "chosen-remove",
+                type: "button",
+                "aria-label": "Retirer",
+                onclick: () => {
+                  state.ecoles_choisies.splice(i, 1);
+                  saveState();
+                  renderEtape3Specificites();
+                  refreshPPBar();
+                },
+              }, "×"),
+            ]));
+          });
+          card.appendChild(ul);
+        }
         card.appendChild(el("p", { class: "spec-max" }, [
-          "⚠ Max ", el("strong", null, "2 écoles"), " à la création (total Spadassin + autres).",
+          "⚠ Max ", el("strong", null, "2 écoles"), " à la création.",
         ]));
 
       } else if (spec.id === "metiers_entrainements") {
-        card.appendChild(el("div", { class: "spec-interactif" }, [
-          el("label", { class: "spec-mini-label" }, "Nombre (3 PP/unité) :"),
-          counterControl("nb_metiers_entrainements", 0, 3),
-        ]));
+        const metiers = state.metiers_choisis || [];
+        const ents = state.entrainements_choisis || [];
+        if (metiers.length === 0 && ents.length === 0) {
+          card.appendChild(el("p", { class: "spec-empty-list" },
+            "Aucun Métier / Entraînement choisi. Cliquez sur 'Ajouter' depuis une fiche."));
+          if ((state.nb_metiers_entrainements || 0) > 0) {
+            card.appendChild(el("p", { class: "spec-max" }, "(Compteur historique en cours.)"));
+            card.appendChild(el("div", { class: "spec-interactif" }, [
+              el("label", { class: "spec-mini-label" }, "Nombre (3 PP) :"),
+              counterControl("nb_metiers_entrainements", 0, 3),
+            ]));
+          }
+        } else {
+          const ul = el("ul", { class: "spec-chosen-list" });
+          metiers.forEach((m, i) => {
+            ul.appendChild(el("li", null, [
+              el("span", { class: "chosen-item-name" }, m.nom),
+              el("span", { class: "chosen-item-meta" }, [
+                el("span", { class: "chosen-tag" }, "Métier"),
+                el("span", { class: "chosen-pp" }, "3 PP"),
+              ]),
+              el("button", {
+                class: "chosen-remove",
+                type: "button",
+                "aria-label": "Retirer",
+                onclick: () => {
+                  state.metiers_choisis.splice(i, 1);
+                  saveState();
+                  renderEtape3Specificites();
+                  refreshPPBar();
+                },
+              }, "×"),
+            ]));
+          });
+          ents.forEach((e, i) => {
+            ul.appendChild(el("li", null, [
+              el("span", { class: "chosen-item-name" }, e.nom),
+              el("span", { class: "chosen-item-meta" }, [
+                el("span", { class: "chosen-tag" }, "Entraînement"),
+                el("span", { class: "chosen-pp" }, "3 PP"),
+              ]),
+              el("button", {
+                class: "chosen-remove",
+                type: "button",
+                "aria-label": "Retirer",
+                onclick: () => {
+                  state.entrainements_choisis.splice(i, 1);
+                  saveState();
+                  renderEtape3Specificites();
+                  refreshPPBar();
+                },
+              }, "×"),
+            ]));
+          });
+          card.appendChild(ul);
+        }
         card.appendChild(el("p", { class: "spec-max" }, [
           "⚠ Max ", el("strong", null, "3 spécialités"), " à la création (hors bonus écoles/âge).",
         ]));
@@ -897,6 +1011,30 @@
   // Reset complet (efface localStorage et recharge la page)
   const btnReset = document.getElementById("pp-bar-reset");
   if (btnReset) btnReset.addEventListener("click", resetState);
+
+  // Rafraîchissement à chaque retour sur la page (au cas où l'utilisateur
+  // aurait ajouté/retiré des items depuis une fiche ouverte en sous-onglet).
+  function refreshFromStorage() {
+    loadState();
+    renderTraits();
+    renderStatsDerivees();
+    renderNations();
+    renderArcanes();
+    renderArcaneSelection();
+    renderEtape3Ages();
+    renderEtape3Specificites();
+    renderEtape3Langues();
+    refreshPPBar();
+  }
+  // Quand state localStorage change ailleurs (autre onglet ou cross-modal sur cette page).
+  window.addEventListener("storage", (e) => {
+    if (e.key === STORAGE_KEY) refreshFromStorage();
+  });
+  window.addEventListener("creation-state-changed", refreshFromStorage);
+  // Quand l'utilisateur revient sur l'onglet
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) refreshFromStorage();
+  });
 
   // 1ᵉʳ rafraîchissement du compteur PP après init
   refreshPPBar();
