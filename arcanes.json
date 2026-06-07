@@ -1,0 +1,367 @@
+{
+  "_meta": {
+    "source": "01 Arcanes (15-11-14).pdf (résumés paraphrasés, table de mapping factuelle)",
+    "nb_arcanes": 22,
+    "nb_travers": 22,
+    "nb_vertus": 22
+  },
+  "intro_etape_2": "La Main du Destin est le seul élément aléatoire de la création de votre Héros, mais l’un des plus structurants pour son rôle dans l’aventure.\n\nLes Sorte Streghe, sorcières de la Destinée, lisent l’aura des Héros à travers 20 Arcanes (en plus de l’Arcane 0 et de l’Arcane 21, soit 22 cartes au total). Chaque carte révèle une Vertu (élément qui fait du PJ un Héros) et un Travers (sa plus grande faiblesse émotionnelle).\n\nLe MJ tire au hasard et donne une carte par joueur, qui gagne la Vertu et le Travers associés. Si le tirage convient mal au concept, le PJ peut tirer une seconde carte et choisir le couple Vertu / Travers parmi les deux.\n\nActivation de la Vertu : une fois par partie, sans coût, dans une circonstance appropriée (rencontre, autre Héros blessé, etc.). Permet d’obtenir un avantage ponctuel.\n\nActivation du Travers : une fois par partie, à votre initiative ou proposée par le MJ. Rapporte un point d’Héroïsme. Le joueur peut toujours refuser une proposition du MJ — mais accepter, c’est créer du jeu et révéler la profondeur de son PJ.",
+  "arcanes": [
+    {
+      "numero": 0,
+      "nom": "Le bateleur",
+      "travers": "Curieux",
+      "vertu": "Béni des dieux"
+    },
+    {
+      "numero": 1,
+      "nom": "Le magicien",
+      "travers": "Ambitieux",
+      "vertu": "Volontaire"
+    },
+    {
+      "numero": 2,
+      "nom": "La papesse",
+      "travers": "Hédoniste",
+      "vertu": "Intuitif"
+    },
+    {
+      "numero": 3,
+      "nom": "L’impératrice",
+      "travers": "Libertin",
+      "vertu": "Rassurant"
+    },
+    {
+      "numero": 4,
+      "nom": "L’empereur",
+      "travers": "Impulsif",
+      "vertu": "Confiant"
+    },
+    {
+      "numero": 5,
+      "nom": "Le hiérophante",
+      "travers": "Naïf",
+      "vertu": "Inspiré"
+    },
+    {
+      "numero": 6,
+      "nom": "Les amoureux",
+      "travers": "Amour impossible",
+      "vertu": "Passionné"
+    },
+    {
+      "numero": 7,
+      "nom": "Le chariot",
+      "travers": "Présomptueux",
+      "vertu": "Victorieux"
+    },
+    {
+      "numero": 8,
+      "nom": "La force",
+      "travers": "Couard",
+      "vertu": "Courageux"
+    },
+    {
+      "numero": 9,
+      "nom": "L’ermite",
+      "travers": "Entier",
+      "vertu": "Concentré"
+    },
+    {
+      "numero": 10,
+      "nom": "Roue de la fortune",
+      "travers": "Malchanceux",
+      "vertu": "Chanceux"
+    },
+    {
+      "numero": 11,
+      "nom": "La justice",
+      "travers": "Critique",
+      "vertu": "Exemplaire"
+    },
+    {
+      "numero": 12,
+      "nom": "Le pendu",
+      "travers": "Indécis",
+      "vertu": "Altruiste"
+    },
+    {
+      "numero": 13,
+      "nom": "La mort",
+      "travers": "Téméraire",
+      "vertu": "Impassible"
+    },
+    {
+      "numero": 14,
+      "nom": "La tempérance",
+      "travers": "Envieux",
+      "vertu": "Maître de soi"
+    },
+    {
+      "numero": 15,
+      "nom": "Légion",
+      "travers": "Dévoué",
+      "vertu": "Perspicace"
+    },
+    {
+      "numero": 16,
+      "nom": "La maison de Dieu",
+      "travers": "Arrogant",
+      "vertu": "Mystérieux"
+    },
+    {
+      "numero": 17,
+      "nom": "L’étoile",
+      "travers": "Borné",
+      "vertu": "Charismatique"
+    },
+    {
+      "numero": 18,
+      "nom": "La lune",
+      "travers": "Distrait",
+      "vertu": "Observateur"
+    },
+    {
+      "numero": 19,
+      "nom": "Le soleil",
+      "travers": "Fier",
+      "vertu": "Amical"
+    },
+    {
+      "numero": 20,
+      "nom": "Le jugement",
+      "travers": "Fanatique",
+      "vertu": "Psychologue"
+    },
+    {
+      "numero": 21,
+      "nom": "Le monde",
+      "travers": "Cupide",
+      "vertu": "Baroudeur"
+    }
+  ],
+  "travers": [
+    {
+      "nom": "Ambitieux",
+      "resume": "Le PJ veut surtout du pouvoir : avoir prise sur les autres compte plus que la richesse.",
+      "activation": "Le MJ peut activer ce travers pour forcer le PJ à tout faire pour accroître son influence, même via un marché risqué."
+    },
+    {
+      "nom": "Amour impossible",
+      "resume": "Le PJ tombe amoureux des mauvaises personnes : trop loin de son rang ou liées à ses ennemis.",
+      "activation": "Le MJ peut activer ce travers pour faire naître l’amour dans le cœur du PJ."
+    },
+    {
+      "nom": "Arrogant",
+      "resume": "Le PJ se croit supérieur aux autres et le fait sentir ouvertement.",
+      "activation": "Le MJ peut activer ce travers pour forcer le PJ à exprimer du mépris ou du dédain envers quelqu’un."
+    },
+    {
+      "nom": "Borné",
+      "resume": "Le PJ ne change jamais d’avis une fois sa décision prise.",
+      "activation": "Le MJ peut activer ce travers pour empêcher le PJ de revenir sur sa position."
+    },
+    {
+      "nom": "Couard",
+      "resume": "Le PJ a un instinct de conservation prononcé et fuit les risques même justifiés.",
+      "activation": "Quand le PJ s’apprête à faire quelque chose de dangereux, le MJ peut activer ce travers pour le forcer à fuir."
+    },
+    {
+      "nom": "Critique",
+      "resume": "Le PJ juge sur l’apparence et change difficilement d’opinion sur autrui.",
+      "activation": "Le MJ peut activer ce travers pour forcer le PJ à tirer des conclusions hâtives sur une personne qu’il rencontre."
+    },
+    {
+      "nom": "Cupide",
+      "resume": "Le PJ s’illumine devant l’argent : il en veut toujours davantage.",
+      "activation": "Lors d’un partage de butin ou face à une tentative de corruption, le MJ peut activer ce travers pour qu’il en tire le maximum."
+    },
+    {
+      "nom": "Curieux",
+      "resume": "Le PJ ne peut pas s’empêcher d’aller voir ce qui se passe, quitte à se mettre en danger.",
+      "activation": "Le MJ peut activer ce travers pour pousser le PJ à enquêter là où il ne devrait pas."
+    },
+    {
+      "nom": "Distrait",
+      "resume": "L’esprit du PJ vagabonde au pire moment.",
+      "activation": "Le MJ peut activer ce travers pour faire rater au PJ un détail crucial qui lui passe sous le nez."
+    },
+    {
+      "nom": "Dévoué",
+      "resume": "Le PJ est entièrement loyal envers une personne ou une cause, jusqu’au sacrifice.",
+      "activation": "Le MJ peut activer ce travers pour forcer le PJ à agir au profit de son objet de dévotion, au détriment du reste."
+    },
+    {
+      "nom": "Entier",
+      "resume": "Le PJ ne fait jamais les choses à moitié : tout ou rien.",
+      "activation": "Le MJ peut activer ce travers pour forcer le PJ à pousser une action à l’extrême."
+    },
+    {
+      "nom": "Envieux",
+      "resume": "Le PJ jalouse ce que les autres possèdent ou ont accompli.",
+      "activation": "Le MJ peut activer ce travers pour amener le PJ à convoiter ce qu’un autre détient."
+    },
+    {
+      "nom": "Fanatique",
+      "resume": "Le PJ suit une cause avec une ferveur aveugle.",
+      "activation": "Le MJ peut activer ce travers pour forcer le PJ à défendre sa cause sans nuance."
+    },
+    {
+      "nom": "Fier",
+      "resume": "Le PJ refuse de paraître diminué : ses succès doivent être vus, ses faiblesses cachées.",
+      "activation": "Le MJ peut activer ce travers pour empêcher le PJ d’accepter de l’aide ou de reconnaître une erreur."
+    },
+    {
+      "nom": "Hédoniste",
+      "resume": "Le PJ recherche systématiquement le plaisir et le confort.",
+      "activation": "Le MJ peut activer ce travers pour pousser le PJ à choisir le plaisir immédiat plutôt que le devoir."
+    },
+    {
+      "nom": "Impulsif",
+      "resume": "Le PJ agit avant de réfléchir.",
+      "activation": "Le MJ peut activer ce travers pour forcer le PJ à réagir immédiatement, sans planification."
+    },
+    {
+      "nom": "Indécis",
+      "resume": "Le PJ a du mal à trancher entre plusieurs options.",
+      "activation": "Le MJ peut activer ce travers pour paralyser le PJ devant un choix important."
+    },
+    {
+      "nom": "Libertin",
+      "resume": "Le PJ enchaîne les conquêtes amoureuses sans s’attacher.",
+      "activation": "Le MJ peut activer ce travers pour pousser le PJ à céder à une nouvelle séduction."
+    },
+    {
+      "nom": "Malchanceux",
+      "resume": "Quoi que fasse le PJ, le sort semble lui jouer des tours.",
+      "activation": "Le MJ peut activer ce travers au moment où le PJ tente sa chance pour le voir échouer."
+    },
+    {
+      "nom": "Naïf",
+      "resume": "Le PJ tend à croire ce qu’on lui dit, surtout venant d’une figure d’autorité.",
+      "activation": "Le MJ peut activer ce travers pour faire avaler au PJ un mensonge ou une promesse trompeuse."
+    },
+    {
+      "nom": "Présomptueux",
+      "resume": "Le PJ surestime ses capacités et croit pouvoir tout réussir.",
+      "activation": "Le MJ peut activer ce travers pour forcer le PJ à se lancer dans un défi au-dessus de ses moyens."
+    },
+    {
+      "nom": "Téméraire",
+      "resume": "Le PJ se jette dans l’action sans considérer les conséquences.",
+      "activation": "Le MJ peut activer ce travers pour pousser le PJ à prendre un risque inconsidéré."
+    }
+  ],
+  "vertus": [
+    {
+      "nom": "Altruiste",
+      "resume": "Le PJ aide autrui spontanément, parfois au prix de ses propres intérêts.",
+      "activation": "Permet de venir en aide à un autre PJ ou PNJ dans le besoin, avec un bonus contextuel."
+    },
+    {
+      "nom": "Amical",
+      "resume": "Le PJ inspire la sympathie ; les inconnus tendent à lui faire confiance facilement.",
+      "activation": "Permet de transformer une rencontre tendue en échange courtois."
+    },
+    {
+      "nom": "Baroudeur",
+      "resume": "Le PJ est endurci par les voyages et tient bon dans des conditions extrêmes.",
+      "activation": "Permet d’ignorer temporairement la fatigue, la faim, le froid ou la chaleur."
+    },
+    {
+      "nom": "Béni des dieux",
+      "resume": "Une présence divine semble veiller sur le PJ aux moments critiques.",
+      "activation": "Permet de relancer un jet raté en moment de péril réel."
+    },
+    {
+      "nom": "Chanceux",
+      "resume": "Les petits coups du sort jouent en faveur du PJ.",
+      "activation": "Permet de transformer un échec mineur en succès, ou de tomber pile sur la bonne chose au bon moment."
+    },
+    {
+      "nom": "Charismatique",
+      "resume": "Le PJ attire naturellement l’attention et inspire ceux qui l’écoutent.",
+      "activation": "Permet de galvaniser un groupe, ou d’imposer son point de vue dans un débat."
+    },
+    {
+      "nom": "Concentré",
+      "resume": "Le PJ reste imperturbable même au cœur de l’agitation.",
+      "activation": "Permet d’ignorer les distractions environnantes pour mener à bien une action délicate."
+    },
+    {
+      "nom": "Confiant",
+      "resume": "Le PJ ne doute jamais de lui : il avance sans vaciller.",
+      "activation": "Permet d’ignorer une pénalité due au stress ou à l’incertitude."
+    },
+    {
+      "nom": "Courageux",
+      "resume": "Le PJ affronte ce que d’autres fuiraient.",
+      "activation": "Permet d’ignorer la peur ou de bénéficier d’un bonus face à une menace écrasante."
+    },
+    {
+      "nom": "Exemplaire",
+      "resume": "Le PJ incarne un modèle ; sa conduite force le respect.",
+      "activation": "Permet d’inspirer un PNJ neutre à devenir un allié temporaire."
+    },
+    {
+      "nom": "Impassible",
+      "resume": "Le PJ ne laisse rien transparaître de ses émotions.",
+      "activation": "Permet de garder un secret sous interrogatoire ou de bluffer une situation tendue."
+    },
+    {
+      "nom": "Inspiré",
+      "resume": "Le PJ a des éclairs d’intuition qui guident son action.",
+      "activation": "Permet d’avoir la bonne idée au bon moment lors d’une enquête ou d’un défi."
+    },
+    {
+      "nom": "Intuitif",
+      "resume": "Le PJ devine ce que les autres dissimulent sans pouvoir l’expliquer.",
+      "activation": "Permet de demander discrètement au MJ un indice sur la véritable nature d’un PNJ ou d’une situation."
+    },
+    {
+      "nom": "Maître de soi",
+      "resume": "Le PJ contrôle ses émotions et impulsions, même sous pression.",
+      "activation": "Permet de résister à une provocation, séduction ou intimidation."
+    },
+    {
+      "nom": "Mystérieux",
+      "resume": "Le PJ dégage une aura intrigante ; on en devine rarement les motivations.",
+      "activation": "Permet de capter l’attention d’un PNJ qui voudra en savoir plus."
+    },
+    {
+      "nom": "Observateur",
+      "resume": "Le PJ remarque les détails que les autres laissent passer.",
+      "activation": "Permet de demander au MJ ce qui cloche dans une scène, un PNJ ou un objet."
+    },
+    {
+      "nom": "Passionné",
+      "resume": "Quand le PJ s’investit, il y va de tout son cœur.",
+      "activation": "Permet de doubler l’effet d’un jet réussi quand l’enjeu touche un objet d’affection."
+    },
+    {
+      "nom": "Perspicace",
+      "resume": "Le PJ comprend vite ce qui se trame autour de lui.",
+      "activation": "Permet de saisir immédiatement l’intention cachée derrière une parole ou un geste."
+    },
+    {
+      "nom": "Psychologue",
+      "resume": "Le PJ cerne rapidement la personnalité de ses interlocuteurs.",
+      "activation": "Permet de prédire la réaction d’un PNJ à une approche donnée."
+    },
+    {
+      "nom": "Rassurant",
+      "resume": "La présence du PJ apaise ; les autres se sentent en sécurité auprès de lui.",
+      "activation": "Permet de calmer une foule, une panique, ou de regagner la confiance d’un allié blessé."
+    },
+    {
+      "nom": "Victorieux",
+      "resume": "Quand l’issue d’un combat est en jeu, le PJ trouve l’ouverture.",
+      "activation": "Permet de transformer un échange équilibré en victoire décisive."
+    },
+    {
+      "nom": "Volontaire",
+      "resume": "Le PJ s’accroche à ses objectifs avec une opiniâtreté à toute épreuve.",
+      "activation": "Permet de continuer une action que d’autres abandonneraient (fatigue, blessure, désespoir)."
+    }
+  ]
+}

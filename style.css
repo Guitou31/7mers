@@ -380,6 +380,134 @@ p { margin: 0 0 0.6em; }
   font-size: 1.4rem;
   color: var(--accent);
 }
+/* Légendes Vertu / Travers (étape 2) */
+.legende-vertu, .legende-travers {
+  font-weight: 700;
+  padding: 0 0.3em;
+  border-radius: 3px;
+}
+.legende-vertu   { background: rgba(107, 139, 91, 0.22); color: #4a6a3a; }
+.legende-travers { background: rgba(139, 72, 68, 0.22); color: #8b3a3a; }
+
+/* Étape 2 — Arcanes (grille de cartes) */
+.arcanes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.7rem;
+  margin-top: 0.5rem;
+}
+.arcane-carte {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.8rem 0.7rem;
+  background: linear-gradient(180deg, rgba(232, 212, 168, 0.08) 0%, rgba(195, 70, 70, 0.04) 100%);
+  border: 2px solid rgba(232, 212, 168, 0.3);
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  font: inherit;
+  color: inherit;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+.arcane-carte:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+}
+.arcane-carte.is-selected {
+  border-color: var(--accent);
+  background: rgba(195, 70, 70, 0.12);
+  box-shadow: 0 0 0 3px rgba(195, 70, 70, 0.25);
+}
+.arcane-numero {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--accent);
+  background: rgba(0, 0, 0, 0.15);
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--accent-soft);
+}
+.arcane-nom {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.arcane-paire {
+  font-size: 0.82rem;
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0.9;
+}
+.arcane-vertu   { color: #4a6a3a; font-weight: 600; }
+.arcane-travers { color: #8b3a3a; font-weight: 600; }
+.arcane-sep     { opacity: 0.5; }
+
+/* Bloc Détail tirage */
+.arcane-selection { display: grid; gap: 1rem; }
+.arcane-tirage-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid rgba(232, 212, 168, 0.25);
+}
+.arcane-tirage-numero {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--accent);
+  background: rgba(195, 70, 70, 0.1);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--accent);
+  flex-shrink: 0;
+}
+.arcane-tirage-titre h5 {
+  margin: 0;
+  font-family: 'Cinzel', Georgia, serif;
+  color: var(--accent);
+  font-size: 1.3rem;
+}
+.arcane-pair-bloc {
+  padding: 0.7rem 0.9rem;
+  border-left: 4px solid;
+  border-radius: 0 4px 4px 0;
+}
+.arcane-vertu-bloc   { background: rgba(107, 139, 91, 0.07); border-left-color: #6b8b5b; }
+.arcane-travers-bloc { background: rgba(139, 72, 68, 0.07);  border-left-color: #8b3a3a; }
+.arcane-pair-bloc h6 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+.arcane-resume {
+  margin: 0 0 0.4rem;
+  line-height: 1.5;
+}
+.arcane-activation {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  line-height: 1.45;
+}
+
 /* Étape 1.2 — Statistiques dérivées (calcul auto) */
 .stats-derivees { display: grid; gap: 0.4rem; }
 .stat-row {

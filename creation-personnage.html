@@ -28,6 +28,10 @@
         <span class="creation-step-num">1</span>
         <span class="creation-step-label">Nationalité &amp; Traits</span>
       </button>
+      <button class="creation-step" data-step="2">
+        <span class="creation-step-num">2</span>
+        <span class="creation-step-label">Main du Destin</span>
+      </button>
     </nav>
 
     <section class="creation-step-content" data-step-content="0" aria-labelledby="step-0-title">
@@ -67,10 +71,31 @@
         <div id="nations-table" class="nations-table"></div>
       </div>
     </section>
+
+    <section class="creation-step-content" data-step-content="2" hidden aria-labelledby="step-2-title">
+      <h3 id="step-2-title">Étape 2 : La Main du Destin</h3>
+
+      <div class="creation-block creation-intro-bloc" id="step-2-intro"></div>
+
+      <div class="creation-block">
+        <h4>Les 22 Arcanes des Héros</h4>
+        <p class="creation-note">
+          Cliquez sur une carte pour voir la <span class="legende-vertu">Vertu</span> et le
+          <span class="legende-travers">Travers</span> associés, avec leur résumé.
+        </p>
+        <div id="arcanes-grid" class="arcanes-grid"></div>
+      </div>
+
+      <div class="creation-block" id="arcane-selection-bloc" hidden>
+        <h4>Votre tirage</h4>
+        <div id="arcane-selection" class="arcane-selection"></div>
+      </div>
+    </section>
   </main>
 
   <script src="layout.js"></script>
   <script src="creation_perso.js"></script>
+  <script src="arcanes.js"></script>
   <script src="cross-modal.js"></script>
   <script src="creation-personnage-app.js"></script>
 </body>

@@ -11,6 +11,7 @@
     nation: null,            // nom de la nation choisie
     trait_bonus_nation: null, // trait choisi pour le +1 de Nation
     trait_libre: null,       // trait choisi pour le +1 'à répartir librement'
+    arcane: null,            // numéro de l'arcane tiré (0–21)
   };
   // Base 2 dans chaque Trait (règle de jeu)
   const TRAIT_BASE = 2;
@@ -319,10 +320,114 @@
     }
   }
 
+  // ===== Étape 2 : Main du Destin (Arcanes) =====
+  const arcanesData = window.ARCANES_DATA || null;
+  // Mapping carte → image disponible (12 illustrations sur 22 arcanes).
+  // Les pages PDF où l'image apparaît correspondent à des cartes spécifiques.
+  // Pour l'instant on associe par numéro : utilisateur pourra raffiner.
+  const ARCANE_IMAGES = {
+    // numero → nom fichier dans images/arcanes/
+    // (laissé vide par défaut — Guillaume associera s'il veut)
+  };
+
+  function renderEtape2Intro() {
+    if (!arcanesData) return;
+    const container = document.getElementById("step-2-intro");
+    if (!container) return;
+    const text = arcanesData.intro_etape_2 || "";
+    const paragraphs = text.split(/\n{2,}/).map(p => p.trim()).filter(Boolean);
+    paragraphs.forEach(p => container.appendChild(el("p", { class: "creation-paragraph" }, p)));
+  }
+
+  function renderArcanes() {
+    if (!arcanesData) return;
+    const grid = document.getElementById("arcanes-grid");
+    if (!grid) return;
+    grid.innerHTML = "";
+    (arcanesData.arcanes || []).forEach(a => {
+      const isSelected = state.arcane === a.numero;
+      const carte = el("button", {
+        class: "arcane-carte" + (isSelected ? " is-selected" : ""),
+        type: "button",
+        "aria-label": "Arcane " + a.numero + " — " + a.nom,
+        onclick: () => selectionnerArcane(a.numero),
+      }, [
+        el("div", { class: "arcane-numero" }, String(a.numero)),
+        el("div", { class: "arcane-nom" }, a.nom),
+        el("div", { class: "arcane-paire" }, [
+          el("span", { class: "arcane-vertu" }, a.vertu),
+          el("span", { class: "arcane-sep" }, "·"),
+          el("span", { class: "arcane-travers" }, a.travers),
+        ]),
+      ]);
+      grid.appendChild(carte);
+    });
+  }
+
+  function selectionnerArcane(numero) {
+    state.arcane = (state.arcane === numero) ? null : numero;
+    renderArcanes();
+    renderArcaneSelection();
+  }
+
+  function renderArcaneSelection() {
+    if (!arcanesData) return;
+    const bloc = document.getElementById("arcane-selection-bloc");
+    const container = document.getElementById("arcane-selection");
+    if (!bloc || !container) return;
+    if (state.arcane == null) {
+      bloc.hidden = true;
+      return;
+    }
+    bloc.hidden = false;
+    container.innerHTML = "";
+    const a = arcanesData.arcanes.find(x => x.numero === state.arcane);
+    if (!a) return;
+    const vertu = arcanesData.vertus.find(v => v.nom === a.vertu);
+    const travers = arcanesData.travers.find(t => t.nom === a.travers);
+
+    container.appendChild(el("div", { class: "arcane-tirage-header" }, [
+      el("div", { class: "arcane-tirage-numero" }, String(a.numero)),
+      el("div", { class: "arcane-tirage-titre" }, [
+        el("h5", null, a.nom),
+        el("p", { class: "creation-note" }, "Arcane tiré"),
+      ]),
+    ]));
+
+    // Vertu
+    container.appendChild(el("div", { class: "arcane-pair-bloc arcane-vertu-bloc" }, [
+      el("h6", null, [
+        el("span", { class: "legende-vertu" }, "Vertu"),
+        " : ",
+        el("strong", null, a.vertu),
+      ]),
+      vertu ? el("p", { class: "arcane-resume" }, vertu.resume) : null,
+      vertu ? el("p", { class: "arcane-activation" }, [
+        el("em", null, vertu.activation),
+      ]) : null,
+    ]));
+
+    // Travers
+    container.appendChild(el("div", { class: "arcane-pair-bloc arcane-travers-bloc" }, [
+      el("h6", null, [
+        el("span", { class: "legende-travers" }, "Travers"),
+        " : ",
+        el("strong", null, a.travers),
+      ]),
+      travers ? el("p", { class: "arcane-resume" }, travers.resume) : null,
+      travers ? el("p", { class: "arcane-activation" }, [
+        el("em", null, travers.activation),
+      ]) : null,
+    ]));
+  }
+
   // ===== Init =====
   renderIntro();
   renderEtape1Intro();
   renderTraits();
   renderStatsDerivees();
   renderNations();
+  renderEtape2Intro();
+  renderArcanes();
+  renderArcaneSelection();
 })();
