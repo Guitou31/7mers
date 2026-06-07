@@ -366,12 +366,70 @@
   // ============================================================
 
   // --- Compétence ---
+  // Sélecteur de rang pour une compétence dans le modal de création.
+  // S'adapte automatiquement : type_cout calculé selon les métiers/entraînements
+  // déjà choisis. Limité à rang 3 max à la création.
+  function buildCompetenceRangSelector(compNom) {
+    const wrapper = el("div", { class: "competence-rang-selector detail-section" });
+    function refresh() {
+      wrapper.innerHTML = "";
+      const cur = window.CreationState.getCompetenceRang(compNom);
+      const tc = window.CreationState.typeCoutCompetence(compNom);
+      const ppPerRang = tc === "base" ? 1 : tc === "avancee" ? 2 : 3;
+      const labelTC = tc === "base"    ? "Base (vient d'une de vos spécialités)" :
+                     tc === "avancee" ? "Avancée (vient d'une de vos spécialités)" :
+                                        "Hors-spécialités (coût plein)";
+      wrapper.appendChild(el("h3", null, "Ajouter à ma création — rang"));
+      wrapper.appendChild(el("p", { class: "competence-rang-info" }, [
+        "Coût : ", el("strong", null, ppPerRang + " PP"), " par rang × le rang visé. ",
+        el("br"),
+        "Type pour vous : ", el("strong", { class: "rang-typecout-" + tc }, labelTC), ".",
+      ]));
+      const btns = el("div", { class: "rang-buttons" });
+      for (let r = 0; r <= 3; r++) {
+        const cout = r * ppPerRang;
+        btns.appendChild(el("button", {
+          class: "rang-btn" + (cur === r ? " is-selected" : ""),
+          type: "button",
+          onclick: () => {
+            window.CreationState.setCompetenceRang(compNom, r);
+            refresh();
+          },
+        }, [
+          el("span", { class: "rang-btn-label" }, r === 0 ? "Aucun" : "Rang " + r),
+          r > 0 ? el("span", { class: "rang-btn-cout" }, cout + " PP") : null,
+        ]));
+      }
+      wrapper.appendChild(btns);
+      if (cur > 0) {
+        wrapper.appendChild(el("p", { class: "competence-rang-recap" }, [
+          "Total dépensé sur cette compétence : ",
+          el("strong", null, (cur * ppPerRang) + " PP"),
+        ]));
+      }
+      wrapper.appendChild(el("p", { class: "competence-rang-note" }, [
+        el("em", null,
+          "⚠ Une compétence ne peut dépasser 3 rangs à la création, même si elle " +
+          "apparaît dans plusieurs de vos spécialités."),
+      ]));
+    }
+    // Réagit aux changements externes (ex: ajout d'un nouveau métier qui change le type_cout)
+    window.addEventListener("creation-state-changed", refresh);
+    refresh();
+    return wrapper;
+  }
+
   function renderCompetence(c, container) {
     const catShort = (c.categorie || "Autre").replace("Compétences ", "").toUpperCase();
     container.appendChild(el("div", { class: "detail-header" }, [
       el("h2", { id: "cross-modal-title" }, c.nom),
       el("div", { class: "badges" }, [el("span", { class: "badge nation" }, catShort)]),
     ]));
+
+    // Sélecteur de rang à la création (si module CreationState chargé)
+    if (window.CreationState) {
+      container.appendChild(buildCompetenceRangSelector(c.nom));
+    }
 
     if (c.description) {
       container.appendChild(el("div", { class: "detail-section" }, [

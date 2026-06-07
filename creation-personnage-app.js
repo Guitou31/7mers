@@ -849,12 +849,57 @@
         ]));
 
       } else if (spec.id === "competences") {
+        // Rappel des coûts
         const ul = el("ul", { class: "spec-couts-list" });
         spec.variantes.forEach(v => ul.appendChild(el("li", null, [
           el("span", { class: "spec-cout-label" }, v.label),
           el("span", { class: "spec-cout-pp" }, v.pp + " PP"),
         ])));
         card.appendChild(ul);
+
+        // Liste des compétences choisies via les sélecteurs de rang
+        const comps = (state.competences_choisies || []).filter(c => (c.rang || 0) > 0);
+        if (comps.length === 0) {
+          card.appendChild(el("p", { class: "spec-empty-list" },
+            "Aucune compétence chiffrée. Cliquez sur 'Rang' depuis une fiche compétence."));
+        } else {
+          // Recalcule le type_cout en direct pour l'affichage
+          let mesSets = { base: new Set(), avancee: new Set() };
+          if (window.CreationState) mesSets = window.CreationState.getMesCompetencesSets();
+          const ulC = el("ul", { class: "spec-chosen-list" });
+          comps.forEach((c, i) => {
+            let tc = "hors";
+            if (mesSets.base.has(c.nom)) tc = "base";
+            else if (mesSets.avancee.has(c.nom)) tc = "avancee";
+            const pprang = tc === "base" ? 1 : tc === "avancee" ? 2 : 3;
+            const cout = pprang * (c.rang || 0);
+            const tcLabel = tc === "base" ? "base" : tc === "avancee" ? "avancée" : "hors-spé";
+            ulC.appendChild(el("li", null, [
+              el("span", { class: "chosen-item-name" }, c.nom),
+              el("span", { class: "chosen-item-meta" }, [
+                el("span", { class: "chosen-tag" }, "Rang " + (c.rang || 0)),
+                el("span", { class: "chosen-tag rang-typecout-" + tc }, tcLabel),
+                el("span", { class: "chosen-pp" }, cout + " PP"),
+              ]),
+              el("button", {
+                class: "chosen-remove",
+                type: "button",
+                "aria-label": "Retirer",
+                onclick: () => {
+                  // On retire l'entrée correspondante (par nom, plus sûr que par index si rerender entre-temps)
+                  const idx = (state.competences_choisies || []).findIndex(x => x.nom === c.nom);
+                  if (idx >= 0) state.competences_choisies.splice(idx, 1);
+                  saveState();
+                  renderEtape3Specificites();
+                  refreshPPBar();
+                },
+              }, "×"),
+            ]));
+          });
+          card.appendChild(ulC);
+        }
+
+        // Fallback : saisie manuelle d'un total PP (utile si on ne passe pas par les rangs)
         const inp = el("input", {
           class: "spec-pp-input",
           type: "number",
@@ -868,7 +913,7 @@
           },
         });
         card.appendChild(el("div", { class: "spec-interactif" }, [
-          el("label", { class: "spec-mini-label" }, "Total PP dépensés en compétences :"),
+          el("label", { class: "spec-mini-label" }, "PP additionnels (saisie libre) :"),
           inp,
           el("span", { class: "spec-cout-pp" }, "PP"),
         ]));

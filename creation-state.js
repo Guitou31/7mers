@@ -126,6 +126,82 @@
     return list.some(item => item.nom === nom);
   }
 
+  // ===== Compétences : type_cout (base / avancee / hors) =====
+  // Calcule l'ensemble des noms de compétences qui sont 'de base' ou 'avancées'
+  // dans au moins un des métiers/entraînements choisis par le joueur.
+  // Inclut les options des choix.
+  function getMesCompetencesSets() {
+    const state = load();
+    const baseSet = new Set();
+    const avSet = new Set();
+
+    function ajouterDe(source) {
+      (source.competences_base || []).forEach(c => baseSet.add(c));
+      (source.competences_avancees || []).forEach(c => avSet.add(c));
+      // Choix : peut être dict (legacy) ou list[dict]
+      const choixBase = source.competences_base_choix;
+      if (Array.isArray(choixBase)) {
+        choixBase.forEach(ch => (ch.options || []).forEach(o => baseSet.add(o)));
+      } else if (choixBase && choixBase.options) {
+        choixBase.options.forEach(o => baseSet.add(o));
+      }
+      const choixAv = source.competences_avancees_choix;
+      if (Array.isArray(choixAv)) {
+        choixAv.forEach(ch => (ch.options || []).forEach(o => avSet.add(o)));
+      } else if (choixAv && choixAv.options) {
+        choixAv.options.forEach(o => avSet.add(o));
+      }
+    }
+
+    // Métiers
+    const mData = window.METIERS_DATA && window.METIERS_DATA.metiers || [];
+    (state.metiers_choisis || []).forEach(m => {
+      const src = mData.find(x => x.nom === m.nom);
+      if (src) ajouterDe(src);
+    });
+    // Entraînements
+    const eData = window.ENTRAINEMENTS_DATA && window.ENTRAINEMENTS_DATA.entrainements || [];
+    (state.entrainements_choisis || []).forEach(e => {
+      const src = eData.find(x => x.nom === e.nom);
+      if (src) ajouterDe(src);
+    });
+    return { base: baseSet, avancee: avSet };
+  }
+
+  function typeCoutCompetence(compNom) {
+    const { base, avancee } = getMesCompetencesSets();
+    if (base.has(compNom))    return "base";
+    if (avancee.has(compNom)) return "avancee";
+    return "hors";
+  }
+
+  function getCompetenceRang(compNom) {
+    const state = load();
+    const item = (state.competences_choisies || []).find(c => c.nom === compNom);
+    return item ? item.rang : 0;
+  }
+
+  function setCompetenceRang(compNom, rang) {
+    const state = load();
+    if (!Array.isArray(state.competences_choisies)) state.competences_choisies = [];
+    const idx = state.competences_choisies.findIndex(c => c.nom === compNom);
+    const tc = typeCoutCompetence(compNom);
+    if (!rang || rang <= 0) {
+      if (idx >= 0) state.competences_choisies.splice(idx, 1);
+    } else {
+      const entry = { nom: compNom, rang: rang, type_cout: tc };
+      if (idx >= 0) state.competences_choisies[idx] = entry;
+      else state.competences_choisies.push(entry);
+    }
+    save(state);
+  }
+
+  // Coût total d'une compétence à un certain rang (utile pour preview).
+  function coutCompetenceTotal(rang, type_cout) {
+    const par_rang = type_cout === "base" ? 1 : type_cout === "avancee" ? 2 : 3;
+    return rang * par_rang;
+  }
+
   function reset() {
     try { localStorage.removeItem(STORAGE_KEY); } catch {}
   }
@@ -146,8 +222,15 @@
     total += (state.entrainements_choisis || []).length * 3;
     total += (state.langues_choisies || []).length * 1;
     if (state.societe_secrete || state.has_societe_secrete) total += 5;
+    // Compétences : on recalcule dynamiquement le type_cout, car le joueur
+    // peut avoir ajouté un métier/entraînement APRÈS avoir choisi un rang
+    // (ce qui ferait basculer la compétence de 'hors' à 'base'/'avancee').
+    const _setsCache = getMesCompetencesSets();
     (state.competences_choisies || []).forEach(c => {
-      const cout = c.type_cout === "base" ? 1 : c.type_cout === "avancee" ? 2 : 3;
+      let tc = "hors";
+      if (_setsCache.base.has(c.nom)) tc = "base";
+      else if (_setsCache.avancee.has(c.nom)) tc = "avancee";
+      const cout = tc === "base" ? 1 : tc === "avancee" ? 2 : 3;
       total += cout * (c.rang || 1);
     });
     (state.avantages_choisis || []).forEach(a => total += (a.pp || 0));
@@ -195,5 +278,11 @@
     reset,
     calculerPP,
     buildToggleButton,
+    // Compétences
+    getMesCompetencesSets,
+    typeCoutCompetence,
+    getCompetenceRang,
+    setCompetenceRang,
+    coutCompetenceTotal,
   };
 })();
