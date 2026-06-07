@@ -128,6 +128,54 @@ _TYPO_REGEX_COMPILED = [(re.compile(p), r) for p, r in TYPO_REGEX_CORRECTIONS]
 # description du Trait Panache dans le PDF — on le retire de Panache (voir
 # extraire_traits) et on le place dans etape_1_intro (texte ci-dessous,
 # reformulé par Guillaume).
+STATISTIQUES_DERIVEES = [
+    {
+        "nom": "Points de Santé",
+        "formule_label": "Gaillardise × 5",
+        "formule": "gaillardise_5",
+        "description": "Le nombre de petites entailles, estafilades, coups… que vous pouvez "
+                       "encaisser. Elles se soignent facilement avec des soins ou un simple repos.",
+    },
+    {
+        "nom": "Seuil de blessures graves",
+        "formule_label": "Détermination",
+        "formule": "determination",
+        "description": "Grosses blessures beaucoup plus sérieuses. Lorsqu'elles sont au "
+                       "maximum, vous êtes Sans-Défense : un ennemi peut vous achever via une Action.",
+    },
+    {
+        "nom": "Tension",
+        "formule_label": "Détermination × 5",
+        "formule": "determination_5",
+        "description": "Représente votre endurance mentale et votre capacité à rester "
+                       "imperturbable. Vous en perdez principalement lors de joutes verbales, "
+                       "marchandages ou événements perturbants. Elle guérit rapidement avec "
+                       "du repos ou du bon temps avec vos amis.",
+    },
+    {
+        "nom": "Frustration",
+        "formule_label": "Esprit",
+        "formule": "esprit",
+        "description": "Blessure mentale laissée par une confrontation sociale intense. "
+                       "Elle guérit avec du repos prolongé ou une activité de détente.",
+    },
+    {
+        "nom": "Actions par tour",
+        "formule_label": "Panache",
+        "formule": "panache",
+        "description": "Le nombre d'actions que vous pouvez faire à chaque tour de combat, "
+                       "physique ou social.",
+    },
+    {
+        "nom": "Dés d'héroïsme",
+        "formule_label": "Trait le plus bas",
+        "formule": "trait_min",
+        "description": "Donne divers bénéfices : bonus à un test, empêcher votre héros "
+                       "d'être achevé, activer votre Vertu, etc.",
+    },
+]
+
+
 ETAPE_1_INTRO = (
     "Un Héros commence avec un score de 2 dans toutes ses Caractéristiques.\n"
     "Vous disposez en plus de 1 points à distribuer dans la Caractéristique "
@@ -401,6 +449,7 @@ def main() -> None:
         "etape_1_intro": ETAPE_1_INTRO,
         "traits_ordre": ["Gaillardise", "Finesse", "Détermination", "Esprit", "Panache"],
         "traits_descriptions": traits,
+        "statistiques_derivees": STATISTIQUES_DERIVEES,
         "continents_ordre": CONTINENTS_ORDER,
         "continents_meta": CONTINENTS_META,
         "nations": nations,

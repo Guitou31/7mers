@@ -25,6 +25,44 @@ window.CREATION_PERSO_DATA = {
     "Esprit": "le reflet de l’intelligence et du charme du personnage. Il sert également à mesurer la vitesse de réaction, tant intellectuelle que physique, de votre héros à une situation inattendue. Plus le rang d’Esprit d’un héros sera élevé, moins il sera facile de le piéger ou de le prendre par surprise.",
     "Panache": "ce petit quelque chose qui diﬀérencie le personnage du commun des mortels. Les héros dotés d’un rang de Panache élevé ont un petit plus bien à eux, qui est diﬃcile à décrire, mais qui est aisément reconnaissable. Le Panache reflète également la sensibilité du personnage à son environnement, on l’utilise pour eﬀectuer les jets de Perception. Enfin, en termes de jeu, le rang de Panache indique le nombre d’actions que le héros pourra entreprendre durant un tour."
   },
+  "statistiques_derivees": [
+    {
+      "nom": "Points de Santé",
+      "formule_label": "Gaillardise × 5",
+      "formule": "gaillardise_5",
+      "description": "Le nombre de petites entailles, estafilades, coups… que vous pouvez encaisser. Elles se soignent facilement avec des soins ou un simple repos."
+    },
+    {
+      "nom": "Seuil de blessures graves",
+      "formule_label": "Détermination",
+      "formule": "determination",
+      "description": "Grosses blessures beaucoup plus sérieuses. Lorsqu'elles sont au maximum, vous êtes Sans-Défense : un ennemi peut vous achever via une Action."
+    },
+    {
+      "nom": "Tension",
+      "formule_label": "Détermination × 5",
+      "formule": "determination_5",
+      "description": "Représente votre endurance mentale et votre capacité à rester imperturbable. Vous en perdez principalement lors de joutes verbales, marchandages ou événements perturbants. Elle guérit rapidement avec du repos ou du bon temps avec vos amis."
+    },
+    {
+      "nom": "Frustration",
+      "formule_label": "Esprit",
+      "formule": "esprit",
+      "description": "Blessure mentale laissée par une confrontation sociale intense. Elle guérit avec du repos prolongé ou une activité de détente."
+    },
+    {
+      "nom": "Actions par tour",
+      "formule_label": "Panache",
+      "formule": "panache",
+      "description": "Le nombre d'actions que vous pouvez faire à chaque tour de combat, physique ou social."
+    },
+    {
+      "nom": "Dés d'héroïsme",
+      "formule_label": "Trait le plus bas",
+      "formule": "trait_min",
+      "description": "Donne divers bénéfices : bonus à un test, empêcher votre héros d'être achevé, activer votre Vertu, etc."
+    }
+  ],
   "continents_ordre": [
     "Trois Royaumes",
     "Theah",

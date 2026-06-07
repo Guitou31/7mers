@@ -380,6 +380,51 @@ p { margin: 0 0 0.6em; }
   font-size: 1.4rem;
   color: var(--accent);
 }
+/* Étape 1.2 — Statistiques dérivées (calcul auto) */
+.stats-derivees { display: grid; gap: 0.4rem; }
+.stat-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.6rem 0.9rem;
+  background: rgba(232, 212, 168, 0.04);
+  border-left: 3px solid var(--accent-soft);
+  border-radius: 0 4px 4px 0;
+}
+.stat-label { display: flex; flex-direction: column; gap: 0.15rem; }
+.stat-label strong {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 1rem;
+  color: var(--accent);
+}
+.stat-formule {
+  font-size: 0.8rem;
+  color: var(--accent-soft);
+  font-family: 'Courier New', monospace;
+  background: rgba(232, 212, 168, 0.08);
+  padding: 0.05rem 0.4rem;
+  border-radius: 3px;
+  align-self: flex-start;
+}
+.stat-desc {
+  margin: 0.2rem 0 0;
+  font-size: 0.82rem;
+  opacity: 0.8;
+  line-height: 1.45;
+}
+.stat-valeur {
+  min-width: 3rem;
+  text-align: center;
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--accent);
+  background: rgba(195, 70, 70, 0.08);
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  border: 2px solid rgba(195, 70, 70, 0.2);
+}
 /* Légendes inline dans le texte d'aide */
 .legende-libre, .legende-nation {
   font-weight: 700;

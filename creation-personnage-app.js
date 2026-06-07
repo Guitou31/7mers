@@ -126,6 +126,45 @@
     // Cliquer sur le trait déjà choisi : annule. Sinon : déplace.
     state.trait_libre = (state.trait_libre === traitNom) ? null : traitNom;
     renderTraits();
+    renderStatsDerivees();
+  }
+
+  // ===== Étape 1.2 : statistiques dérivées (auto) =====
+  function valeursTraits() {
+    const v = {};
+    (data.traits_ordre || []).forEach(t => { v[t] = calcValeurTrait(t); });
+    return v;
+  }
+
+  // Calcule une stat selon sa formule. Retourne un nombre.
+  function calculerStat(formule, traits) {
+    switch (formule) {
+      case "gaillardise_5":   return traits["Gaillardise"] * 5;
+      case "determination":   return traits["Détermination"];
+      case "determination_5": return traits["Détermination"] * 5;
+      case "esprit":          return traits["Esprit"];
+      case "panache":         return traits["Panache"];
+      case "trait_min":       return Math.min(...Object.values(traits));
+      default:                return "—";
+    }
+  }
+
+  function renderStatsDerivees() {
+    const container = document.getElementById("stats-derivees");
+    if (!container) return;
+    container.innerHTML = "";
+    const traits = valeursTraits();
+    (data.statistiques_derivees || []).forEach(stat => {
+      const valeur = calculerStat(stat.formule, traits);
+      container.appendChild(el("div", { class: "stat-row" }, [
+        el("div", { class: "stat-label" }, [
+          el("strong", null, stat.nom),
+          el("span", { class: "stat-formule" }, stat.formule_label),
+          el("p", { class: "stat-desc" }, stat.description),
+        ]),
+        el("div", { class: "stat-valeur" }, String(valeur)),
+      ]));
+    });
   }
 
   function renderTraits() {
@@ -273,6 +312,7 @@
     state.trait_bonus_nation = trait;
     renderTraits();
     renderNations();
+    renderStatsDerivees();
     if (dialog) {
       if (typeof dialog.close === "function") dialog.close();
       else dialog.removeAttribute("open");
@@ -283,5 +323,6 @@
   renderIntro();
   renderEtape1Intro();
   renderTraits();
+  renderStatsDerivees();
   renderNations();
 })();
