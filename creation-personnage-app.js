@@ -6,13 +6,105 @@
     return;
   }
 
-  // État (session, en mémoire — pas de sauvegarde pour l'instant)
-  const state = {
-    nation: null,            // nom de la nation choisie
-    trait_bonus_nation: null, // trait choisi pour le +1 de Nation
-    trait_libre: null,       // trait choisi pour le +1 'à répartir librement'
-    arcane: null,            // numéro de l'arcane tiré (0–21)
+  // ===== State + persistance localStorage =====
+  const STORAGE_KEY = "creation_perso_state_v1";
+  const PP_BUDGET = 60;
+
+  const defaultState = {
+    // Étape 1
+    nation: null,
+    trait_bonus_nation: null,
+    trait_libre: null,
+    // Étape 2
+    arcane: null,
+    // Étape 3
+    age_plage: null,           // "15-25" | "26-35" | "36-50"
+    sorcellerie: null,         // null | "demi-sang" | "sang-pur" | "sang-mele"
+    nb_ecoles_spadassin: 0,
+    nb_ecoles_autres: 0,       // Combat / Courtisan / Professionnelle
+    nb_ecoles_hors_nation: 0,  // sous-ensemble : majoration +5 chacune
+    nb_metiers_entrainements: 0,
+    nb_langues_extra: 0,       // langues supplémentaires (Théan ou autres, 1 PP/u)
+    has_societe_secrete: false,
+    pp_avantages: 0,           // saisie manuelle (variable)
+    pp_competences: 0,         // saisie manuelle (1/2/3 PP × rang selon base/avancée/hors)
   };
+
+  const state = Object.assign({}, defaultState);
+
+  function loadState() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      const obj = JSON.parse(raw);
+      if (obj && typeof obj === "object") {
+        Object.keys(defaultState).forEach(k => {
+          if (k in obj) state[k] = obj[k];
+        });
+      }
+    } catch (e) {
+      console.warn("loadState : impossible de lire le state", e);
+    }
+  }
+  function saveState() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (e) { /* quota plein, navigation privée… on ignore */ }
+  }
+  function resetState() {
+    if (!confirm("Réinitialiser tous les choix de création ?")) return;
+    Object.keys(state).forEach(k => state[k] = defaultState[k]);
+    saveState();
+    location.reload();
+  }
+  loadState();
+
+  // Calcul du total PP dépensés.
+  function calculerPP() {
+    let total = 0;
+    // Sorcellerie
+    if (state.sorcellerie === "demi-sang") total += 15;
+    if (state.sorcellerie === "sang-pur")  total += 25;
+    if (state.sorcellerie === "sang-mele") total += 35;
+    // Écoles
+    total += state.nb_ecoles_spadassin * 20;
+    total += state.nb_ecoles_autres * 15;
+    total += state.nb_ecoles_hors_nation * 5;
+    // Métiers / Entraînements
+    total += state.nb_metiers_entrainements * 3;
+    // Langues (Théan + autres, 1 PP chacune)
+    total += state.nb_langues_extra * 1;
+    // Société Secrète
+    if (state.has_societe_secrete) total += 5;
+    // Avantages + Compétences (saisie manuelle)
+    total += (parseInt(state.pp_avantages, 10) || 0);
+    total += (parseInt(state.pp_competences, 10) || 0);
+    return total;
+  }
+
+  function refreshPPBar() {
+    const bar = document.getElementById("pp-bar");
+    if (!bar) return;
+    const total = calculerPP();
+    const restant = PP_BUDGET - total;
+    bar.classList.toggle("is-overspent", restant < 0);
+    bar.classList.toggle("is-exact", restant === 0);
+    bar.classList.toggle("is-leftover", restant > 0);
+    const valDepenses = document.getElementById("pp-bar-depenses");
+    const valRestant = document.getElementById("pp-bar-restant");
+    const valBudget = document.getElementById("pp-bar-budget");
+    if (valDepenses) valDepenses.textContent = total;
+    if (valRestant) valRestant.textContent = (restant >= 0 ? "+" : "") + restant;
+    if (valBudget) valBudget.textContent = PP_BUDGET;
+  }
+
+  // Met à jour state[clé] + sauve + rafraîchit le compteur PP + refresh ciblé.
+  function setState(cle, valeur, refreshFns) {
+    state[cle] = valeur;
+    saveState();
+    refreshPPBar();
+    if (refreshFns) refreshFns.forEach(fn => fn());
+  }
   // Base 2 dans chaque Trait (règle de jeu)
   const TRAIT_BASE = 2;
 
@@ -126,6 +218,7 @@
   function toggleTraitLibre(traitNom) {
     // Cliquer sur le trait déjà choisi : annule. Sinon : déplace.
     state.trait_libre = (state.trait_libre === traitNom) ? null : traitNom;
+    saveState();
     renderTraits();
     renderStatsDerivees();
   }
@@ -311,6 +404,7 @@
   function selectionnerNationEtTrait(nationNom, trait, dialog) {
     state.nation = nationNom;
     state.trait_bonus_nation = trait;
+    saveState();
     renderTraits();
     renderNations();
     renderStatsDerivees();
@@ -406,6 +500,7 @@
       candidat = Math.floor(Math.random() * n);
     } while (state.arcane === candidat && n > 1);
     state.arcane = candidat;
+    saveState();
     renderArcanes();
     renderArcaneSelection();
     // Scroll vers le détail pour rendre visible le résultat
@@ -415,6 +510,7 @@
 
   function selectionnerArcane(numero) {
     state.arcane = (state.arcane === numero) ? null : numero;
+    saveState();
     renderArcanes();
     renderArcaneSelection();
   }
@@ -501,12 +597,58 @@
     if (!container) return;
     container.innerHTML = "";
     e3.ages.forEach(age => {
-      container.appendChild(el("div", { class: "age-card" }, [
+      const isSel = state.age_plage === age.plage;
+      container.appendChild(el("button", {
+        class: "age-card age-btn" + (isSel ? " is-selected" : ""),
+        type: "button",
+        onclick: () => {
+          state.age_plage = isSel ? null : age.plage;
+          saveState();
+          renderEtape3Ages();
+          refreshPPBar();
+        },
+      }, [
         el("div", { class: "age-plage" }, age.plage),
         el("div", { class: "age-label" }, age.label),
         el("p", { class: "age-bonus" }, age.bonus),
       ]));
     });
+  }
+
+  // Helper : counter -/+ pour incrémenter/décrémenter un nombre.
+  function counterControl(stateKey, min, max) {
+    const cur = state[stateKey] || 0;
+    const dec = el("button", {
+      class: "counter-btn",
+      type: "button",
+      disabled: cur <= min,
+      onclick: () => {
+        if (state[stateKey] > min) {
+          state[stateKey] = state[stateKey] - 1;
+          saveState();
+          renderEtape3Specificites();
+          refreshPPBar();
+        }
+      },
+    }, "−");
+    const inc = el("button", {
+      class: "counter-btn",
+      type: "button",
+      disabled: max != null && cur >= max,
+      onclick: () => {
+        if (max == null || state[stateKey] < max) {
+          state[stateKey] = state[stateKey] + 1;
+          saveState();
+          renderEtape3Specificites();
+          refreshPPBar();
+        }
+      },
+    }, "+");
+    return el("div", { class: "counter-wrap" }, [
+      dec,
+      el("span", { class: "counter-value" }, String(cur)),
+      inc,
+    ]);
   }
 
   function renderEtape3Specificites() {
@@ -542,54 +684,118 @@
       if (spec.resume) {
         card.appendChild(el("p", { class: "spec-resume" }, spec.resume));
       }
-      // Variantes (sorcellerie, école, compétences)
-      if (spec.variantes && spec.variantes.length) {
-        const ul = el("ul", { class: "spec-couts-list" });
+
+      // Sélecteurs interactifs spécifiques selon spec.id
+      if (spec.id === "sorcellerie") {
+        const optsRow = el("div", { class: "spec-sorcel-row" });
+        const aucune = el("button", {
+          class: "spec-sorcel-btn" + (state.sorcellerie == null ? " is-selected" : ""),
+          type: "button",
+          onclick: () => { state.sorcellerie = null; saveState(); renderEtape3Specificites(); refreshPPBar(); },
+        }, "Aucune (0 PP)");
+        optsRow.appendChild(aucune);
+        const mapSorc = {"Demi-Sang": "demi-sang", "Sang-Pur": "sang-pur", "Sang-Mêlé": "sang-mele"};
         spec.variantes.forEach(v => {
-          ul.appendChild(el("li", null, [
-            el("span", { class: "spec-cout-label" }, v.label),
-            el("span", { class: "spec-cout-pp" }, v.pp + " PP"),
-          ]));
+          const label = v.label.split(" (")[0];
+          const key = mapSorc[label];
+          if (!key) return;
+          const sel = state.sorcellerie === key;
+          optsRow.appendChild(el("button", {
+            class: "spec-sorcel-btn" + (sel ? " is-selected" : ""),
+            type: "button",
+            onclick: () => { state.sorcellerie = sel ? null : key; saveState(); renderEtape3Specificites(); refreshPPBar(); },
+          }, label + " (" + v.pp + " PP)"));
         });
+        card.appendChild(optsRow);
+
+      } else if (spec.id === "ecoles") {
+        card.appendChild(el("div", { class: "spec-interactif" }, [
+          el("label", { class: "spec-mini-label" }, "Spadassin (20 PP) :"),
+          counterControl("nb_ecoles_spadassin", 0, 2),
+        ]));
+        card.appendChild(el("div", { class: "spec-interactif" }, [
+          el("label", { class: "spec-mini-label" }, "Combat / Courtisan / Pro (15 PP) :"),
+          counterControl("nb_ecoles_autres", 0, 2),
+        ]));
+        card.appendChild(el("div", { class: "spec-interactif" }, [
+          el("label", { class: "spec-mini-label" }, "Hors Nation (+5 PP / école) :"),
+          counterControl("nb_ecoles_hors_nation", 0, 2),
+        ]));
+        card.appendChild(el("p", { class: "spec-max" }, [
+          "⚠ Max ", el("strong", null, "2 écoles"), " à la création (total Spadassin + autres).",
+        ]));
+
+      } else if (spec.id === "metiers_entrainements") {
+        card.appendChild(el("div", { class: "spec-interactif" }, [
+          el("label", { class: "spec-mini-label" }, "Nombre (3 PP/unité) :"),
+          counterControl("nb_metiers_entrainements", 0, 3),
+        ]));
+        card.appendChild(el("p", { class: "spec-max" }, [
+          "⚠ Max ", el("strong", null, "3 spécialités"), " à la création (hors bonus écoles/âge).",
+        ]));
+
+      } else if (spec.id === "competences") {
+        const ul = el("ul", { class: "spec-couts-list" });
+        spec.variantes.forEach(v => ul.appendChild(el("li", null, [
+          el("span", { class: "spec-cout-label" }, v.label),
+          el("span", { class: "spec-cout-pp" }, v.pp + " PP"),
+        ])));
         card.appendChild(ul);
-      }
-      // Coût unitaire simple (Métiers, Langues)
-      if (spec.cout_unit != null) {
-        card.appendChild(el("p", { class: "spec-cout-unitaire" }, [
-          el("strong", null, spec.cout_unit + " PP"),
-          " par ",
-          spec.id === "langues" ? "langue supplémentaire" : "spécialité",
-          ".",
+        const inp = el("input", {
+          class: "spec-pp-input",
+          type: "number",
+          min: "0",
+          step: "1",
+          value: String(state.pp_competences || 0),
+          oninput: (e) => {
+            state.pp_competences = parseInt(e.target.value, 10) || 0;
+            saveState();
+            refreshPPBar();
+          },
+        });
+        card.appendChild(el("div", { class: "spec-interactif" }, [
+          el("label", { class: "spec-mini-label" }, "Total PP dépensés en compétences :"),
+          inp,
+          el("span", { class: "spec-cout-pp" }, "PP"),
         ]));
-      }
-      if (spec.cout != null) {
-        card.appendChild(el("p", { class: "spec-cout-unitaire" }, [
-          el("strong", null, typeof spec.cout === "number" ? spec.cout + " PP" : spec.cout),
+
+      } else if (spec.id === "avantages") {
+        const inp = el("input", {
+          class: "spec-pp-input",
+          type: "number",
+          min: "0",
+          step: "1",
+          value: String(state.pp_avantages || 0),
+          oninput: (e) => {
+            state.pp_avantages = parseInt(e.target.value, 10) || 0;
+            saveState();
+            refreshPPBar();
+          },
+        });
+        card.appendChild(el("div", { class: "spec-interactif" }, [
+          el("label", { class: "spec-mini-label" }, "Total PP dépensés en avantages :"),
+          inp,
+          el("span", { class: "spec-cout-pp" }, "PP"),
         ]));
-      }
-      // Max création
-      if (spec.max_creation) {
-        card.appendChild(el("p", { class: "spec-max" }, [
-          "⚠ Max à la création : ",
-          el("strong", null, spec.max_creation),
-          spec.rappel ? " (" + spec.rappel + ")" : null,
+
+      } else if (spec.id === "langues") {
+        card.appendChild(el("div", { class: "spec-interactif" }, [
+          el("label", { class: "spec-mini-label" }, "Langues supplémentaires (1 PP/unité) :"),
+          counterControl("nb_langues_extra", 0, null),
         ]));
+        card.appendChild(el("p", { class: "spec-resume" },
+          "Inclut Théan et toute autre langue choisie. La langue native de votre Nation est gratuite."));
+
+      } else if (spec.id === "societe_secrete") {
+        const sel = !!state.has_societe_secrete;
+        card.appendChild(el("button", {
+          class: "spec-sorcel-btn" + (sel ? " is-selected" : ""),
+          type: "button",
+          onclick: () => { state.has_societe_secrete = !sel; saveState(); renderEtape3Specificites(); refreshPPBar(); },
+        }, sel ? "✓ Société Secrète (5 PP)" : "Ajouter (5 PP)"));
       }
-      if (spec.max_rang_creation) {
-        card.appendChild(el("p", { class: "spec-max" }, [
-          "⚠ Max ",
-          el("strong", null, spec.max_rang_creation + " rangs"),
-          " par compétence à la création.",
-        ]));
-      }
-      // Majoration hors nation (écoles)
-      if (spec.majoration_hors_nation) {
-        card.appendChild(el("p", { class: "spec-majoration" }, [
-          "+ ", el("strong", null, spec.majoration_hors_nation.pp + " PP "),
-          spec.majoration_hors_nation.label.toLowerCase(),
-        ]));
-      }
-      // Boutons pages
+
+      // Boutons pages (sous le sélecteur)
       if (spec.pages && spec.pages.length) {
         const pages = el("div", { class: "spec-pages-row" });
         spec.pages.forEach(p => {
@@ -687,4 +893,11 @@
   renderEtape3Langues();
   const btnTirage = document.getElementById("btn-tirage-aleatoire");
   if (btnTirage) btnTirage.addEventListener("click", tirageAleatoire);
+
+  // Reset complet (efface localStorage et recharge la page)
+  const btnReset = document.getElementById("pp-bar-reset");
+  if (btnReset) btnReset.addEventListener("click", resetState);
+
+  // 1ᵉʳ rafraîchissement du compteur PP après init
+  refreshPPBar();
 })();

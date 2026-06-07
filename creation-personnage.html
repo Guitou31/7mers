@@ -11,6 +11,25 @@
 <body data-page="creation-personnage">
   <div id="page-layout"></div>
 
+  <div id="pp-bar" class="pp-bar" role="status" aria-live="polite">
+    <div class="pp-bar-inner">
+      <div class="pp-bar-label">
+        <strong>Points de Personnage</strong>
+        <span class="pp-bar-sub">dépensés / budget</span>
+      </div>
+      <div class="pp-bar-chiffres">
+        <span id="pp-bar-depenses" class="pp-bar-depenses">0</span>
+        <span class="pp-bar-sep">/</span>
+        <span id="pp-bar-budget" class="pp-bar-budget">60</span>
+      </div>
+      <div class="pp-bar-reste">
+        Reste : <span id="pp-bar-restant" class="pp-bar-restant">+60</span> PP
+      </div>
+      <button id="pp-bar-reset" class="pp-bar-reset" type="button"
+              title="Réinitialiser tous les choix de création">🗑 Reset</button>
+    </div>
+  </div>
+
   <div class="page-section-title">
     <h2>Création de personnage</h2>
     <p class="page-section-sub">
