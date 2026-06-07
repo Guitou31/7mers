@@ -27,12 +27,44 @@ window.CREATION_PERSO_DATA = {
   },
   "continents_ordre": [
     "Trois Royaumes",
-    "Europe",
+    "Theah",
     "Nations Pirates",
     "Ifri",
     "Empire du Croissant",
     "Cathay"
   ],
+  "continents_meta": {
+    "Trois Royaumes": {
+      "equivalent": "Royaume-Uni",
+      "parent": "Theah",
+      "couleur": "trois-royaumes"
+    },
+    "Theah": {
+      "equivalent": "Europe",
+      "parent": null,
+      "couleur": "theah"
+    },
+    "Nations Pirates": {
+      "equivalent": "Caraïbes, Méditerranée, Canaries (archipels)",
+      "parent": null,
+      "couleur": "pirates"
+    },
+    "Ifri": {
+      "equivalent": "Afrique",
+      "parent": null,
+      "couleur": "ifri"
+    },
+    "Empire du Croissant": {
+      "equivalent": "Moyen-Orient",
+      "parent": null,
+      "couleur": "croissant"
+    },
+    "Cathay": {
+      "equivalent": "Asie de l'Est (Chine, Japon, Mongolie…)",
+      "parent": null,
+      "couleur": "cathay"
+    }
+  },
   "nations": [
     {
       "nom": "Avalon",
@@ -69,7 +101,7 @@ window.CREATION_PERSO_DATA = {
     },
     {
       "nom": "Castille",
-      "continent": "Europe",
+      "continent": "Theah",
       "bonus_traits": [
         "Finesse",
         "Esprit"
@@ -80,7 +112,7 @@ window.CREATION_PERSO_DATA = {
     },
     {
       "nom": "Eisen",
-      "continent": "Europe",
+      "continent": "Theah",
       "bonus_traits": [
         "Gaillardise",
         "Détermination"
@@ -91,7 +123,7 @@ window.CREATION_PERSO_DATA = {
     },
     {
       "nom": "Montaigne",
-      "continent": "Europe",
+      "continent": "Theah",
       "bonus_traits": [
         "Finesse",
         "Panache"
@@ -102,7 +134,7 @@ window.CREATION_PERSO_DATA = {
     },
     {
       "nom": "Sarmatie",
-      "continent": "Europe",
+      "continent": "Theah",
       "bonus_traits": [
         "Gaillardise",
         "Panache"
@@ -113,7 +145,7 @@ window.CREATION_PERSO_DATA = {
     },
     {
       "nom": "Ussura",
-      "continent": "Europe",
+      "continent": "Theah",
       "bonus_traits": [
         "Détermination",
         "Esprit"
@@ -124,7 +156,7 @@ window.CREATION_PERSO_DATA = {
     },
     {
       "nom": "Khazaris",
-      "continent": "Europe",
+      "continent": "Theah",
       "bonus_traits": [
         "Gaillardise",
         "Finesse"
@@ -135,7 +167,7 @@ window.CREATION_PERSO_DATA = {
     },
     {
       "nom": "Tamatama",
-      "continent": "Europe",
+      "continent": "Theah",
       "bonus_traits": [
         "Esprit",
         "Panache"
@@ -146,7 +178,7 @@ window.CREATION_PERSO_DATA = {
     },
     {
       "nom": "Vestenmannavnjar",
-      "continent": "Europe",
+      "continent": "Theah",
       "bonus_traits": [
         "Gaillardise",
         "Esprit"
@@ -157,7 +189,7 @@ window.CREATION_PERSO_DATA = {
     },
     {
       "nom": "Vodacce",
-      "continent": "Europe",
+      "continent": "Theah",
       "bonus_traits": [
         "Finesse",
         "Détermination"

@@ -388,16 +388,51 @@ p { margin: 0 0 0.6em; }
 }
 .legende-libre { background: rgba(195, 70, 70, 0.18); color: var(--accent); }
 .legende-nation { background: rgba(201, 168, 97, 0.22); color: #8a6a26; }
-/* Tableau des Nations */
-.nations-continent { margin-bottom: 1.5rem; }
+/* Tableau des Nations groupé par continent (avec coloration discrète) */
+.nations-continent {
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 0.8rem;
+  border-left: 4px solid;
+  border-radius: 0 4px 4px 0;
+  background: var(--continent-bg, transparent);
+  border-left-color: var(--continent-color, var(--accent-soft));
+}
 .nations-continent-titre {
   font-family: 'Cinzel', Georgia, serif;
-  color: var(--accent);
+  color: var(--continent-color, var(--accent));
   font-size: 1.05rem;
   margin: 0 0 0.5rem;
   padding-bottom: 0.3rem;
   border-bottom: 1px solid rgba(232, 212, 168, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
+.nations-continent-pastille {
+  display: inline-block;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background: var(--continent-color, var(--accent));
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+}
+.nations-continent-equiv {
+  font-family: Georgia, serif;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--text);
+  opacity: 0.75;
+  font-weight: 400;
+}
+/* Palette : 1 couleur par continent (subtile, cohérente avec le thème) */
+.continent-trois-royaumes { --continent-color: #5b7a99; --continent-bg: rgba(91, 122, 153, 0.06); }
+.continent-theah          { --continent-color: #6b8b5b; --continent-bg: rgba(107, 139, 91, 0.06); }
+.continent-pirates        { --continent-color: #8b4844; --continent-bg: rgba(139, 72, 68, 0.07); }
+.continent-ifri           { --continent-color: #c08644; --continent-bg: rgba(192, 134, 68, 0.07); }
+.continent-croissant      { --continent-color: #5a8e8e; --continent-bg: rgba(90, 142, 142, 0.07); }
+.continent-cathay         { --continent-color: #b0743a; --continent-bg: rgba(176, 116, 58, 0.07); }
 .nations-tbl { width: 100%; border-collapse: collapse; }
 .nations-tbl th, .nations-tbl td {
   padding: 0.5rem 0.75rem;

@@ -141,11 +141,26 @@
     if (!root) return;
     root.innerHTML = "";
     const continents = data.continents_ordre || [];
+    const meta = data.continents_meta || {};
     for (const continent of continents) {
       const nations = data.nations.filter(n => n.continent === continent);
       if (!nations.length) continue;
-      const section = el("div", { class: "nations-continent" }, [
-        el("h5", { class: "nations-continent-titre" }, continent),
+      const m = meta[continent] || {};
+      // Titre enrichi : 'Theah (Europe)' / 'Trois Royaumes (Royaume-Uni — Theah)'
+      const titreFrags = [continent];
+      const meta_suffix = [];
+      if (m.equivalent) meta_suffix.push(m.equivalent);
+      if (m.parent) meta_suffix.push("appartient à " + m.parent);
+      const colorKey = m.couleur || "default";
+      const sousTitre = meta_suffix.length
+        ? el("span", { class: "nations-continent-equiv" }, " — " + meta_suffix.join(" / "))
+        : null;
+      const section = el("div", { class: "nations-continent continent-" + colorKey }, [
+        el("h5", { class: "nations-continent-titre" }, [
+          el("span", { class: "nations-continent-pastille" }),
+          continent,
+          sousTitre,
+        ]),
         el("table", { class: "nations-tbl" }, [
           el("thead", null, el("tr", null, [
             el("th", null, "Nation"),

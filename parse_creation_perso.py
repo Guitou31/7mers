@@ -34,12 +34,23 @@ DEST_JS = DEST_DIR / "creation_perso.js"
 # ============================================================
 CONTINENTS_ORDER = [
     "Trois Royaumes",
-    "Europe",
+    "Theah",
     "Nations Pirates",
     "Ifri",
     "Empire du Croissant",
     "Cathay",
 ]
+
+# Métadonnées par continent : équivalent terrestre + appartenance + clé de couleur
+# (Trois Royaumes appartient à Theah géographiquement).
+CONTINENTS_META = {
+    "Trois Royaumes":      {"equivalent": "Royaume-Uni",                                  "parent": "Theah", "couleur": "trois-royaumes"},
+    "Theah":               {"equivalent": "Europe",                                        "parent": None,    "couleur": "theah"},
+    "Nations Pirates":     {"equivalent": "Caraïbes, Méditerranée, Canaries (archipels)", "parent": None,    "couleur": "pirates"},
+    "Ifri":                {"equivalent": "Afrique",                                       "parent": None,    "couleur": "ifri"},
+    "Empire du Croissant": {"equivalent": "Moyen-Orient",                                  "parent": None,    "couleur": "croissant"},
+    "Cathay":              {"equivalent": "Asie de l'Est (Chine, Japon, Mongolie…)",       "parent": None,    "couleur": "cathay"},
+}
 
 NATIONS = [
     # Trois Royaumes
@@ -47,15 +58,15 @@ NATIONS = [
     ("Inismore",              "Trois Royaumes",      ["Panache", "Esprit"],        "Irlande",                          6),
     ("Marches des Highlands", "Trois Royaumes",      ["Gaillardise", "Finesse"],   "Écosse",                           7),
     # Europe (Théah)
-    ("Castille",              "Europe",              ["Finesse", "Esprit"],        "Espagne",                          8),
-    ("Eisen",                 "Europe",              ["Gaillardise", "Détermination"], "Empire germanique",            10),
-    ("Montaigne",             "Europe",              ["Finesse", "Panache"],       "France (Pré-Révolution)",          11),
-    ("Sarmatie",              "Europe",              ["Gaillardise", "Panache"],   "Tchéquie / Prussie / Ex-Bohème",   13),
-    ("Ussura",                "Europe",              ["Détermination", "Esprit"],  "Russie",                           15),
-    ("Khazaris",              "Europe",              ["Gaillardise", "Finesse"],   "Huns",                             40),  # partage description avec Khazari (Cathay)
-    ("Tamatama",              "Europe",              ["Esprit", "Panache"],        "Tziganes",                         None),
-    ("Vestenmannavnjar",      "Europe",              ["Gaillardise", "Esprit"],    "Scandinavie + Hollande",           16),
-    ("Vodacce",               "Europe",              ["Finesse", "Détermination"], "Italie",                           18),
+    ("Castille",              "Theah",               ["Finesse", "Esprit"],        "Espagne",                          8),
+    ("Eisen",                 "Theah",               ["Gaillardise", "Détermination"], "Empire germanique",            10),
+    ("Montaigne",             "Theah",               ["Finesse", "Panache"],       "France (Pré-Révolution)",          11),
+    ("Sarmatie",              "Theah",               ["Gaillardise", "Panache"],   "Tchéquie / Prussie / Ex-Bohème",   13),
+    ("Ussura",                "Theah",               ["Détermination", "Esprit"],  "Russie",                           15),
+    ("Khazaris",              "Theah",               ["Gaillardise", "Finesse"],   "Huns",                             40),  # partage description avec Khazari (Cathay)
+    ("Tamatama",              "Theah",               ["Esprit", "Panache"],        "Tziganes",                         None),
+    ("Vestenmannavnjar",      "Theah",               ["Gaillardise", "Esprit"],    "Scandinavie + Hollande",           16),
+    ("Vodacce",               "Theah",               ["Finesse", "Détermination"], "Italie",                           18),
     # Nations Pirates
     ("Aragosta",              "Nations Pirates",     ["Panache", "Finesse"],       "Bahamas",                          34),
     ("Jaragua",               "Nations Pirates",     ["Gaillardise", "Finesse"],   "Haïti",                            35),
@@ -380,6 +391,7 @@ def main() -> None:
         "traits_ordre": ["Gaillardise", "Finesse", "Détermination", "Esprit", "Panache"],
         "traits_descriptions": traits,
         "continents_ordre": CONTINENTS_ORDER,
+        "continents_meta": CONTINENTS_META,
         "nations": nations,
     }
 
