@@ -458,6 +458,179 @@
     }
   }
 
+  // ===== Sélecteur de Langues (modal) =====
+  // Reprend la même mise en forme que le tableau des Nations à l'étape 1 :
+  // langues groupées par continent (couleurs assorties), plus une section
+  // dédiée pour le Théan (langue universelle).
+  function ouvrirSelecteurLangues() {
+    let dialog = document.getElementById("creation-modal-langues");
+    if (!dialog) {
+      dialog = el("dialog", { id: "creation-modal-langues", class: "ecole-detail cross-modal" }, [
+        el("div", { class: "cross-modal-header" }, [
+          el("button", {
+            class: "ecole-detail-close",
+            "aria-label": "Fermer",
+            type: "button",
+            onclick: () => dialog.close(),
+          }, "×"),
+        ]),
+        el("div", { id: "creation-modal-langues-content" }),
+      ]);
+      document.body.appendChild(dialog);
+      dialog.addEventListener("click", (e) => {
+        if (e.target === dialog) dialog.close();
+      });
+    }
+    renderContenuModalLangues(dialog);
+    if (typeof dialog.showModal === "function") {
+      if (!dialog.open) dialog.showModal();
+    } else dialog.setAttribute("open", "");
+  }
+
+  function langueEstChoisie(nom) {
+    return (state.langues_choisies || []).some(l => l.nom === nom);
+  }
+
+  function toggleLangue(nom, dialog) {
+    if (!Array.isArray(state.langues_choisies)) state.langues_choisies = [];
+    const idx = state.langues_choisies.findIndex(l => l.nom === nom);
+    if (idx >= 0) state.langues_choisies.splice(idx, 1);
+    else state.langues_choisies.push({ nom });
+    saveState();
+    refreshPPBar();
+    renderContenuModalLangues(dialog);
+    renderEtape3Specificites();
+    renderEtape3Langues();
+  }
+
+  function renderContenuModalLangues(dialog) {
+    const langues_nation = data.langues_par_nation || {};
+    const langue_univ = data.langue_universelle || {};
+    const langueNative = state.nation ? langues_nation[state.nation] : null;
+    const content = document.getElementById("creation-modal-langues-content");
+    content.innerHTML = "";
+
+    content.appendChild(el("div", { class: "detail-header" }, [
+      el("h2", null, "Langues parlées et écrites"),
+    ]));
+    content.appendChild(el("p", { class: "modal-langues-intro" }, [
+      "Chaque langue supplémentaire ", el("strong", null, "coûte 1 PP"),
+      ". La langue native de votre Nation est gratuite et toujours acquise. ",
+      "Cliquez sur une langue pour l'ajouter ou la retirer.",
+    ]));
+
+    // Récap PP du sélecteur (live)
+    const nbChoisies = (state.langues_choisies || []).length;
+    content.appendChild(el("p", { class: "modal-langues-recap" }, [
+      langueNative
+        ? el("span", null, ["Native : ", el("strong", null, langueNative), " "])
+        : el("em", { class: "spec-empty-list" }, "Pas de langue native (Nation non choisie)"),
+      " · ",
+      el("strong", null, nbChoisies),
+      " langue" + (nbChoisies > 1 ? "s" : "") + " supplémentaire" + (nbChoisies > 1 ? "s" : ""),
+      " = ", el("strong", null, nbChoisies + " PP"),
+    ]));
+
+    // ===== Section Langue universelle (Théan) =====
+    if (langue_univ.nom) {
+      const checked = langueEstChoisie(langue_univ.nom);
+      content.appendChild(el("div", { class: "nations-continent langues-section continent-universelle" }, [
+        el("h5", { class: "nations-continent-titre" }, [
+          el("span", { class: "nations-continent-pastille" }),
+          "Langue universelle",
+          el("span", { class: "nations-continent-equiv" }, " — parlée par les érudits et le clergé"),
+        ]),
+        el("table", { class: "nations-tbl langues-tbl" }, [
+          el("thead", null, el("tr", null, [
+            el("th", null, "Langue"),
+            el("th", null, "Origine"),
+            el("th", null, "Coût"),
+          ])),
+          el("tbody", null, [
+            el("tr", {
+              class: "nation-row langue-row" + (checked ? " is-selected" : ""),
+              tabindex: "0",
+              role: "button",
+              "aria-pressed": checked ? "true" : "false",
+              onclick: () => toggleLangue(langue_univ.nom, dialog),
+              onkeydown: (e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  toggleLangue(langue_univ.nom, dialog);
+                }
+              },
+            }, [
+              el("td", { class: "nation-nom" }, langue_univ.nom),
+              el("td", { class: "nation-bonus" }, langue_univ.description || "Langue universelle de Theah"),
+              el("td", { class: "nation-equiv langue-cout-cell" }, "1 PP"),
+            ]),
+          ]),
+        ]),
+      ]));
+    }
+
+    // ===== Sections par continent (langues natives des Nations) =====
+    const continents = data.continents_ordre || [];
+    const meta = data.continents_meta || {};
+    for (const continent of continents) {
+      const nations = (data.nations || []).filter(
+        n => n.continent === continent && langues_nation[n.nom]
+      );
+      if (!nations.length) continue;
+      const m = meta[continent] || {};
+      const colorKey = m.couleur || "default";
+      const suffixes = [];
+      if (m.equivalent) suffixes.push(m.equivalent);
+      if (m.parent) suffixes.push("appartient à " + m.parent);
+      const equivSpan = suffixes.length
+        ? el("span", { class: "nations-continent-equiv" }, " — " + suffixes.join(" / "))
+        : null;
+
+      content.appendChild(el("div", { class: "nations-continent langues-section continent-" + colorKey }, [
+        el("h5", { class: "nations-continent-titre" }, [
+          el("span", { class: "nations-continent-pastille" }),
+          continent,
+          equivSpan,
+        ]),
+        el("table", { class: "nations-tbl langues-tbl" }, [
+          el("thead", null, el("tr", null, [
+            el("th", null, "Langue"),
+            el("th", null, "Nation"),
+            el("th", null, "Coût"),
+          ])),
+          el("tbody", null, nations.map(n => {
+            const lang = langues_nation[n.nom];
+            const isNative = !!(langueNative && lang === langueNative);
+            const choisie = langueEstChoisie(lang);
+            const checked = isNative || choisie;
+            return el("tr", {
+              class: "nation-row langue-row"
+                + (checked ? " is-selected" : "")
+                + (isNative ? " langue-native-row" : ""),
+              tabindex: isNative ? "-1" : "0",
+              role: isNative ? null : "button",
+              "aria-pressed": checked ? "true" : "false",
+              "aria-disabled": isNative ? "true" : null,
+              title: isNative ? "Langue native — toujours acquise gratuitement" : null,
+              onclick: isNative ? null : () => toggleLangue(lang, dialog),
+              onkeydown: isNative ? null : (e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  toggleLangue(lang, dialog);
+                }
+              },
+            }, [
+              el("td", { class: "nation-nom" }, lang),
+              el("td", { class: "nation-bonus" }, n.nom),
+              el("td", { class: "nation-equiv langue-cout-cell" },
+                isNative ? "Gratuite (native)" : "1 PP"),
+            ]);
+          })),
+        ]),
+      ]));
+    }
+  }
+
   // ===== Étape 2 : Main du Destin (Arcanes) =====
   const arcanesData = window.ARCANES_DATA || null;
   // Mapping numéro Arcane 7ème Mer → fichier image (numérotation tarot
@@ -954,12 +1127,56 @@
         ]));
 
       } else if (spec.id === "langues") {
-        card.appendChild(el("div", { class: "spec-interactif" }, [
-          el("label", { class: "spec-mini-label" }, "Langues supplémentaires (1 PP/unité) :"),
-          counterControl("nb_langues_extra", 0, null),
-        ]));
-        card.appendChild(el("p", { class: "spec-resume" },
-          "Inclut Théan et toute autre langue choisie. La langue native de votre Nation est gratuite."));
+        const langues_nation = data.langues_par_nation || {};
+        const langueNative = state.nation ? langues_nation[state.nation] : null;
+
+        // Langue native (gratuite, héritée de la Nation)
+        if (langueNative) {
+          card.appendChild(el("p", { class: "spec-langue-native" }, [
+            el("strong", null, "Native (gratuite) : "),
+            langueNative,
+            " — ",
+            el("em", null, state.nation),
+          ]));
+        } else {
+          card.appendChild(el("p", { class: "spec-empty-list" },
+            "Choisissez une Nation à l'Étape 1 pour avoir une langue native."));
+        }
+
+        // Liste des langues choisies (avec ×)
+        const choisies = state.langues_choisies || [];
+        if (choisies.length) {
+          const ul = el("ul", { class: "spec-chosen-list" });
+          choisies.forEach((l, i) => {
+            ul.appendChild(el("li", null, [
+              el("span", { class: "chosen-item-name" }, l.nom),
+              el("span", { class: "chosen-item-meta" }, [
+                el("span", { class: "chosen-tag" }, "Langue"),
+                el("span", { class: "chosen-pp" }, "1 PP"),
+              ]),
+              el("button", {
+                class: "chosen-remove",
+                type: "button",
+                "aria-label": "Retirer",
+                onclick: () => {
+                  state.langues_choisies.splice(i, 1);
+                  saveState();
+                  renderEtape3Specificites();
+                  renderEtape3Langues();
+                  refreshPPBar();
+                },
+              }, "×"),
+            ]));
+          });
+          card.appendChild(ul);
+        }
+
+        // Bouton ouverture du sélecteur (modal)
+        card.appendChild(el("button", {
+          class: "btn-add-creation spec-langue-btn",
+          type: "button",
+          onclick: () => ouvrirSelecteurLangues(),
+        }, "Ouvrir le sélecteur de langues →"));
 
       } else if (spec.id === "societe_secrete") {
         const sel = !!state.has_societe_secrete;
@@ -1034,22 +1251,34 @@
       ]));
     }
 
-    // Théan
-    if (langue_univ.nom) {
+    // Théan + autres langues choisies : affichage live
+    const choisies = state.langues_choisies || [];
+    if (choisies.length) {
+      const bloc = el("div", { class: "langue-bloc langue-universelle" }, [
+        el("div", { class: "langue-icone" }, "📜"),
+        el("div", { class: "langue-content" }, [
+          el("strong", null, "Langues supplémentaires (" + choisies.length + " PP) :"),
+          el("p", null, choisies.map(l => l.nom).join(", ")),
+        ]),
+      ]);
+      container.appendChild(bloc);
+    } else if (langue_univ.nom) {
+      // Suggestion : Théan si rien d'autre choisi
       container.appendChild(el("div", { class: "langue-bloc langue-universelle" }, [
         el("div", { class: "langue-icone" }, "📜"),
         el("div", { class: "langue-content" }, [
           el("strong", null, langue_univ.nom + " "),
-          el("span", { class: "langue-cout" }, "(1 PP)"),
+          el("span", { class: "langue-cout" }, "(1 PP — facultatif)"),
           el("p", null, langue_univ.description),
         ]),
       ]));
     }
 
-    // Autres langues : indication
+    // Indication
     container.appendChild(el("p", { class: "langues-extras" }, [
-      el("em", null, "Vous pouvez ajouter d'autres langues (1 PP chacune). "),
-      "Consultez la liste des Nations à l'Étape 1 pour voir leurs langues natives.",
+      el("em", null,
+        "Utilisez le bouton « Ouvrir le sélecteur de langues » dans la carte « Langues » " +
+        "de l'étape 3 pour choisir vos langues supplémentaires."),
     ]));
   }
 

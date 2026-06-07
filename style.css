@@ -1352,6 +1352,7 @@ p { margin: 0 0 0.6em; }
 .continent-ifri           { --continent-color: #c08644; --continent-bg: rgba(192, 134, 68, 0.07); }
 .continent-croissant      { --continent-color: #5a8e8e; --continent-bg: rgba(90, 142, 142, 0.07); }
 .continent-cathay         { --continent-color: #b0743a; --continent-bg: rgba(176, 116, 58, 0.07); }
+.continent-universelle    { --continent-color: #c9a861; --continent-bg: rgba(201, 168, 97, 0.10); }
 .nations-tbl { width: 100%; border-collapse: collapse; }
 .nations-tbl th, .nations-tbl td {
   padding: 0.5rem 0.75rem;
@@ -1384,6 +1385,65 @@ p { margin: 0 0 0.6em; }
 .nation-nom { font-weight: 600; }
 .nation-bonus { font-style: italic; }
 .nation-equiv { opacity: 0.75; font-size: 0.9rem; }
+
+/* ====== Sélecteur de langues (modal) ====== */
+.modal-langues-intro {
+  margin: 0.4rem 0 0.6rem 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.modal-langues-recap {
+  margin: 0.2rem 0 1rem 0;
+  padding: 0.45rem 0.75rem;
+  background: rgba(232, 212, 168, 0.08);
+  border-left: 3px solid var(--accent-soft);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.95rem;
+}
+.langues-section { margin-bottom: 1.25rem; }
+.langues-tbl .langue-cout-cell {
+  text-align: right;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0.9;
+}
+.langue-row.is-selected .nation-nom::before {
+  content: "✓ ";
+  color: var(--accent);
+}
+/* Ligne langue native : verrouillée, doré, toujours cochée */
+.langue-row.langue-native-row {
+  background: rgba(201, 168, 97, 0.14);
+  cursor: default;
+  font-weight: 600;
+}
+.langue-row.langue-native-row:hover,
+.langue-row.langue-native-row:focus {
+  background: rgba(201, 168, 97, 0.14);
+  outline: none;
+}
+.langue-row.langue-native-row .nation-nom::before {
+  content: "🔒 ";
+  color: var(--accent-soft);
+}
+.langue-row.langue-native-row .langue-cout-cell {
+  color: var(--accent-soft);
+  font-style: italic;
+}
+
+/* Étape 3 — affichage de la langue native dans la carte 'Langues' */
+.spec-langue-native {
+  margin: 0.4rem 0;
+  padding: 0.45rem 0.7rem;
+  background: rgba(201, 168, 97, 0.12);
+  border-left: 3px solid #c9a861;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.92rem;
+}
+.spec-langue-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+}
 /* Modal : boutons trait dans la fiche Nation */
 .trait-bouton-row {
   display: flex;
