@@ -128,6 +128,175 @@ _TYPO_REGEX_COMPILED = [(re.compile(p), r) for p, r in TYPO_REGEX_CORRECTIONS]
 # description du Trait Panache dans le PDF — on le retire de Panache (voir
 # extraire_traits) et on le place dans etape_1_intro (texte ci-dessous,
 # reformulé par Guillaume).
+# Étape 3 — PP, âge et spécificités du personnage.
+# Structures des coûts (factuelles, page 48 du livret).
+ETAPE_3 = {
+    "intro": (
+        "Cette étape regroupe la répartition des Points de Personnage (PP) "
+        "et le choix des spécificités qui personnalisent votre Héros. "
+        "Vous obtenez 60 PP à dépenser intégralement, plus quelques bonus "
+        "selon l'âge donné à votre Héros."
+    ),
+    "pp_base": 60,
+    "ages": [
+        {
+            "plage": "15-25 ans",
+            "label": "Jeune",
+            "bonus": "Peut monter un autre Trait au choix, et 8 PP réservés aux Avantages.",
+        },
+        {
+            "plage": "26-35 ans",
+            "label": "Adulte",
+            "bonus": "Un Métier au choix : ses compétences avancées sont au rang 1.",
+        },
+        {
+            "plage": "36-50 ans",
+            "label": "Expérimenté",
+            "bonus": "Une École de la Nation d'origine ET un Métier ou Entraînement — "
+                     "mais pioche un 2ᵉ Travers (Main du Destin).",
+        },
+    ],
+    "rappel_max_creation": (
+        "Une compétence ne peut dépasser 3 rangs à la création, même si elle "
+        "apparaît dans plusieurs spécialisations."
+    ),
+    "rappel_ecoles_specs": (
+        "Les Écoles peuvent inclure des Métiers ou Entraînements en bonus : "
+        "ceux-ci ne comptent pas dans la limite de 3 spécialisations à la création "
+        "(idem pour le bonus d'âge)."
+    ),
+    "specificites": [
+        {
+            "id": "sorcellerie",
+            "nom": "Sorcellerie",
+            "resume": "Faire appel à la sorcellerie de son pays d'origine.",
+            "variantes": [
+                {"label": "Demi-Sang (un parent sorcier, puissance moindre)", "pp": 15},
+                {"label": "Sang-Pur (deux parents même sorcellerie)",         "pp": 25},
+                {"label": "Sang-Mêlé (deux sorciers différents, puissance moindre pour chacun)", "pp": 35},
+            ],
+            "page": None,  # page Sorcelleries pas encore implémentée
+            "page_label": "À venir",
+        },
+        {
+            "id": "ecoles",
+            "nom": "École de Spadassin, Combat, Courtisan ou Professionnelle",
+            "resume": "Débloque le niveau Apprenti, des techniques particulières, "
+                      "et deux spécialisations.",
+            "variantes": [
+                {"label": "Spadassin",                            "pp": 20},
+                {"label": "Combat / Courtisan / Professionnelle", "pp": 15},
+            ],
+            "majoration_hors_nation": {"label": "Si l'école n'est pas de la Nation d'origine", "pp": 5},
+            "max_creation": 2,
+            "pages": [
+                {"label": "Écoles de Spadassin",  "url": "ecoles-spadassin.html"},
+                {"label": "Écoles de Combat",     "url": "ecoles-combat.html"},
+            ],
+        },
+        {
+            "id": "metiers_entrainements",
+            "nom": "Métiers et Entraînements",
+            "resume": "Acquiert une palette de compétences de base et avancées. "
+                      "Toutes les compétences de base passent au rang 1 ; "
+                      "les avancées s'achètent ensuite à prix réduit.",
+            "cout_unit": 3,
+            "max_creation": 3,
+            "rappel": "Hors bonus d'âge et bonus des Écoles.",
+            "pages": [
+                {"label": "Métiers",       "url": "metiers.html"},
+                {"label": "Entraînements", "url": "entrainements.html"},
+            ],
+        },
+        {
+            "id": "competences",
+            "nom": "Compétences (achat au rang)",
+            "resume": "Montez le rang d'une compétence (max 3 à la création). "
+                      "Le coût dépend du fait qu'elle soit de base ou avancée dans "
+                      "une de vos spécialisations.",
+            "variantes": [
+                {"label": "Compétence de base (dans une de vos spé.)",     "pp": 1},
+                {"label": "Compétence avancée (dans une de vos spé.)",     "pp": 2},
+                {"label": "Compétence hors-spécialisation (×rang visé)",   "pp": 3},
+            ],
+            "max_rang_creation": 3,
+            "pages": [
+                {"label": "Compétences principales", "url": "competences.html"},
+                {"label": "Compétences artisanales", "url": "competences-artisanales.html"},
+            ],
+        },
+        {
+            "id": "avantages",
+            "nom": "Avantages",
+            "resume": "Particularités qui font sortir le Héros du lot. Certains "
+                      "ne sont accessibles qu'à la création (Noble, Grand, etc.).",
+            "cout": "Variable selon l'Avantage.",
+            "a_venir": True,
+        },
+        {
+            "id": "langues",
+            "nom": "Langues",
+            "resume": "La langue natale de votre Nation est gratuite. Vous pouvez "
+                      "apprendre d'autres langues (parlées ou écrites).",
+            "cout_unit": 1,
+            "page": "#langues-tableau",
+        },
+        {
+            "id": "societe_secrete",
+            "nom": "Société Secrète",
+            "resume": "Réservé aux Héros expérimentés ou en phase avec le but d'une Société.",
+            "cout": 5,
+            "max_creation": 1,
+            "a_venir": True,
+        },
+    ],
+}
+
+# Langues par Nation (langue native locale) + Théan (lingua franca, latin théan).
+LANGUES_PAR_NATION = {
+    "Avalon":                  "Avalonien",
+    "Inismore":                "Inish",
+    "Marches des Highlands":   "Highlander",
+    "Castille":                "Castillian",
+    "Eisen":                   "Eisenör",
+    "Montaigne":               "Montaginois",
+    "Sarmatie":                "Sarmatien",
+    "Ussura":                  "Ussuran",
+    "Khazaris":                "Khazarien",
+    "Tamatama":                "Tamatama (Tzigane)",
+    "Vestenmannavnjar":        "Vesten",
+    "Vodacce":                 "Vodacci",
+    "Aragosta":                "Aragostan",
+    "Jaragua":                 "Jaragua",
+    "La Bucca":                "Buccoléen",
+    "Numa":                    "Numain",
+    "Rahuri":                  "Rahuri",
+    "Agnivarsie":              "Agnivarsi",
+    "Fuso":                    "Fuso",
+    "Han":                     "Han",
+    "Khazari":                 "Khazari",
+    "Nagaja":                  "Nagaja",
+    "Shenzhou":                "Shenzhou",
+    "Empire Aksoumite":        "Aksoumi (Ge'ez)",
+    "Khémet":                  "Khémetique",
+    "Maghreb":                 "Maghrébin",
+    "Kurufaba mandéniane":     "Mandé",
+    "Royaume de Mbey":         "Mbey (Wolof)",
+    "Anatol Ayh":              "Anatol",
+    "Ashur":                   "Ashur (Araméen)",
+    "Persis":                  "Persan",
+    "Sarmion":                 "Sarmion",
+    "Huitième Mer":            "Arabe tribal",
+}
+
+# Langue universelle (latin théan, parlée par les érudits dans tout Theah)
+LANGUE_UNIVERSELLE = {
+    "nom": "Théan",
+    "description": "L'équivalent du latin de notre monde, encore parlé par les érudits, "
+                   "le clergé, et dans le commerce international à travers tout Theah.",
+}
+
+
 STATISTIQUES_DERIVEES = [
     {
         "nom": "Points de Santé",
@@ -453,6 +622,9 @@ def main() -> None:
         "continents_ordre": CONTINENTS_ORDER,
         "continents_meta": CONTINENTS_META,
         "nations": nations,
+        "etape_3": ETAPE_3,
+        "langues_par_nation": LANGUES_PAR_NATION,
+        "langue_universelle": LANGUE_UNIVERSELLE,
     }
 
     json_text = json.dumps(data, ensure_ascii=False, indent=2)

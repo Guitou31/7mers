@@ -32,6 +32,10 @@
         <span class="creation-step-num">2</span>
         <span class="creation-step-label">Main du Destin</span>
       </button>
+      <button class="creation-step" data-step="3">
+        <span class="creation-step-num">3</span>
+        <span class="creation-step-label">Spécificités &amp; PP</span>
+      </button>
     </nav>
 
     <section class="creation-step-content" data-step-content="0" aria-labelledby="step-0-title">
@@ -94,6 +98,34 @@
       <div class="creation-block" id="arcane-selection-bloc" hidden>
         <h4>Votre tirage</h4>
         <div id="arcane-selection" class="arcane-selection"></div>
+      </div>
+    </section>
+
+    <section class="creation-step-content" data-step-content="3" hidden aria-labelledby="step-3-title">
+      <h3 id="step-3-title">Étape 3 : Spécificités &amp; Points de Personnage</h3>
+
+      <div class="creation-block creation-intro-bloc" id="step-3-intro"></div>
+
+      <div class="creation-block">
+        <h4>Âge de votre Héros</h4>
+        <p class="creation-note">Selon l'âge, votre Héros bénéficie de bonus gratuits.</p>
+        <div id="step-3-ages" class="age-grid"></div>
+      </div>
+
+      <div class="creation-block">
+        <h4>Vos spécificités à acheter</h4>
+        <p class="creation-note">
+          Cliquez sur un bouton de page pour aller faire votre choix dans
+          la section dédiée. La <strong>limite de 3 spécialisations</strong> et le
+          <strong>plafond de 3 rangs à la création</strong> par compétence restent à respecter.
+        </p>
+        <div id="step-3-specificites" class="specificites-grid"></div>
+      </div>
+
+      <div class="creation-block" id="langues-tableau">
+        <h4>Langues</h4>
+        <p class="creation-note" id="langues-description"></p>
+        <div id="step-3-langues" class="langues-bloc"></div>
       </div>
     </section>
   </main>

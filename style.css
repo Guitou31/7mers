@@ -380,6 +380,183 @@ p { margin: 0 0 0.6em; }
   font-size: 1.4rem;
   color: var(--accent);
 }
+/* ====== Étape 3 — PP & Spécificités ====== */
+.budget-pp {
+  background: rgba(195, 70, 70, 0.08);
+  padding: 0.6rem 0.9rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+  margin-top: 0.6rem;
+}
+.age-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.7rem;
+}
+.age-card {
+  background: rgba(232, 212, 168, 0.08);
+  border-left: 3px solid var(--accent-soft);
+  border-radius: 0 4px 4px 0;
+  padding: 0.7rem 0.9rem;
+}
+.age-plage {
+  font-family: 'Cinzel', Georgia, serif;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1rem;
+}
+.age-label {
+  font-size: 0.82rem;
+  opacity: 0.7;
+  font-style: italic;
+  margin-bottom: 0.4rem;
+}
+.age-bonus { margin: 0; line-height: 1.5; font-size: 0.92rem; }
+
+/* Cartes de spécificité */
+.creation-note.rappel {
+  background: rgba(201, 168, 97, 0.10);
+  border-left: 3px solid #c9a861;
+  padding: 0.4rem 0.7rem;
+  border-radius: 0 4px 4px 0;
+  margin-bottom: 0.5rem;
+}
+.specs-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.6rem;
+}
+.spec-card {
+  background: rgba(232, 212, 168, 0.05);
+  border: 2px solid rgba(232, 212, 168, 0.25);
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.spec-card.is-a-venir { opacity: 0.65; }
+.spec-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.spec-card-head h5 {
+  margin: 0;
+  font-family: 'Cinzel', Georgia, serif;
+  color: var(--accent);
+  font-size: 1rem;
+  flex: 1;
+}
+.spec-badge-avenir {
+  background: rgba(201, 168, 97, 0.22);
+  color: #8a6a26;
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.spec-resume {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  opacity: 0.92;
+}
+.spec-couts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.3rem 0;
+}
+.spec-couts-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0.5rem;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+  margin-bottom: 0.2rem;
+  font-size: 0.88rem;
+  gap: 0.5rem;
+}
+.spec-cout-label { flex: 1; }
+.spec-cout-pp {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.spec-cout-unitaire {
+  margin: 0.2rem 0;
+  font-size: 0.92rem;
+}
+.spec-max {
+  margin: 0.2rem 0;
+  font-size: 0.85rem;
+  color: #8b3a3a;
+}
+.spec-majoration {
+  margin: 0.2rem 0;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  font-style: italic;
+}
+.spec-pages-row {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.spec-page-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff !important;
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+.spec-page-btn:hover { background: #a23a3a; }
+.spec-page-btn.is-disabled {
+  background: rgba(232, 212, 168, 0.18);
+  color: rgba(232, 212, 168, 0.5) !important;
+  cursor: not-allowed;
+}
+
+/* Langues */
+.langues-bloc { display: grid; gap: 0.5rem; }
+.langue-bloc {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.7rem;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+  background: rgba(232, 212, 168, 0.06);
+  border-left: 3px solid var(--accent-soft);
+  border-radius: 0 4px 4px 0;
+}
+.langue-native { border-left-color: #6b8b5b; background: rgba(107, 139, 91, 0.08); }
+.langue-universelle { border-left-color: #c9a861; background: rgba(201, 168, 97, 0.08); }
+.langue-icone { font-size: 1.6rem; }
+.langue-content strong {
+  font-family: 'Cinzel', Georgia, serif;
+  color: var(--accent);
+}
+.langue-content p { margin: 0.2rem 0 0; font-size: 0.9rem; line-height: 1.4; }
+.langue-cout {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+.langue-vide { font-style: italic; opacity: 0.75; }
+.langues-extras { margin-top: 0.5rem; font-size: 0.88rem; opacity: 0.85; }
+
 /* Légendes Vertu / Travers (étape 2) */
 .legende-vertu, .legende-travers {
   font-weight: 700;

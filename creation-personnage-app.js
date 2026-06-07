@@ -314,6 +314,7 @@
     renderTraits();
     renderNations();
     renderStatsDerivees();
+    renderEtape3Langues();  // langue native dépend de la Nation
     if (dialog) {
       if (typeof dialog.close === "function") dialog.close();
       else dialog.removeAttribute("open");
@@ -478,6 +479,199 @@
     ]));
   }
 
+  // ===== Étape 3 : PP & Spécificités =====
+  function renderEtape3Intro() {
+    const e3 = data.etape_3;
+    if (!e3) return;
+    const container = document.getElementById("step-3-intro");
+    if (!container) return;
+    container.innerHTML = "";
+    container.appendChild(el("p", { class: "creation-paragraph" }, e3.intro));
+    container.appendChild(el("p", { class: "creation-paragraph budget-pp" }, [
+      "Budget de base : ",
+      el("strong", null, String(e3.pp_base) + " PP"),
+      " à dépenser intégralement (hors bonus d'âge).",
+    ]));
+  }
+
+  function renderEtape3Ages() {
+    const e3 = data.etape_3;
+    if (!e3 || !e3.ages) return;
+    const container = document.getElementById("step-3-ages");
+    if (!container) return;
+    container.innerHTML = "";
+    e3.ages.forEach(age => {
+      container.appendChild(el("div", { class: "age-card" }, [
+        el("div", { class: "age-plage" }, age.plage),
+        el("div", { class: "age-label" }, age.label),
+        el("p", { class: "age-bonus" }, age.bonus),
+      ]));
+    });
+  }
+
+  function renderEtape3Specificites() {
+    const e3 = data.etape_3;
+    if (!e3 || !e3.specificites) return;
+    const container = document.getElementById("step-3-specificites");
+    if (!container) return;
+    container.innerHTML = "";
+
+    // Rappels en haut
+    if (e3.rappel_max_creation) {
+      container.appendChild(el("p", { class: "creation-note rappel" }, [
+        el("strong", null, "Rappel : "),
+        e3.rappel_max_creation,
+      ]));
+    }
+    if (e3.rappel_ecoles_specs) {
+      container.appendChild(el("p", { class: "creation-note rappel" }, [
+        el("strong", null, "Bonus écoles : "),
+        e3.rappel_ecoles_specs,
+      ]));
+    }
+
+    const grid = el("div", { class: "specs-cards-grid" });
+    e3.specificites.forEach(spec => {
+      const card = el("div", { class: "spec-card" + (spec.a_venir ? " is-a-venir" : "") });
+      // En-tête
+      card.appendChild(el("div", { class: "spec-card-head" }, [
+        el("h5", null, spec.nom),
+        spec.a_venir ? el("span", { class: "spec-badge-avenir" }, "À venir") : null,
+      ]));
+      // Résumé
+      if (spec.resume) {
+        card.appendChild(el("p", { class: "spec-resume" }, spec.resume));
+      }
+      // Variantes (sorcellerie, école, compétences)
+      if (spec.variantes && spec.variantes.length) {
+        const ul = el("ul", { class: "spec-couts-list" });
+        spec.variantes.forEach(v => {
+          ul.appendChild(el("li", null, [
+            el("span", { class: "spec-cout-label" }, v.label),
+            el("span", { class: "spec-cout-pp" }, v.pp + " PP"),
+          ]));
+        });
+        card.appendChild(ul);
+      }
+      // Coût unitaire simple (Métiers, Langues)
+      if (spec.cout_unit != null) {
+        card.appendChild(el("p", { class: "spec-cout-unitaire" }, [
+          el("strong", null, spec.cout_unit + " PP"),
+          " par ",
+          spec.id === "langues" ? "langue supplémentaire" : "spécialité",
+          ".",
+        ]));
+      }
+      if (spec.cout != null) {
+        card.appendChild(el("p", { class: "spec-cout-unitaire" }, [
+          el("strong", null, typeof spec.cout === "number" ? spec.cout + " PP" : spec.cout),
+        ]));
+      }
+      // Max création
+      if (spec.max_creation) {
+        card.appendChild(el("p", { class: "spec-max" }, [
+          "⚠ Max à la création : ",
+          el("strong", null, spec.max_creation),
+          spec.rappel ? " (" + spec.rappel + ")" : null,
+        ]));
+      }
+      if (spec.max_rang_creation) {
+        card.appendChild(el("p", { class: "spec-max" }, [
+          "⚠ Max ",
+          el("strong", null, spec.max_rang_creation + " rangs"),
+          " par compétence à la création.",
+        ]));
+      }
+      // Majoration hors nation (écoles)
+      if (spec.majoration_hors_nation) {
+        card.appendChild(el("p", { class: "spec-majoration" }, [
+          "+ ", el("strong", null, spec.majoration_hors_nation.pp + " PP "),
+          spec.majoration_hors_nation.label.toLowerCase(),
+        ]));
+      }
+      // Boutons pages
+      if (spec.pages && spec.pages.length) {
+        const pages = el("div", { class: "spec-pages-row" });
+        spec.pages.forEach(p => {
+          pages.appendChild(el("a", {
+            class: "spec-page-btn",
+            href: p.url,
+            target: "_blank",
+            rel: "noopener",
+          }, [p.label, " →"]));
+        });
+        card.appendChild(pages);
+      } else if (spec.page) {
+        card.appendChild(el("a", {
+          class: "spec-page-btn",
+          href: spec.page,
+          target: spec.page.startsWith("#") ? "_self" : "_blank",
+          rel: "noopener",
+        }, [spec.page_label || "Ouvrir →"]));
+      } else if (spec.page_label) {
+        card.appendChild(el("span", { class: "spec-page-btn is-disabled" }, spec.page_label));
+      }
+      grid.appendChild(card);
+    });
+    container.appendChild(grid);
+  }
+
+  function renderEtape3Langues() {
+    const langues_nation = data.langues_par_nation || {};
+    const langue_univ = data.langue_universelle || {};
+    const container = document.getElementById("step-3-langues");
+    const descEl = document.getElementById("langues-description");
+    if (!container) return;
+    container.innerHTML = "";
+
+    // Description
+    if (descEl) {
+      descEl.innerHTML = "";
+      descEl.appendChild(document.createTextNode(
+        "La langue native de votre Nation est gratuite. Chaque langue supplémentaire (parlée ou écrite) coûte 1 PP."
+      ));
+    }
+
+    // Langue native (selon Nation choisie)
+    const langueNative = state.nation ? langues_nation[state.nation] : null;
+    if (langueNative) {
+      container.appendChild(el("div", { class: "langue-bloc langue-native" }, [
+        el("div", { class: "langue-icone" }, "🗣"),
+        el("div", { class: "langue-content" }, [
+          el("strong", null, "Langue native"),
+          el("p", null, [
+            langueNative,
+            " (gratuite — héritée de votre Nation ",
+            el("em", null, state.nation),
+            ")",
+          ]),
+        ]),
+      ]));
+    } else {
+      container.appendChild(el("div", { class: "langue-bloc langue-vide" }, [
+        el("em", null, "Choisissez une Nation à l'Étape 1 pour voir votre langue native."),
+      ]));
+    }
+
+    // Théan
+    if (langue_univ.nom) {
+      container.appendChild(el("div", { class: "langue-bloc langue-universelle" }, [
+        el("div", { class: "langue-icone" }, "📜"),
+        el("div", { class: "langue-content" }, [
+          el("strong", null, langue_univ.nom + " "),
+          el("span", { class: "langue-cout" }, "(1 PP)"),
+          el("p", null, langue_univ.description),
+        ]),
+      ]));
+    }
+
+    // Autres langues : indication
+    container.appendChild(el("p", { class: "langues-extras" }, [
+      el("em", null, "Vous pouvez ajouter d'autres langues (1 PP chacune). "),
+      "Consultez la liste des Nations à l'Étape 1 pour voir leurs langues natives.",
+    ]));
+  }
+
   // ===== Init =====
   renderIntro();
   renderEtape1Intro();
@@ -487,6 +681,10 @@
   renderEtape2Intro();
   renderArcanes();
   renderArcaneSelection();
+  renderEtape3Intro();
+  renderEtape3Ages();
+  renderEtape3Specificites();
+  renderEtape3Langues();
   const btnTirage = document.getElementById("btn-tirage-aleatoire");
   if (btnTirage) btnTirage.addEventListener("click", tirageAleatoire);
 })();

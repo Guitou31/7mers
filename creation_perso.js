@@ -467,5 +467,190 @@ window.CREATION_PERSO_DATA = {
       "description": "Les Tribus de la 8ème Mer\n\nLa Huitième Mer n'est pas une étendue d'eau, mais un désert immense et ardent, berceau de l'antique civilisation katabique. Ses descendants, les tribus bédouines, sont les seuls à pouvoir survivre dans cet environnement hostile, entre sables brûlants et djinns capricieux. Maîtres du désert, ils en connaissent les pistes secrètes et les points d'eau cachés, ce qui en fait des guides et des alliés indispensables pour l'Empire du Croissant. Divisées en trois grandes qabilats (tribus) – le Chameau, le Cheval et le Loup – et une multitude de clans plus petits, elles sont aujourd'hui au bord de la guerre, menacées par des créatures monstrueuses et déchirées par des querelles internes.\n\n### Apparence\n\nLes peuples de la Huitième Mer sont façonnés par le désert. Leur peau est tannée et burinée par le soleil et le vent, prenant des teintes allant du brun clair au bronze profond. Leurs traits sont souvent anguleux et leurs regards vifs, habitués à scruter les lointains horizons de sable. Leurs cheveux, généralement noirs et épais, sont portés longs et tressés.\n\nLeurs vêtements sont avant tout fonctionnels, conçus pour la durabilité et la protection. Ils portent de longues et robustes robes de coton ou de laine appelées t'ob, souvent de couleur brune ou noire, qu'ils ceignent à la taille. Hommes et femmes couvrent leur tête d'un foulard pour se protéger du soleil, et portent fréquemment un masque de cuir anguleux lors des voyages pour se préserver du sable, mais aussi par pudeur.\n\n### Professions typiques\n\nLa société bédouine est nomade et sa survie dépend de l'élevage de chèvres, de moutons et, surtout, de dromadaires. Chaque tribu se déplace au fil des saisons sur ses terres traditionnelles pour trouver eau et pâturages. Les tribus sont dirigées par un wali, un chef dont le rôle est souvent héréditaire, qui arbitre les diﬀérends et prend les grandes décisions. Au niveau local, les communautés de tentes sont menées par des cheikhs, des chefs choisis pour leur âge et leur expérience, responsables de la sécurité du groupe. Bien que la plupart des tribus soient des éleveurs, certaines se sont spécialisées dans le commerce (la tribu du Chameau), tandis que d'autres ont une\n\nréputation de guerriers redoutables (la tribu du Cheval), louant parfois leurs services à l’Empire.\n\n### Religion\n\nLe désert est une terre d'esprits, et la religion des tribus reflète cette réalité. Historiquement, toutes les tribus pratiquaient l'ahurayasna, une foi ancienne qui vénérait les djinns et dont les légendes sont inscrites dans le paysage et les étoiles, servant à la fois de guide spirituel et de carte pour les nomades. Avec le temps, l'al-dīn, la foi du deuxième Prophète, s'est implantée, notamment au sein de la tribu du Loup. Cependant, même les dīnistes continuent d'observer les anciens rituels par respect ou par prudence, sachant que dans la Huitième Mer, il est dangereux d'ignorer les djinns.\n\n### Comportement\n\nLa survie dans le désert a forgé une culture basée sur une connaissance approfondie de l'environnement et des traditions fortes. L'honneur et les coutumes sociales sont primordiaux. Un visiteur est traité comme un roi, mais il ne doit jamais abuser de l'hospitalité de son hôte, qui est traditionnellement limitée à trois jours. La vie familiale s'organise autour de la tente, qui est le cœur du foyer. Les Bédouins sont des conteurs passionnés et aiment se détendre le soir en fumant l'arguileh et en partageant des poèmes et des chansons. Les relations entre les tribus sont complexes, régies par des codes d'honneur stricts, mais les tensions actuelles pour l'accès à l'eau et aux pâturages menacent de faire éclater des conflits ouverts.",
       "page_pdf": 30
     }
-  ]
+  ],
+  "etape_3": {
+    "intro": "Cette étape regroupe la répartition des Points de Personnage (PP) et le choix des spécificités qui personnalisent votre Héros. Vous obtenez 60 PP à dépenser intégralement, plus quelques bonus selon l'âge donné à votre Héros.",
+    "pp_base": 60,
+    "ages": [
+      {
+        "plage": "15-25 ans",
+        "label": "Jeune",
+        "bonus": "Peut monter un autre Trait au choix, et 8 PP réservés aux Avantages."
+      },
+      {
+        "plage": "26-35 ans",
+        "label": "Adulte",
+        "bonus": "Un Métier au choix : ses compétences avancées sont au rang 1."
+      },
+      {
+        "plage": "36-50 ans",
+        "label": "Expérimenté",
+        "bonus": "Une École de la Nation d'origine ET un Métier ou Entraînement — mais pioche un 2ᵉ Travers (Main du Destin)."
+      }
+    ],
+    "rappel_max_creation": "Une compétence ne peut dépasser 3 rangs à la création, même si elle apparaît dans plusieurs spécialisations.",
+    "rappel_ecoles_specs": "Les Écoles peuvent inclure des Métiers ou Entraînements en bonus : ceux-ci ne comptent pas dans la limite de 3 spécialisations à la création (idem pour le bonus d'âge).",
+    "specificites": [
+      {
+        "id": "sorcellerie",
+        "nom": "Sorcellerie",
+        "resume": "Faire appel à la sorcellerie de son pays d'origine.",
+        "variantes": [
+          {
+            "label": "Demi-Sang (un parent sorcier, puissance moindre)",
+            "pp": 15
+          },
+          {
+            "label": "Sang-Pur (deux parents même sorcellerie)",
+            "pp": 25
+          },
+          {
+            "label": "Sang-Mêlé (deux sorciers différents, puissance moindre pour chacun)",
+            "pp": 35
+          }
+        ],
+        "page": null,
+        "page_label": "À venir"
+      },
+      {
+        "id": "ecoles",
+        "nom": "École de Spadassin, Combat, Courtisan ou Professionnelle",
+        "resume": "Débloque le niveau Apprenti, des techniques particulières, et deux spécialisations.",
+        "variantes": [
+          {
+            "label": "Spadassin",
+            "pp": 20
+          },
+          {
+            "label": "Combat / Courtisan / Professionnelle",
+            "pp": 15
+          }
+        ],
+        "majoration_hors_nation": {
+          "label": "Si l'école n'est pas de la Nation d'origine",
+          "pp": 5
+        },
+        "max_creation": 2,
+        "pages": [
+          {
+            "label": "Écoles de Spadassin",
+            "url": "ecoles-spadassin.html"
+          },
+          {
+            "label": "Écoles de Combat",
+            "url": "ecoles-combat.html"
+          }
+        ]
+      },
+      {
+        "id": "metiers_entrainements",
+        "nom": "Métiers et Entraînements",
+        "resume": "Acquiert une palette de compétences de base et avancées. Toutes les compétences de base passent au rang 1 ; les avancées s'achètent ensuite à prix réduit.",
+        "cout_unit": 3,
+        "max_creation": 3,
+        "rappel": "Hors bonus d'âge et bonus des Écoles.",
+        "pages": [
+          {
+            "label": "Métiers",
+            "url": "metiers.html"
+          },
+          {
+            "label": "Entraînements",
+            "url": "entrainements.html"
+          }
+        ]
+      },
+      {
+        "id": "competences",
+        "nom": "Compétences (achat au rang)",
+        "resume": "Montez le rang d'une compétence (max 3 à la création). Le coût dépend du fait qu'elle soit de base ou avancée dans une de vos spécialisations.",
+        "variantes": [
+          {
+            "label": "Compétence de base (dans une de vos spé.)",
+            "pp": 1
+          },
+          {
+            "label": "Compétence avancée (dans une de vos spé.)",
+            "pp": 2
+          },
+          {
+            "label": "Compétence hors-spécialisation (×rang visé)",
+            "pp": 3
+          }
+        ],
+        "max_rang_creation": 3,
+        "pages": [
+          {
+            "label": "Compétences principales",
+            "url": "competences.html"
+          },
+          {
+            "label": "Compétences artisanales",
+            "url": "competences-artisanales.html"
+          }
+        ]
+      },
+      {
+        "id": "avantages",
+        "nom": "Avantages",
+        "resume": "Particularités qui font sortir le Héros du lot. Certains ne sont accessibles qu'à la création (Noble, Grand, etc.).",
+        "cout": "Variable selon l'Avantage.",
+        "a_venir": true
+      },
+      {
+        "id": "langues",
+        "nom": "Langues",
+        "resume": "La langue natale de votre Nation est gratuite. Vous pouvez apprendre d'autres langues (parlées ou écrites).",
+        "cout_unit": 1,
+        "page": "#langues-tableau"
+      },
+      {
+        "id": "societe_secrete",
+        "nom": "Société Secrète",
+        "resume": "Réservé aux Héros expérimentés ou en phase avec le but d'une Société.",
+        "cout": 5,
+        "max_creation": 1,
+        "a_venir": true
+      }
+    ]
+  },
+  "langues_par_nation": {
+    "Avalon": "Avalonien",
+    "Inismore": "Inish",
+    "Marches des Highlands": "Highlander",
+    "Castille": "Castillian",
+    "Eisen": "Eisenör",
+    "Montaigne": "Montaginois",
+    "Sarmatie": "Sarmatien",
+    "Ussura": "Ussuran",
+    "Khazaris": "Khazarien",
+    "Tamatama": "Tamatama (Tzigane)",
+    "Vestenmannavnjar": "Vesten",
+    "Vodacce": "Vodacci",
+    "Aragosta": "Aragostan",
+    "Jaragua": "Jaragua",
+    "La Bucca": "Buccoléen",
+    "Numa": "Numain",
+    "Rahuri": "Rahuri",
+    "Agnivarsie": "Agnivarsi",
+    "Fuso": "Fuso",
+    "Han": "Han",
+    "Khazari": "Khazari",
+    "Nagaja": "Nagaja",
+    "Shenzhou": "Shenzhou",
+    "Empire Aksoumite": "Aksoumi (Ge'ez)",
+    "Khémet": "Khémetique",
+    "Maghreb": "Maghrébin",
+    "Kurufaba mandéniane": "Mandé",
+    "Royaume de Mbey": "Mbey (Wolof)",
+    "Anatol Ayh": "Anatol",
+    "Ashur": "Ashur (Araméen)",
+    "Persis": "Persan",
+    "Sarmion": "Sarmion",
+    "Huitième Mer": "Arabe tribal"
+  },
+  "langue_universelle": {
+    "nom": "Théan",
+    "description": "L'équivalent du latin de notre monde, encore parlé par les érudits, le clergé, et dans le commerce international à travers tout Theah."
+  }
 };
