@@ -1393,41 +1393,65 @@
     renderEtape3Specificites();
   }
 
+  // Limite de rang à la création de personnage (les rangs 4-5 ne sont
+  // atteignables que par progression en jeu / certains avantages rares).
+  const RANG_MAX_CREATION = 3;
+  const RANG_MAX_ABSOLU = 5;
+
   function buildRangRadios(nom, type_cout) {
     // Rang offert (gratuit) par les métiers / entraînements / bonus d'âge.
     const offerts = (window.CreationState && window.CreationState.getRangsOfferts)
       ? window.CreationState.getRangsOfferts() : {};
     const offert = offerts[nom] || 0;
-    // Rang choisi explicitement par le joueur (≥ offert si défini).
+    // Rang acheté explicitement par le joueur (au-delà de l'offert).
     const choisi = getCompRangChoisi(nom);
     // Rang total affiché = max(rang choisi, rang offert)
     const cur = Math.max(choisi, offert);
     const pp_par_rang = type_cout === "base" ? 1 : type_cout === "avancee" ? 2 : 3;
 
     const row = el("div", { class: "fiche-comp-radios", role: "radiogroup" });
-    for (let r = 0; r <= 3; r++) {
-      const isOffert = r > 0 && r <= offert;          // rangs gratuits (verrouillés)
-      const selected = cur === r;
-      const tooltip = isOffert
-        ? "Rang " + r + " (offert gratuitement par vos spécialités)"
-        : (r === 0
-            ? "Annuler (revient à rang " + offert + ")"
-            : "Rang " + r + " — " + ((r - offert) * pp_par_rang) + " PP à payer");
+    for (let r = 1; r <= RANG_MAX_ABSOLU; r++) {
+      const isOffert = r <= offert;                // rang gratuit (non cliquable)
+      const isFilled = r <= cur;                   // cercle plein (visuel)
+      const isHorsCreation = r > RANG_MAX_CREATION;
+      let cssClass = "fiche-radio";
+      if (isFilled) cssClass += " is-filled";
+      if (isOffert) cssClass += " is-offert";
+      if (isHorsCreation) cssClass += " is-hors-creation";
+
+      let tooltip;
+      if (isOffert) {
+        tooltip = "Rang " + r + " — offert gratuitement par vos spécialités";
+      } else if (isHorsCreation) {
+        tooltip = "Rang " + r + " — au-delà de la création (max " + RANG_MAX_CREATION + ")";
+      } else {
+        const aPayer = (r - offert) * pp_par_rang;
+        if (r === cur && r > offert) {
+          tooltip = "Rang " + r + " — cliquer pour redescendre d'un cran";
+        } else {
+          tooltip = "Rang " + r + " — " + aPayer + " PP à payer";
+        }
+      }
+
       row.appendChild(el("button", {
-        class: "fiche-radio"
-          + (selected ? " is-selected" : "")
-          + (isOffert ? " is-offert" : ""),
+        class: cssClass,
         type: "button",
         role: "radio",
-        "aria-checked": selected ? "true" : "false",
+        "aria-checked": r === cur ? "true" : "false",
+        "aria-disabled": (isOffert || isHorsCreation) ? "true" : null,
         "aria-label": "Rang " + r,
         title: tooltip,
         onclick: () => {
-          // Cliquer un rang < offert : on snap à offert (rien stocké = au rang offert).
-          if (r < offert) { setCompRangChoisi(nom, 0, type_cout); return; }
-          // Cliquer le rang offert lui-même : on retire l'entrée (gratuit, pas d'achat).
-          if (r === offert) { setCompRangChoisi(nom, 0, type_cout); return; }
-          // Rang > offert : on stocke le rang total.
+          if (isOffert || isHorsCreation) return;
+          // Si on clique sur le rang courant, on redescend d'un cran (mais
+          // jamais en dessous de l'offert : on retire alors simplement l'entrée).
+          if (r === cur && r > offert) {
+            const nouveau = r - 1;
+            if (nouveau <= offert) setCompRangChoisi(nom, 0, type_cout);
+            else setCompRangChoisi(nom, nouveau, type_cout);
+            return;
+          }
+          // Sinon : on stocke le rang total cliqué.
           setCompRangChoisi(nom, r, type_cout);
         },
       }));
@@ -1543,14 +1567,15 @@
       if (offert > 0) {
         rangSection.appendChild(el("p", { class: "competence-rang-recap" }, [
           "Rang " + offert + " offert gratuitement par vos spécialités",
-          " (cercles hachurés vert). ",
+          " (cercles pleins verrouillés). ",
           "Cercles supplémentaires : ", el("strong", null, (tc === "avancee" ? "2" : tc === "base" ? "1" : "3") + " PP / rang acheté"),
           ".",
         ]));
       }
       rangSection.appendChild(el("p", { class: "competence-rang-note" }, [
         el("em", null,
-          "⚠ Une compétence ne peut dépasser 3 rangs à la création."),
+          "⚠ Une compétence ne peut dépasser 3 rangs à la création. " +
+          "Les rangs 4 et 5 sont affichés pour visualisation future (progression en jeu)."),
       ]));
       content.appendChild(rangSection);
     });

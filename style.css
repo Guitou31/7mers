@@ -852,49 +852,57 @@ p { margin: 0 0 0.6em; }
   background: rgba(232, 212, 168, 0.20);
   transform: scale(1.08);
 }
-.fiche-radio.is-selected {
-  background: var(--accent);
-  border-color: var(--accent);
-}
-.fiche-comp-base .fiche-radio.is-selected {
+/* Cercle rempli (rang atteint, offert ou acheté) : remplissage plein.
+   Couleur dépend de la section (base = vert, avancée = doré). */
+.fiche-radio.is-filled {
   background: #6b8b5b;
   border-color: #6b8b5b;
 }
-.fiche-comp-avancee .fiche-radio.is-selected {
+.fiche-comp-avancee .fiche-radio.is-filled {
   background: #c9a861;
   border-color: #c9a861;
 }
-/* Rangs offerts gratuitement (par métiers / entraînements / bonus d'âge) :
-   liserés verts + remplissage hachuré subtil pour bien les distinguer
-   des rangs achetés. */
+/* Rang acheté par-dessus l'offert : nuance plus saturée pour distinguer
+   subtilement (sans nuire à la lisibilité). */
+.fiche-radio.is-filled:not(.is-offert) {
+  background: #87a875;
+  border-color: #87a875;
+}
+.fiche-comp-avancee .fiche-radio.is-filled:not(.is-offert) {
+  background: #d9bb70;
+  border-color: #d9bb70;
+}
+/* Rang offert (gratuit) : pas d'effet de survol, pas cliquable. */
 .fiche-radio.is-offert {
   cursor: default;
-  border-color: #6b8b5b;
-  background:
-    repeating-linear-gradient(
-      45deg,
-      rgba(107, 139, 91, 0.45) 0 2px,
-      rgba(107, 139, 91, 0.20) 2px 5px);
 }
-.fiche-radio.is-offert:hover {
+.fiche-radio.is-offert:hover { transform: none; background: #6b8b5b; }
+.fiche-comp-avancee .fiche-radio.is-offert:hover { background: #c9a861; }
+/* Rangs au-delà de la limite création (4 et 5) : visibles mais désactivés. */
+.fiche-radio.is-hors-creation {
+  cursor: not-allowed;
+  border-color: rgba(232, 212, 168, 0.25);
+  background: transparent;
+  opacity: 0.45;
+}
+.fiche-radio.is-hors-creation:hover {
   transform: none;
-  background:
-    repeating-linear-gradient(
-      45deg,
-      rgba(107, 139, 91, 0.55) 0 2px,
-      rgba(107, 139, 91, 0.30) 2px 5px);
+  background: transparent;
 }
-.fiche-radio.is-offert.is-selected {
-  /* L'utilisateur n'a pas acheté de rang : on garde le rendu 'offert'
-     mais avec une bordure plus marquée pour montrer que c'est le rang
-     courant. */
-  border-color: var(--accent);
-  border-width: 3px;
-  background:
-    repeating-linear-gradient(
-      45deg,
-      rgba(107, 139, 91, 0.60) 0 2px,
-      rgba(107, 139, 91, 0.30) 2px 5px);
+/* Séparateur visuel entre les rangs création (1-3) et hors-création (4-5) :
+   on cible le 1er cercle hors-création (le 4e cercle de la rangée). */
+.fiche-radio.is-hors-creation:nth-child(4) {
+  margin-left: 0.55rem;
+  position: relative;
+}
+.fiche-radio.is-hors-creation:nth-child(4)::before {
+  content: "";
+  position: absolute;
+  left: -0.35rem;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background: rgba(232, 212, 168, 0.4);
 }
 
 /* Popup compétence (description + sources) */
