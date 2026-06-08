@@ -480,12 +480,12 @@ window.CREATION_PERSO_DATA = {
       {
         "plage": "26-35 ans",
         "label": "Adulte",
-        "bonus": "Un Métier au choix : ses compétences avancées sont au rang 1."
+        "bonus": "Un Métier au choix : +1 rang gratuit sur ses compétences de base ET avancées."
       },
       {
         "plage": "36-50 ans",
         "label": "Expérimenté",
-        "bonus": "Une École de la Nation d'origine ET un Métier ou Entraînement — mais pioche un 2ᵉ Travers (Main du Destin)."
+        "bonus": "Une École de votre Nation d'origine, offerte (0 PP). Ses spécialisations gagnent +1 rang gratuit."
       }
     ],
     "rappel_max_creation": "Une compétence ne peut dépasser 3 rangs à la création, même si elle apparaît dans plusieurs spécialisations.",

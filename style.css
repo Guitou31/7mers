@@ -1314,6 +1314,19 @@ p { margin: 0 0 0.6em; }
   opacity: 0.78;
   font-style: italic;
 }
+/* Groupes (par type d'école) dans le popup École bonus */
+.popup-bonus-groupe {
+  margin-top: 0.6rem;
+}
+.popup-bonus-groupe-titre {
+  margin: 0 0 0.35rem 0;
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 0.9rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid rgba(232, 212, 168, 0.2);
+  padding-bottom: 0.25rem;
+}
 
 /* Cartes de spécificité */
 .creation-note.rappel {

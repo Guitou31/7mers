@@ -29,14 +29,13 @@
     competences_choisies: [],     // [{nom, rang, type_cout}]
     // Bonus d'âge du Héros :
     //   15-25 → trait libre (+1, max 4)
-    //   26-35 → métier au choix (base ET avancées au rang 1)
-    //   36-50 → métier + entraînement (base ET avancées au rang 1) + une vertu
+    //   26-35 → métier au choix (base ET avancées +1 rang gratuit)
+    //   36-50 → une École de la Nation d'origine (spécialisations +1 rang gratuit)
     bonus_age: {
       trait_libre: null,
       metier_26_35: null,
-      metier_36_50: null,
-      entrainement_36_50: null,
-      vertu_36_50: null,
+      ecole_36_50: null,
+      ecole_36_50_choix_specs: {},  // map { slotBrut: optionChoisie }
     },
     // Saisies manuelles libres
     pp_avantages: 0,
@@ -894,14 +893,78 @@
       pane.appendChild(buildBonusAgeMetier("metier_26_35",
         "Métier au choix — ses compétences de base ET avancées gagnent +1 rang gratuit."));
     } else if (plage === "36-50 ans") {
-      pane.appendChild(buildBonusAgeMetier("metier_36_50",
-        "Métier au choix — base ET avancées +1 rang gratuit."));
-      pane.appendChild(buildBonusAgeEntrainement("entrainement_36_50",
-        "Entraînement au choix — base ET avancées +1 rang gratuit."));
-      pane.appendChild(buildBonusAgeVertu("vertu_36_50",
-        "Une Vertu au choix (parmi les 22 Arcanes)."));
+      pane.appendChild(buildBonusAgeEcole(
+        "Une École de votre Nation d'origine. Ses spécialisations gagnent +1 rang gratuit, comme une école achetée — mais celle-ci est offerte (0 PP)."));
     }
     return pane;
+  }
+
+  function buildBonusAgeEcole(description) {
+    const ba = state.bonus_age || {};
+    const choisi = ba.ecole_36_50;
+    const wrap = el("div", { class: "age-bonus-slot" });
+    wrap.appendChild(el("h6", { class: "age-bonus-slot-titre" }, "École offerte"));
+    wrap.appendChild(el("p", { class: "age-bonus-desc" }, description));
+    if (!state.nation) {
+      wrap.appendChild(el("p", { class: "age-bonus-vide" },
+        "Choisissez une Nation à l'Étape 1 pour activer ce bonus."));
+      return wrap;
+    }
+    if (choisi) {
+      wrap.appendChild(el("p", { class: "age-bonus-choisi" }, [
+        el("strong", null, choisi),
+        " — gratuite, de votre Nation ",
+        el("em", null, state.nation),
+      ]));
+
+      // Si l'école choisie a des slots 'A OU B' dans ses spécialisations,
+      // afficher les sélecteurs ici (le state utilise ecole_36_50_choix_specs).
+      const src = trouverSrcEcole(choisi);
+      if (src && window.CreationState && window.CreationState.analyserSpecialisationsEcole) {
+        const fakeEntry = {
+          nom: choisi,
+          choix_specialisations: ba.ecole_36_50_choix_specs || {},
+        };
+        const analyse = window.CreationState.analyserSpecialisationsEcole(fakeEntry, src);
+        if (analyse.slots && analyse.slots.length) {
+          const sub = el("div", { class: "ecole-specs-choix" });
+          const nbAResoudre = analyse.slots.filter(s => !s.choix).length;
+          sub.appendChild(el("p", { class: "ecole-specs-choix-titre" },
+            "Spécialisations" + (nbAResoudre > 0 ? " (à choisir)" : "")));
+          analyse.slots.forEach(slot => {
+            const ligne = el("div", { class: "ecole-specs-choix-row" });
+            ligne.appendChild(el("span", { class: "ecole-specs-choix-label" }, slot.slotBrut));
+            slot.options.forEach(opt => {
+              const isOptChoisi = slot.choix === opt;
+              ligne.appendChild(el("button", {
+                class: "ecole-specs-choix-opt" + (isOptChoisi ? " is-selected" : ""),
+                type: "button",
+                "aria-pressed": isOptChoisi ? "true" : "false",
+                onclick: () => {
+                  state.bonus_age = state.bonus_age || {};
+                  state.bonus_age.ecole_36_50_choix_specs = state.bonus_age.ecole_36_50_choix_specs || {};
+                  state.bonus_age.ecole_36_50_choix_specs[slot.slotBrut] = isOptChoisi ? null : opt;
+                  saveState();
+                  renderEtape3Ages();
+                  renderEtape3Specificites();
+                  refreshPPBar();
+                },
+              }, opt));
+            });
+            sub.appendChild(ligne);
+          });
+          wrap.appendChild(sub);
+        }
+      }
+    } else {
+      wrap.appendChild(el("p", { class: "age-bonus-vide" }, "Aucune École sélectionnée."));
+    }
+    wrap.appendChild(el("button", {
+      class: "btn-add-creation age-bonus-btn",
+      type: "button",
+      onclick: () => ouvrirPopupBonusEcole(),
+    }, choisi ? "Modifier l'École →" : "Choisir une École →"));
+    return wrap;
   }
 
   function buildBonusAgeTrait() {
@@ -942,44 +1005,6 @@
       type: "button",
       onclick: () => ouvrirPopupBonusMetier(slotKey),
     }, choisi ? "Modifier le Métier →" : "Choisir un Métier →"));
-    return wrap;
-  }
-
-  function buildBonusAgeEntrainement(slotKey, description) {
-    const ba = state.bonus_age || {};
-    const choisi = ba[slotKey];
-    const wrap = el("div", { class: "age-bonus-slot" });
-    wrap.appendChild(el("h6", { class: "age-bonus-slot-titre" }, "Entraînement bonus"));
-    wrap.appendChild(el("p", { class: "age-bonus-desc" }, description));
-    if (choisi) {
-      wrap.appendChild(el("p", { class: "age-bonus-choisi" }, [el("strong", null, choisi)]));
-    } else {
-      wrap.appendChild(el("p", { class: "age-bonus-vide" }, "Aucun Entraînement sélectionné."));
-    }
-    wrap.appendChild(el("button", {
-      class: "btn-add-creation age-bonus-btn",
-      type: "button",
-      onclick: () => ouvrirPopupBonusEntrainement(slotKey),
-    }, choisi ? "Modifier l'Entraînement →" : "Choisir un Entraînement →"));
-    return wrap;
-  }
-
-  function buildBonusAgeVertu(slotKey, description) {
-    const ba = state.bonus_age || {};
-    const choisi = ba[slotKey];
-    const wrap = el("div", { class: "age-bonus-slot" });
-    wrap.appendChild(el("h6", { class: "age-bonus-slot-titre" }, "Vertu (Arcane)"));
-    wrap.appendChild(el("p", { class: "age-bonus-desc" }, description));
-    if (choisi) {
-      wrap.appendChild(el("p", { class: "age-bonus-choisi" }, [el("strong", null, choisi)]));
-    } else {
-      wrap.appendChild(el("p", { class: "age-bonus-vide" }, "Aucune Vertu sélectionnée."));
-    }
-    wrap.appendChild(el("button", {
-      class: "btn-add-creation age-bonus-btn",
-      type: "button",
-      onclick: () => ouvrirPopupBonusVertu(slotKey),
-    }, choisi ? "Modifier la Vertu →" : "Choisir une Vertu →"));
     return wrap;
   }
 
@@ -1146,111 +1171,105 @@
     });
   }
 
-  function ouvrirPopupBonusEntrainement(slotKey) {
-    ouvrirPopupBonusAge("popup-bonus-entrainement-" + slotKey, (content, dialog) => {
-      const ents = (window.ENTRAINEMENTS_DATA && window.ENTRAINEMENTS_DATA.entrainements) || [];
+  // Popup École bonus (36-50 ans) : filtrée par Nation, groupée par type.
+  function ouvrirPopupBonusEcole() {
+    ouvrirPopupBonusAge("popup-bonus-ecole-36-50", (content, dialog) => {
       const ba = state.bonus_age || {};
-      content.appendChild(el("div", { class: "detail-header" }, [
-        el("h2", null, "Entraînement bonus — au choix"),
-      ]));
-      content.appendChild(el("p", { class: "modal-langues-intro" }, [
-        "Sélectionnez l'Entraînement qui sera votre bonus d'âge. ",
-        el("strong", null, "Ses compétences de base ET avancées gagneront +1 rang gratuit"),
-        ".",
-      ]));
-      const tri = ents.slice().sort((a, b) =>
-        a.nom.localeCompare(b.nom, "fr", { sensitivity: "base" }));
-      const ul = el("ul", { class: "popup-bonus-list" });
-      tri.forEach(en => {
-        const choisi = ba[slotKey] === en.nom;
-        ul.appendChild(el("li", {
-          class: "popup-bonus-item" + (choisi ? " is-selected" : ""),
-          tabindex: "0",
-          role: "button",
-          "aria-pressed": choisi ? "true" : "false",
-          onclick: () => {
-            state.bonus_age = state.bonus_age || {};
-            state.bonus_age[slotKey] = choisi ? null : en.nom;
-            saveState();
-            renderEtape3Ages();
-            renderEtape3Specificites();
-            refreshPPBar();
-            dialog.close();
-          },
-        }, [
-          el("span", { class: "popup-bonus-nom" }, en.nom),
-          en.description
-            ? el("span", { class: "popup-bonus-desc" }, en.description.slice(0, 90)
-              + (en.description.length > 90 ? "…" : ""))
-            : null,
-        ]));
-      });
-      content.appendChild(ul);
-      if (ba[slotKey]) {
-        content.appendChild(el("button", {
-          class: "btn-mes-spe-clear",
-          type: "button",
-          onclick: () => {
-            state.bonus_age[slotKey] = null;
-            saveState();
-            renderEtape3Ages();
-            renderEtape3Specificites();
-            refreshPPBar();
-            dialog.close();
-          },
-        }, "× Retirer cet Entraînement bonus"));
-      }
-    });
-  }
+      const choisi = ba.ecole_36_50;
+      const nation = state.nation;
 
-  function ouvrirPopupBonusVertu(slotKey) {
-    ouvrirPopupBonusAge("popup-bonus-vertu-" + slotKey, (content, dialog) => {
-      const arcanes = (window.ARCANES_DATA && window.ARCANES_DATA.arcanes) || [];
-      const ba = state.bonus_age || {};
       content.appendChild(el("div", { class: "detail-header" }, [
-        el("h2", null, "Vertu bonus — au choix"),
+        el("h2", null, "École offerte — 36-50 ans"),
       ]));
       content.appendChild(el("p", { class: "modal-langues-intro" }, [
-        "Sélectionnez la Vertu (parmi les 22 Arcanes) qui sera votre bonus d'âge.",
+        nation
+          ? el("span", null, ["Sélectionnez une École enseignée dans votre Nation : ",
+              el("strong", null, nation), "."])
+          : el("strong", { class: "spec-empty-list" },
+              "Choisissez d'abord une Nation à l'Étape 1."),
       ]));
-      const tri = arcanes.slice().sort((a, b) =>
-        (a.vertu || "").localeCompare(b.vertu || "", "fr", { sensitivity: "base" }));
-      const ul = el("ul", { class: "popup-bonus-list" });
-      tri.forEach(arc => {
-        if (!arc.vertu) return;
-        const choisi = ba[slotKey] === arc.vertu;
-        ul.appendChild(el("li", {
-          class: "popup-bonus-item" + (choisi ? " is-selected" : ""),
-          tabindex: "0",
-          role: "button",
-          "aria-pressed": choisi ? "true" : "false",
-          onclick: () => {
-            state.bonus_age = state.bonus_age || {};
-            state.bonus_age[slotKey] = choisi ? null : arc.vertu;
-            saveState();
-            renderEtape3Ages();
-            refreshPPBar();
-            dialog.close();
-          },
-        }, [
-          el("span", { class: "popup-bonus-nom" }, arc.vertu),
-          el("span", { class: "popup-bonus-desc" },
-            "Arcane " + (arc.numero != null ? arc.numero + " · " : "") + (arc.nom || "")),
+      if (!nation) return;
+
+      // Filtre par Nation puis groupe par type
+      const ecData = (window.ECOLES_DATA && window.ECOLES_DATA.ecoles) || [];
+      const ecCombat = (window.ECOLES_COMBAT_DATA && window.ECOLES_COMBAT_DATA.ecoles) || [];
+      function filtreNation(arr) {
+        return arr.filter(ec => Array.isArray(ec.nations) && ec.nations.includes(nation));
+      }
+      const groupes = [
+        { titre: "Écoles de Spadassin",  ecoles: filtreNation(ecData) },
+        { titre: "Écoles de Combat",     ecoles: filtreNation(ecCombat) },
+        { titre: "Écoles de Courtisan",  ecoles: [] }, // (placeholder pour future addition)
+      ];
+
+      // Récap
+      const nbTotal = groupes.reduce((a, g) => a + g.ecoles.length, 0);
+      if (nbTotal === 0) {
+        content.appendChild(el("p", { class: "spec-empty-list" },
+          "Aucune École référencée pour la Nation " + nation + "."));
+        return;
+      }
+      content.appendChild(el("p", { class: "modal-langues-recap" }, [
+        el("strong", null, nbTotal),
+        " École" + (nbTotal > 1 ? "s" : "") + " disponible" + (nbTotal > 1 ? "s" : "") +
+        " pour " + nation + " (réparties par type) :",
+      ]));
+
+      groupes.forEach(g => {
+        if (g.ecoles.length === 0) return;
+        const tri = g.ecoles.slice().sort((a, b) =>
+          a.nom.localeCompare(b.nom, "fr", { sensitivity: "base" }));
+        const ul = el("ul", { class: "popup-bonus-list" });
+        tri.forEach(ec => {
+          const isChoisi = choisi === ec.nom;
+          const armeStr = ec.arme_display || ec.arme || "";
+          ul.appendChild(el("li", {
+            class: "popup-bonus-item" + (isChoisi ? " is-selected" : ""),
+            tabindex: "0",
+            role: "button",
+            "aria-pressed": isChoisi ? "true" : "false",
+            onclick: () => {
+              state.bonus_age = state.bonus_age || {};
+              state.bonus_age.ecole_36_50 = isChoisi ? null : ec.nom;
+              // Réinitialise les choix de slots A/B quand on change d'école
+              state.bonus_age.ecole_36_50_choix_specs = {};
+              saveState();
+              renderEtape3Ages();
+              renderEtape3Specificites();
+              refreshPPBar();
+              dialog.close();
+            },
+          }, [
+            el("span", { class: "popup-bonus-nom" }, ec.nom),
+            armeStr
+              ? el("span", { class: "popup-bonus-desc" },
+                  "Arme : " + armeStr + (ec.description_courte
+                    ? " — " + ec.description_courte.slice(0, 70)
+                      + (ec.description_courte.length > 70 ? "…" : "")
+                    : ""))
+              : null,
+          ]));
+        });
+        content.appendChild(el("div", { class: "popup-bonus-groupe" }, [
+          el("h5", { class: "popup-bonus-groupe-titre" }, g.titre + " (" + tri.length + ")"),
+          ul,
         ]));
       });
-      content.appendChild(ul);
-      if (ba[slotKey]) {
+
+      if (ba.ecole_36_50) {
         content.appendChild(el("button", {
           class: "btn-mes-spe-clear",
           type: "button",
           onclick: () => {
-            state.bonus_age[slotKey] = null;
+            state.bonus_age.ecole_36_50 = null;
+            state.bonus_age.ecole_36_50_choix_specs = {};
             saveState();
             renderEtape3Ages();
+            renderEtape3Specificites();
             refreshPPBar();
             dialog.close();
           },
-        }, "× Retirer cette Vertu bonus"));
+        }, "× Retirer cette École bonus"));
       }
     });
   }

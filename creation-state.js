@@ -242,24 +242,29 @@
     });
 
     // ===== Bonus d'âge =====
-    // 26-35 / 36-50 : le métier (et l'entraînement 36-50) bonus conserve
-    // sa distinction base/avancée — ces compétences sont juste *aussi*
-    // listées comme accessibles via ces sources. Le « + 1 rang gratuit »
-    // sur les avancées est géré séparément par getRangsOfferts().
+    // 26-35 ans : un Métier au choix (base + avancées comptent comme
+    //              sources de compétences, +1 rang offert via getRangsOfferts).
+    // 36-50 ans : une École de la Nation d'origine (au choix). Traitée
+    //              comme une école normale, mais gratuite (non comptée dans
+    //              le total PP). Son nom est stocké dans bonus_age.ecole_36_50.
     const ba = state.bonus_age || {};
-    function ajouterBonusComme(src, label) {
-      if (!src) return;
-      ajouterDe(src, label);
+    if (ba.metier_26_35) {
+      const src = mData.find(x => x.nom === ba.metier_26_35);
+      if (src) ajouterDe(src, "Bonus âge 26-35 · Métier " + ba.metier_26_35);
     }
-    if (ba.metier_26_35) ajouterBonusComme(
-      mData.find(x => x.nom === ba.metier_26_35),
-      "Bonus âge 26-35 · Métier " + ba.metier_26_35);
-    if (ba.metier_36_50) ajouterBonusComme(
-      mData.find(x => x.nom === ba.metier_36_50),
-      "Bonus âge 36-50 · Métier " + ba.metier_36_50);
-    if (ba.entrainement_36_50) ajouterBonusComme(
-      eData.find(x => x.nom === ba.entrainement_36_50),
-      "Bonus âge 36-50 · Entraînement " + ba.entrainement_36_50);
+    if (ba.ecole_36_50) {
+      const srcEc = ecData.find(x => x.nom === ba.ecole_36_50)
+                 || ecCombatData.find(x => x.nom === ba.ecole_36_50);
+      if (srcEc) {
+        const label = "Bonus âge 36-50 · École " + ba.ecole_36_50;
+        // Pour les choix 'A OU B' on s'appuie sur l'entrée fictive ci-dessous.
+        const fakeEntry = { nom: ba.ecole_36_50, choix_specialisations: ba.ecole_36_50_choix_specs || {} };
+        const analyse = analyserSpecialisationsEcole(fakeEntry, srcEc);
+        analyse.resolved.forEach(c => {
+          baseSet.add(c); pushSource("base", c, label);
+        });
+      }
+    }
 
     return { base: baseSet, avancee: avSet, sources: sources };
   }
@@ -308,16 +313,27 @@
       offrirListe(analyse.resolved);
     });
 
-    // Bonus d'âge : +1 rang sur base ET avancées.
+    // Bonus d'âge 26-35 (Métier) : +1 rang sur base ET avancées.
     const ba = state.bonus_age || {};
-    function bonusComplet(src) {
-      if (!src) return;
-      offrirListe(src.competences_base);
-      offrirListe(src.competences_avancees);
+    if (ba.metier_26_35) {
+      const src = mData.find(x => x.nom === ba.metier_26_35);
+      if (src) {
+        offrirListe(src.competences_base);
+        offrirListe(src.competences_avancees);
+      }
     }
-    bonusComplet(mData.find(x => x.nom === ba.metier_26_35));
-    bonusComplet(mData.find(x => x.nom === ba.metier_36_50));
-    bonusComplet(eData.find(x => x.nom === ba.entrainement_36_50));
+
+    // Bonus d'âge 36-50 (École) : +1 rang sur ses spécialisations résolues
+    // (comme une école normale).
+    if (ba.ecole_36_50) {
+      const srcEc = ecData.find(x => x.nom === ba.ecole_36_50)
+                 || ecCombatData.find(x => x.nom === ba.ecole_36_50);
+      if (srcEc) {
+        const fakeEntry = { nom: ba.ecole_36_50, choix_specialisations: ba.ecole_36_50_choix_specs || {} };
+        const analyse = analyserSpecialisationsEcole(fakeEntry, srcEc);
+        offrirListe(analyse.resolved);
+      }
+    }
 
     return offerts;
   }
