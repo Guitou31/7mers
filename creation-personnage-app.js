@@ -162,7 +162,15 @@
     }
     if (children != null) {
       if (!Array.isArray(children)) children = [children];
-      for (const c of children) { if (c == null) continue; e.appendChild(typeof c === "string" ? document.createTextNode(c) : c); }
+      for (const c of children) {
+        if (c == null) continue;
+        // Strings ET nombres → text node (sinon appendChild planterait sur un Number).
+        if (typeof c === "string" || typeof c === "number") {
+          e.appendChild(document.createTextNode(String(c)));
+        } else {
+          e.appendChild(c);
+        }
+      }
     }
     return e;
   }
@@ -526,7 +534,7 @@
         ? el("span", null, ["Native : ", el("strong", null, langueNative), " "])
         : el("em", { class: "spec-empty-list" }, "Pas de langue native (Nation non choisie)"),
       " · ",
-      el("strong", null, nbChoisies),
+      el("strong", null, String(nbChoisies)),
       " langue" + (nbChoisies > 1 ? "s" : "") + " supplémentaire" + (nbChoisies > 1 ? "s" : ""),
       " = ", el("strong", null, nbChoisies + " PP"),
     ]));
