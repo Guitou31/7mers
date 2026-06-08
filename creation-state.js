@@ -104,6 +104,44 @@
    * @param {string[]} ecoleNations Liste des nations natives de l'école (pour
    *                                déterminer auto si hors-Nation)
    */
+  // Mapping Nation officielle (étape 1) → noms équivalents utilisés dans
+  // les écoles. Vestenmannavnjar abrégé en 'Vesten', petits États groupés
+  // par étiquette de continent dans les données d'écoles.
+  const NATION_ALIASES_ECOLES = {
+    "Vestenmannavnjar":     ["Vesten"],
+    "Aragosta":             ["Nations Pirates"],
+    "Jaragua":              ["Nations Pirates"],
+    "La Bucca":             ["Nations Pirates"],
+    "Numa":                 ["Nations Pirates"],
+    "Rahuri":               ["Nations Pirates"],
+    "Agnivarsie":           ["Cathay"],
+    "Fuso":                 ["Cathay"],
+    "Han":                  ["Cathay"],
+    "Khazari":              ["Cathay"],
+    "Nagaja":               ["Cathay"],
+    "Shenzhou":             ["Cathay"],
+    "Empire Aksoumite":     ["Ifri"],
+    "Khémet":               ["Ifri"],
+    "Maghreb":              ["Ifri"],
+    "Kurufaba mandéniane":  ["Ifri"],
+    "Royaume de Mbey":      ["Ifri"],
+    "Anatol Ayh":           ["Empire du Croissant"],
+    "Ashur":                ["Empire du Croissant"],
+    "Persis":               ["Empire du Croissant"],
+    "Sarmion":              ["Empire du Croissant"],
+    "Huitième Mer":         ["Empire du Croissant"],
+  };
+  function nationsCandidatesEcoles(nationOff) {
+    if (!nationOff) return [];
+    const alias = NATION_ALIASES_ECOLES[nationOff] || [];
+    return [nationOff].concat(alias);
+  }
+  function ecoleAppartientNation(ecoleNations, nationOff) {
+    if (!Array.isArray(ecoleNations) || !ecoleNations.length) return false;
+    const cand = nationsCandidatesEcoles(nationOff);
+    return ecoleNations.some(n => cand.includes(n));
+  }
+
   function toggleEcole(nom, type, ecoleNations) {
     const state = load();
     const list = _ensureList(state, "ecoles_choisies");
@@ -114,10 +152,10 @@
       return false;
     } else {
       // Détection auto hors-Nation : si la Nation choisie n'est pas dans
-      // les nations natives de l'école → +5 PP de majoration.
+      // les nations natives de l'école (avec mapping des alias) → +5 PP.
       let hors_nation = false;
       if (state.nation && Array.isArray(ecoleNations) && ecoleNations.length) {
-        hors_nation = !ecoleNations.includes(state.nation);
+        hors_nation = !ecoleAppartientNation(ecoleNations, state.nation);
       }
       // choix_specialisations : map { slotBrut: optionChoisie } pour les
       // spécialisations contenant ' OU ' qui demandent un choix de l'utilisateur.
@@ -481,5 +519,9 @@
     coutCompetenceTotal,
     // Écoles : spécialisations 'A OU B'
     analyserSpecialisationsEcole,
+    // Mapping Nation officielle ↔ équivalents écoles
+    NATION_ALIASES_ECOLES,
+    nationsCandidatesEcoles,
+    ecoleAppartientNation,
   };
 })();

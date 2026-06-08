@@ -1190,11 +1190,12 @@
       ]));
       if (!nation) return;
 
-      // Filtre par Nation puis groupe par type
+      // Filtre par Nation (en tenant compte des alias : 'Vestenmannavnjar'
+      // ↔ 'Vesten', 'Aragosta' ↔ 'Nations Pirates', etc.) puis groupe par type
       const ecData = (window.ECOLES_DATA && window.ECOLES_DATA.ecoles) || [];
       const ecCombat = (window.ECOLES_COMBAT_DATA && window.ECOLES_COMBAT_DATA.ecoles) || [];
       function filtreNation(arr) {
-        return arr.filter(ec => Array.isArray(ec.nations) && ec.nations.includes(nation));
+        return arr.filter(ec => ecoleEstDeNation(ec, nation));
       }
       const groupes = [
         { titre: "Écoles de Spadassin",  ecoles: filtreNation(ecData) },
@@ -1422,6 +1423,17 @@
     const ecData = (window.ECOLES_DATA && window.ECOLES_DATA.ecoles) || [];
     const ecCombat = (window.ECOLES_COMBAT_DATA && window.ECOLES_COMBAT_DATA.ecoles) || [];
     return ecData.find(x => x.nom === nom) || ecCombat.find(x => x.nom === nom) || null;
+  }
+
+  // Filtrage 'École de cette Nation' avec gestion des alias de noms
+  // (Vestenmannavnjar↔Vesten, Aragosta↔Nations Pirates, etc.).
+  // Délégation à CreationState.ecoleAppartientNation.
+  function ecoleEstDeNation(ec, nationOff) {
+    if (!ec || !Array.isArray(ec.nations)) return false;
+    if (window.CreationState && window.CreationState.ecoleAppartientNation) {
+      return window.CreationState.ecoleAppartientNation(ec.nations, nationOff);
+    }
+    return ec.nations.includes(nationOff);
   }
 
   function buildRangRadios(nom, type_cout) {
