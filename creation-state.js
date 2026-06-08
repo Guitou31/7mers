@@ -165,11 +165,53 @@
     }
   }
 
-  // ===== Spécialisations d'écoles : gestion des choix 'A OU B' =====
-  // Une spec brute peut être 'Athlétisme' (1 compétence directe) ou
-  // 'Hache OU Épée 2 mains' (le joueur doit choisir entre 2+ options).
-  // Cette fonction renvoie pour chaque entrée d'école une structure :
-  //   { resolved: [comp...], slots: [{slotBrut, options: [...], choix}] }
+  // ===== Spécialisations d'écoles : résolution vers compétences réelles =====
+  // Une « spécialisation » d'école au sens 7ème Mer est généralement le nom
+  // d'un Entraînement (Athlétisme, Escrime, Combat de rue…) — pas une
+  // compétence en soi. Sélectionner cette spécialisation revient à apprendre
+  // toutes ses compétences de base au rang 1.
+  //
+  // Variante : 'Escrime (Rapière)' / 'Hache à deux mains' etc. sont aussi
+  // possibles, on tente alors un déballage avec substitution d'arme.
+  //
+  // Si rien ne matche, on retombe sur la chaîne brute comme une compétence
+  // directe (fallback, utile pour les futures additions atypiques).
+  function _resoudreSpecVersCompetences(specBrute) {
+    if (typeof specBrute !== "string" || !specBrute) return [];
+    const entrs = (window.ENTRAINEMENTS_DATA && window.ENTRAINEMENTS_DATA.entrainements) || [];
+    const metiers = (window.METIERS_DATA && window.METIERS_DATA.metiers) || [];
+
+    // 1) Match exact avec un entraînement.
+    let src = entrs.find(e => e.nom === specBrute);
+    if (src && Array.isArray(src.competences_base)) return src.competences_base.slice();
+
+    // 2) Variante 'X (Y)' ou 'X(Y)' (Escrime (Rapière), Escrime(Rapière)…) :
+    //    on cherche l'entraînement 'X' et on remplace chaque occurrence du
+    //    mot X par Y dans les noms de compétences (pour passer de
+    //    'Attaque (Escrime)' à 'Attaque (Rapière)').
+    const m = specBrute.match(/^([^()]+?)\s*\(([^)]+)\)\s*$/);
+    if (m) {
+      const xBase = m[1].trim();
+      const yArme = m[2].trim();
+      src = entrs.find(e => e.nom === xBase);
+      if (src && Array.isArray(src.competences_base)) {
+        const re = new RegExp("\\b" + xBase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b", "g");
+        return src.competences_base.map(c => c.replace(re, yArme));
+      }
+    }
+
+    // 3) Match exact avec un métier (rare mais possible).
+    src = metiers.find(x => x.nom === specBrute);
+    if (src && Array.isArray(src.competences_base)) return src.competences_base.slice();
+
+    // 4) Fallback : la spec est traitée comme une compétence directe.
+    return [specBrute];
+  }
+
+  // Analyse les spécialisations d'une école et renvoie :
+  //   { resolved: [comp...], slots: [{slotBrut, options, choix}] }
+  // - `resolved` contient les compétences réelles (déballées) déjà accessibles.
+  // - `slots` liste les choix 'A OU B' encore ouverts (pour l'UI).
   function analyserSpecialisationsEcole(ecoleEntry, srcEcole) {
     const result = { resolved: [], slots: [] };
     if (!srcEcole || !Array.isArray(srcEcole.specialisations)) return result;
@@ -177,17 +219,16 @@
     srcEcole.specialisations.forEach(specBrute => {
       if (typeof specBrute !== "string") return;
       if (/ OU /i.test(specBrute)) {
-        const options = specBrute.split(/\s+OU\s+/i)
-          .map(s => s.trim()).filter(Boolean);
+        const options = specBrute.split(/\s+OU\s+/i).map(s => s.trim()).filter(Boolean);
         const choixUtil = choix[specBrute] || null;
         if (choixUtil && options.includes(choixUtil)) {
-          result.resolved.push(choixUtil);
+          // Le choix est déballé en compétences réelles.
+          _resoudreSpecVersCompetences(choixUtil).forEach(c => result.resolved.push(c));
         }
-        result.slots.push({
-          slotBrut: specBrute, options: options, choix: choixUtil,
-        });
+        result.slots.push({ slotBrut: specBrute, options: options, choix: choixUtil });
       } else {
-        result.resolved.push(specBrute);
+        // Spec directe : on déballe.
+        _resoudreSpecVersCompetences(specBrute).forEach(c => result.resolved.push(c));
       }
     });
     return result;
@@ -280,28 +321,15 @@
     });
 
     // ===== Bonus d'âge =====
-    // 26-35 ans : un Métier au choix (base + avancées comptent comme
-    //              sources de compétences, +1 rang offert via getRangsOfferts).
-    // 36-50 ans : une École de la Nation d'origine (au choix). Traitée
-    //              comme une école normale, mais gratuite (non comptée dans
-    //              le total PP). Son nom est stocké dans bonus_age.ecole_36_50.
+    // 26-35 ans : un Métier au choix (base + avancées comptent comme sources
+    //              de compétences, +1 rang offert via getRangsOfferts).
+    // 36-50 ans : une École de la Nation d'origine ajoutée comme une école
+    //              normale (déjà parcourue ci-dessus dans ecoles_choisies),
+    //              donc pas de traitement spécifique ici.
     const ba = state.bonus_age || {};
     if (ba.metier_26_35) {
       const src = mData.find(x => x.nom === ba.metier_26_35);
       if (src) ajouterDe(src, "Bonus âge 26-35 · Métier " + ba.metier_26_35);
-    }
-    if (ba.ecole_36_50) {
-      const srcEc = ecData.find(x => x.nom === ba.ecole_36_50)
-                 || ecCombatData.find(x => x.nom === ba.ecole_36_50);
-      if (srcEc) {
-        const label = "Bonus âge 36-50 · École " + ba.ecole_36_50;
-        // Pour les choix 'A OU B' on s'appuie sur l'entrée fictive ci-dessous.
-        const fakeEntry = { nom: ba.ecole_36_50, choix_specialisations: ba.ecole_36_50_choix_specs || {} };
-        const analyse = analyserSpecialisationsEcole(fakeEntry, srcEc);
-        analyse.resolved.forEach(c => {
-          baseSet.add(c); pushSource("base", c, label);
-        });
-      }
     }
 
     return { base: baseSet, avancee: avSet, sources: sources };
@@ -352,24 +380,14 @@
     });
 
     // Bonus d'âge 26-35 (Métier) : +1 rang sur base ET avancées.
+    // (Le bonus 36-50 = école achetée normalement, déjà comptée plus haut
+    //  dans la boucle state.ecoles_choisies.)
     const ba = state.bonus_age || {};
     if (ba.metier_26_35) {
       const src = mData.find(x => x.nom === ba.metier_26_35);
       if (src) {
         offrirListe(src.competences_base);
         offrirListe(src.competences_avancees);
-      }
-    }
-
-    // Bonus d'âge 36-50 (École) : +1 rang sur ses spécialisations résolues
-    // (comme une école normale).
-    if (ba.ecole_36_50) {
-      const srcEc = ecData.find(x => x.nom === ba.ecole_36_50)
-                 || ecCombatData.find(x => x.nom === ba.ecole_36_50);
-      if (srcEc) {
-        const fakeEntry = { nom: ba.ecole_36_50, choix_specialisations: ba.ecole_36_50_choix_specs || {} };
-        const analyse = analyserSpecialisationsEcole(fakeEntry, srcEc);
-        offrirListe(analyse.resolved);
       }
     }
 

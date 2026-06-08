@@ -485,7 +485,7 @@ window.CREATION_PERSO_DATA = {
       {
         "plage": "36-50 ans",
         "label": "Expérimenté",
-        "bonus": "Une École de votre Nation d'origine, offerte (0 PP). Ses spécialisations gagnent +1 rang gratuit."
+        "bonus": "Une École de votre Nation d'origine (au choix). Comme une école classique : coût normal et ses spécialisations donnent +1 rang gratuit aux compétences de base."
       }
     ],
     "rappel_max_creation": "Une compétence ne peut dépasser 3 rangs à la création, même si elle apparaît dans plusieurs spécialisations.",

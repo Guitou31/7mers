@@ -29,13 +29,14 @@
     competences_choisies: [],     // [{nom, rang, type_cout}]
     // Bonus d'âge du Héros :
     //   15-25 → trait libre (+1, max 4)
-    //   26-35 → métier au choix (base ET avancées +1 rang gratuit)
-    //   36-50 → une École de la Nation d'origine (spécialisations +1 rang gratuit)
+    //   26-35 → métier au choix (base ET avancées +1 rang gratuit, en plus
+    //            d'apparaître comme source de compétences ; non payé)
+    //   36-50 → pointeur (par nom) vers une École de la Nation d'origine
+    //            ajoutée de manière classique dans state.ecoles_choisies.
     bonus_age: {
       trait_libre: null,
       metier_26_35: null,
       ecole_36_50: null,
-      ecole_36_50_choix_specs: {},  // map { slotBrut: optionChoisie }
     },
     // Saisies manuelles libres
     pp_avantages: 0,
@@ -894,7 +895,7 @@
         "Métier au choix — ses compétences de base ET avancées gagnent +1 rang gratuit."));
     } else if (plage === "36-50 ans") {
       pane.appendChild(buildBonusAgeEcole(
-        "Une École de votre Nation d'origine. Ses spécialisations gagnent +1 rang gratuit, comme une école achetée — mais celle-ci est offerte (0 PP)."));
+        "Choisissez une École de votre Nation d'origine. Elle s'ajoute de manière classique (coût normal, ses spécialisations donnent +1 rang gratuit sur les compétences de base)."));
     }
     return pane;
   }
@@ -902,30 +903,39 @@
   function buildBonusAgeEcole(description) {
     const ba = state.bonus_age || {};
     const choisi = ba.ecole_36_50;
+    // L'école est-elle bien présente dans ecoles_choisies ? Sinon on
+    // considère le slot comme orphelin (l'utilisateur a pu la retirer
+    // depuis la carte 'Écoles') et on l'efface.
+    if (choisi && !(state.ecoles_choisies || []).some(e => e.nom === choisi)) {
+      state.bonus_age.ecole_36_50 = null;
+      saveState();
+    }
+    const ecoleEntry = choisi
+      ? (state.ecoles_choisies || []).find(e => e.nom === choisi)
+      : null;
+
     const wrap = el("div", { class: "age-bonus-slot" });
-    wrap.appendChild(el("h6", { class: "age-bonus-slot-titre" }, "École offerte"));
+    wrap.appendChild(el("h6", { class: "age-bonus-slot-titre" }, "École de la Nation d'origine"));
     wrap.appendChild(el("p", { class: "age-bonus-desc" }, description));
     if (!state.nation) {
       wrap.appendChild(el("p", { class: "age-bonus-vide" },
         "Choisissez une Nation à l'Étape 1 pour activer ce bonus."));
       return wrap;
     }
-    if (choisi) {
+    if (ecoleEntry) {
+      const cout = (ecoleEntry.type === "Spadassin" ? 20 : 15)
+                 + (ecoleEntry.hors_nation ? 5 : 0);
       wrap.appendChild(el("p", { class: "age-bonus-choisi" }, [
-        el("strong", null, choisi),
-        " — gratuite, de votre Nation ",
-        el("em", null, state.nation),
+        el("strong", null, ecoleEntry.nom),
+        " (" + ecoleEntry.type + ") — ",
+        el("span", null, cout + " PP"),
+        " — Nation : ", el("em", null, state.nation),
       ]));
 
-      // Si l'école choisie a des slots 'A OU B' dans ses spécialisations,
-      // afficher les sélecteurs ici (le state utilise ecole_36_50_choix_specs).
-      const src = trouverSrcEcole(choisi);
+      // Sélecteurs de slots 'A OU B' (lit/écrit dans ecoleEntry.choix_specialisations)
+      const src = trouverSrcEcole(ecoleEntry.nom);
       if (src && window.CreationState && window.CreationState.analyserSpecialisationsEcole) {
-        const fakeEntry = {
-          nom: choisi,
-          choix_specialisations: ba.ecole_36_50_choix_specs || {},
-        };
-        const analyse = window.CreationState.analyserSpecialisationsEcole(fakeEntry, src);
+        const analyse = window.CreationState.analyserSpecialisationsEcole(ecoleEntry, src);
         if (analyse.slots && analyse.slots.length) {
           const sub = el("div", { class: "ecole-specs-choix" });
           const nbAResoudre = analyse.slots.filter(s => !s.choix).length;
@@ -941,9 +951,8 @@
                 type: "button",
                 "aria-pressed": isOptChoisi ? "true" : "false",
                 onclick: () => {
-                  state.bonus_age = state.bonus_age || {};
-                  state.bonus_age.ecole_36_50_choix_specs = state.bonus_age.ecole_36_50_choix_specs || {};
-                  state.bonus_age.ecole_36_50_choix_specs[slot.slotBrut] = isOptChoisi ? null : opt;
+                  ecoleEntry.choix_specialisations = ecoleEntry.choix_specialisations || {};
+                  ecoleEntry.choix_specialisations[slot.slotBrut] = isOptChoisi ? null : opt;
                   saveState();
                   renderEtape3Ages();
                   renderEtape3Specificites();
@@ -963,7 +972,7 @@
       class: "btn-add-creation age-bonus-btn",
       type: "button",
       onclick: () => ouvrirPopupBonusEcole(),
-    }, choisi ? "Modifier l'École →" : "Choisir une École →"));
+    }, ecoleEntry ? "Modifier l'École →" : "Choisir une École →"));
     return wrap;
   }
 
@@ -1179,12 +1188,13 @@
       const nation = state.nation;
 
       content.appendChild(el("div", { class: "detail-header" }, [
-        el("h2", null, "École offerte — 36-50 ans"),
+        el("h2", null, "École de la Nation d'origine — 36-50 ans"),
       ]));
       content.appendChild(el("p", { class: "modal-langues-intro" }, [
         nation
           ? el("span", null, ["Sélectionnez une École enseignée dans votre Nation : ",
-              el("strong", null, nation), "."])
+              el("strong", null, nation),
+              ". Elle s'ajoute de manière classique (coût normal)."])
           : el("strong", { class: "spec-empty-list" },
               "Choisissez d'abord une Nation à l'Étape 1."),
       ]));
@@ -1216,14 +1226,25 @@
         " pour " + nation + " (réparties par type) :",
       ]));
 
+      // Helper : retire l'école pointée par bonus_age.ecole_36_50 de
+      // state.ecoles_choisies (si elle y est).
+      function retirerEcoleBonus() {
+        if (!state.bonus_age || !state.bonus_age.ecole_36_50) return;
+        const idx = (state.ecoles_choisies || []).findIndex(
+          e => e.nom === state.bonus_age.ecole_36_50);
+        if (idx >= 0) state.ecoles_choisies.splice(idx, 1);
+      }
+
       groupes.forEach(g => {
         if (g.ecoles.length === 0) return;
         const tri = g.ecoles.slice().sort((a, b) =>
           a.nom.localeCompare(b.nom, "fr", { sensitivity: "base" }));
+        const groupeTitre = g.titre.replace("Écoles de ", "");
         const ul = el("ul", { class: "popup-bonus-list" });
         tri.forEach(ec => {
           const isChoisi = choisi === ec.nom;
           const armeStr = ec.arme_display || ec.arme || "";
+          const cout = (groupeTitre === "Spadassin" ? 20 : 15);
           ul.appendChild(el("li", {
             class: "popup-bonus-item" + (isChoisi ? " is-selected" : ""),
             tabindex: "0",
@@ -1231,9 +1252,26 @@
             "aria-pressed": isChoisi ? "true" : "false",
             onclick: () => {
               state.bonus_age = state.bonus_age || {};
-              state.bonus_age.ecole_36_50 = isChoisi ? null : ec.nom;
-              // Réinitialise les choix de slots A/B quand on change d'école
-              state.bonus_age.ecole_36_50_choix_specs = {};
+              if (isChoisi) {
+                // Toggle off : on retire l'école courante
+                retirerEcoleBonus();
+                state.bonus_age.ecole_36_50 = null;
+              } else {
+                // On change d'école : retirer l'ancienne, ajouter la nouvelle
+                retirerEcoleBonus();
+                // Détermine le type ('Spadassin' ou 'Combat')
+                const ecType = groupeTitre;
+                // Hors-Nation toujours false ici puisque le popup filtre
+                // déjà sur la Nation d'origine.
+                state.ecoles_choisies = state.ecoles_choisies || [];
+                state.ecoles_choisies.push({
+                  nom: ec.nom,
+                  type: ecType,
+                  hors_nation: false,
+                  choix_specialisations: {},
+                });
+                state.bonus_age.ecole_36_50 = ec.nom;
+              }
               saveState();
               renderEtape3Ages();
               renderEtape3Specificites();
@@ -1244,11 +1282,12 @@
             el("span", { class: "popup-bonus-nom" }, ec.nom),
             armeStr
               ? el("span", { class: "popup-bonus-desc" },
-                  "Arme : " + armeStr + (ec.description_courte
-                    ? " — " + ec.description_courte.slice(0, 70)
-                      + (ec.description_courte.length > 70 ? "…" : "")
-                    : ""))
-              : null,
+                  "Arme : " + armeStr + " · " + cout + " PP"
+                    + (ec.description_courte
+                       ? " — " + ec.description_courte.slice(0, 60)
+                         + (ec.description_courte.length > 60 ? "…" : "")
+                       : ""))
+              : el("span", { class: "popup-bonus-desc" }, cout + " PP"),
           ]));
         });
         content.appendChild(el("div", { class: "popup-bonus-groupe" }, [
@@ -1262,15 +1301,15 @@
           class: "btn-mes-spe-clear",
           type: "button",
           onclick: () => {
+            retirerEcoleBonus();
             state.bonus_age.ecole_36_50 = null;
-            state.bonus_age.ecole_36_50_choix_specs = {};
             saveState();
             renderEtape3Ages();
             renderEtape3Specificites();
             refreshPPBar();
             dialog.close();
           },
-        }, "× Retirer cette École bonus"));
+        }, "× Retirer cette École"));
       }
     });
   }
