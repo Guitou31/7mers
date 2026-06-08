@@ -769,6 +769,119 @@ p { margin: 0 0 0.6em; }
   font-style: italic;
 }
 
+/* ====== Carte 'Compétences' — fiche-style avec radios de rang ====== */
+.fiche-comp-wrapper {
+  margin: 0.7rem 0 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.fiche-comp-section {
+  background: rgba(232, 212, 168, 0.05);
+  border: 1px solid rgba(232, 212, 168, 0.18);
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+}
+.fiche-comp-section-titre {
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+}
+.fiche-comp-count {
+  color: var(--accent-soft);
+  opacity: 0.75;
+  font-size: 0.82rem;
+}
+.fiche-comp-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.fiche-comp-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.35rem 0.55rem;
+  border-radius: 4px;
+  border-bottom: 1px dotted rgba(232, 212, 168, 0.15);
+  transition: background 0.12s;
+}
+.fiche-comp-row:hover { background: rgba(232, 212, 168, 0.07); }
+.fiche-comp-nom {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  flex: 1 1 auto;
+  border-bottom: 1px dotted rgba(232, 212, 168, 0.4);
+  transition: color 0.12s;
+}
+.fiche-comp-nom:hover,
+.fiche-comp-nom:focus {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  outline: none;
+}
+.fiche-comp-radios {
+  display: inline-flex;
+  gap: 0.32rem;
+  flex-shrink: 0;
+}
+.fiche-radio {
+  width: 1.4rem;
+  height: 1.4rem;
+  border: 2px solid var(--accent-soft);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.12s, border-color 0.12s, transform 0.12s;
+}
+.fiche-radio:hover {
+  background: rgba(232, 212, 168, 0.20);
+  transform: scale(1.08);
+}
+.fiche-radio.is-selected {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.fiche-comp-base .fiche-radio.is-selected {
+  background: #6b8b5b;
+  border-color: #6b8b5b;
+}
+.fiche-comp-avancee .fiche-radio.is-selected {
+  background: #c9a861;
+  border-color: #c9a861;
+}
+
+/* Popup compétence (description + sources) */
+.fiche-popup-sources {
+  list-style: none;
+  margin: 0.3rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.fiche-popup-sources li {
+  padding: 0.35rem 0.55rem;
+  background: rgba(232, 212, 168, 0.07);
+  border-left: 3px solid var(--accent-soft);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.9rem;
+}
+
 /* ====== Sélecteur de rang de compétence (dans modale) ====== */
 .comp-rang-selector {
   display: flex;
@@ -1048,6 +1161,119 @@ p { margin: 0 0 0.6em; }
   margin-bottom: 0.4rem;
 }
 .age-bonus { margin: 0; line-height: 1.5; font-size: 0.92rem; }
+
+/* Carte âge : zone d'en-tête cliquable (toggle) + panneau de bonus en dessous */
+.age-card.is-selected {
+  background: rgba(195, 70, 70, 0.10);
+  border-left-color: var(--accent);
+}
+.age-card-header {
+  cursor: pointer;
+  outline: none;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.age-card-header:hover,
+.age-card-header:focus {
+  background: rgba(232, 212, 168, 0.10);
+}
+
+/* Panneau bonus (sous le header de la carte sélectionnée) */
+.age-bonus-pane {
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed rgba(232, 212, 168, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.age-bonus-slot {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(232, 212, 168, 0.15);
+  border-radius: 6px;
+  padding: 0.55rem 0.75rem;
+}
+.age-bonus-slot-titre {
+  margin: 0 0 0.3rem 0;
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 0.88rem;
+  color: var(--accent-soft);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.age-bonus-desc {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.85rem;
+  opacity: 0.85;
+  line-height: 1.4;
+}
+.age-bonus-choisi {
+  margin: 0.2rem 0 0.5rem 0;
+  padding: 0.3rem 0.5rem;
+  background: rgba(127, 190, 112, 0.12);
+  border-left: 3px solid #6b8b5b;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.92rem;
+}
+.age-bonus-vide {
+  margin: 0.2rem 0 0.5rem 0;
+  font-size: 0.85rem;
+  font-style: italic;
+  opacity: 0.65;
+}
+.age-bonus-btn {
+  margin: 0;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.8rem;
+}
+
+/* Popup bonus d'âge : liste sélecteur (utilisée pour métiers / entraînements / vertus) */
+.popup-bonus-list {
+  list-style: none;
+  margin: 0.5rem 0 0.5rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.popup-bonus-item {
+  cursor: pointer;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(232, 212, 168, 0.2);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: background 0.12s, border-color 0.12s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.popup-bonus-item:hover,
+.popup-bonus-item:focus {
+  background: rgba(232, 212, 168, 0.10);
+  border-color: var(--accent-soft);
+  outline: none;
+}
+.popup-bonus-item.is-selected {
+  background: rgba(195, 70, 70, 0.14);
+  border-color: var(--accent);
+}
+.popup-bonus-item.is-selected .popup-bonus-nom::before {
+  content: "✓ ";
+  color: var(--accent);
+}
+.popup-bonus-nom {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+.popup-bonus-desc {
+  font-size: 0.82rem;
+  opacity: 0.78;
+  font-style: italic;
+}
 
 /* Cartes de spécificité */
 .creation-note.rappel {

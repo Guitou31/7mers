@@ -209,6 +209,58 @@
         });
       }
     });
+
+    // ===== Bonus d'âge =====
+    // 26-35 ans : métier au choix, base ET avancées passent en coût base (1 PP/rang).
+    // 36-50 ans : métier + entraînement (mêmes effets) — vertu = info pure.
+    const ba = state.bonus_age || {};
+    function ajouterBonusMetier(nomMetier, label) {
+      if (!nomMetier) return;
+      const src = mData.find(x => x.nom === nomMetier);
+      if (!src) return;
+      // Base : ajoutées normalement.
+      (src.competences_base || []).forEach(c => {
+        baseSet.add(c); pushSource("base", c, label);
+      });
+      // Avancées : passées en "base" pour ce métier bonus (coût réduit).
+      (src.competences_avancees || []).forEach(c => {
+        baseSet.add(c); pushSource("base", c, label + " (avancée → base)");
+      });
+      // Choix (de base et avancées) : pareil, tout en base.
+      function bonusOptionsToBase(choix, suffix) {
+        if (!choix) return;
+        const arr = Array.isArray(choix) ? choix : [choix];
+        arr.forEach(ch => (ch.options || []).forEach(o => {
+          baseSet.add(o); pushSource("base", o, label + " (au choix" + suffix + ")");
+        }));
+      }
+      bonusOptionsToBase(src.competences_base_choix, "");
+      bonusOptionsToBase(src.competences_avancees_choix, ", avancée → base");
+    }
+    function ajouterBonusEntrainement(nomEnt, label) {
+      if (!nomEnt) return;
+      const src = eData.find(x => x.nom === nomEnt);
+      if (!src) return;
+      (src.competences_base || []).forEach(c => {
+        baseSet.add(c); pushSource("base", c, label);
+      });
+      (src.competences_avancees || []).forEach(c => {
+        baseSet.add(c); pushSource("base", c, label + " (avancée → base)");
+      });
+      function bonusOptionsToBase(choix, suffix) {
+        if (!choix) return;
+        const arr = Array.isArray(choix) ? choix : [choix];
+        arr.forEach(ch => (ch.options || []).forEach(o => {
+          baseSet.add(o); pushSource("base", o, label + " (au choix" + suffix + ")");
+        }));
+      }
+      bonusOptionsToBase(src.competences_base_choix, "");
+      bonusOptionsToBase(src.competences_avancees_choix, ", avancée → base");
+    }
+    ajouterBonusMetier(ba.metier_26_35, "Bonus âge 26-35 · Métier " + (ba.metier_26_35 || ""));
+    ajouterBonusMetier(ba.metier_36_50, "Bonus âge 36-50 · Métier " + (ba.metier_36_50 || ""));
+    ajouterBonusEntrainement(ba.entrainement_36_50, "Bonus âge 36-50 · Entraînement " + (ba.entrainement_36_50 || ""));
+
     return { base: baseSet, avancee: avSet, sources: sources };
   }
 

@@ -26,6 +26,18 @@
     entrainements_choisis: [],    // [{nom}]
     langues_choisies: [],         // [{nom}]
     societe_secrete: null,        // null | {nom}
+    competences_choisies: [],     // [{nom, rang, type_cout}]
+    // Bonus d'âge du Héros :
+    //   15-25 → trait libre (+1, max 4)
+    //   26-35 → métier au choix (base ET avancées au rang 1)
+    //   36-50 → métier + entraînement (base ET avancées au rang 1) + une vertu
+    bonus_age: {
+      trait_libre: null,
+      metier_26_35: null,
+      metier_36_50: null,
+      entrainement_36_50: null,
+      vertu_36_50: null,
+    },
     // Saisies manuelles libres
     pp_avantages: 0,
     pp_competences: 0,
@@ -49,6 +61,14 @@
         Object.keys(defaultState).forEach(k => {
           if (k in obj) state[k] = obj[k];
         });
+        // bonus_age est un sous-objet : on merge avec les défauts pour
+        // garantir que toutes les clés existent même si la sauvegarde est
+        // antérieure à leur introduction.
+        if (obj.bonus_age && typeof obj.bonus_age === "object") {
+          state.bonus_age = Object.assign({}, defaultState.bonus_age, obj.bonus_age);
+        } else {
+          state.bonus_age = Object.assign({}, defaultState.bonus_age);
+        }
       }
     } catch (e) {
       console.warn("loadState : impossible de lire le state", e);
@@ -224,6 +244,9 @@
     let v = TRAIT_BASE;
     if (state.trait_libre === traitNom) v += 1;
     if (state.trait_bonus_nation === traitNom) v += 1;
+    // Bonus d'âge 15-25 : Trait gratuit (+1, ne dépasse pas 4)
+    if (state.bonus_age && state.bonus_age.trait_libre === traitNom) v += 1;
+    if (v > 4) v = 4;
     return v;
   }
 
@@ -822,20 +845,413 @@
     container.innerHTML = "";
     e3.ages.forEach(age => {
       const isSel = state.age_plage === age.plage;
-      container.appendChild(el("button", {
-        class: "age-card age-btn" + (isSel ? " is-selected" : ""),
-        type: "button",
+      // Zone d'en-tête cliquable (toggle de la plage)
+      const header = el("div", {
+        class: "age-card-header",
+        role: "button",
+        tabindex: "0",
+        "aria-pressed": isSel ? "true" : "false",
         onclick: () => {
           state.age_plage = isSel ? null : age.plage;
           saveState();
           renderEtape3Ages();
+          renderEtape3Specificites();
           refreshPPBar();
+        },
+        onkeydown: (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            state.age_plage = isSel ? null : age.plage;
+            saveState();
+            renderEtape3Ages();
+            renderEtape3Specificites();
+            refreshPPBar();
+          }
         },
       }, [
         el("div", { class: "age-plage" }, age.plage),
         el("div", { class: "age-label" }, age.label),
         el("p", { class: "age-bonus" }, age.bonus),
+      ]);
+
+      const card = el("div", {
+        class: "age-card" + (isSel ? " is-selected" : ""),
+      }, [header]);
+
+      // Quand la tranche est sélectionnée → panneau de bonus interactif
+      if (isSel) card.appendChild(buildBonusAgePane(age.plage));
+
+      container.appendChild(card);
+    });
+  }
+
+  // ===== Panneau Bonus d'âge (sous la carte sélectionnée) =====
+  function buildBonusAgePane(plage) {
+    const pane = el("div", { class: "age-bonus-pane" });
+    if (plage === "15-25 ans") {
+      pane.appendChild(buildBonusAgeTrait());
+    } else if (plage === "26-35 ans") {
+      pane.appendChild(buildBonusAgeMetier("metier_26_35",
+        "Métier au choix — ses compétences de base ET avancées passent au coût base (1 PP/rang)."));
+    } else if (plage === "36-50 ans") {
+      pane.appendChild(buildBonusAgeMetier("metier_36_50",
+        "Métier au choix — base ET avancées au coût base."));
+      pane.appendChild(buildBonusAgeEntrainement("entrainement_36_50",
+        "Entraînement au choix — base ET avancées au coût base."));
+      pane.appendChild(buildBonusAgeVertu("vertu_36_50",
+        "Une Vertu au choix (parmi les 22 Arcanes)."));
+    }
+    return pane;
+  }
+
+  function buildBonusAgeTrait() {
+    const ba = state.bonus_age || {};
+    const choisi = ba.trait_libre;
+    const wrap = el("div", { class: "age-bonus-slot" });
+    wrap.appendChild(el("h6", { class: "age-bonus-slot-titre" }, "Trait gratuit (+1, max 4)"));
+    if (choisi) {
+      wrap.appendChild(el("p", { class: "age-bonus-choisi" }, [
+        el("strong", null, choisi),
+        " (+1 gratuit)",
       ]));
+    } else {
+      wrap.appendChild(el("p", { class: "age-bonus-vide" },
+        "Aucun Trait sélectionné."));
+    }
+    wrap.appendChild(el("button", {
+      class: "btn-add-creation age-bonus-btn",
+      type: "button",
+      onclick: () => ouvrirPopupBonusTrait(),
+    }, choisi ? "Modifier mon Trait gratuit →" : "Choisir un Trait gratuit →"));
+    return wrap;
+  }
+
+  function buildBonusAgeMetier(slotKey, description) {
+    const ba = state.bonus_age || {};
+    const choisi = ba[slotKey];
+    const wrap = el("div", { class: "age-bonus-slot" });
+    wrap.appendChild(el("h6", { class: "age-bonus-slot-titre" }, "Métier bonus"));
+    wrap.appendChild(el("p", { class: "age-bonus-desc" }, description));
+    if (choisi) {
+      wrap.appendChild(el("p", { class: "age-bonus-choisi" }, [el("strong", null, choisi)]));
+    } else {
+      wrap.appendChild(el("p", { class: "age-bonus-vide" }, "Aucun Métier sélectionné."));
+    }
+    wrap.appendChild(el("button", {
+      class: "btn-add-creation age-bonus-btn",
+      type: "button",
+      onclick: () => ouvrirPopupBonusMetier(slotKey),
+    }, choisi ? "Modifier le Métier →" : "Choisir un Métier →"));
+    return wrap;
+  }
+
+  function buildBonusAgeEntrainement(slotKey, description) {
+    const ba = state.bonus_age || {};
+    const choisi = ba[slotKey];
+    const wrap = el("div", { class: "age-bonus-slot" });
+    wrap.appendChild(el("h6", { class: "age-bonus-slot-titre" }, "Entraînement bonus"));
+    wrap.appendChild(el("p", { class: "age-bonus-desc" }, description));
+    if (choisi) {
+      wrap.appendChild(el("p", { class: "age-bonus-choisi" }, [el("strong", null, choisi)]));
+    } else {
+      wrap.appendChild(el("p", { class: "age-bonus-vide" }, "Aucun Entraînement sélectionné."));
+    }
+    wrap.appendChild(el("button", {
+      class: "btn-add-creation age-bonus-btn",
+      type: "button",
+      onclick: () => ouvrirPopupBonusEntrainement(slotKey),
+    }, choisi ? "Modifier l'Entraînement →" : "Choisir un Entraînement →"));
+    return wrap;
+  }
+
+  function buildBonusAgeVertu(slotKey, description) {
+    const ba = state.bonus_age || {};
+    const choisi = ba[slotKey];
+    const wrap = el("div", { class: "age-bonus-slot" });
+    wrap.appendChild(el("h6", { class: "age-bonus-slot-titre" }, "Vertu (Arcane)"));
+    wrap.appendChild(el("p", { class: "age-bonus-desc" }, description));
+    if (choisi) {
+      wrap.appendChild(el("p", { class: "age-bonus-choisi" }, [el("strong", null, choisi)]));
+    } else {
+      wrap.appendChild(el("p", { class: "age-bonus-vide" }, "Aucune Vertu sélectionnée."));
+    }
+    wrap.appendChild(el("button", {
+      class: "btn-add-creation age-bonus-btn",
+      type: "button",
+      onclick: () => ouvrirPopupBonusVertu(slotKey),
+    }, choisi ? "Modifier la Vertu →" : "Choisir une Vertu →"));
+    return wrap;
+  }
+
+  // ===== Helper générique : popup modal pour bonus d'âge =====
+  // dialogId : identifiant DOM unique pour la dialog.
+  // renderFn : (contentDiv, dialog) => void — remplit le contenu.
+  function ouvrirPopupBonusAge(dialogId, renderFn) {
+    let dialog = document.getElementById(dialogId);
+    if (!dialog) {
+      dialog = el("dialog", { id: dialogId, class: "ecole-detail cross-modal" }, [
+        el("div", { class: "cross-modal-header" }, [
+          el("button", {
+            class: "ecole-detail-close",
+            "aria-label": "Fermer",
+            type: "button",
+            onclick: () => dialog.close(),
+          }, "×"),
+        ]),
+        el("div", { id: dialogId + "-content" }),
+      ]);
+      document.body.appendChild(dialog);
+      dialog.addEventListener("click", (e) => { if (e.target === dialog) dialog.close(); });
+    }
+    const content = document.getElementById(dialogId + "-content");
+    content.innerHTML = "";
+    renderFn(content, dialog);
+    if (typeof dialog.showModal === "function") {
+      if (!dialog.open) dialog.showModal();
+    } else dialog.setAttribute("open", "");
+  }
+
+  function ouvrirPopupBonusTrait() {
+    ouvrirPopupBonusAge("popup-bonus-trait", (content, dialog) => {
+      const traits = data.traits_ordre || [];
+      const ba = state.bonus_age || {};
+      content.appendChild(el("div", { class: "detail-header" }, [
+        el("h2", null, "Trait gratuit (15-25 ans)"),
+      ]));
+      content.appendChild(el("p", { class: "modal-langues-intro" }, [
+        "Choisissez le Trait qui reçoit le +1 gratuit. ",
+        el("strong", null, "Aucun Trait ne peut dépasser 4 à la création."),
+      ]));
+      // Pour chaque Trait : ligne avec score actuel et bouton de sélection
+      const tableSec = el("div", { class: "nations-continent langues-section continent-default" }, [
+        el("h5", { class: "nations-continent-titre" }, [
+          el("span", { class: "nations-continent-pastille" }),
+          "Vos 5 Traits",
+        ]),
+        el("table", { class: "nations-tbl langues-tbl" }, [
+          el("thead", null, el("tr", null, [
+            el("th", null, "Trait"),
+            el("th", null, "Score actuel"),
+            el("th", null, "Avec le +1"),
+          ])),
+          el("tbody", null, traits.map(t => {
+            const baseScore = calcValeurTrait(t); // 2 / 3 / 4 selon bonus déjà appliqués
+            const choisi = ba.trait_libre === t;
+            const futur = baseScore + (choisi ? 0 : 1); // si déjà choisi, baseScore intègre le +1
+            const futurEff = choisi ? baseScore : baseScore + 1;
+            const disabled = !choisi && futurEff > 4;
+            return el("tr", {
+              class: "nation-row langue-row" + (choisi ? " is-selected" : "")
+                + (disabled ? " langue-native-row" : ""),
+              tabindex: disabled ? "-1" : "0",
+              role: disabled ? null : "button",
+              "aria-pressed": choisi ? "true" : "false",
+              "aria-disabled": disabled ? "true" : null,
+              title: disabled ? "Ce Trait atteindrait 5 — impossible à la création" : null,
+              onclick: disabled ? null : () => {
+                // Toggle : si déjà choisi, on retire ; sinon on assigne (un seul à la fois)
+                state.bonus_age = state.bonus_age || {};
+                state.bonus_age.trait_libre = choisi ? null : t;
+                saveState();
+                renderTraits();
+                renderStatsDerivees();
+                renderEtape3Ages();
+                refreshPPBar();
+                dialog.close();
+              },
+            }, [
+              el("td", { class: "nation-nom" }, t),
+              el("td", { class: "nation-bonus" }, String(baseScore)),
+              el("td", { class: "nation-equiv langue-cout-cell" },
+                disabled ? "5 (impossible)" : String(futurEff)),
+            ]);
+          })),
+        ]),
+      ]);
+      content.appendChild(tableSec);
+
+      // Bouton "Retirer mon choix"
+      if (ba.trait_libre) {
+        content.appendChild(el("button", {
+          class: "btn-mes-spe-clear",
+          type: "button",
+          onclick: () => {
+            state.bonus_age.trait_libre = null;
+            saveState();
+            renderTraits();
+            renderStatsDerivees();
+            renderEtape3Ages();
+            refreshPPBar();
+            dialog.close();
+          },
+        }, "× Retirer mon Trait gratuit"));
+      }
+    });
+  }
+
+  function ouvrirPopupBonusMetier(slotKey) {
+    ouvrirPopupBonusAge("popup-bonus-metier-" + slotKey, (content, dialog) => {
+      const metiers = (window.METIERS_DATA && window.METIERS_DATA.metiers) || [];
+      const ba = state.bonus_age || {};
+      content.appendChild(el("div", { class: "detail-header" }, [
+        el("h2", null, "Métier bonus — au choix"),
+      ]));
+      content.appendChild(el("p", { class: "modal-langues-intro" }, [
+        "Sélectionnez le Métier qui sera votre bonus d'âge. ",
+        el("strong", null, "Ses compétences de base ET avancées passeront au coût base"),
+        " (1 PP/rang).",
+      ]));
+      const tri = metiers.slice().sort((a, b) =>
+        a.nom.localeCompare(b.nom, "fr", { sensitivity: "base" }));
+      const ul = el("ul", { class: "popup-bonus-list" });
+      tri.forEach(m => {
+        const choisi = ba[slotKey] === m.nom;
+        ul.appendChild(el("li", {
+          class: "popup-bonus-item" + (choisi ? " is-selected" : ""),
+          tabindex: "0",
+          role: "button",
+          "aria-pressed": choisi ? "true" : "false",
+          onclick: () => {
+            state.bonus_age = state.bonus_age || {};
+            state.bonus_age[slotKey] = choisi ? null : m.nom;
+            saveState();
+            renderEtape3Ages();
+            renderEtape3Specificites();
+            refreshPPBar();
+            dialog.close();
+          },
+        }, [
+          el("span", { class: "popup-bonus-nom" }, m.nom),
+          m.description
+            ? el("span", { class: "popup-bonus-desc" }, m.description.slice(0, 90)
+              + (m.description.length > 90 ? "…" : ""))
+            : null,
+        ]));
+      });
+      content.appendChild(ul);
+      if (ba[slotKey]) {
+        content.appendChild(el("button", {
+          class: "btn-mes-spe-clear",
+          type: "button",
+          onclick: () => {
+            state.bonus_age[slotKey] = null;
+            saveState();
+            renderEtape3Ages();
+            renderEtape3Specificites();
+            refreshPPBar();
+            dialog.close();
+          },
+        }, "× Retirer ce Métier bonus"));
+      }
+    });
+  }
+
+  function ouvrirPopupBonusEntrainement(slotKey) {
+    ouvrirPopupBonusAge("popup-bonus-entrainement-" + slotKey, (content, dialog) => {
+      const ents = (window.ENTRAINEMENTS_DATA && window.ENTRAINEMENTS_DATA.entrainements) || [];
+      const ba = state.bonus_age || {};
+      content.appendChild(el("div", { class: "detail-header" }, [
+        el("h2", null, "Entraînement bonus — au choix"),
+      ]));
+      content.appendChild(el("p", { class: "modal-langues-intro" }, [
+        "Sélectionnez l'Entraînement qui sera votre bonus d'âge. ",
+        el("strong", null, "Ses compétences de base ET avancées passeront au coût base"),
+        " (1 PP/rang).",
+      ]));
+      const tri = ents.slice().sort((a, b) =>
+        a.nom.localeCompare(b.nom, "fr", { sensitivity: "base" }));
+      const ul = el("ul", { class: "popup-bonus-list" });
+      tri.forEach(en => {
+        const choisi = ba[slotKey] === en.nom;
+        ul.appendChild(el("li", {
+          class: "popup-bonus-item" + (choisi ? " is-selected" : ""),
+          tabindex: "0",
+          role: "button",
+          "aria-pressed": choisi ? "true" : "false",
+          onclick: () => {
+            state.bonus_age = state.bonus_age || {};
+            state.bonus_age[slotKey] = choisi ? null : en.nom;
+            saveState();
+            renderEtape3Ages();
+            renderEtape3Specificites();
+            refreshPPBar();
+            dialog.close();
+          },
+        }, [
+          el("span", { class: "popup-bonus-nom" }, en.nom),
+          en.description
+            ? el("span", { class: "popup-bonus-desc" }, en.description.slice(0, 90)
+              + (en.description.length > 90 ? "…" : ""))
+            : null,
+        ]));
+      });
+      content.appendChild(ul);
+      if (ba[slotKey]) {
+        content.appendChild(el("button", {
+          class: "btn-mes-spe-clear",
+          type: "button",
+          onclick: () => {
+            state.bonus_age[slotKey] = null;
+            saveState();
+            renderEtape3Ages();
+            renderEtape3Specificites();
+            refreshPPBar();
+            dialog.close();
+          },
+        }, "× Retirer cet Entraînement bonus"));
+      }
+    });
+  }
+
+  function ouvrirPopupBonusVertu(slotKey) {
+    ouvrirPopupBonusAge("popup-bonus-vertu-" + slotKey, (content, dialog) => {
+      const arcanes = (window.ARCANES_DATA && window.ARCANES_DATA.arcanes) || [];
+      const ba = state.bonus_age || {};
+      content.appendChild(el("div", { class: "detail-header" }, [
+        el("h2", null, "Vertu bonus — au choix"),
+      ]));
+      content.appendChild(el("p", { class: "modal-langues-intro" }, [
+        "Sélectionnez la Vertu (parmi les 22 Arcanes) qui sera votre bonus d'âge.",
+      ]));
+      const tri = arcanes.slice().sort((a, b) =>
+        (a.vertu || "").localeCompare(b.vertu || "", "fr", { sensitivity: "base" }));
+      const ul = el("ul", { class: "popup-bonus-list" });
+      tri.forEach(arc => {
+        if (!arc.vertu) return;
+        const choisi = ba[slotKey] === arc.vertu;
+        ul.appendChild(el("li", {
+          class: "popup-bonus-item" + (choisi ? " is-selected" : ""),
+          tabindex: "0",
+          role: "button",
+          "aria-pressed": choisi ? "true" : "false",
+          onclick: () => {
+            state.bonus_age = state.bonus_age || {};
+            state.bonus_age[slotKey] = choisi ? null : arc.vertu;
+            saveState();
+            renderEtape3Ages();
+            refreshPPBar();
+            dialog.close();
+          },
+        }, [
+          el("span", { class: "popup-bonus-nom" }, arc.vertu),
+          el("span", { class: "popup-bonus-desc" },
+            "Arcane " + (arc.numero != null ? arc.numero + " · " : "") + (arc.nom || "")),
+        ]));
+      });
+      content.appendChild(ul);
+      if (ba[slotKey]) {
+        content.appendChild(el("button", {
+          class: "btn-mes-spe-clear",
+          type: "button",
+          onclick: () => {
+            state.bonus_age[slotKey] = null;
+            saveState();
+            renderEtape3Ages();
+            refreshPPBar();
+            dialog.close();
+          },
+        }, "× Retirer cette Vertu bonus"));
+      }
     });
   }
 
@@ -955,6 +1371,153 @@
 
     wrapper.appendChild(detailsEl);
     return wrapper;
+  }
+
+  // ===== Fiche-style : 2 listes de compétences avec radios 0-3 =====
+  function getCompRangChoisi(nom) {
+    const item = (state.competences_choisies || []).find(c => c.nom === nom);
+    return item ? (item.rang || 0) : 0;
+  }
+  function setCompRangChoisi(nom, rang, type_cout) {
+    if (!Array.isArray(state.competences_choisies)) state.competences_choisies = [];
+    const idx = state.competences_choisies.findIndex(c => c.nom === nom);
+    if (!rang || rang <= 0) {
+      if (idx >= 0) state.competences_choisies.splice(idx, 1);
+    } else {
+      const entry = { nom, rang, type_cout };
+      if (idx >= 0) state.competences_choisies[idx] = entry;
+      else state.competences_choisies.push(entry);
+    }
+    saveState();
+    refreshPPBar();
+    renderEtape3Specificites();
+  }
+
+  function buildRangRadios(nom, type_cout) {
+    const cur = getCompRangChoisi(nom);
+    const row = el("div", { class: "fiche-comp-radios", role: "radiogroup" });
+    for (let r = 0; r <= 3; r++) {
+      const selected = cur === r;
+      row.appendChild(el("button", {
+        class: "fiche-radio" + (selected ? " is-selected" : ""),
+        type: "button",
+        role: "radio",
+        "aria-checked": selected ? "true" : "false",
+        "aria-label": "Rang " + r,
+        title: "Rang " + r + (r > 0 ? " (" + (r * (type_cout === "avancee" ? 2 : 1)) + " PP)" : ""),
+        onclick: () => setCompRangChoisi(nom, r, type_cout),
+      }));
+    }
+    return row;
+  }
+
+  function buildFicheCompetences() {
+    const wrapper = el("div", { class: "fiche-comp-wrapper" });
+    if (!window.CreationState || !window.CreationState.getMesCompetencesSets) {
+      wrapper.appendChild(el("p", { class: "spec-empty-list" },
+        "Module CreationState non disponible."));
+      return wrapper;
+    }
+    const sets = window.CreationState.getMesCompetencesSets();
+    // "base prime" : une compétence présente dans base ET avancée est rangée en base.
+    const baseList = Array.from(sets.base)
+      .sort((a, b) => a.localeCompare(b, "fr", { sensitivity: "base" }));
+    const avList = Array.from(sets.avancee)
+      .filter(c => !sets.base.has(c))
+      .sort((a, b) => a.localeCompare(b, "fr", { sensitivity: "base" }));
+
+    if (baseList.length === 0 && avList.length === 0) {
+      wrapper.appendChild(el("p", { class: "spec-empty-list" },
+        "Ajoutez des Métiers, Entraînements ou Écoles pour faire apparaître ici " +
+        "des compétences à coût réduit. Le métier bonus d'âge fait aussi passer " +
+        "les avancées en coût base."));
+      return wrapper;
+    }
+
+    function buildSection(titre, level, list) {
+      if (list.length === 0) return null;
+      const sec = el("div", { class: "fiche-comp-section fiche-comp-" + level });
+      sec.appendChild(el("h6", { class: "fiche-comp-section-titre" }, [
+        el("span", { class: "rang-typecout rang-typecout-" + level }, titre),
+        el("span", { class: "fiche-comp-count" }, "(" + list.length + ")"),
+      ]));
+      const ul = el("ul", { class: "fiche-comp-list" });
+      list.forEach(nom => {
+        ul.appendChild(el("li", { class: "fiche-comp-row" }, [
+          el("button", {
+            class: "fiche-comp-nom",
+            type: "button",
+            title: "Voir la description et les sources",
+            onclick: () => ouvrirPopupCompetence(nom),
+          }, nom),
+          buildRangRadios(nom, level),
+        ]));
+      });
+      sec.appendChild(ul);
+      return sec;
+    }
+
+    const secBase = buildSection("Compétences de base", "base", baseList);
+    const secAv = buildSection("Compétences avancées", "avancee", avList);
+    if (secBase) wrapper.appendChild(secBase);
+    if (secAv)   wrapper.appendChild(secAv);
+
+    return wrapper;
+  }
+
+  // ===== Popup compétence (description + sources) =====
+  function ouvrirPopupCompetence(nom) {
+    ouvrirPopupBonusAge("popup-fiche-competence", (content, dialog) => {
+      const compData = (window.COMPETENCES_DATA && window.COMPETENCES_DATA.competences) || [];
+      const c = compData.find(x => x.nom === nom);
+      const sets = window.CreationState.getMesCompetencesSets();
+      const tc = sets.base.has(nom) ? "base" : sets.avancee.has(nom) ? "avancee" : "hors";
+      const tcLabel = tc === "base" ? "De base (1 PP / rang)"
+                     : tc === "avancee" ? "Avancée (2 PP / rang)"
+                     : "Hors-spécialités (3 PP / rang)";
+
+      content.appendChild(el("div", { class: "detail-header" }, [
+        el("h2", null, nom),
+        el("div", { class: "badges" }, [
+          el("span", { class: "badge rang-typecout-" + tc }, tcLabel),
+        ]),
+      ]));
+
+      // Description
+      if (c && c.description) {
+        content.appendChild(el("div", { class: "detail-section" }, [
+          el("h3", null, "Description"),
+          el("p", { class: "description-paragraph" }, c.description),
+        ]));
+      }
+
+      // Sources : d'où vient cette compétence ?
+      const srcList = (sets.sources && sets.sources[tc + ":" + nom]) || [];
+      if (srcList.length) {
+        const ul = el("ul", { class: "fiche-popup-sources" });
+        srcList.forEach(s => ul.appendChild(el("li", null, s)));
+        content.appendChild(el("div", { class: "detail-section" }, [
+          el("h3", null, "Sources (vos spécialités)"),
+          ul,
+        ]));
+      } else {
+        content.appendChild(el("div", { class: "detail-section" }, [
+          el("h3", null, "Sources"),
+          el("p", { class: "spec-empty-list" },
+            "Aucune source ne donne accès à cette compétence."),
+        ]));
+      }
+
+      // Sélecteur de rang dans le popup
+      content.appendChild(el("div", { class: "detail-section" }, [
+        el("h3", null, "Rang à la création"),
+        buildRangRadios(nom, tc),
+        el("p", { class: "competence-rang-note" }, [
+          el("em", null,
+            "⚠ Une compétence ne peut dépasser 3 rangs à la création."),
+        ]),
+      ]));
+    });
   }
 
   function renderEtape3Specificites() {
@@ -1128,61 +1691,18 @@
         ]));
 
       } else if (spec.id === "competences") {
-        // Rappel des coûts
-        const ul = el("ul", { class: "spec-couts-list" });
-        spec.variantes.forEach(v => ul.appendChild(el("li", null, [
+        // Rappel des coûts (compact, en haut)
+        const ulC = el("ul", { class: "spec-couts-list" });
+        spec.variantes.forEach(v => ulC.appendChild(el("li", null, [
           el("span", { class: "spec-cout-label" }, v.label),
           el("span", { class: "spec-cout-pp" }, v.pp + " PP"),
         ])));
-        card.appendChild(ul);
+        card.appendChild(ulC);
 
-        // Compétences disponibles à coût réduit grâce aux Métiers /
-        // Entraînements / Écoles déjà choisis (avec source en regard).
-        card.appendChild(buildCompetencesDispoBloc());
+        // Fiche-style : deux listes (base / avancée) avec radios 0-3.
+        card.appendChild(buildFicheCompetences());
 
-        // Liste des compétences choisies via les sélecteurs de rang
-        const comps = (state.competences_choisies || []).filter(c => (c.rang || 0) > 0);
-        if (comps.length === 0) {
-          card.appendChild(el("p", { class: "spec-empty-list" },
-            "Aucune compétence chiffrée. Cliquez sur 'Rang' depuis une fiche compétence."));
-        } else {
-          // Recalcule le type_cout en direct pour l'affichage
-          let mesSets = { base: new Set(), avancee: new Set() };
-          if (window.CreationState) mesSets = window.CreationState.getMesCompetencesSets();
-          const ulC = el("ul", { class: "spec-chosen-list" });
-          comps.forEach((c, i) => {
-            let tc = "hors";
-            if (mesSets.base.has(c.nom)) tc = "base";
-            else if (mesSets.avancee.has(c.nom)) tc = "avancee";
-            const pprang = tc === "base" ? 1 : tc === "avancee" ? 2 : 3;
-            const cout = pprang * (c.rang || 0);
-            const tcLabel = tc === "base" ? "base" : tc === "avancee" ? "avancée" : "hors-spé";
-            ulC.appendChild(el("li", null, [
-              el("span", { class: "chosen-item-name" }, c.nom),
-              el("span", { class: "chosen-item-meta" }, [
-                el("span", { class: "chosen-tag" }, "Rang " + (c.rang || 0)),
-                el("span", { class: "chosen-tag rang-typecout-" + tc }, tcLabel),
-                el("span", { class: "chosen-pp" }, cout + " PP"),
-              ]),
-              el("button", {
-                class: "chosen-remove",
-                type: "button",
-                "aria-label": "Retirer",
-                onclick: () => {
-                  // On retire l'entrée correspondante (par nom, plus sûr que par index si rerender entre-temps)
-                  const idx = (state.competences_choisies || []).findIndex(x => x.nom === c.nom);
-                  if (idx >= 0) state.competences_choisies.splice(idx, 1);
-                  saveState();
-                  renderEtape3Specificites();
-                  refreshPPBar();
-                },
-              }, "×"),
-            ]));
-          });
-          card.appendChild(ulC);
-        }
-
-        // Fallback : saisie manuelle d'un total PP (utile si on ne passe pas par les rangs)
+        // Fallback : saisie manuelle d'un total PP supplémentaire
         const inp = el("input", {
           class: "spec-pp-input",
           type: "number",
