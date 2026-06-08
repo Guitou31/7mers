@@ -211,57 +211,73 @@
     });
 
     // ===== Bonus d'âge =====
-    // 26-35 ans : métier au choix, base ET avancées passent en coût base (1 PP/rang).
-    // 36-50 ans : métier + entraînement (mêmes effets) — vertu = info pure.
+    // 26-35 / 36-50 : le métier (et l'entraînement 36-50) bonus conserve
+    // sa distinction base/avancée — ces compétences sont juste *aussi*
+    // listées comme accessibles via ces sources. Le « + 1 rang gratuit »
+    // sur les avancées est géré séparément par getRangsOfferts().
     const ba = state.bonus_age || {};
-    function ajouterBonusMetier(nomMetier, label) {
-      if (!nomMetier) return;
-      const src = mData.find(x => x.nom === nomMetier);
+    function ajouterBonusComme(src, label) {
       if (!src) return;
-      // Base : ajoutées normalement.
-      (src.competences_base || []).forEach(c => {
-        baseSet.add(c); pushSource("base", c, label);
-      });
-      // Avancées : passées en "base" pour ce métier bonus (coût réduit).
-      (src.competences_avancees || []).forEach(c => {
-        baseSet.add(c); pushSource("base", c, label + " (avancée → base)");
-      });
-      // Choix (de base et avancées) : pareil, tout en base.
-      function bonusOptionsToBase(choix, suffix) {
-        if (!choix) return;
-        const arr = Array.isArray(choix) ? choix : [choix];
-        arr.forEach(ch => (ch.options || []).forEach(o => {
-          baseSet.add(o); pushSource("base", o, label + " (au choix" + suffix + ")");
-        }));
-      }
-      bonusOptionsToBase(src.competences_base_choix, "");
-      bonusOptionsToBase(src.competences_avancees_choix, ", avancée → base");
+      ajouterDe(src, label);
     }
-    function ajouterBonusEntrainement(nomEnt, label) {
-      if (!nomEnt) return;
-      const src = eData.find(x => x.nom === nomEnt);
-      if (!src) return;
-      (src.competences_base || []).forEach(c => {
-        baseSet.add(c); pushSource("base", c, label);
-      });
-      (src.competences_avancees || []).forEach(c => {
-        baseSet.add(c); pushSource("base", c, label + " (avancée → base)");
-      });
-      function bonusOptionsToBase(choix, suffix) {
-        if (!choix) return;
-        const arr = Array.isArray(choix) ? choix : [choix];
-        arr.forEach(ch => (ch.options || []).forEach(o => {
-          baseSet.add(o); pushSource("base", o, label + " (au choix" + suffix + ")");
-        }));
-      }
-      bonusOptionsToBase(src.competences_base_choix, "");
-      bonusOptionsToBase(src.competences_avancees_choix, ", avancée → base");
-    }
-    ajouterBonusMetier(ba.metier_26_35, "Bonus âge 26-35 · Métier " + (ba.metier_26_35 || ""));
-    ajouterBonusMetier(ba.metier_36_50, "Bonus âge 36-50 · Métier " + (ba.metier_36_50 || ""));
-    ajouterBonusEntrainement(ba.entrainement_36_50, "Bonus âge 36-50 · Entraînement " + (ba.entrainement_36_50 || ""));
+    if (ba.metier_26_35) ajouterBonusComme(
+      mData.find(x => x.nom === ba.metier_26_35),
+      "Bonus âge 26-35 · Métier " + ba.metier_26_35);
+    if (ba.metier_36_50) ajouterBonusComme(
+      mData.find(x => x.nom === ba.metier_36_50),
+      "Bonus âge 36-50 · Métier " + ba.metier_36_50);
+    if (ba.entrainement_36_50) ajouterBonusComme(
+      eData.find(x => x.nom === ba.entrainement_36_50),
+      "Bonus âge 36-50 · Entraînement " + ba.entrainement_36_50);
 
     return { base: baseSet, avancee: avSet, sources: sources };
+  }
+
+  // ===== Rangs offerts gratuitement =====
+  // Chaque source (métier, entraînement) donne ses compétences DE BASE au
+  // rang 1 gratuit (règle 7ème Mer). Cumul possible (max 3).
+  // Le bonus d'âge "métier au choix" (26-35) et "métier + entraînement"
+  // (36-50) offrent en plus +1 rang sur les compétences AVANCÉES du
+  // métier/entraînement choisi.
+  // Retourne { compNom: nbRangsOfferts }.
+  function getRangsOfferts() {
+    const state = load();
+    const offerts = {};
+
+    function offrir(comp) {
+      offerts[comp] = (offerts[comp] || 0) + 1;
+      if (offerts[comp] > 3) offerts[comp] = 3;
+    }
+    function offrirListe(arr) {
+      (arr || []).forEach(offrir);
+    }
+
+    const mData = (window.METIERS_DATA && window.METIERS_DATA.metiers) || [];
+    const eData = (window.ENTRAINEMENTS_DATA && window.ENTRAINEMENTS_DATA.entrainements) || [];
+
+    // Métiers normaux : +1 rang sur leurs compétences de base.
+    (state.metiers_choisis || []).forEach(m => {
+      const src = mData.find(x => x.nom === m.nom);
+      if (src) offrirListe(src.competences_base);
+    });
+    // Entraînements normaux : +1 rang sur leurs compétences de base.
+    (state.entrainements_choisis || []).forEach(en => {
+      const src = eData.find(x => x.nom === en.nom);
+      if (src) offrirListe(src.competences_base);
+    });
+
+    // Bonus d'âge : +1 rang sur base ET avancées.
+    const ba = state.bonus_age || {};
+    function bonusComplet(src) {
+      if (!src) return;
+      offrirListe(src.competences_base);
+      offrirListe(src.competences_avancees);
+    }
+    bonusComplet(mData.find(x => x.nom === ba.metier_26_35));
+    bonusComplet(mData.find(x => x.nom === ba.metier_36_50));
+    bonusComplet(eData.find(x => x.nom === ba.entrainement_36_50));
+
+    return offerts;
   }
 
   function typeCoutCompetence(compNom) {
@@ -337,13 +353,18 @@
     // Compétences : on recalcule dynamiquement le type_cout, car le joueur
     // peut avoir ajouté un métier/entraînement APRÈS avoir choisi un rang
     // (ce qui ferait basculer la compétence de 'hors' à 'base'/'avancee').
+    // On soustrait aussi les rangs offerts gratuitement (par les métiers
+    // normaux sur leurs base, et par les bonus d'âge sur base + avancées).
     const _setsCache = getMesCompetencesSets();
+    const _offerts = getRangsOfferts();
     (state.competences_choisies || []).forEach(c => {
       let tc = "hors";
       if (_setsCache.base.has(c.nom)) tc = "base";
       else if (_setsCache.avancee.has(c.nom)) tc = "avancee";
-      const cout = tc === "base" ? 1 : tc === "avancee" ? 2 : 3;
-      total += cout * (c.rang || 1);
+      const pp_par_rang = tc === "base" ? 1 : tc === "avancee" ? 2 : 3;
+      const offert = _offerts[c.nom] || 0;
+      const rangAchete = Math.max(0, (c.rang || 0) - offert);
+      total += pp_par_rang * rangAchete;
     });
     (state.avantages_choisis || []).forEach(a => total += (a.pp || 0));
     // Fallback saisies manuelles
@@ -395,6 +416,7 @@
     buildToggleButton,
     // Compétences
     getMesCompetencesSets,
+    getRangsOfferts,
     typeCoutCompetence,
     getCompetenceRang,
     setCompetenceRang,

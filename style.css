@@ -864,6 +864,38 @@ p { margin: 0 0 0.6em; }
   background: #c9a861;
   border-color: #c9a861;
 }
+/* Rangs offerts gratuitement (par métiers / entraînements / bonus d'âge) :
+   liserés verts + remplissage hachuré subtil pour bien les distinguer
+   des rangs achetés. */
+.fiche-radio.is-offert {
+  cursor: default;
+  border-color: #6b8b5b;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(107, 139, 91, 0.45) 0 2px,
+      rgba(107, 139, 91, 0.20) 2px 5px);
+}
+.fiche-radio.is-offert:hover {
+  transform: none;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(107, 139, 91, 0.55) 0 2px,
+      rgba(107, 139, 91, 0.30) 2px 5px);
+}
+.fiche-radio.is-offert.is-selected {
+  /* L'utilisateur n'a pas acheté de rang : on garde le rendu 'offert'
+     mais avec une bordure plus marquée pour montrer que c'est le rang
+     courant. */
+  border-color: var(--accent);
+  border-width: 3px;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(107, 139, 91, 0.60) 0 2px,
+      rgba(107, 139, 91, 0.30) 2px 5px);
+}
 
 /* Popup compétence (description + sources) */
 .fiche-popup-sources {

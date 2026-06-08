@@ -892,12 +892,12 @@
       pane.appendChild(buildBonusAgeTrait());
     } else if (plage === "26-35 ans") {
       pane.appendChild(buildBonusAgeMetier("metier_26_35",
-        "Métier au choix — ses compétences de base ET avancées passent au coût base (1 PP/rang)."));
+        "Métier au choix — ses compétences de base ET avancées gagnent +1 rang gratuit."));
     } else if (plage === "36-50 ans") {
       pane.appendChild(buildBonusAgeMetier("metier_36_50",
-        "Métier au choix — base ET avancées au coût base."));
+        "Métier au choix — base ET avancées +1 rang gratuit."));
       pane.appendChild(buildBonusAgeEntrainement("entrainement_36_50",
-        "Entraînement au choix — base ET avancées au coût base."));
+        "Entraînement au choix — base ET avancées +1 rang gratuit."));
       pane.appendChild(buildBonusAgeVertu("vertu_36_50",
         "Une Vertu au choix (parmi les 22 Arcanes)."));
     }
@@ -1098,8 +1098,8 @@
       ]));
       content.appendChild(el("p", { class: "modal-langues-intro" }, [
         "Sélectionnez le Métier qui sera votre bonus d'âge. ",
-        el("strong", null, "Ses compétences de base ET avancées passeront au coût base"),
-        " (1 PP/rang).",
+        el("strong", null, "Ses compétences de base ET avancées gagneront +1 rang gratuit"),
+        ".",
       ]));
       const tri = metiers.slice().sort((a, b) =>
         a.nom.localeCompare(b.nom, "fr", { sensitivity: "base" }));
@@ -1155,8 +1155,8 @@
       ]));
       content.appendChild(el("p", { class: "modal-langues-intro" }, [
         "Sélectionnez l'Entraînement qui sera votre bonus d'âge. ",
-        el("strong", null, "Ses compétences de base ET avancées passeront au coût base"),
-        " (1 PP/rang).",
+        el("strong", null, "Ses compétences de base ET avancées gagneront +1 rang gratuit"),
+        ".",
       ]));
       const tri = ents.slice().sort((a, b) =>
         a.nom.localeCompare(b.nom, "fr", { sensitivity: "base" }));
@@ -1394,18 +1394,42 @@
   }
 
   function buildRangRadios(nom, type_cout) {
-    const cur = getCompRangChoisi(nom);
+    // Rang offert (gratuit) par les métiers / entraînements / bonus d'âge.
+    const offerts = (window.CreationState && window.CreationState.getRangsOfferts)
+      ? window.CreationState.getRangsOfferts() : {};
+    const offert = offerts[nom] || 0;
+    // Rang choisi explicitement par le joueur (≥ offert si défini).
+    const choisi = getCompRangChoisi(nom);
+    // Rang total affiché = max(rang choisi, rang offert)
+    const cur = Math.max(choisi, offert);
+    const pp_par_rang = type_cout === "base" ? 1 : type_cout === "avancee" ? 2 : 3;
+
     const row = el("div", { class: "fiche-comp-radios", role: "radiogroup" });
     for (let r = 0; r <= 3; r++) {
+      const isOffert = r > 0 && r <= offert;          // rangs gratuits (verrouillés)
       const selected = cur === r;
+      const tooltip = isOffert
+        ? "Rang " + r + " (offert gratuitement par vos spécialités)"
+        : (r === 0
+            ? "Annuler (revient à rang " + offert + ")"
+            : "Rang " + r + " — " + ((r - offert) * pp_par_rang) + " PP à payer");
       row.appendChild(el("button", {
-        class: "fiche-radio" + (selected ? " is-selected" : ""),
+        class: "fiche-radio"
+          + (selected ? " is-selected" : "")
+          + (isOffert ? " is-offert" : ""),
         type: "button",
         role: "radio",
         "aria-checked": selected ? "true" : "false",
         "aria-label": "Rang " + r,
-        title: "Rang " + r + (r > 0 ? " (" + (r * (type_cout === "avancee" ? 2 : 1)) + " PP)" : ""),
-        onclick: () => setCompRangChoisi(nom, r, type_cout),
+        title: tooltip,
+        onclick: () => {
+          // Cliquer un rang < offert : on snap à offert (rien stocké = au rang offert).
+          if (r < offert) { setCompRangChoisi(nom, 0, type_cout); return; }
+          // Cliquer le rang offert lui-même : on retire l'entrée (gratuit, pas d'achat).
+          if (r === offert) { setCompRangChoisi(nom, 0, type_cout); return; }
+          // Rang > offert : on stocke le rang total.
+          setCompRangChoisi(nom, r, type_cout);
+        },
       }));
     }
     return row;
@@ -1429,8 +1453,8 @@
     if (baseList.length === 0 && avList.length === 0) {
       wrapper.appendChild(el("p", { class: "spec-empty-list" },
         "Ajoutez des Métiers, Entraînements ou Écoles pour faire apparaître ici " +
-        "des compétences à coût réduit. Le métier bonus d'âge fait aussi passer " +
-        "les avancées en coût base."));
+        "des compétences à coût réduit. Les métiers / entraînements bonus d'âge " +
+        "offrent +1 rang gratuit sur leurs compétences avancées en plus des bases."));
       return wrapper;
     }
 
@@ -1508,15 +1532,27 @@
         ]));
       }
 
-      // Sélecteur de rang dans le popup
-      content.appendChild(el("div", { class: "detail-section" }, [
+      // Sélecteur de rang dans le popup + rappel du rang offert
+      const offerts = (window.CreationState && window.CreationState.getRangsOfferts)
+        ? window.CreationState.getRangsOfferts() : {};
+      const offert = offerts[nom] || 0;
+      const rangSection = el("div", { class: "detail-section" }, [
         el("h3", null, "Rang à la création"),
         buildRangRadios(nom, tc),
-        el("p", { class: "competence-rang-note" }, [
-          el("em", null,
-            "⚠ Une compétence ne peut dépasser 3 rangs à la création."),
-        ]),
+      ]);
+      if (offert > 0) {
+        rangSection.appendChild(el("p", { class: "competence-rang-recap" }, [
+          "Rang " + offert + " offert gratuitement par vos spécialités",
+          " (cercles hachurés vert). ",
+          "Cercles supplémentaires : ", el("strong", null, (tc === "avancee" ? "2" : tc === "base" ? "1" : "3") + " PP / rang acheté"),
+          ".",
+        ]));
+      }
+      rangSection.appendChild(el("p", { class: "competence-rang-note" }, [
+        el("em", null,
+          "⚠ Une compétence ne peut dépasser 3 rangs à la création."),
       ]));
+      content.appendChild(rangSection);
     });
   }
 
