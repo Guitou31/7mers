@@ -1808,6 +1808,59 @@ p { margin: 0 0 0.6em; }
   font-style: italic;
 }
 
+/* ====== Choix des spécialisations 'A OU B' (carte Écoles) ====== */
+.ecole-specs-choix {
+  margin: 0.45rem 0 0.2rem 0;
+  padding: 0.45rem 0.6rem;
+  background: rgba(232, 212, 168, 0.05);
+  border-left: 3px solid var(--accent-soft);
+  border-radius: 0 4px 4px 0;
+}
+.ecole-specs-choix-titre {
+  margin: 0 0 0.35rem 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+  font-weight: 600;
+}
+.ecole-specs-choix-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.25rem;
+}
+.ecole-specs-choix-row:last-child { margin-bottom: 0; }
+.ecole-specs-choix-label {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--text);
+  opacity: 0.8;
+  flex: 0 0 auto;
+}
+.ecole-specs-choix-opt {
+  font: inherit;
+  font-size: 0.82rem;
+  padding: 0.2rem 0.55rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  border: 1px solid rgba(232, 212, 168, 0.3);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+.ecole-specs-choix-opt:hover {
+  background: rgba(232, 212, 168, 0.15);
+  border-color: var(--accent-soft);
+}
+.ecole-specs-choix-opt.is-selected {
+  background: #6b8b5b;
+  border-color: #6b8b5b;
+  color: #fff;
+  font-weight: 600;
+}
+
 /* Étape 3 — affichage de la langue native dans la carte 'Langues' */
 .spec-langue-native {
   margin: 0.4rem 0;

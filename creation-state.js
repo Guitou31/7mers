@@ -119,10 +119,40 @@
       if (state.nation && Array.isArray(ecoleNations) && ecoleNations.length) {
         hors_nation = !ecoleNations.includes(state.nation);
       }
-      list.push({ nom, type, hors_nation });
+      // choix_specialisations : map { slotBrut: optionChoisie } pour les
+      // spécialisations contenant ' OU ' qui demandent un choix de l'utilisateur.
+      list.push({ nom, type, hors_nation, choix_specialisations: {} });
       save(state);
       return true;
     }
+  }
+
+  // ===== Spécialisations d'écoles : gestion des choix 'A OU B' =====
+  // Une spec brute peut être 'Athlétisme' (1 compétence directe) ou
+  // 'Hache OU Épée 2 mains' (le joueur doit choisir entre 2+ options).
+  // Cette fonction renvoie pour chaque entrée d'école une structure :
+  //   { resolved: [comp...], slots: [{slotBrut, options: [...], choix}] }
+  function analyserSpecialisationsEcole(ecoleEntry, srcEcole) {
+    const result = { resolved: [], slots: [] };
+    if (!srcEcole || !Array.isArray(srcEcole.specialisations)) return result;
+    const choix = (ecoleEntry && ecoleEntry.choix_specialisations) || {};
+    srcEcole.specialisations.forEach(specBrute => {
+      if (typeof specBrute !== "string") return;
+      if (/ OU /i.test(specBrute)) {
+        const options = specBrute.split(/\s+OU\s+/i)
+          .map(s => s.trim()).filter(Boolean);
+        const choixUtil = choix[specBrute] || null;
+        if (choixUtil && options.includes(choixUtil)) {
+          result.resolved.push(choixUtil);
+        }
+        result.slots.push({
+          slotBrut: specBrute, options: options, choix: choixUtil,
+        });
+      } else {
+        result.resolved.push(specBrute);
+      }
+    });
+    return result;
   }
 
   function isInCreation(category, nom) {
@@ -196,18 +226,19 @@
     });
     // Écoles : leurs `specialisations` sont des compétences de base
     // (sémantique 7ème Mer : compétences enseignées par le style).
+    // Gère les choix 'A OU B' via analyserSpecialisationsEcole.
     const ecData = (window.ECOLES_DATA && window.ECOLES_DATA.ecoles) || [];
     const ecCombatData = (window.ECOLES_COMBAT_DATA && window.ECOLES_COMBAT_DATA.ecoles) || [];
     (state.ecoles_choisies || []).forEach(e => {
       const src = ecData.find(x => x.nom === e.nom)
               || ecCombatData.find(x => x.nom === e.nom);
-      if (src && Array.isArray(src.specialisations)) {
-        const label = "École " + (e.type ? "(" + e.type + ") " : "") + e.nom;
-        src.specialisations.forEach(c => {
-          baseSet.add(c);
-          pushSource("base", c, label);
-        });
-      }
+      if (!src) return;
+      const label = "École " + (e.type ? "(" + e.type + ") " : "") + e.nom;
+      const analyse = analyserSpecialisationsEcole(e, src);
+      analyse.resolved.forEach(c => {
+        baseSet.add(c);
+        pushSource("base", c, label);
+      });
     });
 
     // ===== Bonus d'âge =====
@@ -264,6 +295,17 @@
     (state.entrainements_choisis || []).forEach(en => {
       const src = eData.find(x => x.nom === en.nom);
       if (src) offrirListe(src.competences_base);
+    });
+    // Écoles (Spadassin / Combat) : +1 rang sur chacune de leurs
+    // spécialisations résolues (les slots 'A OU B' non choisis sont ignorés).
+    const ecData = (window.ECOLES_DATA && window.ECOLES_DATA.ecoles) || [];
+    const ecCombatData = (window.ECOLES_COMBAT_DATA && window.ECOLES_COMBAT_DATA.ecoles) || [];
+    (state.ecoles_choisies || []).forEach(e => {
+      const src = ecData.find(x => x.nom === e.nom)
+              || ecCombatData.find(x => x.nom === e.nom);
+      if (!src) return;
+      const analyse = analyserSpecialisationsEcole(e, src);
+      offrirListe(analyse.resolved);
     });
 
     // Bonus d'âge : +1 rang sur base ET avancées.
@@ -421,5 +463,7 @@
     getCompetenceRang,
     setCompetenceRang,
     coutCompetenceTotal,
+    // Écoles : spécialisations 'A OU B'
+    analyserSpecialisationsEcole,
   };
 })();

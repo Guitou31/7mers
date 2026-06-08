@@ -1398,6 +1398,13 @@
   const RANG_MAX_CREATION = 3;
   const RANG_MAX_ABSOLU = 5;
 
+  // Helper : retrouve la source d'une école (spadassin ou combat) par son nom.
+  function trouverSrcEcole(nom) {
+    const ecData = (window.ECOLES_DATA && window.ECOLES_DATA.ecoles) || [];
+    const ecCombat = (window.ECOLES_COMBAT_DATA && window.ECOLES_COMBAT_DATA.ecoles) || [];
+    return ecData.find(x => x.nom === nom) || ecCombat.find(x => x.nom === nom) || null;
+  }
+
   function buildRangRadios(nom, type_cout) {
     // Rang offert (gratuit) par les métiers / entraînements / bonus d'âge.
     const offerts = (window.CreationState && window.CreationState.getRangsOfferts)
@@ -1664,11 +1671,23 @@
           const ul = el("ul", { class: "spec-chosen-list" });
           ecoles.forEach((e, i) => {
             const cout = (e.type === "Spadassin" ? 20 : 15) + (e.hors_nation ? 5 : 0);
-            ul.appendChild(el("li", null, [
+            // Analyse des slots 'A OU B'
+            const src = trouverSrcEcole(e.nom);
+            const analyse = (src && window.CreationState && window.CreationState.analyserSpecialisationsEcole)
+              ? window.CreationState.analyserSpecialisationsEcole(e, src)
+              : { slots: [], resolved: [] };
+            const slots = analyse.slots || [];
+            const nbAResoudre = slots.filter(s => !s.choix).length;
+
+            const li = el("li", null, [
               el("span", { class: "chosen-item-name" }, e.nom),
               el("span", { class: "chosen-item-meta" }, [
                 el("span", { class: "chosen-tag" }, e.type),
                 e.hors_nation ? el("span", { class: "chosen-tag chosen-tag-warn" }, "hors-Nation") : null,
+                nbAResoudre > 0
+                  ? el("span", { class: "chosen-tag chosen-tag-warn" },
+                      "⚠ " + nbAResoudre + " choix")
+                  : null,
                 el("span", { class: "chosen-pp" }, cout + " PP"),
               ]),
               el("button", {
@@ -1682,7 +1701,39 @@
                   refreshPPBar();
                 },
               }, "×"),
-            ]));
+            ]);
+
+            // Sous-bloc : choix des spécialisations 'A OU B'
+            if (slots.length > 0) {
+              const sub = el("div", { class: "ecole-specs-choix" });
+              sub.appendChild(el("p", { class: "ecole-specs-choix-titre" },
+                "Spécialisations" + (nbAResoudre > 0 ? " (à choisir)" : "")));
+              slots.forEach(slot => {
+                const ligne = el("div", { class: "ecole-specs-choix-row" });
+                ligne.appendChild(el("span", { class: "ecole-specs-choix-label" },
+                  slot.slotBrut));
+                slot.options.forEach(opt => {
+                  const isChoisi = slot.choix === opt;
+                  ligne.appendChild(el("button", {
+                    class: "ecole-specs-choix-opt" + (isChoisi ? " is-selected" : ""),
+                    type: "button",
+                    "aria-pressed": isChoisi ? "true" : "false",
+                    onclick: () => {
+                      // Toggle : si déjà choisi, on annule ; sinon on fixe.
+                      e.choix_specialisations = e.choix_specialisations || {};
+                      e.choix_specialisations[slot.slotBrut] = isChoisi ? null : opt;
+                      saveState();
+                      renderEtape3Specificites();
+                      refreshPPBar();
+                    },
+                  }, opt));
+                });
+                sub.appendChild(ligne);
+              });
+              li.appendChild(sub);
+            }
+
+            ul.appendChild(li);
           });
           card.appendChild(ul);
         }
