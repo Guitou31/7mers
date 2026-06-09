@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avantages — Bréviaire 7ème Mer V2.1</title>
+  <link rel="icon" type="image/png" href="Favicon.png">
+  <link rel="apple-touch-icon" href="Favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="avantages">
+  <div id="page-layout"></div>
+
+  <div class="page-section-title">
+    <h2>Avantages</h2>
+    <p class="page-section-sub">
+      Bonus achetables à la création (en PP) ou en cours de jeu (en XP, double du
+      coût PP). Les Avantages marqués <strong>*</strong> viennent de la 2ème édition.
+      Ceux marqués <strong>(H)</strong> s'activent au prix d'un dé d'Héroïsme.
+      Certains sont restreints à une Nation, d'autres simplement réduits pour
+      la Nation d'origine — utilisez les filtres pour vous y retrouver.
+    </p>
+  </div>
+
+  <div class="layout">
+    <button class="filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="filters">
+      <span class="filters-toggle-label">Filtres</span>
+      <span class="filters-toggle-count" id="filters-active-count" hidden></span>
+    </button>
+
+    <aside class="filters" id="filters" aria-label="Filtres">
+      <div class="filter-group">
+        <label for="search">Recherche</label>
+        <input type="search" id="search" placeholder="Nom, description…" autocomplete="off">
+      </div>
+
+      <div class="filter-group">
+        <h3>Catégorie</h3>
+        <div class="checkbox-list" id="filter-categories"></div>
+      </div>
+
+      <div class="filter-group">
+        <h3>Type</h3>
+        <div class="checkbox-list" id="filter-type">
+          <label>
+            <input type="checkbox" id="filter-v2"><span>2ᵉ Édition (*)</span>
+          </label>
+          <label>
+            <input type="checkbox" id="filter-h"><span>Active par Héroïsme (H)</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3>Liens à ma Nation</h3>
+        <div class="mes-spe-list" id="filter-nation">
+          <p class="filter-empty-note" id="filter-nation-info"></p>
+        </div>
+      </div>
+
+      <button class="btn-reset" id="reset-filters" type="button">Réinitialiser les filtres</button>
+    </aside>
+
+    <main class="results">
+      <div class="results-bar">
+        <span class="results-count" id="results-count"></span>
+      </div>
+      <ul class="ecoles-grid" id="avantages-grid"></ul>
+      <p class="empty-state" id="empty-state" hidden>
+        Aucun avantage ne correspond à ces critères.
+      </p>
+    </main>
+  </div>
+
+  <script src="layout.js"></script>
+  <script src="avantages.js"></script>
+  <script src="creation-state.js"></script>
+  <script src="avantages-app.js"></script>
+  <script src="pp-bar-global.js"></script>
+</body>
+</html>

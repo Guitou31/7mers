@@ -21,7 +21,7 @@
     { id: "entrainements",         file: "entrainements.html",        label: "Entraînements",          available: true,  category: "creation" },
     { id: "competences",              file: "competences.html",              label: "Compétences principales",  available: true,  category: "creation", group: "competences" },
     { id: "competences-artisanales",  file: "competences-artisanales.html",  label: "Compétences artisanales",  available: true,  category: "creation", group: "competences" },
-    { id: "avantages",             file: "avantages.html",            label: "Avantages",              available: false, category: "creation" },
+    { id: "avantages",             file: "avantages.html",            label: "Avantages",              available: true,  category: "creation" },
     { id: "ecoles-spadassin",      file: "ecoles-spadassin.html",     label: "Écoles de Spadassin",    available: true,  category: "combat",   group: "ecoles_techniques" },
     { id: "ecoles-combat",         file: "ecoles-combat.html",        label: "Écoles de Combat",       available: true,  category: "combat",   group: "ecoles_techniques" },
     { id: "techniques",            file: "techniques.html",           label: "Liste des techniques",   available: true,  category: "combat",   group: "ecoles_techniques" },

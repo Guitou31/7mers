@@ -2685,3 +2685,45 @@ p { margin: 0 0 0.6em; }
   align-self: flex-start;
   font-family: -apple-system, system-ui, sans-serif;
 }
+
+/* ====== Page Avantages ====== */
+.avant-card .arme.avant-cout {
+  font-family: 'Cinzel', Georgia, serif;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+.avant-badge-v2 {
+  background: rgba(201, 168, 97, 0.22);
+  color: #c9a861;
+  border: 1px solid rgba(201, 168, 97, 0.35);
+}
+.avant-badge-h {
+  background: rgba(195, 70, 70, 0.18);
+  color: #e29191;
+  border: 1px solid rgba(195, 70, 70, 0.35);
+  font-weight: 700;
+}
+.avant-badge-restrict {
+  background: rgba(195, 70, 70, 0.14);
+  color: #e29191;
+  border: 1px solid rgba(195, 70, 70, 0.35);
+}
+.avant-badge-reduc {
+  background: rgba(127, 190, 112, 0.14);
+  color: #9fd28b;
+  border: 1px solid rgba(127, 190, 112, 0.35);
+}
+.avant-cout-detail {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+}
+.avant-section-nation {
+  background: rgba(232, 212, 168, 0.06);
+  border-left: 3px solid var(--accent-soft);
+  border-radius: 0 4px 4px 0;
+  padding: 0.5rem 0.8rem;
+}
