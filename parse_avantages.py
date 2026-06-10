@@ -83,14 +83,25 @@ def parser_cout(brut: str):
     cout_min / cout_max : tentatives d'extraction numérique pour tri
     """
     raw = brut.strip()
+    # 'only' → 'Seulement' (terminologie française uniforme)
+    raw = re.sub(r"\bonly\b", "Seulement", raw, flags=re.IGNORECASE)
     txt = raw
 
-    # Détection de la Nation mentionnée (le token le plus long match)
-    nation = None
+    # Détection des Nations mentionnées (peut y en avoir plusieurs :
+    # '3 à 5 Ussuran ou Sarmatien Seulement'). On matche les tokens du
+    # plus long au plus court en masquant chaque match pour éviter les
+    # chevauchements (Sorcière Strega vs Strega).
+    nations = []
+    reste = txt
+    premiere_pos = None
     for tok in sorted(NATION_TOKENS, key=len, reverse=True):
-        if re.search(r"(?<!\w)" + re.escape(tok) + r"(?!\w)", txt, re.IGNORECASE):
-            nation = tok
-            break
+        m = re.search(r"(?<!\w)" + re.escape(tok) + r"(?!\w)", reste, re.IGNORECASE)
+        if m:
+            nations.append(tok)
+            if premiere_pos is None or m.start() < premiere_pos:
+                premiere_pos = m.start()
+            reste = reste[:m.start()] + ("#" * len(tok)) + reste[m.end():]
+    nation = nations[0] if nations else None
 
     # Distinction restriction / réduction :
     # - "only" / "seulement" / nation seule (sans '/' avant) → restriction
@@ -98,9 +109,9 @@ def parser_cout(brut: str):
     # Sans nation : on n'a aucun lien (peut-être tarif progressif)
     type_lien = None
     if nation:
-        # Chercher '/' avant le token Nation : si présent → réduction
+        # Chercher '/' avant la 1ʳᵉ Nation : si présent → réduction
         # Sinon → restriction (l'avantage est exclusif à cette Nation).
-        avant_nation = txt.lower().split(nation.lower())[0]
+        avant_nation = txt[:premiere_pos] if premiere_pos is not None else txt
         if "/" in avant_nation:
             type_lien = "reduction"
         else:
@@ -108,13 +119,20 @@ def parser_cout(brut: str):
         # 'only' / 'seulement' renforce la restriction (même avec /)
         if re.search(r"\bonly\b", txt, re.IGNORECASE) or "seulement" in txt.lower():
             type_lien = "restriction"
+        # Coûts CROISSANTS avec slash ('10/20/40 Eisenor', '3/5/7 Nation
+        # Pirate') = tarif progressif d'un avantage restreint à la Nation,
+        # pas une réduction (les réductions sont décroissantes : '6 / 3').
+        if type_lien == "reduction":
+            m2 = re.match(r"^(\d+)\s*/\s*(\d+)", txt)
+            if m2 and int(m2.group(2)) > int(m2.group(1)):
+                type_lien = "restriction"
 
     # Extraire les nombres pour tri (premier / dernier)
     nums = [int(m) for m in re.findall(r"\d+", txt)]
     cout_min = nums[0] if nums else None
     cout_max = nums[-1] if nums else cout_min
 
-    return raw, type_lien, nation, cout_min, cout_max
+    return raw, type_lien, nations, cout_min, cout_max
 
 
 def normaliser_nation(nat: str) -> str:
@@ -150,6 +168,102 @@ def normaliser_nation(nat: str) -> str:
         "Fhidelis":          "Fhidelis",
     }
     return mapping.get(nat, nat)
+
+
+# Corrections de gentilés pour l'affichage des réductions
+# (typos du docx, noms de Nation utilisés comme gentilé, etc.)
+GENTILE_FIX = {
+    "Castille":            "Castillans",
+    "Nation Pirate":       "Nations Pirates",
+    "Voddaci":             "Vodacci",
+    "Eiseinor":            "Eisenors",
+    "Ussuran ou Sertepes": "Ussurans et Sertepes",
+}
+
+
+def pluriel_gentile(s):
+    """'Eisenor' → 'Eisenors', 'Montaginois' → 'Montaginois', 'Vodacci' → 'Vodacci'.
+    Ne pluralise que les gentilés à un seul mot."""
+    s = s.strip()
+    if s in GENTILE_FIX:
+        return GENTILE_FIX[s]
+    if " " in s:
+        return s
+    if s[-1:].lower() in ("s", "x", "z", "i"):
+        return s
+    return s + "s"
+
+
+def construire_cout_affiche(a):
+    """Libellé de coût clair pour les cartes et le modal.
+    Réductions : '4 / 2 Eisenor' → '4 PP (2 PP pour les Eisenors)'.
+    Restrictions : '3 Aztlan' → '3 PP' (la Nation est dans le badge)."""
+    raw = a["cout_raw"]
+    if a["type_lien"] == "reduction":
+        m = re.match(r"^(\d+(?:\s*à\s*\d+)?)\s*/\s*(\d+)\s*(si\s+)?(.+)$", raw)
+        if m:
+            x, y, si, qui = m.group(1).strip(), m.group(2).strip(), m.group(3), m.group(4).strip()
+            if si:
+                return f"{x} PP ({y} PP si {qui})"
+            return f"{x} PP ({y} PP pour les {pluriel_gentile(qui)})"
+    if a["type_lien"] == "restriction" and a["nation_lien"]:
+        # Partie numérique en tête ('3 à 5', '10/20/40', '1+', '1 à 26'...)
+        # Greedy avec arrêt sur la majuscule du gentilé ('3 à 5 Ussuran' →
+        # '3 à 5', le 'à' minuscule fait partie de la plage de coût).
+        m = re.match(r"^([\d][\d\s/à+,\-]*)(?=[A-ZÀ-Ü])", raw)
+        if m and m.group(1).strip():
+            return m.group(1).strip().rstrip(",-") + " PP"
+    # Défaut : suffixe PP si chiffres présents et pas déjà de 'pp' dans la chaîne
+    if re.search(r"\d", raw) and "pp" not in raw.lower():
+        return raw + " PP"
+    return raw
+
+
+# Corrections manuelles : classification et/ou libellé de coût.
+# Appliquées en dernier (priorité sur la détection automatique).
+COUT_OVERRIDES = {
+    "Araignée dressée": {
+        # Limitée aux Vodacci ; moins chère pour les Sorcières Strega
+        # (la sorcellerie Sorte est de toute façon exclusivement vodacci).
+        "type_lien": "restriction",
+        "nation_lien": "Vodacce",
+        "nations_lien": ["Vodacce"],
+        "cout_affiche": "2 PP (1 PP pour les Sorcières Strega)",
+        "cout_min": 1, "cout_max": 2,
+    },
+    "Lame du mystère": {
+        "cout_affiche": "Variable (selon la lame)",
+    },
+    "Arme du clan Mac Eachern": {
+        # Réservé aux Îles Glamour (Avalon, Inismore, Marches des Highlands).
+        # Coût réel : 5 PP.
+        "type_lien": "restriction",
+        "nation_lien": "Îles Glamour",
+        "nations_lien": ["Avalon", "Inismore", "Marches des Highlands"],
+        "cout_affiche": "5 PP",
+        "cout_min": 5, "cout_max": 5,
+    },
+    "Pizkaya": {
+        # Réservé aux Fidhelis (Ussura / Sarmatie).
+        "type_lien": "restriction",
+        "nation_lien": "Ussura / Sarmatie",
+        "nations_lien": ["Ussura", "Sarmatie"],
+        "cout_affiche": "15 PP (Fidhelis Seulement)",
+    },
+    "Âme Indomptable": {
+        "nations_lien": ["Nations Pirates", "Mille Nations"],
+        "cout_affiche": "4 PP (2 PP pour les Nations Pirates et Mille Nations)",
+    },
+    "Liste de clients importants": {
+        "cout_affiche": "1 PP (réservé aux Jennys et Courtisanes)",
+    },
+    "Lame épaissie": {
+        "cout_affiche": "2 PP par fil (10 PP max)",
+    },
+    "Arme achetée": {
+        "cout_affiche": "Variable (+2 PP au coût initial de l'arme)",
+    },
+}
 
 
 # Réécritures des descriptions courtes trop sommaires ou renvoyant au PDF
@@ -254,21 +368,31 @@ def main():
             nom = re.sub(r"\s+", " ", nom).rstrip(".").strip()
 
             # Parser le coût
-            cout_raw, type_lien, nation, c_min, c_max = parser_cout(cout_brut)
-            nation_off = normaliser_nation(nation) if nation else None
+            cout_raw, type_lien, nations_tok, c_min, c_max = parser_cout(cout_brut)
+            # Normalise chaque Nation détectée, dédoublonne en gardant l'ordre
+            nations_off = []
+            for tok in nations_tok:
+                off = normaliser_nation(tok)
+                if off not in nations_off:
+                    nations_off.append(off)
+            nation_off = " / ".join(nations_off) if len(nations_off) > 1 \
+                else (nations_off[0] if nations_off else None)
 
-            avantages.append({
+            entry = {
                 "nom": nom,
                 "categorie": cur_section,
                 "cout_raw": cout_raw,
                 "cout_min": c_min,
                 "cout_max": c_max,
                 "type_lien": type_lien,          # "restriction" | "reduction" | None
-                "nation_lien": nation_off,        # nom officiel de Nation/spé
+                "nation_lien": nation_off,        # libellé (peut être 'A / B')
                 "v2": v2,
                 "h_heroisme": h_heroisme,
                 "description": description,
-            })
+            }
+            if len(nations_off) > 1:
+                entry["nations_lien"] = nations_off
+            avantages.append(entry)
             i = j
         else:
             i += 1
@@ -288,6 +412,12 @@ def main():
     for a in unique:
         if a["nom"] in DESC_OVERRIDES:
             a["description"] = DESC_OVERRIDES[a["nom"]]
+
+    # Libellé de coût clair + corrections manuelles
+    for a in unique:
+        a["cout_affiche"] = construire_cout_affiche(a)
+        if a["nom"] in COUT_OVERRIDES:
+            a.update(COUT_OVERRIDES[a["nom"]])
 
     print(f"Avantages extraits : {len(avantages)} ({len(unique)} uniques)")
 

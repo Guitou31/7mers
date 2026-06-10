@@ -284,8 +284,8 @@ def main():
             bloc = choisir_bloc(blocs, a.get("nation_lien"))
             if bloc["paragraphes"]:
                 a["description_v1"] = bloc["paragraphes"]
-                if bloc["cout_v1"]:
-                    a["cout_v1"] = bloc["cout_v1"]
+                # NB : on ne stocke plus cout_v1 — les coûts du docx de
+                # Guillaume font foi (corrigés à la main).
                 matched += 1
                 continue
         non_matches.append(

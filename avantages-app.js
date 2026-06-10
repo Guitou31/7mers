@@ -51,15 +51,16 @@
     if (state.nation_filtre) {
       const nation = getNationCourante();
       if (!nation) return false; // pas de Nation choisie → ces filtres sont sans effet
+      const liees = nationsLiees(a);
       if (state.nation_filtre === "restriction") {
         // Avantages réservés à ma Nation
-        if (a.type_lien !== "restriction" || a.nation_lien !== nation) return false;
+        if (a.type_lien !== "restriction" || !liees.includes(nation)) return false;
       } else if (state.nation_filtre === "reduction") {
         // Avantages avec réduction pour ma Nation
-        if (a.type_lien !== "reduction" || a.nation_lien !== nation) return false;
+        if (a.type_lien !== "reduction" || !liees.includes(nation)) return false;
       } else if (state.nation_filtre === "bloque") {
         // Avantages restreints à une AUTRE Nation que la mienne
-        if (a.type_lien !== "restriction" || a.nation_lien === nation) return false;
+        if (a.type_lien !== "restriction" || liees.includes(nation)) return false;
       }
     }
     if (state.search) {
@@ -89,10 +90,18 @@
     return badges;
   }
 
-  // Suffixe ' PP' seulement si le coût contient un chiffre
-  // (évite 'Sorcier Porté only PP').
+  // Libellé de coût : pré-calculé par le parseur (cout_affiche), avec
+  // fallback brut (suffixe ' PP' seulement si chiffre présent).
   function libelleCout(a) {
+    if (a.cout_affiche) return a.cout_affiche;
     return /\d/.test(a.cout_raw) ? a.cout_raw + " PP" : a.cout_raw;
+  }
+
+  // Liste des Nations liées (gère les restrictions multi-Nations comme
+  // les Îles Glamour : Avalon, Inismore, Marches des Highlands).
+  function nationsLiees(a) {
+    if (Array.isArray(a.nations_lien) && a.nations_lien.length) return a.nations_lien;
+    return a.nation_lien ? [a.nation_lien] : [];
   }
 
   function renderCard(a) {
@@ -162,22 +171,26 @@
       renderBadges(a),
     ]));
 
-    // Coût
-    const coutSection = el("div", { class: "detail-section" }, [
+    // Coût (le docx de Guillaume fait foi — pas de rappel V1)
+    content.appendChild(el("div", { class: "detail-section" }, [
       el("h3", null, "Coût"),
       el("p", { class: "description-paragraph avant-cout-detail" }, libelleCout(a)),
-    ]);
-    if (a.cout_v1 && normalize(a.cout_v1) !== normalize("Coût : " + a.cout_raw + " PP")) {
-      coutSection.appendChild(el("p", { class: "avant-cout-v1" },
-        "Dans le supplément V1 : " + a.cout_v1.replace(/^Co[uû]t\s*:\s*/i, "")));
-    }
-    content.appendChild(coutSection);
+    ]));
 
     // Lien à une Nation
     if (a.type_lien && a.nation_lien) {
+      const liees = nationsLiees(a);
+      let cible;
+      if (liees.length > 1) {
+        cible = liees.join(", ") + " (" + a.nation_lien + ")";
+      } else {
+        cible = a.nation_lien;
+      }
       const phrase = a.type_lien === "restriction"
-        ? ("Cet avantage est réservé aux personnages de la Nation " + a.nation_lien + ".")
-        : ("Disponible pour tous, à coût réduit pour la Nation " + a.nation_lien + ".");
+        ? (liees.length > 1
+            ? "Cet avantage est réservé aux personnages des Nations : " + cible + "."
+            : "Cet avantage est réservé aux personnages de la Nation " + cible + ".")
+        : ("Disponible pour tous, à coût réduit pour : " + cible + ".");
       content.appendChild(el("div", { class: "detail-section avant-section-nation" }, [
         el("h3", null, a.type_lien === "restriction" ? "Restriction de Nation" : "Réduction pour une Nation"),
         el("p", { class: "description-paragraph" }, phrase),
@@ -252,9 +265,9 @@
       return;
     }
     info.textContent = "Nation actuelle : " + nation;
-    const nbRestrict = data.avantages.filter(a => a.type_lien === "restriction" && a.nation_lien === nation).length;
-    const nbReduc   = data.avantages.filter(a => a.type_lien === "reduction"   && a.nation_lien === nation).length;
-    const nbBloque  = data.avantages.filter(a => a.type_lien === "restriction" && a.nation_lien && a.nation_lien !== nation).length;
+    const nbRestrict = data.avantages.filter(a => a.type_lien === "restriction" && nationsLiees(a).includes(nation)).length;
+    const nbReduc   = data.avantages.filter(a => a.type_lien === "reduction"   && nationsLiees(a).includes(nation)).length;
+    const nbBloque  = data.avantages.filter(a => a.type_lien === "restriction" && nationsLiees(a).length && !nationsLiees(a).includes(nation)).length;
     const options = [
       { key: "restriction", label: "Réservés à ma Nation (" + nbRestrict + ")" },
       { key: "reduction",   label: "Réduction pour ma Nation (" + nbReduc + ")" },
