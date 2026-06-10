@@ -66,8 +66,8 @@ def detecter_cout(s: str) -> bool:
         return True
     if "only" in s.lower() or "seulement" in s.lower():
         return True
-    if "sorcier" in s.lower() or "sorcière" in s.lower():
-        return True
+    # NB : ne PAS matcher 'sorcier' seul — 'Sorcier Latent' est un nom
+    # d'avantage, pas un coût. 'Sorcier Porté only' est couvert par 'only'.
     return False
 
 

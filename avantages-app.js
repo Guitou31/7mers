@@ -154,11 +154,16 @@
     ]));
 
     // Coût
-    content.appendChild(el("div", { class: "detail-section" }, [
+    const coutSection = el("div", { class: "detail-section" }, [
       el("h3", null, "Coût"),
       el("p", { class: "description-paragraph avant-cout-detail" },
         [a.cout_raw, " PP"]),
-    ]));
+    ]);
+    if (a.cout_v1 && normalize(a.cout_v1) !== normalize("Coût : " + a.cout_raw + " PP")) {
+      coutSection.appendChild(el("p", { class: "avant-cout-v1" },
+        "Dans le supplément V1 : " + a.cout_v1.replace(/^Co[uû]t\s*:\s*/i, "")));
+    }
+    content.appendChild(coutSection);
 
     // Lien à une Nation
     if (a.type_lien && a.nation_lien) {
@@ -171,12 +176,35 @@
       ]));
     }
 
-    // Description
-    content.appendChild(el("div", { class: "detail-section" }, [
-      el("h3", null, "Description"),
-      el("p", { class: "description-paragraph" },
-        a.description || "(à venir — voir le supplément V1)"),
-    ]));
+    // Résumé court (docx de Guillaume)
+    if (a.description) {
+      content.appendChild(el("div", { class: "detail-section" }, [
+        el("h3", null, "En bref"),
+        el("p", { class: "description-paragraph avant-resume" }, a.description),
+      ]));
+    }
+
+    // Description détaillée V1 (extraite du PDF '09 Avantages')
+    if (Array.isArray(a.description_v1) && a.description_v1.length) {
+      const sec = el("div", { class: "detail-section" }, [
+        el("h3", null, "Description détaillée"),
+      ]);
+      a.description_v1.forEach(p => {
+        if (p.startsWith("◆")) {
+          // Sous-variante (ex: 'Éblouissant — Coût : 10 PP')
+          sec.appendChild(el("h4", { class: "avant-v1-sub" },
+            p.replace(/^◆\s*/, "").replace(/\s*:\s*$/, "")));
+        } else {
+          sec.appendChild(el("p", { class: "description-paragraph" }, p));
+        }
+      });
+      content.appendChild(sec);
+    } else if (!a.description) {
+      content.appendChild(el("div", { class: "detail-section" }, [
+        el("h3", null, "Description"),
+        el("p", { class: "description-paragraph" }, "(à venir)"),
+      ]));
+    }
 
     if (typeof dialog.showModal === "function") {
       if (!dialog.open) dialog.showModal();

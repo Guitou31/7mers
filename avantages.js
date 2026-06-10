@@ -1,4 +1,4 @@
-// Genere par parse_avantages.py - ne pas editer a la main
+// Genere par parse_avantages.py + parse_avantages_pdf.py - ne pas editer a la main
 window.AVANTAGES_DATA = {
   "_meta": {
     "source": "Avantages triés.docx (Guillaume)",
@@ -20,7 +20,9 @@ window.AVANTAGES_DATA = {
       "Maritimes": 9,
       "Compétences": 40,
       "Autres": 23
-    }
+    },
+    "source_v1": "09 Avantages (10-09-14).pdf",
+    "nb_descriptions_v1": 110
   },
   "avantages": [
     {
@@ -45,7 +47,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Possession d’un navire, coût de l’Avantage selon la taille du navire"
+      "description": "Possession d’un navire, coût de l’Avantage selon la taille du navire",
+      "description_v1": [
+        "entre plusieurs héros Le (ou les) héros possède(nt) un navire dès le début du jeu.",
+        "Sa valeur en Points de Navire est proportionnelle à la dépense en Points de Personnage. Pour 4 PP, il dispose de 10 PN, pour 6 PP, de 15 PN et pour 8 PP de 20 PN. Enfin, vous recevez 1 point de rang social."
+      ],
+      "cout_v1": "Coût : de 2 à 8 PP, possibilité de dépense commune"
     },
     {
       "nom": "Artefact Syrneth",
@@ -57,7 +64,43 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Possède une arme Sidhe au choix"
+      "description": "Possède une arme Sidhe au choix",
+      "description_v1": [
+        "Le héros commence le jeu avec un artefact Syrneth. Il est possible d’acheter cet avantage plusieurs fois. Le joueur doit choisir un objet dans la liste suivante :",
+        "◆ Boîte argentée — Coût : 3 PP :",
+        "La première fois que vous avez ramassé cette boite, elle s’est ouverte à votre contact. Depuis, vous avez été la seule personne à pouvoir l’ouvrir. La boîte s’est révélée invulnérable à toute tentative classique pour la forcer ou la détruire, bien qu’il soit possible qu’un autre artefact Syrneth puisse accomplir une telle tâche.",
+        "L’intérieur de la boîte mesure 10x5x2,5 cm, ce qui fait que vous n’y déposerez que vos biens les plus précieux.",
+        "◆ Bille d’or — Coût : 2 PP :",
+        "Vous avez trouvé cette bille dans un champ près de la maison de votre enfance. Vous avez accidentellement découvert que si vous lui donniez un petit coup d’ongle, l’emmeniez autre part et la laissiez tomber sur le sol, elle commençait à rouler en direction de l’endroit où vous l’aviez tapotée la première fois.",
+        "Elle ne “se souvient” que du dernier endroit où elle a pris un petit coup et “n’oublie” jamais un lieu tant qu’on ne l’active pas de nouveau. Dès qu’elle roule, elle parcourt en sens inverse le chemin qu’on lui a fait faire depuis, à la vitesse d’un marcheur lent. Il est possible de ramasser la bille pendant qu’elle retrace le parcours, de faire une halte, puis de la laisser reprendre son voyage plus tard. Si la bille atteint un point d’eau, elle s’arrête au bord, et reprend son chemin si on la dépose de l’autre côté.",
+        "◆ Bracelet vert — Coût : 3 PP :",
+        "Vous avez trouvé ce bracelet vert dans vos filets alors que vous étiez en train de pêcher. Vous l’avez mis, et plus tard, alors que vous étiez en train d’éviscérer un poisson, votre couteau a glissé et vous vous êtes ouvert la main. Le bracelet a émis une pâle lueur verte et la blessure s’est refermée toute seule.",
+        "Une fois par scène, ce bracelet soigne son porteur de 10 blessures légères. Il s’agit toujours des premières blessures infligées au porteur au cours de cette scène : elles se referment instantanément et on ne les prend donc pas en compte lors du jet de blessure.",
+        "◆ Brassard grimaçant — Coût : 2 PP :",
+        "Ce large brassard doré est incrusté d’un petit crâne d’animal en argent. Vous l’avez acheté à un vieux marin ratatiné qui affirmait qu’il avait autrefois appartenu au capitaine Rogers lui-même. Quand vous le portez et raidissez rapidement le bras deux fois de suite, les mâchoires du crâne s’entrouvrent et une main squelettique en est éjectée, entraînant un fin câble d’argent.",
+        "La main peut atteindre un point situé jusqu’à une quinzaine de mètres et s’agrippe fermement à ce qu’elle touche. Une fois que la main a une prise solide, le câble se rétracte, vous entraînant à sa suite jusqu’au point où la main est accrochée.",
+        "Le brassard fonctionne comme un pistolet à grappin, hormis le fait qu’il est plus simple d’utilisation (ND 10 au lieu de 15) et que vous ne risquez ni de glisser ni de lâcher la corde.",
+        "◆ Ceinture étincelante — Coût : 1 PP :",
+        "Une fois attachée autour de votre taille, cette ceinture segmentée émet une pâle lueur blanche qui éclaire à six mètres dans toutes les directions, tout en vous laissant les mains libres.",
+        "Une fois la ceinture attachée, seul le porteur peut l’ôter. La ceinture s’arrête de luire si on l’expose à la lumière du soleil ou si on la détache.",
+        "◆ Chope et cannelle ternies — Coût : 2 PP :",
+        "Vous avez acquis ces objets auprès d’un marchand itinérant qui n’en réalisait pas la valeur. La cannelle est le genre de robinet qu’on utilise pour percer les tonnelets de bière. La chope est un récipient haut et étroit, muni d’une poignée bien trop épaisse pour assurer une prise adaptée à des mains humaines. Les deux objets semblent invulnérables aux dommages classiques.",
+        "Quand la cannelle est placée sur un baril ou un tonneau et qu’on l’ouvre, rien n’en sort. Cependant, si quelqu’un tente de boire à la chope, du liquide provenant du tonneau y apparaît. Le liquide ne coule que si quelqu’un boit à la chope : il ne peut se répandre au-dehors. La cannelle ne fonctionne que si on l’a insérée dans un tonneau. La jeter dans un lac ne garantirait en aucun cas des réserves infinies en eau potable.",
+        "◆ Coutelas — Coût : 2 PP :",
+        "Vous avez acheté cet étrange couteau gris à un individu louche, dans une ruelle sombre. Vous avez découvert que les blessures qu’il inflige sont plus profondes et plus longues à guérir.",
+        "Le couteau inflige 3 blessures légères supplémentaires à chaque fois qu’il touche.",
+        "◆ Gant ouvragé et couteau de lancer — Coût : 5 PP :",
+        "Vous avez reçu cette paire d’objets en cadeau d’un de vos amis archéologues. Le gant au filigrane d’argent dissimule un fourreau contenant un couteau bleuté, équilibré pour le lancer. Dès que vous faites un mouvement de votre main gantée, comme si vous vous apprêtiez à lancer un couteau, la dague apparaît dans votre main.",
+        "Vous pouvez lancer la dague une fois par phase uniquement.",
+        "Dans le cas contraire, elle revient dans votre main avant de toucher sa cible. De plus, il faut laisser le couteau dans son fourreau au moins deux heures par jour, sans quoi il perd sa capacité à revenir. Le gant lui-même semble tenir son énergie du simple fait qu’on le porte. Vous devez le porter au moins dix heures par jour, sans quoi la dague cesse de revenir avant qu’il ait été porté pendant dix heures consécutives.",
+        "◆ Main mécanique — Coût : 2 PP :",
+        "Cette main est composée d’un étrange métal aux reflets rouges. Quand vous l’avez découverte, vous veniez de perdre votre main gauche (si vous êtes droitier) au cours d’un combat. Par curiosité, vous l’avez placée contre le moignon et elle s’est fixée dessus. Il s’est avéré qu’elle n’est ni plus forte ni plus habile que votre main perdue, mais elle ne se fatigue jamais.",
+        "Elle peut être endommagée aussi facilement qu’une main normale mais se répare d’elle-même en quelques jours. En outre, si elle est tranchée, il est possible de la fixer de nouveau.",
+        "◆ Sabre d’abordage rougeâtre — Coût : 2 PP :",
+        "La marée a rejeté ce sabre sur la plage. Remarquant sa forme inhabituelle, vous en avez déduit qu’il s’agissait d’un artefact Syrneth et l’avez conservé. La lame semble capable de dupliquer une attaque portée contre un adversaire.",
+        "Une fois par scène, dès que vous avez touché et infligé des dommages à un ennemi à l’aide de cette arme, vous pouvez consacrer votre action suivante (une fois que la phase se présente) à l’activation du pouvoir du sabre, et ce en utilisant un dé d’héroïsme. Ce dernier reproduit alors à la perfection la précédente attaque, ce qui inclut les résultats du jet d’attaque et du jet de dommages (dès lors que le jet d’attaque de la phase en cours permet de toucher l’adversaire)."
+      ],
+      "cout_v1": "Coût : de 1 à 5 PP"
     },
     {
       "nom": "Associé",
@@ -69,7 +112,13 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Permet d’investir des guilders pour en recevoir régulièrement"
+      "description": "Permet d’investir des guilders pour en recevoir régulièrement",
+      "description_v1": [
+        "Vous êtes l’associé d’un marchand et partagez donc ses profits. Évidemment, il vous faut de l’argent pour créer de l’argent, aussi les profits générés par le marchand dépendent-ils du volume et de la fréquence de vos investissements. Plus vous investissez souvent, plus vite vous récupérez de l’argent.",
+        "Le coût total de cet avantage est égal à la somme des Profits et de la Fréquence de votre investissement. Enfin, vous recevez 1 point de rang social.",
+        "(Table 5 : Coûts et bénéfices d’un associé — voir le PDF source.)"
+      ],
+      "cout_v1": "Coût : de 1 à 5 PP"
     },
     {
       "nom": "Béni par les Dieux",
@@ -105,7 +154,51 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+10 pts de réputation et -1PP pour toutes les Appartenances. Diverses récompenses, certaines sont réservée à une nation"
+      "description": "+10 pts de réputation et -1PP pour toutes les Appartenances. Diverses récompenses, certaines sont réservée à une nation",
+      "description_v1": [
+        "Un héros peut recevoir un nombre considérable de citations dans Les Secrets de la Septième Mer :",
+        "recommandations, médailles, récompenses en titres ou en terres, lettres de marque… Si vous allez recevoir la plupart d’entre elles au cours du jeu, grâce à la qualité et à l’inventivité de votre interprétation, vous pouvez acquérir une (et une seule) citation lors de la création de votre personnage. À vous, en accord avec votre MJ, d’imaginer l’exploit qui lui a valu tant d’honneurs.",
+        "Voici une liste non exhaustive de citations possibles, vous en trouverez d’autres dans le détail des avantages par nations.",
+        "Ajoutez 10 à l’un des scores de réputation de départ de votre héros, ce qui vous fait bénéficier d’un dé de réputation, selon l’acte accompli. Vous bénéficiez également d’une réduction de 1 PP sur toutes les Appartenances. Cet avantage ne peut être pris qu’une seule fois à la création.",
+        "◆ Médailles, ordres et décorations :",
+        "Il s’agit des décorations remises par le souverain pour récompenser actes de bravoure ou performances individuelles. Certaines marquent l’appartenance du récipiendaire à un ordre chevaleresque. Vous en trouverez le détail dans les avantages de chaque nation.",
+        "◆ Lettre de noblesse :",
+        "Cette lettre permet à un noble de prouver la “qualité” de sa noblesse. C’est une sorte d’arbre généalogique qui remonte jusqu’à l’anoblissement de l’ancêtre du personnage.",
+        "Certains clubs de gentilshommes, et d’autres organisations, réclament un certain nombre de “quartiers de noblesse” pour intégrer leurs rangs. Ces quartiers de noblesse sont le “nombre de rangs” jusqu’où vous pouvez faire remonter vos lignées paternelle et maternelle depuis leur anoblissement.",
+        "◆ Lettre de marque :",
+        "Les lettres de marque ou lettres de course sont des lettres patentes d’un souverain permettant à un capitaine et son équipage de rechercher, attaquer, saisir et détruire les navires ou les équipements d’une nation adverse dans les eaux territoriales internationales ou étrangères.",
+        "Le détenteur de cette autorisation est autorisé à “courir sus” aux ennemis de son pays en temps de guerre. Il doit remplir de nombreuses conditions pour bénéficier de ce statut de corsaire, notamment en ce qui concerne la déclaration des prises, et le fait de traiter les équipages et les passagers des navires comme des prisonniers de guerre. Les corsaires capturés sont considérés aussi comme prisonniers de guerre et non comme des pirates… en théorie ◆ Commutation de peine et pardon royal :",
+        "Le souverain, ou la haute noblesse, peut parfois vouloir accorder une réduction de peine ou une levée d’écrou à l’encontre de l’un de ses sujets qu’il a autrefois fait emprisonner. Que ce soit pour montrer sa mansuétude à l’ensemble de son peuple, contre une gratification financière importante ou parce qu’il s’agit d’un ami, la lettre patente signée de l’autorité royale ou ducale permet à celui qui l’obtient de sortir du cachot.",
+        "◆ Provision d’un office :",
+        "Un office est une dignité personnelle consentie par un souverain à un individu pour le faire participer à l’exercice de sa souveraineté, il lui est donc facile d’attribuer une telle charge pour récompenser un sujet méritant. Vous trouverez plus de détails sur ces offices dans Noblesse Oblige, chapitre I, et leur fonctionnement ludique au chapitre VI.",
+        "◆ Lettre d’anoblissement :",
+        "L’anoblissement est un acte formel de promotion d’une personne par la volonté d’un souverain, provoquant un changement d’état social en lui conférant la noblesse. D’une manière générale, on confère la noblesse en incorporant un individu non noble au sein de la chevalerie. Reportez-vous au chapitre II de Noblesse Oblige pour en savoir plus sur les titres de noblesse et les possibilités d’anoblissement (en particulier dans la description de la noblesse montaginoise qui explicite particulièrement les différentes façons de rejoindre cette classe sociale).",
+        "◆ Relèvement de titre de noblesse :",
+        "Un sujet déjà noble peut se voir récompenser par son suzerain en élevant son titre de noblesse. Par exemple, en Montaigne, un baron pourra être nommé comte, vicomte ou marquis par l’Empereur. Seul le Roi peut relever un titre de noblesse.",
+        "◆ Usage des armoiries royales :",
+        "Être autorisé à apposer le symbole royal sur ses armoiries est un grand privilège prisé même par la plus haute noblesse. En Montaigne, seules quelques familles portent le soleil impérial sur leurs blasons.",
+        "◆ Concessions outre-mer :",
+        "Depuis la découverte de l’Archipel de Minuit, et encore plus depuis l’émergence de Cabora, les souverains des nations de Théah accordent parfois en récompense des concessions sur des terres outre-mer afin d’inciter leurs vassaux à émigrer et peupler ces nouvelles terres. Le Rex Castillium est un grand utilisateur de ce type de récompense.",
+        "◆ Exonération d’impôts :",
+        "Le souverain, la noblesse ou le clergé qui perçoit un impôt peut parfois récompenser un sujet en l’exonérant de tout ou partie des taxes qui le frappaient. La durée de cette exonération peut varier d’un an à dix ans en passant par un privilège à vie ou héréditaire.",
+        "◆ Droit de perception d’une taxe :",
+        "Le souverain, la noblesse ou le clergé qui perçoit un impôt peut parfois récompenser un sujet en lui permettant d’encaisser, à sa place, le profit de cette taxe. La durée de ce droit de perception peut varier d’un an à dix ans en passant par un privilège à vie ou héréditaire.",
+        "◆ Concession (sur une terre, sur un commerce, sur le domaine royal) :",
+        "Le souverain, la noblesse ou le clergé peuvent accorder des concessions sur leur domaine d’exercice du pouvoir.",
+        "Ces concessions s’étendent du droit d’extraction de mines, de pêche, de chasse à l’exclusivité de commerce fluvial, maritime ou d’un domaine commercial particulier (tissage, vignes, etc.), et toute autre concession qui puisse sortir de l’imagination du MJ. La durée de cette concession peut varier d’un an à dix ans en passant par un privilège à vie ou héréditaire.",
+        "◆ Territoires :",
+        "Le souverain, la noblesse ou le clergé peuvent céder une partie de leurs terres au profit de l’un de leurs vassaux. Une telle récompense est toutefois rare car les suzerains éprouvent beaucoup de difficultés à concéder leurs droits territoriaux.",
+        "◆ Fournisseur exclusif :",
+        "Le souverain, la noblesse ou le clergé peuvent imposer à leur administration de s’approvisionner exclusivement auprès d’un sujet particulier, quel qu’en soit le prix (mais mieux vaut ne pas abuser du privilège royal…). La durée de ce monopole peut varier d’un an à dix ans en passant par un privilège à vie ou héréditaire.",
+        "◆ Mariage :",
+        "Le souverain ou la noblesse peuvent parfois offrir la main de l’une de leurs fille, nièce, sœur, etc. en récompense à l’un de leurs vassaux. Dans Les Secrets de la Septième Mer, cette pratique s’entend également aux enfants mâles. Ce peut être une récompense très prisée pour un roturier, car cela permettrait à ses enfants d’accéder à la noblesse.",
+        "◆ Indulgence :",
+        "Au sein de l’Église du Vaticine, l’indulgence est la rémission totale ou partielle devant Theus de la peine temporelle encourue en raison d’un péché déjà pardonné. Voici un extrait du code de droit canonique vaticin sur les indulgences : “la rémission devant Theus de la peine temporelle due pour les péchés dont la faute est déjà effacée, rémission que le fidèle bien disposé obtient à certaines conditions déterminées, par l’action de l’Église, laquelle, en tant que dispensatrice de la rédemption, distribue et applique par son autorité le trésor des satisfactions des Prophètes et de leurs Témoins.” Selon la doctrine vaticine, le péché est effacé par le sacrement du pardon (confession). Mais ce sacrement n’enlève pas la peine temporelle due au péché, qui se traduit généralement par un temps de purgatoire si elle n’est pas d’abord purgée sur terre par des actes de foi et de charité (actes de réparation). Cette peine temporelle peut être atténuée voire effacée par l’indulgence.",
+        "L’indulgence est dite partielle ou plénière, selon qu’elle libère partiellement ou totalement de la peine temporelle due pour le péché.",
+        "En ce qui concerne les indulgences partielles, elles se comptent traditionnellement en jours, mois ou années.",
+        "Les indulgences partielles peuvent être concédées par les archevêques et cardinaux, les indulgences plénières étant le fait réservé du Hiérophante."
+      ],
+      "cout_v1": "Coût : 4 PP, interdit aux Scélérats"
     },
     {
       "nom": "Coursier du vent",
@@ -117,7 +210,13 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Pur-Sang offert"
+      "description": "Pur-Sang offert",
+      "description_v1": [
+        "(de lignée royale) Homme de main Le coursier du vent de sang royal est exceptionnel, même par rapport à d’autres membres de sa race. Il est plus agile et a une plus grande endurance que d’autres chevaux croissantins.",
+        "Gaillardise : 4 ; Finesse : 3 ; Esprit : 1 ; Détermination : 2 ;",
+        "Panache : 1 ND : 15 (30 au galop) Attaque : Morsure 3g2, Coup de sabots 3g2, Piétinement 3g2 Dommages : Morsure 0g1, Coup de sabots 4g2, Piétinement 4g3 Compétences : Jeu de Jambes 2, Course d’endurance 4, Course de vitesse 5, Sauter 2.",
+        "Capacités spéciales : Les poneys des steppes peuvent porter deux fois la charge normale pour leur Gaillardise."
+      ]
     },
     {
       "nom": "Double Nationalité",
@@ -129,7 +228,13 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Sorcier Sang-Mêlé",
       "v2": false,
       "h_heroisme": false,
-      "description": "2 nationalités, avec tous les accès que ça implique."
+      "description": "2 nationalités, avec tous les accès que ça implique.",
+      "description_v1": [
+        "Vous êtes issu de parents de nationalités différentes.",
+        "En plus de pouvoir être Sang-mêlé si vos parents utilisaient la sorcellerie, vous pouvez choisir parmi les avantages, épées de Damoclès et écoles de spadassins des deux nations. Vous parlez aussi les deux langues (mais ne les écrivez et lisez pas, sauf si vous en payer le coût) mais n’avez qu’un seul accent, qui déterminera le coût d’apprentissage des autres langues.",
+        "Enfin, vous ne bénéficiez que d’un seul des deux bonus de traits (au choix)."
+      ],
+      "cout_v1": "Coût : 10 PP, 5 PP si vous êtes Sorcier Sang Mêlé"
     },
     {
       "nom": "Enfant de la balle",
@@ -141,7 +246,14 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Métiers Bateleur et Acrobate offerts, -2 rang social."
+      "description": "Métiers Bateleur et Acrobate offerts, -2 rang social.",
+      "description_v1": [
+        "Depuis tout petit, vous baignez dans les arts du cirque. Que vous ayez vécu dans un cirque, une troupe ambulante ou comme apprenti d’un montreur d’ours, vous faites montre d’un grand talent pour les acrobaties.",
+        "Votre formation vous permet d’acquérir gratuitement les métiers Bateleur et Acrobate.",
+        "Également, toutes les compétences avancées de l’un de ces deux métiers sont considérées comme des compétences de base et peuvent donc être améliorées pour 1 PP au lieu de 2. Une fois la création de personnage terminée, le coût d’amélioration des compétences avancées des métiers est le même que pour tous les autres héros.",
+        "Enfin, vous perdez 2 points de rang social."
+      ],
+      "cout_v1": "Coût : 4 PP"
     },
     {
       "nom": "Grand",
@@ -153,7 +265,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Vestenmannavnjar",
       "v2": false,
       "h_heroisme": false,
-      "description": "+1g0 aux jets de dégâts, résistance à l’alcool et à l’intimidation, +1 Réputation Martiale"
+      "description": "+1g0 aux jets de dégâts, résistance à l’alcool et à l’intimidation, +1 Réputation Martiale",
+      "description_v1": [
+        "Le héros fait au moins 30 centimètres de plus que la moyenne.",
+        "Vous faites tous vos jets de dommages, d’ébriété et d’intimidation (système de répartie) en lançant, sans le garder, un dé supplémentaire (+1g0). Vous ne pouvez pas choisir l’avantage Petit. Enfin, vous recevez 1 point de réputation martiale."
+      ],
+      "cout_v1": "Coût : 5 PP"
     },
     {
       "nom": "Grande famille",
@@ -165,7 +282,15 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Castille",
       "v2": false,
       "h_heroisme": false,
-      "description": "Aide de la famille possible dans tout Théa"
+      "description": "Aide de la famille possible dans tout Théa",
+      "description_v1": [
+        "Vous pouvez toujours compter sur votre famille pour obtenir un repas chaud et un bon lit, ainsi que toute autre forme d’aide. Du reste, vous avez des parents et cousins dans tout Théah.",
+        "Ainsi, même dans les étendues sauvages d’Ussura, vous êtes susceptible de tomber sur quelqu’un qui s’est marié à votre troisième cousine au deuxième degré.",
+        "Lorsque vous souhaitez faire appel à cet avantage, lancez un dé et reportez-vous à la table qui suit. Si vous obtenez un résultat inférieur ou égal à la fréquence précisée pour la nation dans laquelle vous vous trouvez, un membre de votre famille habite bien la région. Autrement, il vous faut faire au moins 150 kilomètres avant de pouvoir relancer le dé.",
+        "Comme votre famille se déplace beaucoup, vous n’en retrouverez pas forcément les membres deux fois au même endroit.",
+        "(Table 9 : Grande famille castilliane — voir le PDF source.)"
+      ],
+      "cout_v1": "Coût : 5 PP"
     },
     {
       "nom": "Habitant du quartier",
@@ -177,7 +302,14 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Choisissez une ville et un quartier. +2g0 à tous les tests sociaux et rang 5 en orientation citadine dans ce quartier + secrets connus."
+      "description": "Choisissez une ville et un quartier. +2g0 à tous les tests sociaux et rang 5 en orientation citadine dans ce quartier + secrets connus.",
+      "description_v1": [
+        "Vous habitez votre ville (que ce soit Charousse, Freiburg ou Altamira) depuis des dizaines d’années, assez longtemps en tout cas pour être connu des gens du quartier et des environs. Choisissez un quartier de la ville où votre personnage a vécu. En fonction du quartier, votre MJ déterminera le coût de cet avantage.",
+        "En effet, un quartier riche et noble a beaucoup plus d’intérêt qu’un quartier pauvre et besogneux. De même un quartier riche de Charousse ou de Pau est beaucoup plus attrayant que celui de Vernaise ou de Railleux.",
+        "Choisissez un quartier de la ville où votre personnage a vécu.",
+        "Dans ce quartier, vous bénéficiez d’un dé lancé non gardé supplémentaire (+1g0) pour toutes vos relations sociales. De plus, vous êtes considéré comme ayant le rang 5 en Orientation citadine dans ce quartier. Finalement, le MJ vous révélera certains des secrets de ce quartier auxquels vous ou certains de vos amis auraient pu assister."
+      ],
+      "cout_v1": "Coût : de 1 à 3 PP"
     },
     {
       "nom": "Hémophile",
@@ -189,7 +321,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Sorcier Porté",
       "v2": false,
       "h_heroisme": false,
-      "description": "Peut ensanglanter 1 objet de plus par niveau de maitrise, mais +10ND pour se soigner"
+      "description": "Peut ensanglanter 1 objet de plus par niveau de maitrise, mais +10ND pour se soigner",
+      "description_v1": [
+        "Votre sang est plus fluide que celui de la plupart des gens.",
+        "Vous pouvez ensanglanter 4 objets par niveau de maîtrise (contre 3, normalement). Cependant, tous les jets de Premiers soins et de Chirurgie effectués sur ce héros se font avec un ND augmenté de 10. Cet avantage peut être acquis deux fois (4 points, 5 objets par rang de maîtrise, +20 aux jets de Premiers soins et de Chirurgie)."
+      ],
+      "cout_v1": "Coût : 2points, Sorcier Porté uniquement"
     },
     {
       "nom": "Héritage",
@@ -201,7 +338,14 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Propriété, équipement, … en héritage, voir table"
+      "description": "Propriété, équipement, … en héritage, voir table",
+      "description_v1": [
+        "Le héros a hérité d’un objet de valeur. Peut-être lui a-til été légué par un parent éloigné. Peut-être encore – vous acceptez le risque que des gens dépendent de votre héros – est-ce la dot de son épouse ou un présent de ses beaux-parents. Il peut également s’agir d’un précieux bien familial transmis de génération en génération ou plus simplement une importante somme d’argent. Quoi qu’il en soit, cet héritage appartient désormais pleinement à votre héros.",
+        "La table ci-dessous vise à vous donner une idée approximative de la valeur de cet héritage, afin que vous puissiez plus facilement l’évaluer en accord avec votre MJ.",
+        "Les objets de prix “courants” (bijoux, œuvres d’art…) n’y sont pas répertoriées car leur coût en PP peut facilement être déterminé à partir de leur valeur monétaire. Vous ne pouvez affecter plus de 10 PP à cet avantage.",
+        "(Table 7 : Coûts et bénéfices d’un héritage — voir le PDF source.)"
+      ],
+      "cout_v1": "Coût : de 1 à 10 PP"
     },
     {
       "nom": "Héritage du clan Mac Codrum",
@@ -213,7 +357,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Avalon",
       "v2": false,
       "h_heroisme": false,
-      "description": "Sang Sidhe : Séduisant, Eblouissant, Enfant de la mer, Vieillissement ralenti, Lié à la mer, Cœur de pierre, Vulnérabilité au fer"
+      "description": "Sang Sidhe : Séduisant, Eblouissant, Enfant de la mer, Vieillissement ralenti, Lié à la mer, Cœur de pierre, Vulnérabilité au fer",
+      "description_v1": [
+        "Les MacCodrum descendent des selkies et en tant que tels, ils possèdent une version particulière de l’avantage Sang Sidhe.",
+        "À savoir Séduisant : éblouissant, Enfant de la mer, Vieillissement ralenti et immunité aux maladies, Lié à la mer, Vulnérabilité au fer et Cœur de pierre."
+      ],
+      "cout_v1": "Coût : 5 PP"
     },
     {
       "nom": "Héritage du clan MacEachern",
@@ -225,7 +374,13 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Avalon",
       "v2": false,
       "h_heroisme": false,
-      "description": "Résistance aux magies Glamour et magie Sidhe, mais traqués par ces-derniers."
+      "description": "Résistance aux magies Glamour et magie Sidhe, mais traqués par ces-derniers.",
+      "description_v1": [
+        "Les MacEachern, censés avoir été décimés par les Sidhe il y a bien longtemps, n’ont pas entièrement disparu et se cachent parmi les highlanders. Les personnages possédant l’avantage Héritage du clan MacEachern détiennent un terrible secret : l’art d’occire les Sidhe.",
+        "Tous les MacEachern connaissent les secrets des armes du clan, néanmoins, seuls ceux qui disposent de talents de forgeron sont capables d’en créer.",
+        "En outre, ils résistent légèrement au Glamour et à la magie Sidhe. Les sorciers Glamour qui les prennent pour cible voient leur ND subir une augmentation de malus. Lorsqu’ils sont confrontés à la sorcellerie des Sidhe, les MacEachern ont toujours un dé d’héroïsme (qu’ils ne peuvent pas dépenser), ce qui signifie que tous les sorts qu’on leur lance ne durent que jusqu’au matin suivant. De la même manière, s’ils s’entourent d’un cercle continu de douze couteaux de fer, aucune magie Sidhe (de Lumière ou d’Ombre) ne peut les affecter. À propos, les Sidhe vous tueront s’ils prennent connaissance de votre véritable héritage. Évitez donc que cela n’arrive, à moins que vous n’appréciiez les fins horribles et macabres."
+      ],
+      "cout_v1": "Coût : 10 PP"
     },
     {
       "nom": "Joli coup",
@@ -237,7 +392,15 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "En possession de 10D100 guilders"
+      "description": "En possession de 10D100 guilders",
+      "description_v1": [
+        "Le personnage a réussi un Joli coup ; c’est-à-dire que par un heureux concours de circonstances, il s’est retrouvé en possession d’une grosse somme d’argent.",
+        "Cela peut aller du casse particulièrement réussi à l’objet trouvé, en passant par la récompense offerte par un noble ou le fruit d’un chantage.",
+        "Il pourrait également être opportun que le joueur acquiert une épée de Damoclès explicitant la méthode par laquelle il a acquis cette forte somme d’argent.",
+        "En tout cas, le héros est en possession de 2 à 2000 guilders ;",
+        "lancez et additionnez 2D1000 pour en connaître le montant exact."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Noble",
@@ -261,7 +424,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Vodacce",
       "v2": false,
       "h_heroisme": false,
-      "description": "Immunisé à la sorcellerie Sorte, Niveau de peur = 2 vs Sorcière de la Destinée"
+      "description": "Immunisé à la sorcellerie Sorte, Niveau de peur = 2 vs Sorcière de la Destinée",
+      "description_v1": [
+        "À chaque génération, une poignée d’hommes vodaccis naît hors des toiles du destin. Aucun filament ne va jusqu’à eux, et la sorcellerie Sorte glisse sur eux comme l’eau sur le plumage d’un canard.",
+        "Tout effort visant à lire leur destin n’a pour résultat qu’une sorte de charabia incompréhensible. Les “non liés“, comme les appellent les sorcières de la destinée, constituent quelques-uns des plus grands héros de l’histoire de Vodacce, mais également les pires vilains. Vous êtes immunisé contre toutes les utilisations de la sorcellerie Sorte. On considère que les filaments qui vous sont attachés sont des têtes, et ce quelle que soit leur puissance. En outre, lorsque vous affrontez une sorcière de la destinée, vous disposez à son encontre d’un niveau de peur de 2. Enfin, si vous prenez l’avantage Scélérat, votre Moralité tombe à –16. Dans le cas contraire, vous gagnez 6 points de Moralité."
+      ],
+      "cout_v1": "Coût : 15 PP, Réservé aux hommes"
     },
     {
       "nom": "Parent proche",
@@ -273,7 +441,32 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Montaigne",
       "v2": false,
       "h_heroisme": false,
-      "description": "Parent avec fonction au choix qui peut aider 1x par trimestre"
+      "description": "Parent avec fonction au choix qui peut aider 1x par trimestre",
+      "description_v1": [
+        "Le personnage a un parent proche qui se démènera en toute occasion pour l’aider. Le héros ne peut faire appel à lui qu’une fois par trimestre (même en Montaigne, les liens du sang ne permettent pas tout).",
+        "Le coût de cet avantage dépend de la profession du parent et de son utilité pour le personnage. La nature exacte de la relation est au choix du joueur. Il est possible de prendre cet avantage jusqu’à trois fois. Les joueurs incarnant un personnage noble ont tout intérêt à lire les descriptions des familles du chapitre I du supplément Montaigne pour trouver des personnalités auxquelles s’apparenter.",
+        "◆ Chef de famille — Coût : 10 PP :",
+        "Ce parent est le chef de votre famille et compte vous laisser sa place lorsqu’il mourra. En outre, il peut faire appel à tout autre type de parent présent dans cette liste (jusqu’à 8 PP de valeur) pour le compte du personnage.",
+        "◆ Commandant — Coût : 5 PP :",
+        "Ce parent dispose d’une place de prestige au sein de l’armée ou de la marine et est capable de faire jouer ses relations lorsque le personnage est dans le besoin. Cela peut permettre au personnage de traverser des zones interdites, de se faire détacher quelques hommes pour une mission officielle, voire de faire “disparaître” du matériel militaire.",
+        "◆ Courtisan — Coût : 3 PP :",
+        "Ce parent est connu à la cour et capable d’offrir au personnage une faveur de 3 points maximum (à l’exclusion du prêt d’argent) s’il en a besoin.",
+        "◆ Duelliste — Coût : 4 PP minimum :",
+        "Ce parent est un duelliste de talent (maître de l’une des écoles de spadassin) et peut remplacer le personnage dans un combat quand il fait appel à lui. Pour chaque PP supplémentaire investi dans cet avantage, votre personnage possède un rang de plus dans une école de spadassin. Par exemple, Sébastien Valroux de Martise, maître de trois écoles et compagnon de deux autres coûterait 10 PP de plus, soit 14. Cela est énorme mais autant dire que vos ennemis trembleront d’épouvante s’il fait une apparition pour se battre à votre place.",
+        "◆ Érudit — Coût : 1 PP :",
+        "Ce parent est un érudit de grand renom capable de trouver la réponse à une question ou énigme obscure.",
+        "◆ Génie — Coût : 3 PP :",
+        "Ce parent fait preuve d’un grand talent dans une compétence qui ne relève pas de la sorcellerie (5 rangs dans la compétence et le trait correspondant et donc un jet de 10g5). Il la mettra à disposition du personnage quand celui-ci en fera la demande. Connaissance des bas-fonds, Contact, Forgeron, Pister et Séduction constituent de bons exemples de choix de compétence.",
+        "◆ Membre d’une société — Coût : 3 PP :",
+        "Ce parent est membre d’une société secrète et peut demander une faveur à son organisation lorsque le héros en a besoin.",
+        "◆ Prêtre — Coût : 2 PP :",
+        "Ce parent occupe une bonne place au sein de l’église des Prophètes et peut intercéder en faveur du personnage. Il est sans doute capable de convaincre l’Inquisition de relâcher le personnage.",
+        "◆ Riche marchand — Coût : 3 PP :",
+        "Ce parent est un marchand cossu qui peut prêter de l’argent et de l’équipement au personnage (jusqu’à 1 000 guilders). Il faut le rembourser ou lui restituer ses biens dans les trois mois, sans quoi l’avantage est perdu à jamais.",
+        "◆ Sorcier — Coût : 2 PP :",
+        "Ce parent, un puissant mage Porté, peut transporter le personnage et ses amis où ils le souhaitent."
+      ],
+      "cout_v1": "Coût : de 1 à 10 PP"
     },
     {
       "nom": "Parure de plumes",
@@ -297,19 +490,28 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1g1 aux jets de Discrétion. -1g0 sur le premier jet d’attaque et de dégâts. -1 Réputation martiale"
+      "description": "+1g1 aux jets de Discrétion. -1g0 sur le premier jet d’attaque et de dégâts. -1 Réputation martiale",
+      "description_v1": [
+        "Le héros fait au moins 30 centimètres de moins que la normale.",
+        "Vous faites tous vos jets de Déplacement silencieux ou de Filature en lançant, sans le garder, un dé supplémentaire (+1g0). Vous devez aussi garder un dé de moins lors de votre premier jet de dommages d’un combat. Vous ne pouvez pas choisir l’avantage Grand. Enfin, vous perdez 1 point de réputation martiale."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Pizkaya",
       "categorie": "Innés",
-      "cout_raw": "15 Ussuran/Sarmatien Fhidelis",
+      "cout_raw": "15 Ussuran ou Sarmatien Fhidelis",
       "cout_min": 15,
       "cout_max": 15,
-      "type_lien": "reduction",
+      "type_lien": "restriction",
       "nation_lien": "Sarmatie",
       "v2": false,
       "h_heroisme": false,
-      "description": "Immunisé à toutes les formes de magie et chamanerie, mais pas aux effets indirects (boule de feu, tempête invoquée…)"
+      "description": "Immunisé à toutes les formes de magie et chamanerie, mais pas aux effets indirects (boule de feu, tempête invoquée…)",
+      "description_v1": [
+        "Les Fhidelis sont immunisés contre toutes les formes de sorcellerie et de chamanisme. Rien ne peut les influencer. Par contre, ils ne sont pas immunisés aux effets indirects de ces magies, comme une tempête levée par un sorcier Lærdom ou un incendie déclenché par un sorcier El Fuego Adentro."
+      ],
+      "cout_v1": "Coût : 20 PP, réservé aux Fidhelis"
     },
     {
       "nom": "Pour Services Rendus",
@@ -321,7 +523,21 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+5 Rang Social face à une Organisation Secrète par PP investi"
+      "description": "+5 Rang Social face à une Organisation Secrète par PP investi",
+      "description_v1": [
+        "moins pour les personnages appartenant à l’organisation qui leur doit un service Par le passé, vous avez rendu un service immense à une organisation. Voyez avec votre MJ de quoi il a pu s’agir pour qu’elle vous en soi redevable.",
+        "Cet avantage remplace également ceux de type “Mécène”, comme Mécène de la Rose et la Croix, Mécène du Collège Invisible, etc.",
+        "Puisqu’en l’occurrence, financer ces organisations revient à leur rendre service et, bien souvent, attendre quelque chose en retour.",
+        "Bien entendu, c’est le MJ qui garde le dernier mot en la matière et certaines organisations, telles les Kreuzritter, la Rilasciare ou le NOM, ne sont pas vraiment adaptée à cet avantage. Il conviendra alors de se rabattre sur des épées de Damoclès telles que Maître chanteur ou Pacte.",
+        "Toutes les fois que vous avez affaire à l’un de ses membres, vous bénéficiez de 5 points de rang social supplémentaires par point investi dans cet avantage.",
+        "À titre d’exemple, voici ce que procure le fait d’être un Mécène de la Rose et de la Croix :",
+        "Pour 1 PP, 5 points de rang social et une bande de six brutes novices de l’Ordre pour le protéger ;",
+        "Pour 2 PP, 10 points de rang social et une bande de six brutes pauvres chevaliers de l’Ordre pour le protéger ;",
+        "Pour 3 PP, 15 points de rang social et un homme de main chevalier errant pour le protéger ;",
+        "Pour 4 PP, 20 points de rang social et un héros chevaliersergent pour le protéger.",
+        "Dans tous les cas, il bénéficie également d’un insigne de Mécène de la Rose et de la Croix et c’est grâce à celui-ci qu’il est facilement identifié par les membres de l’Ordre et bénéficie des points de rang social en rapport avec les services qu’il a rendus."
+      ],
+      "cout_v1": "Coût : de 1 à 4 PP, 1 PP de"
     },
     {
       "nom": "Sang Sidhe",
@@ -333,19 +549,89 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Avalon",
       "v2": false,
       "h_heroisme": false,
-      "description": ""
+      "description": "Divers avantages au choix, voir p34",
+      "description_v1": [
+        "Les personnages possédant du Sang Sidhe peuvent en profiter ou en subir les inconvénients. Le coût de cet avantage varie en fonction des traits dont vous avez hérité de votre côté Sidhe.",
+        "Les bénédictions coûtent des PP alors que les malédictions vous en redonnent. Le coût minimal de cet avantage est de 1 PP.",
+        "◆ Bénédictions :",
+        "Il s’agit d’avantages découlant de vos origines Sidhe. Il n’est possible de choisir chaque bénédiction qu’une seule fois.",
+        "◆ Avantages déjà existants (variable) :",
+        "Vous pouvez choisir l’un des avantages ci-dessous au prix indiqué : Séduisant : Séduisant (4 PP), Éblouissant (8 PP), Intimidant (12 PP) ou Beauté divine (16 PP) ;",
+        "Beauté du diable (2 PP) ; Expression inquiétante :",
+        "Sombre (1 PP), Angoissant (3 PP) ou Inquiétant (5 PP) ;",
+        "Sens aiguisés (1 PP) ; Grand (4 PP) ou Petit (1 PP).",
+        "◆ Bonne réputation — Coût : 2 PP :",
+        "Le côté sidhe de votre famille est en bon terme avec la cour de la Reine.",
+        "Vous bénéficiez d’un dé de rang social supplémentaire lorsque vous êtes confronté à la cour de Lumière. En outre, vous pouvez acheter l’avantage Arme sidhe pour 1 PP de moins.",
+        "◆ Détection du Glamour — Coût : 3 PP :",
+        "Votre origine Sidhe vous permet de “sentir” le Glamour. Choisissez une odeur particulière comme celle d’une orange mûre, de la gaulthérie ou du soufre.",
+        "Cette odeur vous remplira les narines lorsqu’un Sidhe ou un mage Glamour utilisera ses pouvoirs dans un rayon de 10 mètres autour de vous. Certaines personnes peuvent également “entendre” le Glamour et une poignée peut même le “goûter”.",
+        "◆ Enfant du ciel — Coût : 3 PP :",
+        "Vous possédez une certaine affinité avec le ciel et un faible lien avec la Reine des Sidhe. Le doux bruit de la pluie vous berce dès que vous commencez à vous endormir, même lors de la pire des sécheresses.",
+        "Vous sentez qu’il existe un autre monde aux limites de votre champ de perception visuel et vous pouvez vous servir une fois par acte d’une compétence de Glamour sans utiliser de dé d’héroïsme.",
+        "◆ Enfant de la mer — Coût : 2 PP :",
+        "Vous possédez une certaine affinité avec la mer. Vous sentez l’odeur caractéristique de la marée, peu importe la distance vous séparant des côtes.",
+        "Vous ressentez l’imminence d’une tempête, et lorsque vous utilisez les règles de noyade, votre Détermination est considérée comme augmentée de 3 points.",
+        "◆ Enfant de la terre — Coût : 2 PP :",
+        "Vous possédez une certaine affinité avec la généreuse terre avalonienne. Vous sentez le cœur des montagnes battre lentement sous vos pieds.",
+        "Vous ressentez l’imminence d’un tremblement de terre comme les animaux, et lorsque vous subissez des dommages dus à une chute, la surface sur laquelle vous atterrissez est toujours considérée d’un niveau plus molle que la normale.",
+        "◆ Vieillissement ralenti et immunité aux maladies — Coût : 2 PP :",
+        "Votre origine Sidhe vous permet de vieillir plus lentement que la normale (divisez votre âge par deux, arrondi à l’inférieur, lorsque vous utilisez la règle du vieillissement) et êtes immunisé à toutes les maladies (y compris la peste blanche).",
+        "◆ Malédictions :",
+        "Il s’agit de désavantages liés à vos origines Sidhe. Il n’est possible de choisir chaque malédiction qu’une seule fois.",
+        "◆ Cœur de pierre — Coût : 2 PP :",
+        "Votre héritage Sidhe vous a conféré un cœur de pierre.",
+        "Vous ne connaîtrez jamais le véritable amour (sauf grâce à des moyens magiques), et toutes les histoires d’amour que vous vivez sont condamnées à s’achever une fois que vous vous lassez de votre amant.",
+        "En termes de jeu, toute romance vécue par votre personnage doit être terminée au début de l’histoire suivante. Chaque aventure close de la sorte réduit votre Moralité de 3 points.",
+        "Pire, vous commencez la partie avec l’épée de Damoclès Amour perdu (2 PP) pour laquelle vous ne recevez jamais de points d’expérience.",
+        "◆ Diurne — Coût : 2 PP :",
+        "Vous vous sentez faible lorsque vous êtes privé de la lumière du soleil.",
+        "À moins que vous ne vous trouviez en plein soleil, vous lancez deux dés de moins sur tous vos jets. Vous ne pouvez pas prendre la malédiction Nocturne.",
+        "◆ Dons — Coût : 2 PP :",
+        "Au pays des Sidhe, faire un don est un rite important.",
+        "À chaque fois que vous acceptez un présent, vous devez rendre la faveur aussi vite que possible. Pour chaque jour de retard, vous lancez un dé de moins sur tous vos jets. Les effets sont cumulatifs.",
+        "◆ Eau courante — Coût : 1 PP :",
+        "Vous ne pouvez traverser l’eau courante autrement que sur un pont. Vous ne sauriez expliquer pourquoi.",
+        "Vous aimeriez pourtant ; cela vous aiderait sans doute à surmonter votre interdit.",
+        "◆ Lié à la mer — Coût : 2 PP :",
+        "Vous êtes affaibli lorsque vous ne sentez pas les embruns sur votre peau.",
+        "Quand vous vous trouvez à plus de quinze kilomètres d’une étendue d’eau salée, vous lancez deux dés de moins sur tous vos jets. Vous ne pouvez prendre la malédiction Lié à la terre.",
+        "◆ Lié à la terre — Coût : 2 PP :",
+        "Vous vous sentez faible lorsque vous ne pouvez fouler la terre ferme.",
+        "Dès que vous vous trouvez sur une étendue d’eau ou dans les airs, vous lancez deux dés de moins sur tous vos jets.",
+        "Vous ne pouvez prendre la malédiction Lié à la mer.",
+        "◆ Nocturne — Coût : 1 PP :",
+        "Vous avez du mal à agir en plein soleil.",
+        "Dans le cas où vous seriez en plein soleil, vous lancez un dé de moins sur tous vos jets. Vous ne pouvez pas prendre la malédiction Diurne.",
+        "◆ Sensibilité au fer — Coût : 1 PP :",
+        "Vous êtes sensible au fer froid, bien qu’à un niveau bien moindre que certains de vos cousins. Le fait d’en toucher à mains nues provoque en vous une sensation désagréable, sans véritable malus.",
+        "Si vous êtes frappé par une arme de fer froid, votre adversaire lance un dé supplémentaire lors du jet de dommages. Si ce dernier est équipé d’une arme du clan MacEachern, il lance et garde ce dé supplémentaire.",
+        "◆ Vulnérabilité au fer — Coût : 2 PP :",
+        "Votre origine Sidhe vous a rendu vulnérable au fer froid. Dès que ce terrible métal entre en contact avec votre chair, vous ressentez une vive douleur et lancez un dé de moins sur toutes vos actions pour le reste de la scène.",
+        "Si vous êtes frappé par une arme de fer froid, votre adversaire lance et garde un dé supplémentaire sur le jet de dommages.",
+        "Les armes du clan MacEachern vous affectent comme si vous étiez un Sidhe à part entière.",
+        "◆ Vulnérabilité au sel — Coût : 2 PP :",
+        "Votre origine Sidhe vous a rendu vulnérable au sel.",
+        "Dès que cette substance entre en contact avec votre chair, vous ressentez une vive douleur et lancez un dé de moins sur toutes vos actions pour le reste de la scène. Vous ne pouvez bien sûr pas prendre la malédiction Lié à la mer."
+      ],
+      "cout_v1": "Coût : de 1 à 26 PP"
     },
     {
-      "nom": "Divers avantages au choix, voir p34",
+      "nom": "Sorcier Latent",
       "categorie": "Innés",
-      "cout_raw": "Sorcier Latent",
-      "cout_min": null,
-      "cout_max": null,
+      "cout_raw": "10",
+      "cout_min": 10,
+      "cout_max": 10,
       "type_lien": null,
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "10 Compétence de sorcellerie rang 1, à développer par la suite."
+      "description": "Compétence de sorcellerie rang 1, à développer par la suite.",
+      "description_v1": [
+        "Qu’il le sache ou non, votre personnage charrie du sang sorcier dans ses veines. Pour le moment, il ne s’est pas encore vraiment rendu compte de son potentiel. Il n’en utilise qu’un fragment. Mais peut-être qu’un jour, un sorcier plu puissant lui montrera le chemin à emprunter pour développer ses capacités. Enfin, il ne faut pas oublier que les PNJ considèreront le héros comme un véritable sorcier, c’est en particulier vrai pour l’Inquisition, les Kreuzritter, etc. Attention donc, l’achat de cet avantage n’est pas innocent…",
+        "Cet avantage vous permet de bénéficier d’une compétence de sorcellerie au rang 1 que vous pouvez ensuite développer jusqu’au rang 3 maximum. Vous pourrez par la suite acquérir une sorcellerie demi-sang complète, mais cela nécessitera de trouver quelqu’un capable de vous l’enseigner et de disposer de pas mal de points d’expérience. À savoir, vous devrez d’abord développer vos compétences de sorcellerie, il vous en coûtera donc 5 XP pour porter chacune d’elle au rang 1, puis 30 XP supplémentaire pour libérer votre potentiel sorcier et acquérir le rang d’apprenti."
+      ],
+      "cout_v1": "Coût : 10 PP"
     },
     {
       "nom": "Stérile",
@@ -357,7 +643,11 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Impossible de procréer, volontairement ou non"
+      "description": "Impossible de procréer, volontairement ou non",
+      "description_v1": [
+        "Le personnage est incapable de concevoir et de donner naissance à un enfant. Cela peut venir d’une particularité héréditaire ou être le résultat d’un accident ; sur Théah, une naissance difficile peut rendre une femme stérile ou les oreillons un homme. Cela peut être un grand avantage, particulièrement pour une jenny ou une courtisane, puisque le personnage n’aura aucun besoin de s’astreindre à une contraception ennuyeuse ou à s’inquiéter de mourir en couches. Toutefois, une telle situation n’est pas sans contreparties à l’époque. Les femmes qui ne peuvent donner le jour à un enfant sont souvent considérées comme inutiles et ne pourront jamais se marier. En effet, les gens se marient alors dans le seul but de donner le jour à des enfants et une femme ou un homme incapable d’avoir un héritier le vivra comme une grande honte. Toutefois, si c’est l’homme qui est atteint, la faute en rejaillira la plupart du temps sur son épouse. Cette situation pourrait également avoir une influence sur la psyché du personnage s’il désirait avoir ses propres enfants. Ainsi, un joueur qui déciderait de prendre un tel avantage doit s’attendre à profiter des avantages, comme des inconvénients, d’une telle situation."
+      ],
+      "cout_v1": "Coût : 1 PP"
     },
     {
       "nom": "Araignée dressée",
@@ -369,7 +659,24 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Sorcière Strega",
       "v2": false,
       "h_heroisme": false,
-      "description": "Animal de entrainée à faire qu’une tâche, choisi au hasard."
+      "description": "Animal de entrainée à faire qu’une tâche, choisi au hasard.",
+      "description_v1": [
+        "L’araignée est la personnification même des sorcières de la destinée de Vodacce, et nombre de femmes dressent des arachnides à diverses fins. Vous avez fait l’acquisition de l’une de ces araignées élevées de manière spéciale qui vont de la taille d’un ongle à celle d’une assiette.",
+        "Les araignées sont des brutes disposant d’un niveau de menace de 1. Elles ne peuvent participer à un combat normal et sont des animaux de compagnie, pas des domestiques.",
+        "Elles ne sont capables d’accomplir qu’une tâche. Choisissezen une ou lancez les dés dans la table suivante :",
+        "1. Lueur. Vous possédez une petite sphère remplie de minuscules araignées qui produisent une vive lueur phosphorescente. Le globe illumine une zone de 3 mètres sur 3.",
+        "2. Poison. On entraîne cette araignée à mordre toute personne qui rentre dans une zone pas plus grande qu’une simple pièce. La morsure est profondément douloureuse et inflige 3g2 dés de dommages.",
+        "L’araignée ne peut mordre qu’une fois par jour.",
+        "3. Marque du larcin. On a entraîné cette araignée pour qu’elle morde quiconque touche un objet précis. Bien qu’il ne soit pas mortel, le poison fait en sorte que la peau enfle comme un ballon. Les effets durent plusieurs jours, et il est donc très facile de repérer le voleur.",
+        "4. Marques de la porte. On a entraîné l’araignée pour qu’elle tisse des toiles en travers des portes, fenêtres et autres entrées, ce qui permet au propriétaire de savoir quand on les franchit. L’araignée a besoin de dix minutes pour “marquer” une entrée. Une fois marquée, le propriétaire saura d’un simple coup d’œil si quelqu’un l’a franchie ou non.",
+        "5. Recherche. Cette grosse araignée est entraînée pour retrouver de petits objets – plumes, anneaux, liasses de papiers, etc. – et les ramener à son propriétaire. Les objets ne doivent pas peser plus de 500 grammes, et l’araignée est limitée soit à un seul type d’objet (plume, anneau, etc.) soit à un objet qu’elle a eu l’occasion de marquer avec son odeur.",
+        "6. Soie résistante. L’araignée produit des fils très résistants, dont on peut faire de minces cordes. Il lui faut une semaine pour tisser 4,5 mètres de fils, qui pourront supporter jusqu’à 125 kilos.",
+        "7. Transfert de message. La morsure de l’araignée a pour effet de transférer un court message d’un sujet à un autre. Le message doit se limiter à quinze mots maximum et être composé d’une seule phrase. Les renseignements ne vont que dans un sens (de l’expéditeur au destinataire) et ne peuvent être transférés qu’à une personne. Veuillez garder à l’esprit qu’un sujet qui n’est pas au courant écrasera peut-être l’araignée avant qu’elle ne le morde. L’araignée ne peut exploiter cette capacité que trois fois par semaine.",
+        "8 Pistage. L’araignée est capable de suivre à la trace une personne en particulier, laissant des fils sur les bâtiments et autres points de repères pour que sa maîtresse puisse suivre à son tour. La distance importe peu ; l’araignée peut suivre le sujet sur des centaines de kilomètres si nécessaire. Cette capacité de pistage ne fonctionne que si le sujet est à pied : l’araignée est trop lente pour suivre chevaux et chariots, et les navires ne laissent aucune trace derrière eux.",
+        "9 Dissimulation d’objet. L’araignée peut prendre un objet (500 grammes au plus) et le cacher en un lieu secret, l’envelopper dans un cocon de soie et le récupérer quand on le lui ordonne. On considère l’objet invisible en ce qui concerne les recherches visant à le retrouver ; on ne peut tout simplement pas mettre la main dessus par des moyens normaux. L’araignée peut cacher jusqu’à trois objets en même temps par le biais de cette capacité.",
+        "10. Lancez deux fois le dé sur cette table en ignorant tout nouveau 10."
+      ],
+      "cout_v1": "Coût : 2 PP, 1 PP pour les Streghe della Sorte"
     },
     {
       "nom": "Objet fétiche",
@@ -393,7 +700,13 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Un donateur vous offre 10/20/40 guilders 1 / 2 /4 fois par mois"
+      "description": "Un donateur vous offre 10/20/40 guilders 1 / 2 /4 fois par mois",
+      "description_v1": [
+        "Lorsqu’on n’a pas d’argent mais que l’on a du talent, que fait-on ? On tâche de trouver un protecteur ! Les protecteurs sont des individus riches qui entretiennent des artistes, des poètes, des écrivains, des duellistes et des profiteurs de toutes sortes.",
+        "Le nombre de PP que vous avez investi dans l’avantage Protecteur indique la richesse de ce dernier, ainsi que la somme qu’il est prêt à donner régulièrement au héros que vous incarnez. Discutez avec votre MJ lors de l’acquisition de cet avantage afin de déterminer qui pourrait être le protecteur du héros. Déterminez la générosité de celui de votre personnage (en fonction du nombre de PP investi) au moyen de la table ci-dessous :",
+        "(Table 6 : Coûts et bénéfices d’un protecteur — voir le PDF source.)"
+      ],
+      "cout_v1": "Coût : de 2 à 8 PP"
     },
     {
       "nom": "Publié",
@@ -405,7 +718,13 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Une de vos publications vous donne +5/10 rang social et salaire de 10/20 guilders."
+      "description": "Une de vos publications vous donne +5/10 rang social et salaire de 10/20 guilders.",
+      "description_v1": [
+        "Une ou plusieurs de vos théories ont été publiées, augmentant ainsi votre réputation parmi vos collègues.",
+        "Ceux qui appartiennent aux bons cercles reconnaissent votre nom et votre travail bénéficie de plus d’attention que s’il était resté dans votre bureau.",
+        "Pour 2 PP, votre rang social augmente de 5 points et vous gagnez un petit traitement de 10 guilders, ce qui représente les ventes de votre texte. Pour 3 PP, ces bonus sont respectivement de 10 points de rang social et 20 guilders."
+      ],
+      "cout_v1": "Coût : 2 ou 3 PP"
     },
     {
       "nom": "Héros local",
@@ -417,7 +736,13 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Bonus de moralité dans une ville choisie"
+      "description": "Bonus de moralité dans une ville choisie",
+      "description_v1": [
+        "Vous n’êtes pas en ville (Freiburg, Altamira, Numa, Charousse ou Pau, par exemple) depuis très longtemps, mais vous avez fait une grande impression sur le peuple de la cité.",
+        "Peut-être un article sur vos exploits est-il paru dans le journal local ou avez-vous fait acte d’un grand héroïsme public en sauvant une femme agressée par des malfrats, mais quoi qu’il en soit, vous êtes célèbre, et les gens se souviennent de vos exploits et vous en sont reconnaissants.",
+        "Quand vous êtes dans cette ville, vous bénéficiez de deux dés de Moralité supplémentaires."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Ambidextre",
@@ -429,7 +754,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Pas de malus de main non-directrice."
+      "description": "Pas de malus de main non-directrice.",
+      "description_v1": [
+        "Votre personnage peut écrire et accomplir toutes les tâches exigeant la coordination, la force ou la dextérité manuelle aussi bien avec la main gauche qu’avec la main droite.",
+        "Vous pouvez utiliser votre main gauche ou droite en tant que main principale et vous pouvez librement passer de l’une à l’autre. La pénalité de main non-directrice est annulée pour votre personnage et, s’il choisit de combattre en gaucher, il gagne tous les bonus de l’avantage Gaucher."
+      ],
+      "cout_v1": "Coût : 5 PP"
     },
     {
       "nom": "Arme achetée",
@@ -441,7 +771,11 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Vestenmannavnjar",
       "v2": false,
       "h_heroisme": false,
-      "description": "Permet d’acheter une arme normalement réservée à une autre Nation, pour 2PP de plus que le coût initial"
+      "description": "Permet d’acheter une arme normalement réservée à une autre Nation, pour 2PP de plus que le coût initial",
+      "description_v1": [
+        "Variable Les Vendelars ne disposent d’aucune arme natale particulière. En fait, ils en achètent, échangent ou dérobent à d’autres nations. Les armes Sidhe d’Avalon, les épées du Mystère de Montaigne, l’acier de Castille, les lames épaissies de Vodacce et même les armes runiques du Vestenmannavnjar sont disponibles aux Vendelars. Par contre, les armes en Dracheneisen ne le sont pas.",
+        "Les Vendelars peuvent faire l’acquisition de telles armes en dépensant 2 PP de plus que ne coûterait l’avantage en question pour un natif du pays concerné. Par exemple, un personnage Vendelar qui souhaite disposer d’une Lame de Soldano doit payer 8 PP. Enfin, vous recevez 1 point de réputation martiale."
+      ]
     },
     {
       "nom": "Arme du clan Mac Eachern",
@@ -453,7 +787,15 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Avalon",
       "v2": false,
       "h_heroisme": false,
-      "description": "Arme en fer froid, efficace contre les Sidhes"
+      "description": "Arme en fer froid, efficace contre les Sidhes",
+      "description_v1": [
+        "Bien que vous ne sachiez pas exactement d’où elle provient, vous êtes en possession d’une arme du clan MacEachern. Cette arme de fer froid fut forgée au moyen des techniques secrètes du clan MacEachern, et il peut s’agir de n’importe quel type de lame, d’un couteau à une claymore.",
+        "Si une telle arme frappe un Sidhe, faites un jet de dommages comme d’habitude. En revanche, le Sidhe n’effectue pas de jet de blessure. Au lieu de cela, divisez le nombre total de blessures par 5.",
+        "Le résultat est le nombre de blessures graves infligées au Sidhe. Bien qu’il ressente la douleur avec une intensité dépassant les limites de l’imagination humaine, ce dernier ne souffre d’aucune pénalité. La plupart peuvent endurer sept blessures graves avant de succomber. Vous pouvez posséder autant d’armes du clan MacEachern que vous le désirez. Toutefois, si le groupe auquel appartient votre personnage en détient plus d’une, les Sidhes pourront vous détecter où que vous alliez…",
+        "et vous écraser à leur guise tel un insecte. Une seule arme par groupe est le meilleur moyen de ne pas avoir d’accident.",
+        "Enfin, vous recevez 1 point de réputation martiale."
+      ],
+      "cout_v1": "Coût : 5 PP"
     },
     {
       "nom": "Arme en acier damasquiné",
@@ -465,7 +807,13 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Empire du Croissant",
       "v2": false,
       "h_heroisme": false,
-      "description": "Arme qui a +3 en toucher/dégât/parade active et techs."
+      "description": "Arme qui a +3 en toucher/dégât/parade active et techs.",
+      "description_v1": [
+        "Vous possédez une épée ou un autre objet en acier damasquiné, une technique qui n’a été développée que dans l’Empire du Croissant. De nombreux aciers à des taux plus ou moins bas en carbone et en fer sont utilisés pour forger ces outils exceptionnels.",
+        "Des couches successives d’acier chauffé à blanc sont forgées ensemble. Un nombre élevé de couches (comme un mille-feuilles) sont accumulées, martelées, torsadées et plongées dans l’eau glaciale pour obtenir une ébauche. Le processus se termine alors par une série de gravures à l’eauforte. Le résultat final est une arme à l’acier indestructible et d’une incroyable finition artistique.",
+        "Une arme en acier damasquinée permet d’ajouter 3 points à tous les jets effectués avec elle. Cela inclut les jets d’attaque, de dommages, de parades actives et toutes les techniques de combat qui utilisent l’arme. En outre, le ND pour briser cette arme est augmenté de 5. Le coût d’une arme en acier damasquiné est déterminé par le type de l’arme. Les couteaux réclament 6 PP, les armes d’escrime et les haches à une main, 7 PP, les armes à deux mains 8 PP et les armes d’hast 9 PP. Le coût de cet avantage est réduit de 1 PP si vous possédez déjà l’avantage Noble. Si vous acquérez plus d’une arme en acier damasquiné, sachez que les suivantes coûtent 1 PP de moins. Enfin, vous recevez 1 point de réputation martiale."
+      ],
+      "cout_v1": "Coût : de5 à 9 PP"
     },
     {
       "nom": "Arme runique",
@@ -477,7 +825,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Vestenmannavnjar",
       "v2": false,
       "h_heroisme": false,
-      "description": "Armé dotée d’une magie au choix, coût selon magie"
+      "description": "Armé dotée d’une magie au choix, coût selon magie",
+      "description_v1": [
+        "Vous possédez une arme ou quelque autre objet sur lequel est inscrite une rune. Il peut s’agir de n’importe laquelle des runes décrites dans le chapitre Magie.",
+        "Le coût de cet avantage dépend du genre de rune qui y est inscrite. Les runes de temps coûtent 1 PP, plus 1 PP par augmentation utilisée, jusqu’à un maximum de 3 augmentations. Les runes qui confèrent des dés de bonus coûtent 4 PP. Une rune permanente coûte deux fois plus cher qu’une rune ordinaire du même type. Enfin, vous recevez 1 point de réputation martiale."
+      ],
+      "cout_v1": "Coût : de 1 à 8 PP"
     },
     {
       "nom": "Arme Sidhe",
@@ -489,7 +842,26 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Avalon",
       "v2": false,
       "h_heroisme": false,
-      "description": "Arc, dague, épée ou lance Sidhe. -1PP si Sang Sidhe. Voir description."
+      "description": "Arc, dague, épée ou lance Sidhe. -1PP si Sang Sidhe. Voir description.",
+      "description_v1": [
+        "Certains personnages ont eu la chance de recevoir un jour un artefact de la part des Sidhes.",
+        "Les personnages possédant l’avantage Sang Sidhe avec la bénédiction Bonne réputation peuvent acheter celuici pour 1 PP de moins que le coût indiqué. Il est possible d’acquérir cet avantage plusieurs fois.",
+        "◆ Arc et flèches Sidhes — Coût : 3 PP :",
+        "Les arcs et flèches Sidhes sont des armes particulières.",
+        "Un arc Sidhe ne peut jamais se briser et on peut toujours récupérer les six flèches qui l’accompagnent après qu’elles aient été décochées.",
+        "Toute personne tuée par une telle flèche tombe en réalité dans un sommeil magique qui dure aussi longtemps que le MJ l’estime nécessaire (une simple nuit est courant, mais il est arrivé que ce sommeil dure jusqu’à cent ans). Enfin, vous recevez 1 point de réputation martiale.",
+        "◆ Dague Sidhe — Coût : 2 PP :",
+        "Une dague Sidhe peut être aussi mortelle qu’une épée.",
+        "Elle inflige des dommages de 2g2 (1g2 ailleurs qu’en Avalon) et possède les mêmes qualités qu’une épée Sidhe, y compris le bonus d’initiative. Enfin, vous recevez 1 point de réputation martiale.",
+        "◆ Épée Sidhe — Coût : 4 PP :",
+        "Une épée Sidhe est aussi légère que la fumée et aussi mortelle que le feu.",
+        "N’importe quel personnage possédant les spécialisations Escrime ou Épée à deux mains peut manier de telles épées.",
+        "Elles infligent des dommages de 4g2 dans les Trois Royaumes et de 3g2 ailleurs. Lorsque vous déterminez l’initiative, leur utilisateur peut réduire de 1 l’un de ses dés d’action au début du tour. Enfin, vous recevez 1 point de réputation martiale.",
+        "◆ Lance Sidhe — Coût : 5 PP :",
+        "Une lance sidhe est aussi légère que mortelle qu’une épée Sidhe.",
+        "Elle exige d’utiliser les compétences Armes d’hast ou Lances légères, et fait des dommages de 6g2 dans les Trois Royaumes et de 5g2 ailleurs. Lorsque vous déterminer l’initiative, leur utilisateur peut réduire de 1 l’un de ses dés d’action au début du tour. Enfin, vous recevez 1 point de réputation martiale."
+      ],
+      "cout_v1": "Coût : de 1 à 4 PP"
     },
     {
       "nom": "Assaut irréfléchi",
@@ -549,7 +921,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Insensible aux blocages d’articulation, +2g0 pour se dégager d’une prise."
+      "description": "Insensible aux blocages d’articulation, +2g0 pour se dégager d’une prise.",
+      "description_v1": [
+        "Vous pouvez plier vos doigts en arrière sans vous faire mal.",
+        "Vous êtes insensible aux dommages causés par un Blocage d’articulation sur vos doigts, et vous bénéficiez de 2 dés lancés non gardés supplémentaires (+2g0) pour vous dégager d’un tel Blocage. Vous bénéficiez également d’un dé lancé non gardé supplémentaire (+1g0) sur votre Jet de Blessure lorsque vous êtes désarmé et que vous maniez une lame avec une bague d’escrime. Cet avantage ne vous donne aucun bonus pour échapper à une Prise, ni pour vous dégager d’un Blocage d’articulation autre que sur vos doigts."
+      ],
+      "cout_v1": "Coût : 1 PP"
     },
     {
       "nom": "Dracheneisen",
@@ -561,7 +938,22 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Eisen",
       "v2": false,
       "h_heroisme": false,
-      "description": "Points à dépenser pour des armes et armures en Dracheneisen : 3 / 6 / 16"
+      "description": "Points à dépenser pour des armes et armures en Dracheneisen : 3 / 6 / 16",
+      "description_v1": [
+        "Les natifs d’Eisen n’ont jamais été des sorciers, mais leur pays est parcouru de filons de Dracheneisen (ou “fer du dragon”). Il s’agit d’un minerai à base de fer d’une qualité supérieure à tout ce que l’on peut trouver sur Théah que des forgerons d’Eisen, les Nibelungen, passent leur vie à travailler. Il s’agit d’un procédé long et difficile, mais le résultat final est, pour le moins, impressionnant.",
+        "Lorsque vous acquérez cet avantage, vous allouez une importante part de vos PP à l’héritage culturel de la nation d’origine de votre héros. En ce sens, cet avantage fonctionne de la même manière que la sorcellerie pour les autres nations : il permet d’acquérir l’avantage Noble à moindre coût et traduit l’existence d’un lien entre le héros et la lignée royale d’Eisen (à déterminer avec votre MJ).",
+        "Vous pouvez choisir de dépenser 40 PP, 20 PP ou 10 PP. Ce choix modifie la quantité de Dracheneisen à laquelle vous pourrez avoir accès :",
+        "(Table 12 : Bénéfices des armures en Dracheneisen — voir le PDF source.) (Légende de la table — voir le PDF source.) ◆ Modifications de Panzerfaust — Coût : 4 points :",
+        "Note :",
+        "vous devez avoir acheté un Panzerfaust en Dracheneisen pour choisir l’une de ces modifications.",
+        "On ne peut s’offrir qu’une modification par Panzerfaust.",
+        "Arbalète montée Une arbalète infligeant 1g3 de dommages a été installée sur votre Panzerfaust.",
+        "Hormis les dommages qu’elle inflige et sa petite taille, elle a tout d’une arbalète normale.",
+        "Articulations lestées Coût : 1point Le Panzerfaust a été fondu pour prendre l’apparence d’un poing fermé et présente de lourdes articulations lestées. Cela accroît les dommages qu’il inflige à 2g2, mais il ne sert à rien d’autre qu’à donner des coups de poing. Il ne permet donc pas l’utilisation des techniques de combat Désarmer (Panzerfaust) et Emprisonner (Panzerfaust). Cependant, le MJ pourra autoriser certaines actions avec des modifications.",
+        "Pistolet incorporé Coût : 5points Un pistolet est incorporé dans le Panzerfaust. Lorsqu’il est chargé (ce qui nécessite 20 actions), un coup part dès que l’utilisateur réussit une attaque avec la compétence Attaque (Panzerfaust), infligeant alors 4g3 dommages, +1 dé lancé par rang de Finesse du porteur.",
+        "(Table 11 : Coûts et bénéfice du Dracheneisen — voir le PDF source.)"
+      ],
+      "cout_v1": "Coût : 10, 20 ou 40 PP"
     },
     {
       "nom": "Dur à cuir",
@@ -573,7 +965,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Sertepes",
       "v2": false,
       "h_heroisme": false,
-      "description": "Vous pouvez encaisser une Blessure de plus"
+      "description": "Vous pouvez encaisser une Blessure de plus",
+      "description_v1": [
+        "Que cela soit dû à une forte constitution naturelle, à un entraînement intensif, ou à un épiderme (ou un crâne) particulièrement dur, le héros est “dur au mal”.",
+        "Vous faites vos jets de blessure en lançant et gardant un dé supplémentaire (+1g1). Enfin, vous recevez 1 point de réputation martiale."
+      ],
+      "cout_v1": "Coût : 5 PP"
     },
     {
       "nom": "Faire le mort",
@@ -609,7 +1006,34 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Arme de qualité, voir p38"
+      "description": "Arme de qualité, voir p38",
+      "description_v1": [
+        "choisissent la lame de leur province natale Comme tout Castillian vous le dira, les meilleures lames du pays viennent de sa province natale.",
+        "Évidemment, on peut soutenir que les habitants de Soldano sont les plus proches de la vérité, mais il ne fait nul doute que la Castille est la patrie de certains des forgerons les plus talentueux du monde.",
+        "Un personnage ne peut acheter qu’une seule des lames castillianes qui suivent.",
+        "Toutes les lames castillianes vous permettent de recevoir 1 point de réputation martiale.",
+        "◆ Lame d’Aldana — Coût : 3 PP :",
+        "Les épées d’Aldana sont légères et souples, parfaites pour porter des coups rapides et exécuter des parades éclairs. Dans la main d’un spadassin de talent, une lame d’Aldana est presque aussi dangereuse qu’une épée de Soldano.",
+        "Une Lame d’Aldana est une arme d’Escrime infligeant 2g2 de dommages qui permet de diminuer l’un de vos dés d’action de 1 point au début de chaque tour.",
+        "◆ Lame de Gallegos — Coût : 3 PP :",
+        "Les épées de Gallegos sont parfaitement équilibrées et résistantes. On peut les plier en deux et elles se redressent quand même.",
+        "Une Lame de Gallegos est une arme d’Escrime infligeant 2g2 de dommages qui ajoute 2 points à vos jets d’attaque. En outre, lorsque l’on tente de briser une Lame de Gallegos, il faut ajouter 5 au ND.",
+        "◆ Lame d’Ochoa — Coût : 2 PP :",
+        "Les Lames d’Ochoa étaient autrefois aussi prisées que celles d’Aldana, de Gallegos ou de Torres, mais la récente trahison de cette famille les a reléguées derrière les lames de Zepeda.",
+        "Une Lame d’Ochoa est une arme d’Escrime infligeant 2g2 de dommages qui ajoute 2 aux jets de parade de son possesseur.",
+        "◆ Lame de Soldano — Coût : 6 PP :",
+        "Les meilleurs forgerons Castillians font du magnifique acier de Soldano des épées véritablement exceptionnelles.",
+        "Ces lames ont un fil plus long, sont plus difficiles à briser et leur équilibre est sans pareil.",
+        "Une Lame de Soldano est une arme d’Escrime infligeant 2g2 de dommages qui ajoute 2 points à tout jet effectué avec elle.",
+        "Cela inclut les jets d’attaque, de dommages, les défenses actives de parade et toute technique de combat relevant de l’Escrime. En outre, lorsque l’on tente de briser une Lame de Soldano, il faut ajouter 5 au ND.",
+        "◆ Lame de Torres — Coût : 3 PP :",
+        "Les épées de Torres sont réputées pour leur fil particulièrement tranchant. Cela se traduit par des blessures plus profondes et de plus gros dommages en général.",
+        "Une Lame de Torres est une arme d’Escrime infligeant 2g2 de dommages qui ajoute 3 points au jet de dégâts de son possesseur.",
+        "◆ Lame de Zepeda — Coût : 2 PP :",
+        "Les Lames de Zepeda sont tenues pour les moins précieuses des lames Castillianes. Bien qu’elles soient plus légères et plus acérées qu’une épée normale, on ne peut les comparer aux splendides lames de Soldano.",
+        "Une Lame de Zepeda est une arme d’Escrime infligeant 2g2 de dommages qui ajoute 1 aux jets d’attaque et de dommages de son possesseur."
+      ],
+      "cout_v1": "Coût : 2, 3 ou 6 PP, 1 PP de moins pour ceux qui"
     },
     {
       "nom": "Lame du mystère",
@@ -621,7 +1045,93 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Montaigne",
       "v2": false,
       "h_heroisme": false,
-      "description": "Voir pages 49 à 53"
+      "description": "Voir pages 49 à 53",
+      "description_v1": [
+        "Un personnage qui choisit cet avantage a acquis l’une des infâmes Lames du Mystère montaginoises.",
+        "Commencez par déterminer la nature de votre arme en lançant un dé sur la table des Lames du Mystère. Suivez les instructions de ladite table et payez les PP lorsqu’on vous le demande. Selon son fabricant, une Lame du mystère coûte 2, 5 ou 10 PP. Une fois que vous commencez à lancer les dés, vous devez payer tous les coûts indiqués sur la table ; vous ne pouvez décider de ne pas effectuer de jet sur la table suivante pour éviter de dépenser des PP. ainsi, nous vous conseillons de mettre de côté 10 PP avant de commencer vos jets de dés.",
+        "Les personnages originaires des provinces occidentales (Verrier, Viltoille, Martise, Rachecourt, Torignon et La Motte) soustraient 1 point sur tous les jets effectués sur la table des Lames du Mystère. Les personnages originaires des provinces septentrionales (Douard, Crieux, Aury et Arrange) ajoutent 1 point sur tous leurs jets effectués sur la table des Lames du Mystère. Les personnages originaires des provinces méridionales (Sicée, Charousse, Pourcy, Glavène et Surly) ne font l’objet d’aucun modificateur.",
+        "◆ Règles générales sur les Lames du Mystère : :",
+        "Nombre de Lames du Mystère disposent de boutons cachés, crans dissimulés, etc. Ces mécanismes secrets font l’objet des règles suivantes :",
+        "Il faut effectuer un jet d’Esprit contre une difficulté de 30 pour les découvrir, sauf lorsque l’utilisateur les connaît déjà.",
+        "Il n’est nul besoin d’utiliser quelque action pour enfoncer un bouton, libérer un cran de sûreté, etc., du moment que l’individu en question tient l’épée à la main.",
+        "Nombre de Lames du Mystère disposent de parties détachables comme des dards, réservoirs d’huile, etc.",
+        "Ôter ou vider l’un d’eux affecte l’équilibre fragile de l’épée. Lorsqu’une Lame du Mystère est mal équilibrée, son utilisateur souffre d’une pénalité d’un dé (à lancer et à garder) sur tous ses jets d’attaque et de défense active effectués à l’aide de l’épée.",
+        "(Table 14 : Lames du Mystère — voir le PDF source.) ◆ Lames du Mystère de Renart :",
+        "Vous recevez 1 point de réputation martiale.",
+        "0 : Garrot La garde de l’épée dissimule un garrot. En cas d’attaque dans le dos, la victime est incapable d’émettre le moindre son et commence à suffoquer. La victime est considérée comme Prise (voir la compétence correspondante) et peut tenter de se libérer normalement.",
+        "1 : Poignée ouvragée La poignée particulièrement bien réalisée de l’épée permet à son utilisateur de se livrer à quelques feintes osées. Ajoutez 5 au ND de quiconque effectue une défense active contre une telle attaque.",
+        "2 : Fourreau maquillé L’épée ressemble à une canne lorsqu’elle est au fourreau. Vous bénéficiez de deux augmentations gratuites dès lors qu’il s’agit de la dissimuler.",
+        "3 : Bien équilibrée L’équilibre de l’épée est tel que lorsque vous l’utilisez, vous ajoutez 1 à tous vos jets d’attaque (un 18 passera ainsi à 19).",
+        "4 : Entrave Les détails de la garde de l’épée entravent les attaques.",
+        "Elle augmente ainsi la défense active de son utilisateur de 2 points (un 19 passera à 21).",
+        "5-6 : Effectuez un nouveau jet sur cette table Ignorez tout nouveau résultat de 5 ou 6. Ensuite, dépensez 3 PP et effectuez un jet sur la table des Lames Rares.",
+        "7 : Bonne allonge L’utilisateur ajoute toujours 5 points de plus à son allonge totale.",
+        "8 : Garde de serrurier La poignée de l’épée dissimule un jeu d’outils de crochetage (jet d’Esprit contre un ND 40 pour les découvrir). Ces outils sont de si bonne qualité qu’ils donnent toujours une augmentation gratuite lorsque l’utilisateur souhaite user de sa compétence Crochetage.",
+        "9 : Compartiment secret Le pommeau de l’épée s’ouvre sur un tout petit compartiment secret. On peut y dissimuler messages, bijoux et autres petits objets utiles qu’il ne sera alors possible de trouver qu’en effectuant un jet d’Esprit contre un ND de 40.",
+        "10 : Antirouille L’épée est immunisée aux effets de l’âge et du temps.",
+        "Elle ne rouille pas, ne se ternit pas et n’est sujette à aucune corrosion (même la magie Zerstörung est sans effet sur elle).",
+        "11 : Fourreau de sûreté Il y a sur le fourreau un cran de sûreté qui garde l’épée en place tant qu’on ne la débloque pas. Il est impossible de l’en ôter sans une Gaillardise de 6 au moins. Libérer ainsi l’épée brisera au passage le fourreau.",
+        "◆ Lames du Mystère d’Isengrin :",
+        "Vous recevez 1 point de réputation martiale.",
+        "0 : Lame en dent de scie La lame de cette épée est conçue pour infliger de vilaines et douloureuses entailles. Lorsque l’utilisateur parvient à obtenir une augmentation sur son ND pour être toucher, le jet de dommages qui suit augmente de 2 points (ainsi un 18 passera à 20) par augmentation (en plus de tous les dés de dommages normaux supplémentaires).",
+        "1 : Flamberge Lorsqu’il effectue un jet de dommage pour des blessures infligées à l’aide de cette épée, l’utilisateur relance tous les 1 jusqu’à ce qu’il n’en reste plus.",
+        "2 : Lame légère Cette épée est extrêmement légère. Lorsque vous faites une Riposte, vous recevez une augmentation gratuite sur vos jets d’attaque (en partant du principe que vous avez réussi votre défense active).",
+        "3 : Indestructible Il est impossible de briser cette épée. En outre, elle se redresse toute seule quand on la tord.",
+        "4 : Garde barbelée La garde de l’épée est parcourue de filigranes conçus pour coincer les lames. L’utilisateur bénéficie d’une augmentation gratuite lorsqu’il tente de désarmer un adversaire.",
+        "5-6 : Effectuez un nouveau jet sur cette table Ignorez tout nouveau résultat de 5 ou 6. Ensuite, dépensez 3 PP et effectuez un jet sur la table des Lames Rares.",
+        "7 : Fil tranchant Le fil de l’épée est si tranchant qu’il augmente les jets de dommage de son utilisateur d’un point (un 14 devient ainsi un 15).",
+        "8 : Garde pointue La garde de l’épée est décorée de plusieurs pointes aiguisées. Les coups de pommeau effectués à l’aide de cette épée infligent 2g2 de dommages plutôt que 0g2.",
+        "9 : Jamais émoussée Cette épée ne perd jamais son fil tranchant. Il n’est jamais nécessaire de l’aiguiser ou de l’entretenir. Il est néanmoins possible qu’elle rouille ou qu’elle se brise.",
+        "10 : Lame lourde Cette épée est particulièrement lourde et offre deux augmentations gratuites à son utilisateur lorsqu’il se sert de la technique de combat Coup puissant.",
+        "11 : Dague Une dague sort du pommeau de l’épée quand on enfonce un bouton caché. Cela permet à l’utilisateur de se servir de sa compétence Attaque (Couteau) lorsque son adversaire Lie son épée. À l’instar d’un poignard classique, la dague inflige 1g2 de dommages et brise automatiquement le Lien de l’adversaire quand elle inflige des dommages.",
+        "(Table 15 : Lames Rares — voir le PDF source.) ◆ Lames du Mystère de Bonnegrâce :",
+        "Vous recevez 1 point de réputation martiale supplémentaire.",
+        "0 : Nuage de fumée L’épée diffuse un nuage de fumée sur trois mètres quand on enfonce un bouton caché, plongeant ainsi la zone dans le noir complet pendant 10 phases. L’épée renferme suffisamment de fumée pour une utilisation, suite à quoi il faut la recharger avec un mélange d’huile et d’herbes assez courantes (1 guilder), ce qui nécessite 5 actions. Quand le réservoir est vide, l’épée est mal équilibrée (voir plus haut).",
+        "1 : Poignée articulée La poignée de l’épée s’adapte particulièrement bien à la paume de son utilisateur. L’épéiste peut utiliser un dé d’action pour parer comme s’il était une phase avant (un dé d’action utilisé en phase 5 permettra de passer en phase 4).",
+        "2 : Queue de lézard L’épée dispose d’une fausse pointe dont elle peut se séparer. Quand l’adversaire réussit une parade, la pointe tombe. Il lui faut alors refaire son jet de parade.",
+        "S’il l’emporte une seconde fois, l’attaque est bloquée ;",
+        "autrement, la ruse fonctionne et l’attaque finit par passer. Il faut 5 actions pour refixer correctement la pointe ; sans elle, l’épée est mal équilibrée (voir plus haut).",
+        "3 : Garde serpentine À moins qu’il ne relâche le cran de sûreté, la garde de l’épée se referme soudainement sur la main de son utilisateur une phase après qu’il s’en soit emparé.",
+        "Libérer la main de la victime exige une Gaillardise de 5 une fois que la garde s’est refermée. La victime doit lancer un dé et obtenir moins que son rang de Détermination ou avoir la main brisée pendant un mois (période pendant laquelle elle aura –1 en Finesse).",
+        "La garde s’ouvre en appuyant sur le bouton.",
+        "4 : Garde serrée La garde de l’épée est d’une conception telle qu’elle s’enroule autour de la main de son porteur lorsqu’il s’en saisit.",
+        "Cela présente deux avantages.",
+        "Premièrement, il n’est pas possible de désarmer l’utilisateur. Deuxièmement, le cran qui permet de relâcher la garde est dissimulé, ce qui signifie qu’un utilisateur étranger aura la main piégée comme dans un étau.",
+        "5-6 : Effectuez un nouveau jet sur cette table Ignorez tout nouveau résultat de 5 ou 6. Ensuite, dépensez 5 PP et effectuez un jet sur la table des Lames de Lemaître.",
+        "7 : Garde réglable La garde de cette épée peut être raccourcie ou allongée en dépensant une action. Elle devient alors une Épée d’Escrime (2g2) ou une Épée à deux mains (3g2).",
+        "L’utiliser comme une Épée à deux mains nécessite les deux mains, alors que l’utiliser comme une arme d’escrime n’en requiert qu’une.",
+        "8 : Garde à grappin La garde de l’épée peut faire office de pistolet à grappin. Elle dispose d’une solide corde de 6 mètres de long et il faut 10 actions pour la rembobiner. Si l’on se bat avec pendant que la corde est déroulée, l’épée est mal équilibrée.",
+        "9 : Propriétés curatives Au contact d’un bouton dissimulé, l’épée injecte au porteur un liquide qui le soigne de 15 blessures légères.",
+        "La formule de ce liquide est connue du porteur et coûte 5 guilders la dose mais n’est efficace qu’injectée. Une seule dose marchera chaque jour sur un même individu, et le réservoir de l’épée ne peut en contenir qu’une. Ensuite, il faut le recharger, ce qui prend 25 actions. Une fois vide, l’épée est mal équilibrée.",
+        "10 : Garde loyale Une aiguille empoisonnée pique le pouce du porteur une phase après qu’il se soit saisi de l’épée, sauf si un minuscule verrou dissimulé est débloqué. Le poison peut être de l’arsenic comme un soporifique, à la discrétion du propriétaire de l’épée. Un lourd gantelet ou un Panzerfaust viendront à bout de cette mesure de sécurité. Il faut remplir le réservoir après chaque utilisation, mais il n’est pas assez grand pour affecter l’équilibre de l’épée.",
+        "11 : Brise-lames Il s’agit d’un objet conçu pour frapper la lame de l’adversaire en un point fragile afin de la briser. Cela n’est utile que lorsqu’un adversaire vient de parer la Lame du Mystère. Le porteur appuie alors sur un bouton caché, et une partie de la garde de l’épée surgit brutalement, tentant de briser l’autre arme. Cela fonctionne sur le même modèle que la technique de compagnon de l’école d’escrime Eisenfaust, l’épée disposant dans ce but d’une Gaillardise de 4. Une fois déclenché, il faut remonter le mécanisme avant de pouvoir l’exploiter de nouveau, ce qui prend 10 actions. Dans l’attente, l’épée est mal équilibrée.",
+        "◆ Lames du Mystère de Malemort :",
+        "Vous recevez 1 point de réputation martiale supplémentaire.",
+        "0 : Poignée pistolet Il y a dans la poignée de l’épée un pistolet à un coup dissimulé dont on peut se servir en appuyant sur un bouton. Si l’utilisateur appuie sur le bouton au moment même où il cause des dommages à son adversaire, le pistolet touche automatiquement au but, infligeant des dégâts normaux (4g3). Autrement, le porteur doit réussir un jet d’Attaque (Armes à feu) avec une augmentation pour toucher.",
+        "1 : Cracheuse de feu Lorsque l’on brandit l’épée et que l’on appuie sur un bouton dissimulé, elle vaporise de l’huile avant de l’enflammer à l’aide d’un silex incorporé. Le résultat produit un arc de feu qui part de l’extrémité de l’épée.",
+        "La cible peut éviter l’arc en effectuant un jet de Finesse + Roulé-boulé contre un ND de 20 (sans dépenser d’action). L’épée renferme suffisamment d’huile pour une utilisation et doit ensuite être rechargée, ce qui prend 25 actions. Une fois vide, l’épée est mal équilibrée.",
+        "2 : Jet aveuglant L’épée dispose d’un réservoir de liquide qu’il est possible de pulvériser au visage de son adversaire par simple pression sur un bouton caché. Cela nécessite un jet d’Attaque réussi accompagné de deux augmentations. Plutôt que de subir des dommages, la victime est aveuglée (comme si elle était dans le noir complet) jusqu’à ce qu’elle se rince les yeux ou qu’une heure se soit écoulée. L’épée renferme suffisamment de liquide pour une utilisation et il faut 5 actions pour la remplir (avec de l’eau et des herbes pour une valeur de 1 guilder). Quand le réservoir de l’épée est vide, celle-ci est mal équilibrée.",
+        "3 : Poignée dard L’épée peut projeter une petite fléchette. Celle-ci sort du pommeau et va jusqu’à 3 mètres quand on appuie sur un bouton. Pour toucher, il faut réussir un jet d’attaque accompagné de trois augmentations. On enduit généralement le dard de poisons mortels ou soporifiques. Si la fléchette est perdue, un forgeron qualifié (au moins 4 rangs dans la compétence du même nom) la remplacera contre 10 guilders. Sans le dard, l’épée est mal équilibrée. Il faut réappliquer le poison après chaque utilisation.",
+        "4 : Métal étrange L’épée est faite d’un métal si léger que le porteur peut diminuer l’un de ses dés d’action d’une phase ou bénéficier de +10 à son initiative totale lors de la phase 1.",
+        "5-6 : Effectuez un nouveau jet sur cette table Ignorez tout nouveau résultat de 5 ou 6. Ensuite, dépensez 5 PP et effectuez un jet sur la table des Lames de Lemaître.",
+        "7 : Double lame Cette épée est dotée d’un puissant ressort qui se trouve entre deux moitiés de lame. Lorsqu’on enfonce un bouton caché, les deux moitiés de l’épée se séparent.",
+        "Cela cause souvent des fractures de côtes et autres blessures horribles. En termes de jeu, lorsqu’une attaque est couronnée de succès, le personnage peut activer cette capacité pour infliger deux dés (lancés & gardés) de blessures supplémentaires (appliqués séparément après les dommages normaux de l’épée).",
+        "Toutefois, le ND pour être brisée de l’épée est réduit de 5 points. En outre, une fois qu’elle est activée, elle est inutile tant que 10 actions n’ont pas été utilisées pour la remettre en place.",
+        "8 : Réservoir de poison Il y a un petit compartiment étanche dans la poignée de l’épée. Lorsque l’on tortille une certaine décoration du pommeau, cela ouvre le compartiment, ce qui permet au liquide qui est à l’intérieur de s’écouler. Si l’on tient l’épée la pointe vers le bas quand on l’ouvre, le liquide coule le long, enduisant la lame. Cela prend une action. Cependant, le liquide reste collé à l’épée jusqu’à la fin du tour et s’infiltre dans toute blessure qu’elle inflige. Généralement, on met dans le réservoir des poisons mortels ou soporifiques. L’épée renferme suffisamment de poison pour une utilisation et la recharger nécessite 25 actions. Une fois vide, l’épée est mal équilibrée.",
+        "9 : Garde fragile Si l’on dégaine l’épée sans enfoncer un cran de sûreté, lancez un dé. Autant de phases plus tard, l’épée tombe en morceaux dans les mains du porteur. Il faut (10 – Esprit) actions pour la réassembler.",
+        "10 : Métal souillé Lorsqu’un adversaire rate son jet de blessure après avoir été frappé par cette épée, il ne peut effacer qu’un nombre de blessures légères égal à son jet de blessures.",
+        "Par exemple, si l’adversaire a 87 blessures légères et qu’il obtient 42 sur son jet de blessures, il subit 3 blessures graves (1 + 2 pour avoir raté de plus de 40) et a toujours 45 blessures légères (87 – 42).",
+        "11 : Rasoir Pour chaque 10 que garde le porteur lorsqu’il effectue des dommages avec cette épée, il inflige automatiquement une blessure grave à la cible. Les 10 n’explosent pas et ne comptent pas dans le total du jet de dommages, mais ils ne font pas non plus disparaître les blessures légères. Par exemple, si le porteur a obtenu un 9 et un 10 sur son jet de dommages, la victime subit une blessure grave et effectue un jet de Gaillardise contre son ancien total de blessures légères augmenté de 9.",
+        "◆ Lames du Mystère de Lemaître :",
+        "Vous recevez 2 points de réputation martiale supplémentaires.",
+        "0-1 : La Lame Passionnée Cette épée peut instantanément bondir dans la main de son propriétaire quand il le souhaite et quelle que soit la distance qui les sépare. Si jamais il la tend à autrui garde en avant, l’épée obéira aux ordres de ce nouvel individu. Si le propriétaire meurt, la première personne qui touche l’épée en devient le nouveau propriétaire.",
+        "2-3 : La Lame Fantomatique Hormis son propriétaire, nul ne peut se saisir de cette épée. Quand son propriétaire s’en empare, l’épée est tangible et n’importe qui peut la toucher (il en va de même pour elle), mais dès qu’il la lâche, elle reprend son apparence fantomatique. Si jamais il la tend à autrui garde en avant, l’épée n’autorisera plus que ce nouvel individu à s’en saisir. Si le propriétaire meurt, l’épée devient tangible et la première personne qui la touche en devient le nouveau propriétaire.",
+        "4-5 : La Lame Aigre Une fois par acte, cette épée peut attaquer à de vastes distances. Si le porteur est en mesure de voir sa cible, il peut l’attaquer avec l’épée, où qu’elle se trouve, la lame se volatilise et apparaît près de la cible. Cette dernière peut toujours utiliser ses défenses passives et actives, comme d’ordinaire. Il faut évidemment effectuer un jet de surprise (le porteur reçoit deux augmentations gratuites) pour déterminer si la cible est consciente ou non du porteur.",
+        "6-7 : La Lame Chatoyante Une fois par acte, cette épée peut “chatoyer”. Elle commence à trembler comme un mirage, et jusqu’à la fin du tour suivant, elle ignore toute forme d’armure et de protection, et ne peut être parée (qu’il s’agisse d’une défense active ou passive).",
+        "8-9 : La Lame Cupide Le porteur de cette épée peut utiliser une action pour ouvrir une brèche dans les airs à l’aide son arme et y plonger son autre main. Cela permet au porteur d’agir comme s’il disposait de 3 rangs dans la compétence Porté Poche, sauf que les objets qui se trouvent à l’intérieur ne disparaissent jamais.",
+        "10-11 : La Lame Assoiffée Une fois par acte, cette épée peut dérober du sang à l’adversaire de son porteur. Le porteur déclare qu’il souhaite activer l’épée avant de faire son jet de dommages. Il peut alors doubler la valeur de dommages d’un dé lancé gardé. Ainsi, si l’un des dés explose et fait 15, il peut utiliser cette capacité pour le transformer en 30, en plus de tous les autres dés qu’il garde pour la résolution des dommages."
+      ],
+      "cout_v1": "Coût : 2, 5 ou 10 PP"
     },
     {
       "nom": "Lame épaissie",
@@ -633,7 +1143,15 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Vodacce",
       "v2": false,
       "h_heroisme": false,
-      "description": "Filament de Sorcière Vodacce sur la lame. Chacune permet d’ajouter 1g1 lors de l’utilisation de l’arme (attaque, Parade, Technique, …)1x par acte et par fil."
+      "description": "Filament de Sorcière Vodacce sur la lame. Chacune permet d’ajouter 1g1 lors de l’utilisation de l’arme (attaque, Parade, Technique, …)1x par acte et par fil.",
+      "description_v1": [
+        "Les sorcières vodaccies fixent parfois des filaments du destin aux armes nouvellement forgées pour en accroître la force. Ces “lames épaissies“ sont très recherchées au sein de la noblesse du pays. Même si les sorcières épaississent généralement des épées, elles peuvent également exercer leur influence sur des poignards, pistolets et autres armes de leur choix.",
+        "Pour chaque tranche de 2 PP que vous dépensez dans cet avantage, votre arme dispose d’un dé du destin.",
+        "Vous pouvez acheter ainsi jusqu’à cinq dés du destin.",
+        "Il vous est possible de dépenser ces dés afin d’effectuer ainsi un jet lié à votre arme (jets d’attaque et de dommages, techniques de combat, défense active, etc.).",
+        "Chaque dé ainsi dépensé ajoute 1g1 au jet. Vos dés du destin reviennent au début de chaque acte. Enfin, vous recevez 1 point de réputation martiale."
+      ],
+      "cout_v1": "Coût : de 2 à 10 PP"
     },
     {
       "nom": "Ma faiblesse est votre force",
@@ -717,7 +1235,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Baisse la pénalité d’armure et +1 Réputation martiale"
+      "description": "Baisse la pénalité d’armure et +1 Réputation martiale",
+      "description_v1": [
+        "Vous avez l’habitude de porter des pièces d’armure toute la journée, à tel point que vous n’êtes pas gêné dans vos mouvements comme vous le seriez normalement.",
+        "Quand vous portez une armure, vos malus sur la table des Pénalités d’Armure sont traités comme si votre type d’armure était de la colonne immédiatement à droite de la vôtre. Enfin, vous recevez 1 point de réputation martiale."
+      ],
+      "cout_v1": "Coût : 6 PP"
     },
     {
       "nom": "Recharge Rapide",
@@ -741,7 +1264,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Permet de relancer un dé d’action, et +2 Réputation Martiale"
+      "description": "Permet de relancer un dé d’action, et +2 Réputation Martiale",
+      "description_v1": [
+        "l’avantage académie militaire Le héros a un sens du combat particulièrement aiguisé : il réagit sans la moindre hésitation aux développements (souvent inattendus) du combat.",
+        "Après avoir fait votre jet d’initiative pour le tour, vous pouvez relancer l’un de vos dés d’action, mais vous serez contraint de conserver ce nouveau résultat. Enfin, vous recevez 2 points de réputation martiale."
+      ],
+      "cout_v1": "Coût : 3 PP, 2 PP pour les personnages possédant"
     },
     {
       "nom": "Tireur Précis",
@@ -753,7 +1281,13 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1g0 lors des tests avec une catégorie d’arme à distance et +2 Rep. Martiale"
+      "description": "+1g0 lors des tests avec une catégorie d’arme à distance et +2 Rep. Martiale",
+      "description_v1": [
+        "Vous êtes un tireur né et manquez rarement votre cible. Des années d’entraînement vous permettent aujourd’hui d’apprécier correctement les distances et la force du vent. Il existe plusieurs “spécialités” à cet avantage dépendant de différentes compétences liées aux armes à distance (cf. table cidessous).",
+        "Suivant votre arme de prédilection, vous bénéficiez d’un dé lancé non gardé supplémentaire (+1g0) sur toutes les attaques réalisées avec une arme de cette catégorie, à pied comme à cheval. Enfin, vous recevez 2 points de réputation martiale.",
+        "(Table 2 : Les experts du tir — voir le PDF source.)"
+      ],
+      "cout_v1": "Coût : 3 PP"
     },
     {
       "nom": "Peintures de guerre",
@@ -777,7 +1311,11 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Avalon",
       "v2": false,
       "h_heroisme": false,
-      "description": "Un Sidhe est votre allié/ami et vous aide selon certaines conditions et circonstances"
+      "description": "Un Sidhe est votre allié/ami et vous aide selon certaines conditions et circonstances",
+      "description_v1": [
+        "Vous vous êtes fait un allié à la cour des Sidhes, un avantage à double tranchant. Il pourra vous aider de temps en temps, mais il aura également parfois besoin d’aide. Bien que ses problèmes soient de bien plus vaste ampleur que les vôtres, il vous a sauvé la vie plus souvent que vous ne sauriez en faire le compte."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Ami de cour",
@@ -789,7 +1327,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Peut répartir 2 à 4 crans d’Humeur à une connaissance de Cour"
+      "description": "Peut répartir 2 à 4 crans d’Humeur à une connaissance de Cour",
+      "description_v1": [
+        "Cet avantage permet au héros de commencer le jeu avec une relation à la cour.",
+        "Pour chaque PP investi dans cet avantage, le héros peut répartir 3 points entre les cases Sympathie et Utilité de cette connaissance. Il est possible d’acheter cet avantage trois fois, chacune pour un ami différent."
+      ],
+      "cout_v1": "Coût : de 1 à 3 PP par ami"
     },
     {
       "nom": "Bakchich",
@@ -813,7 +1356,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+2g0 aux jets de séduction"
+      "description": "+2g0 aux jets de séduction",
+      "description_v1": [
+        "Quelque chose chez le héros attire les membres du sexe opposé.",
+        "Vous faites toutes vos tentatives de séduction en lançant (mais sans les garder) deux dés supplémentaires (+2g0)."
+      ],
+      "cout_v1": "Coût : 3 PP"
     },
     {
       "nom": "C’était un malentendu",
@@ -849,7 +1397,20 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "-1/2/3g0 aux tests sociaux, à cause de votre attitude/laideur, mais +1/2/3g1/2/3 quand c’est à votre avantage (marchander, intimider, …). Au dernier niveau, génère un niveau de peur."
+      "description": "-1/2/3g0 aux tests sociaux, à cause de votre attitude/laideur, mais +1/2/3g1/2/3 quand c’est à votre avantage (marchander, intimider, …). Au dernier niveau, génère un niveau de peur.",
+      "description_v1": [
+        "Physiquement, vous avez quelque chose d’effrayant et tous ceux qui vous entourent se sentent mal à l’aise en votre présence. Bien que cela soit embarrassant dans de nombreuses situations, il est parfois utile d’être angoissant. D’aucuns pensent que votre laideur s’applique également à votre âme, ce qui vous rend d’autant plus intimidant. Cela peut se traduire par une caractéristique flagrante (vous êtes bossu, avez de nombreuses balafres, une énorme verrue, des dents en moins, etc.) ou par une impression subtile que vous laissez derrière vous (vous ne clignez jamais des yeux, etc.).",
+        "Quelle que soit votre explication, les modificateurs sont les suivants :",
+        "Bien entendu, cet avantage n’est pas cumulable avec Séduisant, les bonus s’annulant les uns les autres.",
+        "◆ Sombre — Coût : 2 PP :",
+        "Vous effectuez tous les jets se rapportant à des actions sociales en lançant un dé de moins (-1g0), sauf lorsque votre apparence tourne à votre avantage (marchander, par exemple). Dans ce cas, vous bénéficiez d’un dé à lancer et garder (+1g1). Ce bonus s’applique également à toutes vos tentatives d’intimidation du système de répartie.",
+        "◆ Angoissant — Coût : 4 PP :",
+        "Vous effectuez tous les jets se rapportant à des actions sociales en lançant deux dés de moins (-2g0), sauf lorsque votre apparence tourne à votre avantage (marchander, par exemple). Dans ce cas, vous bénéficiez d’un bonus de deux dés à lancer et garder (+2g2). Ce bonus s’applique également à toutes vos tentatives d’intimidation du système de répartie.",
+        "◆ Inquiétant — Coût : 6 PP :",
+        "Vous effectuez tous les jets se rapportant à des actions sociales en lançant trois dés de moins (-3g0), sauf lorsque votre apparence tourne à votre avantage (marchander, par exemple). Dans ce cas, vous bénéficiez d’un bonus de trois dés à lancer et garder (+3g3). Ce bonus s’applique également à toutes vos tentatives d’intimidation du système de répartie.",
+        "En outre, vous pouvez utiliser une action par tour pour afficher votre air inquiétant et ajoutez +1 à votre niveau de peur pour le reste du tour. Si vous n’avez pas de niveau de peur de base, vous en gagnez un temporaire de 1."
+      ],
+      "cout_v1": "Coût : 2, 4 ou 6 PP"
     },
     {
       "nom": "Flegmatique",
@@ -861,7 +1422,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1g1 aux tests de Sincérité, Jouer, Interrogatoire et Intimidation -1g0 aux tests de Séduction et Narrer"
+      "description": "+1g1 aux tests de Sincérité, Jouer, Interrogatoire et Intimidation -1g0 aux tests de Séduction et Narrer",
+      "description_v1": [
+        "Le personnage a un visage de marbre quelles que soient les circonstances. Qu’il raconte une blague et il reste sérieux comme un pape. Il est impossible de discerner en lui quelque sentiment que ce soit. De plus, aucun de ses gestes ne trahit ses sentiments.",
+        "Si cela gêne ses tentatives de Séduction et de Narrer (-1g0), il bénéficie par contre de 1g1 de bonus à ses jets de Sincérité, de Jouer, d’Interrogatoire et d’Intimidation."
+      ],
+      "cout_v1": "Coût : 3 PP"
     },
     {
       "nom": "Joie de vivre",
@@ -885,7 +1451,14 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Clients puissants que le PJ peut faire chanter au prix de l’épée de Damocles « Maître Chanteur »"
+      "description": "Clients puissants que le PJ peut faire chanter au prix de l’épée de Damocles « Maître Chanteur »",
+      "description_v1": [
+        "Il y a parmi vos clients réguliers (ou même occasionnels) quelques personnes puissantes qui tiennent à garder leur identité secrète, soit qu’elles aient des goûts sexuels embarrassants, soit que leurs épouses n’apprécient pas de telles activités.",
+        "L’information que vous détenez peut être utilisée pour les faire chanter, ou du moins, obtenir quelques faveurs. Cependant, vous devez faire attention à la façon de l’employer. Révéler un tel secret vous ferait certainement perdre de nombreux clients, et pourrait même causer votre mort.",
+        "Le personnage bénéficie d’informations confidentielles qu’il peut utiliser pour soutirer informations, assistance et finances.",
+        "Toutefois, s’il y a recours, il “gagne” automatiquement l’épée de Damoclès Maître-chanteur. La valeur de cette épée variera en fonction des éléments soutirés et reste à la discrétion du MJ."
+      ],
+      "cout_v1": "Coût : 1 PP, réservée aux jennys et aux courtisanes"
     },
     {
       "nom": "Meneur d’hommes",
@@ -921,7 +1494,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1g0 aux jets de Droit, Eloquence, Philosophie et Théologie"
+      "description": "+1g0 aux jets de Droit, Eloquence, Philosophie et Théologie",
+      "description_v1": [
+        "Vous êtes né pour débattre. Rien ne vous exalte plus qu’un débat animé, et vous aimez l’emporter comme un général apprécie de gagner une bataille.",
+        "Vous bénéficiez d’un dé lancé non gardé supplémentaire (+1g0) sur tous vos jets de Droit, d’Éloquence, de Philosophie et de Théologie."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Ordonné",
@@ -957,7 +1535,18 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Vous connaissez quelqu’un qui peut vous aider, doit 1 service pour 2 PP de +"
+      "description": "Vous connaissez quelqu’un qui peut vous aider, doit 1 service pour 2 PP de +",
+      "description_v1": [
+        "Le héros dispose de relations qui seront prêtes à l’aider en cas de besoin. Ces individus ne sont généralement pas plus influents ou puissants que lui, mais votre MJ pourrait accepter que vous choisissiez une relation plus influente si vous le lui demandez gentiment.",
+        "Lorsque vous acquérez une relation, il vous faut imaginer de quelle manière cette rencontre a pu avoir lieu dans la vie de votre personnage, ce que cette personne éprouve à votre égard (amitié, dévouement, amour…), ainsi que tout autre détail que vous jugeriez important (nationalité, statut social…). Vous pouvez choisir jusqu’à (rang de Panache) relations. De plus, pour un coût supplémentaire de 2 PP, une relation peut avoir une obligation envers le héros (à déterminer entre vous et votre MJ avant le début de la partie). Il existe trois types de relations :",
+        "◆ Allié — Coût : 3 PP :",
+        "Il s’agit d’ordinaire d’un ami proche, qui serait prêt à risquer sa vie pour le héros. S’il ne pourra jamais être plus puissant que lui lors de sa création, son influence pourra parfaitement évoluer rapidement (de manière imprévisible) au cours du jeu.",
+        "◆ Confident — Coût : 2 PP :",
+        "Il s’agit d’une personne en qui le héros a pleinement confiance, mais qui n’est pas tout à fait un “ami”. S’il devait choisir entre sauver sa peau ou celle du héros, il préférera sans doute se tirer d’affaire. Un confident ne pourra jamais être plus influent que le héros lors de sa création.",
+        "◆ Informateur — Coût : 1 PP :",
+        "Les informateurs ne s’intéressent qu’à une seule et unique chose – l’argent. Donnez-leur la somme qu’ils demandent et ils vous diront ce que vous avez besoin de savoir. Un informateur ne pourra jamais être plus influent que le héros lors de sa création."
+      ],
+      "cout_v1": "Coût : de 1 à 5 PP"
     },
     {
       "nom": "Relation cymbre",
@@ -969,19 +1558,39 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "A vécu avec les cymbres, qui accorderont confiance et asile"
+      "description": "A vécu avec les cymbres, qui accorderont confiance et asile",
+      "description_v1": [
+        "Que ce soit en raison de votre extraction ou de quelque exploit passé, vous avez acquis la confiance du peuple errant des Cymbres. Vous connaissez l’emplacement de plusieurs villages cymbres et comprenez les signes qu’ils utilisent pour communiquer entre eux. Si vous le souhaitez, vous pouvez vous servir de ces signes pour trouver de l’aide ou vous cacher en trouvant asile dans l’une de leurs enclaves permanentes. Bien que vous ne jouissiez d’aucun bénéfice tangible, les Cymbres vous connaissent, vous font confiance et feront preuve de bienveillance à l’égard de vos compagnons et de vousmême (du moment que vous ne faites rien pour briser cette amitié).",
+        "Vous perdez 1 point de rang social."
+      ],
+      "cout_v1": "Coût : 3 PP"
     },
     {
       "nom": "Relation fidhelie",
       "categorie": "Sociaux",
-      "cout_raw": "3 à 5 Ussuran only",
+      "cout_raw": "3 à 5 Ussuran ou Sarmatien only",
       "cout_min": 3,
       "cout_max": 5,
       "type_lien": "restriction",
-      "nation_lien": "Ussura",
+      "nation_lien": "Sarmatie",
       "v2": false,
       "h_heroisme": false,
-      "description": "Contact/Adoption/Dans le secret des Fidhelis"
+      "description": "Contact/Adoption/Dans le secret des Fidhelis",
+      "description_v1": [
+        "À un moment de sa vie, votre personnage a passé du temps avec les Fhidelis. D’ailleurs, ces derniers l’ont peut-être même adopté. Cela signifie que vous avez passé une partie de votre vie en Ussura si vous n’êtes pas originaire de ce pays.",
+        "Les PP investis dans cet avantage déterminent ce que votre personnage sait au sujet des Fidhelies et l’accueil qu’ils vous réserveraient si vous reveniez parmi eux.",
+        "◆ Contacts — Coût : 3 PP :",
+        "Les Fidhelis vous connaissent et vous accordent leur confiance. Vous êtes considéré comme un ami dans presque tous les camps.",
+        "Vous perdez 1 point de rang social.",
+        "◆ Adoption — Coût : 4 PP :",
+        "Vous avez été adopté par un Vitzi et avez appris à vivre comme un Fidheli.",
+        "L’avantage Fidheli ne vous coûte que 2 PP au lieu de 4.",
+        "Enfin, vous perdez 2 points de rang social.",
+        "◆ Dans le secret — Coût : 5 PP :",
+        "Non seulement vous avez été adopté par un Vitzi, mais les Fidheli vous ont également appris leurs plus grands secrets.",
+        "Vous pouvez prendre l’avantage Fidheli pour 2 PP et vous connaissez la vérité au sujet du Vayu. Toutefois, vous devez prendre garde. À la discrétion du MJ, un personnage ainsi respecté qui trahit les Fidhelis risque de gagner l’épée de Damoclès Maudit d’une valeur de 3 PP. Enfin, vous perdez 3 points de rang social."
+      ],
+      "cout_v1": "Coût : 3à 5 PP"
     },
     {
       "nom": "Rücken",
@@ -993,7 +1602,11 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Eisen",
       "v2": false,
       "h_heroisme": false,
-      "description": "Homme de main loyal et fort"
+      "description": "Homme de main loyal et fort",
+      "description_v1": [
+        "Ce serviteur dispose de 2 rangs dans chaque trait, sauf en Gaillardise où il en possède 3. Le Rücken a toutes les compétences de base des métiers Soldat et Épée à deux mains à 3 et les compétences avancées à 2. En outre, il bénéficie de 25 PP que le joueur alloue comme bon lui semble à d’autres métiers, entraînements ou compétences en gardant à l’esprit qu’il ne peut commencer avec des compétences de métiers supérieures à 2.",
+        "Rücken signifie « dos » ou « arrière » en Eisenör, car c’est bien à lui qu’on peut les confier."
+      ]
     },
     {
       "nom": "Séduisant",
@@ -1005,7 +1618,19 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1g0 / + 2g0 / +3g0 à toute action sociale"
+      "description": "+1g0 / + 2g0 / +3g0 à toute action sociale",
+      "description_v1": [
+        "5, 10, 15 ou 20 PP Le héros est particulièrement attirant, que cela soit dû à des caractéristiques physiques (la perfection de ses traits, par exemple) ou à quelque chose de plus subtil (comme un regard magnétique). Quelle que soit votre explication, les modificateurs sont les suivants :",
+        "Bien entendu, cet avantage n’est pas cumulable avec Expression inquiétante, les bonus s’annulant les uns les autres.",
+        "◆ Séduisant — Coût : 5 PP :",
+        "Vous faites tous vos jets se rapportant au système de répartie en lançant, sans le garder, un dé supplémentaire (+1g0).",
+        "◆ Éblouissant :",
+        "10 PP Vous faites tous les jets se rapportant au système de répartie en lançant, sans les garder, deux dés supplémentaires (+2g0).",
+        "◆ Intimidant :",
+        "15 PP Vous effectuez tous les jets se rapportant au système de répartie en lançant, sans les garder, trois dés supplémentaires (+3g0).",
+        "◆ Beauté divine :",
+        "20 PP Vous effectuez tous les jets se rapportant au système de répartie en lançant, sans les garder, quatre dés supplémentaires (+4g0)."
+      ]
     },
     {
       "nom": "Sens de l’humour",
@@ -1017,7 +1642,20 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1g0 aux tests de relations sociales, déclenchement de l’Arcane du Vilain ou annuler une augmentation, selon le trait d’humour choisi."
+      "description": "+1g0 aux tests de relations sociales, déclenchement de l’Arcane du Vilain ou annuler une augmentation, selon le trait d’humour choisi.",
+      "description_v1": [
+        "Votre héros est un véritable boute-en-train. Il a toujours le mot pour rire à la bouche. Il vous conviendra juste de définir son type d’humour :",
+        "◆ Grand guignol :",
+        "Votre personnage à un sens de l’humour qui lui permet de faire rire n’importe qui, de faire exploser les gens en de sonores éclats de rire.",
+        "Votre personnage bénéficie de un dé lancé non gardé supplémentaire (+1g0) sur ses jets de relations sociales.",
+        "◆ Humour noir :",
+        "Votre personnage sait trouver les mots qui font mal, les saillies cyniques et immorales. Ceux qui sont victimes de son humour sont capables d’avoir rapidement des gestes déplacés.",
+        "Votre héros peut activer l’arcane du vilain sans dépenser de dé d’héroïsme en utilisant son humour noir afin de faire enrager son adversaire. Toutefois, il doit réussir un jet d’opposition Esprit contre Détermination de la victime.",
+        "◆ Le bon mot :",
+        "Votre personnage sait toujours trouver le bon mot ou l’expression appropriée pour détendre l’atmosphère ou dédramatiser la situation.",
+        "Dans les situations de stress, le héros peut faire appel à son sens de l’humour pour annuler une augmentation prise contre lui et tous ceux qui l’écoutent."
+      ],
+      "cout_v1": "Coût : 3 PP"
     },
     {
       "nom": "Sens du commerce",
@@ -1029,7 +1667,13 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+2g0 aux tests de Marchandage et Evaluer. Non-cumulable avec Troqueur."
+      "description": "+2g0 aux tests de Marchandage et Evaluer. Non-cumulable avec Troqueur.",
+      "description_v1": [
+        "Vous êtes né pour le commerce. Vous affichez un mélange d’expérience et d’obstination qui se prête naturellement à de tels procédés et sortez presque toujours la main haute de vos négociations.",
+        "Vous lancez, sans les garder, deux dés supplémentaires (+2g0) sur tous vos jets de Marchandage et Évaluation.",
+        "Vous ne pouvez cumuler cet avantage avec Troqueur, Sens du commerce est simplement une version plus puissante de ce dernier."
+      ],
+      "cout_v1": "Coût : 5 PP"
     },
     {
       "nom": "Titulaire",
@@ -1041,7 +1685,13 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Castille",
       "v2": true,
       "h_heroisme": false,
-      "description": "Vous serez toujours nourri/logé dans les universités, et avez accès à la plupart des bibliothèques académiques. +2g0 aux tests sociaux ciblant une personne appartenant à l’enseignement supérieur"
+      "description": "Vous serez toujours nourri/logé dans les universités, et avez accès à la plupart des bibliothèques académiques. +2g0 aux tests sociaux ciblant une personne appartenant à l’enseignement supérieur",
+      "description_v1": [
+        "Vous êtes employé par l’une des universités de Théah.",
+        "Vous avez donc des revenus réguliers, même lorsque vous êtes en congé. Choisissez votre université : les plus célèbres sont La Cienca en Castille, Dionna en Vodacce, La Grande Université en Montaigne, Durchsetzungburg en Eisen, Bedegrane en Avalon et Kirk en Vendel.",
+        "Vos revenus s’élèvent à 15 guilders par mois et votre rang social augmente de 2 points."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Troqueur",
@@ -1053,7 +1703,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1g0 aux tests de Marchandage et Evaluer. Non-cumulable avec Sens du Commerce."
+      "description": "+1g0 aux tests de Marchandage et Evaluer. Non-cumulable avec Sens du Commerce.",
+      "description_v1": [
+        "Sur Théah, on marchande sur chaque place de marché et les commerçants expérimentés sont capables de négocier pendant des heures. Savoir plaire au client fait partie de votre nature.",
+        "Vous effectuez tous vos jets de Marchandage avec un dé lancé non gardé supplémentaire (+1g0). Vous ne pouvez cumuler cet avantage avec Sens du commerce, Troqueur est simplement une version moins puissante de ce dernier."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Voix d’Or",
@@ -1065,7 +1720,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+2g0/+3g0 aux tests de Chant."
+      "description": "+2g0/+3g0 aux tests de Chant.",
+      "description_v1": [
+        "Vous avez une voix d’or – l’une de ces voix au timbre vibrant, émouvant, capable de faire perler une larme au coin de l’œil des plus endurcis ou de bouleverser une foule entière.",
+        "Pour 3 PP, vous bénéficiez de 2 dés lancés non gardés supplémentaires (+2g0) sur vos jets de Chant. Pour 5 PP, vous bénéficiez en plus d’un dé lancé non gardé supplémentaire (+1g0) sur vos jets sociaux – lorsque vous parlez, bien sûr."
+      ],
+      "cout_v1": "Coût : 3 ou 5 PP"
     },
     {
       "nom": "Âme Indomptable",
@@ -1101,7 +1761,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1 Xp après chaque histoire et -5ND en Conception à l’aide de cette biblio."
+      "description": "+1 Xp après chaque histoire et -5ND en Conception à l’aide de cette biblio.",
+      "description_v1": [
+        "Le personnage dispose d’une bibliothèque privée d’ouvrages dont il se sert dans le cadre de ses recherches.",
+        "Toute personne qui passe au moins 1 mois dans la bibliothèque gagne 1 XP supplémentaire à la fin de chaque histoire (utilisable dans les métiers des Belles Lettres uniquement). On ne peut gagner ainsi qu’un XP, quel que soit le nombre de bibliothèques que le personnage visite. En outre, tout scientifique peut se servir de la bibliothèque pour réduire le ND de son jet de Conception de 5 du moment qu’il y passe au moins la moitié du temps requis (Voir les règles sur les inventions pages 85 à 88 dans le supplément sur le Collège Invisible). Ce bonus s’applique également aux jets d’Ébauche. Pour 2 PP, la bibliothèque est incomplète ou renferme des textes erronés. Avant le jet de Conception, le MJ effectue un jet secret. Sur un résultat de 9 ou un résultat de 0, la bibliothèque ajoute 5 au ND du jet de Conception plutôt que de le réduire."
+      ],
+      "cout_v1": "Coût : 2ou 4 PP"
     },
     {
       "nom": "Bonne mémoire",
@@ -1113,7 +1778,14 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Bonus aux tests de Mémoire. Quasi eidétique à 5 PP."
+      "description": "Bonus aux tests de Mémoire. Quasi eidétique à 5 PP.",
+      "description_v1": [
+        "Le personnage a une excellente mémoire, il se souvient facilement de faits anciens et sait restituer ses souvenir.",
+        "Cet avantage se révèle aussi utile quand un personnage souhaite réciter, répéter, jouer ou imiter quelque chose qu’on a joué, chanté, dit ou réalisé devant lui. Enfin, il pourra servir de “béquille” pour les joueurs débutants ou distraits.",
+        "Pour 3 PP, le personnage effectue un jet d’Esprit pour se souvenir de choses anciennes. Évidemment, plus les éléments à restituer sont longs et anciens, plus le ND sera élevé (à la discrétion du MJ). Une blague de comptoir grivoise entendue il y a un mois aura un ND de 5 alors que l’ensemble d’un drame historique réclamera un ND de 25.",
+        "Pour 5 PP, le joueur pourra parfois bénéficier de l’aide du MJ. Lorsque les circonstances s’y prêteront, le MJ pourra faire passer un papier sur lequel il aura inscrit les souvenirs de son personnage, souvenirs qui reviendront au moment opportun."
+      ],
+      "cout_v1": "Coût : 3 ou 5 PP"
     },
     {
       "nom": "Brillant",
@@ -1125,7 +1797,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+2g0 aux tests de Conception ou autre visant à fabriquer quelque chose qui sort de l’ordinaire. Le ND des tests liés à l’imagination augmente de 5."
+      "description": "+2g0 aux tests de Conception ou autre visant à fabriquer quelque chose qui sort de l’ordinaire. Le ND des tests liés à l’imagination augmente de 5.",
+      "description_v1": [
+        "L’esprit du personnage fonctionne de manière étonnante. Il fait toujours montre d’une logique intuitive qui lui permet d’imaginer de nouvelles technologies et branches de la science.",
+        "Il lance, sans le garder, un dé supplémentaire (+1g0) quand il effectue un jet de Conception (cf. Règles des inventions pages 85 à 88 dans le supplément sur le Collège Invisible)."
+      ],
+      "cout_v1": "Coût : 4 PP"
     },
     {
       "nom": "Cerveau du groupe",
@@ -1149,7 +1826,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1g0 aux tests de Mathématiques, Economie, Comptabilité et Code Secret."
+      "description": "+1g0 aux tests de Mathématiques, Economie, Comptabilité et Code Secret.",
+      "description_v1": [
+        "Le personnage est doté d’un véritable don pour le maniement des chiffres et des nombres. Il calcule à une vitesse prodigieuse et raisonne de manière entièrement logique. Par contre, cette rigueur lui fait perdre de vue les joies de l’existence. La vie est beaucoup moins trépidante quand on la voit comme une succession de nombres et de probabilités.",
+        "Le personnage lance, sans le garder, un dé supplémentaire (+1g0) sur tous ses jets de Calcul, de Mathématiques, d’Économie, de Comptabilité et de Code secret. En contrepartie, le ND de toute action où l’imagination entre en compte est augmenté de 5."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Cultivé",
@@ -1173,7 +1855,14 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Castille",
       "v2": false,
       "h_heroisme": false,
-      "description": "Compétences Avancées des Métiers : coût = 1 à la création ; coût Noble = 5 PP ; coût Don errant = 3 PP ; Théan L/E/P"
+      "description": "Compétences Avancées des Métiers : coût = 1 à la création ; coût Noble = 5 PP ; coût Don errant = 3 PP ; Théan L/E/P",
+      "description_v1": [
+        "Les Castillians ont tout fait pour développer le système éducatif de leur pays, peut-être en réaction à la perte de leurs talents de sorciers. Lorsque vous acquérez cet avantage, vous allouez une importante part de vos PP à l’héritage culturel de la nation d’origine de votre personnage. En ce sens, cet avantage fonctionne de la même manière que la sorcellerie pour les autres nations : il permet d’acquérir l’avantage Noble à moindre coût et traduit l’existence d’un lien entre le héros et la lignée royale de Castille (à déterminer avec votre MJ).",
+        "Cet avantage est une version plus poussée de l’avantage Université. Il reçoit gratuitement le métier Estudiant et un second métier des Belles Lettres au choix pour lequel il bénéficie d’un dé lancé et gardé sur toutes ses compétences.",
+        "De plus, il peut acquérir toutes les compétences avancées associées aux métiers des belles lettres du héros pour 1 PP par rang ; par la suite, les coûts restent inchangés. Il sait également parler, lire et écrire le Théan et lire et écrire sa propre langue.",
+        "Enfin, vous recevez 5 points de rang social."
+      ],
+      "cout_v1": "Coût : 10 PP"
     },
     {
       "nom": "Etincelle de génie",
@@ -1185,7 +1874,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": true,
       "h_heroisme": true,
-      "description": "Choisissez un domaine intellectuel (Astronomie, maths, histoire, …). Dépensez un dés d’héroïsme pour ajouter un nombre de dès bonus à un test utilisant la compétence égale à votre Esprit."
+      "description": "Choisissez un domaine intellectuel (Astronomie, maths, histoire, …). Dépensez un dés d’héroïsme pour ajouter un nombre de dès bonus à un test utilisant la compétence égale à votre Esprit.",
+      "description_v1": [
+        "l’avantage Université Le personnage a une compréhension intuitive d’un domaine théorique. Il est capable de résoudre des problèmes liés à ce domaine sans se reporter à ses gribouillis et notes.",
+        "Choisissez l’une des compétences suivantes : Astronomie, Cartographie, Chant, Code secret, Composition, Comptabilité, Création littéraire, Dessin, Droit, Économie, Histoire, Logistique, Mathématiques, Musique, Occultisme, Philosophie, Sciences de la nature, Sculpture, Stratégie, Tactique ou Théologie. Lorsque vous effectuez un jet basé sur cette compétence, vous obtenez un dé lancé non gardé supplémentaire."
+      ],
+      "cout_v1": "Coût : 3 PP, 2 PP pour les personnages possédant"
     },
     {
       "nom": "Habile",
@@ -1197,7 +1891,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1g0 aux tests de Construction (Règle des Inventions)"
+      "description": "+1g0 aux tests de Construction (Règle des Inventions)",
+      "description_v1": [
+        "À l’instar de Brillant, ce personnage fait preuve d’aptitudes de construction naturelles. Il comprend instinctivement comment assembler les choses. Avec rien de plus que quelques outils, il est capable de transformer un diagramme abstrait en un objet pratique.",
+        "Cet avantage confère un dé lancé non gardé supplémentaire (+1g0) aux jets de Construction qu’effectue le personnage (cf. Règles des inventions pages 85 à 88 dans le supplément sur le Collège Invisible)."
+      ],
+      "cout_v1": "Coût : 4 PP"
     },
     {
       "nom": "Instinct architectural",
@@ -1209,7 +1908,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1g0 pour rechercher des issues/cachettes dissimulés dans l’architecture"
+      "description": "+1g0 pour rechercher des issues/cachettes dissimulés dans l’architecture",
+      "description_v1": [
+        "Peut-être avez-vous l’œil pour les détails ; peut-être avez-vous grandi dans un vieux manoir ou un château familial ancestral. Quelle qu’en soit la cause, vous avez un talent inné pour trouver les compartiments et les portes cachés.",
+        "Vous recevez un dé supplémentaire, que vous ne gardez pas, (+1g0) quand vous recherchez des portes secrètes et autres aspects dissimulés dans l’architecture."
+      ],
+      "cout_v1": "Coût : 1 PP"
     },
     {
       "nom": "Polyglotte",
@@ -1221,7 +1925,14 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Lorsque vous acquérez une nouvelle langue parlée, vous savez aussi l’écrire ou en parlez une autre."
+      "description": "Lorsque vous acquérez une nouvelle langue parlée, vous savez aussi l’écrire ou en parlez une autre.",
+      "description_v1": [
+        "Le héros a un don inné pour les langues : il lui suffit de regarder des mots étrangers pour parvenir à rapidement comprendre leur signification. Le héros dispose d’un atout important à Théah, ne serait-ce qu’en tant qu’interprète.",
+        "Pour 3 PP, vous êtes Linguiste et apprendre une nouvelle langue vous coûte 1 PP de moins, en prenant en compte la faculté de Lecture/Écriture (sauf si ce coût est déjà de 1). De même, par la suite, les nouvelles langues vous coûtent 2 XP de moins (coût minimum de 1 XP).",
+        "Pour 7 PP, vous êtes un Maître Linguiste, vous êtes capable de vous exprimer sans aucun accent (bien que vous deviez en choisir un pour calculer le coût d’apprentissage des langues), et quelqu’un qui voudrait déterminer votre langue maternelle devrait lui-même être Linguiste.",
+        "Vous pouvez vous exprimer en utilisant votre accent natal quand vous le souhaitez, ou vous pouvez également utiliser un accent spécifique de n’importe laquelle des langues que vous maîtrisez en réussissant un jet d’opposition d’Esprit du maître linguiste contre un jet d’Esprit de l’auditeur. Celui-ci reçoit un dé lancé non gardé supplémentaire (+1g0) si le maître linguiste essaie d’imiter un accent de sa langue maternelle, voire même +2g0 si vous essayez d’imiter son accent."
+      ],
+      "cout_v1": "Coût : 3 ou 7 PP"
     },
     {
       "nom": "Rythme de sommeil",
@@ -1233,7 +1944,13 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Peut rester 1 jour sans sommeil de plus. +1g0 aux tests de Recherches."
+      "description": "Peut rester 1 jour sans sommeil de plus. +1g0 aux tests de Recherches.",
+      "description_v1": [
+        "Le personnage a adopté une bien étrange habitude de sommeil. Peut-être fait-il cinq sommes d’une heure toutes les cinq heures plutôt que de dormir la nuit.",
+        "Peut-être dort-il quatre heures par nuit puis deux heures dans l’après-midi. Dans tous les cas, il a besoin de moins de sommeil que le personnage moyen et a donc davantage de temps pour étudier.",
+        "Ce personnage peut rester 1 jour supplémentaire sans dormir au-delà de son score de Détermination. De plus, il bénéficie d’un dé lancé non gardé supplémentaire (+1g0) sur tous ses jets de Recherches."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Stratège",
@@ -1245,7 +1962,13 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1g0 aux tests de Calcul, Stratégie, Tactique et Jouer (les jeux non-hasard). +1 Réputation martiale."
+      "description": "+1g0 aux tests de Calcul, Stratégie, Tactique et Jouer (les jeux non-hasard). +1 Réputation martiale.",
+      "description_v1": [
+        "Votre héros a le sens de la guerre. Depuis tout petit, il sait où se positionner pour éviter de prendre des coups, a toujours été doué pour les mathématiques et sait où placer ses pions lorsqu’il joue à un jeu de stratégie.",
+        "Cet avantage confère un dé lancé non gardé (+1g0) au personnage sur tous ses jets de Calcul, Stratégie, Tactique et Jouer (quand il s’agit de jeux tactiques, stratégiques ou de calcul. En gros, tous les jeux ne relevant pas du hasard).",
+        "Enfin, vous recevez 1 point de réputation martiale."
+      ],
+      "cout_v1": "Coût : 4 PP"
     },
     {
       "nom": "Université",
@@ -1257,7 +1980,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Castille",
       "v2": false,
       "h_heroisme": false,
-      "description": "Métier Estudiant offert, dont les compétences avancées coûtent 1 à la création. Les métiers coûtent 1 pts au lieu de 2. Sait lire/écrire/parler le Théan. +1 rang social."
+      "description": "Métier Estudiant offert, dont les compétences avancées coûtent 1 à la création. Les métiers coûtent 1 pts au lieu de 2. Sait lire/écrire/parler le Théan. +1 rang social.",
+      "description_v1": [
+        "Comme les académies militaires, les universités (dont la plupart ont été fondées par l’église du Vaticine) sont aujourd’hui bien répandue à travers Théah. Ces hauts lieux du savoir dispensent un large éventail d’enseignements.",
+        "Votre héros a suivi les enseignements de l’une de ces universités, ce qui vous permet d’acquérir gratuitement le métier d’Estudiant, pour lequel toutes les compétences avancées sont considérées comme des compétences de base et peuvent donc être améliorées pour 1 PP au lieu de 2. Une fois la création de personnage terminée, le coût d’amélioration des compétences avancées des métiers est le même que pour tous les autres héros. Il sait également parler, lire et écrire le Théan et lire et écrire sa propre langue. Enfin, vous recevez 1 point de rang social."
+      ],
+      "cout_v1": "Coût : 4 PP"
     },
     {
       "nom": "As de la barre",
@@ -1281,7 +2009,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Dock gratuit au port d’attache au choix, qu’on peut louer."
+      "description": "Dock gratuit au port d’attache au choix, qu’on peut louer.",
+      "description_v1": [
+        "Dans votre port d’attache, vous disposez de docks réservés à votre usage personnel. Vous ne payez jamais rien pour eux, quelle que soit l’importance du trafic dans ce port.",
+        "Les individus particulièrement entreprenants peuvent gagner de l’argent (la somme reste à déterminer, par le MJ et par quelques négociations entre les personnages et leurs interlocuteurs) en louant leurs docks."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Favori de l’Océan",
@@ -1317,7 +2050,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1g0 sur tous les tests de compétence maritimes. -1 rang social"
+      "description": "+1g0 sur tous les tests de compétence maritimes. -1 rang social",
+      "description_v1": [
+        "Mousse, vous commençâtes votre enfance, matelot, vous poursuivîtes votre adolescence, quartier-maître vous terminâtes votre prime jeunesse. Aujourd’hui, vous connaissez le pont et les entrecales des navires comme s’il s’agissait de la poche de vos culottes. Vous avez navigué sur la plupart des océans du globe, usé vos fonds de pantalon sur les ponts des bateaux et ne rêvez que de reprendre la mer.",
+        "Vous bénéficiez d’un dé lancé non gardé supplémentaire (+1g0) sur tous les jets des compétences maritimes (cf. aide de jeu Compétences). Enfin, vous perdez 1 point de rang social."
+      ],
+      "cout_v1": "Coût : 3 PP"
     },
     {
       "nom": "Marié à l’océan",
@@ -1377,7 +2115,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Eisen",
       "v2": false,
       "h_heroisme": false,
-      "description": "Les entraînements coûtent 2 pts au lieu de 3"
+      "description": "Les entraînements coûtent 2 pts au lieu de 3",
+      "description_v1": [
+        "Certaines institutions de Théah sont dédiées à l’apprentissage des sciences militaires, notamment la tactique et la stratégie, le commandement, ainsi qu’un large éventail de pratiques athlétiques. Ces académies militaires n’ont rien à voir avec les écoles d’escrime et on n’y enseigne aucune botte secrète.",
+        "Votre héros a suivi les enseignements de l’une de ces académies militaires, ce qui vous permet d’acquérir gratuitement les métiers Commandement et Soldat. De plus, toutes les compétences avancées du métier Commandement sont considérées comme des compétences de base et peuvent donc être améliorées pour 1 PP au lieu de 2. Une fois la création de personnage terminée, le coût d’amélioration des compétences avancées des métiers est le même que pour tous les autres héros. Enfin, vous recevez 2 points de réputation martiale."
+      ],
+      "cout_v1": "Coût : 4 PP"
     },
     {
       "nom": "Acteur de comptoir",
@@ -1401,7 +2144,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+2g0 à tous les tests de Dressage"
+      "description": "+2g0 à tous les tests de Dressage",
+      "description_v1": [
+        "Vous vous entendez parfaitement bien avec les animaux et vice versa. Même si cela ne vous sauvera pas des griffes d’un sanglier enragé, cela peut vous aider à dresser un animal domestique.",
+        "Vous bénéficiez d’un dé lancé non gardé supplémentaire (+1g0) sur tous vos jets de Dressage."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Androgyne",
@@ -1413,7 +2161,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+2g0 aux tests de déguisement, pas de malus si sexe opposé"
+      "description": "+2g0 aux tests de déguisement, pas de malus si sexe opposé",
+      "description_v1": [
+        "Le personnage à un physique très androgyne, il est courant qu’on le prenne pour une personne du sexe opposé ; même si cela l’agace la plupart du temps, cela comporte également des avantages.",
+        "Vous gagnez deux dés lancés non gardés (+2g0) à tous ses jets de déguisement. Vous ne pouvez pas acheter l’avantage Beauté du diable."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Âme d’artiste",
@@ -1425,7 +2178,13 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+2g0 pour tous les jets de création physique artistique"
+      "description": "+2g0 pour tous les jets de création physique artistique",
+      "description_v1": [
+        "Vous avez le cœur et l’âme d’un créateur, et vous abordez la vie avec un regard d’artiste. Vous avez de grandes facilités pour créer des œuvres de toute beauté, et même sentir les goûts et les envies des gens pour leur offrir une création qui ravira leurs sens.",
+        "L’inspiration ne vous quitte que très rarement.",
+        "Vous effectuez tous vos jets de création artistique ou artisanale en lançant, sans les garder, deux dés supplémentaires (+2g0). Ceci est valable pour des compétences comme Compositeur, Création littéraire, Dessin, Sculpture, Céramiste, Potier, Tailleur, ou encore Verrier, mais pas sur des compétences d’interprétation comme Chant, Comédie ou Danse."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Aptitude innée",
@@ -1437,7 +2196,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": "Cathay",
       "v2": false,
       "h_heroisme": false,
-      "description": "Vous pouvez déclarer une augmentation après le test pour une compétence"
+      "description": "Vous pouvez déclarer une augmentation après le test pour une compétence",
+      "description_v1": [
+        "une compétence avancée, 10 PP pour une compétence de sorcellerie Vous avez une aptitude naturelle pour une compétence de votre choix, qui doit être sélectionnée à l’achat de cet avantage.",
+        "Cela vous permet d’atteindre des résultats spectaculaires sans vraiment vous forcer. Vous ne pouvez avoir qu’une seule aptitude de ce genre. Si vous ne possédez pas la compétence, vous ne souffrez pas des pénalités habituelles des jets effectués avec des compétences inconnues (dés non explosifs, ND plus élevé). Quand vous faites un jet avec cette compétence, vous pouvez déclarer des Augmentations après avoir effectué le jet au lieu de le faire avant."
+      ],
+      "cout_v1": "Coût : 6 PP pour une compétence de base, 7 PP pour"
     },
     {
       "nom": "Baroudeur",
@@ -1449,7 +2213,15 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Test de ND 25 en région rurale. En cas de réussite, les jets de de Contacts, Connaissance des Routes et Sens de l’Orientation ont +1/2/3 rangs"
+      "description": "Test de ND 25 en région rurale. En cas de réussite, les jets de de Contacts, Connaissance des Routes et Sens de l’Orientation ont +1/2/3 rangs",
+      "description_v1": [
+        "Votre personnage a passé l’essentiel de sa vie dans les forêts et la nature. Cette dernière n’a plus de secrets pour lui, il sait exactement où trouver de quoi se nourrir et se sustenter. Un héros qui possède cet avantage se sent à l’aise dans n’importe quel environnement rural, il est rarement surpris par les particularités d’une zone campagnarde.",
+        "Ainsi, lorsqu’il arrive dans une région rurale inconnue (aucune agglomération), il fait un jet d’Esprit contre un ND de 25 (-5 s’il s’est documenté, -5 s’il parle la langue). En cas de réussite, il bénéficie, selon le coût qu’il a payé, de :",
+        "On considère qu’il connaît cette région et peut donc effectuer des jets de Contacts, de Connaissance des routes, et de Sens de l’orientation comme s’il avait un rang dans cette compétence (1 PP) ;",
+        "On considère qu’il connaît bien cette région et peut donc effectuer des jets de de Contacts, de Connaissance des routes, et de Sens de l’orientation comme s’il avait deux rangs dans cette compétence (2 PP) ;",
+        "Aucun jet d’Esprit n’est nécessaire et l’on considère qu’il connaît très bien la région où il vient d’arriver et peut donc effectuer des jets de de Contacts, de Connaissance des routes, et de Sens de l’orientation comme s’il avait trois rangs dans cette compétence (5 PP)."
+      ],
+      "cout_v1": "Coût : 1, 2 ou 5 PP"
     },
     {
       "nom": "Bélier",
@@ -1485,7 +2257,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1g0 aux tests de Danse du Ventre, se dégager d’une prise ou Contorsion"
+      "description": "+1g0 aux tests de Danse du Ventre, se dégager d’une prise ou Contorsion",
+      "description_v1": [
+        "Votre corps est la souplesse incarnée, il sinue comme celui d’un serpent. Que cela soit pour danser ou se dégager d’une prise ou la contorsion, il est pareil à l’eau en mouvement.",
+        "Vous effectuez tous vos jets en rapport avec la Danse du ventre, Se dégager d’une prise ou la Contorsion en lançant (sans le garder) un dé supplémentaire (+1g0)."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Cosmopolite",
@@ -1497,7 +2274,15 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Test de ND 25 en région urbaine. En cas de réussite, les jets de de Contacts, Connaissance Citadine et Sens de l’Orientation ont +1/2/3 rangs"
+      "description": "Test de ND 25 en région urbaine. En cas de réussite, les jets de de Contacts, Connaissance Citadine et Sens de l’Orientation ont +1/2/3 rangs",
+      "description_v1": [
+        "Un héros qui possède cet avantage se sent à l’aise dans n’importe quel environnement urbain, il est rarement surpris par les particularités d’une ville.",
+        "Ainsi, lorsqu’il arrive dans une ville inconnue, il fait un jet d’Esprit contre un ND de 25 (-5 s’il s’est documenté, -5 s’il parle la langue). En cas de réussite, il bénéficie, selon le coût qu’il a payé, de :",
+        "On considère qu’il connaît cette ville et peut donc effectuer des jets de Contacts, de Connaissance des bas-fonds et d’Orientation citadine comme s’il avait un rang dans cette compétence (1 PP) ;",
+        "On considère qu’il connaît bien cette ville et peut donc effectuer des jets de Contacts, de Connaissance des basfonds et d’Orientation citadine comme s’il avait deux rangs dans cette compétence (2 PP) ;",
+        "Aucun jet d’Esprit n’est nécessaire et l’on considère qu’il connaît très bien la ville où il vient d’arriver et peut donc effectuer des jets de Contacts, de Connaissance des basfonds et d’Orientation citadine comme s’il avait trois rangs dans cette compétence (5 PP)."
+      ],
+      "cout_v1": "Coût : 1, 2 ou 5 PP"
     },
     {
       "nom": "Criminel de haut vol",
@@ -1509,7 +2294,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1g0 sur tous les jets des compétences larronnes, mais -2 moralité."
+      "description": "+1g0 sur tous les jets des compétences larronnes, mais -2 moralité.",
+      "description_v1": [
+        "Depuis tout petit, vous traînez dans les milieux les plus interlopes, vous avez l’habitude des caïds du milieu comme des petites frappes. Vous avez vous-même exercé plusieurs de ces “professions” peu recommandables.",
+        "Vous bénéficiez d’un dé lancé non gardé supplémentaire (+1g0) sur tous les jets des compétences larronnes (cf. aide de jeu Compétences). Enfin, vous perdez 2 points de moralité."
+      ],
+      "cout_v1": "Coût : 4 PP"
     },
     {
       "nom": "Débrouillard",
@@ -1533,7 +2323,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1g0 aux tests nécessitant de la minutie (cf liste du livre)"
+      "description": "+1g0 aux tests nécessitant de la minutie (cf liste du livre)",
+      "description_v1": [
+        "Depuis tout petit vous avez toujours eu une certaine dextérité du bout de vos doigts. Minutie est presque votre second prénom.",
+        "Vous gagnez un dé lancé non gardé sur tous les jets nécessitant de la minutie, à savoir les compétences Acupuncture, Barbier, Calligraphie, Céramiste, Chapelier, Cordonnier, Couturier, Crochetage, Dentiste, Horloger, Joaillier, Luthier, Orfèvre, Pickpocket, Potier, Prestidigitation, Sculpture, Serrurier, Tailleur de pierre, Tailleur, Tisserand, Tricher et Vannier."
+      ],
+      "cout_v1": "Coût : 3 PP"
     },
     {
       "nom": "Découvreur de talents",
@@ -1545,7 +2340,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Pas de test lorsque vous recherchez un type de PNJ (Forgeron, tailleur, …) de haut rang"
+      "description": "Pas de test lorsque vous recherchez un type de PNJ (Forgeron, tailleur, …) de haut rang",
+      "description_v1": [
+        "Le personnage a une sorte de sixième sens pour découvrir des personnes talentueuses qui pourront lui être fort utiles.",
+        "Ainsi, lorsqu’il recherche un “type” de PNJ (forgeron, tailleur, spadassin, dresseur de chevaux, etc.) via ses compétences Contacts ou Connaissance des bas-fonds, on considérera qu’il parvient à rencontrer un spécialiste du domaine de haut rang dans la ville ou la région dans laquelle il se trouve."
+      ],
+      "cout_v1": "Coût : 3 PP"
     },
     {
       "nom": "Émérite",
@@ -1557,7 +2357,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Les rangs d’une compétence choisie valent double. 10PP si c’est une compétence de Sorcier/Spadassin, 5 pour le reste."
+      "description": "Les rangs d’une compétence choisie valent double. 10PP si c’est une compétence de Sorcier/Spadassin, 5 pour le reste.",
+      "description_v1": [
+        "Le personnage a un don naturel et deviendra un grand maître de cette spécialité. Cet avantage est différent de Spécialité, celle-ci vous permet simplement d’acquérir une compétence à laquelle vous n’auriez normalement pas eu accès, alors qu’Émérite vous permettra d’atteindre un haut niveau de compétence.",
+        "Choisissez une compétence parmi celle auxquelles vous avez accès. Quand vous prenez des augmentations avec cette compétence, vous profitez des bénéfices correspondant à deux fois le nombre d’augmentations prises. En clair, si vous prenez 2 augmentations, vous bénéficiez du résultat correspondant à 4, pour 3, 6, etc. Cet avantage coûte 10 PP pour une compétence de spadassin ou de magie et 5 pour les autres. Vous ne pouvez acheter cet avantage qu’une seule fois."
+      ],
+      "cout_v1": "Coût : 5ou 10 PP"
     },
     {
       "nom": "Entraide",
@@ -1581,7 +2386,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Malus du aux ténèbres divisés par 2 et +1 de réputation martiale."
+      "description": "Malus du aux ténèbres divisés par 2 et +1 de réputation martiale.",
+      "description_v1": [
+        "Cet avantage confère au personnage une meilleure vue et une perception accrue de son environnement dans le noir.",
+        "Les pénalités d’action dans le noir du personnage sont divisées par deux. Ainsi, il ne perd qu’un dé (à lancer et à garder) dans l’obscurité et deux dés (à lancer et à garder) dans le noir complet. Enfin, vous recevez 1 point de réputation martiale."
+      ],
+      "cout_v1": "Coût : 4 PP"
     },
     {
       "nom": "Equilibre Parfait",
@@ -1641,7 +2451,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+4g0 aux tests de résistance à l’alcool, -1 Moralité."
+      "description": "+4g0 aux tests de résistance à l’alcool, -1 Moralité.",
+      "description_v1": [
+        "L’alcool semble n’avoir aucun effet sur le héros, que cela soit dû à une impressionnante constitution ou à une mithridatisation de longue date.",
+        "Un héros Grand buveur bénéficie de 4 dés lancés non gardés supplémentaires sur ses tests d’ébriété et les effets de l’alcool sont décalés de 2 rangs vers le bas. Enfin, vous perdez 1 point de Moralité."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Imitateur parfait",
@@ -1653,7 +2468,13 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "1 augmentation gratuite lors de vos tests de déguisement"
+      "description": "1 augmentation gratuite lors de vos tests de déguisement",
+      "description_v1": [
+        "Vous avez commencé par imiter vos proches pour vous amuser, mais maintenant vous ne considérez plus cela comme un jeu mais comme un don. Vous êtes un imitateur parfait et savez rendre tous les détails d’une personnalité à la perfection. Le héros sait à merveille imiter les intonations de la voix d’une personne qu’il a pu écouter au moins une demi-heure.",
+        "Cet avantage oblige la personne qui cherche à percer à jour l’imitateur à l’observer attentivement pour se rendre compte de la supercherie. Et dans ce cas, les deux augmentations dont elle devrait bénéficier sont annulées. Si l’observateur ne fait pas particulièrement attention, l’imitateur est sûr de ne pas être découvert.",
+        "Exemple : Carl est déguisé, bénéficie de 3 en Esprit, 3 en Déguisement et de l’avantage Imitateur parfait. Le garde de la maison a, quant à lui, Qui-Vive 2 et Esprit 2. Carl fait 37 sur son jet de dé. Pour le percer à jour, le garde doit être suspicieux et déclarer dévisager Carl, il fait son jet de dé et obtient 30, un joli score. Auquel il aurait normalement fallu ajouter les deux augmentations, ce qui aurait fait 40. Mais comme Carl est imitateur parfait, il annule ces deux augmentations et passe inaperçu. Enfin, si le garde n’avait pas fait attention à lui, même avec un score de 53, il ne l’aurait pas percé à jour."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Noctambule",
@@ -1677,7 +2498,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+2g0 pour les jets de perception visuelle de loin, réduit de 2 rangs les pénalités de distance de tir et lancer."
+      "description": "+2g0 pour les jets de perception visuelle de loin, réduit de 2 rangs les pénalités de distance de tir et lancer.",
+      "description_v1": [
+        "Le personnage voit plus loin que la plupart des gens.",
+        "Il a droit à 2 dés lancés non gardés supplémentaire (+2g0) pour les jets de perception consistant à voir quelque chose d’éloigné et peut réduire de deux rangs les pénalités de distance pour le tir et le lancer."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Oreille musicale",
@@ -1689,7 +2515,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+2g0 à tous les jets de Composition et Musique et pour se souvenir d’un morceau. +1g0 pour déterminer l’influence ou modif magique à une chanson."
+      "description": "+2g0 à tous les jets de Composition et Musique et pour se souvenir d’un morceau. +1g0 pour déterminer l’influence ou modif magique à une chanson.",
+      "description_v1": [
+        "Votre personnage a une excellente oreille musicale. Il est capable de reconnaître un morceau après l’avoir entendu une seule fois, peut restituer sur un instrument de musique (s’il sait en jouer) un air qu’il a entendu il y a quelques années, etc.",
+        "Il bénéficie de 2 dé lancés non gardés supplémentaire (+2g0) sur tous ses jets de Compositeur et de Musique, et lorsqu’il cherche à se souvenir d’un morceau de musique qu’il a déjà entendu. En outre, il bénéficie également d’un dé lancé non gardé supplémentaire (+1g0) pour déterminer si un morceau de musique a été écrit suivant un modèle ou a subi une influence artificielle (Sorte, le code musical du Collège Invisible, etc.), mais pas pour déchiffrer ce code ou déterminer exactement la nature magique de l’influence."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Os sensibles",
@@ -1701,7 +2532,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+2g2 lorsque vous effectuez un jet de perception météo"
+      "description": "+2g2 lorsque vous effectuez un jet de perception météo",
+      "description_v1": [
+        "Un jour, vous avez reçu une blessure grave. Bien qu’elle soit aujourd’hui guérie, elle demeure sensible aux changements de pression atmosphérique.",
+        "Vous lancez et gardez 2 dés supplémentaires (+2g2) lorsque vous effectuez un jet de Perception du temps."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Poigne ferme",
@@ -1713,7 +2549,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1g0 aux jets de Gaillardise visant à (re)tenir un objet ou quelqu’un"
+      "description": "+1g0 aux jets de Gaillardise visant à (re)tenir un objet ou quelqu’un",
+      "description_v1": [
+        "Vos mains sont extrêmement puissantes, et peuvent serrer un objet ou une autre main aussi fermement qu’un étau.",
+        "Vous bénéficiez d’un dé lancé non gardé supplémentaire (+1g0) sur tous vos jets de Gaillardise effectués afin de savoir si vous tenez toujours votre objet. Cela inclut les techniques de combat telles que Emprisonner ou Désarmer ou des techniques permettant de vous faire perdre votre arme."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Pourfendeur",
@@ -1725,7 +2566,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": true,
       "h_heroisme": false,
-      "description": "+1g0 lorsque vous faites face à une école de Courtisan/Duelliste/Sorcier"
+      "description": "+1g0 lorsque vous faites face à une école de Courtisan/Duelliste/Sorcier",
+      "description_v1": [
+        "Le héros trouve instinctivement les faiblesses des pratiquants d’une école d’escrime, d’une école de courtisan ou d’un type de magie.",
+        "Pour 1 PP, vous connaissez les faiblesses d’une école de courtisan, pour 2 PP, vous connaissez les faiblesses d’une école d’escrime, tandis que pour 7 PP, vous connaissez celles d’un type de magie. Lorsque vous utilisez une compétence à l’encontre d’un pratiquant du style que vous avez choisi, vous gardez un dé supplémentaire."
+      ],
+      "cout_v1": "Coût : 1, 2 ou 7 PP"
     },
     {
       "nom": "Seigneur de la Courbette",
@@ -1737,7 +2583,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1g0 aux tests de Discrétion et Tâches Domestiques, +1 Rang Social"
+      "description": "+1g0 aux tests de Discrétion et Tâches Domestiques, +1 Rang Social",
+      "description_v1": [
+        "Vous avez toujours vécu dans l’ombre de la noblesse et de la bourgeoisie. Vous les avez servies avec diligence et loyauté, apprenant tout ce que vous pouviez. En retour, vous n’avez pas eu affaire à des maîtres ingrats, puisqu’ils vous permirent de progresser tant socialement que financièrement.",
+        "Vous effectuez tous vos jets de Discrétion et Tâches domestiques avec un dé lancé non gardé supplémentaire (+1g0). Enfin, vous recevez 1 point de rang social."
+      ],
+      "cout_v1": "Coût : 1 PP"
     },
     {
       "nom": "Sens Aiguisés",
@@ -1749,7 +2600,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Perception +1g0"
+      "description": "Perception +1g0",
+      "description_v1": [
+        "Le héros a l’un de ses sens particulièrement aiguisés, ce qui lui permet de repérer plus facilement une marque sur le sol ou un léger goût d’amande dans son thé.",
+        "Le coût de cet avantage varie en fonction du sens surdéveloppé : 2 PP pour la vue et l’ouïe, 1 PP pour l’odorat, le goût et le toucher. Vous faites tous les jets liés à l’utilisation du sens développé de votre héros, en lançant, sans le garder, un dé supplémentaire (+1g0). Pour la vue et l’ouïe, vous bénéficiez également de ce bonus sur les jets de surprise."
+      ],
+      "cout_v1": "Coût : 1 ou 2 PP"
     },
     {
       "nom": "Sens du spectacle",
@@ -1761,7 +2617,13 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1 Réputation à chaque test de compétence de Représentation réussie et +1 augmentation gratuite lors de ces tests."
+      "description": "+1 Réputation à chaque test de compétence de Représentation réussie et +1 augmentation gratuite lors de ces tests.",
+      "description_v1": [
+        "Vous avez le sens du rythme et remuez les foules comme personne. Vous avez depuis longtemps compris que lorsque l’on fait quelque chose, on doit y mettre le chic. Vous bougez, parlez, combattez et mangez avec style. Si cela est très utile sur scène pour ébranler les foules, cela trouve également d’autres applications.",
+        "Toute action réalisée devant un public qui rapporterait au personnage un ou plusieurs points de Réputation lui en vaut un de plus. En outre, le personnage bénéficie d’une augmentation gratuite dans le cadre d’une utilisation réussie du système de répartie. En d’autres termes, si le jet n’est pas réussi, le personnage échoue, mais s’il l’emporte, on considère que le joueur avait fait appel à une augmentation.",
+        "Si le joueur avait déjà fait appel à une augmentation, cela lui en fait donc une deuxième. Lorsqu’il souhaite affecter plus d’un individu, le joueur doit choisir entre l’augmentation gratuite et une cible supplémentaire."
+      ],
+      "cout_v1": "Coût : 5 PP"
     },
     {
       "nom": "Secret d’école",
@@ -1773,7 +2635,16 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Permet de traiter une technique de combat/oratoire/professionnelle comme compétence avancée régulière."
+      "description": "Permet de traiter une technique de combat/oratoire/professionnelle comme compétence avancée régulière.",
+      "description_v1": [
+        "Bien que les techniques de combat, oratoires ou professionnelles (Bricoleur Syrneth de la Société des Explorateurs, écoles d’équitation castillianes, école des poisons Vergift de la guilde des apothicaires, haute école de commerce de la guilde des marchands, etc.) soient des secrets très bien gardés, certains n’ont aucun scrupule à les vendre contre une bonne rémunération.",
+        "Si la somme est assez importante, il y a peu de personnes qui refuseraient d’enseigner leur art, et cela inclut leurs compétences de spadassin, de courtisan ou autre.",
+        "Cet avantage permet de traiter une technique de combat, une technique oratoire ou une technique professionnelle comme une compétence avancée régulière. Même un membre de la guilde des spadassins peut ainsi acheter une compétence qu’il ne maîtrise pas grâce à son école.",
+        "Les coûts des compétences figurent dans le tableau cidessous.",
+        "Une compétence acquise de cette manière ne peut être développée au-delà du niveau 3 (ce qui est déjà honorable), à moins que le personnage n’intègre ensuite l’école où cette compétence fait partie de l’enseignement, auquel cas, il pourra tout à fait normalement la développer jusqu’au niveau de maître.",
+        "(Table 1 : acquisition d’une compétence d’école — voir le PDF source.)"
+      ],
+      "cout_v1": "Coût : 3 à 6 PP"
     },
     {
       "nom": "Sixième sens",
@@ -1785,7 +2656,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+2g0 sur tous les tests de Qui-Vive."
+      "description": "+2g0 sur tous les tests de Qui-Vive.",
+      "description_v1": [
+        "Aux moments de grand danger, le personnage a le nez qui le gratte, des picotements dans le bas du dos, ses jointures qui lui font mal, etc. Le héros sait reconnaitre ces signes comme l’avertissant d’un danger imminent.",
+        "Vous gagnez deux dés lancés non gardés (+2g0) sur tous vos jets de Qui-vive. Cependant, votre MJ, s’il est d’humeur taquine, peut dépenser un dé d’héroïsme pour “déclencher” votre sixième sens à un moment inopportun."
+      ],
+      "cout_v1": "Coût : 3 PP"
     },
     {
       "nom": "Talent Scénique",
@@ -1797,7 +2673,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+2g0 aux tests d’Interprétation (Chant, Comédie, Narrer, …)"
+      "description": "+2g0 aux tests d’Interprétation (Chant, Comédie, Narrer, …)",
+      "description_v1": [
+        "l’avantage Enfant de la balle Vous êtes né pour vivre sur une scène ou devant un public. Chacune de vos prestations est une vraie performance, et vous impressionnez à chaque fois les spectateurs qui vous regardent et vous écoutent. Que ce soit par le chant, la musique, la comédie ou toute autre forme de spectacle, vous recueillez toujours des applaudissements nourris.",
+        "Vous effectuez tous vos jets de représentation et d’interprétation en lançant (sans les garder) deux dés supplémentaires. Ceci est valable pour des compétences comme Chant, Comédie, Danse, Musique, Narrer, Prestidigitation, ou Spectacle de rue, mais pas sur les compétences de création comme Compositeur, Création littéraire, Dessin ou Sculpture."
+      ],
+      "cout_v1": "Coût : 4 PP, 3 PP pour les personnages possédant"
     },
     {
       "nom": "Trait Légendaire",
@@ -1809,7 +2690,13 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Un trait pourra atteindre 6"
+      "description": "Un trait pourra atteindre 6",
+      "description_v1": [
+        "Un des traits du héros est supérieur à la moyenne : ce dernier a peut-être des aptitudes spécifiques, à moins qu’il n’ait particulièrement développé ce trait en s’entraînant.",
+        "Lorsque vous acquérez cet avantage, choisissez un trait :",
+        "lorsque vous aurez accumulé des points d’expérience, ce trait pourra atteindre le rang 6. Cet avantage ne modifie en rien la règle selon laquelle un héros ne peut commencer le jeu avec un trait supérieur au rang 3 (ou 4 avec le bonus de nationalité)."
+      ],
+      "cout_v1": "Coût : 3 PP"
     },
     {
       "nom": "Unis, nous sommes forts",
@@ -1869,7 +2756,14 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Permet d’encaisser plus d’insolation ou froid"
+      "description": "Permet d’encaisser plus d’insolation ou froid",
+      "description_v1": [
+        "Dans le premier cas, vous êtes habitué à la chaleur, et n’en souffrez pas autant que les autres. Mais à l’inverse, le froid vous affecte davantage que la normale. Et inversement pour l’accoutumance au froid.",
+        "Les deux versions de cet avantage s’excluent mutuellement.",
+        "On ne peut être à la fois accoutumé à la chaleur et au froid.",
+        "Dans le premier cas, vous pouvez encaisser 2 niveaux d’insolation supplémentaires (1 de moins si vous possédez Accoutumance au froid). À l’inverse, dans le second cas, vous pouvez encaisser 2 niveaux de froidure sans difficultés particulières (1 de moins si vous détenez Accoutumance à la chaleur)."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Ange gardien",
@@ -1881,7 +2775,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": true,
-      "description": "Contre un dès d’Héroïsme, peut relancer un jet de défense active (hors-combat) ou forcer un ennemi à relancer son jet"
+      "description": "Contre un dès d’Héroïsme, peut relancer un jet de défense active (hors-combat) ou forcer un ennemi à relancer son jet",
+      "description_v1": [
+        "Que vous croyiez ou non en son existence, une puissance invisible céleste semble veiller sur vous, vous protégeant de tout danger ou tort.",
+        "En utilisant un dé d’héroïsme, vous pouvez obliger un adversaire à relancer un jet d’attaque qu’il vient de réussir contre vous. Vous pouvez également utiliser un dé d’héroïsme pour tenter de nouveau un jet de défense active face à un piège ou à tout danger que présente votre environnement."
+      ],
+      "cout_v1": "Coût : 4 PP"
     },
     {
       "nom": "Bon Samaritain",
@@ -1893,7 +2792,13 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Moralité +10. Elle ne baisse pas avec le temps. Vous pouvez dépenser de l’argent pour l’augmenter."
+      "description": "Moralité +10. Elle ne baisse pas avec le temps. Vous pouvez dépenser de l’argent pour l’augmenter.",
+      "description_v1": [
+        "Vous avez passé toute votre vie à aider les autres. Vous êtes très doué pour ressentir la douleur de vos congénères et vous la supportez mal. Ainsi, cette empathie naturelle et la charité dont vous faîtes preuve à l’égard de votre prochain sont connues et reconnus.",
+        "L’acquisition de cet avantage vous permet d’améliorer la Moralité de départ de votre héros de 10 points (ce qui vous offre 1 dé de Moralité). Le passage du temps n’a pas d’effets négatifs sur votre réputation. Enfin, Vous pouvez acquérir de la moralité supplémentaire en dépensant votre argent dans les bonnes œuvres suivant le principe ci-dessous.",
+        "(Table 3 : Bonus de moralité — voir le PDF source.)"
+      ],
+      "cout_v1": "Coût : 3 PP"
     },
     {
       "nom": "Bricoleur",
@@ -1929,7 +2834,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Vous êtes pieux. Bonus au bon vouloir du MJ.+5 Moralité."
+      "description": "Vous êtes pieux. Bonus au bon vouloir du MJ.+5 Moralité.",
+      "description_v1": [
+        "pour les personnages possédant l’avantage Bon Samaritain Peu importe que le héros suive les préceptes de l’église du Vaticine, soit un Protestataire, un Réformé avalonien, un Orthodoxe ou un fidèle de la Patika, c’est un croyant sincère. Il pense que la vie est une énigme qui peut être résolue par la compréhension du message des Prophètes, et qu’ainsi il pourra se rapprocher du Créateur. Vous n’êtes pas réellement sûr des effets de cet avantage. Vous ne savez d’ailleurs même pas s’il a un quelconque effet. Cela en vaut-il la peine ? Il vous faudra un peu de foi pour le savoir enfin.",
+        "Toutefois, en effet immédiat, vous recevez 5 points de moralité."
+      ],
+      "cout_v1": "Coût : 5 PP, 4 PP"
     },
     {
       "nom": "Horloge vivante",
@@ -1953,7 +2863,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Immunité à un type de poison choisi"
+      "description": "Immunité à un type de poison choisi",
+      "description_v1": [
+        "Que ce soit dû à une immunité naturelle ou à une mithridatisation progressive, vous n’avez plus rien à craindre d’un poison en particulier. En ce qui vous concerne, il est aussi inoffensif que du petit lait.",
+        "Choisissez un type de poison. Vous en ignorez les effets lorsque vous y êtes exposé. Vous pouvez acheter cet avantage autant de fois que vous le souhaitez."
+      ],
+      "cout_v1": "Coût : 1 PP"
     },
     {
       "nom": "Intrépide",
@@ -1965,7 +2880,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Un dès d’héroïsme supplémentaire par partie. Peut être prix 2 fois max."
+      "description": "Un dès d’héroïsme supplémentaire par partie. Peut être prix 2 fois max.",
+      "description_v1": [
+        "Le personnage réussi toujours les actions les plus audacieuses qu’il entreprend. Il semble bénéficier de la bénédiction de Theus. Qu’il tombe d’une falaise et un arbre amortira sa chute, qu’il se jette à travers une fenêtre sans avoir regardé au préalable et il tombe dans une rivière, qu’il soit pendu et la branche cassera, etc.",
+        "Le personnage bénéficie d’un dé d’héroïsme supplémentaire par aventure en plus de ceux qui lui sont normalement alloués. Cet avantage peut être pris deux fois."
+      ],
+      "cout_v1": "Coût : 8 PP"
     },
     {
       "nom": "Naïf",
@@ -2001,7 +2921,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "2ème Travers"
+      "description": "2ème Travers",
+      "description_v1": [
+        "Que ça lui plaise ou non, le héros semble avoir un don pour être toujours au cœur de l’aventure. Qu’une princesse ait besoin d’aide et elle l’appellera à la rescousse ; si une ancienne conquête refait surface après des années, c’est uniquement parce qu’elle manigance un plan diabolique pour dominer le monde en compagnie du meilleur ami du héros. Ne laissez jamais dire que vous menez une vie ordinaire.",
+        "Vous recevez gratuitement une épée de Damoclès valant 4 PP lors de la création de votre personnage. Cet avantage est la seule manière d’affecter plus de 3 PP à une épée de Damoclès. Vous ne pouvez en choisir une autre, mais si elle venait à se résoudre, vous en gagneriez aussitôt une autre gratuite valant 4 PP."
+      ],
+      "cout_v1": "Coût : 5 PP"
     },
     {
       "nom": "Potentiel Glorieux",
@@ -2049,7 +2974,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Permet de faire plus d’Infamies avant de devenir un Vilain"
+      "description": "Permet de faire plus d’Infamies avant de devenir un Vilain",
+      "description_v1": [
+        "Tous les Vodacci étudient les travaux de Cristoforo Scarovese, mais vous faites montre d’une véritable perspicacité à l’égard de son œuvre. Vous êtes capable d’exploiter ses leçons pour dissimuler vos traces, rejeter les blâmes sur autrui et de manière plus générale vous épanouir au sein du Grand Jeu.",
+        "En dépensant 1 PP dans cet avantage, vous pouvez effectuer 4 infamies avant de devenir un vilain, et donc un PNJ. En dépensant 3 PP dans cet avantage, vous pouvez effectuer 6 infamies avant de devenir un vilain, et donc un PNJ."
+      ],
+      "cout_v1": "Coût : 1ou 3 PP"
     },
     {
       "nom": "Sens de l’orientation",
@@ -2073,7 +3003,12 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Parfaitement conscient du temps qui passe et de l’heure actuelle."
+      "description": "Parfaitement conscient du temps qui passe et de l’heure actuelle.",
+      "description_v1": [
+        "Votre héros a une compréhension innée du passage du temps. À n’importe quel moment, il sait quelle heure il est avec une faible marge d’erreur. Il est également capable de se rendre compte du temps écoulé pendant une plus ou moins longue période. Par exemple, il sait qu’il est environ 18 h, après avoir passé toute la journée dans le tribunal à se défendre ; ou encore, il sait exactement quel temps s’est écoulé depuis qu’il a allumé la mèche dont la durée est de quinze minutes.",
+        "Cet avantage prend une valeur inestimable lorsqu’il s’agit de calculer la longitude à laquelle on se trouve à un moment donné (surtout en mer)."
+      ],
+      "cout_v1": "Coût : 2 PP"
     },
     {
       "nom": "Serviteur",
@@ -2085,7 +3020,41 @@ window.AVANTAGES_DATA = {
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "PNJ à votre service (laquais, cocher, …), PP supplémentaires pour + de qualités. D’autres serviteurs spécifiques aux nations sont dispo"
+      "description": "PNJ à votre service (laquais, cocher, …), PP supplémentaires pour + de qualités. D’autres serviteurs spécifiques aux nations sont dispo",
+      "description_v1": [
+        "Le héros commence sa carrière d’aventurier avec un ou plusieurs serviteurs. Ils ne sont pas particulièrement loyaux (au-delà du désir d’être payés), mais ils peuvent s’avérer utiles si le héros souhaite venir à bout de quelque chose (ou de quelqu’un), sauf si le joueur dépense plus de points.",
+        "Ce sont des hommes de main et ils sont créés comme tels.",
+        "◆ Types de serviteurs Laquais — Coût : 5 PP :",
+        "Le serviteur dispose de 2 rangs dans chaque trait, sauf en Détermination où il en possède 3. Le laquais a toutes les compétences du métier Serviteur à 3. En outre, il bénéficie de 25 PP que le joueur alloue comme bon lui semble à d’autres métiers, entraînements ou compétences en gardant à l’esprit qu’il ne peut commencer avec des compétences d’entraînements supérieures à 2. Il est également possible de bâtir sur ce modèle une bonne, un maître d’hôtel ou un valet.",
+        "◆ Cocher :",
+        "5 PP Ce serviteur dispose de 2 rangs dans chaque trait, sauf en Finesse où il en possède 3. Le cocher a toutes les compétences du métier Cocher justement à 3. En outre, il bénéficie de 25 PP que le joueur alloue comme bon lui semble à d’autres métiers, entraînements ou compétences en gardant à l’esprit qu’il ne peut commencer avec des compétences d’entraînements supérieures à 2. Il est également possible de bâtir sur ce modèle un écuyer, un fauconnier ou un veneur.",
+        "◆ Confesseur :",
+        "5 PP Ce serviteur dispose de 2 rangs dans chaque trait, sauf en Esprit où il en possède 3. Le confesseur a toutes les compétences du métier Prêtre à 3. En outre, il bénéficie de 25 PP que le joueur alloue comme bon lui semble à d’autres métiers, entraînements ou compétences en gardant à l’esprit qu’il ne peut commencer avec des compétences d’entraînements supérieures à 2. Il est également possible de bâtir sur ce modèle un compagnon moine, un templier ou un chapelain.",
+        "◆ Garde du corps :",
+        "5 PP Ce serviteur dispose de 2 rangs dans chaque trait, sauf en Finesse où il en possède 3. Le garde du corps a toutes les compétences de base du métier Garde du corps et de l’entraînement Escrime à 3 et les compétences avancées de ces mêmes spécialisations à 2. En outre, il bénéficie de 25 PP que le joueur alloue comme bon lui semble à d’autres métiers, entraînements ou compétences en gardant à l’esprit qu’il ne peut commencer avec des compétences de métier supérieures à 2. Il est également possible de bâtir sur ce modèle un soldat, un duelliste ou un artilleur.",
+        "◆ Qualités spéciales des serviteurs :",
+        "Attention, ces qualités spéciales coûtent des PP au joueur et non au domestique. Le joueur peut en prendre trois au maximum pour un même serviteur.",
+        "◆ Âgé — Coût : 3 PP :",
+        "Le serviteur est déjà âgé et a vécu énormément de choses, il bénéficie de 50 PP supplémentaires à sa création.",
+        "◆ Bon combattant — Coût : 2 PP :",
+        "Le rang potentiel maximum dans les entraînements du serviteur augmente de 1 à la création (et passe donc normalement à 4).",
+        "◆ Escrimeur — Coût : 4 PP :",
+        "Le serviteur est un escrimeur averti et bénéficie d’une école d’escrime de son pays natal avec 3 rangs dans les compétences de spadassin.",
+        "◆ Flagorneur — Coût : 1 PP :",
+        "Le serviteur adore tout de son maître et donnerait sa vie pour le sauver. Évidemment, le reste du temps, le personnage doit supporter les remarques lèche-bottes et l’attitude obséquieuse de son serviteur.",
+        "◆ Grande famille — Coût : 3 PP :",
+        "Le serviteur a une grande famille. Cette qualité spéciale est la même que l’avantage du même nom réservé aux Castillians.",
+        "◆ Loyauté extrême — Coût : 3 PP :",
+        "Le serviteur ne vous abandonnera ou trahira jamais.",
+        "◆ Relations — Coût : 1 PP :",
+        "Le serviteur reçoit la spécialisation Malandrin et la compétence Contact à 5. En outre, il lance et garde toujours un dé supplémentaire lorsqu’il fait un jet de compétence associée à la spécialisation Malandrin.",
+        "◆ Savoir-faire — Coût : 2 PP :",
+        "Le joueur choisit jusqu’à trois compétences de métiers dans lesquelles le serviteur dispose d’au moins un rang et qui deviendront ses compétences de Savoir-faire.",
+        "Lorsque le domestique aide le personnage dans une tâche faisant appel à l’une de ses compétences de savoir-faire, le maître bénéficie d’un rang supplémentaire pour son jet.",
+        "◆ Sorcier — Coût : 4 PP :",
+        "Le serviteur est un sorcier demisang et bénéficie d’un rang de 3 dans cinq de ses compétences de sorcier."
+      ],
+      "cout_v1": "Coût : de 5 à 16 PP"
     },
     {
       "nom": "Ennemi Juré",

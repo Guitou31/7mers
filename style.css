@@ -2727,3 +2727,25 @@ p { margin: 0 0 0.6em; }
   border-radius: 0 4px 4px 0;
   padding: 0.5rem 0.8rem;
 }
+
+/* Modal avantage : description V1 enrichie */
+.avant-cout-v1 {
+  margin: 0.3rem 0 0 0;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--accent-soft);
+}
+.avant-resume {
+  background: rgba(232, 212, 168, 0.07);
+  border-left: 3px solid var(--accent-soft);
+  border-radius: 0 4px 4px 0;
+  padding: 0.45rem 0.7rem;
+}
+.avant-v1-sub {
+  margin: 0.8rem 0 0.3rem 0;
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 0.95rem;
+  color: var(--accent);
+  border-bottom: 1px dotted rgba(232, 212, 168, 0.35);
+  padding-bottom: 0.2rem;
+}
