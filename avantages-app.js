@@ -89,6 +89,12 @@
     return badges;
   }
 
+  // Suffixe ' PP' seulement si le coût contient un chiffre
+  // (évite 'Sorcier Porté only PP').
+  function libelleCout(a) {
+    return /\d/.test(a.cout_raw) ? a.cout_raw + " PP" : a.cout_raw;
+  }
+
   function renderCard(a) {
     return el("li", {
       class: "ecole-card avant-card",
@@ -99,7 +105,10 @@
       onkeydown: (ev) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); ouvrirAvantage(a); } },
     }, [
       el("h2", null, a.nom),
-      el("p", { class: "arme avant-cout" }, a.cout_raw + " PP"),
+      el("p", { class: "arme avant-cout" }, libelleCout(a)),
+      a.description
+        ? el("p", { class: "avant-desc" }, a.description)
+        : null,
       renderBadges(a),
     ]);
   }
@@ -156,8 +165,7 @@
     // Coût
     const coutSection = el("div", { class: "detail-section" }, [
       el("h3", null, "Coût"),
-      el("p", { class: "description-paragraph avant-cout-detail" },
-        [a.cout_raw, " PP"]),
+      el("p", { class: "description-paragraph avant-cout-detail" }, libelleCout(a)),
     ]);
     if (a.cout_v1 && normalize(a.cout_v1) !== normalize("Coût : " + a.cout_raw + " PP")) {
       coutSection.appendChild(el("p", { class: "avant-cout-v1" },
@@ -176,15 +184,10 @@
       ]));
     }
 
-    // Résumé court (docx de Guillaume)
-    if (a.description) {
-      content.appendChild(el("div", { class: "detail-section" }, [
-        el("h3", null, "En bref"),
-        el("p", { class: "description-paragraph avant-resume" }, a.description),
-      ]));
-    }
-
-    // Description détaillée V1 (extraite du PDF '09 Avantages')
+    // Description détaillée V1 (extraite du PDF '09 Avantages').
+    // Le résumé court ('en bref') est affiché sur la carte, plus besoin
+    // de le répéter ici. S'il n'y a pas de version V1, on retombe sur le
+    // résumé court pour ne pas laisser un modal vide.
     if (Array.isArray(a.description_v1) && a.description_v1.length) {
       const sec = el("div", { class: "detail-section" }, [
         el("h3", null, "Description détaillée"),
@@ -199,10 +202,11 @@
         }
       });
       content.appendChild(sec);
-    } else if (!a.description) {
+    } else {
       content.appendChild(el("div", { class: "detail-section" }, [
         el("h3", null, "Description"),
-        el("p", { class: "description-paragraph" }, "(à venir)"),
+        el("p", { class: "description-paragraph" },
+          a.description || "(à venir)"),
       ]));
     }
 

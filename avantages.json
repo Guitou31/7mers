@@ -209,7 +209,7 @@
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Pur-Sang offert",
+      "description": "Un cheval Pur-Sang du Croissant offert à la création.",
       "description_v1": [
         "(de lignée royale) Homme de main Le coursier du vent de sang royal est exceptionnel, même par rapport à d’autres membres de sa race. Il est plus agile et a une plus grande endurance que d’autres chevaux croissantins.",
         "Gaillardise : 4 ; Finesse : 3 ; Esprit : 1 ; Détermination : 2 ;",
@@ -337,7 +337,7 @@
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Propriété, équipement, … en héritage, voir table",
+      "description": "Propriété, équipement ou biens reçus en héritage (valeur selon les PP investis).",
       "description_v1": [
         "Le héros a hérité d’un objet de valeur. Peut-être lui a-til été légué par un parent éloigné. Peut-être encore – vous acceptez le risque que des gens dépendent de votre héros – est-ce la dot de son épouse ou un présent de ses beaux-parents. Il peut également s’agir d’un précieux bien familial transmis de génération en génération ou plus simplement une importante somme d’argent. Quoi qu’il en soit, cet héritage appartient désormais pleinement à votre héros.",
         "La table ci-dessous vise à vous donner une idée approximative de la valeur de cet héritage, afin que vous puissiez plus facilement l’évaluer en accord avec votre MJ.",
@@ -548,7 +548,7 @@
       "nation_lien": "Avalon",
       "v2": false,
       "h_heroisme": false,
-      "description": "Divers avantages au choix, voir p34",
+      "description": "Sang féerique d'Avalon : composez vos bénédictions (séduction, vision du Glamour, longévité…) et malédictions Sidhes.",
       "description_v1": [
         "Les personnages possédant du Sang Sidhe peuvent en profiter ou en subir les inconvénients. Le coût de cet avantage varie en fonction des traits dont vous avez hérité de votre côté Sidhe.",
         "Les bénédictions coûtent des PP alors que les malédictions vous en redonnent. Le coût minimal de cet avantage est de 1 PP.",
@@ -841,7 +841,7 @@
       "nation_lien": "Avalon",
       "v2": false,
       "h_heroisme": false,
-      "description": "Arc, dague, épée ou lance Sidhe. -1PP si Sang Sidhe. Voir description.",
+      "description": "Arc, dague, épée ou lance Sidhe enchantée. -1 PP si vous avez l'avantage Sang Sidhe.",
       "description_v1": [
         "Certains personnages ont eu la chance de recevoir un jour un artefact de la part des Sidhes.",
         "Les personnages possédant l’avantage Sang Sidhe avec la bénédiction Bonne réputation peuvent acheter celuici pour 1 PP de moins que le coût indiqué. Il est possible d’acquérir cet avantage plusieurs fois.",
@@ -1005,7 +1005,7 @@
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Arme de qualité, voir p38",
+      "description": "Lame de maître castillane (Aldana, Gallegos, Soldano…) offrant un bonus propre à son école d'escrime.",
       "description_v1": [
         "choisissent la lame de leur province natale Comme tout Castillian vous le dira, les meilleures lames du pays viennent de sa province natale.",
         "Évidemment, on peut soutenir que les habitants de Soldano sont les plus proches de la vérité, mais il ne fait nul doute que la Castille est la patrie de certains des forgerons les plus talentueux du monde.",
@@ -1044,7 +1044,7 @@
       "nation_lien": "Montaigne",
       "v2": false,
       "h_heroisme": false,
-      "description": "Voir pages 49 à 53",
+      "description": "Lame montaginoise dotée d'un pouvoir mystérieux, frappée du sceau de Renart ou d'Isengrin (effets selon la lame).",
       "description_v1": [
         "Un personnage qui choisit cet avantage a acquis l’une des infâmes Lames du Mystère montaginoises.",
         "Commencez par déterminer la nature de votre arme en lançant un dé sur la table des Lames du Mystère. Suivez les instructions de ladite table et payez les PP lorsqu’on vous le demande. Selon son fabricant, une Lame du mystère coûte 2, 5 ou 10 PP. Une fois que vous commencez à lancer les dés, vous devez payer tous les coûts indiqués sur la table ; vous ne pouvez décider de ne pas effectuer de jet sur la table suivante pour éviter de dépenser des PP. ainsi, nous vous conseillons de mettre de côté 10 PP avant de commencer vos jets de dés.",
@@ -2322,7 +2322,7 @@
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+1g0 aux tests nécessitant de la minutie (cf liste du livre)",
+      "description": "+1g0 aux tests de minutie (crochetage, joaillerie, prestidigitation…).",
       "description_v1": [
         "Depuis tout petit vous avez toujours eu une certaine dextérité du bout de vos doigts. Minutie est presque votre second prénom.",
         "Vous gagnez un dé lancé non gardé sur tous les jets nécessitant de la minutie, à savoir les compétences Acupuncture, Barbier, Calligraphie, Céramiste, Chapelier, Cordonnier, Couturier, Crochetage, Dentiste, Horloger, Joaillier, Luthier, Orfèvre, Pickpocket, Potier, Prestidigitation, Sculpture, Serrurier, Tailleur de pierre, Tailleur, Tisserand, Tricher et Vannier."
@@ -2599,7 +2599,7 @@
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "Perception +1g0",
+      "description": "+1g0 à tous les jets de Perception.",
       "description_v1": [
         "Le héros a l’un de ses sens particulièrement aiguisés, ce qui lui permet de repérer plus facilement une marque sur le sol ou un léger goût d’amande dans son thé.",
         "Le coût de cet avantage varie en fonction du sens surdéveloppé : 2 PP pour la vue et l’ouïe, 1 PP pour l’odorat, le goût et le toucher. Vous faites tous les jets liés à l’utilisation du sens développé de votre héros, en lançant, sans le garder, un dé supplémentaire (+1g0). Pour la vue et l’ouïe, vous bénéficiez également de ce bonus sur les jets de surprise."
@@ -2920,7 +2920,7 @@
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "2ème Travers",
+      "description": "Vous subissez un 2ᵉ Travers (Main du Destin).",
       "description_v1": [
         "Que ça lui plaise ou non, le héros semble avoir un don pour être toujours au cœur de l’aventure. Qu’une princesse ait besoin d’aide et elle l’appellera à la rescousse ; si une ancienne conquête refait surface après des années, c’est uniquement parce qu’elle manigance un plan diabolique pour dominer le monde en compagnie du meilleur ami du héros. Ne laissez jamais dire que vous menez une vie ordinaire.",
         "Vous recevez gratuitement une épée de Damoclès valant 4 PP lors de la création de votre personnage. Cet avantage est la seule manière d’affecter plus de 3 PP à une épée de Damoclès. Vous ne pouvez en choisir une autre, mais si elle venait à se résoudre, vous en gagneriez aussitôt une autre gratuite valant 4 PP."

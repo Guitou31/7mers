@@ -2749,3 +2749,11 @@ p { margin: 0 0 0.6em; }
   border-bottom: 1px dotted rgba(232, 212, 168, 0.35);
   padding-bottom: 0.2rem;
 }
+
+/* Carte avantage : description courte visible sans clic */
+.avant-desc {
+  margin: 0.35rem 0 0.5rem 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  opacity: 0.85;
+}

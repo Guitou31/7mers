@@ -152,6 +152,36 @@ def normaliser_nation(nat: str) -> str:
     return mapping.get(nat, nat)
 
 
+# Réécritures des descriptions courtes trop sommaires ou renvoyant au PDF
+# ('voir p38', 'voir table'...). Affichées directement sur les cartes.
+DESC_OVERRIDES = {
+    "Lame du mystère":
+        "Lame montaginoise dotée d'un pouvoir mystérieux, frappée du sceau "
+        "de Renart ou d'Isengrin (effets selon la lame).",
+    "Sang Sidhe":
+        "Sang féerique d'Avalon : composez vos bénédictions (séduction, "
+        "vision du Glamour, longévité…) et malédictions Sidhes.",
+    "Lame castillane":
+        "Lame de maître castillane (Aldana, Gallegos, Soldano…) offrant "
+        "un bonus propre à son école d'escrime.",
+    "Porte-Poisse":
+        "Vous subissez un 2ᵉ Travers (Main du Destin).",
+    "Coursier du vent":
+        "Un cheval Pur-Sang du Croissant offert à la création.",
+    "Héritage":
+        "Propriété, équipement ou biens reçus en héritage (valeur selon "
+        "les PP investis).",
+    "Arme Sidhe":
+        "Arc, dague, épée ou lance Sidhe enchantée. -1 PP si vous avez "
+        "l'avantage Sang Sidhe.",
+    "Doigts de Fée":
+        "+1g0 aux tests de minutie (crochetage, joaillerie, "
+        "prestidigitation…).",
+    "Sens Aiguisés":
+        "+1g0 à tous les jets de Perception.",
+}
+
+
 def main():
     if not SRC.exists():
         print(f"❌ Fichier introuvable : {SRC}")
@@ -253,6 +283,11 @@ def main():
             continue
         vus.add(key)
         unique.append(a)
+
+    # Applique les réécritures de descriptions courtes
+    for a in unique:
+        if a["nom"] in DESC_OVERRIDES:
+            a["description"] = DESC_OVERRIDES[a["nom"]]
 
     print(f"Avantages extraits : {len(avantages)} ({len(unique)} uniques)")
 
