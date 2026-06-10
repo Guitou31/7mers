@@ -34,6 +34,7 @@
     only_v2: false,
     only_h: false,
     // Filtres liés à la Nation
+    nation_cible: null,    // Nation sélectionnée dans le dropdown (toutes Nations)
     nation_filtre: null,   // null | "restriction" | "reduction" | "bloque"
   };
 
@@ -44,13 +45,36 @@
     return st.nation || null;
   }
 
+  // Liste des Nations (et groupes spéciaux : Sorcier Porté, Mille Nations…)
+  // réellement référencées par les avantages.
+  function nationsDisponibles() {
+    const set = new Set();
+    data.avantages.forEach(a => nationsLiees(a).forEach(n => set.add(n)));
+    return Array.from(set).sort(compareFR);
+  }
+
+  // Nation présélectionnée : celle de la création, avec mapping des alias
+  // (Fuso → Cathay, Aragosta → Nations Pirates, etc.).
+  function nationParDefaut() {
+    const courante = getNationCourante();
+    if (!courante) return null;
+    const dispo = new Set(nationsDisponibles());
+    if (dispo.has(courante)) return courante;
+    if (window.CreationState && window.CreationState.nationsCandidatesEcoles) {
+      const cands = window.CreationState.nationsCandidatesEcoles(courante);
+      for (const c of cands) {
+        if (dispo.has(c)) return c;
+      }
+    }
+    return null;
+  }
+
   function matchAvantage(a) {
     if (state.categories.size > 0 && !state.categories.has(a.categorie)) return false;
     if (state.only_v2 && !a.v2) return false;
     if (state.only_h && !a.h_heroisme) return false;
-    if (state.nation_filtre) {
-      const nation = getNationCourante();
-      if (!nation) return false; // pas de Nation choisie → ces filtres sont sans effet
+    if (state.nation_filtre && state.nation_cible) {
+      const nation = state.nation_cible;
       const liees = nationsLiees(a);
       if (state.nation_filtre === "restriction") {
         // Avantages réservés à ma Nation
@@ -255,23 +279,55 @@
 
   function buildNationFilter() {
     const container = document.getElementById("filter-nation");
-    const info = document.getElementById("filter-nation-info");
     if (!container) return;
-    const nation = getNationCourante();
-    // Nettoie d'abord les anciennes options éventuelles
-    container.querySelectorAll("label, button.btn-mes-spe-clear").forEach(e => e.remove());
+    container.innerHTML = "";
+
+    // Présélection : la Nation de la création (si pas déjà choisi manuellement)
+    if (state.nation_cible == null) {
+      const def = nationParDefaut();
+      if (def) state.nation_cible = def;
+    }
+
+    // Dropdown de toutes les Nations référencées par les avantages
+    const sel = el("select", {
+      class: "nation-select",
+      "aria-label": "Nation à filtrer",
+      onchange: (e) => {
+        state.nation_cible = e.target.value || null;
+        state.nation_filtre = null;
+        buildNationFilter();
+        renderGrid();
+      },
+    });
+    sel.appendChild(el("option", { value: "" }, "— Choisir une Nation —"));
+    nationsDisponibles().forEach(n => {
+      const opt = el("option", { value: n }, n);
+      if (state.nation_cible === n) opt.setAttribute("selected", "");
+      sel.appendChild(opt);
+    });
+    container.appendChild(sel);
+
+    // Note : Nation de la création si différente / absente
+    const courante = getNationCourante();
+    if (courante) {
+      container.appendChild(el("p", { class: "filter-empty-note" },
+        "Nation de ma création : " + courante));
+    }
+
+    const nation = state.nation_cible;
     if (!nation) {
-      info.textContent = "Filtres disponibles après avoir choisi une Nation à l'étape 1 de la Création de personnage.";
+      container.appendChild(el("p", { class: "filter-empty-note" },
+        "Sélectionnez une Nation pour filtrer les avantages réservés, réduits ou bloqués."));
       return;
     }
-    info.textContent = "Nation actuelle : " + nation;
+
     const nbRestrict = data.avantages.filter(a => a.type_lien === "restriction" && nationsLiees(a).includes(nation)).length;
     const nbReduc   = data.avantages.filter(a => a.type_lien === "reduction"   && nationsLiees(a).includes(nation)).length;
     const nbBloque  = data.avantages.filter(a => a.type_lien === "restriction" && nationsLiees(a).length && !nationsLiees(a).includes(nation)).length;
     const options = [
-      { key: "restriction", label: "Réservés à ma Nation (" + nbRestrict + ")" },
-      { key: "reduction",   label: "Réduction pour ma Nation (" + nbReduc + ")" },
-      { key: "bloque",      label: "Bloqués (autre Nation) (" + nbBloque + ")" },
+      { key: "restriction", label: "Réservés à cette Nation (" + nbRestrict + ")" },
+      { key: "reduction",   label: "Réduction pour cette Nation (" + nbReduc + ")" },
+      { key: "bloque",      label: "Bloqués (autres Nations) (" + nbBloque + ")" },
     ];
     options.forEach(opt => {
       const cb = el("input", {

@@ -2757,3 +2757,21 @@ p { margin: 0 0 0.6em; }
   line-height: 1.45;
   opacity: 0.85;
 }
+
+/* Filtre Nationalité (page Avantages) : dropdown */
+.nation-select {
+  width: 100%;
+  padding: 0.45rem 0.6rem;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--ink);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 0.4rem;
+}
+.nation-select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
