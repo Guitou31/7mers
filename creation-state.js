@@ -240,6 +240,45 @@
     return list.some(item => item.nom === nom);
   }
 
+  /**
+   * Toggle un Avantage.
+   * @param {string} nom Nom de l'avantage
+   * @param {number} pp  PP dépensés (choisis par le joueur pour les coûts
+   *                     variables ; pré-rempli avec le coût suggéré).
+   * Renvoie true si l'avantage est désormais présent, false sinon.
+   */
+  function toggleAvantage(nom, pp) {
+    const state = load();
+    const list = _ensureList(state, "avantages_choisis");
+    const idx = list.findIndex(a => a.nom === nom);
+    if (idx >= 0) {
+      list.splice(idx, 1);
+      save(state);
+      return false;
+    } else {
+      list.push({ nom: nom, pp: parseInt(pp, 10) || 0 });
+      save(state);
+      return true;
+    }
+  }
+
+  // Met à jour le coût PP d'un avantage déjà choisi (coûts variables).
+  function setAvantagePP(nom, pp) {
+    const state = load();
+    const list = _ensureList(state, "avantages_choisis");
+    const item = list.find(a => a.nom === nom);
+    if (item) {
+      item.pp = parseInt(pp, 10) || 0;
+      save(state);
+    }
+  }
+
+  function getAvantagePP(nom) {
+    const state = load();
+    const item = (state.avantages_choisis || []).find(a => a.nom === nom);
+    return item ? (item.pp || 0) : null;
+  }
+
   // ===== Compétences : type_cout (base / avancee / hors) =====
   // Calcule l'ensemble des noms de compétences qui sont 'de base' ou 'avancées'
   // dans au moins un des métiers/entraînements choisis par le joueur, plus
@@ -522,6 +561,9 @@
     toggleMetier,
     toggleEntrainement,
     toggleEcole,
+    toggleAvantage,
+    setAvantagePP,
+    getAvantagePP,
     isInCreation,
     reset,
     markStarted,

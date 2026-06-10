@@ -593,9 +593,10 @@ window.CREATION_PERSO_DATA = {
       {
         "id": "avantages",
         "nom": "Avantages",
-        "resume": "Particularités qui font sortir le Héros du lot. Certains ne sont accessibles qu'à la création (Noble, Grand, etc.).",
+        "resume": "Particularités qui font sortir le Héros du lot. Certains ne sont accessibles qu'à la création (Noble, Grand, etc.), d'autres sont réservés ou réduits selon la Nation.",
         "cout": "Variable selon l'Avantage.",
-        "a_venir": true
+        "page": "avantages.html",
+        "page_label": "Parcourir les Avantages"
       },
       {
         "id": "langues",

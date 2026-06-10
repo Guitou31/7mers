@@ -2775,3 +2775,36 @@ p { margin: 0 0 0.6em; }
   outline: none;
   border-color: var(--accent);
 }
+
+/* Avantages : ajout à la création */
+.avant-ajout-note {
+  margin: 0.3rem 0;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+.avant-ajout-reduc {
+  color: #4f7a42;
+  font-weight: 600;
+}
+.avant-ajout-bloque {
+  margin: 0.3rem 0;
+  padding: 0.45rem 0.7rem;
+  background: rgba(139, 58, 58, 0.08);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.88rem;
+  color: var(--accent);
+}
+.avant-card.is-in-creation {
+  border-left-color: #6b8b5b;
+  background: rgba(107, 139, 91, 0.06);
+}
+.avant-in-creation-tag {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #4f7a42;
+  letter-spacing: 0.03em;
+}

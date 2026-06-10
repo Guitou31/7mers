@@ -129,8 +129,10 @@
   }
 
   function renderCard(a) {
+    const dansCreation = window.CreationState
+      && window.CreationState.isInCreation("avantages_choisis", a.nom);
     return el("li", {
-      class: "ecole-card avant-card",
+      class: "ecole-card avant-card" + (dansCreation ? " is-in-creation" : ""),
       tabindex: "0",
       role: "button",
       "aria-label": "Voir le détail de l'avantage " + a.nom,
@@ -143,6 +145,9 @@
         ? el("p", { class: "avant-desc" }, a.description)
         : null,
       renderBadges(a),
+      dansCreation
+        ? el("span", { class: "avant-in-creation-tag" }, "✓ Dans ma création")
+        : null,
     ]);
   }
 
@@ -168,6 +173,130 @@
                   (state.nation_filtre ? 1 : 0);
     const counter = document.getElementById("filters-active-count");
     if (total > 0) { counter.textContent = total; counter.hidden = false; } else counter.hidden = true;
+  }
+
+  // ===== Ajout à la création =====
+  // La Nation de la création correspond-elle à l'une des Nations liées ?
+  // (avec alias : un Fuso correspond à Cathay, un Aragosta à Nations Pirates)
+  function nationCreationCorrespond(a) {
+    const nation = getNationCourante();
+    if (!nation) return false;
+    const liees = nationsLiees(a);
+    if (!liees.length) return false;
+    let cands = [nation];
+    if (window.CreationState && window.CreationState.nationsCandidatesEcoles) {
+      cands = window.CreationState.nationsCandidatesEcoles(nation);
+    }
+    return liees.some(l => cands.includes(l));
+  }
+
+  // Étiquette de restriction non-Nation (Sorcier Porté, Sorcière Strega…) :
+  // dépend de la Sorcellerie, pas de la Nationalité → on ne bloque pas.
+  function estRestrictionSorcellerie(a) {
+    return nationsLiees(a).some(l => /sorci/i.test(l));
+  }
+
+  // Coût suggéré (PP) : premier nombre du libellé ; si réduction et que la
+  // Nation de la création correspond, le nombre entre parenthèses.
+  function coutSuggere(a) {
+    const aff = a.cout_affiche || a.cout_raw || "";
+    if (a.type_lien === "reduction" && nationCreationCorrespond(a)) {
+      const m = aff.match(/\(\s*(\d+)\s*PP/);
+      if (m) return parseInt(m[1], 10);
+    }
+    const m2 = aff.match(/\d+/);
+    return m2 ? parseInt(m2[0], 10) : 0;
+  }
+
+  // Section 'Ma création' du modal : bouton ajouter/retirer + coût ajustable.
+  function buildAjoutCreation(a) {
+    if (!window.CreationState) return null;
+    const wrap = el("div", { class: "detail-section avant-ajout" });
+
+    function refresh() {
+      wrap.innerHTML = "";
+      wrap.appendChild(el("h3", null, "Ma création"));
+
+      const ppActuel = window.CreationState.getAvantagePP(a.nom); // null si absent
+      const estDedans = ppActuel !== null;
+      const nation = getNationCourante();
+
+      // Restriction de Nation incompatible → blocage (sauf restrictions
+      // de Sorcellerie, qui ne dépendent pas de la Nationalité).
+      const bloque = a.type_lien === "restriction"
+        && nation
+        && !estRestrictionSorcellerie(a)
+        && !nationCreationCorrespond(a);
+
+      if (bloque && !estDedans) {
+        wrap.appendChild(el("p", { class: "avant-ajout-bloque" },
+          "Indisponible : réservé à " + a.nation_lien +
+          " (votre Nation : " + nation + ")."));
+        return;
+      }
+      if (bloque && estDedans) {
+        wrap.appendChild(el("p", { class: "avant-ajout-bloque" },
+          "⚠ Cet avantage est réservé à " + a.nation_lien +
+          " mais votre Nation est désormais " + nation + "."));
+      }
+      if (a.type_lien === "restriction" && !nation && !estDedans) {
+        wrap.appendChild(el("p", { class: "avant-ajout-note" },
+          "Réservé à " + a.nation_lien + " — choisissez votre Nation à l'étape 1 pour vérifier."));
+      }
+      if (estRestrictionSorcellerie(a)) {
+        wrap.appendChild(el("p", { class: "avant-ajout-note" },
+          "Réservé : " + a.nation_lien + " (dépend de votre Sorcellerie, pas de votre Nationalité)."));
+      }
+      if (a.type_lien === "reduction" && nationCreationCorrespond(a)) {
+        wrap.appendChild(el("p", { class: "avant-ajout-note avant-ajout-reduc" },
+          "✓ Réduction appliquée pour votre Nation (" + nation + ")."));
+      }
+
+      // Champ PP (modifiable : utile pour les coûts variables '2 à 8')
+      const valeurInitiale = estDedans ? ppActuel : coutSuggere(a);
+      const inp = el("input", {
+        class: "spec-pp-input",
+        type: "number",
+        min: "0",
+        step: "1",
+        value: String(valeurInitiale),
+      });
+      if (estDedans) {
+        // 'change' (et non 'input') : évite de reconstruire la section à
+        // chaque frappe (le save déclenche creation-state-changed → refresh).
+        inp.addEventListener("change", () => {
+          window.CreationState.setAvantagePP(a.nom, inp.value);
+        });
+      }
+      wrap.appendChild(el("div", { class: "spec-interactif" }, [
+        el("label", { class: "spec-mini-label" }, "Coût en PP :"),
+        inp,
+        el("span", { class: "spec-cout-pp" }, "PP"),
+      ]));
+
+      const btn = el("button", {
+        class: "btn-add-creation" + (estDedans ? " is-added" : ""),
+        type: "button",
+        onclick: () => {
+          window.CreationState.toggleAvantage(a.nom, inp.value);
+          refresh();
+        },
+      }, estDedans ? "✓ Retirer de ma création" : "+ Ajouter à ma création");
+      wrap.appendChild(btn);
+    }
+
+    function onChange() {
+      // Auto-nettoyage : si la section n'est plus dans le DOM (modal
+      // reconstruit), on détache le listener.
+      if (!wrap.isConnected) {
+        window.removeEventListener("creation-state-changed", onChange);
+        return;
+      }
+      refresh();
+    }
+    window.addEventListener("creation-state-changed", onChange);
+    refresh();
+    return wrap;
   }
 
   // ===== Modal détail d'avantage =====
@@ -220,6 +349,10 @@
         el("p", { class: "description-paragraph" }, phrase),
       ]));
     }
+
+    // Ajout à la création de personnage
+    const ajout = buildAjoutCreation(a);
+    if (ajout) content.appendChild(ajout);
 
     // Description détaillée V1 (extraite du PDF '09 Avantages').
     // Le résumé court ('en bref') est affiché sur la carte, plus besoin

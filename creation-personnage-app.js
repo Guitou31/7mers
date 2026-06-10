@@ -27,6 +27,7 @@
     langues_choisies: [],         // [{nom}]
     societe_secrete: null,        // null | {nom}
     competences_choisies: [],     // [{nom, rang, type_cout}]
+    avantages_choisis: [],        // [{nom, pp}]
     // Bonus d'âge du Héros :
     //   15-25 → trait libre (+1, max 4)
     //   26-35 → métier au choix (base ET avancées +1 rang gratuit, en plus
@@ -134,6 +135,8 @@
     }
     // Société Secrète
     if (state.societe_secrete || state.has_societe_secrete) total += 5;
+    // Avantages choisis (depuis la page Avantages)
+    (state.avantages_choisis || []).forEach(a => total += (a.pp || 0));
     // Avantages + Compétences (saisie manuelle)
     total += (parseInt(state.pp_avantages, 10) || 0);
     total += (parseInt(state.pp_competences, 10) || 0);
@@ -1904,6 +1907,37 @@
         ]));
 
       } else if (spec.id === "avantages") {
+        // Liste des Avantages ajoutés depuis la page Avantages
+        const avs = state.avantages_choisis || [];
+        if (avs.length === 0) {
+          card.appendChild(el("p", { class: "spec-empty-list" },
+            "Aucun Avantage choisi. Cliquez sur 'Ajouter' depuis la page Avantages."));
+        } else {
+          const ul = el("ul", { class: "spec-chosen-list" });
+          avs.forEach((av, i) => {
+            ul.appendChild(el("li", null, [
+              el("span", { class: "chosen-item-name" }, av.nom),
+              el("span", { class: "chosen-item-meta" }, [
+                el("span", { class: "chosen-tag" }, "Avantage"),
+                el("span", { class: "chosen-pp" }, (av.pp || 0) + " PP"),
+              ]),
+              el("button", {
+                class: "chosen-remove",
+                type: "button",
+                "aria-label": "Retirer",
+                onclick: () => {
+                  state.avantages_choisis.splice(i, 1);
+                  saveState();
+                  renderEtape3Specificites();
+                  refreshPPBar();
+                },
+              }, "×"),
+            ]));
+          });
+          card.appendChild(ul);
+        }
+
+        // Saisie libre additionnelle (fallback)
         const inp = el("input", {
           class: "spec-pp-input",
           type: "number",
@@ -1917,7 +1951,7 @@
           },
         });
         card.appendChild(el("div", { class: "spec-interactif" }, [
-          el("label", { class: "spec-mini-label" }, "Total PP dépensés en avantages :"),
+          el("label", { class: "spec-mini-label" }, "PP additionnels (saisie libre) :"),
           inp,
           el("span", { class: "spec-cout-pp" }, "PP"),
         ]));
