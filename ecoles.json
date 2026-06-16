@@ -6,7 +6,7 @@
       "ecoles_enrichies_auto.json",
       "ecoles_enrichies.json"
     ],
-    "nb_ecoles": 89,
+    "nb_ecoles": 91,
     "nb_ecoles_enrichies": 72,
     "nb_techniques_definies": 79,
     "nations_uniques": [
@@ -2046,8 +2046,8 @@
         "Bâtons"
       ],
       "specialisations": [
-        "Escrime",
-        "Bâton"
+        "Escrime (Sabre)",
+        "Bateleur"
       ],
       "description_courte": "Style privilégiant la vitesse avec l'utilisation d'une sorte de faucille",
       "techniques_combat": [
@@ -2055,25 +2055,31 @@
           "nom_base": "Feinte",
           "variante": "Sabre",
           "ref": "feinte",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Double-Parade",
-          "variante": "Sabre/Bâton ou Bouclier",
+          "variante": "Sabre / Bâton ou Bouclier",
           "ref": "double parade",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Riposte",
-          "variante": "escrime",
+          "variante": "Escrime",
           "ref": "riposte",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Harceler",
           "variante": null,
           "ref": "harceler",
-          "source": "csv"
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
         }
       ],
       "avantages_courts": {
@@ -2083,7 +2089,36 @@
       },
       "restriction_creation": "inconnue",
       "genre_restriction": null,
-      "enrichie": false
+      "enrichie": true,
+      "details": {
+        "description_longue": [
+          "Les adeptes de ce style de Duel apprennent une série de danses complexes divisées en mouvements distincts qu'ils utilisent ensuite dans leurs duels. L'épée traditionnelle associée au Style d'Awal Thmani est une lame courbe en forme de faucille appelée khopesh.",
+          "Les Duellistes tiennent leur épée dans une main et manient de l'autre un bâton ou un gourdin de défense (certains pratiquants préfèrent également utiliser un simple bouclier). Toutes les personnes qui s'initient à l'Awal Thmani n'ont pas pour but de devenir Duellistes. Beaucoup de danseurs apprennent et adaptent le Style d'Awal Thmani à leurs propres fins. Ainsi est né un regain d'intérêt pour la musique et les histoires traditionnelles d'antan. Un Duelliste voulant vanter les mérites de son art à des élèves peu portés sur le combat leur fera remarquer que la popularité du Style d'Awal Thmani et l'intérêt pour des cultures autrefois perdues sont bien la preuve que les duels peuvent servir de pont culturel.",
+          "La principale faiblesse de l'école d'Awal Thmani réside dans sa nature chorégraphiée. Ses mouvements sont si codifiés qu'un adversaire familier avec ses danses peut en reconnaître les motifs. En particulier, la posture d'ouverture de la manœuvre du \"Premier huit\" est un signal clair qui permet à un ennemi averti d'anticiper l'assaut et de préparer une contre-attaque ciblée avant même que la série de taillades ne soit complétée."
+        ],
+        "origine_texte": "Ifri",
+        "armes_predilection": "Khopesh (sabre courbe en forme de faucille) tenu d'une main ; bâton ou gourdin de défense dans l'autre (certains préfèrent un simple bouclier)",
+        "academies": "Ifri ; le style se transmet au sein des troupes de danseurs-duellistes, et sert de « pont culturel » vers des traditions musicales et narratives anciennes",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": "Réflexes éclairs",
+            "regles": "L'apprenti lance un dé supplémentaire (non gardé) à tous ses jets d'Initiative"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Le compagnon ajoute son rang de Danse (savoir de Bateleur) à sa Défense Passive et résultats de jets de Défense Passive"
+          },
+          "maitre": {
+            "fluff": "Transe",
+            "regles": "Au début de chaque round, le maître reçoit un nombre de dés de transe égal à son rang d'Esprit ; il peut en ajouter et en garder un (un seul par jet) à n'importe quel jet d'attaque ou de défense active du round"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      }
     },
     {
       "nom": "Badayah",
@@ -2106,25 +2141,31 @@
           "nom_base": "Attaque en dégaine",
           "variante": null,
           "ref": "attaque en degaine",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Collé-Serré",
           "variante": null,
           "ref": "colle serre",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Défigurer",
           "variante": null,
           "ref": "defigurer",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Lacérer",
           "variante": null,
           "ref": "lacerer",
-          "source": "csv"
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
         }
       ],
       "avantages_courts": {
@@ -2134,7 +2175,34 @@
       },
       "restriction_creation": "inconnue",
       "genre_restriction": null,
-      "enrichie": false
+      "enrichie": true,
+      "details": {
+        "description_longue": [
+          "Les Badayah sont une petite tribu nomade de la Huitième Mer, l'une des plus redoutables à parcourir les dunes. Leurs guerriers sont des maîtres de l'embuscade. On prétend qu'ils sont capables d'attendre l'apparition d'une cible en restant cachés dans le sable pendant des jours. Les Badayah sont également les seuls enseignants connus du Style de Duel Badayah. Chaque Duelliste formé au Badayah possède un pesh, un poignard à la lame incurvée, dentelée et affûtée comme un rasoir. Les Blessures infligées par un Duelliste Badayah sont extrêmement douloureuses, au point que les soins d'un médecin expérimenté sont souvent nécessaires pour s'en remettre complètement. On a coutume de dire que le premier pesh tiré est le signe qu'une querelle de Badayah vient de dégénérer. La tradition Badayah veut en effet qu'un poignard ne puisse pas être rengainé tant qu'il n'a pas versé le sang. Cela explique notamment pourquoi leurs duels se poursuivent moins jusqu'à la mort. Les Duellistes Badayah qui ont le plus de cicatrices sont donc soit les plus doués, soit les moins conciliants (et la plupart du temps, ce sont les deux). La philosophie du Badayah est entièrement tournée vers l'offensive et la recherche du coup parfait. Ce style manque de techniques défensives élaborées. Un adepte est donc vulnérable face à des adversaires qui le submergent avec un grand nombre d'attaques rapides, l'empêchant de trouver le temps et l'ouverture nécessaires pour préparer sa propre frappe chirurgicale."
+        ],
+        "origine_texte": "Huitième Mer (Empire du Croissant)",
+        "armes_predilection": "Pesh (poignard à la lame incurvée, dentelée et affûtée comme un rasoir)",
+        "academies": "Enseigné exclusivement par la tribu nomade Badayah, maîtres de l'embuscade dans les dunes de la Huitième Mer",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": "Lames dentelées",
+            "regles": "Chaque fois que l'apprenti inflige une Blessure Grave avec le pesh, la plaie saigne : la victime subit -5 à toutes ses actions jusqu'à recevoir des soins"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Tant que la victime saigne, elle subit les dommages de base du pesh (la Valeur de Dommages de l'arme, sans le bonus de Gaillardise) chaque fois qu'elle entreprend une action violente (attaque, sprint, charge). Elle peut dépenser une action et réussir un jet d'Esprit + Premiers Secours (ND 20) pour stopper l'hémorragie"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Le saignement du maître est presque impossible à endiguer : le ND pour le stopper passe à 30, et la victime saigne désormais à chacune de ses actions, et non plus seulement sur les actions violentes"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      }
     },
     {
       "nom": "Basulde",
@@ -2591,8 +2659,8 @@
         "Couteau"
       ],
       "specialisations": [
-        "Couteaux",
-        "Bâtons"
+        "Couteau",
+        "Bâton"
       ],
       "description_courte": "Style de combat kiwan issu du peuple, basé sur l'utilisation polyvalente d'outils du quotidien et spécialisé dans le maniement d'une paire de gourdins (eskrima) et de la riposte.",
       "techniques_combat": [
@@ -2600,25 +2668,31 @@
           "nom_base": "Double attaque",
           "variante": null,
           "ref": "double attaque",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
-          "nom_base": "Double Parade",
+          "nom_base": "Double parade",
           "variante": null,
           "ref": "double parade",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
-          "nom_base": "Déplacements Circulaires",
+          "nom_base": "Déplacements circulaires",
           "variante": null,
           "ref": "deplacements circulaires",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Riposte",
           "variante": null,
           "ref": "riposte",
-          "source": "csv"
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
         }
       ],
       "avantages_courts": {
@@ -2628,7 +2702,35 @@
       },
       "restriction_creation": "inconnue",
       "genre_restriction": null,
-      "enrichie": false
+      "enrichie": true,
+      "details": {
+        "description_longue": [
+          "Le Calis est un style né dans les îles Kiwa, et qui jusqu'à peu ne possédait pas de formation ou de pratique réglementée et unifiée. Il s'agit d'une série de techniques et de manœuvres inventées par des fermiers, pêcheurs et autres roturiers kiwans, afin de se protéger contre diverses menaces locales ou étrangères. Les origines modestes de ce style expliquent son absence de spécialisation : au lieu de se concentrer sur le maniement d'une seule arme, le Calis apprend à ses utilisateurs des techniques usant d'une grande variété d'objets de la vie courante et d'outils que tout travailleur kiwan posséderait. Les pratiquants du Calis apprennent donc à se battre avec des lames, des couteaux, des bâtons, ainsi qu'à mains nues, mais ils sont surtout connus pour leur usage de gourdins de bois rudimentaires appelés eskrima. La notoriété de ce type d'armes est telle que le style tout entier se concentre depuis peu sur leur maniement, en particulier dans les nouvelles écoles de Calis dont les maîtres cherchent à devenir célèbres. Les Duellistes fusoais, toujours en quête de nouvelles méthodes efficaces, ont développé un style de combat s'inspirant des mouvements et principes du Calis, substituant aux eskrima kiwanes une paire de tonfas.",
+          "La principale faiblesse du Calis réside dans ses origines roturières. Le style se concentre sur un assaut continu avec des armes légères et manque d'une garde formelle et robuste. Un adversaire utilisant une arme lourde ou un bouclier peut souvent ignorer ou \"forcer\" les parades d'un adepte du Calis, et le style est particulièrement vulnérable face aux techniques d'escrime très structurées qui se basent sur le contrôle de la lame."
+        ],
+        "origine_texte": "Îles Kiwa (Cathay)",
+        "armes_predilection": "Eskrima (gourdins de bois), couteaux, bâtons, armes improvisées et mains nues",
+        "academies": "Îles Kiwa (Cathay) ; nouvelles écoles centrées sur l'eskrima ; les duellistes fusoais en ont développé une variante à la paire de tonfas",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "Lorsque l'apprenti utilise la technique Double Attaque en maniant deux armes différentes (de type Bâton, Couteau ou armes improvisées), le malus est de -5 par attaque au lieu de -10"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Une fois par round, le compagnon peut utiliser la technique Riposte sans dépenser de dé d'action ; cette riposte gratuite doit tout de même être déclenchée par une défense active de Parade réussie"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Lorsque le maître utilise la technique Riposte en maniant deux armes différentes, il ignore le malus de 5 à la Défense active (Parade) et à la contre-attaque"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      }
     },
     {
       "nom": "Chaka",
@@ -2643,7 +2745,7 @@
       ],
       "specialisations": [
         "Bâton",
-        "Armes Exotiques jumelées"
+        "Athlétisme"
       ],
       "description_courte": "Style avec deux bâtons courts où le duelliste bloque avec un des bâtons l'arme de l'adversaire",
       "techniques_combat": [
@@ -2651,31 +2753,31 @@
           "nom_base": "Double Attaque",
           "variante": "Bâtons",
           "ref": "double attaque",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Double Parade",
           "variante": "Bâtons",
           "ref": "double parade",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Coup Puissant",
           "variante": null,
           "ref": "coup puissant",
-          "source": "csv"
-        },
-        {
-          "nom_base": "Riposte",
-          "variante": "Bâton",
-          "ref": "riposte",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Tourbillon",
           "variante": null,
           "ref": "tourbillon",
-          "source": "csv"
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
         }
       ],
       "avantages_courts": {
@@ -2685,7 +2787,35 @@
       },
       "restriction_creation": "inconnue",
       "genre_restriction": null,
-      "enrichie": false
+      "enrichie": true,
+      "details": {
+        "description_longue": [
+          "Ce style de duel qui tire son nom d'un chef légendaire tient plus des techniques martiales que du combat singulier rituel. Soit Chaka réinventa la guerre pour son peuple, soit il subtilisa les innovations des autres, dans tous les cas, il est célèbre parmi les ifriens pour sa perspicacité et ses victoires militaires. Ce style utilise deux bâtons, un pour l'attaque et l'autre pour la défense, ainsi qu'un petit bouclier-bracelet que l'on fixe à l'avant-bras, un Turkana. Le Style de Duel de Chaka possède une piètre réputation auprès de la plupart des Duellistes, qui lui reprochent d'être indigne. Toutefois pour ceux qui ont l'habitude d'assécher le fleuve, la brutalité expéditive du Style de Chaka leur convient parfaitement. Actuellement, le Style de Chaka jouit d'une grande popularité dans le Royaume de Mbey.",
+          "La principale faiblesse du style de Chaka est sa focalisation sur une offensive brutale et directe. Il est conçu pour briser une garde et finir le combat rapidement, mais il manque de subtilité et de mobilité. Un adversaire qui refuse l'engagement direct et qui utilise des feintes ou des déplacements rapides peut facilement exploiter l'approche agressive et prévisible d'un adepte de Chaka."
+        ],
+        "origine_texte": "Royaume de Mbey (Ifri)",
+        "armes_predilection": "Deux bâtons (l'un d'attaque, l'autre de défense) et un Turkana (bracelet-bouclier fixé à l'avant-bras)",
+        "academies": "Ifri ; le style jouit aujourd'hui d'une grande popularité dans le Royaume de Mbey",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": "Maîtrise du Turkana",
+            "regles": "L'apprenti ignore le malus de -1g1 imposé par le bracelet-bouclier et reçoit gratuitement l'Entraînement Boucliers"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Lors de l'utilisation de la Technique de Double-Attaque, le compagnon ajoute sa Finesse aux dés non gardés de ses jets de dommages au Bâton"
+          },
+          "maitre": {
+            "fluff": "Verrou parfait",
+            "regles": "Une fois par round, lorsque le maître touche au Bâton, la Défense Passive de la cible est réduite de 10 (minimum 5) jusqu'à sa prochaine action"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      }
     },
     {
       "nom": "Chin Te",
@@ -2870,7 +3000,7 @@
       ],
       "specialisations": [
         "Escrime",
-        "Interposition"
+        "Étiquette"
       ],
       "description_courte": "Style défensif qui peut être utilisé pour protéger ses alliés",
       "techniques_combat": [
@@ -2878,25 +3008,31 @@
           "nom_base": "Céder la place",
           "variante": null,
           "ref": "ceder la place",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Désarmer",
           "variante": "Rapière",
           "ref": "desarmer",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Riposte",
           "variante": "Rapière",
           "ref": "riposte",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
-          "nom_base": "Mur D’acier",
+          "nom_base": "Mur d'acier",
           "variante": "Rapière",
           "ref": "mur d'acier",
-          "source": "csv"
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
         }
       ],
       "avantages_courts": {
@@ -2906,7 +3042,36 @@
       },
       "restriction_creation": "inconnue",
       "genre_restriction": null,
-      "enrichie": false
+      "enrichie": true,
+      "details": {
+        "description_longue": [
+          "Dans un petit village appelé Auzat, niché dans les sommets Blancs, se trouve un château nommé le mont de Vore, qui vit la naissance du style de duel éponyme. Cet édifice se dresse sur les rives d'un lac, sous le regard altier de montagnes aux sommets enneigés. De nombreuses personnes s'y rendent dans l'objectif d'y parfaire leur talent. Les étudiants y apprennent les postures adéquates et la supériorité de la Montaigne en toutes choses. Les duellistes de Vore, que l'on dit semblables à des statues, gardent la tête droite et ne bougent que très peu durant les combats. Ils sont des modèles d'efficience. Un Duelliste pratiquant ce style tient sa main directrice et sa rapière ostensiblement plus haut que ne le dicte le confort, parallèlement au sol. Les étudiants de Vore revendiquent ainsi « placer haut la barre du duel ».",
+          "Le mont de Vore offre une cravache aux diplômés, afin de leur rappeler l'importance d'une posture et d'un protocole rigoureux. Monsieur Riche la Borre est l'actuel directeur du mont de Vore. Cet homme charismatique est un ancien membre de la Garde éclair. Il perdit son œil gauche lors d'une tentative d'assassinat contre l'Empereur, et se défit du tueur alors qu'il était ensanglanté et aveuglé. Il dut abandonner son poste prestigieux à cause d'un scandale impliquant l'une des filles du Roi-Soleil. Son passé lui évita la corde, et il prit une retraite tranquille dans les montagnes qui l'avaient vu jadis apprendre le de Vore. Il décida d'y consacrer ses dernières années à enseigner aux nouvelles générations le Style qui lui avait tant servi par le passé.",
+          "La principale faiblesse du style De Vore est sa rigidité et son manque de mobilité. Sa posture parfaite est conçue pour le duel sur un terrain plat et prévisible. Un adversaire qui utilise le terrain à son avantage, qui force le duelliste De Vore à se déplacer constamment ou qui l'attaque depuis un angle inattendu (par le haut, par le bas) peut facilement briser la posture statique de l'adepte et contourner sa garde redoutable."
+        ],
+        "origine_texte": "Auzat, dans les Sommets Blancs (Montaigne)",
+        "armes_predilection": "Rapière tenue en garde haute (une main, l'autre vide) ; cravache remise aux diplômés en rappel du protocole",
+        "academies": "Le Mont de Vore, à Auzat, dans les Sommets Blancs (Montaigne) ; directeur actuel : Monsieur Riche la Borre, ancien de la Garde éclair",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "Tant que le de Vore manie une rapière (une main, l'autre vide) et n'effectue aucune action de mouvement durant la phase, sa Défense Passive et le résultat des tests de Défense Active sont augmentés de 5 jusqu'à sa prochaine action"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Tant qu'il n'a pas encore attaqué durant le round, le compagnon effectue ses défenses actives de Parade sans dépenser de dé d'action. Il ne bénéficie cependant pas du bonus d'apprenti de +5 en faisant cela"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Le maître peut désigner un allié adjacent : il intercepte et pare les attaques visant cet allié via sa Défense Active ou Passive"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      }
     },
     {
       "nom": "Délicatesse",
@@ -3661,28 +3826,40 @@
         "Bâtons"
       ],
       "specialisations": [
-        "Bâton",
-        "Bateleur"
+        "Bateleur",
+        "Bâton"
       ],
       "description_courte": "Style artistique utilisant danse avec un long bâton",
       "techniques_combat": [
         {
+          "nom_base": "Exploiter les faiblesses",
+          "variante": "Bâtons",
+          "ref": "exploiter les faiblesses",
+          "source": "docx_v2"
+        },
+        {
           "nom_base": "Fente en avant",
-          "variante": "Bâton 2 mains",
+          "variante": "Bâtons",
           "ref": "fente en avant",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Marquer",
-          "variante": "Bâton 2 Mains",
+          "variante": "Bâtons",
           "ref": "marquer",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Riposte",
-          "variante": "Bâton 2 mains",
+          "variante": "Bâtons",
           "ref": "riposte",
-          "source": "csv"
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
         }
       ],
       "avantages_courts": {
@@ -3692,7 +3869,36 @@
       },
       "restriction_creation": "inconnue",
       "genre_restriction": null,
-      "enrichie": false
+      "enrichie": true,
+      "details": {
+        "description_longue": [
+          "Le Fa'tahib est le Style de Duel traditionnel des élites alwarithlih depuis des générations. S'il s'agissait à l'origine d'un véritable style de combat, il a évolué au fil des années pour devenir une performance artistique. Les démonstrations de Fa'tahib sont fréquentes dans les grandes cérémonies : un artiste y utilise l'asaaya traditionnel (un lourd bâton d'environ un mètre trente) pour démontrer sa maîtrise dans une chorégraphie accompagnée de musique. Le Duelliste exécute ainsi des motifs complexes sans jamais frapper réellement son partenaire.",
+          "Bien que les démonstrations artistiques de Fa'tahib soient l'apanage des individus ayant la force brute nécessaire au maniement d'un asaaya, une nouvelle version plus acrobatique s'est récemment développée et s'avère tout aussi populaire. Cette nouvelle version du Fa'tahib est généralement exécutée en même temps qu'une performance traditionnelle, mais elle exige du danseur de l'agilité plutôt que de la force. Si le message de la démonstration traditionnelle est « J'ai une arme et je sais m'en servir ! », la nouvelle danse lui répond « Tu n'es pas si impressionnant, moi aussi je sais danser avec un bâton ! »",
+          "Le style Fa'tahib, même dans sa version martiale, reste une performance. Ses mouvements sont amples, télégraphiés et conçus pour être impressionnants. Un adversaire pragmatique et sans fioritures, qui ne se laisse pas impressionner par le spectacle, peut ignorer les feintes et profiter des larges ouvertures créées par les mouvements de danse pour placer des coups simples et directs."
+        ],
+        "origine_texte": "Empire du Croissant",
+        "armes_predilection": "Asaaya (lourd bâton d'environ 1,30 m), manié à deux mains",
+        "academies": "Empire du Croissant ; démonstrations artistiques lors des grandes cérémonies des élites alwarithlih, dont une variante acrobatique plus récente",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "L'apprenti peut utiliser sa compétence de Représentation à la place de Bâton pour ses jets de Parade ; si la cible n'est pas elle-même un artiste martial, l'apprenti bénéficie d'une augmentation gratuite à sa prochaine attaque contre cette cible"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Après chaque action d'Attaque ou de Parade au Bâton, le compagnon se déplace d'un nombre de mètres égal à son rang de Danse sans déclencher d'attaque d'opportunité de la part de la cible"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Lorsque le maître utilise la technique Riposte, il ignore les malus habituels (la division par deux des compétences de parade et d'attaque)"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      }
     },
     {
       "nom": "Strade",
@@ -3708,27 +3914,39 @@
       ],
       "specialisations": [
         "Escrime",
-        "Athlétisme"
+        "Acrobate"
       ],
       "description_courte": "Style basé sur l'utilisation de l'environnement (murs, caisses, bouteilles, …)",
       "techniques_combat": [
         {
           "nom_base": "Coup puissant",
-          "variante": "couteau",
+          "variante": "Couteau",
           "ref": "coup puissant",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
-          "nom_base": "riposte",
-          "variante": "couteau",
+          "nom_base": "Riposte",
+          "variante": "Couteau",
           "ref": "riposte",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
-          "nom_base": "Double Parade",
-          "variante": "couteau",
+          "nom_base": "Double parade",
+          "variante": "Couteau",
           "ref": "double parade",
-          "source": "csv"
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Exploiter les faiblesses",
+          "variante": "Strade",
+          "ref": "exploiter les faiblesses",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
         }
       ],
       "avantages_courts": {
@@ -3738,7 +3956,37 @@
       },
       "restriction_creation": "inconnue",
       "genre_restriction": null,
-      "enrichie": false
+      "enrichie": true,
+      "details": {
+        "description_longue": [
+          "Pour l'heure, personne n'a pu retrouver l'inventeur de ce Style, même si nombre de bretteurs qui en sont spécialistes affirment en être à l'origine. Nommé d'après les rues étroites où il est né et a été perfectionné, ce style convient parfaitement aux boulevards sinueux et aux hautes flèches effilées des cités vodaccis.",
+          "Un escrimeur qui s'initie au Strade apprend à considérer son environnement comme une course d'obstacles, ainsi que comme une source d'opportunités pour prendre le dessus sur son adversaire. Le Strade favorise l'utilisation d'une lame légère dans la main armée, ce qui laisse l'autre main libre pour voltiger sur les murs, se balancer d'un pont, sauter entre deux bâtiments ou rouler sous une passerelle.",
+          "Tout adepte du Strade prend son entraînement très au sérieux, et fait souvent des « essais » au sein des lieux qu'il découvre pour la première fois, afin d'évaluer la distance entre deux bâtiments, le poids qu'une poutre peut recevoir, ou bien encore la hauteur d'un mur qu'il doit escalader. Il vaut mieux vérifier tout cela en amont d'un duel à mort plutôt que de le découvrir en plein milieu. Lorsque deux Duellistes adeptes du style Le Strade se rencontrent, ils ont tendance à faire étalage de leurs dernières trouvailles, et quand cela se produit dans une maison de guilde, leur démonstration peut attirer une sacrée foule et pas mal de parieurs.",
+          "La principale faiblesse du style Le Strade est sa dépendance totale à un environnement complexe. Sur un terrain plat, ouvert et sans obstacles (une plaine, une salle de bal vide, un pont large), le duelliste est privé de tous ses avantages acrobatiques. Il est forcé de se battre de manière conventionnelle, ce qui le désavantage grandement face à des écoles plus directes et techniques."
+        ],
+        "origine_texte": "Vodacce",
+        "armes_predilection": "Lame légère dans la main armée, l'autre main libre pour voltiger sur le décor",
+        "academies": "Les ruelles sinueuses et les toits des cités vodaccis ; transmission informelle, démonstrations remarquées dans les maisons de guilde",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "En environnement offrant des appuis (ruelles, navire, forêt dense…) et avec une main libre, l'apprenti utilise sa compétence d'Acrobaties à la place de l'habituel Jeu de Jambe pour ses défenses actives"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Une fois par round, le compagnon peut sacrifier son déplacement pour exploiter le décor (jet de Finesse + Acrobaties, ND 15) ; en cas de réussite, son adversaire subit -1g1 à sa prochaine action"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Lorsque le maître déclenche la Furia delle Strade, sa victime subit en plus des dommages égaux à sa Finesse x2, réduits uniquement par la Gaillardise de la cible"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      }
     },
     {
       "nom": "Gallegos",
@@ -4248,9 +4496,9 @@
         "Boucliers"
       ],
       "specialisations": [
-        "Escrime",
+        "Épée",
         "Bouclier",
-        "Artisan"
+        "Artisan (Bouclier)"
       ],
       "description_courte": "Style utilisant un bouclier fabriqué par le Duelliste, de manière offensive.",
       "techniques_combat": [
@@ -4258,25 +4506,31 @@
           "nom_base": "Emprisonner",
           "variante": "Bouclier",
           "ref": "emprisonner",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Harceler",
           "variante": null,
           "ref": "harceler",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Charge au bouclier",
           "variante": null,
           "ref": "charge au bouclier",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Riposte",
           "variante": null,
           "ref": "riposte",
-          "source": "csv"
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
         }
       ],
       "avantages_courts": {
@@ -4286,7 +4540,36 @@
       },
       "restriction_creation": "inconnue",
       "genre_restriction": null,
-      "enrichie": false
+      "enrichie": true,
+      "details": {
+        "description_longue": [
+          "Le créateur de ce Style fut Hallbjorn Ulfsen, un Pilleur vesten légendaire qui abandonna la mer pour intégrer une Maison de Duel vesten. Les guerriers qui le pratiquent maîtrisent le bouclier et l'utilisent à la fois pour se protéger des attaques ennemies et comme une arme. Ils créent des ouvertures dont leurs alliés peuvent profiter tout en percutant leurs adversaires de leur bouclier.",
+          "Contrairement à ceux utilisés par les soldats d'autres Nations de Théah, le bouclier rond vesten est fait de bois, parfois renforcé de métal, il reste moins solide que beaucoup d'autres. Cela est délibéré, car un bouclier plus léger permet aux utilisateurs du Hallbjorn de le manier avec plus d'aisance pour frapper. Cependant, ils résistent rarement longtemps aux rigueurs du combat. Pour cette raison, de nombreux Duellistes Hallbjorn apprennent à fabriquer leurs propres boucliers. Ils n'en utiliseraient jamais un fabriqué par quelqu'un d'autre, car ils croient insuffler une partie de leur propre férocité dans leurs créations. Ils les décorent également d'images ou de motifs runiques inspirés de leur vie. Si quelqu'un venait à rassembler tous les boucliers utilisés par un Duelliste et les alignait par ordre chronologique, il pourrait aisément retracer sa vie.",
+          "La principale faiblesse du style Hallbjorn réside dans son bouclier. Conçu pour être plus léger et offensif, il est délibérément moins solide que les boucliers militaires traditionnels. Un adepte du Hallbjorn qui utilise son bouclier pour parer des coups puissants (particulièrement d'armes lourdes) risque de le voir se briser en plein combat, le laissant exposé et privé de ses techniques les plus efficaces."
+        ],
+        "origine_texte": "Vesten",
+        "armes_predilection": "Épée et bouclier rond vesten (en bois, léger, conçu autant pour frapper que pour protéger)",
+        "academies": "Maisons de Duel vesten ; chaque adepte forge et décore son propre bouclier rond, qu'il ne confierait à personne d'autre",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "Lorsque l'apprenti attaque équipé de son bouclier, la Défense Passive de la cible est réduite d'un montant égal à sa Gaillardise contre la prochaine attaque qu'il lui portera"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Lorsque le compagnon touche avec une attaque de bouclier, la cible devient Vulnérable : la prochaine fois qu'elle subit des dommages durant ce round, elle en subit 5 de plus"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "La cible rendue Vulnérable par le Choc d'Hallbjorn subit également -1g1 à sa prochaine action"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      }
     },
     {
       "nom": "Hennessey",
@@ -4746,27 +5029,39 @@
       ],
       "specialisations": [
         "Pugilat",
-        "Gants de combat"
+        "Gant de combat"
       ],
       "description_courte": "Style à mains nues, ou avec des gants et canons d'avant-bras pour affronter les lames.",
       "techniques_combat": [
         {
-          "nom_base": "épingler",
+          "nom_base": "Prise de Bras",
           "variante": "Gant de combat",
-          "ref": "epingler",
-          "source": "csv"
+          "ref": "prise de bras",
+          "source": "docx_v2"
         },
         {
-          "nom_base": "Corps à corps",
+          "nom_base": "Corps à Corps",
           "variante": "Gant de combat",
           "ref": "corps a corps",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
-          "nom_base": "Force d’Âme",
+          "nom_base": "Force d'âme",
           "variante": null,
           "ref": "force d'ame",
-          "source": "csv"
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Déplacements circulaires",
+          "variante": null,
+          "ref": "deplacements circulaires",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
         }
       ],
       "avantages_courts": {
@@ -4776,7 +5071,34 @@
       },
       "restriction_creation": "inconnue",
       "genre_restriction": null,
-      "enrichie": false
+      "enrichie": true,
+      "details": {
+        "description_longue": [
+          "Le kulachniy boi (ou « pugilat ») est la plus répandue des formes de duel ussuran. Elle consiste simplement à donner des coups à l'aide de ses poings. Les Duellistes adoptent le kulachniy boi pour des raisons aussi bien pratiques que cérémonielles. Lors des jours fériés ussurans, les duellistes se rencontrent et combattent en veillant à ne pas provoquer de blessure durable. Après tout, les gens se sont rassemblés pour faire la fête. Les choses changent quand un pratiquant de kulachniy boi voyage à travers le monde, où son savoir peut faire la différence entre la vie et la mort. Il porte alors des gants et des canons d'avant-bras en métal, appelés rukavitsa, qui lui permettent d'infliger de plus gros dégâts tout en maintenant l'apparence d'un duel sans arme. La principale faiblesse du Kulachniy Boi est son manque d'allonge. Le pratiquant doit constamment chercher à combler la distance pour être efficace. Un adversaire armé d'une arme plus longue (rapière, lance, etc.) qui parvient à maintenir le duelliste à distance aura un avantage tactique considérable."
+        ],
+        "origine_texte": "Ussura",
+        "armes_predilection": "Poings nus ; rukavitsa (gants et canons d'avant-bras en métal) en voyage",
+        "academies": "Ussura ; pratiqué à mains nues lors des fêtes (sans blessure durable), et avec rukavitsa lorsque le duelliste voyage et que sa vie en dépend",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "L'apprenti apprend à se rapprocher et casser la distance efficacement contre la plupart de ses adversaires qui utiliseront une lame et son allonge contre lui. Lorsqu'il subit une attaque d'opportunité de la part d'une cible armée lors qu'il se rapproche d'elle, il peut utiliser une Défense Active de Parade(Gant de combat) sans dépenser de dès d'action. Il bénéficie aussi d'une augmentation gratuite aux jets de Dissimulation pour les dissimuler. Un adversaire armé qui ignore qu'il porte des rukavitsa (donc aucune attaque ou parade faite avec) ne peut pas effectuer de défense active contre sa première attaque"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Lorsqu'il est équipé de ses gants de combat, le compagnon ajoute sa Gaillardise à sa Défense Passive et au résultat de son test de Défense active de Parade(Gant de combat)"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Lorsque le maître inflige une Blessure Grave au Pugilat, l'adversaire est si sonné qu'il perd l'action de sa prochaine Phase"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      }
     },
     {
       "nom": "La Guêpe",
@@ -5703,8 +6025,7 @@
       "nom": "Mateenatya",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Cathay",
-        "Sarmatie"
+        "Cathay"
       ],
       "arme": "Sabre + Bouclier",
       "arme_display": "Sabre + Bouclier",
@@ -5713,8 +6034,8 @@
         "Boucliers"
       ],
       "specialisations": [
-        "Escrime",
-        "Bouclier"
+        "Escrime (Sabre)",
+        "Bateleur"
       ],
       "description_courte": "Un style de combat acrobatique d'Agnivarsie qui combine le maniement d'une épée courbe et d'un bouclier avec un jeu de jambes et des sauts inégalés pour frapper l'adversaire sous des angles surprenants.",
       "techniques_combat": [
@@ -5722,25 +6043,31 @@
           "nom_base": "Coup fourré",
           "variante": null,
           "ref": "coup fourre",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Déplacements circulaires",
           "variante": null,
           "ref": "deplacements circulaires",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Esquive acrobatique",
           "variante": null,
           "ref": "esquive acrobatique",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Tourbillon",
           "variante": null,
           "ref": "tourbillon",
-          "source": "csv"
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
         }
       ],
       "avantages_courts": {
@@ -5750,7 +6077,35 @@
       },
       "restriction_creation": "inconnue",
       "genre_restriction": null,
-      "enrichie": false
+      "enrichie": true,
+      "details": {
+        "description_longue": [
+          "La tradition martiale de l'Agnivarsie, connue sous le nom de rathinatya (« la danse du soldat »), est considérée par beaucoup comme le plus ancien art martial au monde encore pratiqué. Le rathinatya est très éclectique, couvrant la lutte, le combat à l'épée, à la lance et à l'arc. Récemment, des écoles spécialisées sont apparues. L'une d'elles, le Mateenatya, est une méthode de combat inventée par le héros moderne Mateen, basée sur des mouvements acrobatiques combinés au maniement d'un bouclier et d'une épée courbe. Après avoir perdu un bras, Mateen sombra dans la dépression et l'alcoolisme jusqu'à ce qu'une jeune épéiste lui demande de la former. Cette requête lui permit de reprendre le contrôle de sa vie. Mateen retrouva un but, cessa de boire et commença à enseigner à d'autres élèves. Bien qu'incapable de porter le bouclier qui a fait la réputation de son style, son jeu de jambes et ses acrobaties restent inégalés.",
+          "La principale faiblesse du Mateenatya réside dans sa nature chorégraphiée. Ses mouvements acrobatiques, bien que spectaculaires et déroutants, suivent un rythme et des motifs prévisibles pour un œil entraîné. Un adversaire patient qui refuse de se laisser submerger par le spectacle peut analyser cette \"danse\" pour en anticiper les temps forts et les temps faibles, lui permettant de placer une attaque précise juste au moment où le duelliste termine une pirouette ou prépare son prochain saut."
+        ],
+        "origine_texte": "Agnivarsie (Cathay)",
+        "armes_predilection": "Épée courbe et bouclier ; jeu de jambes et acrobaties au cœur du style",
+        "academies": "Agnivarsie (Cathay) ; école issue du rathinatya (« la danse du soldat »), fondée par le héros moderne Mateen",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "Après une action de mouvement, l'apprenti bénéficie de +1g0 à son prochain jet de Parade (Bouclier ou Sabre) du round ; en cas de Sprint, ce bonus passe à +1g1 ; et lorsqu'il charge, le malus de -2g1 est supprimé et il ajoute sa Finesse x2 aux dommages au lieu de sa Gaillardise x2"
+          },
+          "compagnon": {
+            "fluff": "Saut de Mateen",
+            "regles": "Lorsque le compagnon attaque à l'Escrime après avoir effectué une action de mouvement durant la phase, il ajoute sa Finesse aux dés non gardés de ses dommages"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Après avoir résolu son attaque sautée (qu'elle ait réussi ou non), le maître peut immédiatement se déplacer de la moitié de sa distance de mouvement, sans dépenser d'action ni provoquer d'attaque d'opportunité"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      }
     },
     {
       "nom": "Mubarizdun",
@@ -5766,28 +6121,40 @@
         "Armes d'Hast"
       ],
       "specialisations": [
-        "2 Mains aux choix",
-        "Intimidation x2"
+        "Armes à 2 mains (au choix)",
+        "Athlétisme"
       ],
       "description_courte": "Style agressif basé sur l'intimidation",
       "techniques_combat": [
         {
           "nom_base": "Coup de pommeau",
-          "variante": "Arme 2 mains au choix",
+          "variante": "Arme à 2 mains",
           "ref": "coup de pommeau",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
-          "nom_base": "Coup Puissant",
-          "variante": "Arme 2 mains au choix",
+          "nom_base": "Coup puissant",
+          "variante": "Arme à 2 mains",
           "ref": "coup puissant",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Marquer",
-          "variante": "Arme 2 mains au choix",
+          "variante": "Arme à 2 mains",
           "ref": "marquer",
-          "source": "csv"
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Exploiter les faiblesses",
+          "variante": "Arme à 2 mains",
+          "ref": "exploiter les faiblesses",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
         }
       ],
       "avantages_courts": {
@@ -5797,7 +6164,36 @@
       },
       "restriction_creation": "inconnue",
       "genre_restriction": null,
-      "enrichie": false
+      "enrichie": true,
+      "details": {
+        "description_longue": [
+          "Le Mubarizdun est le Style favori des soldats d'élite de l'Empire. Relativement jeune, on peut retracer ses origines jusqu'au général impérial Sepideh. Elle inventa ce Style pour qu'il soit utilisé par l'unité la plus aguerrie de son armée, le Mubar. Cette unité avait l'honneur d'être la première engagée sur-le-champ de bataille, et mettait au défi le général adverse d'envoyer son meilleur guerrier affronter l'un de ses membres. Une fois désigné, le soldat ennemi choisissait son adversaire dans les rangs du Mubar. Les deux guerriers combattaient alors à mort, le but étant de saper le moral du camp du vaincu. La légende veut que les soldats du Mubar n'aient jamais perdu aucun de ces duels.",
+          "Bien que les armées modernes de l'Empire du Croissant emploient toujours des soldats formés au Mubarizdun, cette stratégie n'est guère plus usitée. Pourtant, des Duellistes s'entraînent toujours à pratiquer ce Style et l'utilisent avec une efficacité redoutable dans d'autres parties de l'Empire. Maniant à deux mains une épée, une masse ou une hache, un Duelliste du Mubarizdun démoralise ses adversaires en ponctuant ses attaques d'insultes.",
+          "La principale faiblesse du Mubarizdun est sa dépendance à la guerre psychologique. Le style perd une grande partie de son efficacité contre un adversaire difficile à intimider ou qui ne comprend pas les insultes (un monstre, un automate, ou quelqu'un ne parlant pas la même langue). Contre une telle cible, les manœuvres de l'école sont inopérantes, et le style redevient un simple combat à l'arme lourde, sans ses finesses tactiques."
+        ],
+        "origine_texte": "Empire du Croissant",
+        "armes_predilection": "Arme lourde à deux mains au choix (épée, masse ou hache), accompagnée d'insultes destinées à démoraliser l'adversaire",
+        "academies": "Empire du Croissant ; héritage de l'unité d'élite du Mubar, fondée par la générale impériale Sepideh",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "L'apprenti obtient également Intimidation en compétence Avancée. En attaquant à l'arme lourde, l'apprenti peut lancer une provocation : jet de Panache + Intimidation contre un ND égal à la Détermination x5 de la cible ; en cas de réussite, la Défense Passive de la cible est réduite de 5 contre cette attaque"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Tant que le compagnon renonce à toute défense active durant le round, tous les dommages qu'il subit sont réduits d'un montant égal à sa Détermination x2 (mais minimum 1)"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Tant que le maître bénéficie de cette réduction de dommages, tous les ennemis à portée de voix subissent -1g1 à tous leurs jets contre lui"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      }
     },
     {
       "nom": "Mullooney",
@@ -5986,22 +6382,40 @@
         "Escrime (Épée)"
       ],
       "specialisations": [
-        "Escrime (épée)",
+        "Escrime (Épée)",
         "Courtisan"
       ],
       "description_courte": "Une école de kenjutsu traditionnelle et conservatrice du Fuso, centrée sur la discipline et l'art de l'iaijutsu : le dégainé et la coupe en un seul mouvement fluide et fatal.",
       "techniques_combat": [
         {
           "nom_base": "Feinte",
-          "variante": "épée",
+          "variante": "Épée",
           "ref": "feinte",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Tourbillon",
           "variante": null,
           "ref": "tourbillon",
-          "source": "csv"
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Céder la place",
+          "variante": null,
+          "ref": "ceder la place",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Attaque en dégaine",
+          "variante": null,
+          "ref": "attaque en degaine",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
         }
       ],
       "avantages_courts": {
@@ -6011,7 +6425,35 @@
       },
       "restriction_creation": "inconnue",
       "genre_restriction": null,
-      "enrichie": false
+      "enrichie": true,
+      "details": {
+        "description_longue": [
+          "Au Fuso, l'épée et le samouraï ont un statut quasi légendaire. Les duels pour l'honneur entre dojos rivaux sont courants. Okada-ryu, le dojo le plus populaire pour le kenjutsu (« l'art de l'épée »), fut fondé par Okada Kanna du clan du Dragon, lui-même entraîné par le légendaire Duelliste Shinmen Takezo. La plus grande rivale d'Okada-ryu est Naito-ryu, fondée par Naito Shiori du clan du Corbeau. Les étudiants d'Okada-ryu sont généralement plus âgés, conservateurs et attachent de l'importance au décorum, tandis que ceux de Naito-ryu sont souvent décrits comme rustres et vulgaires.",
+          "La principale faiblesse de l'Okada-ryu est sa concentration quasi totale sur le premier coup. Une fois que la lame est sortie du fourreau et que l'assaut initial a été porté, le style perd son avantage et redevient une escrime au sabre plus conventionnelle. Il est vulnérable face à des adversaires capables de survivre à la première frappe et de forcer le duelliste à un combat d'endurance prolongé où il ne peut pas prendre le temps de rengainer."
+        ],
+        "origine_texte": "Fuso (Cathay)",
+        "armes_predilection": "Katana (kenjutsu, posture iaijutsu)",
+        "academies": "Dojo Okada-ryu (Fuso, Cathay), fondé par Okada Kanna du clan du Dragon, élève du légendaire Shinmen Takezo ; grande rivale : Naito-ryu",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "Lorsque l'Apprenti utilise la Technique « Attaque en dégaine », il ignore le malus d'une augmentation et ajoute son Panache x2 aux dés non gardés des dommages. Dégainer dans les autres cas reste toujours une action gratuite"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Une fois par combat, si un adversaire réussit une attaque de corps à corps contre le compagnon alors que son sabre est rengainé, celui-ci riposte immédiatement via la technique « Attaque en Dégaine » sans dépenser de dé d'action, résolue avant que les dommages de l'adversaire ne soient appliqués"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Lorsque le maître dépense une action pour rengainer son arme et reprendre la posture iaijutsu, sa Défense Passive est augmentée d'un montant égal à 5 + son Panache jusqu'à son prochain tour"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      }
     },
     {
       "nom": "Omuhelo",
@@ -6026,27 +6468,40 @@
         "Pugilat"
       ],
       "specialisations": [
-        "Bâton + Arts martiaux offensifs"
+        "Bâton ou épée",
+        "Arts Martiaux Offensifs"
       ],
       "description_courte": "Style privilégiant les arts martiaux, utilisant l'arme pour parer celle de l'adversaire.",
       "techniques_combat": [
         {
-          "nom_base": "Coup de Pied",
+          "nom_base": "Coup de pied réflexe",
           "variante": null,
-          "ref": null,
-          "source": "csv"
+          "ref": "coup de pied reflexe",
+          "source": "docx_v2"
         },
         {
           "nom_base": "Déplacements circulaires",
           "variante": null,
           "ref": "deplacements circulaires",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Feinte",
-          "variante": "bâton ou épée",
+          "variante": "Bâton ou Épée",
           "ref": "feinte",
-          "source": "csv"
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Coup de pied sauté",
+          "variante": null,
+          "ref": "coup de pied saute",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
         }
       ],
       "avantages_courts": {
@@ -6056,7 +6511,35 @@
       },
       "restriction_creation": "inconnue",
       "genre_restriction": null,
-      "enrichie": false
+      "enrichie": true,
+      "details": {
+        "description_longue": [
+          "Tirant son nom d'un des rituels qui implique un combat singulier, l'Omuhelo est une forme très athlétique de combat se disputant traditionnellement avec les paumes ouvertes. Ce Style de Duel comprend des appuis renversés rapides sur une seule main ainsi que d'autres sortes de basculement, sans compter toute une panoplie de coups secs et de balayages avec les jambes. Les Duellistes ont adapté ce Style pour utiliser une arme dans une main (généralement, il s'agit d'un bâton robuste, même si certains utilisent des épées). Un Duelliste utilise rarement son arme, préférant combattre avec ses pieds.",
+          "Un Duelliste qui pratique le Style de l'Omuhelo passe une partie de son entraînement à étudier son arbre généalogique, allant jusqu'à faire de longs voyages pour parler avec des membres de sa famille éloignée ou se rendre en des lieux datant de la jeunesse de ses arrière-grands-parents. Les renversements qu'étudient les élèves de l'Omuhelo symbolisent le lien des Duellistes au monde inversé où résident les morts, et leurs ancêtres. Comprendre qui étaient ces ancêtres et savoir à quoi s'attendre de cette connexion potentielle est important pour les Duellistes. Le Style de l'Omuhelo est fascinant à regarder. Bien des Duellistes en font des représentations solos lors des festivals pour montrer leur talent ou se livrent à des duels n'allant pas plus loin que la phase de démonstration. Ce style flamboyant et marquant en fait l'un des styles les plus connus en Théah. La principale faiblesse de l'Omuhelo est sa dépendance à l'espace et à un sol stable pour ses acrobaties. Dans un environnement confiné (un couloir étroit, une foule dense) ou sur un terrain instable (un pont de corde, le pont d'un navire en pleine tempête), le duelliste ne peut pas utiliser ses appuis renversés et ses balayages. Il est alors privé de ses techniques les plus efficaces et forcé de se battre de manière beaucoup plus conventionnelle et moins efficace."
+        ],
+        "origine_texte": "Ifri",
+        "armes_predilection": "Bâton robuste (ou, plus rarement, une épée) tenu d'une main ; le combat se mène surtout aux pieds, paumes ouvertes",
+        "academies": "Ifri ; les renversements symbolisent le lien aux ancêtres, et le style donne lieu à des représentations solos très prisées lors des festivals",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "Tant qu'au moins une de ses mains est libre, l'apprenti peut porter un Coup de Pied (savoir d'Arts Martiaux Offensifs) en plus de son attaque à l'arme, à la place de son déplacement"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Ruade de la Gazelle : Lorsque le compagnon attaque, il peut sacrifier son déplacement pour gagner jusqu'à la fin du round une « armure acrobatique » égale à son rang de Finesse, cumulable avec l'armure portée"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "La Ruade de la Gazelle ne consomme plus le déplacement du maître : il peut se déplacer de sa distance de mouvement normale juste avant ou juste après l'attaque"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      }
     },
     {
       "nom": "Ottenheim",
@@ -7451,7 +7934,7 @@
       ],
       "specialisations": [
         "Armes exotiques jumelées",
-        "Escrime (Épée)"
+        "Athlétisme"
       ],
       "description_courte": "Style de combat Hanin basé sur une coordination parfaite des épées jumelles pour déchaîner un assaut incessant, briser la garde de l'adversaire et lancer des ripostes imparables.",
       "techniques_combat": [
@@ -7459,19 +7942,31 @@
           "nom_base": "Double Attaque",
           "variante": "Armes exotiques jumelées",
           "ref": "double attaque",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Double Parade",
           "variante": "Armes exotiques jumelées",
           "ref": "double parade",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
-          "nom_base": "emprisonner",
-          "variante": "Armes exotiques jumelées",
+          "nom_base": "Emprisonner",
+          "variante": null,
           "ref": "emprisonner",
-          "source": "csv"
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Exploiter les faiblesses",
+          "variante": "Ssang Geom",
+          "ref": "exploiter les faiblesses",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
         }
       ],
       "avantages_courts": {
@@ -7481,7 +7976,36 @@
       },
       "restriction_creation": "inconnue",
       "genre_restriction": null,
-      "enrichie": false
+      "enrichie": true,
+      "details": {
+        "description_longue": [
+          "Le Ssang Geom (« les épées jumelles ») est un style de combat originaire du Han. Longtemps ignoré et méprisé, le style bénéficie aujourd'hui d'un regain d'intérêt grâce à la réputation de son maître le plus célèbre : l'amirale Ji. De nombreuses nouvelles écoles ont vu le jour, souvent dirigées par de prétendus maîtres cherchant à profiter de cette mode. L'amirale Ji elle-même ne forme aucun étudiant, privilégiant ses responsabilités militaires. Le Ssang Geom est un style basé sur l'utilisation de deux épées, une pour la défense et l'autre pour l'attaque, le combattant passant rapidement de l'une à l'autre.",
+          "L'adepte du Ssang Geom manie une paire de sabres coréens appelés Ssanghwando. Il s'agit de deux Hwando – des sabres à un seul tranchant – de taille quasi identique, permettant de passer sans effort de l'attaque à la défense. Pour optimiser la vitesse de leurs parades, certains duellistes choisissent d'utiliser une lame très légèrement plus courte et plus légère pour leur main défensive, une subtilité laissée à l'appréciation de chaque combattant.",
+          "La principale faiblesse du Ssang Geom est sa dépendance à un rythme et un espace suffisant pour manœuvrer ses deux lames. Le style est moins efficace dans les espaces très confinés. De plus, un adversaire qui parvient à briser le rythme du duelliste avec une manœuvre de \"Briser l'Arme\" ou en immobilisant l'une de ses deux lames peut neutraliser une grande partie de son répertoire offensif et défensif."
+        ],
+        "origine_texte": "Han (Cathay)",
+        "armes_predilection": "Paire de Ssanghwando (deux sabres han à un seul tranchant ; la lame défensive est parfois légèrement plus courte)",
+        "academies": "Han (Cathay) ; style longtemps méprisé, popularisé par l'amirale Ji — laquelle ne forme toutefois aucun élève, privilégiant ses responsabilités militaires",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "Maniant deux armes exotiques jumelées, l'apprenti supprime le malus de main non-directrice ; de plus, lors d'une action de Parade, il peut relancer un de ses dés, et deux s'il utilise la technique « Double Parade »"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Les deux attaques de la technique « Double Attaque » du compagnon voient leur ND augmenté de 5 (au lieu de 10) ; ses parades à deux armes lui octroient 2 dés d'héroïsme (au lieu de l'unique dé conféré par Double Parade)"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Lorsque le maître réussit une Double Parade, il peut choisir de ne pas gagner les deux dès d'héroïsme temporaires normalement conférés, et peut à la place dépenser un dès d'Héroïsme(même temporaire) pour pour riposter aussitôt par une Attaque (Armes exotiques jumelées) si rapide et bien placée qu'elle ignore l'attribut « Défensive » conféré par les armes et les boucliers"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      }
     },
     {
       "nom": "Swanson",
@@ -7585,22 +8109,41 @@
         "Escrime (Sabre)"
       ],
       "specialisations": [
-        "Sabre",
-        "Athlétisme"
+        "Escrime (Sabre)",
+        "Athlétisme",
+        "Equitation"
       ],
       "description_courte": "Style inspiré de la cavalerie, privilégiant les coups hauts et sautés",
       "techniques_combat": [
         {
           "nom_base": "Charge de cavalerie",
-          "variante": "Sabre",
+          "variante": null,
           "ref": "charge de cavalerie",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
           "nom_base": "Coup puissant",
           "variante": "Sabre",
           "ref": "coup puissant",
-          "source": "csv"
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Saut de cheval",
+          "variante": null,
+          "ref": "saut de cheval",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Harceler",
+          "variante": null,
+          "ref": "harceler",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
         }
       ],
       "avantages_courts": {
@@ -7610,7 +8153,35 @@
       },
       "restriction_creation": "inconnue",
       "genre_restriction": null,
-      "enrichie": false
+      "enrichie": true,
+      "details": {
+        "description_longue": [
+          "Du haut de leurs chevaux, les célèbres hussards ailés font de terribles adversaires. Ils pointent leurs lances sur l'ennemi en les chargeant avec férocité. Leur armure inspire la crainte à leurs adversaires, et ils s'occupent de leurs chevaux comme de leurs camarades. Le lien entre un hussard et sa monture est indestructible.  Une hussarde particulièrement perspicace nommée Kyra Mikita se rendit un jour compte que toutes les situations ne permettaient pas de profiter de leur supériorité équine. Elle mit au point le Style de combat du Szybowanie. Peu importe l'arme que l'on a en main, le but de ce Style consiste à trouver un avantage sur le champ de bataille.  Basé sur le combat depuis n'importe quelle hauteur avantageuse, et pas seulement depuis le dos d'un cheval, le Style permet de porter dès que possible un puissant coup nommé Plongeon de l'aigle. Les pratiquants du Szybowanie restent constamment en mouvement sur le champ de bataille pour trouver la position la plus avantageuse.",
+          "La principale faiblesse du Szybowanie est sa dépendance absolue à un environnement offrant des dénivelés. Sur un terrain parfaitement plat et sans obstacles, le duelliste est privé de sa tactique principale. Il est forcé de d'utiliser des sauts plus modérés, perdant une bonne partie de l'avantage unique que lui confère son entraînement tout en rendant son attaque prévisible."
+        ],
+        "origine_texte": "Rzeczpospolita (Fédération Sarmatienne)",
+        "armes_predilection": "Sabre (mais « peu importe l'arme ») ; combat depuis une position élevée ; monture dressée au sein de l'école",
+        "academies": "Fédération Sarmatienne ; style mis au point par la hussarde Kyra Mikita, fondé sur le combat depuis toute hauteur avantageuse, et non plus seulement à cheval",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "Lorsque l'apprenti attaque un adversaire situé plus bas que lui, il bénéficie d'une augmentation gratuite. Il peut en outre effectuer une charge sautée : une Charge classique dont il ignore le malus de -1g1"
+          },
+          "compagnon": {
+            "fluff": "Plongeon de l'Aigle",
+            "regles": "Le compagnon peut effectuer une Attaque (Sabre) en piqué sans avoir à charger (il doit quand même effectuer un déplacement ou le « sacrifier » même en cas de surplace). ; en cas de réussite, il ajoute son rang de Sauter x2 aux dés non gardés des dommages"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Lorsque le maître réussit un Plongeon de l'Aigle, la cible est en outre jetée à terre par la force de l'impact"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      }
     },
     {
       "nom": "Torres",
@@ -8767,6 +9338,170 @@
       "restriction_creation": "interdite",
       "genre_restriction": null,
       "absent_csv": true
+    },
+    {
+      "nom": "La Siqueira",
+      "origine": "seconde_edition_adaptee",
+      "nations": [
+        "Castille"
+      ],
+      "arme": "Vara",
+      "arme_display": "Vara",
+      "armes_categories": [
+        "Lances"
+      ],
+      "specialisations": [
+        "Lance",
+        "Torero"
+      ],
+      "description_courte": "Les toreros entraînés à la Siqueira sont formés à maîtriser un taureau avec grâce en exécutant leur danse.",
+      "techniques_combat": [
+        {
+          "nom_base": "Feinte de corps",
+          "variante": null,
+          "ref": "feinte de corps",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Force d'âme",
+          "variante": null,
+          "ref": "force d'ame",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Maintenir à distance",
+          "variante": null,
+          "ref": "maintenir a distance",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Esquive Acrobatique",
+          "variante": null,
+          "ref": "esquive acrobatique",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
+        }
+      ],
+      "avantages_courts": {},
+      "restriction_creation": "libre",
+      "genre_restriction": null,
+      "details": {
+        "description_longue": [
+          "Les toreros entraînés à la Siqueira sont formés à maîtriser un taureau avec grâce en exécutant leur danse. Certains disent que le style trouve ses origines chez les bergers et leurs techniques pour se défendre contre les loups et les voleurs. Muni de sa vara, une sorte d'épieu de chasse, le Duelliste contrôle sa cible en la provoquant dans un premier temps, généralement en lui donnant de petits coups avec le bout de son arme, et parfois même en l'insultant.",
+          "Une fois l'ennemi à bout, le pratiquant de la Siqueira le pousse à charger. Quand il se rue sur lui, le Duelliste s'écarte d'un pas de côté et frappe le flanc de son adversaire avant de se remettre rapidement à distance. Le but est de garder l'ennemi hors de portée et de le laisser venir pour garder le contrôle au cours du duel.",
+          "La principale faiblesse de la Siqueira est sa dépendance totale à la réaction de son adversaire. Le style est conçu pour contrer une charge directe et prévisible. Il est bien moins efficace contre un adversaire patient qui refuse de charger, qui se bat à distance, ou qui utilise des feintes complexes au lieu d'attaques directes."
+        ],
+        "origine_texte": "Castille",
+        "armes_predilection": "Vara (épieu de chasse ; dotée de l'attribut Réception de charge)",
+        "academies": "Castille ; héritage des bergers et des toréros, qui maîtrisent le taureau avec grâce à l'aide de la vara",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": "Prendre le Taureau par les Cornes",
+            "regles": "L'apprenti obtient une augmentation gratuite pour ses jets de Défense Active et sa Défense Passive quand un ennemi entre dans son allonge via un déplacement normal ou une Charge"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Le compagnon obtient une augmentation gratuite à ses jets d'attaque résultant de Réception de Charge. Une fois par round quand un ennemi entre dans son allonge via un déplacement, il peut utiliser « Réception de Charge » comme si cet ennemi avait utilisé une Charge, avec tous les avantages que cela donne au compagnon Siqueira"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Le Maitre peut utiliser une deuxième fois « Réception de charge » sur un simple déplacement ennemi vers son allonge. Sur une riposte réussie via la Réception de charge, le maître ajoute sa Finesse x2 aux dés non gardés des dommages ; de plus, toute charge qu'il subit voit ses dommages réduits d'un montant égal à sa Gaillardise"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      },
+      "enrichie": true
+    },
+    {
+      "nom": "Bugu Takobi",
+      "origine": "seconde_edition_adaptee",
+      "nations": [
+        "Nations Pirates"
+      ],
+      "arme": "Épée courte ou machette",
+      "arme_display": "Épée courte ou machette",
+      "armes_categories": [
+        "Escrime (Épée)"
+      ],
+      "specialisations": [
+        "Escrime (Épée)",
+        "Athlétisme"
+      ],
+      "description_courte": "L'une des techniques martiales issues d'Ifri fait usage d'une épée courte et d'une gestuelle trompeuse pour déséquilibrer l'adversaire et aménager des ouvertures.",
+      "techniques_combat": [
+        {
+          "nom_base": "Coup fourré",
+          "variante": "Épée",
+          "ref": "coup fourre",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Déplacements circulaires",
+          "variante": null,
+          "ref": "deplacements circulaires",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Feinte",
+          "variante": "Épée",
+          "ref": "feinte",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Harceler",
+          "variante": null,
+          "ref": "harceler",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
+        }
+      ],
+      "avantages_courts": {},
+      "restriction_creation": "libre",
+      "genre_restriction": null,
+      "details": {
+        "description_longue": [
+          "L'une des techniques martiales issues d'Ifri fait usage d'une épée courte et d'une gestuelle trompeuse pour déséquilibrer l'adversaire et aménager des ouvertures. Une machette se prête idéalement à cette technique faite de coups vifs et de mouvements rapides qui se jouent de l'allonge de l'opposant. Les gestes dansants et les pas agiles perturbent l'adversaire, permettant d'attaquer rapidement puis d'esquiver habilement la riposte.",
+          "Les mawons ont parfait ce style et ses manœuvres déstabilisantes, et s'en sont servi pour combattre leurs oppresseurs atabéens. Aujourd'hui, il existe une poignée d'écoles qui enseignent le Bugu Takobi dans la mer Atabéenne. Les plus renommées sont la Makaranta Takobi (littéralement « École de l'Épée »), localisée dans l'Arc Septentrional de La Bucca près du Havre du Couchant, et le Mémorial de Taiyewo, à Kap-Kalfu, en Jaragua, dans l'ombre des Princes jumeaux. Récemment, une rumeur dit qu'un maître du Bugu Takobi aurait gagné la Fédération Sarmatienne dans l'espoir d'y ouvrir une école.",
+          "La principale faiblesse du Bugu Takobi est sa dépendance au mouvement et à l'espace. Le style est bien moins efficace dans un lieu confiné (couloir, foule dense) qui empêche ses \"pas agiles\" et ses \"gestes dansants\". De plus, le besoin d'avoir une main libre le rend vulnérable face à des styles utilisant un bouclier ou une arme secondaire défensive."
+        ],
+        "origine_texte": "Racines ifriennes ; établie dans les Nations Pirates (La Bucca, Jaragua)",
+        "armes_predilection": "Épée courte ou machette (une main, l'autre main libre pour feinter et déséquilibrer)",
+        "academies": "Makaranta Takobi (« École de l'Épée »), dans l'Arc Septentrional de La Bucca près du Havre du Couchant ; Mémorial de Taiyewo, à Kap-Kalfu en Jaragua ; une rumeur évoque une école naissante en Fédération Sarmatienne",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "Tant que l'apprenti manie une arme d'Escrime dans une main et que l'autre est vide, il ne souffre d'aucun malus lors de l'utilisation de la Technique de combat Feinte"
+          },
+          "compagnon": {
+            "fluff": "Takobi Gudana",
+            "regles": "Lors d'une Feinte réussie, les dégâts sont augmentés de  +1g1"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Lors d'une attaque menée dans le cadre du Takobi Gudana, le maître bénéficie d'une augmentation gratuite à ses défenses (active ou passive) contre la prochaine attaque de la cible contre lui, et 2 augmentations contre toute tentative de riposte de l'adversaire à cette attaque"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      },
+      "enrichie": true
     }
   ]
 }
