@@ -4217,7 +4217,28 @@
       },
       "restriction_creation": "inconnue",
       "genre_restriction": null,
-      "enrichie": false
+      "enrichie": true,
+      "details": {
+        "origine_texte": "Cathay",
+        "description_longue": [
+          "Style de combat à la lance shenoise, basé sur une alternance fluide et gracieuse entre des postures offensives et défensives pour déstabiliser l'adversaire."
+        ],
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "Si vous effectuez une action d'Attaque et que votre action précédente dans le même round était une Parade, vous bénéficiez d'une Augmentation gratuite (+5 au total). De même, si vous effectuez une action de Parade et que votre action précédente était une Attaque, vous bénéficiez d'une Augmentation gratuite."
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Après votre première attaque ou Parade(Lances) à chaque round, vous devez choisir une \"posture\" jusqu'à la fin du round : - Posture Offensive (Si vous aviez paré) : Votre prochaine attaque durant ce round inflige +1g1 de dégâts. - Posture Défensive (Si vous aviez attaqué) : Votre prochaine Parade durant ce round gagne un bonus de +1g1. Vous devez ensuite changer de posture, en offensive si vous parez et en défensive si vous attaquez. Vous pouvez aussi changer de posture contre une Action."
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Lorsque vous utilisez la \"Méthode Qiang\", vos bonus passent à +2g2. Vous initiez un combat avec la posture de votre choix, et pouvez choisir de sacrifier votre Déplacement pour en changer au lieu de votre Action."
+          }
+        },
+        "_source_pdf": "spadassin_v2"
+      }
     },
     {
       "nom": "Gosling",

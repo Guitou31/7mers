@@ -383,6 +383,38 @@ def appliquer(data, ecoles_docx):
     return maj, crees
 
 
+def completer_ecoles_compactes(data):
+    """Écoles déjà complètes (avantages par niveau rédigés) mais restées en
+    rendu compact (enrichie=False) : on les passe en rendu enrichi en
+    RÉORGANISANT leurs données existantes — sans rien réécrire. Objectif :
+    leur donner le même traitement que les autres écoles, notamment le
+    bouton « Ajouter à ma création » (absent du rendu compact).
+
+    Cas concerné aujourd'hui : Geng Yu Qiang (école 2ᵉ Éd. non incluse dans
+    le docx V2, mais validée telle quelle par Guillaume)."""
+    completees = []
+    for e in data["ecoles"]:
+        if e.get("enrichie"):
+            continue
+        av = e.get("avantages_courts") or {}
+        if not any(av.get(k) for k in ("apprenti", "compagnon", "maitre")):
+            continue
+        det = e.get("details") or {}
+        det.setdefault("origine_texte", ", ".join(e.get("nations", [])))
+        if not det.get("description_longue") and e.get("description_courte"):
+            det["description_longue"] = [e["description_courte"]]
+        niveaux = det.get("niveaux") or {}
+        for k in ("apprenti", "compagnon", "maitre"):
+            if av.get(k) and k not in niveaux:
+                niveaux[k] = {"fluff": None, "regles": av[k]}
+        det["niveaux"] = niveaux
+        det.setdefault("_source_pdf", "spadassin_v2")
+        e["details"] = det
+        e["enrichie"] = True
+        completees.append(e["nom"])
+    return completees
+
+
 def main():
     if not DOCX.exists():
         print(f"[X] docx introuvable : {DOCX}")
@@ -393,12 +425,14 @@ def main():
 
     data = json.loads(ECOLES_JSON.read_text(encoding="utf-8"))
     maj, crees = appliquer(data, ecoles_docx)
+    completees = completer_ecoles_compactes(data)
 
     # Méta
     data.setdefault("_meta", {})["nb_ecoles"] = len(data["ecoles"])
 
     print(f"  Mises à jour ({len(maj)}) : {', '.join(maj)}")
     print(f"  Créées ({len(crees)}) : {', '.join(crees) or '—'}")
+    print(f"  Complétées (réorg. format enrichi) : {', '.join(completees) or '—'}")
 
     # Vérifs Nations
     print("\n  Nations attribuées :")
