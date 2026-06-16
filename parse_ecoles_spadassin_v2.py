@@ -319,6 +319,15 @@ def construire_details(e):
     return d
 
 
+# Écoles du docx qui correspondent à une école déjà présente sous un nom
+# différent : on fusionne (mise à jour) au lieu de créer un doublon, et on
+# renomme l'école au nom du docx (le docx fait foi).
+#   nom docx (normalisé) -> nom existant dans ecoles.json
+ALIAS_NOMS_EXISTANTS = {
+    "la siqueira": "Siqueira",
+}
+
+
 def appliquer(data, ecoles_docx):
     par_nom = {x["nom"]: x for x in data["ecoles"]}
     par_nom_norm = {_norm(k): v for k, v in par_nom.items()}
@@ -333,7 +342,11 @@ def appliquer(data, ecoles_docx):
                        if e["description"] else "")
 
         cible = par_nom.get(e["nom"]) or par_nom_norm.get(_norm(e["nom"]))
+        # Fusion par alias (ex. 'La Siqueira' du docx = 'Siqueira' existante)
+        if not cible and _norm(e["nom"]) in ALIAS_NOMS_EXISTANTS:
+            cible = par_nom.get(ALIAS_NOMS_EXISTANTS[_norm(e["nom"])])
         if cible:
+            cible["nom"] = e["nom"]   # renomme au nom du docx
             cible["nations"] = nations
             cible["specialisations"] = specs
             cible["techniques_combat"] = techniques

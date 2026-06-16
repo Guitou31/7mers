@@ -6,7 +6,7 @@
       "ecoles_enrichies_auto.json",
       "ecoles_enrichies.json"
     ],
-    "nb_ecoles": 91,
+    "nb_ecoles": 90,
     "nb_ecoles_enrichies": 72,
     "nb_techniques_definies": 79,
     "nations_uniques": [
@@ -7695,7 +7695,7 @@
       "enrichie": true
     },
     {
-      "nom": "Siqueira",
+      "nom": "La Siqueira",
       "origine": "seconde_edition_adaptee",
       "nations": [
         "Castille"
@@ -7707,27 +7707,39 @@
       ],
       "specialisations": [
         "Lance",
-        "Inciter"
+        "Torero"
       ],
       "description_courte": "Style inspiré de toréador, utilisant un épieu et des provocations pour inciter à se faire charger.",
       "techniques_combat": [
         {
-          "nom_base": "Fente en avant",
-          "variante": "Lance",
-          "ref": "fente en avant",
-          "source": "csv"
+          "nom_base": "Feinte de corps",
+          "variante": null,
+          "ref": "feinte de corps",
+          "source": "docx_v2"
         },
         {
-          "nom_base": "Force d’âme",
+          "nom_base": "Force d'âme",
           "variante": null,
           "ref": "force d'ame",
-          "source": "csv"
+          "source": "docx_v2"
         },
         {
-          "nom_base": "Lancer",
-          "variante": "Lance",
-          "ref": null,
-          "source": "csv"
+          "nom_base": "Maintenir à distance",
+          "variante": null,
+          "ref": "maintenir a distance",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Esquive Acrobatique",
+          "variante": null,
+          "ref": "esquive acrobatique",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
         }
       ],
       "avantages_courts": {
@@ -7737,7 +7749,36 @@
       },
       "restriction_creation": "inconnue",
       "genre_restriction": null,
-      "enrichie": false
+      "enrichie": true,
+      "details": {
+        "description_longue": [
+          "Les toreros entraînés à la Siqueira sont formés à maîtriser un taureau avec grâce en exécutant leur danse. Certains disent que le style trouve ses origines chez les bergers et leurs techniques pour se défendre contre les loups et les voleurs. Muni de sa vara, une sorte d'épieu de chasse, le Duelliste contrôle sa cible en la provoquant dans un premier temps, généralement en lui donnant de petits coups avec le bout de son arme, et parfois même en l'insultant.",
+          "Une fois l'ennemi à bout, le pratiquant de la Siqueira le pousse à charger. Quand il se rue sur lui, le Duelliste s'écarte d'un pas de côté et frappe le flanc de son adversaire avant de se remettre rapidement à distance. Le but est de garder l'ennemi hors de portée et de le laisser venir pour garder le contrôle au cours du duel.",
+          "La principale faiblesse de la Siqueira est sa dépendance totale à la réaction de son adversaire. Le style est conçu pour contrer une charge directe et prévisible. Il est bien moins efficace contre un adversaire patient qui refuse de charger, qui se bat à distance, ou qui utilise des feintes complexes au lieu d'attaques directes."
+        ],
+        "origine_texte": "Castille",
+        "armes_predilection": "Vara (épieu de chasse ; dotée de l'attribut Réception de charge)",
+        "academies": "Castille ; héritage des bergers et des toréros, qui maîtrisent le taureau avec grâce à l'aide de la vara",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": "Prendre le Taureau par les Cornes",
+            "regles": "L'apprenti obtient une augmentation gratuite pour ses jets de Défense Active et sa Défense Passive quand un ennemi entre dans son allonge via un déplacement normal ou une Charge"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Le compagnon obtient une augmentation gratuite à ses jets d'attaque résultant de Réception de Charge. Une fois par round quand un ennemi entre dans son allonge via un déplacement, il peut utiliser « Réception de Charge » comme si cet ennemi avait utilisé une Charge, avec tous les avantages que cela donne au compagnon Siqueira"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Le Maitre peut utiliser une deuxième fois « Réception de charge » sur un simple déplacement ennemi vers son allonge. Sur une riposte réussie via la Réception de charge, le maître ajoute sa Finesse x2 aux dés non gardés des dommages ; de plus, toute charge qu'il subit voit ses dommages réduits d'un montant égal à sa Gaillardise"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      }
     },
     {
       "nom": "Snedig",
@@ -9338,88 +9379,6 @@
       "restriction_creation": "interdite",
       "genre_restriction": null,
       "absent_csv": true
-    },
-    {
-      "nom": "La Siqueira",
-      "origine": "seconde_edition_adaptee",
-      "nations": [
-        "Castille"
-      ],
-      "arme": "Vara",
-      "arme_display": "Vara",
-      "armes_categories": [
-        "Lances"
-      ],
-      "specialisations": [
-        "Lance",
-        "Torero"
-      ],
-      "description_courte": "Les toreros entraînés à la Siqueira sont formés à maîtriser un taureau avec grâce en exécutant leur danse.",
-      "techniques_combat": [
-        {
-          "nom_base": "Feinte de corps",
-          "variante": null,
-          "ref": "feinte de corps",
-          "source": "docx_v2"
-        },
-        {
-          "nom_base": "Force d'âme",
-          "variante": null,
-          "ref": "force d'ame",
-          "source": "docx_v2"
-        },
-        {
-          "nom_base": "Maintenir à distance",
-          "variante": null,
-          "ref": "maintenir a distance",
-          "source": "docx_v2"
-        },
-        {
-          "nom_base": "Esquive Acrobatique",
-          "variante": null,
-          "ref": "esquive acrobatique",
-          "source": "docx_v2"
-        },
-        {
-          "nom_base": "Voir le style",
-          "variante": null,
-          "ref": "voir le style",
-          "source": "docx_v2"
-        }
-      ],
-      "avantages_courts": {},
-      "restriction_creation": "libre",
-      "genre_restriction": null,
-      "details": {
-        "description_longue": [
-          "Les toreros entraînés à la Siqueira sont formés à maîtriser un taureau avec grâce en exécutant leur danse. Certains disent que le style trouve ses origines chez les bergers et leurs techniques pour se défendre contre les loups et les voleurs. Muni de sa vara, une sorte d'épieu de chasse, le Duelliste contrôle sa cible en la provoquant dans un premier temps, généralement en lui donnant de petits coups avec le bout de son arme, et parfois même en l'insultant.",
-          "Une fois l'ennemi à bout, le pratiquant de la Siqueira le pousse à charger. Quand il se rue sur lui, le Duelliste s'écarte d'un pas de côté et frappe le flanc de son adversaire avant de se remettre rapidement à distance. Le but est de garder l'ennemi hors de portée et de le laisser venir pour garder le contrôle au cours du duel.",
-          "La principale faiblesse de la Siqueira est sa dépendance totale à la réaction de son adversaire. Le style est conçu pour contrer une charge directe et prévisible. Il est bien moins efficace contre un adversaire patient qui refuse de charger, qui se bat à distance, ou qui utilise des feintes complexes au lieu d'attaques directes."
-        ],
-        "origine_texte": "Castille",
-        "armes_predilection": "Vara (épieu de chasse ; dotée de l'attribut Réception de charge)",
-        "academies": "Castille ; héritage des bergers et des toréros, qui maîtrisent le taureau avec grâce à l'aide de la vara",
-        "homologation": "Reconnue par la Guilde des Duellistes",
-        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
-        "techniques_toutes_avancees": true,
-        "niveaux": {
-          "apprenti": {
-            "fluff": "Prendre le Taureau par les Cornes",
-            "regles": "L'apprenti obtient une augmentation gratuite pour ses jets de Défense Active et sa Défense Passive quand un ennemi entre dans son allonge via un déplacement normal ou une Charge"
-          },
-          "compagnon": {
-            "fluff": null,
-            "regles": "Le compagnon obtient une augmentation gratuite à ses jets d'attaque résultant de Réception de Charge. Une fois par round quand un ennemi entre dans son allonge via un déplacement, il peut utiliser « Réception de Charge » comme si cet ennemi avait utilisé une Charge, avec tous les avantages que cela donne au compagnon Siqueira"
-          },
-          "maitre": {
-            "fluff": null,
-            "regles": "Le Maitre peut utiliser une deuxième fois « Réception de charge » sur un simple déplacement ennemi vers son allonge. Sur une riposte réussie via la Réception de charge, le maître ajoute sa Finesse x2 aux dés non gardés des dommages ; de plus, toute charge qu'il subit voit ses dommages réduits d'un montant égal à sa Gaillardise"
-          }
-        },
-        "_source_pdf": "spadassin_v2",
-        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
-      },
-      "enrichie": true
     },
     {
       "nom": "Bugu Takobi",

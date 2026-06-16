@@ -66,9 +66,6 @@
 
   function renderCard(ecole) {
     const nationsBadges = ecole.nations.map(n => el("span", { class: "badge nation" }, n));
-    const enrichieBadge = ecole.enrichie
-      ? el("span", { class: "badge enrichie", title: "Fiche complète disponible" }, "📖 Fiche complète")
-      : null;
     const restrictionBadge = ecole.restriction_creation === "interdite"
       ? el("span", { class: "badge restriction-interdite", title: "Interdite à la création" }, "⛔ Interdite à la création")
       : ecole.restriction_creation === "limitee"
@@ -91,7 +88,7 @@
       el("div", { class: "badges" }, [
         ...nationsBadges,
         el("span", { class: "badge origine-" + ecole.origine }, ORIGINE_LABELS[ecole.origine] || ecole.origine),
-        restrictionBadge, genreBadge, enrichieBadge,
+        restrictionBadge, genreBadge,
       ]),
     ]);
   }
