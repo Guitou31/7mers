@@ -2726,7 +2726,7 @@ window.METIERS_DATA = {
         "Galvaniser",
         "Jeu de jambes",
         "Roulé-boulé",
-        "Soin des animaux (type d’animal à préciser)"
+        "Acrobatie"
       ],
       "reputation": "Réputation martiale : +1 Ces métiers sont réservées aux membres de certaines organisations secrètes, ou au moins très discrètes.",
       "restriction_creation": "libre",

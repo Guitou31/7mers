@@ -41,14 +41,16 @@ window.COMPETENCES_DATA = {
       ],
       "donnent_acces_avancee": [
         "Athlétisme",
-        "Monte-en-l’air"
+        "Monte-en-l’air",
+        "Torero"
       ],
       "categorie": "Compétences physiques",
       "donnent_acces_metiers_base": [
         "Acrobate"
       ],
       "donnent_acces_metiers_avancee": [
-        "Monte-en-l’air"
+        "Monte-en-l’air",
+        "Torero"
       ],
       "donnent_acces_entrainements_base": [],
       "donnent_acces_entrainements_avancee": [
@@ -5741,8 +5743,7 @@ window.COMPETENCES_DATA = {
         "Chasseur",
         "Gitan",
         "Guérisseur",
-        "Pauvre Chevalier",
-        "Torero"
+        "Pauvre Chevalier"
       ],
       "categorie": "Compétences rurales",
       "donnent_acces_metiers_base": [
@@ -5755,8 +5756,7 @@ window.COMPETENCES_DATA = {
         "Chasseur",
         "Gitan",
         "Guérisseur",
-        "Pauvre Chevalier",
-        "Torero"
+        "Pauvre Chevalier"
       ],
       "donnent_acces_entrainements_base": [
         "Cavalier"
