@@ -82,6 +82,62 @@ COMPETENCES_AJOUTS: list[dict] = [
         "donnent_acces_avancee": [],
         "variantes": [],
     },
+    # Révision sociale 2026-06 : 4 nouvelles compétences sociales.
+    # Les listes donnent_acces_* sont reconstruites par la synchro inverse
+    # (sync_competences_acces) depuis les métiers — laissées vides ici.
+    {
+        "nom": "Charmer",
+        "categorie": "Compétences sociales",
+        "description": (
+            "Cette compétence permet de gagner la sympathie d'autrui par la flatterie, "
+            "l'attention et un abord plaisant, en installant un climat de confiance et de "
+            "connivence. À distinguer de Séduction (qui joue sur l'attirance) et de Sincérité "
+            "(qui repose sur la bonne foi). Cette compétence peut également être utilisée avec "
+            "le système de répartie."
+        ),
+        "donnent_acces_base": [],
+        "donnent_acces_avancee": [],
+        "variantes": [],
+    },
+    {
+        "nom": "Convaincre",
+        "categorie": "Compétences sociales",
+        "description": (
+            "Cette compétence permet de persuader un interlocuteur par la force d'arguments "
+            "rationnels et un raisonnement structuré, en s'appuyant sur la logique plutôt que "
+            "sur l'émotion ou le charme. À distinguer d'Éloquence (l'art du beau discours) et "
+            "de Sincérité (la persuasion par la bonne foi). Cette compétence peut également "
+            "être utilisée avec le système de répartie."
+        ),
+        "donnent_acces_base": [],
+        "donnent_acces_avancee": [],
+        "variantes": [],
+    },
+    {
+        "nom": "Inciter",
+        "categorie": "Compétences sociales",
+        "description": (
+            "Cette compétence permet de pousser quelqu'un à agir ou à réagir par des "
+            "sous-entendus, des suggestions habiles ou une provocation subtile, sans jamais "
+            "formuler ouvertement sa demande. Cette compétence peut également être utilisée "
+            "avec le système de répartie."
+        ),
+        "donnent_acces_base": [],
+        "donnent_acces_avancee": [],
+        "variantes": [],
+    },
+    {
+        "nom": "Persifler",
+        "categorie": "Compétences sociales",
+        "description": (
+            "Cette compétence permet de railler un adversaire par des piques moqueuses et des "
+            "traits d'esprit acérés, afin de le déstabiliser, l'aiguillonner ou le pousser à la "
+            "faute. Cette compétence peut également être utilisée avec le système de répartie."
+        ),
+        "donnent_acces_base": [],
+        "donnent_acces_avancee": [],
+        "variantes": [],
+    },
 ]
 
 # Overrides manuels : pour les compétences génériques absentes du "Classement par catégories"

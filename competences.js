@@ -1024,7 +1024,6 @@ window.COMPETENCES_DATA = {
         "Garde du corps",
         "Jenny",
         "Missionnaire",
-        "Politicien",
         "Receleur"
       ],
       "categorie": "Compétences sociales",
@@ -1045,7 +1044,6 @@ window.COMPETENCES_DATA = {
         "Garde du corps",
         "Jenny",
         "Missionnaire",
-        "Politicien",
         "Receleur"
       ],
       "donnent_acces_entrainements_base": [],
@@ -1390,7 +1388,6 @@ window.COMPETENCES_DATA = {
         "Gitan",
         "Guérillero",
         "Hors-la-loi",
-        "Skalde",
         "Éclaireur"
       ],
       "categorie": "Compétences savantes",
@@ -1411,7 +1408,6 @@ window.COMPETENCES_DATA = {
         "Gitan",
         "Guérillero",
         "Hors-la-loi",
-        "Skalde",
         "Éclaireur"
       ],
       "donnent_acces_entrainements_base": [],
@@ -2376,7 +2372,6 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_avancee": [
-        "Chroniqueur",
         "Dilettante"
       ],
       "categorie": "Compétences artisanales",
@@ -2384,7 +2379,6 @@ window.COMPETENCES_DATA = {
         "Artisan"
       ],
       "donnent_acces_metiers_avancee": [
-        "Chroniqueur",
         "Dilettante"
       ],
       "donnent_acces_entrainements_base": [],
@@ -2401,15 +2395,12 @@ window.COMPETENCES_DATA = {
         "Gwai Liao (Bureaucrate)",
         "Missionnaire",
         "Politicien",
-        "Professeur",
         "Prêtre",
         "Shirbaz (magicien)",
         "Skalde"
       ],
       "donnent_acces_avancee": [
         "Artiste",
-        "Collecteur d’impôts",
-        "Courtisan",
         "Dilettante",
         "Diplomate",
         "Explorateur",
@@ -2428,15 +2419,12 @@ window.COMPETENCES_DATA = {
         "Gwai Liao (Bureaucrate)",
         "Missionnaire",
         "Politicien",
-        "Professeur",
         "Prêtre",
         "Shirbaz (magicien)",
         "Skalde"
       ],
       "donnent_acces_metiers_avancee": [
         "Artiste",
-        "Collecteur d’impôts",
-        "Courtisan",
         "Dilettante",
         "Diplomate",
         "Explorateur",
@@ -2755,13 +2743,11 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Artiste",
         "Avoué",
-        "Barde",
         "Cadet",
         "Cartographe",
         "Fauconnier",
         "Garde",
         "Juge d’armes",
-        "Maître d’armes",
         "Prêtre",
         "Rasoir",
         "Veneur"
@@ -2784,13 +2770,11 @@ window.COMPETENCES_DATA = {
       "donnent_acces_metiers_avancee": [
         "Artiste",
         "Avoué",
-        "Barde",
         "Cadet",
         "Cartographe",
         "Fauconnier",
         "Garde",
         "Juge d’armes",
-        "Maître d’armes",
         "Prêtre",
         "Rasoir",
         "Veneur"
@@ -3589,7 +3573,6 @@ window.COMPETENCES_DATA = {
         "Garde",
         "Garde du corps",
         "Légionnaire",
-        "Maistrance",
         "Marine",
         "Maître d’armes",
         "Précepteur"
@@ -3612,7 +3595,6 @@ window.COMPETENCES_DATA = {
         "Garde",
         "Garde du corps",
         "Légionnaire",
-        "Maistrance",
         "Marine",
         "Maître d’armes",
         "Précepteur"
@@ -4190,11 +4172,9 @@ window.COMPETENCES_DATA = {
         "Shirbaz (magicien)"
       ],
       "donnent_acces_avancee": [
-        "Comédien",
         "Dilettante",
         "Domestique",
-        "Gwai Liao (Bureaucrate)",
-        "Précepteur"
+        "Gwai Liao (Bureaucrate)"
       ],
       "categorie": "Compétences artistiques",
       "donnent_acces_metiers_base": [
@@ -4203,11 +4183,9 @@ window.COMPETENCES_DATA = {
         "Shirbaz (magicien)"
       ],
       "donnent_acces_metiers_avancee": [
-        "Comédien",
         "Dilettante",
         "Domestique",
-        "Gwai Liao (Bureaucrate)",
-        "Précepteur"
+        "Gwai Liao (Bureaucrate)"
       ],
       "donnent_acces_entrainements_base": [],
       "donnent_acces_entrainements_avancee": []
@@ -4428,14 +4406,11 @@ window.COMPETENCES_DATA = {
         "Artisan",
         "Cadet",
         "Cartographe",
-        "Dilettante",
         "Détrousseur",
         "Fouineur",
         "Fournisseur de drogues",
         "Garde du corps",
-        "Monte-en-l’air",
-        "Racketteur",
-        "Souteneur"
+        "Monte-en-l’air"
       ],
       "categorie": "Compétences larronnes",
       "donnent_acces_metiers_base": [
@@ -4452,14 +4427,11 @@ window.COMPETENCES_DATA = {
         "Artisan",
         "Cadet",
         "Cartographe",
-        "Dilettante",
         "Détrousseur",
         "Fouineur",
         "Fournisseur de drogues",
         "Garde du corps",
-        "Monte-en-l’air",
-        "Racketteur",
-        "Souteneur"
+        "Monte-en-l’air"
       ],
       "donnent_acces_entrainements_base": [],
       "donnent_acces_entrainements_avancee": []
@@ -4795,7 +4767,6 @@ window.COMPETENCES_DATA = {
       "donnent_acces_avancee": [
         "Arnaqueur",
         "Artiste",
-        "Courtisan",
         "Dilettante",
         "Rahib (Moine)"
       ],
@@ -4804,7 +4775,6 @@ window.COMPETENCES_DATA = {
       "donnent_acces_metiers_avancee": [
         "Arnaqueur",
         "Artiste",
-        "Courtisan",
         "Dilettante",
         "Rahib (Moine)"
       ],
@@ -5089,9 +5059,6 @@ window.COMPETENCES_DATA = {
         "Chasseur de primes",
         "Chevalier",
         "Cocher",
-        "Commandement",
-        "Espion",
-        "Guérillero",
         "Légionnaire",
         "Pauvre Chevalier",
         "Soldat",
@@ -5119,9 +5086,6 @@ window.COMPETENCES_DATA = {
         "Chasseur de primes",
         "Chevalier",
         "Cocher",
-        "Commandement",
-        "Espion",
-        "Guérillero",
         "Légionnaire",
         "Pauvre Chevalier",
         "Soldat",
@@ -5476,11 +5440,8 @@ window.COMPETENCES_DATA = {
         "Souteneur"
       ],
       "donnent_acces_avancee": [
-        "Artiste",
         "Courtisan",
-        "Espion",
-        "Recruteur",
-        "Shirbaz (magicien)"
+        "Espion"
       ],
       "categorie": "Compétences sociales",
       "donnent_acces_metiers_base": [
@@ -5489,11 +5450,8 @@ window.COMPETENCES_DATA = {
         "Souteneur"
       ],
       "donnent_acces_metiers_avancee": [
-        "Artiste",
         "Courtisan",
-        "Espion",
-        "Recruteur",
-        "Shirbaz (magicien)"
+        "Espion"
       ],
       "donnent_acces_entrainements_base": [],
       "donnent_acces_entrainements_avancee": []
@@ -5690,40 +5648,26 @@ window.COMPETENCES_DATA = {
       "nom": "Sincérité",
       "description": "Cette compétence permet de convaincre un interlocuteur de sa bonne foi par la posture, le regard et le ton, sans nécessairement avancer d'argument élaboré. À distinguer de Duperie, qui repose sur le mensonge délibéré. Cette compétence peut également être utilisée avec le système de répartie.",
       "donnent_acces_base": [
-        "Avoué",
-        "Bonne aventure",
         "Gitan",
-        "Médecin",
-        "Recruteur"
+        "Médecin"
       ],
       "donnent_acces_avancee": [
-        "Bourreau",
         "Chroniqueur",
         "Courtisan",
-        "Courtisane",
-        "Diplomate",
         "Domestique",
         "Guide",
-        "Gwai Liao (Bureaucrate)",
         "Gérant de comptoir"
       ],
       "categorie": "Compétences sociales",
       "donnent_acces_metiers_base": [
-        "Avoué",
-        "Bonne aventure",
         "Gitan",
-        "Médecin",
-        "Recruteur"
+        "Médecin"
       ],
       "donnent_acces_metiers_avancee": [
-        "Bourreau",
         "Chroniqueur",
         "Courtisan",
-        "Courtisane",
-        "Diplomate",
         "Domestique",
         "Guide",
-        "Gwai Liao (Bureaucrate)",
         "Gérant de comptoir"
       ],
       "donnent_acces_entrainements_base": [],
@@ -6314,9 +6258,13 @@ window.COMPETENCES_DATA = {
       "description": "Cette compétence permet d'user de mensonges pour convaincre son interlocuteur. Le mensonge le plus élaboré est inutile face à un interlocuteur capable de discerner un frisson d'appréhension ou un éclair de nervosité dans le regard. La compétence Duperie permet au héros de donner à ses mensonges toutes les apparences de la vérité et de dissimuler le mensonge le plus patent derrière un masque de parfaite honnêteté. Cette compétence peut également être utilisée avec le système de répartie.",
       "donnent_acces_base": [
         "Arnaqueur",
-        "Gitan"
+        "Bonne aventure",
+        "Gitan",
+        "Recruteur"
       ],
       "donnent_acces_avancee": [
+        "Bourreau",
+        "Courtisane",
         "Détrousseur",
         "Espion",
         "Malandrin",
@@ -6326,14 +6274,120 @@ window.COMPETENCES_DATA = {
       "variantes": [],
       "donnent_acces_metiers_base": [
         "Arnaqueur",
-        "Gitan"
+        "Bonne aventure",
+        "Gitan",
+        "Recruteur"
       ],
       "donnent_acces_metiers_avancee": [
+        "Bourreau",
+        "Courtisane",
         "Détrousseur",
         "Espion",
         "Malandrin",
         "Mendiant",
         "Shirbaz (magicien)"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
+    },
+    {
+      "nom": "Charmer",
+      "description": "Cette compétence permet de gagner la sympathie d'autrui par la flatterie, l'attention et un abord plaisant, en installant un climat de confiance et de connivence. À distinguer de Séduction (qui joue sur l'attirance) et de Sincérité (qui repose sur la bonne foi). Cette compétence peut également être utilisée avec le système de répartie.",
+      "donnent_acces_base": [],
+      "donnent_acces_avancee": [
+        "Artiste",
+        "Barde",
+        "Courtisan",
+        "Dilettante",
+        "Recruteur",
+        "Shirbaz (magicien)"
+      ],
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Artiste",
+        "Barde",
+        "Courtisan",
+        "Dilettante",
+        "Recruteur",
+        "Shirbaz (magicien)"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
+    },
+    {
+      "nom": "Convaincre",
+      "description": "Cette compétence permet de persuader un interlocuteur par la force d'arguments rationnels et un raisonnement structuré, en s'appuyant sur la logique plutôt que sur l'émotion ou le charme. À distinguer d'Éloquence (l'art du beau discours) et de Sincérité (la persuasion par la bonne foi). Cette compétence peut également être utilisée avec le système de répartie.",
+      "donnent_acces_base": [
+        "Avoué",
+        "Professeur"
+      ],
+      "donnent_acces_avancee": [
+        "Collecteur d’impôts",
+        "Diplomate",
+        "Gwai Liao (Bureaucrate)"
+      ],
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [
+        "Avoué",
+        "Professeur"
+      ],
+      "donnent_acces_metiers_avancee": [
+        "Collecteur d’impôts",
+        "Diplomate",
+        "Gwai Liao (Bureaucrate)"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
+    },
+    {
+      "nom": "Inciter",
+      "description": "Cette compétence permet de pousser quelqu'un à agir ou à réagir par des sous-entendus, des suggestions habiles ou une provocation subtile, sans jamais formuler ouvertement sa demande. Cette compétence peut également être utilisée avec le système de répartie.",
+      "donnent_acces_base": [],
+      "donnent_acces_avancee": [
+        "Chroniqueur",
+        "Courtisan",
+        "Espion",
+        "Guérillero",
+        "Politicien",
+        "Racketteur",
+        "Souteneur"
+      ],
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Chroniqueur",
+        "Courtisan",
+        "Espion",
+        "Guérillero",
+        "Politicien",
+        "Racketteur",
+        "Souteneur"
+      ],
+      "donnent_acces_entrainements_base": [],
+      "donnent_acces_entrainements_avancee": []
+    },
+    {
+      "nom": "Persifler",
+      "description": "Cette compétence permet de railler un adversaire par des piques moqueuses et des traits d'esprit acérés, afin de le déstabiliser, l'aiguillonner ou le pousser à la faute. Cette compétence peut également être utilisée avec le système de répartie.",
+      "donnent_acces_base": [],
+      "donnent_acces_avancee": [
+        "Commandement",
+        "Comédien",
+        "Maistrance",
+        "Maître d’armes",
+        "Précepteur",
+        "Skalde"
+      ],
+      "categorie": "Compétences sociales",
+      "donnent_acces_metiers_base": [],
+      "donnent_acces_metiers_avancee": [
+        "Commandement",
+        "Comédien",
+        "Maistrance",
+        "Maître d’armes",
+        "Précepteur",
+        "Skalde"
       ],
       "donnent_acces_entrainements_base": [],
       "donnent_acces_entrainements_avancee": []

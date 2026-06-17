@@ -311,7 +311,7 @@ window.METIERS_DATA = {
         "Comportementalisme",
         "Débrouillardise",
         "Éloquence",
-        "Séduction",
+        "Charmer",
         "Etiquette",
         "Pique-assiette",
         "Narrer"
@@ -388,7 +388,7 @@ window.METIERS_DATA = {
       "competences_base": [
         "Droit",
         "Éloquence",
-        "Sincérité"
+        "Convaincre"
       ],
       "competences_avancees": [
         "Comportementalisme",
@@ -505,7 +505,7 @@ window.METIERS_DATA = {
         "Estomac",
         "Examiner",
         "Premiers secours",
-        "Sincérité",
+        "Duperie",
         "Qui-vive"
       ],
       "reputation": "Moralité : -2",
@@ -656,7 +656,7 @@ window.METIERS_DATA = {
         "Calligraphie",
         "Contacts (Nation à préciser)",
         "Discrétion",
-        "Écrivain public",
+        "Inciter",
         "Histoire",
         "Narrer",
         "Sincérité"
@@ -707,7 +707,7 @@ window.METIERS_DATA = {
         "Comportementalisme",
         "Corruption",
         "Économie",
-        "Éloquence",
+        "Convaincre",
         "Évaluation",
         "Intimidation",
         "Numismatique"
@@ -761,7 +761,7 @@ window.METIERS_DATA = {
         "Création littéraire",
         "Danse",
         "Galvaniser",
-        "Mode",
+        "Persifler",
         "Narrer"
       ],
       "reputation": "Moralité : -1",
@@ -786,7 +786,7 @@ window.METIERS_DATA = {
         "Entraîner",
         "Estomac",
         "Galvaniser",
-        "Qui-vive"
+        "Persifler"
       ],
       "reputation": "Réputation martiale : +2",
       "restriction_creation": "libre",
@@ -862,9 +862,9 @@ window.METIERS_DATA = {
       "competences_avancees": [
         "Cancanier",
         "Diplomatie",
-        "Éloquence",
+        "Inciter",
         "Intrigant",
-        "Pique-assiette",
+        "Charmer",
         "Séduction",
         "Sincérité"
       ],
@@ -918,7 +918,7 @@ window.METIERS_DATA = {
         "Géographie",
         "Intrigant",
         "Linguistique",
-        "Sincérité"
+        "Convaincre"
       ],
       "reputation": "Rang social : +2",
       "restriction_creation": "libre",
@@ -1076,7 +1076,7 @@ window.METIERS_DATA = {
         "Falsification",
         "Interrogatoire",
         "Lire sur les lèvres",
-        "Qui-vive",
+        "Inciter",
         "Séduction",
         "Duperie"
       ],
@@ -1380,7 +1380,7 @@ window.METIERS_DATA = {
         "Connaissance des routes (nation à préciser)",
         "Langage des signes",
         "Piéger",
-        "Qui-vive",
+        "Inciter",
         "Signes de piste",
         "Tactique",
         "Connaissance des plantes"
@@ -1640,7 +1640,7 @@ window.METIERS_DATA = {
         "Corruption",
         "Diplomatie",
         "Guet-apens",
-        "Intimidation",
+        "Persifler",
         "Logistique",
         "Navigation"
       ],
@@ -2042,7 +2042,7 @@ window.METIERS_DATA = {
         "Héraldique",
         "Histoire",
         "Intimidation",
-        "Mode"
+        "Persifler"
       ],
       "reputation": "Rang social : +2",
       "restriction_creation": "libre",
@@ -2083,7 +2083,7 @@ window.METIERS_DATA = {
       "description": "Les professeurs sont des universitaires qui ont décidé d’enseigner leur savoir aux plus brillants étudiants de Théah. Plutôt que de passer leur vie enfermés dans des laboratoires et des bibliothèques, ils passent leur temps à instruire des classes pleines de jeunes érudits avides d’apprendre. Ils écrivent des manuels, donnent des conférences et veillent à ce que leurs cours bénéficient de soutiens financiers adéquats.",
       "competences_base": [
         "Création littéraire",
-        "Éloquence",
+        "Convaincre",
         "Entraîner"
       ],
       "competences_avancees": [
@@ -2153,7 +2153,7 @@ window.METIERS_DATA = {
         "Estomac",
         "Filature",
         "Guet-apens",
-        "Orientation citadine (Nation à préciser)"
+        "Inciter"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -2195,7 +2195,7 @@ window.METIERS_DATA = {
       "competences_base": [
         "Comportementalisme",
         "Corruption",
-        "Sincérité"
+        "Duperie"
       ],
       "competences_avancees": [
         "Assommer",
@@ -2204,7 +2204,7 @@ window.METIERS_DATA = {
         "Équitation (type d’animal à préciser s’il ne s’agit pas de chevaux)",
         "Jouer",
         "Marchandage",
-        "Séduction"
+        "Charmer"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -2254,7 +2254,7 @@ window.METIERS_DATA = {
         "Déplacement silencieux",
         "Filature",
         "Fouille",
-        "Orientation citadine (Nation à préciser)"
+        "Inciter"
       ],
       "reputation": "Moralité : -1",
       "restriction_creation": "libre",
@@ -2329,7 +2329,7 @@ window.METIERS_DATA = {
         "Cancanier",
         "Connaissance des routes (nation à préciser)",
         "Connaissance des Sidhes",
-        "Étiquette",
+        "Charmer",
         "Galvaniser",
         "Héraldique",
         "Musique (type d’instrument à préciser)"
@@ -2349,7 +2349,7 @@ window.METIERS_DATA = {
       "competences_base": [
         "Chiromancie",
         "Comportementalisme",
-        "Sincérité"
+        "Duperie"
       ],
       "competences_avancees": [
         "Augures",
@@ -2440,12 +2440,14 @@ window.METIERS_DATA = {
         "Métiers de Serviteurs"
       ],
       "description": "Les courtisanes sont plus que de simples jennys. Intelligentes, pleines d’esprit et cultivées, elles conseillent, séduisent et divertissent leurs clients en leur proposant leur compagnie à tous les niveaux. Elles apprennent également à manipuler autrui pour en tirer parti car elles ne disposent pas de la protection d’une famille ou d’un mariage. Les courtisanes vodaccies sont charmantes à l’excès, et aussi dangereuses que séduisantes. Leur pendant masculin n’existe pas ; les hommes n’apprennent pas cette spécialisation.",
-      "competences_base": [],
+      "competences_base": [
+        "Séduction"
+      ],
       "competences_avancees": [
         "Cancanier",
         "Dissimulation",
         "Poison",
-        "Sincérité",
+        "Duperie",
         "Musique (type d’instrument à préciser)",
         "Dilettantisme"
       ],
@@ -2455,14 +2457,13 @@ window.METIERS_DATA = {
       "restriction_texte": "Être une femme, de nationalité vodacce ou croissantine.",
       "competences_base_choix": [
         {
-          "nb": 3,
+          "nb": 2,
           "options": [
             "Danse",
             "Étiquette",
             "Jenny",
             "Masseur",
-            "Mode",
-            "Séduction"
+            "Mode"
           ]
         }
       ],
@@ -2604,7 +2605,7 @@ window.METIERS_DATA = {
         "Droit",
         "Intrigant",
         "Politique",
-        "Sincérité",
+        "Convaincre",
         "Mode"
       ],
       "reputation": "Rang social : +2",
@@ -2669,7 +2670,7 @@ window.METIERS_DATA = {
         "Lire sur les lèvres",
         "Pickpocket",
         "Prestidigitation",
-        "Séduction",
+        "Charmer",
         "Duperie"
       ],
       "reputation": "Moralité : -1",
@@ -2694,7 +2695,7 @@ window.METIERS_DATA = {
         "Histoire"
       ],
       "competences_avancees": [
-        "Connaissance des routes (nation à préciser)",
+        "Persifler",
         "Connaissance des runes",
         "Création littéraire",
         "Énigmes",
@@ -2876,7 +2877,7 @@ window.METIERS_DATA = {
       "competences_avancees": [
         "Écrivain public",
         "Éloquence",
-        "Orientation citadine (Nation à préciser)",
+        "Charmer",
         "Pique-assiette",
         "Musique (type d’instrument à préciser)",
         "Mode",
@@ -2979,7 +2980,7 @@ window.METIERS_DATA = {
       "competences_avancees": [
         "Commander",
         "Estomac",
-        "Étiquette",
+        "Persifler",
         "Intimidation",
         "Pas de côté",
         "Premiers secours",
@@ -3003,7 +3004,7 @@ window.METIERS_DATA = {
       ],
       "competences_avancees": [
         "Agitation",
-        "Comportementalisme",
+        "Inciter",
         "Corruption",
         "Diplomatie",
         "Galvaniser",
