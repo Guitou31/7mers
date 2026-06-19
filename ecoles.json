@@ -9868,7 +9868,10 @@
       "nom": "Krzyż",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Avalon",
+        "Inismore",
+        "Marches des Highlands"
       ],
       "arme": "Sabre",
       "arme_display": "Sabre",
@@ -9951,7 +9954,8 @@
       "nom": "Pancerny",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Ussura"
       ],
       "arme": "Sabre et tarcza",
       "arme_display": "Sabre et tarcza",
@@ -10033,7 +10037,8 @@
       "nom": "Koncerz",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Vodacce"
       ],
       "arme": "Koncerz",
       "arme_display": "Koncerz",
@@ -10116,7 +10121,10 @@
       "nom": "Lipka",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Empire du Croissant",
+        "Cathay",
+        "Ifri"
       ],
       "arme": "Sabre léger",
       "arme_display": "Sabre léger",
@@ -10198,7 +10206,8 @@
       "nom": "Žynys",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Ussura"
       ],
       "arme": "Sabre et dague rituelle",
       "arme_display": "Sabre et dague rituelle",
@@ -10281,7 +10290,9 @@
       "nom": "Vilkas",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Ussura",
+        "Ifri"
       ],
       "arme": "Sabre et hachette",
       "arme_display": "Sabre et hachette",
@@ -10365,7 +10376,8 @@
       "nom": "Szabla Honoru",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Avalon"
       ],
       "arme": "Sabre",
       "arme_display": "Sabre",
@@ -10448,7 +10460,8 @@
       "nom": "Nadziak",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Eisen"
       ],
       "arme": "Nadziak",
       "arme_display": "Nadziak",
@@ -10530,7 +10543,8 @@
       "nom": "Zimowit",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Marches des Highlands"
       ],
       "arme": "Pałasz",
       "arme_display": "Pałasz",
@@ -10612,7 +10626,10 @@
       "nom": "Wolny Lis",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Empire du Croissant",
+        "Nations Pirates",
+        "Ifri"
       ],
       "arme": "Sabre",
       "arme_display": "Sabre",

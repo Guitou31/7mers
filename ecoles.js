@@ -9869,7 +9869,10 @@ window.ECOLES_DATA = {
       "nom": "Krzyż",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Avalon",
+        "Inismore",
+        "Marches des Highlands"
       ],
       "arme": "Sabre",
       "arme_display": "Sabre",
@@ -9952,7 +9955,8 @@ window.ECOLES_DATA = {
       "nom": "Pancerny",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Ussura"
       ],
       "arme": "Sabre et tarcza",
       "arme_display": "Sabre et tarcza",
@@ -10034,7 +10038,8 @@ window.ECOLES_DATA = {
       "nom": "Koncerz",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Vodacce"
       ],
       "arme": "Koncerz",
       "arme_display": "Koncerz",
@@ -10117,7 +10122,10 @@ window.ECOLES_DATA = {
       "nom": "Lipka",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Empire du Croissant",
+        "Cathay",
+        "Ifri"
       ],
       "arme": "Sabre léger",
       "arme_display": "Sabre léger",
@@ -10199,7 +10207,8 @@ window.ECOLES_DATA = {
       "nom": "Žynys",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Ussura"
       ],
       "arme": "Sabre et dague rituelle",
       "arme_display": "Sabre et dague rituelle",
@@ -10282,7 +10291,9 @@ window.ECOLES_DATA = {
       "nom": "Vilkas",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Ussura",
+        "Ifri"
       ],
       "arme": "Sabre et hachette",
       "arme_display": "Sabre et hachette",
@@ -10366,7 +10377,8 @@ window.ECOLES_DATA = {
       "nom": "Szabla Honoru",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Avalon"
       ],
       "arme": "Sabre",
       "arme_display": "Sabre",
@@ -10449,7 +10461,8 @@ window.ECOLES_DATA = {
       "nom": "Nadziak",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Eisen"
       ],
       "arme": "Nadziak",
       "arme_display": "Nadziak",
@@ -10531,7 +10544,8 @@ window.ECOLES_DATA = {
       "nom": "Zimowit",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Marches des Highlands"
       ],
       "arme": "Pałasz",
       "arme_display": "Pałasz",
@@ -10613,7 +10627,10 @@ window.ECOLES_DATA = {
       "nom": "Wolny Lis",
       "origine": "seconde_edition_adaptee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Empire du Croissant",
+        "Nations Pirates",
+        "Ifri"
       ],
       "arme": "Sabre",
       "arme_display": "Sabre",

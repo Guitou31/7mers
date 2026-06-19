@@ -257,6 +257,50 @@ def origine_to_nations(origine):
     return [origine.strip()]
 
 
+# ---------- Nations secondaires (où l'école « s'enseigne aussi ») ----------
+# Détecte, dans le champ Académies, les Nations/continents d'enseignement
+# secondaire mentionnés après « enseigné(e) aussi » / « diffusé ».
+# Les noms longs d'abord (« marches des highlands » avant « highlands »).
+NATIONS_DETECTABLES = [
+    ("marches des highlands", "Marches des Highlands"),
+    ("empire du croissant", "Empire du Croissant"),
+    ("nations pirates", "Nations Pirates"),
+    ("mille nations", "Mille Nations"),
+    ("1000 nations", "Mille Nations"),
+    ("inismore", "Inismore"),
+    ("avalon", "Avalon"),
+    ("castille", "Castille"),
+    ("montaigne", "Montaigne"),
+    ("vodacce", "Vodacce"),
+    ("vesten", "Vesten"),
+    ("ussura", "Ussura"),
+    ("eisen", "Eisen"),
+    ("cathay", "Cathay"),
+    ("ifri", "Ifri"),
+    ("aztlan", "Aztlan"),
+]
+
+
+def extraire_nations_secondaires(academies):
+    """Renvoie la liste des Nations où l'école s'enseigne aussi (hors
+    Nation d'origine), lues dans le texte des Académies."""
+    a = _norm(academies)
+    m = re.search(r"(enseigne[e]*\s+aussi|diffuse|enseignee?\s+(?:dans|en|a travers))", a)
+    if not m:
+        return []
+    zone = a[m.start():]
+    res = []
+    # Les « Îles Glamour » désignent Avalon + Inismore + Marches des Highlands.
+    if "glamour" in zone:
+        for n in ("Avalon", "Inismore", "Marches des Highlands"):
+            if n not in res:
+                res.append(n)
+    for key, nat in NATIONS_DETECTABLES:
+        if re.search(r"\b" + re.escape(key) + r"\b", zone) and nat not in res:
+            res.append(nat)
+    return res
+
+
 # ---------- Techniques ----------
 def parse_technique(ligne):
     ligne = ligne.strip()
@@ -358,6 +402,13 @@ def appliquer(data, ecoles_docx):
 
     for e in ecoles_docx:
         nations = origine_to_nations(e["origine"])
+        # Écoles sarmates (nation théane) : on ajoute les Nations où l'école
+        # s'enseigne aussi (lues dans les Académies). Les écoles continentales
+        # (Ifri…) couvrent déjà tout leur continent, on les laisse telles quelles.
+        if nations == ["Sarmatie"]:
+            for n in extraire_nations_secondaires(e.get("academies", "")):
+                if n not in nations:
+                    nations.append(n)
         specs = nettoyer_specialisations(e["specialisations"])
         techniques = [parse_technique(t) for t in e["techniques"]]
         details = construire_details(e)
