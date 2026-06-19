@@ -7,7 +7,7 @@ window.ECOLES_DATA = {
       "ecoles_enrichies_auto.json",
       "ecoles_enrichies.json"
     ],
-    "nb_ecoles": 90,
+    "nb_ecoles": 103,
     "nb_ecoles_enrichies": 72,
     "nb_techniques_definies": 79,
     "nations_uniques": [
@@ -105,6 +105,7 @@ window.ECOLES_DATA = {
       "description": "Il s’agit de la capacité à dégainer et attaquer en un seul et fluide mouvement nommé Attaque en dégaine. Vous dépensez un seul dé d’action pour dégainer votre arme et attaquer dans le même mouvement. Vous devez utiliser cette technique de combat avec un malus d’une augmentation pour réussir cette manœuvre. Si vous ratez votre attaque contre votre adversaire, votre arme est de toute façon dégainée. De plus, cette manœuvre est particulièrement rapide, vous pouvez l’effectuer [rang d’Attaque en dégaine] phases avant le chiffre indiqué par votre dé d’action. Par exemple, Virgilio doit normalement agir en phase 7 et possède une technique de combat Attaque en dégaine de 3, il pourra donc effectuer cette manœuvre en phase 4.",
       "ecoles_enseignant": [
         "Badayah",
+        "Okada-ryu",
         "Vigilare"
       ],
       "tables": []
@@ -142,10 +143,12 @@ window.ECOLES_DATA = {
       "categorie": "Techniques de spadassin classiques",
       "description": "Le but de cette manœuvre est de faire tomber l’adversaire. Si votre adversaire réussit son attaque et passe votre défense passive, vous pouvez effectuer une défense active avec un test de [Finesse + Céder la place] avec un nombre d’augmentation égal à l’esprit de votre attaquant -1. En cas de réussite, vous dégagez votre buste sur le côté afin d’éviter l’attaque, saisissez le bras de votre attaquant et, au moyen d’un croc en jambe, le faites tomber à terre.",
       "ecoles_enseignant": [
+        "Braslyn",
         "De Vore",
         "Escuela Pater Noster",
-        "Wu Tsain",
-        "Braslyn"
+        "Okada-ryu",
+        "Wolny Lis",
+        "Wu Tsain"
       ],
       "tables": []
     },
@@ -156,6 +159,7 @@ window.ECOLES_DATA = {
       "ecoles_enseignant": [
         "Hallbjorn",
         "Kemmler",
+        "Pancerny",
         "Épées de Salomon"
       ],
       "tables": []
@@ -182,6 +186,7 @@ window.ECOLES_DATA = {
         "Finnegan",
         "Keiferhund",
         "Kjemper",
+        "Kulachniy Boi",
         "Leegstra",
         "Les Cadets",
         "Lucani",
@@ -197,7 +202,8 @@ window.ECOLES_DATA = {
         "Shan Dian Dao Te",
         "Skollvfesson",
         "Vipereus Morsus",
-        "Winckler"
+        "Winckler",
+        "Zimowit"
       ],
       "tables": []
     },
@@ -229,6 +235,7 @@ window.ECOLES_DATA = {
       "description": "Un tel coup de pied est une contre-attaque faite sans penser à votre propre défense. Il s'agit d'un coup de pied rapide lancé contre un adversaire au moment où il tente de vous attaquer, dans l'espoir que votre pied l'empêchera de continuer son assaut. Quand un ennemi vous attaque, vous pouvez dépenser une action (comme une défense active) pour donner un coup de pied réflexe. Lancez un jet d'[Esprit + Coup de pied réflexe]. Si vous le touchez, vous lui infligez 0g1 dés de dégâts (en ajoutant votre Gaillardise aux dès non-gardés). S'il reçoit une Blessure Grave, alors l'attaque qu'il tentait d'effectuer est purement et simplement annulée. Vous pouvez prendre des Augmentations sur votre jet pour augmenter vos dommages ou localiser votre coup.",
       "ecoles_enseignant": [
         "Ki Kwanji",
+        "Omuhelo",
         "Zheng Yi Quan"
       ],
       "tables": []
@@ -241,19 +248,21 @@ window.ECOLES_DATA = {
         "Ambrogia",
         "Bogatyr",
         "Bouffe-Doublons",
-        "Geng Yu Qiang",
         "Courtepointe",
         "Daphan",
         "Donnerwette",
         "Drexel",
         "Falisci",
+        "Geng Yu Qiang",
         "Halfdansson",
         "Höpken",
         "Lucani",
         "Mac Donald",
         "Mac Lellan",
         "Malone",
+        "Mubarizdun",
         "Mullooney",
+        "Nadziak",
         "O'Faolain",
         "Ottenheim Rasmussen",
         "Swanson",
@@ -267,7 +276,17 @@ window.ECOLES_DATA = {
       "categorie": "Techniques de spadassin classiques",
       "description": "Un coup fourré est un mélange de parade et de contre- attaque qui exploite la lame de l’adversaire pour guider celle du spadassin. Lorsqu’un adversaire vous attaque, vous pouvez dépenser une action pour réaliser un coup fourré. Effectuez un jet d’[Esprit + Coup fourré] en guise de jet d’attaque contre votre assaillant. Si vous touchez, vous infligez 3g2 de dommages (Vous n’ajoutez pas votre Gaillardise). Si votre adversaire devait recevoir ainsi une blessure grave, l’attaque qu’il était sur le point d’effectuer est tout bonnement annulée.",
       "ecoles_enseignant": [
-        "Villanova"
+        "Bugu Takobi",
+        "Gbeto",
+        "Iyasu",
+        "Koncerz",
+        "Lipka",
+        "Mateenatya",
+        "Tin Hinan",
+        "Vilkas",
+        "Villanova",
+        "Wolny Lis",
+        "Žynys"
       ],
       "tables": []
     },
@@ -277,27 +296,33 @@ window.ECOLES_DATA = {
       "description": "Vous effectuez une attaque en utilisant toute votre force, mais prévisible. Vous devez annoncer cette action. Vous effectuez un jet de [Gaillardise + Coup puissant] et devez réussir votre jet en utilisant deux augmentations pour que cette attaque spécifique porte. Si vous réussissez votre jet, l’adversaire de votre PJ ne peut pas tenter d’éviter l’attaque en utilisant une défense active.",
       "ecoles_enseignant": [
         "Bernoulli",
-        "Boucher",
         "Bogatyr",
+        "Boucher",
         "Caballo Rojo",
         "Chaka",
         "Daphan",
         "Desco Numanaius",
         "Eisenfaust",
+        "Gbeto",
         "Guannazar",
         "Haagen",
         "Hammer",
+        "Hirojosa",
+        "Iyasu",
         "Kippe",
         "Kiriakin",
+        "Krzyż",
         "La Gouge",
-        "Peecke",
-        "Hirojosa",
         "Leegstra",
         "Lucani",
         "Mac Donald",
         "Mac Lellan",
         "Monastic Order of Avalon",
+        "Mubarizdun",
+        "Nadziak",
         "Ottenheim",
+        "Pancerny",
+        "Peecke",
         "Pösen",
         "Qor'qunq",
         "Quinn Snedig",
@@ -305,8 +330,11 @@ window.ECOLES_DATA = {
         "Salinas",
         "Shan Dian Dao Te",
         "Skollvfesson",
+        "Strade",
+        "Szybowanie",
         "Tréville",
-        "Urostifter"
+        "Urostifter",
+        "Zimowit"
       ],
       "tables": []
     },
@@ -336,8 +364,17 @@ window.ECOLES_DATA = {
       "categorie": "Techniques de spadassin classiques",
       "description": "Le spadassin a appris à se déplacer en cercles et à toujours esquiver du côté faible de l’adversaire (à gauche pour les droitiers, à droite pour les gauchers). Lorsque l’adversaire vous rate (du fait de votre défense active ou passive), vous pouvez réduire votre dé d’action suivant de un pour chaque rang que vous possédez dans cette technique de combat. Vous ne pouvez évidemment pas réduire un dé d’action en dessous de la phase actuelle.",
       "ecoles_enseignant": [
+        "Bugu Takobi",
+        "Calis",
         "Finnegan",
-        "O'Faolain"
+        "Gbeto",
+        "Kulachniy Boi",
+        "Lipka",
+        "Mateenatya",
+        "O'Faolain",
+        "Omuhelo",
+        "Tin Hinan",
+        "Vilkas"
       ],
       "tables": []
     },
@@ -366,27 +403,29 @@ window.ECOLES_DATA = {
         "Donovan",
         "Drexel",
         "Eisenfaust",
-        "Épées de Salomon",
         "Escuela Pater Noster",
         "Gautier",
         "Guannazar",
         "Halfdansson",
         "Höpken",
+        "Iyasu",
         "Keiferhund",
-        "Leibwächter",
         "La Guêpe",
+        "Leibwächter",
         "Monastic Order of Avalon",
         "Provolone",
         "Rees",
         "Robin Goodfellow",
         "Rogers",
         "Rossini",
-        "Trécy",
+        "Szabla Honoru",
         "Tom Morel",
+        "Trécy",
         "Vigilare",
         "Winckler",
         "Yael",
-        "Zepeda"
+        "Zepeda",
+        "Épées de Salomon"
       ],
       "tables": []
     },
@@ -397,10 +436,12 @@ window.ECOLES_DATA = {
       "ecoles_enseignant": [
         "Al'Marikk",
         "Basulde",
+        "Calis",
         "Chaka",
         "Mac Codrum",
         "Mortis",
-        "Siggursdottir"
+        "Siggursdottir",
+        "Ssang Geom"
       ],
       "tables": []
     },
@@ -412,22 +453,28 @@ window.ECOLES_DATA = {
         "Awal Thmani",
         "Blitzen",
         "Boucher",
+        "Calis",
         "Chaka",
         "Desaix",
         "Gautier",
         "Kippe",
+        "Krzyż",
+        "Qurra",
         "Robertson",
         "Scarron",
         "Scola Carnavale",
         "Smirnov",
         "Soldano",
+        "Ssang Geom",
+        "Strade",
         "Swanson",
+        "Tin Hinan",
         "Torres",
         "Urostifter",
         "Valroux",
         "Villanova",
-        "Qurra",
-        "Yael"
+        "Yael",
+        "Žynys"
       ],
       "tables": []
     },
@@ -440,7 +487,6 @@ window.ECOLES_DATA = {
         "Donovan",
         "Eisenfaust",
         "El Puñal Oculto",
-        "Épées de Salomon",
         "Fadh-Righ",
         "Gautier",
         "Hallbjorn",
@@ -451,9 +497,11 @@ window.ECOLES_DATA = {
         "Robertson",
         "Rogers",
         "Rossini",
+        "Ssang Geom",
         "Teginbek",
         "Tom Morel",
-        "Zepeda"
+        "Zepeda",
+        "Épées de Salomon"
       ],
       "tables": []
     },
@@ -463,8 +511,10 @@ window.ECOLES_DATA = {
       "description": "Le spadassin utilise ses capacités acrobatiques exceptionnelles pour se défendre en toutes circonstances. Double saut périlleux arrière, roulade, pirouette par-dessus son adversaire, etc. Cette technique de défense peut être utilisée comme défense passive avec 2 fois le niveau de la technique de combat Acrobatie en bonus.",
       "ecoles_enseignant": [
         "Basulde",
-        "Rojando & Wilcox",
+        "La Siqueira",
+        "Mateenatya",
         "Qurra",
+        "Rojando & Wilcox",
         "Zheng Yi Quan"
       ],
       "tables": []
@@ -474,138 +524,143 @@ window.ECOLES_DATA = {
       "categorie": "Techniques de spadassin classiques",
       "description": "Lorsque votre PJ affrontera une personne qui utilise une arme dont il connaît les points faibles, et ce, même si le PJ n’utilise pas cette arme lui-même pour combattre, il bénéficiera de (rang dans la technique de combat Exploiter les faiblesses) dés non-gardés à utiliser pour n’importe quel jet de compétences d’attaque, de défense ou de dommages par scène de combat contre l’utilisateur de ladite arme.",
       "ecoles_enseignant": [
-        "Höpken",
-        "Ricardo",
-        "Buslayevich",
-        "Chima Gongjian Shou",
-        "Robin Goodfellow",
-        "Haagen",
-        "Rossini",
-        "Tréville",
-        "Monastic Order of Avalon",
-        "Pavois",
-        "Qor’qunq",
-        "Quinn",
-        "Qurra",
-        "Scarron",
-        "Wu Tsain",
-        "Zheng Yi Quan",
-        "Ki Kwanji",
-        "Tie Xiong Kung",
-        "Ying Sun Wo",
-        "Zheng Yi Quan",
-        "Caldwell",
-        "Peecke",
+        "Al-Aïfa",
+        "Aldana",
+        "Al’Marikk",
+        "Ambrogia",
         "Angelo",
         "Bahol",
-        "Boucher",
-        "Courtepointe",
-        "Mortis",
-        "Mullooney",
-        "Necare",
-        "Vipereus Morsus",
-        "Desco Numanaius",
-        "Donovan",
-        "Épées de Salomon",
-        "Hua Shao Ren Te",
-        "Kemmler",
-        "Kippe",
-        "Kjemper",
-        "Leibwächter",
-        "Lucani",
-        "Mac Lellan",
-        "Urostifter",
-        "Drexel",
-        "Mac Donald",
-        "Sersemlik",
-        "Shan Dian Dao Te",
-        "Charmine",
-        "Falisci",
-        "Chin Te",
-        "Canis",
-        "Malone",
-        "Zepeda",
-        "Nadja’hari",
-        "Al’Marikk",
-        "Eisenfaust",
-        "Keiferhund",
-        "Smirnov",
-        "Bogatyr",
-        "Leegstra",
-        "Siggursdottir",
-        "Skollvfesson",
-        "Halfdansson",
-        "Kiriakin",
-        "Mac Codrum",
-        "Nahgem",
-        "Pösen",
-        "Zar’houni",
-        "Braslyn",
-        "Dobrynya",
-        "Fadh-Righ",
-        "Rees",
-        "Hammer",
-        "Winckler",
-        "Durante",
-        "Guzman",
-        "O’Faolain",
-        "Bouffe-Doublons",
-        "Bricquébec",
-        "Donnerwetter",
-        "Overmars",
-        "Rasmussen",
-        "Finnegan",
-        "Kensington",
-        "Aldana",
-        "Ambrogia",
+        "Basulde",
+        "Bernoulli",
         "Blitzen",
-        "Délicatesse",
+        "Bogatyr",
+        "Bonita",
+        "Boucher",
+        "Bouffe-Doublons",
+        "Braslyn",
+        "Bricquébec",
+        "Buslayevich",
+        "Caballo Rojo",
+        "Caldwell",
+        "Canis",
+        "Charmine",
+        "Chima Gongjian Shou",
+        "Chin Te",
+        "Courtepointe",
+        "Daphan",
         "Desaix",
+        "Desco Numanaius",
+        "Dobrynya",
+        "Donnerwetter",
+        "Donovan",
+        "Drexel",
+        "Durante",
+        "Délicatesse",
+        "Eisenfaust",
+        "El Puñal Oculto",
         "Escuela Pater Noster",
+        "Fa'tahib",
+        "Fadh-Righ",
         "Faileas",
+        "Falisci",
+        "Finnegan",
+        "Gallegos",
         "Gautier",
         "Gosling",
+        "Guannazar",
+        "Guzman",
+        "Haagen",
         "Hainzl",
+        "Halfdansson",
+        "Hammer",
+        "Hennessey",
         "Hirojosa",
+        "Hua Shao Ren Te",
+        "Höpken",
+        "Keiferhund",
+        "Kemmler",
+        "Kensington",
+        "Ki Kwanji",
+        "Kippe",
+        "Kiriakin",
+        "Kjemper",
         "La Guêpe",
         "La Pointe au cœur",
         "Larsen",
-        "Léon des Gueux",
+        "Leegstra",
+        "Leibwächter",
         "Les Cadets",
+        "Lucani",
+        "Léon des Gueux",
+        "Mac Codrum",
+        "Mac Donald",
+        "Mac Lellan",
+        "Malone",
         "Marchenko",
+        "Marcina",
+        "Monastic Order of Avalon",
+        "Mortis",
+        "Mubarizdun",
+        "Mullooney",
+        "Nadja’hari",
+        "Nahgem",
+        "Necare",
         "Ottenheim",
+        "Overmars",
+        "O’Faolain",
+        "Pavois",
+        "Peecke",
         "Provolone",
+        "Pösen",
+        "Qor’qunq",
+        "Quinn",
+        "Qurra",
         "Rachecourt",
+        "Rasmussen",
+        "Rees",
+        "Ricardo",
         "Robertson",
+        "Robin Goodfellow",
         "Rochefort",
+        "Rogers",
+        "Rojando & Wilcox",
+        "Rossini",
+        "Salinas",
+        "Sanders",
         "Scarlatti",
+        "Scarron",
         "Scola Carnavale",
+        "Sersemlik",
+        "Shan Dian Dao Te",
+        "Siggursdottir",
+        "Skollvfesson",
+        "Smirnov",
         "Snedig",
+        "Soldano",
+        "Ssang Geom",
+        "Strade",
         "Swanson",
+        "Teginbek",
+        "Tie Xiong Kung",
         "Tom Morel",
         "Torres",
         "Trecy",
+        "Tréville",
+        "Urostifter",
         "Valroux",
-        "Villanova",
-        "Al-Aïfa",
-        "Basulde",
-        "Bernoulli",
-        "Bonita",
-        "Caballo Rojo",
-        "Daphan",
-        "El Puñal Oculto",
-        "Gallegos",
-        "Guannazar",
-        "Hennessey",
-        "Marcina",
-        "Rogers",
-        "Rojando & Wilcox",
-        "Salinas",
-        "Sanders",
-        "Soldano",
-        "Teginbek",
         "Vigilare",
-        "Yesukai"
+        "Villanova",
+        "Vipereus Morsus",
+        "Winckler",
+        "Wolny Lis",
+        "Wu Tsain",
+        "Yesukai",
+        "Ying Sun Wo",
+        "Zar’houni",
+        "Zepeda",
+        "Zheng Yi Quan",
+        "Zheng Yi Quan",
+        "Épées de Salomon"
       ],
       "ecoles_enseignant_groupees": {
         "Arbalète": [
@@ -642,6 +697,7 @@ window.ECOLES_DATA = {
         ],
         "Bâton": [
           "Caldwell",
+          "Fa'tahib",
           "Peecke"
         ],
         "Couteau": [
@@ -657,7 +713,6 @@ window.ECOLES_DATA = {
         "Épée": [
           "Desco Numanaius",
           "Donovan",
-          "Épées de Salomon",
           "Hua Shao Ren Te",
           "Kemmler",
           "Kippe",
@@ -665,11 +720,14 @@ window.ECOLES_DATA = {
           "Leibwächter",
           "Lucani",
           "Mac Lellan",
-          "Urostifter"
+          "Ssang Geom",
+          "Urostifter",
+          "Épées de Salomon"
         ],
         "Épée à deux mains": [
           "Drexel",
           "Mac Donald",
+          "Mubarizdun",
           "Sersemlik",
           "Shan Dian Dao Te"
         ],
@@ -738,8 +796,8 @@ window.ECOLES_DATA = {
           "Aldana",
           "Ambrogia",
           "Blitzen",
-          "Délicatesse",
           "Desaix",
+          "Délicatesse",
           "Escuela Pater Noster",
           "Faileas",
           "Gautier",
@@ -749,8 +807,8 @@ window.ECOLES_DATA = {
           "La Guêpe",
           "La Pointe au cœur",
           "Larsen",
-          "Léon des Gueux",
           "Les Cadets",
+          "Léon des Gueux",
           "Marchenko",
           "Ottenheim",
           "Provolone",
@@ -760,6 +818,7 @@ window.ECOLES_DATA = {
           "Scarlatti",
           "Scola Carnavale",
           "Snedig",
+          "Strade",
           "Swanson",
           "Tom Morel",
           "Torres",
@@ -786,6 +845,7 @@ window.ECOLES_DATA = {
           "Soldano",
           "Teginbek",
           "Vigilare",
+          "Wolny Lis",
           "Yesukai"
         ]
       },
@@ -802,22 +862,27 @@ window.ECOLES_DATA = {
         "Angelo",
         "Awal Thmani",
         "Bahol",
+        "Bugu Takobi",
         "Caldwell",
-        "Geng Yu Qiang",
         "Chin Te",
         "Desaix",
         "Délicatesse",
         "Faileas",
         "Falisci",
         "Gallegos",
+        "Geng Yu Qiang",
         "Gustavo",
         "Hennessey",
         "Hirojosa",
         "Hua Shao Ren Te",
+        "Krzyż",
         "La Guêpe",
         "Larsen",
+        "Lipka",
         "Marcina",
         "Mullooney",
+        "Okada-ryu",
+        "Omuhelo",
         "Peecke",
         "Quinn",
         "Robertson",
@@ -826,12 +891,16 @@ window.ECOLES_DATA = {
         "Shan Dian Dao Te",
         "Snedig",
         "Swanson",
+        "Szabla Honoru",
+        "Tin Hinan",
         "Tom Morel",
         "Urostifter",
         "Valroux",
         "Villanova",
+        "Wolny Lis",
         "Yael",
-        "Zar'houni"
+        "Zar'houni",
+        "Žynys"
       ],
       "tables": []
     },
@@ -852,6 +921,7 @@ window.ECOLES_DATA = {
         "Braslyn",
         "Dobrynya",
         "Gosling",
+        "La Siqueira",
         "Salinas",
         "Torres",
         "Ying Sun Wo"
@@ -870,12 +940,14 @@ window.ECOLES_DATA = {
         "Desaix",
         "Desco Numanaius",
         "Drexel",
+        "Fa'tahib",
         "Fadh-Righ",
         "Gosling",
         "Halfdansson",
         "Hua Shao Ren Te",
         "Kemmler",
         "Kjemper",
+        "Koncerz",
         "Leegstra",
         "Léon des Gueux",
         "Mac Codrum",
@@ -903,9 +975,12 @@ window.ECOLES_DATA = {
         "Dobrynya",
         "Guannazar",
         "Kensington",
+        "Kulachniy Boi",
+        "La Siqueira",
         "Leibwächter",
         "Overmars",
-        "Yorak"
+        "Yorak",
+        "Zimowit"
       ],
       "tables": []
     },
@@ -926,8 +1001,12 @@ window.ECOLES_DATA = {
       "description": "Vous devez annoncer l’utilisation de cette technique lors de votre action. Vous devez de plus sacrifier une autre action et effectuer un test de [Finesse ou Panache + Harceler]. Grâce à cette technique de combat, vous infligez à votre adversaire une multitude de petites blessures en lui tournant autour, avec quelques quolibets. Étourdi par la rapidité de vos attaques, votre adversaire sera désemparé pour le reste du combat, il se battra alors avec un malus d’une augmentation sur toutes ses actions jusqu’à la fin du combat, à l’exception des jets qu’il effectuera pour s’enfuir ; auquel cas ils bénéficieront d’un bonus de deux augmentations.",
       "ecoles_enseignant": [
         "Awal Thmani",
+        "Bugu Takobi",
         "Hallbjorn",
-        "Léon des Gueux"
+        "Léon des Gueux",
+        "Szybowanie",
+        "Vilkas",
+        "Žynys"
       ],
       "tables": []
     },
@@ -938,7 +1017,8 @@ window.ECOLES_DATA = {
       "ecoles_enseignant": [
         "Al Aïfa",
         "Badayah",
-        "Sanders"
+        "Sanders",
+        "Vilkas"
       ],
       "tables": []
     },
@@ -947,9 +1027,10 @@ window.ECOLES_DATA = {
       "categorie": "Techniques de spadassin classiques",
       "description": "Quand le spadassin utilise cette tactique de combat, le ND de sa cible augmente de 10, ce qui simule la difficulté à le maintenir à distance tout en le frappant, et les dégâts que vous infligez sont alors réduits de 1 dés lancé et gardé. Vous devez être pile à votre portée d’allonge. Votre adversaire, par contre, ne peut vous attaquer que s’il possède une arme au moins aussi longue que la vôtre (d’où l’intérêt d’utiliser des armes d’hast particulièrement grandes). Dans le cas contraire, il devra dépenser un dé d’action et réussir un jet de Jeu de jambes, Acrobatie, Parade ou autre technique de défense approprié… contre un ND égal à votre score de Maintenir à distance multiplié par 5. S’il y parvient, il pourra s’approcher de vous à l’allonge désirée et son action se termine. Si vous deviez vous désengager de lui durant la même phase, il bénéficiera d’une augmentation gratuite s’il effectue une attaque d’opportunité.",
       "ecoles_enseignant": [
-        "Geng Yu Qiang",
         "Délicatesse",
+        "Geng Yu Qiang",
         "Haagen",
+        "La Siqueira",
         "Léon des Gueux",
         "Mac Codrum",
         "Nahgem"
@@ -965,19 +1046,26 @@ window.ECOLES_DATA = {
         "Canis",
         "Chariot de Thespis",
         "Donnerwetter",
+        "Fa'tahib",
         "Fadh-Righ",
         "Faileas",
         "Falisci",
         "Gallegos",
+        "Gbeto",
         "Gosling",
         "Hainzl",
         "Hennessey",
         "Hirojosa",
         "Hua Shao Ren Te",
+        "Iyasu",
         "Kensington",
+        "Koncerz",
         "La Pointe au cœur",
         "Marchenko",
+        "Mubarizdun",
         "Nadja'hari",
+        "Nadziak",
+        "Pancerny",
         "Rachecourt",
         "Ricardo",
         "Robin Goodfellow",
@@ -985,6 +1073,7 @@ window.ECOLES_DATA = {
         "Scola Carnavale",
         "Sersemlik",
         "Soldano",
+        "Szabla Honoru",
         "Teginbek",
         "Torres",
         "Valroux",
@@ -1031,7 +1120,10 @@ window.ECOLES_DATA = {
       "description": "Généralement, le spadassin immobilise la lame de son adversaire en la bloquant avec sa propre épée au niveau de la garde. Puis il saisit promptement son poignet et porte un coup d’estoc. Il doit d’abord réussir une Défense Active de Parade. Il peut alors dépenser une action afin de faire un jet d’opposition de [Gaillardise + Prise de bras] contre [Gaillardise + Parade] de la cible. S’il échoue, il peut recommencer en dépensant à nouveau un dès d’action, sinon le spadassin à l’origine de la prise de bras place sa prochaine attaque immédiatement, sans dépenser de dé d’action supplémentaire, contre un ND de la cible réduit de 10 (minimum 5). Si la cible réussit, il dégage son poignet à temps afin de se remettre en garde, mais il aura dépensé un ou plusieurs dés d’action.",
       "ecoles_enseignant": [
         "Kippe",
-        "Les Cadets"
+        "Koncerz",
+        "Kulachniy Boi",
+        "Les Cadets",
+        "Nadziak"
       ],
       "tables": []
     },
@@ -1060,6 +1152,7 @@ window.ECOLES_DATA = {
       "ecoles_enseignant": [
         "Caldwell",
         "Mullooney",
+        "Szabla Honoru",
         "Wu Tsain"
       ],
       "tables": []
@@ -1076,20 +1169,25 @@ window.ECOLES_DATA = {
         "Awal Thmani",
         "Blitzen",
         "Boucher",
+        "Calis",
         "De Vore",
         "Donovan",
+        "Fa'tahib",
         "Gallegos",
-        "Hallbjorn",
         "Hainzl",
+        "Hallbjorn",
+        "Krzyż",
         "La Guêpe",
-        "Marcina",
         "Marchenko",
+        "Marcina",
         "Mortis",
         "Pavois",
         "Provolone",
         "Salinas",
         "Scarlatti",
-        "Trécy"
+        "Strade",
+        "Trécy",
+        "Zimowit"
       ],
       "tables": []
     },
@@ -1123,8 +1221,11 @@ window.ECOLES_DATA = {
         "Basulde",
         "Chaka",
         "Charmine",
-        "Geng Yu Qiang",
         "Chin Te",
+        "Geng Yu Qiang",
+        "Lipka",
+        "Mateenatya",
+        "Okada-ryu",
         "Qurra",
         "Sanders",
         "Sersemlik",
@@ -1149,7 +1250,37 @@ window.ECOLES_DATA = {
       "categorie": "Techniques de spadassin classiques",
       "description": "Au début de chaque combat, les duellistes peuvent tenter un jet de [Esprit + Voir le style], avec un certain nombre d’augmentations. S’ils réussissent leur jet, ils reconnaissent l’école de leur adversaire. Ils bénéficient alors de 1 point de défense passive et active supplémentaire par rang en Voir le style, plus 2 par augmentation prise. Ce bonus de défense n’est valable que pour la défense passive.",
       "ecoles_enseignant": [
-        "Toutes les écoles"
+        "Awal Thmani",
+        "Badayah",
+        "Bugu Takobi",
+        "Calis",
+        "Chaka",
+        "De Vore",
+        "Fa'tahib",
+        "Gbeto",
+        "Hallbjorn",
+        "Iyasu",
+        "Koncerz",
+        "Krzyż",
+        "Kulachniy Boi",
+        "La Siqueira",
+        "Lipka",
+        "Mateenatya",
+        "Mubarizdun",
+        "Nadziak",
+        "Okada-ryu",
+        "Omuhelo",
+        "Pancerny",
+        "Ssang Geom",
+        "Strade",
+        "Szabla Honoru",
+        "Szybowanie",
+        "Tin Hinan",
+        "Toutes les écoles",
+        "Vilkas",
+        "Wolny Lis",
+        "Zimowit",
+        "Žynys"
       ],
       "tables": [
         [
@@ -1216,6 +1347,7 @@ window.ECOLES_DATA = {
       "description": "Cette technique de combat nécessite la dépense d’un autre dé d’action en plus de celui de l’action en cours, sans quoi vous ne pourrez pas effectuer cette action. Vous effectuez un violent bond vers le haut, en gardant la jambe repliée et en la détendant violemment dans le visage de votre adversaire. Pour cela, vous devez effectuer un coup visé au visage (+ 4 augmentations). Si vous réussissez, votre adversaire encaisse une blessure. De plus, vous lancez les dés de dommages comme d’habitude. Ensuite, la victime effectue un jet de Gaillardise avec un ND égal à votre résultat du jet d’attaque. Si ce jet est un échec, la victime est alors temporairement sonnée et perd toutes ses actions du round en cours. Si le jet est réussi, elle encaisse les dommages et peut continuer le combat. Si l’attaque est effectuée sans que la victime en soit consciente (embuscade, etc.), le jet d’attaque est de 2 augmentations au lieu de 4.",
       "ecoles_enseignant": [
         "Ki Kwanji",
+        "Omuhelo",
         "Tie Xiong Kung"
       ],
       "tables": []
@@ -1277,8 +1409,10 @@ window.ECOLES_DATA = {
         "Caballo Rojo",
         "Chima Gongjian Shou",
         "Gustavo",
+        "Pancerny",
         "Pösen",
         "Shaktishaalee",
+        "Szybowanie",
         "Yesukai"
       ],
       "tables": []
@@ -1306,7 +1440,8 @@ window.ECOLES_DATA = {
       "categorie": "Techniques de combat avec animaux",
       "description": "Cette technique vous permet de sauter sur un adversaire, monté ou à pied, tout en lui portant un coup d’épée au moment de l’impact. Le cavalier arrivant à hauteur de sa cible saute vigoureusement, pointe en avant sur son adversaire. Si sa monture a été dressée au sein de l’école, elle reviendra immédiatement vers lui après son saut, lui permettant de remonter en selle dès l’action suivante. Si elle réussit, cette attaque a un double effet : d’une part l’adversaire ne peut pas tenter de défense active, d’autre part, il ajoute trois à son prochain dé d’action à cause du choc reçu (si cela l’amène à un résultat supérieur à 10, l’action est perdue).",
       "ecoles_enseignant": [
-        "Caballo Rojo"
+        "Caballo Rojo",
+        "Szybowanie"
       ],
       "tables": []
     },
@@ -9481,6 +9616,1079 @@ window.ECOLES_DATA = {
         },
         "_source_pdf": "spadassin_v2",
         "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      },
+      "enrichie": true
+    },
+    {
+      "nom": "Iyasu",
+      "origine": "seconde_edition_adaptee",
+      "nations": [
+        "Ifri"
+      ],
+      "arme": "Shotel",
+      "arme_display": "Shotel",
+      "armes_categories": [
+        "Escrime (Sabre)"
+      ],
+      "specialisations": [
+        "Escrime (Sabre)",
+        "Athlétisme"
+      ],
+      "description_courte": "L'Empire aksoumite, terre du deuxième Prophète, tient le savoir pour l'égal de la foi et forme des soldats capables de manier le shotel et la lance — et de courir toute une nuit avant d'affronter l'ennemi au matin.",
+      "techniques_combat": [
+        {
+          "nom_base": "Désarmer",
+          "variante": "Sabre",
+          "ref": "desarmer",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Coup fourré",
+          "variante": null,
+          "ref": "coup fourre",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Marquer",
+          "variante": null,
+          "ref": "marquer",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Coup puissant",
+          "variante": null,
+          "ref": "coup puissant",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
+        }
+      ],
+      "avantages_courts": {},
+      "restriction_creation": "libre",
+      "genre_restriction": null,
+      "details": {
+        "description_longue": [
+          "L'Empire aksoumite, terre du deuxième Prophète, tient le savoir pour l'égal de la foi et forme des soldats capables de manier le shotel et la lance — et de courir toute une nuit avant d'affronter l'ennemi au matin. C'est dans la garde impériale, le zukic'shok, que naquit l'école : son fondateur, le ras Iyasu, capitaine de la garde, étudia auprès des nebīyi la géométrie sacrée des joks pour résoudre un problème tenace — comment frapper un adversaire abrité derrière son bouclier.",
+          "Sa réponse fut d'épouser la courbe profonde du shotel, cette lame en faucille dont la pointe contourne les gardes pour mordre le dos, la nuque et les flancs. Le styliste Iyasu ne force pas la défense : il la contourne, par des cercles patients que prolonge l'endurance légendaire des Aksoumites.",
+          "La faiblesse de l'école est l'envers de sa lame : la courbe extrême se prête mal à l'estoc et peine à dévier une lame droite et rapide. Contre un escrimeur mobile et sans bouclier — qui ne lui offre aucune garde à contourner — le styliste Iyasu perd l'essentiel de son avantage."
+        ],
+        "origine_texte": "Empire Aksoumite (Ifri)",
+        "armes_predilection": "Shotel (sabre courbe en faucille), tenu à une main",
+        "academies": "Née au sein de la garde impériale aksoumite — le zukic'shok —, dont les vétérans, libérés après cinq ans de service, en essaiment l'enseignement dans l'Empire et, plus largement, à travers l'Ifri",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "L'apprenti Iyasu manie le shotel, dont la pointe recourbée passe par-dessus les gardes : la cible ne tire aucun bonus de l'attribut « Défensive » de son bouclier face aux attaques de l'apprenti"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Le crochet de la lame en faucille excelle à arracher une arme : le compagnon Iyasu bénéficie d'une augmentation gratuite sur tous ses jets de Désarmer effectués avec le shotel sur une arme secondaire (bouclier, dague, …)"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Le maître Iyasu frappe toujours là où l'armure protège le moins : ses attaques au shotel ignorent la moitié de la valeur d'armure de la cible"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      },
+      "enrichie": true
+    },
+    {
+      "nom": "Tin Hinan",
+      "origine": "seconde_edition_adaptee",
+      "nations": [
+        "Ifri"
+      ],
+      "arme": "Takouba",
+      "arme_display": "Takouba",
+      "armes_categories": [
+        "Escrime (Épée)"
+      ],
+      "specialisations": [
+        "Escrime (Épée)",
+        "Cape"
+      ],
+      "description_courte": "Le Maghreb, pays du Peuple bleu et de la Reine bleue, est un joyau de sable où l'on se voile d'indigo contre le soleil et les regards.",
+      "techniques_combat": [
+        {
+          "nom_base": "Feinte",
+          "variante": "Épée",
+          "ref": "feinte",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Double parade",
+          "variante": "Épée / Voile",
+          "ref": "double parade",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Coup fourré",
+          "variante": null,
+          "ref": "coup fourre",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Déplacements circulaires",
+          "variante": null,
+          "ref": "deplacements circulaires",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
+        }
+      ],
+      "avantages_courts": {},
+      "restriction_creation": "libre",
+      "genre_restriction": null,
+      "details": {
+        "description_longue": [
+          "Le Maghreb, pays du Peuple bleu et de la Reine bleue, est un joyau de sable où l'on se voile d'indigo contre le soleil et les regards. L'école porte le nom de Tin Hinan, matriarche légendaire qui mena son peuple à travers les Sables bénis de la Lune ; ses gardes voilés en codifièrent l'art, que perfectionna ensuite l'escorte de la Reine bleue.",
+          "Tout y repose sur le chèche : déployé d'une main, il brouille la ligne de la takouba — droite et fine — dans le miroitement de la chaleur. Le duelliste se fait mirage, insaisissable, frappant d'où on ne l'attend pas.",
+          "Mais le mirage a besoin du désert : en pleine lumière, sur un terrain dégagé, face à qui a déjà percé le jeu du voile, l'illusion se dissipe. Et la takouba légère, comme le voile, ne vaut rien contre une armure lourde et la force brute."
+        ],
+        "origine_texte": "Maghreb (Ifri)",
+        "armes_predilection": "Takouba (épée droite) et chèche indigo (voile employé comme une cape)",
+        "academies": "Transmise par les gardes voilés du Peuple bleu et par l'escorte de la Reine bleue, des Sables bénis de la Lune aux cités maghrébines, et étudiée çà et là à travers l'Ifri",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "L'apprenti Tin Hinan combat le chèche déployé d'une main : il en ignore le malus de main non-directrice, et un adversaire qui l'affronte pour la première fois ne peut opposer aucune défense active à sa première attaque réussie du duel"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Le compagnon Tin Hinan se fait mirage dès que quelque chose le dérobe au regard — voile déployé, poussière, pénombre ou plein soleil aveuglant : il gagne alors +5 à sa Défense Passive"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Tant que le maître Tin Hinan n'a pas été touché durant le round, ses adversaires ne parviennent plus à fixer sa position et subissent -2g0 à toutes leurs attaques contre lui"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      },
+      "enrichie": true
+    },
+    {
+      "nom": "Gbeto",
+      "origine": "seconde_edition_adaptee",
+      "nations": [
+        "Ifri"
+      ],
+      "arme": "Lourde lame de chasse",
+      "arme_display": "Lourde lame de chasse",
+      "armes_categories": [
+        "Escrime (Sabre)"
+      ],
+      "specialisations": [
+        "Escrime (Sabre)",
+        "Pister"
+      ],
+      "description_courte": "Dans la Kurufaba mandéniane, joyau d'or et de sel, la guerre se gagne par le nombre, l'or et la logistique — mais la Xwéda, tapie sous la jungle, a donné à l'Ifri ses chasseresses les plus redoutées : les gbeto, qui abattent l'éléphant et qui, une nuit, s'infiltrèrent dans al-Ghāba pour égorger en silence tous ses chefs..",
+      "techniques_combat": [
+        {
+          "nom_base": "Marquer",
+          "variante": null,
+          "ref": "marquer",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Coup fourré",
+          "variante": null,
+          "ref": "coup fourre",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Coup puissant",
+          "variante": null,
+          "ref": "coup puissant",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Déplacements circulaires",
+          "variante": null,
+          "ref": "deplacements circulaires",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
+        }
+      ],
+      "avantages_courts": {},
+      "restriction_creation": "libre",
+      "genre_restriction": null,
+      "details": {
+        "description_longue": [
+          "Dans la Kurufaba mandéniane, joyau d'or et de sel, la guerre se gagne par le nombre, l'or et la logistique — mais la Xwéda, tapie sous la jungle, a donné à l'Ifri ses chasseresses les plus redoutées : les gbeto, qui abattent l'éléphant et qui, une nuit, s'infiltrèrent dans al-Ghāba pour égorger en silence tous ses chefs.",
+          "De cette traque naquit une école de duel. La gbeto chasse l'homme comme la bête : immobile et patiente, elle lit sa proie, puis frappe la première d'un coup que la longue attente a rendu mortel ; et nul fauve, nul colosse ne l'effraie, car elle a affronté plus gros et plus fort qu'un homme.",
+          "Sa faiblesse est celle du chasseur : tout est dans l'embuscade et le premier coup. Dans un duel qui s'éternise, face à une proie qui rend coup pour coup sans faiblir, la gbeto — dressée à abattre en quelques frappes, non à échanger les passes — s'essouffle et perd l'avantage."
+        ],
+        "origine_texte": "Kurufaba mandéniane — Xwéda (Ifri)",
+        "armes_predilection": "Lourde lame de chasse (apparentée au sabre), tenue à une main",
+        "academies": "Gardée par les chasseresses de la Xwéda, au cœur des jungles et marécages mandénians ; on en murmure l'art dans toute la Kurufaba et au-delà, à travers l'Ifri",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "L'apprenti Gbeto chasse l'homme comme la bête : à la toute première attaque qu'il porte dans un combat, il ajoute sa Finesse aux dés non gardés des dommages — le coup de l'affût, que la longue attente a rendu mortel"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Le compagnon Gbeto sait abattre plus gros que lui : il peut ajouter la Gaillardise de sa propre cible au dès non-gardés de dégâts, au lieu de la sienne"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Rien n'effraie le maître Gbeto, qui a affronté plus dangereux qu'un homme : il bénéficie de deux augmentations gratuites aux tests d'Estomac visant à résister à la Peur et l'intimidation. De plus, ses attaques contre une cible déjà victime d'une Blessure Grave divisent son armure par deux (arrondi à l'inférieur) — le coup de grâce du chasseur"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      },
+      "enrichie": true
+    },
+    {
+      "nom": "Krzyż",
+      "origine": "seconde_edition_adaptee",
+      "nations": [
+        "Sarmatie"
+      ],
+      "arme": "Sabre",
+      "arme_display": "Sabre",
+      "armes_categories": [
+        "Escrime (Sabre)"
+      ],
+      "specialisations": [
+        "Escrime (Sabre)",
+        "Athlétisme"
+      ],
+      "description_courte": "Dans la Rzeczpospolita, où la szlachta — c'est-à-dire la quasi-totalité d'une population entièrement anoblie — tient le sabre pour un droit de naissance et l'emblème du sarmatisme (le long manteau cramoisi, la ceinture de tissu, la lame courbe), le Krzyż est le premier art que l'on apprend.",
+      "techniques_combat": [
+        {
+          "nom_base": "Riposte",
+          "variante": null,
+          "ref": "riposte",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Double parade",
+          "variante": null,
+          "ref": "double parade",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Coup puissant",
+          "variante": "Sabre",
+          "ref": "coup puissant",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Feinte",
+          "variante": "Sabre",
+          "ref": "feinte",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
+        }
+      ],
+      "avantages_courts": {},
+      "restriction_creation": "libre",
+      "genre_restriction": null,
+      "details": {
+        "description_longue": [
+          "Dans la Rzeczpospolita, où la szlachta — c'est-à-dire la quasi-totalité d'une population entièrement anoblie — tient le sabre pour un droit de naissance et l'emblème du sarmatisme (le long manteau cramoisi, la ceinture de tissu, la lame courbe), le Krzyż est le premier art que l'on apprend. Il ne se réclame d'aucun fondateur : il s'est cristallisé au fil des générations dans les salles d'armes du pays, où des maîtres ont réduit le chaos du sabre à une géométrie enseignable, celle des « tailles en croix ».",
+          "Le principe en est une grille de parades qui glissent sans rupture vers la riposte : le sabre ne quitte jamais la ligne, et chaque défense arme déjà l'attaque. C'est un art sobre, sans fioritures, que tout szlachcic se doit de maîtriser avant de prétendre à un style plus personnel.",
+          "La principale faiblesse du Krzyż tient à la rigueur même de ses schémas : un adversaire qui multiplie les angles imprévus — un acrobate, un manieur d'armes jumelées — sort le krzyżeur de ses rails et le force à improviser, là où son entraînement le dessert."
+        ],
+        "origine_texte": "Rzeczpospolita (Fédération Sarmatienne)",
+        "armes_predilection": "Sabre (szabla), tenu à une main",
+        "academies": "Berceau dans la Rzeczpospolita, où il est l'art-socle de la szlachta. Enseigné aussi à travers les Îles Glamour — Avalon, les Marches des Highlands et Inismore —, où les bretteurs friands du sabre l'ont volontiers adopté",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "Dans le cadre d'une Riposte, si la défense active de Parade au sabre de l'apprenti Krzyż réussit, sa contre-attaque ne souffre d'aucun malus au test ([Finesse + Riposte] au lieu de [Finesse + Riposte + 5])"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Une fois par round, après une Riposte réussie, le compagnon Krzyż enchaîne immédiatement une autre attaque au sabre sans dépenser de dé d'action si le premier test est raté, dans les mêmes conditions : sa contre-attaque se teste avec [Finesse + rang de Riposte divisé par 2 et arrondi à l'entier supérieur + rang d'Attaque divisé par deux et arrondi à l'entier inférieur] dés, et le ND de cette attaque est augmenté de 5"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Les attaques issues de Riposte du maître Krzyż ignorent l'encaissement de la cible"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)",
+        "sous_titre": "la Croix"
+      },
+      "enrichie": true
+    },
+    {
+      "nom": "Pancerny",
+      "origine": "seconde_edition_adaptee",
+      "nations": [
+        "Sarmatie"
+      ],
+      "arme": "Sabre et tarcza",
+      "arme_display": "Sabre et tarcza",
+      "armes_categories": [
+        "Escrime (Sabre)"
+      ],
+      "specialisations": [
+        "Escrime (Sabre)",
+        "Cavalier"
+      ],
+      "description_courte": "Sous les hussards ailés, dont l'éclat masque le nombre, ce sont les pancerni — la cavalerie « blindée » de moyenne ligne — qui forment le gros de l'armée de la Rzeczpospolita.",
+      "techniques_combat": [
+        {
+          "nom_base": "Charge de cavalerie",
+          "variante": null,
+          "ref": "charge de cavalerie",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Coup puissant",
+          "variante": null,
+          "ref": "coup puissant",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Marquer",
+          "variante": null,
+          "ref": "marquer",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Charge au bouclier",
+          "variante": null,
+          "ref": "charge au bouclier",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
+        }
+      ],
+      "avantages_courts": {},
+      "restriction_creation": "libre",
+      "genre_restriction": null,
+      "details": {
+        "description_longue": [
+          "Sous les hussards ailés, dont l'éclat masque le nombre, ce sont les pancerni — la cavalerie « blindée » de moyenne ligne — qui forment le gros de l'armée de la Rzeczpospolita. Bien plus nombreux et moins fortunés, ils combattent sabre au poing et bouclier rond au bras ; c'est dans leurs rangs, au fil de générations de guerres de frontière contre les Tatars et les cavaliers de l'est, que s'est forgé leur style.",
+          "Le Pancerny privilégie la polyvalence et la cohésion : on y apprend à charger avec mesure, à tenir en selle comme à pied, et surtout à combattre épaule contre épaule, chaque cavalier couvrant son voisin.",
+          "Sa faiblesse est celle de tout touche-à-tout : sans tranchant décisif face à un pur spécialiste, le pancerny perd en outre une bonne part de son efficacité dès qu'on l'isole de ses camarades."
+        ],
+        "origine_texte": "Rzeczpospolita (Fédération Sarmatienne)",
+        "armes_predilection": "Sabre et tarcza (bouclier rond de cavalier)",
+        "academies": "Né dans les rangs de la cavalerie moyenne de la Rzeczpospolita. Enseigné aussi en Ussura, où la parenté des cavaliers des steppes en a favorisé l'essor",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "Équipé de son bouclier, l'apprenti Pancerny ajoute +3 à l'attribut « Défensive » de tout bouclier qu'il porte. À pied comme monté, il dispose de la Réception de charge tant qu'il est équipé d'un sabre et d'un bouclier"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Lorsqu'il charge (monté ou à pied), le compagnon Pancerny voit le malus de Charge passer de -1g1 à 0 et ajoute 2g1 aux dommages de la charge (au lieu de sa Gaillardise ×2)"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Tant qu'au moins un allié combat à ses côtés, le maître Pancerny et cet allié gagnent +4 à leur Défense Passive ; ce bonus est doublé si l'allié possède lui aussi un bouclier"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      },
+      "enrichie": true
+    },
+    {
+      "nom": "Koncerz",
+      "origine": "seconde_edition_adaptee",
+      "nations": [
+        "Sarmatie"
+      ],
+      "arme": "Koncerz",
+      "arme_display": "Koncerz",
+      "armes_categories": [
+        "Escrime (Rapière)"
+      ],
+      "specialisations": [
+        "Escrime (Rapière)",
+        "Cavalier"
+      ],
+      "description_courte": "Quand la kopia — la longue lance des hussards ailés — se brise au premier choc de la charge, il reste au cavalier le koncerz : un estoc démesuré, raide, de section triangulaire, sanglé sous la selle.",
+      "techniques_combat": [
+        {
+          "nom_base": "Fente en avant",
+          "variante": null,
+          "ref": "fente en avant",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Coup fourré",
+          "variante": null,
+          "ref": "coup fourre",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Marquer",
+          "variante": null,
+          "ref": "marquer",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Prise de bras",
+          "variante": null,
+          "ref": "prise de bras",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
+        }
+      ],
+      "avantages_courts": {},
+      "restriction_creation": "libre",
+      "genre_restriction": null,
+      "details": {
+        "description_longue": [
+          "Quand la kopia — la longue lance des hussards ailés — se brise au premier choc de la charge, il reste au cavalier le koncerz : un estoc démesuré, raide, de section triangulaire, sanglé sous la selle. L'art du Koncerz est né de cette nécessité, dans les écoles de cavalerie de la Rzeczpospolita, pour donner aux hussards privés de leur lance un second coup aussi mortel que le premier.",
+          "Ce n'est pas une arme de taille : c'est une pointe, conçue pour trouver le défaut d'une armure et la percer d'un seul estoc. Le styliste apprend à viser le jour entre deux plaques et à concentrer dans sa pointe tout l'élan d'une monture lancée.",
+          "Sa faiblesse est inhérente à l'arme : médiocre en taille et en défense circulaire, l'estoc laisse son porteur démuni une fois la pointe liée ou écartée, car la relance est lente."
+        ],
+        "origine_texte": "Rzeczpospolita (Fédération Sarmatienne)",
+        "armes_predilection": "Koncerz (long estoc rigide à section triangulaire)",
+        "academies": "Pratique d'estoc des hussards ailés de la Rzeczpospolita. Enseigné aussi en Vodacce, dont la tradition de la pointe et de l'estoc en goûte la rigueur",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "Les attaques d'estoc de l'apprenti Koncerz (Fente en avant et Prise de bras) réduisent de moitié la valeur d'armure de la cible"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Un estoc porté par le compagnon Koncerz après une charge — ou depuis une monture — ignore entièrement la valeur d'armure de la cible"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Le maître Koncerz reçoit une augmentation gratuite lorsqu'il utilise les techniques Fente en avant et Prise de bras. Quand son estoc inflige une Blessure, la cible subit -5 à toutes ses actions jusqu'à recevoir des soins"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)",
+        "sous_titre": "l'estoc des hussards"
+      },
+      "enrichie": true
+    },
+    {
+      "nom": "Lipka",
+      "origine": "seconde_edition_adaptee",
+      "nations": [
+        "Sarmatie"
+      ],
+      "arme": "Sabre léger",
+      "arme_display": "Sabre léger",
+      "armes_categories": [
+        "Escrime (Sabre)"
+      ],
+      "specialisations": [
+        "Escrime (Sabre)",
+        "Athlétisme"
+      ],
+      "description_courte": "Aux marches méridionales de la Rzeczpospolita vivent les Lipka, des Tatars de confession dīniste installés depuis des générations au service de la Fédération, dont ils forment une cavalerie légère réputée.",
+      "techniques_combat": [
+        {
+          "nom_base": "Feinte",
+          "variante": "Sabre",
+          "ref": "feinte",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Déplacements circulaires",
+          "variante": null,
+          "ref": "deplacements circulaires",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Tourbillon",
+          "variante": null,
+          "ref": "tourbillon",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Coup fourré",
+          "variante": null,
+          "ref": "coup fourre",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
+        }
+      ],
+      "avantages_courts": {},
+      "restriction_creation": "libre",
+      "genre_restriction": null,
+      "details": {
+        "description_longue": [
+          "Aux marches méridionales de la Rzeczpospolita vivent les Lipka, des Tatars de confession dīniste installés depuis des générations au service de la Fédération, dont ils forment une cavalerie légère réputée. Fidèles à l'empire qui les a accueillis sans exiger qu'ils abjurent, ils ont conservé l'art du sabre de leurs ancêtres des steppes — et l'ont peu à peu transmis aux Sarmates.",
+          "Le Lipka est tout de vitesse et de feintes : la lame légère — l'ordynka — danse autour de l'adversaire, et le duelliste ne s'arrête jamais. C'est un style de mouvement, fait pour celui qui frappe et se dérobe avant la riposte.",
+          "Sa faiblesse est le revers de sa légèreté : le sabre léger mord mal l'armure lourde et encaisse mal les coups puissants ; privé de mouvement, le lipka est vulnérable."
+        ],
+        "origine_texte": "Rzeczpospolita — frontière méridionale (Fédération Sarmatienne)",
+        "armes_predilection": "Sabre léger (ordynka), tenu à une main",
+        "academies": "Issu des Tatars Lipka au service de la Fédération, le long de la frontière sud de la Rzeczpospolita. Diffusé par les routes steppiques jusque dans l'Empire du Croissant, au Cathay (par le Khazari) et en Ifri (par le Maghreb)",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "L'apprenti Lipka ajoute +1 dé non gardé à tous ses jets d'Initiative et bénéficie d'une augmentation gratuite à ses Feintes au sabre léger"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Une fois par round, après une attaque réussie, le compagnon Lipka peut se déplacer de la moitié de sa distance de mouvement sans dépenser d'action ni provoquer d'attaque d'opportunité"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Tant que le maître Lipka a effectué une action de mouvement durant la phase — ou son demi-déplacement à la suite d'une attaque réussie —, sa Défense Passive augmente de 5"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      },
+      "enrichie": true
+    },
+    {
+      "nom": "Žynys",
+      "origine": "seconde_edition_adaptee",
+      "nations": [
+        "Sarmatie"
+      ],
+      "arme": "Sabre et dague rituelle",
+      "arme_display": "Sabre et dague rituelle",
+      "armes_categories": [
+        "Escrime (Sabre)",
+        "Couteau"
+      ],
+      "specialisations": [
+        "Escrime (Sabre)",
+        "Couteau"
+      ],
+      "description_courte": "La Curonie, l'autre moitié de la Fédération, n'a jamais ployé sous la foi vaticine : on y honore encore les dievai, et ses prêtres — les Žynys — passent avec ces esprits des pactes que redoutent les étrangers.",
+      "techniques_combat": [
+        {
+          "nom_base": "Feinte",
+          "variante": "Sabre",
+          "ref": "feinte",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Double parade",
+          "variante": "Sabre / Couteaux",
+          "ref": "double parade",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Coup fourré",
+          "variante": null,
+          "ref": "coup fourre",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Harceler",
+          "variante": null,
+          "ref": "harceler",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
+        }
+      ],
+      "avantages_courts": {},
+      "restriction_creation": "libre",
+      "genre_restriction": null,
+      "details": {
+        "description_longue": [
+          "La Curonie, l'autre moitié de la Fédération, n'a jamais ployé sous la foi vaticine : on y honore encore les dievai, et ses prêtres — les Žynys — passent avec ces esprits des pactes que redoutent les étrangers. Quelques-uns d'entre eux ont fait de leur sacerdoce un art du duel, où la lame n'est que le prolongement de la menace rituelle.",
+          "Le Žynys combat enveloppé d'invocations, une dague rituelle au poing gauche qui pare autant qu'elle inquiète. Ses gestes lents et chargés de présages troublent l'adversaire avant même le premier fer, et c'est dans ce trouble qu'il frappe.",
+          "La principale faiblesse du Žynys est que sa mise en scène n'opère qu'une fois : un adversaire qui l'a déjà affronté, ou un vaticin aguerri et imperméable aux « superstitions », n'en ressent plus le trouble."
+        ],
+        "origine_texte": "Curonie (Fédération Sarmatienne)",
+        "armes_predilection": "Sabre et dague rituelle (employée en parade)",
+        "academies": "Style des prêtres-duellistes païens de Curonie, dépositaires de l'ancienne foi. L'organisation des Ratas (qui régule les Losejas qui ont passé un pacte avec un Dievaï) enseigne également ce style. Enseigné aussi en Ussura, où il rencontre un terreau de croyances anciennes apparenté",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "L'apprenti Žynys gagne la compétence « Intimidation » en compétence de base. Il pare à la dague (y compris avec Double parade) en ajoutant son Panache à son total passif ou au résultat de ses tests actifs ; un adversaire qui l'affronte pour la première fois doit réussir un test de [Esprit + Estomac] à un ND de 20, auquel cas il subit -5 à sa Défense Passive durant le premier round"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Une fois par round, le compagnon Žynys peut relancer l'intégralité d'un test raté sur une Feinte ou une attaque"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Le maître Žynys ne subit aucun malus lorsqu'il rate une Feinte. Lorsqu'il touche après une Feinte réussie, la cible subit aussi -1g0 à sa prochaine action"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      },
+      "enrichie": true
+    },
+    {
+      "nom": "Vilkas",
+      "origine": "seconde_edition_adaptee",
+      "nations": [
+        "Sarmatie"
+      ],
+      "arme": "Sabre et hachette",
+      "arme_display": "Sabre et hachette",
+      "armes_categories": [
+        "Escrime (Sabre)",
+        "Haches"
+      ],
+      "specialisations": [
+        "Escrime (Sabre)",
+        "Haches"
+      ],
+      "description_courte": "Les grandes forêts de Curonie, où rôdent encore le loup et l'ours, ont leurs propres maîtres : des rôdeurs, braconniers et pisteurs qui connaissent chaque fourré et chaque ombre.",
+      "techniques_combat": [
+        {
+          "nom_base": "Déplacements circulaires",
+          "variante": null,
+          "ref": "deplacements circulaires",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Harceler",
+          "variante": null,
+          "ref": "harceler",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Coup fourré",
+          "variante": null,
+          "ref": "coup fourre",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Lacérer",
+          "variante": null,
+          "ref": "lacerer",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
+        }
+      ],
+      "avantages_courts": {},
+      "restriction_creation": "libre",
+      "genre_restriction": null,
+      "details": {
+        "description_longue": [
+          "Les grandes forêts de Curonie, où rôdent encore le loup et l'ours, ont leurs propres maîtres : des rôdeurs, braconniers et pisteurs qui connaissent chaque fourré et chaque ombre. De leur manière de chasser l'homme comme la bête est née l'école Vilkas, transmise loin des salles d'armes, autour des feux des villages forestiers.",
+          "Le Vilkas chasse en meute et frappe par surprise : sabre dans une main, hachette dans l'autre, le rôdeur harcèle, use le terrain et achève la proie affaiblie. Le sabre ouvre, la hachette achève.",
+          "Sa faiblesse est sa dépendance au décor : conçu pour l'escarmouche et le couvert, le Vilkas perd son mordant dans un duel formel à découvert, sans terrain à exploiter."
+        ],
+        "origine_texte": "Curonie (Fédération Sarmatienne)",
+        "armes_predilection": "Sabre et hachette (au corps à corps)",
+        "academies": "Art des rôdeurs des grandes forêts curoniennes. Enseigné aussi en Ussura et en Ifri, partout où l'on se bat à couvert et par embuscade",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "Maniant sabre et hachette, l'apprenti Vilkas ignore le malus de main non-directrice. Il bénéficie d'une augmentation gratuite lors de l'utilisation de la technique Lacérer. Lorsqu'il emploie la technique Harceler (notamment hors duel), la cible ne bénéficie plus du bonus de deux augmentations à ses tests visant à s'enfuir du combat"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Contre une cible déjà blessée (au moins une Blessure), le compagnon Vilkas ajoute sa Finesse aux dés non gardés de ses dommages"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Une fois par round, le maître Vilkas peut effectuer une attaque supplémentaire à la hachette contre un adversaire adjacent qu'il a déjà touché ce round"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)",
+        "sous_titre": "le Loup"
+      },
+      "enrichie": true
+    },
+    {
+      "nom": "Szabla Honoru",
+      "origine": "seconde_edition_adaptee",
+      "nations": [
+        "Sarmatie"
+      ],
+      "arme": "Sabre",
+      "arme_display": "Sabre",
+      "armes_categories": [
+        "Escrime (Sabre)"
+      ],
+      "specialisations": [
+        "Escrime (Sabre)",
+        "Étiquette"
+      ],
+      "description_courte": "La Liberté dorée de la Rzeczpospolita a fait de chaque szlachcic l'égal des plus grands : tous votent au Sejm, tous se disent nobles, et tous, par conséquent, ont un honneur à défendre l'épée à la main.",
+      "techniques_combat": [
+        {
+          "nom_base": "Désarmer",
+          "variante": "Sabre",
+          "ref": "desarmer",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Retourner les Attaques",
+          "variante": null,
+          "ref": "retourner les attaques",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Marquer",
+          "variante": null,
+          "ref": "marquer",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Feinte",
+          "variante": "Sabre",
+          "ref": "feinte",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
+        }
+      ],
+      "avantages_courts": {},
+      "restriction_creation": "libre",
+      "genre_restriction": null,
+      "details": {
+        "description_longue": [
+          "La Liberté dorée de la Rzeczpospolita a fait de chaque szlachcic l'égal des plus grands : tous votent au Sejm, tous se disent nobles, et tous, par conséquent, ont un honneur à défendre l'épée à la main. De cette singularité sont nés une institution — le duel rituel au premier sang — et l'école qui la sert, enseignée dans les cours et les villes du pays.",
+          "Le Szabla Honoru est l'art de vaincre sans tuer : coups mesurés, désarmements élégants, retournement des attaques adverses. On y blesse pour humilier, non pour occire, car le sang versé suffit à laver l'offense.",
+          "Sa faiblesse est l'envers de sa courtoisie : taillé pour le duel d'honneur codifié, il se retrouve démuni dans une mêlée sans règles, ou face à un adversaire qui méprise l'honneur et frappe pour tuer."
+        ],
+        "origine_texte": "Rzeczpospolita (Fédération Sarmatienne)",
+        "armes_predilection": "Sabre (szabla), tenu à une main",
+        "academies": "École des cours et des villes de la Rzeczpospolita, fille de l'anoblissement général de la population. Enseignée aussi en Avalon, dont la culture chevaleresque du duel l'a accueillie",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "L'apprenti Szabla Honoru peut effectuer la technique Retourner les Attaques au sabre face à des armes d'escrime (Sabre, Épées, Rapières) avec un malus au ND de 5 au lieu de 10"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Lorsqu'il touche, le compagnon Szabla Honoru peut porter un coup « maîtrisé » : avant le jet de dégâts d'une attaque réussie, il peut transférer autant de dés non gardés vers les dés gardés qu'il le souhaite, mais les dégâts s'arrêtent dès que l'adversaire subit une Blessure — il n'en prend alors pas davantage"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Le maître Szabla Honoru maîtrise la botte Retourner les Attaques : lorsqu'elle réussit, ce n'est plus l'adversaire qui choisit en sa faveur les dés de dégâts qu'il subira — c'est le maître Szabla Honoru qui les choisit à sa place"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)",
+        "sous_titre": "le sabre d'honneur"
+      },
+      "enrichie": true
+    },
+    {
+      "nom": "Nadziak",
+      "origine": "seconde_edition_adaptee",
+      "nations": [
+        "Sarmatie"
+      ],
+      "arme": "Nadziak",
+      "arme_display": "Nadziak",
+      "armes_categories": [
+        "Masses"
+      ],
+      "specialisations": [
+        "Masse",
+        "Athlétisme"
+      ],
+      "description_courte": "Le nadziak — un marteau de cavalier dont le bec d'acier perce les armures que nulle taille n'entame — pend à la selle de bien des szlachcice, qui s'en servent autant pour la guerre que pour régler leurs querelles.",
+      "techniques_combat": [
+        {
+          "nom_base": "Coup de pommeau",
+          "variante": null,
+          "ref": "coup de pommeau",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Coup puissant",
+          "variante": null,
+          "ref": "coup puissant",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Prise de bras",
+          "variante": null,
+          "ref": "prise de bras",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Marquer",
+          "variante": null,
+          "ref": "marquer",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
+        }
+      ],
+      "avantages_courts": {},
+      "restriction_creation": "libre",
+      "genre_restriction": null,
+      "details": {
+        "description_longue": [
+          "Le nadziak — un marteau de cavalier dont le bec d'acier perce les armures que nulle taille n'entame — pend à la selle de bien des szlachcice, qui s'en servent autant pour la guerre que pour régler leurs querelles. Réputé déloyal, banni de plus d'un duel d'honneur, il a pourtant son école, transmise par ceux qui préfèrent l'efficacité brutale à l'élégance.",
+          "L'art du Nadziak est celui du choc : on frappe pour briser, pour étourdir, pour défoncer la cuirasse. C'est une école de mêlée et de rixe, sans esthétique, mais redoutable dans la fureur du combat.",
+          "Sa faiblesse est sa brutalité même : puissant mais lent et lisible, le nadziak laisse un duelliste vif et mobile le déborder — et son port traîne une réputation sulfureuse qui se paie en société."
+        ],
+        "origine_texte": "Rzeczpospolita (Fédération Sarmatienne)",
+        "armes_predilection": "Nadziak (marteau de cavalier à bec d'acier)",
+        "academies": "Tradition martiale de la szlachta de la Rzeczpospolita. Enseignée aussi en Eisen, où les rudes combattants apprécient son efficacité contre les armures",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "Lorsque l'apprenti Nadziak manie une arme de type Masse dotée de l'attribut « Fracassant », il lui ajoute l'attribut « Perforant » de la même valeur que son attribut Fracassant"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Lorsque le compagnon Nadziak inflige une Blessure Grave, la cible est sonnée et perd sa prochaine action"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Contre une cible portant une armure (Mailles ou davantage), le maître Nadziak ignore la totalité de l'armure ; contre les autres types d'armure, il inflige 0g1 dé de dégâts supplémentaire"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      },
+      "enrichie": true
+    },
+    {
+      "nom": "Zimowit",
+      "origine": "seconde_edition_adaptee",
+      "nations": [
+        "Sarmatie"
+      ],
+      "arme": "Pałasz",
+      "arme_display": "Pałasz",
+      "armes_categories": [
+        "Escrime (Sabre)"
+      ],
+      "specialisations": [
+        "Escrime (Sabre)",
+        "Athlétisme"
+      ],
+      "description_courte": "Sur la frontière orientale de la Rzeczpospolita, là où la Fédération touche l'Ussura et où l'hiver tue plus sûrement que l'ennemi, on ne combat pas comme dans les salles tièdes du pays.",
+      "techniques_combat": [
+        {
+          "nom_base": "Force d'âme",
+          "variante": null,
+          "ref": "force d'ame",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Coup puissant",
+          "variante": null,
+          "ref": "coup puissant",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Riposte",
+          "variante": null,
+          "ref": "riposte",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Corps à Corps",
+          "variante": null,
+          "ref": "corps a corps",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
+        }
+      ],
+      "avantages_courts": {},
+      "restriction_creation": "libre",
+      "genre_restriction": null,
+      "details": {
+        "description_longue": [
+          "Sur la frontière orientale de la Rzeczpospolita, là où la Fédération touche l'Ussura et où l'hiver tue plus sûrement que l'ennemi, on ne combat pas comme dans les salles tièdes du pays. L'école Zimowit y est née, parmi les garnisons des marches, façonnée par le froid, les longues campagnes et la nécessité de durer.",
+          "Le Zimowit « tient l'hiver » : posture basse, coups amples du lourd pałasz, endurance à toute épreuve qui use l'adversaire autant qu'elle l'écrase. C'est un art de patience et de ténacité, où l'on encaisse pour mieux frapper en retour.",
+          "Sa faiblesse est que l'endurance y prime la vitesse : un adversaire mobile et feinteur esquive les grands coups et le prend de vitesse, tournant sa puissance contre lui."
+        ],
+        "origine_texte": "Rzeczpospolita — frontière ussurane (Fédération Sarmatienne)",
+        "armes_predilection": "Pałasz (sabre lourd à lame droite)",
+        "academies": "Forgé sur la frontière orientale de la Rzeczpospolita, face aux hivers ussurans. Enseigné aussi dans les Marches des Highlands, dont les durs montagnards y reconnaissent les leurs",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "L'apprenti Zimowit réduit d'un montant égal à sa Détermination ×3 les dommages de la première attaque qui le touche à chaque round"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Tant qu'il a subi au moins une Blessure Grave, le compagnon Zimowit ajoute sa Détermination aux dés non gardés de ses dommages"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Une fois par combat, lorsqu'il devrait être mis hors de combat, le maître Zimowit tient debout jusqu'à la fin du round, en ignorant les malus dus à ses Blessures (mais pas la Frustration)"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
+      },
+      "enrichie": true
+    },
+    {
+      "nom": "Wolny Lis",
+      "origine": "seconde_edition_adaptee",
+      "nations": [
+        "Sarmatie"
+      ],
+      "arme": "Sabre",
+      "arme_display": "Sabre",
+      "armes_categories": [
+        "Escrime (Sabre)"
+      ],
+      "specialisations": [
+        "Escrime (Sabre)",
+        "Observation"
+      ],
+      "description_courte": "La Fédération a toujours produit plus de soldats que de guerres pour les employer, et ses fils s'en vont louer leur sabre d'un bout à l'autre du monde.",
+      "techniques_combat": [
+        {
+          "nom_base": "Feinte",
+          "variante": "Sabre",
+          "ref": "feinte",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Céder la place",
+          "variante": null,
+          "ref": "ceder la place",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Exploiter les faiblesses",
+          "variante": "catégorie d'arme au choix",
+          "ref": "exploiter les faiblesses",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Coup fourré",
+          "variante": null,
+          "ref": "coup fourre",
+          "source": "docx_v2"
+        },
+        {
+          "nom_base": "Voir le style",
+          "variante": null,
+          "ref": "voir le style",
+          "source": "docx_v2"
+        }
+      ],
+      "avantages_courts": {},
+      "restriction_creation": "libre",
+      "genre_restriction": null,
+      "details": {
+        "description_longue": [
+          "La Fédération a toujours produit plus de soldats que de guerres pour les employer, et ses fils s'en vont louer leur sabre d'un bout à l'autre du monde. C'est dans ces compagnies de mercenaires sarmates — qui combattent un jour pour un prince vodaccis, le lendemain contre lui — qu'est né le Wolny Lis, l'art de survivre à toutes les guerres des autres.",
+          "Le Renard n'enseigne pas tant une botte qu'une manière de lire l'adversaire et de retourner son propre jeu contre lui. Le mercenaire qui le pratique a vu mille styles et sait s'adapter à chacun, là où d'autres ne connaissent que le leur.",
+          "Sa faiblesse est d'être adaptable mais maître de rien : face à un bagarreur sans style à « lire », il n'a aucune prise, et sa frappe brute reste inférieure à celle des écoles spécialisées."
+        ],
+        "origine_texte": "Fédération Sarmatienne",
+        "armes_predilection": "Sabre, tenu à une main",
+        "academies": "Porté par les compagnies mercenaires sarmates qui se louent d'un bout à l'autre du monde. Enseigné aussi dans les Nations Pirates (exporté à Numa), dans l'Empire du Croissant et en Ifri, au gré des champs de bataille",
+        "homologation": "Reconnue par la Guilde des Duellistes",
+        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
+        "techniques_toutes_avancees": true,
+        "niveaux": {
+          "apprenti": {
+            "fluff": null,
+            "regles": "L'apprenti Wolny Lis ajoute +1g1 à ses jets de Voir le style. S'il parvient à identifier l'école adverse, il obtient 2 points de Défense Passive et active supplémentaires par rang de Voir le style (au lieu de 1)"
+          },
+          "compagnon": {
+            "fluff": null,
+            "regles": "Contre un adversaire dont il a identifié l'école (Voir le style réussi), le compagnon Wolny Lis gagne une augmentation gratuite à tous ses jets d'attaque contre cette cible"
+          },
+          "maitre": {
+            "fluff": null,
+            "regles": "Une fois par combat, le maître Wolny Lis peut emprunter une Technique de combat qu'il a vu l'adversaire employer, l'utilisant à son propre rang de Voir le style jusqu'à la fin du combat"
+          }
+        },
+        "_source_pdf": "spadassin_v2",
+        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)",
+        "sous_titre": "le Renard libre"
       },
       "enrichie": true
     }

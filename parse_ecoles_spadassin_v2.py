@@ -23,8 +23,13 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-DOCX = Path(r"D:/Utilisateur/Guillaume/Bureau/JDR Papier/7ème Mer"
-           r"/Ecoles combat & co/Ecoles_spadassin_V2_claudé.docx")
+_ECOLES_DIR = Path(r"D:/Utilisateur/Guillaume/Bureau/JDR Papier/7ème Mer/Ecoles combat & co")
+# Tous les docx d'écoles de Spadassin V2 (corpus principal + suppléments).
+DOCX_SOURCES = [
+    _ECOLES_DIR / "Ecoles_spadassin_V2_claudé.docx",
+    _ECOLES_DIR / "Ecoles_spadassin_Ifri.docx",
+    _ECOLES_DIR / "Ecoles_spadassin_Sarmatie.docx",
+]
 ECOLES_JSON = ROOT / "ecoles.json"
 ECOLES_JS = ROOT / "ecoles.js"
 
@@ -117,8 +122,16 @@ def parse_ecoles(paras):
             # Nouvelle école
             if cur:
                 ecoles.append(cur)
+            titre = m.group(2).strip()
+            # Sépare un éventuel sous-titre / traduction parenthésé :
+            # 'Krzyż (« la Croix »)' → nom='Krzyż', sous_titre='la Croix'.
+            sous_titre = ""
+            mt = re.match(r"^(.+?)\s*\((.+)\)\s*$", titre)
+            if mt:
+                titre = mt.group(1).strip()
+                sous_titre = mt.group(2).strip().strip("«»  ").strip()
             cur = {
-                "nom": m.group(2).strip(),
+                "nom": titre, "sous_titre": sous_titre,
                 "origine": "", "description": [], "academies": "",
                 "homologation": "", "armes": "", "specialisations": [],
                 "techniques": [], "niveaux": {}, "rangs_requis": "",
@@ -287,6 +300,14 @@ def deduire_armes_categories(specs, meta_categories):
         (r"bouclier", "Boucliers"),
         (r"hache", "Haches"),
         (r"2 mains|deux mains", "Épées à 2 mains"),
+        (r"masse", "Masses"),
+        (r"fl[ée]au", "Fléau"),
+        (r"fouet", "Fouet"),
+        (r"arbal[èe]te", "Arbalètes"),
+        (r"\barc\b|arcs", "Arcs"),
+        (r"pistolet", "Pistolet"),
+        (r"fusil|mousquet", "Fusil"),
+        (r"arme.?\s*d.hast|hast", "Armes d'Hast"),
     ]
     cats = []
     blob = _norm(" · ".join(specs))
@@ -312,6 +333,8 @@ def construire_details(e):
         "_source_pdf": "spadassin_v2",
         "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)",
     }
+    if e.get("sous_titre"):
+        d["sous_titre"] = e["sous_titre"]
     for key in ("apprenti", "compagnon", "maitre"):
         if key in e["niveaux"]:
             fluff, regles = _split_niveau(e["niveaux"][key])
@@ -415,37 +438,99 @@ def completer_ecoles_compactes(data):
     return completees
 
 
+# ---------- Cross-linking technique → écoles ----------
+# Mappe une catégorie d'arme d'école vers la clé d'arme utilisée dans les
+# « ecoles_enseignant_groupees » (technique « Exploiter les faiblesses »).
+ARME_VERS_GROUPE = {
+    "escrime (sabre)": "Sabre", "escrime (epee)": "Épée",
+    "escrime (rapiere)": "Rapière", "batons": "Bâton", "couteau": "Couteau",
+    "masses": "Masse", "haches": "Haches", "lances": "Lances",
+    "epees a 2 mains": "Épée à deux mains", "gant de combat": "Gant de combat",
+    "pugilat": "Pugilat", "fleau": "Fléau", "fouet": "Fouet",
+    "boucliers": "Boucliers", "arbaletes": "Arbalète", "arcs": "Arc",
+    "pistolet": "Pistolet", "fusil": "Mousquet", "armes d'hast": "Armes d’hast",
+}
+
+
+def _arme_groupe(ec):
+    cats = ec.get("armes_categories") or []
+    return ARME_VERS_GROUPE.get(_norm(cats[0])) if cats else None
+
+
+def sync_techniques_ecoles(data, noms_ecoles):
+    """Pour chaque école traitée, l'inscrit dans ecoles_enseignant de chaque
+    technique du recueil qu'elle enseigne (cross-linking technique → école).
+    Gère le format groupé par arme (Exploiter les faiblesses)."""
+    techniques = data.get("techniques") or {}
+    if not techniques:
+        return 0, []
+    par_nom = {e["nom"]: e for e in data["ecoles"]}
+    ajouts, sans_fiche = 0, set()
+    for nom in noms_ecoles:
+        ec = par_nom.get(nom)
+        if not ec:
+            continue
+        arme = _arme_groupe(ec)
+        for tc in ec.get("techniques_combat", []):
+            ref = tc.get("ref")
+            if not ref:
+                continue
+            t = techniques.get(ref)
+            if t is None:
+                # Technique pas (encore) dans le recueil → pas de fiche.
+                if _norm(tc.get("nom_base", "")) not in ("voir le style",):
+                    sans_fiche.add(tc.get("nom_base", ref))
+                continue
+            grp = t.get("ecoles_enseignant_groupees")
+            if grp:
+                cible = next((k for k in grp if arme and _norm(k) == _norm(arme)), None)
+                if cible is None:
+                    continue  # arme non trouvée : on n'altère pas le compte
+                if nom not in grp[cible]:
+                    grp[cible].append(nom)
+                    grp[cible].sort(key=lambda x: x.lower())
+            lst = t.setdefault("ecoles_enseignant", [])
+            if nom not in lst:
+                lst.append(nom)
+                lst.sort(key=lambda x: x.lower())
+                ajouts += 1
+    return ajouts, sorted(sans_fiche)
+
+
 def main():
-    if not DOCX.exists():
-        print(f"[X] docx introuvable : {DOCX}")
-        return
-    paras = extraire_paragraphes(DOCX)
-    ecoles_docx = parse_ecoles(paras)
-    print(f"Écoles parsées dans le docx : {len(ecoles_docx)}")
-
     data = json.loads(ECOLES_JSON.read_text(encoding="utf-8"))
-    maj, crees = appliquer(data, ecoles_docx)
-    completees = completer_ecoles_compactes(data)
+    tous_noms, log_nations = [], []
+    for src in DOCX_SOURCES:
+        if not src.exists():
+            print(f"  [!] docx introuvable, ignoré : {src.name}")
+            continue
+        ecoles_docx = parse_ecoles(extraire_paragraphes(src))
+        maj, crees = appliquer(data, ecoles_docx)
+        tous_noms += maj + crees
+        log_nations += [(e["nom"], e["origine"]) for e in ecoles_docx]
+        print(f"{src.name} : {len(ecoles_docx)} écoles ({len(maj)} maj, {len(crees)} créées)")
 
-    # Méta
+    completees = completer_ecoles_compactes(data)
+    if completees:
+        print(f"  Complétées (réorg. enrichi) : {', '.join(completees)}")
+
+    nb_tech, sans_fiche = sync_techniques_ecoles(data, tous_noms)
+    print(f"  Cross-linking technique → école : {nb_tech} liens ajoutés")
+    if sans_fiche:
+        print(f"  [i] Techniques sans fiche dans le recueil (affichées en texte) : {', '.join(sans_fiche)}")
+
     data.setdefault("_meta", {})["nb_ecoles"] = len(data["ecoles"])
 
-    print(f"  Mises à jour ({len(maj)}) : {', '.join(maj)}")
-    print(f"  Créées ({len(crees)}) : {', '.join(crees) or '—'}")
-    print(f"  Complétées (réorg. format enrichi) : {', '.join(completees) or '—'}")
-
-    # Vérifs Nations
     print("\n  Nations attribuées :")
-    for e in ecoles_docx:
-        print(f"    {e['nom']:<16} ← {e['origine'][:45]:<45} → {origine_to_nations(e['origine'])}")
+    for nom, origine in log_nations:
+        print(f"    {nom:<16} ← {origine[:42]:<42} → {origine_to_nations(origine)}")
 
-    ECOLES_JSON.write_text(json.dumps(data, ensure_ascii=False, indent=2),
-                           encoding="utf-8")
-    header = "// Généré par csv_to_json.py — ne pas éditer à la main\n"
-    ECOLES_JS.write_text(header + "window.ECOLES_DATA = "
-                         + json.dumps(data, ensure_ascii=False, indent=2) + ";\n",
-                         encoding="utf-8")
-    print("\n[ok] ecoles.json / ecoles.js régénérés")
+    txt = json.dumps(data, ensure_ascii=False, indent=2)
+    ECOLES_JSON.write_text(txt, encoding="utf-8")
+    ECOLES_JS.write_text(
+        "// Généré par csv_to_json.py — ne pas éditer à la main\n"
+        "window.ECOLES_DATA = " + txt + ";\n", encoding="utf-8")
+    print(f"\n[ok] {len(data['ecoles'])} écoles — ecoles.json / ecoles.js régénérés")
 
 
 if __name__ == "__main__":

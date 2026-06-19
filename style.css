@@ -2808,3 +2808,11 @@ p { margin: 0 0 0.6em; }
   color: #4f7a42;
   letter-spacing: 0.03em;
 }
+
+/* Sous-titre / traduction du nom d'école (« la Croix », etc.) */
+.ecole-sous-titre {
+  margin: -0.2rem 0 0.4rem 0;
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}

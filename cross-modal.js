@@ -833,8 +833,10 @@
       : ecole.genre_restriction === "hommes"
         ? el("span", { class: "badge genre-hommes" }, "♂ Réservée aux hommes")
         : null;
+    const sousTitre = ecole.details && ecole.details.sous_titre;
     return el("div", { class: "detail-header" }, [
       el("h2", { id: "cross-modal-title" }, ecole.nom),
+      sousTitre ? el("p", { class: "ecole-sous-titre" }, "« " + sousTitre + " »") : null,
       el("div", { class: "badges" }, [
         ...ecole.nations.map(n => el("span", { class: "badge nation" }, n)),
         el("span", { class: "badge origine-" + ecole.origine }, ORIGINE_LABELS[ecole.origine] || ecole.origine),
