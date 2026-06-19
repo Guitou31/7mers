@@ -394,6 +394,58 @@ ALIAS_NOMS_EXISTANTS = {
     "la siqueira": "Siqueira",
 }
 
+# Écoles présentes dans les docx mais que l'on NE veut PAS intégrer
+# (corpus jugé trop fourni). Exclues du parsing ET retirées de ecoles.json
+# (y compris des listes ecoles_enseignant des techniques).
+ECOLES_EXCLUES = {"szabla honoru", "lipka"}
+
+# Retouches manuelles d'écoles déjà présentes (V1/combat), appliquées après
+# le parsing des docx. nations_ajout = Nations d'enseignement à ajouter ;
+# appartenance_requise = bannière affichée sur la fiche.
+ECOLES_OVERRIDES_MANUELS = {
+    "Basulde": {
+        "nations_ajout": ["Ussura"],
+        "appartenance_requise": (
+            "Réservée au peuple des Fidhelis, qui parcourt la Sarmatie et l'Ussura."
+        ),
+    },
+}
+
+
+def supprimer_ecoles_exclues(data):
+    """Retire les écoles exclues de la liste ET de tous les ecoles_enseignant
+    (et groupées) des techniques, pour éviter des références mortes."""
+    noms_retires = {x["nom"] for x in data["ecoles"] if _norm(x["nom"]) in ECOLES_EXCLUES}
+    if not noms_retires:
+        return []
+    data["ecoles"] = [x for x in data["ecoles"] if _norm(x["nom"]) not in ECOLES_EXCLUES]
+    for t in (data.get("techniques") or {}).values():
+        if "ecoles_enseignant" in t:
+            t["ecoles_enseignant"] = [e for e in t["ecoles_enseignant"] if e not in noms_retires]
+        grp = t.get("ecoles_enseignant_groupees")
+        if grp:
+            for arme in list(grp):
+                grp[arme] = [e for e in grp[arme] if e not in noms_retires]
+                if not grp[arme]:
+                    del grp[arme]
+    return sorted(noms_retires)
+
+
+def appliquer_overrides_manuels(data):
+    par_nom = {x["nom"]: x for x in data["ecoles"]}
+    touches = []
+    for nom, ov in ECOLES_OVERRIDES_MANUELS.items():
+        e = par_nom.get(nom)
+        if not e:
+            continue
+        for n in ov.get("nations_ajout", []):
+            if n not in e.get("nations", []):
+                e.setdefault("nations", []).append(n)
+        if ov.get("appartenance_requise"):
+            e.setdefault("details", {})["appartenance_requise"] = ov["appartenance_requise"]
+        touches.append(nom)
+    return touches
+
 
 def appliquer(data, ecoles_docx):
     par_nom = {x["nom"]: x for x in data["ecoles"]}
@@ -401,6 +453,8 @@ def appliquer(data, ecoles_docx):
     maj, crees = [], []
 
     for e in ecoles_docx:
+        if _norm(e["nom"]) in ECOLES_EXCLUES:
+            continue
         nations = origine_to_nations(e["origine"])
         # Écoles sarmates (nation théane) : on ajoute les Nations où l'école
         # s'enseigne aussi (lues dans les Académies). Les écoles continentales
@@ -560,6 +614,13 @@ def main():
         tous_noms += maj + crees
         log_nations += [(e["nom"], e["origine"]) for e in ecoles_docx]
         print(f"{src.name} : {len(ecoles_docx)} écoles ({len(maj)} maj, {len(crees)} créées)")
+
+    retirees = supprimer_ecoles_exclues(data)
+    if retirees:
+        print(f"  Retirées (exclues) : {', '.join(retirees)}")
+    overrides = appliquer_overrides_manuels(data)
+    if overrides:
+        print(f"  Overrides manuels appliqués : {', '.join(overrides)}")
 
     completees = completer_ecoles_compactes(data)
     if completees:

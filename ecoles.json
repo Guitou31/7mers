@@ -6,7 +6,7 @@
       "ecoles_enrichies_auto.json",
       "ecoles_enrichies.json"
     ],
-    "nb_ecoles": 103,
+    "nb_ecoles": 101,
     "nb_ecoles_enrichies": 72,
     "nb_techniques_definies": 79,
     "nations_uniques": [
@@ -279,7 +279,6 @@
         "Gbeto",
         "Iyasu",
         "Koncerz",
-        "Lipka",
         "Mateenatya",
         "Tin Hinan",
         "Vilkas",
@@ -368,7 +367,6 @@
         "Finnegan",
         "Gbeto",
         "Kulachniy Boi",
-        "Lipka",
         "Mateenatya",
         "O'Faolain",
         "Omuhelo",
@@ -417,7 +415,6 @@
         "Robin Goodfellow",
         "Rogers",
         "Rossini",
-        "Szabla Honoru",
         "Tom Morel",
         "Trécy",
         "Vigilare",
@@ -877,7 +874,6 @@
         "Krzyż",
         "La Guêpe",
         "Larsen",
-        "Lipka",
         "Marcina",
         "Mullooney",
         "Okada-ryu",
@@ -890,7 +886,6 @@
         "Shan Dian Dao Te",
         "Snedig",
         "Swanson",
-        "Szabla Honoru",
         "Tin Hinan",
         "Tom Morel",
         "Urostifter",
@@ -1072,7 +1067,6 @@
         "Scola Carnavale",
         "Sersemlik",
         "Soldano",
-        "Szabla Honoru",
         "Teginbek",
         "Torres",
         "Valroux",
@@ -1151,7 +1145,6 @@
       "ecoles_enseignant": [
         "Caldwell",
         "Mullooney",
-        "Szabla Honoru",
         "Wu Tsain"
       ],
       "tables": []
@@ -1222,7 +1215,6 @@
         "Charmine",
         "Chin Te",
         "Geng Yu Qiang",
-        "Lipka",
         "Mateenatya",
         "Okada-ryu",
         "Qurra",
@@ -1263,7 +1255,6 @@
         "Krzyż",
         "Kulachniy Boi",
         "La Siqueira",
-        "Lipka",
         "Mateenatya",
         "Mubarizdun",
         "Nadziak",
@@ -1272,7 +1263,6 @@
         "Pancerny",
         "Ssang Geom",
         "Strade",
-        "Szabla Honoru",
         "Szybowanie",
         "Tin Hinan",
         "Toutes les écoles",
@@ -2343,7 +2333,8 @@
       "nom": "Basulde",
       "origine": "combat_reclassee",
       "nations": [
-        "Sarmatie"
+        "Sarmatie",
+        "Ussura"
       ],
       "arme": "Une paire de sabres ou de sabres de cavalerie",
       "arme_display": "Une paire de sabres ou de sabres de cavalerie",
@@ -2423,7 +2414,8 @@
           }
         },
         "categorie_creation": "Écoles à l'accès limité à la création",
-        "_source_pdf": "combat_reclassee"
+        "_source_pdf": "combat_reclassee",
+        "appartenance_requise": "Réservée au peuple des Fidhelis, qui parcourt la Sarmatie et l'Ussura."
       },
       "enrichie": true
     },
@@ -10118,91 +10110,6 @@
       "enrichie": true
     },
     {
-      "nom": "Lipka",
-      "origine": "seconde_edition_adaptee",
-      "nations": [
-        "Sarmatie",
-        "Empire du Croissant",
-        "Cathay",
-        "Ifri"
-      ],
-      "arme": "Sabre léger",
-      "arme_display": "Sabre léger",
-      "armes_categories": [
-        "Escrime (Sabre)"
-      ],
-      "specialisations": [
-        "Escrime (Sabre)",
-        "Athlétisme"
-      ],
-      "description_courte": "Aux marches méridionales de la Rzeczpospolita vivent les Lipka, des Tatars de confession dīniste installés depuis des générations au service de la Fédération, dont ils forment une cavalerie légère réputée.",
-      "techniques_combat": [
-        {
-          "nom_base": "Feinte",
-          "variante": "Sabre",
-          "ref": "feinte",
-          "source": "docx_v2"
-        },
-        {
-          "nom_base": "Déplacements circulaires",
-          "variante": null,
-          "ref": "deplacements circulaires",
-          "source": "docx_v2"
-        },
-        {
-          "nom_base": "Tourbillon",
-          "variante": null,
-          "ref": "tourbillon",
-          "source": "docx_v2"
-        },
-        {
-          "nom_base": "Coup fourré",
-          "variante": null,
-          "ref": "coup fourre",
-          "source": "docx_v2"
-        },
-        {
-          "nom_base": "Voir le style",
-          "variante": null,
-          "ref": "voir le style",
-          "source": "docx_v2"
-        }
-      ],
-      "avantages_courts": {},
-      "restriction_creation": "libre",
-      "genre_restriction": null,
-      "details": {
-        "description_longue": [
-          "Aux marches méridionales de la Rzeczpospolita vivent les Lipka, des Tatars de confession dīniste installés depuis des générations au service de la Fédération, dont ils forment une cavalerie légère réputée. Fidèles à l'empire qui les a accueillis sans exiger qu'ils abjurent, ils ont conservé l'art du sabre de leurs ancêtres des steppes — et l'ont peu à peu transmis aux Sarmates.",
-          "Le Lipka est tout de vitesse et de feintes : la lame légère — l'ordynka — danse autour de l'adversaire, et le duelliste ne s'arrête jamais. C'est un style de mouvement, fait pour celui qui frappe et se dérobe avant la riposte.",
-          "Sa faiblesse est le revers de sa légèreté : le sabre léger mord mal l'armure lourde et encaisse mal les coups puissants ; privé de mouvement, le lipka est vulnérable."
-        ],
-        "origine_texte": "Rzeczpospolita — frontière méridionale (Fédération Sarmatienne)",
-        "armes_predilection": "Sabre léger (ordynka), tenu à une main",
-        "academies": "Issu des Tatars Lipka au service de la Fédération, le long de la frontière sud de la Rzeczpospolita. Diffusé par les routes steppiques jusque dans l'Empire du Croissant, au Cathay (par le Khazari) et en Ifri (par le Maghreb)",
-        "homologation": "Reconnue par la Guilde des Duellistes",
-        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
-        "techniques_toutes_avancees": true,
-        "niveaux": {
-          "apprenti": {
-            "fluff": null,
-            "regles": "L'apprenti Lipka ajoute +1 dé non gardé à tous ses jets d'Initiative et bénéficie d'une augmentation gratuite à ses Feintes au sabre léger"
-          },
-          "compagnon": {
-            "fluff": null,
-            "regles": "Une fois par round, après une attaque réussie, le compagnon Lipka peut se déplacer de la moitié de sa distance de mouvement sans dépenser d'action ni provoquer d'attaque d'opportunité"
-          },
-          "maitre": {
-            "fluff": null,
-            "regles": "Tant que le maître Lipka a effectué une action de mouvement durant la phase — ou son demi-déplacement à la suite d'une attaque réussie —, sa Défense Passive augmente de 5"
-          }
-        },
-        "_source_pdf": "spadassin_v2",
-        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)"
-      },
-      "enrichie": true
-    },
-    {
       "nom": "Žynys",
       "origine": "seconde_edition_adaptee",
       "nations": [
@@ -10369,90 +10276,6 @@
         "_source_pdf": "spadassin_v2",
         "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)",
         "sous_titre": "le Loup"
-      },
-      "enrichie": true
-    },
-    {
-      "nom": "Szabla Honoru",
-      "origine": "seconde_edition_adaptee",
-      "nations": [
-        "Sarmatie",
-        "Avalon"
-      ],
-      "arme": "Sabre",
-      "arme_display": "Sabre",
-      "armes_categories": [
-        "Escrime (Sabre)"
-      ],
-      "specialisations": [
-        "Escrime (Sabre)",
-        "Étiquette"
-      ],
-      "description_courte": "La Liberté dorée de la Rzeczpospolita a fait de chaque szlachcic l'égal des plus grands : tous votent au Sejm, tous se disent nobles, et tous, par conséquent, ont un honneur à défendre l'épée à la main.",
-      "techniques_combat": [
-        {
-          "nom_base": "Désarmer",
-          "variante": "Sabre",
-          "ref": "desarmer",
-          "source": "docx_v2"
-        },
-        {
-          "nom_base": "Retourner les Attaques",
-          "variante": null,
-          "ref": "retourner les attaques",
-          "source": "docx_v2"
-        },
-        {
-          "nom_base": "Marquer",
-          "variante": null,
-          "ref": "marquer",
-          "source": "docx_v2"
-        },
-        {
-          "nom_base": "Feinte",
-          "variante": "Sabre",
-          "ref": "feinte",
-          "source": "docx_v2"
-        },
-        {
-          "nom_base": "Voir le style",
-          "variante": null,
-          "ref": "voir le style",
-          "source": "docx_v2"
-        }
-      ],
-      "avantages_courts": {},
-      "restriction_creation": "libre",
-      "genre_restriction": null,
-      "details": {
-        "description_longue": [
-          "La Liberté dorée de la Rzeczpospolita a fait de chaque szlachcic l'égal des plus grands : tous votent au Sejm, tous se disent nobles, et tous, par conséquent, ont un honneur à défendre l'épée à la main. De cette singularité sont nés une institution — le duel rituel au premier sang — et l'école qui la sert, enseignée dans les cours et les villes du pays.",
-          "Le Szabla Honoru est l'art de vaincre sans tuer : coups mesurés, désarmements élégants, retournement des attaques adverses. On y blesse pour humilier, non pour occire, car le sang versé suffit à laver l'offense.",
-          "Sa faiblesse est l'envers de sa courtoisie : taillé pour le duel d'honneur codifié, il se retrouve démuni dans une mêlée sans règles, ou face à un adversaire qui méprise l'honneur et frappe pour tuer."
-        ],
-        "origine_texte": "Rzeczpospolita (Fédération Sarmatienne)",
-        "armes_predilection": "Sabre (szabla), tenu à une main",
-        "academies": "École des cours et des villes de la Rzeczpospolita, fille de l'anoblissement général de la population. Enseignée aussi en Avalon, dont la culture chevaleresque du duel l'a accueillie",
-        "homologation": "Reconnue par la Guilde des Duellistes",
-        "rangs_requis": "Compagnon : 3 Techniques de combat au rang 3. Maître : 4 Techniques de combat au rang 4",
-        "techniques_toutes_avancees": true,
-        "niveaux": {
-          "apprenti": {
-            "fluff": null,
-            "regles": "L'apprenti Szabla Honoru peut effectuer la technique Retourner les Attaques au sabre face à des armes d'escrime (Sabre, Épées, Rapières) avec un malus au ND de 5 au lieu de 10"
-          },
-          "compagnon": {
-            "fluff": null,
-            "regles": "Lorsqu'il touche, le compagnon Szabla Honoru peut porter un coup « maîtrisé » : avant le jet de dégâts d'une attaque réussie, il peut transférer autant de dés non gardés vers les dés gardés qu'il le souhaite, mais les dégâts s'arrêtent dès que l'adversaire subit une Blessure — il n'en prend alors pas davantage"
-          },
-          "maitre": {
-            "fluff": null,
-            "regles": "Le maître Szabla Honoru maîtrise la botte Retourner les Attaques : lorsqu'elle réussit, ce n'est plus l'adversaire qui choisit en sa faveur les dés de dégâts qu'il subira — c'est le maître Szabla Honoru qui les choisit à sa place"
-          }
-        },
-        "_source_pdf": "spadassin_v2",
-        "categorie_creation": "Écoles de Duelliste (2ᵉ Édition)",
-        "sous_titre": "le sabre d'honneur"
       },
       "enrichie": true
     },
