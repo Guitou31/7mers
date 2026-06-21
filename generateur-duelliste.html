@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Générateur de duelliste — Bréviaire 7ème Mer V2.1</title>
+  <link rel="icon" type="image/png" href="Favicon.png">
+  <link rel="apple-touch-icon" href="Favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ============================================================
+       Styles propres à la page Générateur de duelliste.
+       Thème calé sur les variables du site (style.css) :
+       --accent, --bg-card, --border, --ink, etc.
+       ============================================================ */
+
+    .gen-wrap { max-width: 1100px; margin: 1.25rem auto 3rem; padding: 0 1.25rem; }
+
+    /* --- Carte de contrôle (lieu + bouton) --- */
+    .gen-controls {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .gen-controls label.gen-label {
+      display: block; font-weight: 600; text-transform: uppercase;
+      font-size: 0.72rem; letter-spacing: 0.05em; color: var(--ink-mute);
+      margin-bottom: 0.5rem;
+    }
+    .gen-controls select {
+      width: 100%; padding: 0.7rem; font-size: 1rem; font-family: inherit;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      background: var(--bg-elevated); color: var(--ink);
+    }
+    .proba-summary {
+      margin-top: 0.7rem; font-size: 0.78rem; color: var(--ink-soft);
+      background: var(--border-soft); padding: 0.45rem 0.6rem; border-radius: var(--radius);
+    }
+    .gen-pool-note { margin-top: 0.5rem; font-size: 0.75rem; color: var(--ink-mute); font-style: italic; }
+
+    button.cta {
+      width: 100%; margin-top: 1rem; background: var(--accent); color: #fffbf0;
+      font-family: Georgia, serif; font-size: 1.25rem; font-weight: 700;
+      padding: 0.9rem; border: none; border-radius: var(--radius); cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+      box-shadow: var(--shadow); transition: transform 0.1s, background 0.2s;
+    }
+    button.cta:hover { background: #732e2e; }
+    button.cta:active { transform: scale(0.99); }
+    button.cta svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* --- Carte résultat --- */
+    #result-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); box-shadow: var(--shadow-lg);
+      overflow: hidden; display: none; animation: gen-slideUp 0.35s ease-out;
+    }
+    @keyframes gen-slideUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes gen-fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .res-header {
+      background: linear-gradient(180deg, #3a2418 0%, var(--accent) 100%);
+      color: #fdf3e0; padding: 0.9rem 1.25rem; position: relative;
+      border-bottom: 3px solid var(--border);
+    }
+    .res-eyebrow { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.85; }
+    .res-header h2 { font-size: 1.6rem; margin: 0.2rem 0 0.4rem; color: #fff8e8; }
+    .res-badges { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+    .print-btn {
+      position: absolute; top: 0.9rem; right: 1.1rem;
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.4);
+      color: #fff; padding: 0.35rem 0.6rem; border-radius: var(--radius); cursor: pointer;
+      display: inline-flex; align-items: center; gap: 0.35rem; font: inherit; font-size: 0.8rem; font-weight: 700;
+    }
+    .print-btn:hover { background: rgba(255,255,255,0.3); }
+    .print-btn svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+    .res-body { padding: 1.25rem; }
+    .res-split { display: flex; gap: 1.8rem; flex-wrap: wrap; }
+    .res-col-left { flex: 1; min-width: 300px; }
+    .res-col-right { flex: 1.2; min-width: 300px; border-left: 1px solid var(--border-soft); padding-left: 1.8rem; }
+    @media (max-width: 800px) {
+      .res-col-right { border-left: none; padding-left: 0; border-top: 1px solid var(--border-soft); padding-top: 1.1rem; }
+    }
+
+    .res-row { margin-bottom: 0.85rem; }
+    .res-label { font-size: 0.62rem; text-transform: uppercase; font-weight: 700; color: var(--ink-mute); letter-spacing: 0.06em; margin-bottom: 0.15rem; }
+    .res-value { font-size: 1.05rem; font-weight: 600; color: var(--ink); }
+    .desc-box {
+      background: var(--bg-elevated); border: 1px solid var(--border-soft); padding: 0.7rem 0.8rem;
+      border-radius: var(--radius); font-style: italic; font-size: 0.9rem; line-height: 1.45; margin-top: 0.9rem; color: var(--ink-soft);
+    }
+
+    /* Sélecteur de niveau (pilule) */
+    .mastery-control-group { display: flex; background: var(--border-soft); border-radius: 999px; padding: 0.25rem; margin: 1.1rem 0; }
+    .mastery-control-group label { flex: 1; text-align: center; cursor: pointer; }
+    .mastery-control-group input[type="radio"] { display: none; }
+    .mastery-control-group span {
+      display: block; padding: 0.45rem 0; font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+      color: var(--ink-mute); border-radius: 999px; transition: all 0.15s;
+    }
+    .mastery-control-group input[type="radio"]:checked + span {
+      background: var(--bg-elevated); color: var(--accent); box-shadow: var(--shadow);
+    }
+
+    /* Blocs avantages par niveau */
+    .mastery-box {
+      background: var(--bg-elevated); border: 1px solid var(--border-soft); border-left: 4px solid var(--border);
+      padding: 0.7rem 0.8rem; margin-top: 0.6rem; border-radius: var(--radius); font-size: 0.9rem; line-height: 1.45;
+      display: none; animation: gen-fadeIn 0.3s;
+    }
+    .mastery-box.apprentice { border-left-color: #9a8f74; }
+    .mastery-box.journeyman { border-left-color: #b8860b; }
+    .mastery-box.master { border-left-color: var(--accent); }
+    .mastery-title { font-weight: 700; font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; color: var(--ink-mute); }
+    .mastery-fluff { font-style: italic; color: var(--ink-mute); margin-bottom: 0.3rem; }
+    .mastery-rules { color: var(--ink); }
+
+    /* Stats (caractéristiques + compétences) */
+    .stats-container { display: flex; gap: 1.2rem; margin-top: 1.1rem; padding-top: 0.9rem; border-top: 1px dashed var(--border); }
+    .stats-block { flex: 1; }
+    .stat-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.45rem; font-size: 0.8rem; font-weight: 600; color: var(--ink-soft); }
+    .blank-input {
+      border: none; border-bottom: 1px dotted var(--ink-mute); background: transparent; font-family: inherit;
+      font-size: 0.8rem; width: 100%; max-width: 130px; outline: none; color: var(--ink-soft); font-weight: 600; padding-bottom: 1px;
+    }
+    .blank-input:focus { border-bottom: 1px solid var(--accent); }
+    .blank-input::placeholder { color: var(--border); font-weight: 400; font-style: italic; }
+
+    /* Points (dots) */
+    .tech-dots { display: flex; gap: 3px; align-items: center; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; border: 1px solid var(--accent); background: transparent; }
+    .dot.filled { background: var(--accent); }
+
+    .roll-line { margin-top: 1rem; font-size: 0.75rem; color: var(--ink-mute); text-align: right; }
+    .roll-line span { font-weight: 700; color: var(--ink-soft); }
+
+    /* Techniques */
+    .tech-list-title { font-size: 0.62rem; text-transform: uppercase; font-weight: 700; color: var(--ink-mute); letter-spacing: 0.06em; margin-bottom: 0.6rem; }
+    .tech-item { margin-bottom: 0.7rem; background: var(--bg-elevated); padding: 0.6rem 0.7rem; border-radius: var(--radius); border: 1px solid var(--border-soft); }
+    .tech-header { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; }
+    .tech-name { font-weight: 700; color: var(--accent); font-size: 0.98rem; }
+    .tech-desc { font-size: 0.82rem; color: var(--ink-soft); margin-top: 0.3rem; font-style: italic; line-height: 1.4; white-space: pre-wrap; }
+    .tech-desc.is-missing { color: var(--ink-mute); }
+
+    #gen-status { text-align: center; font-size: 0.8rem; color: var(--accent); margin-top: 1rem; }
+
+    /* ============================================================
+       Impression : on ne garde que la fiche d'adversaire.
+       ============================================================ */
+    @media print {
+      @page { margin: 0.8cm; }
+      body { background: #fff; }
+      #page-layout, .page-section-title, .gen-controls, #pp-bar-global { display: none !important; }
+      .gen-wrap { margin: 0; padding: 0; max-width: none; }
+      #result-card { display: block !important; border: none; box-shadow: none; }
+      .res-header {
+        background: var(--accent) !important; color: #fff !important;
+        -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 0.5rem 0.9rem !important;
+      }
+      .res-header h2 { font-size: 1.15rem !important; }
+      .print-btn, .mastery-control-group { display: none !important; }
+      .res-body { padding: 0.5rem 0 !important; }
+      .res-split { flex-wrap: nowrap !important; gap: 1.2rem !important; }
+      .res-col-left { min-width: auto !important; }
+      .res-col-right { min-width: auto !important; padding-left: 1.1rem !important; }
+      .mastery-box { page-break-inside: avoid; padding: 0.4rem 0.5rem !important; margin-top: 0.25rem !important; font-size: 0.62rem !important; }
+      .tech-item { break-inside: avoid; page-break-inside: avoid; padding: 0.3rem 0.45rem !important; margin-bottom: 0.35rem !important; }
+      .tech-desc { font-size: 0.6rem !important; line-height: 1.2 !important; }
+      .dot { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .blank-input::placeholder { color: transparent !important; }
+    }
+  </style>
+</head>
+<body data-page="generateur-duelliste">
+  <div id="page-layout"></div>
+
+  <div class="page-section-title">
+    <h2>Générateur de duelliste</h2>
+    <p class="page-section-sub">
+      « En garde ! » Tire au sort l'école de l'adversaire que vos PJ duellistes vont affronter,
+      en fonction du lieu du duel. Les écoles, techniques et avantages proviennent directement
+      des données du Bréviaire (toujours à jour). Fiche imprimable.
+    </p>
+  </div>
+
+  <div class="gen-wrap">
+
+    <!-- Contrôles -->
+    <div class="gen-controls">
+      <label class="gen-label" for="location-select">Lieu du duel</label>
+      <select id="location-select"></select>
+      <div id="proba-summary" class="proba-summary"></div>
+      <div id="gen-pool-note" class="gen-pool-note"></div>
+
+      <button id="generate-btn" class="cta" type="button">
+        <svg viewBox="0 0 24 24"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"/><path d="m13 19 6-6"/><path d="M16 16l4 4"/><path d="M19 21l2-2"/></svg>
+        EN GARDE !
+      </button>
+      <div id="gen-status"></div>
+    </div>
+
+    <!-- Résultat (imprimable) -->
+    <div id="result-card">
+      <div class="res-header">
+        <div class="res-eyebrow">Adversaire identifié</div>
+        <h2 id="res-name">—</h2>
+        <div id="res-badges" class="res-badges"></div>
+        <button class="print-btn" type="button" onclick="window.print()" title="Imprimer ou sauvegarder en PDF">
+          <svg viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
+          Imprimer
+        </button>
+      </div>
+
+      <div class="res-body">
+        <div class="res-split">
+
+          <!-- COLONNE GAUCHE -->
+          <div class="res-col-left">
+            <div class="res-row">
+              <div class="res-label">Origine</div>
+              <div id="res-origin" class="res-value">—</div>
+            </div>
+            <div class="res-row">
+              <div class="res-label">Arme utilisée</div>
+              <div id="res-weapon" class="res-value">—</div>
+            </div>
+            <div class="res-row">
+              <div class="res-label">Spécialisations</div>
+              <div id="res-specs" class="res-value">—</div>
+            </div>
+
+            <div class="desc-box">
+              <div class="res-label" style="margin-bottom:0.3rem;">Description</div>
+              <span id="res-desc">—</span>
+            </div>
+
+            <!-- Sélecteur de niveau -->
+            <div class="mastery-control-group">
+              <label><input type="radio" name="mastery-level" value="1" checked><span>Apprenti</span></label>
+              <label><input type="radio" name="mastery-level" value="2"><span>Compagnon</span></label>
+              <label><input type="radio" name="mastery-level" value="3"><span>Maître</span></label>
+            </div>
+
+            <!-- Avantages -->
+            <div id="mastery-container">
+              <div id="adv-apprentice" class="mastery-box apprentice"><div class="mastery-title">Avantage d'Apprenti</div><div class="mastery-fluff" id="fluff-apprentice"></div><div class="mastery-rules" id="txt-apprentice">—</div></div>
+              <div id="adv-journeyman" class="mastery-box journeyman"><div class="mastery-title">Avantage de Compagnon</div><div class="mastery-fluff" id="fluff-journeyman"></div><div class="mastery-rules" id="txt-journeyman">—</div></div>
+              <div id="adv-master" class="mastery-box master"><div class="mastery-title">Avantage de Maître</div><div class="mastery-fluff" id="fluff-master"></div><div class="mastery-rules" id="txt-master">—</div></div>
+            </div>
+
+            <!-- Stats à remplir -->
+            <div class="stats-container">
+              <div class="stats-block">
+                <div class="res-label" style="margin-bottom:0.5rem;">Caractéristiques</div>
+                <div class="stat-row"><span>Gaillardise</span><div class="tech-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+                <div class="stat-row"><span>Finesse</span><div class="tech-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+                <div class="stat-row"><span>Esprit</span><div class="tech-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+                <div class="stat-row"><span>Détermination</span><div class="tech-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+                <div class="stat-row"><span>Panache</span><div class="tech-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+              </div>
+              <div class="stats-block">
+                <div class="res-label" style="margin-bottom:0.5rem;">Compétences</div>
+                <div class="stat-row"><input type="text" class="blank-input" placeholder="Compétence…"><div class="tech-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+                <div class="stat-row"><input type="text" class="blank-input" placeholder="Compétence…"><div class="tech-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+                <div class="stat-row"><input type="text" class="blank-input" placeholder="Compétence…"><div class="tech-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+                <div class="stat-row"><input type="text" class="blank-input" placeholder="Compétence…"><div class="tech-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+                <div class="stat-row"><input type="text" class="blank-input" placeholder="Compétence…"><div class="tech-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+              </div>
+            </div>
+
+            <div class="roll-line">Jet de dé (d100) : <span id="res-roll">00</span></div>
+          </div>
+
+          <!-- COLONNE DROITE : TECHNIQUES -->
+          <div class="res-col-right">
+            <div class="tech-list-title">Techniques de combat</div>
+            <div id="tech-container"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="layout.js"></script>
+  <script src="ecoles.js"></script>
+  <script src="creation-state.js"></script>
+  <script src="generateur-duelliste-app.js"></script>
+  <script src="pp-bar-global.js"></script>
+</body>
+</html>
