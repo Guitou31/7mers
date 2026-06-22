@@ -132,33 +132,45 @@
 
   // --- Répartition des rangs de techniques par niveau de maîtrise ---
   // Les trois niveaux sont tirés indépendamment, chacun selon ses règles
-  // (basées sur les prérequis 7ème Mer). « Voir le style » est comptée comme
-  // une technique à part entière.
-  function shuffleIndices(n) {
-    const a = Array.from({ length: n }, (_, i) => i);
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
+  // (prérequis 7ème Mer). « Voir le style » est comptée comme une technique,
+  // mais un peu moins priorisée (un duelliste ne l'investit pas en premier) —
+  // sauf pour l'école Wolny Lis, dont c'est la signature.
+  const VLS_BIAS = 0.55; // intensité du biais sur « Voir le style »
+
+  // Ordre des techniques : les premières reçoivent les rangs les plus élevés.
+  // « Voir le style » est poussée vers la fin (biais négatif) ou le début
+  // (biais positif, Wolny Lis).
+  function biasedOrder(n, vlsIndex, biasVLS) {
+    const keyed = Array.from({ length: n }, (_, i) => ({
+      i: i, k: Math.random() + (i === vlsIndex ? biasVLS : 0),
+    }));
+    keyed.sort((a, b) => b.k - a.k);
+    return keyed.map(o => o.i);
   }
 
-  // Apprenti : chaque technique 1–3, avec au moins une technique à 2 minimum.
-  function genApprentiRanks(n) {
-    const r = Array.from({ length: n }, () => getRandomInt(1, 3));
-    if (n > 0 && Math.max.apply(null, r) < 2) r[Math.floor(Math.random() * n)] = 2;
+  // Apprenti : chaque technique 1–3, avec au moins une à 2. « Voir le style »
+  // tirée plus bas (1–2), ou plus haut (2–3) pour Wolny Lis.
+  function genApprentiRanks(n, vlsIndex, biasVLS) {
+    const r = Array.from({ length: n }, (_, i) => {
+      if (i === vlsIndex) return biasVLS > 0 ? getRandomInt(2, 3) : getRandomInt(1, 2);
+      return getRandomInt(1, 3);
+    });
+    if (n > 0 && Math.max.apply(null, r) < 2) {
+      const cands = Array.from({ length: n }, (_, i) => i).filter(i => i !== vlsIndex);
+      const pool = cands.length ? cands : [0];
+      r[pool[Math.floor(Math.random() * pool.length)]] = 2;
+    }
     return r;
   }
 
   // Compagnon : 3 techniques à 3 minimum (1 fixée à 3, 2 tirées de 3 à 5) ;
-  // les autres techniques de 1 à 4 ; sans jamais atteindre 4 techniques à 4+
-  // (ce qui ferait un Maître).
-  function genCompagnonRanks(n) {
+  // les autres de 1 à 4 ; sans jamais atteindre 4 techniques à 4+ (Maître).
+  function genCompagnonRanks(n, vlsIndex, biasVLS) {
     const r = new Array(n).fill(0);
-    const idx = shuffleIndices(n);
+    const order = biasedOrder(n, vlsIndex, biasVLS);
     const nbPre = Math.min(3, n);
-    const prereq = idx.slice(0, nbPre);
-    const autres = idx.slice(nbPre);
+    const prereq = order.slice(0, nbPre);
+    const autres = order.slice(nbPre);
     if (prereq.length) r[prereq[0]] = 3;                       // fixée à 3
     for (let k = 1; k < prereq.length; k++) r[prereq[k]] = getRandomInt(3, 5);
     const nbPrereqGe4 = prereq.slice(1).filter(i => r[i] >= 4).length;
@@ -174,28 +186,34 @@
   }
 
   // Maître : 4 techniques à 4 minimum (4 ou 5 au hasard) ; la/les technique(s)
-  // restante(s) tirée(s) de 3 à 5.
-  function genMaitreRanks(n) {
+  // restante(s) tirée(s) de 2 à 5.
+  function genMaitreRanks(n, vlsIndex, biasVLS) {
     const r = new Array(n).fill(0);
-    const idx = shuffleIndices(n);
+    const order = biasedOrder(n, vlsIndex, biasVLS);
     const k = Math.min(4, n);
-    for (let i = 0; i < k; i++) r[idx[i]] = getRandomInt(4, 5);
-    for (let i = k; i < n; i++) r[idx[i]] = getRandomInt(3, 5);
+    for (let i = 0; i < k; i++) r[order[i]] = getRandomInt(4, 5);
+    for (let i = k; i < n; i++) r[order[i]] = getRandomInt(2, 5);
     return r;
   }
 
   // --- Techniques de l'école (en garantissant « Voir le style ») ---
   function buildTechniques(school) {
     const techs = (school.techniques_combat || []).slice();
-    const hasVLS = techs.some(t =>
+    let vlsIndex = techs.findIndex(t =>
       (t.ref && normalizeTech(t.ref) === "voir le style") || normalizeTech(t.nom_base) === "voir le style"
     );
-    if (!hasVLS) techs.unshift({ nom_base: "Voir le style", variante: null, ref: "voir le style" });
+    if (vlsIndex < 0) {
+      techs.unshift({ nom_base: "Voir le style", variante: null, ref: "voir le style" });
+      vlsIndex = 0;
+    }
+    // « Voir le style » : signature de Wolny Lis (priorisée), reléguée ailleurs.
+    const isWolnyLis = normalizeTech(school.nom) === "wolny lis";
+    const biasVLS = isWolnyLis ? VLS_BIAS : -VLS_BIAS;
 
     const n = techs.length;
-    const app = genApprentiRanks(n);
-    const comp = genCompagnonRanks(n);
-    const mait = genMaitreRanks(n);
+    const app = genApprentiRanks(n, vlsIndex, biasVLS);
+    const comp = genCompagnonRanks(n, vlsIndex, biasVLS);
+    const mait = genMaitreRanks(n, vlsIndex, biasVLS);
 
     return techs.map((t, i) => {
       const label = t.nom_base + (t.variante ? " (" + t.variante + ")" : "");
