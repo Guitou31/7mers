@@ -145,7 +145,22 @@
     .roll-line span { font-weight: 700; color: var(--ink-soft); }
 
     /* Techniques */
+    .tech-list-head { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem; }
+    .tech-list-head .tech-list-title { margin-bottom: 0; }
     .tech-list-title { font-size: 0.62rem; text-transform: uppercase; font-weight: 700; color: var(--ink-mute); letter-spacing: 0.06em; margin-bottom: 0.6rem; }
+
+    /* Bouton « Relancer » les rangs des techniques */
+    .reroll-btn {
+      display: inline-flex; align-items: center; gap: 0.3rem; flex-shrink: 0;
+      background: transparent; border: 1px solid var(--border); color: var(--ink-mute);
+      font: inherit; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
+      padding: 0.25rem 0.55rem; border-radius: 999px; cursor: pointer; transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+    .reroll-btn:hover { border-color: var(--accent); color: var(--accent); background: rgba(139, 58, 58, 0.06); }
+    .reroll-btn:focus-visible { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(139, 58, 58, 0.25); }
+    .reroll-btn svg { width: 13px; height: 13px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .reroll-btn.is-spinning svg { animation: reroll-spin 0.45s ease-in-out; }
+    @keyframes reroll-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     .tech-item { margin-bottom: 0.7rem; background: var(--bg-elevated); padding: 0.6rem 0.7rem; border-radius: var(--radius); border: 1px solid var(--border-soft); }
     .tech-header { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; }
     .tech-name { font-weight: 700; color: var(--accent); font-size: 0.98rem; }
@@ -168,7 +183,7 @@
         -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 0.5rem 0.9rem !important;
       }
       .res-header h2 { font-size: 1.15rem !important; }
-      .print-btn, .mastery-control-group { display: none !important; }
+      .print-btn, .reroll-btn, .mastery-control-group { display: none !important; }
       .res-body { padding: 0.5rem 0 !important; }
       .res-split { flex-wrap: nowrap !important; gap: 1.2rem !important; }
       .res-col-left { min-width: auto !important; }
@@ -283,7 +298,18 @@
 
           <!-- COLONNE DROITE : TECHNIQUES -->
           <div class="res-col-right">
-            <div class="tech-list-title">Techniques de combat</div>
+            <div class="tech-list-head">
+              <div class="tech-list-title">Techniques de combat</div>
+              <button class="reroll-btn" id="reroll-techniques" type="button"
+                      title="Relancer les rangs des techniques">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <polyline points="23 4 23 10 17 10"></polyline>
+                  <polyline points="1 20 1 14 7 14"></polyline>
+                  <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                </svg>
+                Relancer
+              </button>
+            </div>
             <div id="tech-container"></div>
           </div>
 

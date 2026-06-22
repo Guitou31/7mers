@@ -278,8 +278,10 @@
 
   // --- Affichage du résultat ---
   let currentDuelTechniques = [];
+  let currentSchool = null; // école du tirage en cours (pour relancer les rangs)
 
   function displayResult(school, origin, type, roll) {
+    currentSchool = school;
     document.getElementById("res-name").textContent = school.nom;
     document.getElementById("res-origin").textContent = origin + " (" + type + ")";
     document.getElementById("res-weapon").textContent = school.arme_display || school.arme || "—";
@@ -312,6 +314,14 @@
     void card.offsetHeight; // force le reflow pour rejouer l'animation
     card.style.animation = "gen-slideUp 0.35s ease-out";
     card.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  // Relance les rangs (semi-aléatoires) des techniques de l'école en cours,
+  // sans retirer une nouvelle école. Le niveau de maîtrise affiché est conservé.
+  function rerollTechniques() {
+    if (!currentSchool) return;
+    currentDuelTechniques = buildTechniques(currentSchool);
+    updateMasteryDisplay();
   }
 
   function updateMasteryDisplay() {
@@ -383,6 +393,20 @@
   select.addEventListener("change", () => { updateProbaText(); updatePoolNote(); });
   btn.addEventListener("click", generate);
   for (const r of document.getElementsByName("mastery-level")) r.addEventListener("change", updateMasteryDisplay);
+
+  const rerollBtn = document.getElementById("reroll-techniques");
+  if (rerollBtn) {
+    rerollBtn.addEventListener("click", function () {
+      rerollTechniques();
+      // Petit retour visuel : fait tourner l'icône une fois.
+      rerollBtn.classList.remove("is-spinning");
+      void rerollBtn.offsetWidth; // reflow pour rejouer l'animation
+      rerollBtn.classList.add("is-spinning");
+    });
+    rerollBtn.addEventListener("animationend", function () {
+      rerollBtn.classList.remove("is-spinning");
+    });
+  }
 
   // --- Init ---
   updateProbaText();
