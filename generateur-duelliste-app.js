@@ -130,6 +130,60 @@
     return "—";
   }
 
+  // --- Répartition des rangs de techniques par niveau de maîtrise ---
+  // Les trois niveaux sont tirés indépendamment, chacun selon ses règles
+  // (basées sur les prérequis 7ème Mer). « Voir le style » est comptée comme
+  // une technique à part entière.
+  function shuffleIndices(n) {
+    const a = Array.from({ length: n }, (_, i) => i);
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  // Apprenti : chaque technique 1–3, avec au moins une technique à 2 minimum.
+  function genApprentiRanks(n) {
+    const r = Array.from({ length: n }, () => getRandomInt(1, 3));
+    if (n > 0 && Math.max.apply(null, r) < 2) r[Math.floor(Math.random() * n)] = 2;
+    return r;
+  }
+
+  // Compagnon : 3 techniques à 3 minimum (1 fixée à 3, 2 tirées de 3 à 5) ;
+  // les autres techniques de 1 à 4 ; sans jamais atteindre 4 techniques à 4+
+  // (ce qui ferait un Maître).
+  function genCompagnonRanks(n) {
+    const r = new Array(n).fill(0);
+    const idx = shuffleIndices(n);
+    const nbPre = Math.min(3, n);
+    const prereq = idx.slice(0, nbPre);
+    const autres = idx.slice(nbPre);
+    if (prereq.length) r[prereq[0]] = 3;                       // fixée à 3
+    for (let k = 1; k < prereq.length; k++) r[prereq[k]] = getRandomInt(3, 5);
+    const nbPrereqGe4 = prereq.slice(1).filter(i => r[i] >= 4).length;
+    const maxAutresGe4 = Math.max(0, 3 - nbPrereqGe4);
+    for (const i of autres) r[i] = getRandomInt(1, 4);
+    let a4 = autres.filter(i => r[i] >= 4);
+    while (a4.length > maxAutresGe4) {                          // évite 4 techniques à 4+
+      const i = a4[Math.floor(Math.random() * a4.length)];
+      r[i] = getRandomInt(1, 3);
+      a4 = autres.filter(j => r[j] >= 4);
+    }
+    return r;
+  }
+
+  // Maître : 4 techniques à 4 minimum (4 ou 5 au hasard) ; la/les technique(s)
+  // restante(s) tirée(s) de 3 à 5.
+  function genMaitreRanks(n) {
+    const r = new Array(n).fill(0);
+    const idx = shuffleIndices(n);
+    const k = Math.min(4, n);
+    for (let i = 0; i < k; i++) r[idx[i]] = getRandomInt(4, 5);
+    for (let i = k; i < n; i++) r[idx[i]] = getRandomInt(3, 5);
+    return r;
+  }
+
   // --- Techniques de l'école (en garantissant « Voir le style ») ---
   function buildTechniques(school) {
     const techs = (school.techniques_combat || []).slice();
@@ -138,14 +192,15 @@
     );
     if (!hasVLS) techs.unshift({ nom_base: "Voir le style", variante: null, ref: "voir le style" });
 
-    return techs.map(t => {
+    const n = techs.length;
+    const app = genApprentiRanks(n);
+    const comp = genCompagnonRanks(n);
+    const mait = genMaitreRanks(n);
+
+    return techs.map((t, i) => {
       const label = t.nom_base + (t.variante ? " (" + t.variante + ")" : "");
       const desc = resolveTechDesc(t);
-      // Rangs croissants avec la maîtrise (Apprenti ≤ Compagnon ≤ Maître)
-      const rA = getRandomInt(1, 3);
-      const rJ = getRandomInt(Math.max(rA, 2), 4);
-      const rM = getRandomInt(Math.max(rJ, 4), 5);
-      return { name: label, desc: desc, ranks: { 1: rA, 2: rJ, 3: rM } };
+      return { name: label, desc: desc, ranks: { 1: app[i], 2: comp[i], 3: mait[i] } };
     });
   }
 
