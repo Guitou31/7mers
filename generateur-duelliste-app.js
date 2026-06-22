@@ -247,6 +247,35 @@
     document.getElementById("txt-" + which).textContent = niv.regles || "—";
   }
 
+  // --- Saisie manuelle des caractéristiques & compétences (points cliquables) ---
+  // Les écoles ne fournissent pas de valeurs fiables : le MJ règle ces rangs
+  // à la main sur chaque adversaire tiré. Un clic sur le point N remplit
+  // jusqu'à N ; recliquer le dernier point rempli le décoche (jusqu'à 0).
+  function wireStatDots() {
+    document.querySelectorAll(".stats-container .tech-dots").forEach(function (row) {
+      const dots = Array.prototype.slice.call(row.querySelectorAll(".dot"));
+      dots.forEach(function (dot, i) {
+        dot.setAttribute("role", "button");
+        dot.setAttribute("tabindex", "0");
+        dot.setAttribute("aria-label", "Rang " + (i + 1));
+        const setVal = function () {
+          const filled = dots.filter(function (d) { return d.classList.contains("filled"); }).length;
+          const val = (filled === i + 1) ? i : i + 1; // re-clic du dernier point = décrémente
+          dots.forEach(function (d, j) { d.classList.toggle("filled", j < val); });
+        };
+        dot.addEventListener("click", setVal);
+        dot.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setVal(); }
+        });
+      });
+    });
+  }
+  function resetStatDots() {
+    document.querySelectorAll(".stats-container .dot").forEach(function (d) {
+      d.classList.remove("filled");
+    });
+  }
+
   // --- Affichage du résultat ---
   let currentDuelTechniques = [];
 
@@ -262,9 +291,12 @@
     setNiveauBox("journeyman", getNiveau(school, "compagnon"));
     setNiveauBox("master", getNiveau(school, "maitre"));
 
-    // Pré-remplit les compétences avec les spécialisations de l'école (dots à cocher à la main).
+    // Pré-remplit les compétences avec les spécialisations de l'école ; les
+    // rangs (points) des caractéristiques et compétences repartent à zéro,
+    // à régler à la main pour ce nouvel adversaire.
     const skillInputs = document.querySelectorAll(".stats-block:last-child .blank-input");
     skillInputs.forEach((inp, i) => { inp.value = (school.specialisations && school.specialisations[i]) || ""; });
+    resetStatDots();
 
     document.getElementById("res-roll").textContent = String(roll).padStart(2, "0");
 
@@ -355,4 +387,5 @@
   // --- Init ---
   updateProbaText();
   updatePoolNote();
+  wireStatDots();
 })();
