@@ -27,6 +27,8 @@
     </div>
   </div>
 
+  <script src="journal-data.js"></script>
+  <script src="journal-core.js"></script>
   <script src="journal-changements.js"></script>
   <script src="journal-layout.js"></script>
   <script>
@@ -37,8 +39,13 @@
       var CAT_LABELS = { monde: "Monde", temps: "Temps", jeu: "Jeu" };
 
       // --- Aperçu des derniers changements ---
-      var data = window.JOURNAL_CHANGEMENTS || {};
-      var entries = (data.entries || []).slice(0, 6);
+      var dbChanges = (window.JOURNAL_DB && window.JOURNAL_DB.changes) || [];
+      var entries = (dbChanges.length ? dbChanges : ((window.JOURNAL_CHANGEMENTS || {}).entries || [])).slice(0, 6);
+      var hrefOf = function (e) {
+        if (e.page) return e.page;
+        if (e.rubrique && e.id && window.JournalCore) return window.JournalCore.articleUrl(e.rubrique, e.id);
+        return null;
+      };
       var recent = document.getElementById("dash-recent");
       if (entries.length) {
         var pad = function (n) { return n < 10 ? "0" + n : "" + n; };
@@ -46,8 +53,9 @@
           var p = String(e.date || "").split("-");
           var dShort = p.length >= 3 ? pad(+p[2]) + "." + pad(+p[1]) + "." + p[0] : e.date;
           var isCreate = e.action === "créé";
-          var target = e.page
-            ? "<a class='what' href='" + e.page + "'>" + e.target + "</a>"
+          var h = hrefOf(e);
+          var target = h
+            ? "<a class='what' href='" + h + "'>" + e.target + "</a>"
             : "<span class='what'>" + e.target + "</span>";
           return "<div class='j-feed-row'>" +
             "<span class='j-feed-dot " + (isCreate ? "create" : "modify") + "'></span>" +

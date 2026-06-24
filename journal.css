@@ -185,3 +185,126 @@
   .journal-backdrop.is-open { opacity: 1; pointer-events: auto; }
   .j-feed-row { flex-wrap: wrap; }
 }
+
+/* ============================================================
+   Articles : listes, cartes, fiche, éditeur. (zone parchemin)
+   ============================================================ */
+
+/* Barre d'actions + boutons */
+.j-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
+.j-btn-add {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  background: var(--accent); color: #fff; border: 1px solid var(--accent);
+  font: inherit; font-weight: 700; font-size: 0.9rem; padding: 0.5rem 0.95rem;
+  border-radius: 999px; cursor: pointer; text-decoration: none; transition: background 0.12s;
+}
+.j-btn-add:hover { background: #743030; }
+.j-btn-add:disabled { opacity: 0.6; cursor: default; }
+.j-btn-add .j-plus { font-size: 1.05em; line-height: 1; }
+.j-btn-ghost {
+  display: inline-flex; align-items: center; background: transparent; color: var(--ink-soft);
+  border: 1px solid var(--border); font: inherit; font-weight: 600; font-size: 0.9rem;
+  padding: 0.5rem 0.95rem; border-radius: 999px; cursor: pointer; text-decoration: none;
+}
+.j-btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+.j-btn-danger {
+  display: inline-flex; align-items: center; background: transparent; color: #a23;
+  border: 1px solid #d8a; font: inherit; font-weight: 600; font-size: 0.9rem;
+  padding: 0.5rem 0.95rem; border-radius: 999px; cursor: pointer;
+}
+.j-btn-danger:hover { background: #fbe9ec; border-color: #a23; }
+
+/* Grille de cartes d'articles */
+.j-card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.9rem; }
+.j-card {
+  display: block; padding: 0.9rem 1rem; background: var(--bg-card);
+  border: 1px solid var(--border-soft); border-radius: 8px; text-decoration: none; color: var(--ink);
+  transition: box-shadow 0.12s, transform 0.12s, border-color 0.12s;
+}
+.j-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); border-color: var(--accent-soft); }
+.j-card-name { font-weight: 700; color: var(--accent); font-size: 1.02rem; }
+.j-card-meta { font-size: 0.74rem; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 0.15rem; }
+.j-card-snippet { font-size: 0.84rem; color: var(--ink-soft); margin-top: 0.45rem; line-height: 1.4; }
+
+/* Liens @ dans les descriptions */
+.j-link { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent-soft); font-weight: 600; }
+.j-link:hover { border-bottom-style: solid; }
+
+/* Fil d'Ariane */
+.j-crumb { font-size: 0.78rem; color: var(--ink-mute); margin-bottom: 0.1rem; }
+.j-crumb a { color: var(--accent); text-decoration: none; }
+.j-crumb a:hover { text-decoration: underline; }
+.j-crumb span { opacity: 0.6; margin: 0 0.15rem; }
+
+/* Fiche d'article : infos + description */
+.j-article-info {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.4rem 1.4rem;
+  background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: 8px;
+  padding: 0.9rem 1.1rem; margin-bottom: 1.4rem;
+}
+.j-info-row { display: flex; gap: 0.5rem; font-size: 0.9rem; padding: 0.15rem 0; }
+.j-info-k { color: var(--ink-mute); font-weight: 700; min-width: 90px; }
+.j-info-v { color: var(--ink); }
+.j-desc { font-size: 1rem; line-height: 1.6; color: var(--ink); }
+.j-desc h3 { color: var(--accent); margin-top: 1.1rem; }
+.j-desc img { max-width: 100%; height: auto; border-radius: 6px; }
+.j-desc-empty { color: var(--ink-mute); }
+
+/* Formulaire d'édition */
+.j-form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem 1.4rem; }
+.j-field { display: flex; flex-direction: column; gap: 0.3rem; }
+.j-field.half { grid-column: span 1; }
+.j-field.full, .j-field:not(.half) { grid-column: 1 / -1; }
+.j-field.half { grid-column: span 1; }
+.j-label { font-size: 0.82rem; font-weight: 700; color: var(--ink-soft); }
+.j-req { color: var(--accent); }
+.j-input {
+  font: inherit; font-size: 0.95rem; color: var(--ink); background: var(--bg-elevated);
+  border: 1px solid var(--border); border-radius: 6px; padding: 0.5rem 0.65rem; width: 100%;
+}
+.j-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(139,58,58,0.15); }
+
+/* Éditeur riche */
+.j-rich { border: 1px solid var(--border); border-radius: 6px; overflow: hidden; background: var(--bg-elevated); }
+.j-rich-toolbar { display: flex; flex-wrap: wrap; gap: 2px; padding: 0.3rem; background: var(--bg-card); border-bottom: 1px solid var(--border-soft); }
+.j-tool {
+  min-width: 30px; height: 30px; padding: 0 0.4rem; border: 1px solid transparent; border-radius: 5px;
+  background: transparent; color: var(--ink-soft); font: inherit; font-size: 0.9rem; cursor: pointer; line-height: 1;
+}
+.j-tool:hover { background: var(--bg); border-color: var(--border); color: var(--accent); }
+.j-rich-area { min-height: 240px; padding: 0.8rem 0.9rem; font-size: 1rem; line-height: 1.6; color: var(--ink); outline: none; }
+.j-rich-area:empty::before { content: "Décris cet article… (tape @ pour lier un autre article)"; color: var(--ink-mute); font-style: italic; }
+.j-rich-area h3 { color: var(--accent); }
+.j-rich-hint { font-size: 0.78rem; color: var(--ink-mute); padding: 0.4rem 0.7rem; background: var(--bg-card); border-top: 1px solid var(--border-soft); }
+
+.j-form-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.4rem; }
+.j-form-msg { margin-top: 0.8rem; font-size: 0.9rem; min-height: 1.2em; }
+.j-form-msg.err { color: #b3261e; font-weight: 600; }
+
+/* Popup d'autocomplétion @ */
+.j-mention-pop {
+  position: absolute; z-index: 200; min-width: 220px; max-width: 320px; display: none;
+  background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 8px;
+  box-shadow: var(--shadow-lg); overflow: hidden; padding: 0.2rem;
+}
+.j-mention-item { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; padding: 0.4rem 0.6rem; border-radius: 5px; cursor: pointer; }
+.j-mention-item.is-active { background: var(--accent); color: #fff; }
+.j-mention-item.is-active .j-mention-cat { color: rgba(255,255,255,0.8); }
+.j-mention-item.is-empty { color: var(--ink-mute); font-style: italic; cursor: default; }
+.j-mention-name { font-weight: 600; }
+.j-mention-cat { font-size: 0.74rem; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.03em; }
+
+/* Modale de configuration */
+.j-modal-overlay { position: fixed; inset: 0; background: rgba(20,10,5,0.55); z-index: 300; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+.j-modal { background: var(--bg-elevated); border-radius: 12px; box-shadow: var(--shadow-lg); padding: 1.5rem; width: 100%; max-width: 460px; max-height: 90vh; overflow-y: auto; }
+.j-modal h2 { margin: 0 0 0.5rem; color: var(--accent); }
+.j-modal .j-label { margin-top: 0.8rem; display: block; }
+.j-modal-lead { font-size: 0.86rem; color: var(--ink-soft); }
+.j-modal-adv { margin-top: 0.8rem; }
+.j-modal-adv summary { cursor: pointer; font-size: 0.85rem; color: var(--ink-mute); }
+
+@media (max-width: 720px) {
+  .j-form-grid { grid-template-columns: 1fr; }
+  .j-field.half { grid-column: 1 / -1; }
+}
+

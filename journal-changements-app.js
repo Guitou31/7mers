@@ -27,11 +27,19 @@
     });
   }
 
+  // Lien d'une entrée : article (rubrique+id), sinon page (ancien flux git).
+  function entryHref(e) {
+    if (e.page) return e.page;
+    if (e.rubrique && e.id && window.JournalCore) return window.JournalCore.articleUrl(e.rubrique, e.id);
+    return null;
+  }
+
   function render() {
     var mount = document.getElementById("changes-feed");
     if (!mount) return;
-    var data = window.JOURNAL_CHANGEMENTS || {};
-    var entries = (data.entries || []).slice();
+    // Priorité au journal d'activité des articles ; repli sur l'ancien flux git.
+    var dbChanges = (window.JOURNAL_DB && window.JOURNAL_DB.changes) || [];
+    var entries = dbChanges.length ? dbChanges.slice() : ((window.JOURNAL_CHANGEMENTS || {}).entries || []).slice();
 
     if (!entries.length) {
       mount.innerHTML =
@@ -58,8 +66,9 @@
         lastDay = e.date;
       }
       var isCreate = (e.action === "créé");
-      var target = e.page
-        ? "<a class='what' href='" + esc(e.page) + "'>" + esc(e.target) + "</a>"
+      var href = entryHref(e);
+      var target = href
+        ? "<a class='what' href='" + esc(href) + "'>" + esc(e.target) + "</a>"
         : "<span class='what'>" + esc(e.target) + "</span>";
       html +=
         "<div class='j-feed-row'>" +

@@ -108,11 +108,13 @@
   // --- Construction de la barre latérale ---
   function buildSidebar(mount) {
     mount.innerHTML = "";
-    var data = window.JOURNAL_CHANGEMENTS || {};
+    var changes = (window.JOURNAL_DB && window.JOURNAL_DB.changes) || [];
+    var lastDate = changes.length ? changes[0].date
+      : (window.JOURNAL_CHANGEMENTS && window.JOURNAL_CHANGEMENTS.lastUpdated);
 
     var head = el("div", "j-head");
     head.appendChild(el("div", "j-head-title", CAMPAIGN_TITLE));
-    var rel = relativeFr(data.lastUpdated);
+    var rel = relativeFr(lastDate);
     head.appendChild(el("div", "j-head-sub", rel ? "Mis à jour " + rel : "Journal de campagne"));
     var back = el("a", "j-back");
     back.href = "index.html";
@@ -204,7 +206,14 @@
     if (sidebar) buildSidebar(sidebar);
     var head = document.getElementById("journal-pagehead");
     if (head) buildPageHead(head);
-    fillEmptyState(document.getElementById("journal-main"));
+    // Sur une page de rubrique, afficher la liste de ses articles (+ bouton Ajouter).
+    var main = document.getElementById("journal-main");
+    var rub = currentId().replace(/^journal-/, "");
+    if (main && window.JournalCore && window.JournalCore.isRubrique(rub)) {
+      window.JournalCore.renderRubriqueList(rub, main);
+    } else {
+      fillEmptyState(main);
+    }
     wireMobile();
   }
 
