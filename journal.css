@@ -1,0 +1,187 @@
+/* ============================================================
+   Journal de campagne — disposition latérale.
+   Thème hybride : menu latéral sombre (façon Kanka) + zone de
+   contenu en parchemin (cohérente avec le reste du Bréviaire).
+   Dépend de style.css (variables :root parchemin + typographie).
+   ============================================================ */
+
+:root {
+  /* Palette de la barre latérale sombre */
+  --j-bg-top: #1d2533;
+  --j-bg-bot: #171d28;
+  --j-hover: #232c3b;
+  --j-active: #2b3547;
+  --j-edge: #0f141d;
+  --j-ink: #d7dded;
+  --j-ink-mute: #8593ab;
+  --j-cat: #6f7d96;
+  --j-gold: #e0b35c;
+  --j-gold-soft: #f0cd8a;
+  --j-sidebar-w: 256px;
+}
+
+/* ---- Ossature ---- */
+.journal-shell { display: flex; align-items: flex-start; min-height: 100vh; background: var(--bg); }
+
+.journal-sidebar {
+  width: var(--j-sidebar-w);
+  flex: 0 0 var(--j-sidebar-w);
+  background: linear-gradient(180deg, var(--j-bg-top) 0%, var(--j-bg-bot) 100%);
+  color: var(--j-ink);
+  border-right: 1px solid var(--j-edge);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 1.5rem;
+}
+
+.journal-content {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.7rem 2.2rem 3.5rem;
+}
+
+/* ---- En-tête de la barre latérale ---- */
+.j-head {
+  padding: 1.15rem 1.15rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+.j-head-title {
+  font-family: Georgia, "Iowan Old Style", serif;
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+.j-head-sub { font-size: 0.72rem; color: var(--j-ink-mute); margin-top: 0.18rem; }
+.j-back {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  margin-top: 0.7rem; font-size: 0.72rem; color: var(--j-gold);
+  text-decoration: none; opacity: 0.85; transition: opacity 0.12s;
+}
+.j-back svg { width: 13px; height: 13px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.j-back:hover { opacity: 1; text-decoration: underline; }
+
+/* ---- Navigation ---- */
+.j-nav { padding: 0.55rem 0.5rem 0; }
+.j-cat {
+  font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.09em;
+  color: var(--j-cat); padding: 0.95rem 0.7rem 0.35rem; font-weight: 700;
+}
+.j-item {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.5rem 0.7rem; border-radius: 6px;
+  color: var(--j-ink); text-decoration: none;
+  font-family: Georgia, "Iowan Old Style", serif; font-size: 0.92rem;
+  transition: background 0.12s, color 0.12s;
+}
+.j-item:hover { background: var(--j-hover); color: #fff; }
+.j-item.is-current { background: var(--j-active); color: #fff; box-shadow: inset 3px 0 0 var(--j-gold); }
+.j-ico { width: 18px; height: 18px; flex: 0 0 18px; color: var(--j-ink-mute); display: inline-flex; }
+.j-item:hover .j-ico, .j-item.is-current .j-ico { color: var(--j-gold); }
+.j-ico svg { width: 18px; height: 18px; display: block; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.j-ico.fill svg { fill: currentColor; stroke: none; }
+
+/* ---- En-tête de page (zone parchemin) ---- */
+.journal-pagehead {
+  display: flex; align-items: center; gap: 0.8rem;
+  padding-bottom: 0.9rem; margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border);
+}
+.journal-pagehead .ph-ico { width: 30px; height: 30px; flex: 0 0 30px; color: var(--accent); }
+.journal-pagehead .ph-ico svg { width: 30px; height: 30px; stroke: currentColor; stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.journal-pagehead .ph-ico.fill svg { fill: currentColor; stroke: none; }
+.journal-pagehead .ph-text h1 { margin: 0; font-size: 1.7rem; color: var(--ink); line-height: 1.1; }
+.journal-pagehead .ph-sub { color: var(--ink-mute); font-size: 0.85rem; font-style: italic; margin-top: 0.15rem; }
+
+/* ---- État vide (rubriques pas encore remplies) ---- */
+.j-empty {
+  text-align: center; color: var(--ink-mute);
+  padding: 3rem 1.2rem; border: 2px dashed var(--border);
+  border-radius: 10px; background: var(--bg-card);
+}
+.j-empty-ico { width: 48px; height: 48px; opacity: 0.55; margin: 0 auto 0.7rem; color: var(--accent-soft); }
+.j-empty-ico svg { width: 48px; height: 48px; stroke: currentColor; stroke-width: 1.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.j-empty-ico.fill svg { fill: currentColor; stroke: none; }
+.j-empty p { margin: 0.25rem 0; }
+.j-empty .j-empty-hint { font-size: 0.82rem; opacity: 0.8; }
+
+/* ---- Flux « Changements récents » ---- */
+.j-feed-day {
+  margin: 1.7rem 0 0.55rem; font-size: 0.95rem; font-weight: 700;
+  color: var(--ink-soft); text-transform: capitalize;
+}
+.j-feed-day:first-child { margin-top: 0.3rem; }
+.j-feed-list { display: flex; flex-direction: column; gap: 3px; }
+.j-feed-row {
+  display: flex; align-items: center; gap: 0.7rem;
+  padding: 0.55rem 0.75rem; border-radius: 6px;
+  background: var(--bg-card); border: 1px solid var(--border-soft);
+}
+.j-feed-row:hover { background: var(--bg-elevated); box-shadow: var(--shadow); }
+.j-feed-dot { width: 11px; height: 11px; border-radius: 50%; flex: 0 0 11px; background: var(--ink-mute); }
+.j-feed-dot.create { background: #4caf72; }
+.j-feed-dot.modify { background: #7f93b0; }
+.j-feed-text { flex: 1 1 auto; min-width: 0; font-size: 0.9rem; color: var(--ink-soft); }
+.j-feed-text .who { font-weight: 700; color: var(--ink); }
+.j-feed-text .what { color: var(--accent); text-decoration: none; }
+.j-feed-text a.what:hover { text-decoration: underline; }
+.j-feed-date { flex: 0 0 auto; font-size: 0.78rem; color: var(--ink-mute); white-space: nowrap; }
+
+/* ---- Tableau de bord ---- */
+.j-dash-lead { color: var(--ink-soft); max-width: 60ch; }
+.j-dash-section-title {
+  margin: 1.9rem 0 0.2rem; font-size: 0.7rem; text-transform: uppercase;
+  letter-spacing: 0.09em; color: var(--ink-mute); font-weight: 700;
+}
+.j-dash-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  gap: 0.9rem; margin-top: 0.7rem;
+}
+.j-dash-card {
+  display: flex; align-items: center; gap: 0.7rem;
+  padding: 0.9rem 1rem; background: var(--bg-card);
+  border: 1px solid var(--border-soft); border-radius: 8px;
+  text-decoration: none; color: var(--ink);
+  transition: box-shadow 0.12s, transform 0.12s, border-color 0.12s;
+}
+.j-dash-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); border-color: var(--accent-soft); }
+.j-dash-card .dc-ico { width: 24px; height: 24px; flex: 0 0 24px; color: var(--accent); }
+.j-dash-card .dc-ico svg { width: 24px; height: 24px; stroke: currentColor; stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.j-dash-card .dc-ico.fill svg { fill: currentColor; stroke: none; }
+.j-dash-card .dc-label { font-weight: 700; }
+.j-dash-recent { margin-top: 0.7rem; }
+.j-dash-more { display: inline-block; margin-top: 0.8rem; font-size: 0.85rem; color: var(--accent); text-decoration: none; font-weight: 700; }
+.j-dash-more:hover { text-decoration: underline; }
+
+/* ---- Bouton menu mobile + backdrop ---- */
+.journal-toggle { display: none; }
+.journal-backdrop { display: none; }
+
+@media (max-width: 860px) {
+  .journal-shell { display: block; }
+  .journal-sidebar {
+    position: fixed; left: 0; top: 0; height: 100vh; z-index: 50;
+    transform: translateX(-100%); transition: transform 0.22s ease;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
+  }
+  .journal-sidebar.is-open { transform: translateX(0); }
+  .journal-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    position: fixed; top: 0.7rem; left: 0.7rem; z-index: 60;
+    width: 42px; height: 42px; border-radius: 8px; border: none;
+    background: #1d2533; color: #fff; font-size: 1.25rem; cursor: pointer;
+    box-shadow: var(--shadow);
+  }
+  .journal-content { padding: 3.6rem 1.1rem 3rem; max-width: none; }
+  .journal-backdrop {
+    display: block; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.45);
+    z-index: 40; opacity: 0; pointer-events: none; transition: opacity 0.2s;
+  }
+  .journal-backdrop.is-open { opacity: 1; pointer-events: auto; }
+  .j-feed-row { flex-wrap: wrap; }
+}

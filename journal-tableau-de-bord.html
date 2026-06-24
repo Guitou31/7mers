@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tableau de bord — Journal 7ème Mer</title>
+  <link rel="icon" type="image/png" href="Favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="journal.css">
+</head>
+<body data-page="journal-tableau-de-bord">
+  <div class="journal-shell">
+    <button class="journal-toggle" id="journal-toggle" aria-label="Ouvrir le menu"
+            aria-controls="journal-sidebar" aria-expanded="false">☰</button>
+    <aside id="journal-sidebar" class="journal-sidebar" aria-label="Navigation du journal"></aside>
+    <div class="journal-content">
+      <header id="journal-pagehead" class="journal-pagehead"></header>
+      <main class="journal-main" id="journal-main">
+        <p class="j-dash-lead">
+          Bienvenue dans le journal de la campagne <strong>7ème Mer CRJR</strong>.
+          Retrouve ici les personnages, lieux, organisations, intrigues et récits
+          de séance — façon wiki, sans quitter le Bréviaire.
+        </p>
+        <div id="dash-recent"></div>
+        <div id="dash-rubriques"></div>
+      </main>
+    </div>
+  </div>
+
+  <script src="journal-changements.js"></script>
+  <script src="journal-layout.js"></script>
+  <script>
+    (function () {
+      "use strict";
+      var SECTIONS = window.JOURNAL_SECTIONS || [];
+      var ico = window.journalIcon || function () { return ""; };
+      var CAT_LABELS = { monde: "Monde", temps: "Temps", jeu: "Jeu" };
+
+      // --- Aperçu des derniers changements ---
+      var data = window.JOURNAL_CHANGEMENTS || {};
+      var entries = (data.entries || []).slice(0, 6);
+      var recent = document.getElementById("dash-recent");
+      if (entries.length) {
+        var pad = function (n) { return n < 10 ? "0" + n : "" + n; };
+        var rows = entries.map(function (e) {
+          var p = String(e.date || "").split("-");
+          var dShort = p.length >= 3 ? pad(+p[2]) + "." + pad(+p[1]) + "." + p[0] : e.date;
+          var isCreate = e.action === "créé";
+          var target = e.page
+            ? "<a class='what' href='" + e.page + "'>" + e.target + "</a>"
+            : "<span class='what'>" + e.target + "</span>";
+          return "<div class='j-feed-row'>" +
+            "<span class='j-feed-dot " + (isCreate ? "create" : "modify") + "'></span>" +
+            "<span class='j-feed-text'><span class='who'>" + e.author + "</span> a " +
+            e.action + " " + target + "</span>" +
+            "<span class='j-feed-date'>" + dShort + "</span></div>";
+        }).join("");
+        recent.innerHTML =
+          "<div class='j-dash-section-title'>Derniers changements</div>" +
+          "<div class='j-feed-list j-dash-recent'>" + rows + "</div>" +
+          "<a class='j-dash-more' href='journal-changements.html'>Tout l'historique →</a>";
+      }
+
+      // --- Cartes de rubriques, groupées par catégorie ---
+      var host = document.getElementById("dash-rubriques");
+      var cats = ["monde", "temps", "jeu"];
+      var html = "";
+      cats.forEach(function (cat) {
+        var items = SECTIONS.filter(function (s) { return s.category === cat; });
+        if (!items.length) return;
+        html += "<div class='j-dash-section-title'>" + (CAT_LABELS[cat] || cat) + "</div>";
+        html += "<div class='j-dash-grid'>";
+        items.forEach(function (s) {
+          html += "<a class='j-dash-card' href='" + s.file + "'>" +
+            ico(s.icon, "dc-ico") +
+            "<span class='dc-label'>" + s.label + "</span></a>";
+        });
+        html += "</div>";
+      });
+      host.innerHTML = html;
+    })();
+  </script>
+</body>
+</html>
