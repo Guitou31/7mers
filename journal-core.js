@@ -98,9 +98,14 @@
     });
   }
   // Texte brut depuis une description HTML (pour les extraits de carte).
+  // On remplace les fins de bloc et <br> par une espace pour ne pas coller
+  // un titre de section au paragraphe suivant.
   function htmlToText(html) {
+    var s = String(html || "")
+      .replace(/<\s*br\s*\/?>/gi, " ")
+      .replace(/<\/(p|div|h[1-6]|li|tr|blockquote)>/gi, " ");
     var d = document.createElement("div");
-    d.innerHTML = html || "";
+    d.innerHTML = s;
     return (d.textContent || "").replace(/\s+/g, " ").trim();
   }
 
@@ -177,11 +182,13 @@
       body = "<div class='j-card-grid'>" + arts.map(function (a) {
         var snippet = htmlToText(a.description).slice(0, 130);
         var meta2 = [a.type, a.statut].filter(Boolean).join(" · ");
-        return "<a class='j-card' href='" + articleUrl(r, a.id) + "'>" +
+        return "<a class='j-card" + (a.image ? " has-thumb" : "") + "' href='" + articleUrl(r, a.id) + "'>" +
+          (a.image ? "<div class='j-card-thumb'><img src='" + esc(a.image) + "' alt='' loading='lazy'></div>" : "") +
+          "<div class='j-card-body'>" +
           "<div class='j-card-name'>" + esc(a.name) + "</div>" +
           (meta2 ? "<div class='j-card-meta'>" + esc(meta2) + "</div>" : "") +
           (snippet ? "<div class='j-card-snippet'>" + esc(snippet) + "</div>" : "") +
-          "</a>";
+          "</div></a>";
       }).join("") + "</div>";
     }
     mainEl.innerHTML = "<div class='j-actions'>" + addBtn + "</div>" + body;

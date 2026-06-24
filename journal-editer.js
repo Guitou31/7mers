@@ -27,6 +27,8 @@
   var fields = Core.fieldsFor(R);
   var inputs = {};        // key -> élément input
   var editorEl = null;    // contenteditable description
+  var pendingImageFile = null;  // nouvelle image choisie (à uploader au save)
+  var imageRemoved = false;     // l'utilisateur a retiré l'image existante
 
   // --- Construction du formulaire ---
   function fieldControl(f) {
@@ -62,9 +64,45 @@
     return inp;
   }
 
+  var CAMERA_SVG = "<svg viewBox='0 0 24 24' aria-hidden='true'><path d='M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z'/><circle cx='12' cy='13' r='4'/></svg>";
+
+  function buildImageControl() {
+    var wrap = el("div", "j-image-field");
+    var preview = el("div", "j-image-preview");
+    function setPreview(src) {
+      preview.innerHTML = src
+        ? "<img src='" + src + "' alt=''>"
+        : "<span class='j-image-ph'>" + CAMERA_SVG + "</span>";
+    }
+    setPreview((existing && existing.image) || "");
+
+    var controls = el("div", "j-image-controls");
+    var pick = el("label", "j-btn-ghost", "Choisir une image");
+    var input = el("input"); input.type = "file"; input.accept = "image/*"; input.style.display = "none";
+    pick.appendChild(input);
+    var rm = el("button", "j-btn-ghost", "Retirer"); rm.type = "button";
+    controls.appendChild(pick); controls.appendChild(rm);
+
+    input.addEventListener("change", function () {
+      var f = input.files && input.files[0];
+      if (!f) return;
+      pendingImageFile = f; imageRemoved = false;
+      setPreview(URL.createObjectURL(f));
+    });
+    rm.addEventListener("click", function () {
+      pendingImageFile = null; imageRemoved = true; input.value = "";
+      setPreview("");
+    });
+
+    wrap.appendChild(preview);
+    wrap.appendChild(controls);
+    return wrap;
+  }
+
   function renderForm(mainEl) {
     var form = el("form", "j-form");
     form.addEventListener("submit", function (e) { e.preventDefault(); save(); });
+    form.appendChild(buildImageControl());
 
     var grid = el("div", "j-form-grid");
     fields.forEach(function (f) {
@@ -251,6 +289,7 @@
       else art[f.key] = (inputs[f.key].value || "").trim();
     });
     art.slug = Core.slugify(art.name);
+    if (imageRemoved) art.image = "";          // l'image uploadée écrasera (cf. save)
     art.updated = today();
     if (!art.created) art.created = today();
     art.author = GH.getConfig().author || "Guillaume";
@@ -279,13 +318,27 @@
       action: isNew ? "créé" : "modifié",
       target: art.name, rubrique: R, id: art.id, date: today()
     };
-    setBusy(true); msg("Publication sur GitHub…", "");
-    GH.saveArticle(R, art, change).then(function (db) {
-      window.JOURNAL_DB = db;
-      window.location.href = Core.articleUrl(R, art.id);
-    }).catch(function (err) {
-      setBusy(false); msg("Échec : " + (err.message || err), "err");
-    });
+    setBusy(true);
+    var publish = function () {
+      msg("Publication sur GitHub…", "");
+      GH.saveArticle(R, art, change).then(function (db) {
+        window.JOURNAL_DB = db;
+        window.location.href = Core.articleUrl(R, art.id);
+      }).catch(function (err) {
+        setBusy(false); msg("Échec : " + (err.message || err), "err");
+      });
+    };
+    // Si une image a été choisie, on l'upload d'abord, puis on publie l'article.
+    if (pendingImageFile) {
+      msg("Envoi de l'image…", "");
+      GH.uploadImage(pendingImageFile).then(function (path) {
+        art.image = path; publish();
+      }).catch(function (err) {
+        setBusy(false); msg("Échec image : " + (err.message || err), "err");
+      });
+    } else {
+      publish();
+    }
   }
 
   function remove() {

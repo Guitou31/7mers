@@ -47,8 +47,8 @@
     var actions = "<div class='j-actions'>" +
       "<a class='j-btn-add' href='" + Core.editUrl(r, id) + "'>Éditer</a></div>";
 
-    // Champs informatifs (hors nom/titre/description), seulement si remplis.
-    var SKIP = { name: 1, title: 1, description: 1 };
+    // Champs informatifs (hors nom/titre/description/image), seulement si remplis.
+    var SKIP = { name: 1, title: 1, description: 1, image: 1, slug: 1 };
     var rows = "";
     Core.fieldsFor(r).forEach(function (f) {
       if (SKIP[f.key]) return;
@@ -67,7 +67,11 @@
       ? descWrap.outerHTML
       : "<div class='j-desc j-desc-empty'><em>Pas encore de description.</em></div>";
 
-    main.innerHTML = actions + info + descHtml;
+    var hero = art.image
+      ? "<div class='j-article-hero'><img src='" + Core.esc(art.image) + "' alt='" + Core.esc(art.name) + "'></div>"
+      : "";
+
+    main.innerHTML = actions + hero + info + descHtml;
   }
 
   if (document.readyState === "loading") {

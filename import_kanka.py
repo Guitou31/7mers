@@ -14,6 +14,7 @@ Usage :
 
 import json
 import re
+import shutil
 import sys
 from pathlib import Path
 
@@ -102,6 +103,29 @@ def main():
         except Exception:
             pass
 
+    # --- Gallery : uuid -> fichier image. Copiées vers journal-images/ ---
+    gal = {}
+    for f in (export / "gallery").glob("*"):
+        if f.suffix.lower() == ".json":
+            continue
+        gal[f.stem] = f
+    img_dir = ROOT / "journal-images"
+    img_dir.mkdir(exist_ok=True)
+    n_img = [0]
+
+    def copier_image(ent):
+        u = ent.get("image_uuid")
+        if not u or u not in gal:
+            return ""
+        src = gal[u]
+        dest = img_dir / (u + src.suffix.lower())
+        try:
+            shutil.copyfile(src, dest)
+            n_img[0] += 1
+            return "journal-images/" + dest.name
+        except Exception:
+            return ""
+
     # --- Pass 1 : charge toutes les entités, construit l'index ---
     articles = {r: [] for r in RUBRIQUES}
     index = {}            # entity.id -> (rubrique, id, name)
@@ -133,6 +157,7 @@ def main():
                 "name": d["name"],
                 "type": (ent.get("type") or d.get("type") or "").strip(),
                 "title": (d.get("title") or "").strip(),
+                "image": copier_image(ent),
                 "etiquettes": etq,
                 "description": "",  # rempli au pass 2
                 "created": (d.get("created_at") or "")[:10],
@@ -206,6 +231,7 @@ def main():
         if articles[r]:
             print(f"  {r:14} {len(articles[r])}")
     print(f"Mentions @ non résolues (texte conservé) : {non_resolues[0]}")
+    print(f"Images copiées dans journal-images/ : {n_img[0]}")
     print(f"Entrées d'activité : {len(changes)}")
     return 0
 

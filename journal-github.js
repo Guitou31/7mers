@@ -95,6 +95,36 @@
     });
   }
 
+  // --- Upload d'une image (binaire) dans journal-images/ ---
+  var _imgCounter = 0;
+  function fileToBase64(file) {
+    return new Promise(function (resolve, reject) {
+      var r = new FileReader();
+      r.onload = function () { resolve(String(r.result).split(",")[1] || ""); };
+      r.onerror = function () { reject(new Error("Lecture du fichier impossible.")); };
+      r.readAsDataURL(file);
+    });
+  }
+  function uploadImage(file) {
+    var ext = (file.name.split(".").pop() || "img").toLowerCase().replace(/[^a-z0-9]/g, "") || "img";
+    var name = "img-" + Date.now().toString(36) + "-" + (_imgCounter++) + "." + ext;
+    var path = "journal-images/" + name;
+    var c = getConfig();
+    return fileToBase64(file).then(function (b64) {
+      return fetch(api("contents/" + path), {
+        method: "PUT", headers: headers(),
+        body: JSON.stringify({ message: "Journal: image " + name, content: b64, branch: c.branch })
+      }).then(function (res) {
+        if (res.status === 401) throw new Error("Jeton refusé (401).");
+        if (res.status === 403) throw new Error("Accès refusé (403) : droits Contents insuffisants.");
+        if (!res.ok) return res.json().then(function (j) {
+          throw new Error("Upload image échoué (" + res.status + ") : " + (j.message || ""));
+        });
+        return path;
+      });
+    });
+  }
+
   function emptyDb() {
     return {
       articles: { personnages: [], lieux: [], cartes: [], organisations: [], familles: [],
@@ -143,6 +173,6 @@
   window.JournalGitHub = {
     getConfig: getConfig, setConfig: setConfig, isConfigured: isConfigured,
     clearToken: clearToken, getFile: getFile, saveArticle: saveArticle, deleteArticle: deleteArticle,
-    PATH: PATH
+    uploadImage: uploadImage, PATH: PATH
   };
 })();
