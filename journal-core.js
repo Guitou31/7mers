@@ -229,9 +229,24 @@
           "<div class='j-card-body'><div class='j-card-name'>" + esc(c.label) + "</div>" +
           "<div class='j-card-meta'>" + c.nations.length + " nations · " + detailed + " détaillée" + (detailed > 1 ? "s" : "") + "</div></div></a>";
       }).join("");
+      // Filet de sécurité : nations sans continent connu (jamais orphelines).
+      var known = {};
+      CONTINENTS.forEach(function (c) {
+        known[normName(c.label)] = 1;
+        c.nations.forEach(function (nm) { known[normName(nm)] = 1; });
+      });
+      var orphans = articlesOf("nations").filter(function (a) {
+        if (known[normName(a.name)]) return false;
+        return !(a.aliases || []).some(function (al) { return known[normName(al)]; });
+      }).sort(function (a, b) { return a.name.localeCompare(b.name, "fr"); });
+      var orphHtml = orphans.length
+        ? "<div class='j-dash-section-title'>Autres nations</div><div class='j-card-grid'>" +
+            orphans.map(natCard).join("") + "</div>"
+        : "";
+
       mainEl.innerHTML =
         "<div class='j-actions'><a class='j-btn-add' href='" + editUrl("nations") + "'><span class='j-plus'>+</span> Ajouter une nation</a></div>" +
-        "<div class='j-card-grid'>" + cards + "</div>";
+        "<div class='j-card-grid'>" + cards + "</div>" + orphHtml;
       return true;
     }
 
