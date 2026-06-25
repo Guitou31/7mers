@@ -221,13 +221,12 @@
     if (!key) {
       // Niveau 1 : les continents (ordre fixe).
       var cards = CONTINENTS.map(function (c) {
-        var detailed = c.nations.filter(function (nm) { return idx[normName(nm)]; }).length;
         var overview = idx[normName(c.label)];
         var img = overview && overview.image;
         return "<a class='j-card" + (img ? " has-thumb" : "") + "' href='journal-nations.html?continent=" + encodeURIComponent(c.key) + "'>" +
           (img ? "<div class='j-card-thumb'><img src='" + esc(img) + "' alt='' loading='lazy'></div>" : "") +
           "<div class='j-card-body'><div class='j-card-name'>" + esc(c.label) + "</div>" +
-          "<div class='j-card-meta'>" + c.nations.length + " nations · " + detailed + " détaillée" + (detailed > 1 ? "s" : "") + "</div></div></a>";
+          "<div class='j-card-meta'>" + c.nations.length + " nations</div></div></a>";
       }).join("");
       // Filet de sécurité : nations sans continent connu (jamais orphelines).
       var known = {};
