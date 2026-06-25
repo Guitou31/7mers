@@ -62,7 +62,8 @@ BOOKS = {
             "Numa": {"pages": (19, 37), "truncate": {"religion": 1}},
             "La Bucca": {"pages": (39, 59), "exclude": set(range(53, 60))},
             "La Mer Atabéenne (Rahuris)": {"pages": (61, 79)},
-            "Aragosta": {"pages": (81, 101), "exclude": set(range(89, 94)) | set(range(98, 102))},
+            "Aragosta": {"pages": (81, 101), "exclude": set(range(89, 94)) | set(range(98, 102)),
+                         "drop": {"societes secretes"}},
             "Jaragua": {"pages": (103, 121), "exclude": set(range(112, 119))},
         },
     },
@@ -75,7 +76,9 @@ def is_furniture(t):
         return True
     if low in ("ç", "Ç", "•"):
         return True
-    if re.search(r"CHAPITRE\s+\d|7E MER|LIVRE DE BASE|NATIONS PIRATES", low, re.I):
+    # En-têtes/pieds : toujours en CAPITALES -> match sensible à la casse
+    # (pour ne pas jeter « 7e Mer » ou « Ce chapitre » dans le corps de texte).
+    if re.search(r"CHAPITRE\s+\d|7E MER|LIVRE DE BASE|NATIONS PIRATES", low):
         return True
     if re.fullmatch(r"\d{1,3}", low):
         return True
@@ -117,7 +120,7 @@ def in_dark(bbox, rects):
     return any(r.x0 <= cx <= r.x1 and r.y0 <= cy <= r.y1 for r in rects)
 
 
-def extract_html(pdf, p0, p1, exclude=frozenset(), truncate=None):
+def extract_html(pdf, p0, p1, exclude=frozenset(), truncate=None, drop=frozenset()):
     truncate = truncate or {}
     d = fitz.open(pdf)
     items = []
@@ -126,6 +129,7 @@ def extract_html(pdf, p0, p1, exclude=frozenset(), truncate=None):
     head = ""
     head_tag = ""
     trunc_left = [None]   # None = hors troncature ; sinon nb de paragraphes encore gardés
+    dropping = [False, None]   # [section supprimée en cours ?, niveau du titre déclencheur]
 
     def flush_para():
         nonlocal para, pending_cap
@@ -136,6 +140,8 @@ def extract_html(pdf, p0, p1, exclude=frozenset(), truncate=None):
         if pending_cap:
             t = pending_cap + t
             pending_cap = ""
+        if dropping[0]:
+            return                         # section supprimée : paragraphe ignoré
         if trunc_left[0] is not None:
             if trunc_left[0] <= 0:
                 return                     # troncature : paragraphe ignoré
@@ -151,6 +157,17 @@ def extract_html(pdf, p0, p1, exclude=frozenset(), truncate=None):
 
     def add_heading(tag, text):
         nonlocal head, head_tag
+        nt = norm(text.strip())
+        # Fin d'une section supprimée : un <h3> (toujours) ou un <h4> de même niveau.
+        if dropping[0] and (tag == "h3" or dropping[1] == "h4"):
+            dropping[0] = False
+        # Début d'une section à supprimer (titre + contenu jusqu'au titre suivant).
+        if nt in drop:
+            flush_para()
+            dropping[0], dropping[1] = True, tag
+            return
+        if dropping[0]:
+            return                          # dans une section supprimée : titres ignorés
         if tag == "h4" and trunc_left[0] is not None:
             return                          # troncature : sous-titres sautés
         flush_para()
@@ -161,8 +178,8 @@ def extract_html(pdf, p0, p1, exclude=frozenset(), truncate=None):
         else:
             flush_head()
             head, head_tag = text.strip(), tag
-        if tag == "h3" and norm(text.strip()) in truncate:
-            trunc_left[0] = truncate[norm(text.strip())]
+        if tag == "h3" and nt in truncate:
+            trunc_left[0] = truncate[nt]
 
     def add_body(text, new_block):
         nonlocal para
@@ -207,7 +224,8 @@ def extract_html(pdf, p0, p1, exclude=frozenset(), truncate=None):
                 epi.sort(key=lambda b: b["bbox"][1])
                 quote, author = [], ""
                 for b in epi:
-                    t = clean("".join(s["text"] for l in b["lines"] for s in l["spans"]))
+                    lines_txt = ["".join(s["text"] for s in l["spans"]) for l in b["lines"]]
+                    t = clean(" ".join(lines_txt))
                     if not t:
                         continue
                     if t[0] in "—–-":
@@ -219,8 +237,10 @@ def extract_html(pdf, p0, p1, exclude=frozenset(), truncate=None):
                     bq += "<br><cite>" + html.escape(author, quote=False) + "</cite>"
                 items.append(("raw", bq + "</blockquote>"))
 
+        # Tri par bord gauche : un bloc pleine largeur (intro, x0 petit) reste
+        # en colonne gauche -> lu en premier (la lettrine lui reste attachée).
         mid = pw / 2
-        blocks.sort(key=lambda b: (0 if (b["bbox"][0] + b["bbox"][2]) / 2 < mid else 1, round(b["bbox"][1])))
+        blocks.sort(key=lambda b: (0 if b["bbox"][0] < mid - 20 else 1, round(b["bbox"][1])))
 
         for b in blocks:
             first = True
@@ -289,7 +309,8 @@ def apply(book_key):
     report = []
     for name, cfg in book["nations"].items():
         p0, p1 = cfg["pages"]
-        desc = extract_html(pdf, p0, p1, cfg.get("exclude", frozenset()), cfg.get("truncate"))
+        desc = extract_html(pdf, p0, p1, cfg.get("exclude", frozenset()),
+                            cfg.get("truncate"), cfg.get("drop", frozenset()))
         art = by_norm.get(norm(name))
         if art:
             art["description"] = desc

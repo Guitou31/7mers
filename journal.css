@@ -235,16 +235,10 @@
 .j-card-todo .j-card-name { color: var(--ink-mute); font-weight: 600; }
 .j-card-todo .j-card-meta { color: var(--accent-soft); }
 
-/* Présentation d'un continent (en tête de la page d'un continent) */
-.j-cont-overview {
-  display: flex; gap: 1rem; align-items: center; text-decoration: none; color: var(--ink);
-  background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: 10px;
-  padding: 0.9rem 1rem; margin-bottom: 1.4rem;
-}
-.j-cont-overview:hover { box-shadow: var(--shadow); border-color: var(--accent-soft); }
-.j-cont-overview img { width: 92px; height: 92px; flex: 0 0 92px; object-fit: cover; border-radius: 8px; }
-.j-cont-overview strong { color: var(--accent); font-size: 1.05rem; }
-.j-cont-overview p { margin: 0.25rem 0 0; font-size: 0.85rem; color: var(--ink-soft); line-height: 1.4; }
+/* Description complète du continent (en tête de la page d'un continent) */
+.j-cont-desc { margin-bottom: 1.6rem; padding-bottom: 1.3rem; border-bottom: 1px dashed var(--border); }
+/* Citation d'ouverture (épigraphe) sur les cartes de nation */
+.j-card-quote { font-size: 0.86rem; color: var(--ink-soft); margin-top: 0.5rem; line-height: 1.45; font-style: italic; }
 
 /* Liens @ dans les descriptions */
 .j-link { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent-soft); font-weight: 600; }

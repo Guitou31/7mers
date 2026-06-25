@@ -205,12 +205,27 @@
     return null;
   }
 
+  // Citation d'ouverture (épigraphe) d'une fiche, SANS l'auteur.
+  function epigraphQuote(htmlDesc) {
+    var m = /<blockquote>([\s\S]*?)<\/blockquote>/.exec(htmlDesc || "");
+    if (!m) return "";
+    var inner = m[1].replace(/<br>\s*<cite>[\s\S]*?<\/cite>/i, "");
+    var q = htmlToText(inner);
+    // Retire un « — Auteur » accolé en fin de citation (en plus du <cite>).
+    return q.replace(/\s*[—–]\s*[A-ZÀ-Þ][^—–]{0,45}$/, "").trim();
+  }
+
   function natCard(a) {
-    var snippet = htmlToText(a.description).slice(0, 110);
+    var quote = epigraphQuote(a.description);
+    var body = quote
+      ? "<div class='j-card-quote'>" + esc(quote) + "</div>"
+      : (function () {
+          var s = htmlToText(a.description).slice(0, 110);
+          return s ? "<div class='j-card-snippet'>" + esc(s) + "</div>" : "";
+        })();
     return "<a class='j-card" + (a.image ? " has-thumb" : "") + "' href='" + articleUrl("nations", a.id) + "'>" +
       (a.image ? "<div class='j-card-thumb'><img src='" + esc(a.image) + "' alt='' loading='lazy'></div>" : "") +
-      "<div class='j-card-body'><div class='j-card-name'>" + esc(a.name) + "</div>" +
-      (snippet ? "<div class='j-card-snippet'>" + esc(snippet) + "</div>" : "") + "</div></a>";
+      "<div class='j-card-body'><div class='j-card-name'>" + esc(a.name) + "</div>" + body + "</div></a>";
   }
 
   function renderNations(mainEl) {
@@ -253,13 +268,11 @@
     var cont = continentByKey(key);
     if (!cont) { mainEl.innerHTML = "<div class='j-empty'><p>Continent inconnu.</p></div>"; return true; }
     var overview = idx[normName(cont.label)];
-    var ov = "";
-    if (overview) {
-      var snip = htmlToText(overview.description).slice(0, 220);
-      ov = "<a class='j-cont-overview' href='" + articleUrl("nations", overview.id) + "'>" +
-        (overview.image ? "<img src='" + esc(overview.image) + "' alt=''>" : "") +
-        "<div><strong>" + esc(overview.name) + "</strong>" + (snip ? "<p>" + esc(snip) + "</p>" : "") + "</div></a>";
-    }
+    var hasDesc = overview && htmlToText(overview.description);
+    var hero = (overview && overview.image)
+      ? "<div class='j-article-hero'><img src='" + esc(overview.image) + "' alt='" + esc(cont.label) + "'></div>"
+      : "";
+    var ov = hasDesc ? "<div class='j-cont-desc j-desc'></div>" : "";
     var noms = cont.nations.slice().sort(function (a, b) { return a.localeCompare(b, "fr"); });
     var cards2 = noms.map(function (nm) {
       var a = idx[normName(nm)];
@@ -271,7 +284,12 @@
     mainEl.innerHTML =
       "<div class='j-actions'><a class='j-btn-ghost' href='journal-nations.html'>← Tous les continents</a></div>" +
       "<div class='j-crumb'><a href='journal-nations.html'>Nations</a> <span>›</span> " + esc(cont.label) + "</div>" +
-      ov + "<div class='j-card-grid'>" + cards2 + "</div>";
+      hero + ov +
+      "<div class='j-dash-section-title'>Les nations</div>" +
+      "<div class='j-card-grid'>" + cards2 + "</div>";
+    // Description complète du continent (avec liens @ résolus).
+    var dEl = mainEl.querySelector(".j-cont-desc");
+    if (dEl && overview) renderDescription(dEl, overview.description, overview.id);
     return true;
   }
 
