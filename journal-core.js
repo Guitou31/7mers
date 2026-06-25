@@ -160,6 +160,107 @@
     try { autolink(targetEl, selfId); } catch (e) { /* regex \p non supporté : on garde les liens @ explicites */ }
   }
 
+  // --- Nations : navigation à deux niveaux (continents → nations) ---
+  // Ordre des continents volontairement NON alphabétique (ordre du monde).
+  var CONTINENTS = [
+    { key: "theah", label: "Theah", nations: ["Avalon", "Castille", "Eisen", "Inismore", "Marche des Highlands", "Montaigne", "Sarmatie", "Ussura", "Vestenmennavenjar", "Vodacce"] },
+    { key: "pirates", label: "Nations Pirates", nations: ["Aragosta", "Jaragua", "La Bucca", "Numa", "La Mer Atabéenne (Rahuris)"] },
+    { key: "croissant", label: "Empire du Croissant", nations: ["Anatol Ath", "Ashur", "Persis", "Sarmion", "8ème Mer"] },
+    { key: "ifri", label: "Ifri", nations: ["Empire Aksoumite", "Khémet", "Maghreb", "Kurafaba mandéniane", "Royame de Mbey"] },
+    { key: "cathay", label: "Cathay", nations: ["Agnivarsie", "Fuso", "Han", "Khazari", "Nagaja", "Shenzhou"] },
+    { key: "aztlan", label: "Aztlan", nations: ["Alliance Nahucane", "Kuraq", "Tzak K'an"] },
+    { key: "tissees", label: "Terres Tissées (1000 Nations)", nations: ["Terres de l'Aube", "Enohtos", "Alliance Sertepe"] }
+  ];
+
+  function urlParam(name) {
+    var m = new RegExp("[?&]" + name + "=([^&]*)").exec(location.search);
+    return m ? decodeURIComponent(m[1].replace(/\+/g, " ")) : "";
+  }
+  // Normalise un nom de nation pour l'appariement (accents, article de tête).
+  function normName(s) {
+    s = String(s || "");
+    if (s.normalize) s = s.normalize("NFKD").replace(/[̀-ͯ]/g, "");
+    return s.toLowerCase().replace(/^(?:la|le|les|l'|the)\s+/, "").replace(/\s+/g, " ").trim();
+  }
+  // Index normalisé (nom + alias) -> article de la rubrique nations.
+  function nationIndex() {
+    var idx = {};
+    articlesOf("nations").forEach(function (a) {
+      idx[normName(a.name)] = a;
+      (a.aliases || []).forEach(function (al) { idx[normName(al)] = a; });
+    });
+    return idx;
+  }
+  function continentByKey(k) {
+    for (var i = 0; i < CONTINENTS.length; i++) if (CONTINENTS[i].key === k) return CONTINENTS[i];
+    return null;
+  }
+  function continentOf(nationName) {
+    var n = normName(nationName);
+    for (var i = 0; i < CONTINENTS.length; i++) {
+      for (var j = 0; j < CONTINENTS[i].nations.length; j++) {
+        if (normName(CONTINENTS[i].nations[j]) === n) return CONTINENTS[i];
+      }
+    }
+    return null;
+  }
+
+  function natCard(a) {
+    var snippet = htmlToText(a.description).slice(0, 110);
+    return "<a class='j-card" + (a.image ? " has-thumb" : "") + "' href='" + articleUrl("nations", a.id) + "'>" +
+      (a.image ? "<div class='j-card-thumb'><img src='" + esc(a.image) + "' alt='' loading='lazy'></div>" : "") +
+      "<div class='j-card-body'><div class='j-card-name'>" + esc(a.name) + "</div>" +
+      (snippet ? "<div class='j-card-snippet'>" + esc(snippet) + "</div>" : "") + "</div></a>";
+  }
+
+  function renderNations(mainEl) {
+    if (!mainEl) return false;
+    var idx = nationIndex();
+    var key = urlParam("continent");
+
+    if (!key) {
+      // Niveau 1 : les continents (ordre fixe).
+      var cards = CONTINENTS.map(function (c) {
+        var detailed = c.nations.filter(function (nm) { return idx[normName(nm)]; }).length;
+        var overview = idx[normName(c.label)];
+        var img = overview && overview.image;
+        return "<a class='j-card" + (img ? " has-thumb" : "") + "' href='journal-nations.html?continent=" + encodeURIComponent(c.key) + "'>" +
+          (img ? "<div class='j-card-thumb'><img src='" + esc(img) + "' alt='' loading='lazy'></div>" : "") +
+          "<div class='j-card-body'><div class='j-card-name'>" + esc(c.label) + "</div>" +
+          "<div class='j-card-meta'>" + c.nations.length + " nations · " + detailed + " détaillée" + (detailed > 1 ? "s" : "") + "</div></div></a>";
+      }).join("");
+      mainEl.innerHTML =
+        "<div class='j-actions'><a class='j-btn-add' href='" + editUrl("nations") + "'><span class='j-plus'>+</span> Ajouter une nation</a></div>" +
+        "<div class='j-card-grid'>" + cards + "</div>";
+      return true;
+    }
+
+    // Niveau 2 : nations d'un continent (alphabétique).
+    var cont = continentByKey(key);
+    if (!cont) { mainEl.innerHTML = "<div class='j-empty'><p>Continent inconnu.</p></div>"; return true; }
+    var overview = idx[normName(cont.label)];
+    var ov = "";
+    if (overview) {
+      var snip = htmlToText(overview.description).slice(0, 220);
+      ov = "<a class='j-cont-overview' href='" + articleUrl("nations", overview.id) + "'>" +
+        (overview.image ? "<img src='" + esc(overview.image) + "' alt=''>" : "") +
+        "<div><strong>" + esc(overview.name) + "</strong>" + (snip ? "<p>" + esc(snip) + "</p>" : "") + "</div></a>";
+    }
+    var noms = cont.nations.slice().sort(function (a, b) { return a.localeCompare(b, "fr"); });
+    var cards2 = noms.map(function (nm) {
+      var a = idx[normName(nm)];
+      if (a) return natCard(a);
+      return "<a class='j-card j-card-todo' href='" + editUrl("nations") + "&name=" + encodeURIComponent(nm) + "'>" +
+        "<div class='j-card-body'><div class='j-card-name'>" + esc(nm) + "</div>" +
+        "<div class='j-card-meta'>à détailler</div></div></a>";
+    }).join("");
+    mainEl.innerHTML =
+      "<div class='j-actions'><a class='j-btn-ghost' href='journal-nations.html'>← Tous les continents</a></div>" +
+      "<div class='j-crumb'><a href='journal-nations.html'>Nations</a> <span>›</span> " + esc(cont.label) + "</div>" +
+      ov + "<div class='j-card-grid'>" + cards2 + "</div>";
+    return true;
+  }
+
   // --- Rendu de la liste d'une rubrique (appelé par journal-layout sur les
   // pages de rubrique). Remplit #journal-main. ---
   function renderRubriqueList(r, mainEl) {
@@ -210,6 +311,9 @@
     htmlToText: htmlToText,
     renderDescription: renderDescription,
     renderRubriqueList: renderRubriqueList,
+    renderNations: renderNations,
+    continentOf: continentOf,
+    CONTINENTS: CONTINENTS,
     isRubrique: function (id) { return !!RUBRIQUES[id]; }
   };
 })();

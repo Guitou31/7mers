@@ -31,13 +31,21 @@
 
     document.title = art.name + " — Journal 7ème Mer";
 
+    // Pour une nation, intercale le continent dans le fil d'Ariane.
+    var crumbExtra = "";
+    if (r === "nations" && Core.continentOf) {
+      var cont = Core.continentOf(art.name);
+      if (cont) crumbExtra = "<a href='journal-nations.html?continent=" + encodeURIComponent(cont.key) +
+        "'>" + Core.esc(cont.label) + "</a> <span>›</span> ";
+    }
+
     // En-tête : fil d'Ariane + nom + titre.
     if (head) {
       head.innerHTML =
         (window.journalIcon ? window.journalIcon(meta.icon, "ph-ico") : "") +
         "<div class='ph-text'>" +
         "<div class='j-crumb'><a href='journal-" + r + ".html'>" + Core.esc(meta.label) +
-        "</a> <span>›</span> " + Core.esc(art.name) + "</div>" +
+        "</a> <span>›</span> " + crumbExtra + Core.esc(art.name) + "</div>" +
         "<h1>" + Core.esc(art.name) + "</h1>" +
         (art.title ? "<div class='ph-sub'>" + Core.esc(art.title) + "</div>" : "") +
         "</div>";

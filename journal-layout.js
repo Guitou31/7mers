@@ -210,7 +210,11 @@
     var main = document.getElementById("journal-main");
     var rub = currentId().replace(/^journal-/, "");
     if (main && window.JournalCore && window.JournalCore.isRubrique(rub)) {
-      window.JournalCore.renderRubriqueList(rub, main);
+      if (rub === "nations" && window.JournalCore.renderNations) {
+        window.JournalCore.renderNations(main);
+      } else {
+        window.JournalCore.renderRubriqueList(rub, main);
+      }
     } else {
       fillEmptyState(main);
     }

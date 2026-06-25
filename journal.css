@@ -229,6 +229,23 @@
 .j-card-meta { font-size: 0.74rem; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 0.15rem; }
 .j-card-snippet { font-size: 0.84rem; color: var(--ink-soft); margin-top: 0.45rem; line-height: 1.4; }
 
+/* Nation pas encore détaillée (placeholder cliquable -> créer) */
+.j-card-todo { border-style: dashed; opacity: 0.75; }
+.j-card-todo:hover { opacity: 1; }
+.j-card-todo .j-card-name { color: var(--ink-mute); font-weight: 600; }
+.j-card-todo .j-card-meta { color: var(--accent-soft); }
+
+/* Présentation d'un continent (en tête de la page d'un continent) */
+.j-cont-overview {
+  display: flex; gap: 1rem; align-items: center; text-decoration: none; color: var(--ink);
+  background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: 10px;
+  padding: 0.9rem 1rem; margin-bottom: 1.4rem;
+}
+.j-cont-overview:hover { box-shadow: var(--shadow); border-color: var(--accent-soft); }
+.j-cont-overview img { width: 92px; height: 92px; flex: 0 0 92px; object-fit: cover; border-radius: 8px; }
+.j-cont-overview strong { color: var(--accent); font-size: 1.05rem; }
+.j-cont-overview p { margin: 0.25rem 0 0; font-size: 0.85rem; color: var(--ink-soft); line-height: 1.4; }
+
 /* Liens @ dans les descriptions */
 .j-link { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent-soft); font-weight: 600; }
 .j-link:hover { border-bottom-style: solid; }

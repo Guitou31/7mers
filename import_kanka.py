@@ -49,6 +49,11 @@ RUBRIQUES = ["personnages", "lieux", "cartes", "organisations", "familles",
              "quetes", "objets"]
 PREFIXE = {r: r[:3] for r in RUBRIQUES}
 
+# Alias d'articles (clé = slug du nom) → autres noms qui doivent créer un lien @.
+ALIAS_ARTICLES = {
+    "vestenmennavenjar": ["Vesten", "Vestenmennavnjar"],
+}
+
 
 def slugify(s):
     import unicodedata
@@ -158,6 +163,7 @@ def main():
                 "type": (ent.get("type") or d.get("type") or "").strip(),
                 "title": (d.get("title") or "").strip(),
                 "image": copier_image(ent),
+                "aliases": ALIAS_ARTICLES.get(slugify(d["name"]), []),
                 "etiquettes": etq,
                 "description": "",  # rempli au pass 2
                 "created": (d.get("created_at") or "")[:10],

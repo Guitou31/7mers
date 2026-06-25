@@ -415,6 +415,11 @@
     }
     document.title = (existing ? "Éditer " + existing.name : "Nouveau " + meta.singular) + " — Journal 7ème Mer";
     renderForm(main);
+    // Pré-remplit le nom si fourni (ex. créer une nation depuis un continent).
+    if (!ID) {
+      var preNom = qs("name");
+      if (preNom && inputs.name) inputs.name.value = preNom;
+    }
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
