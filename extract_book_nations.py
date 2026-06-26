@@ -67,6 +67,15 @@ BOOKS = {
             "Jaragua": {"pages": (103, 121), "exclude": set(range(112, 119))},
         },
     },
+    "ifri": {
+        "pdf": LIVRES / "7Eme Mer-IFRI.pdf",
+        "nations": {
+            # Présentation du continent (impr. 14-16 = PDF 13-15).
+            "Ifri": {"pages": (13, 15),
+                     "skip_headings": {"verites sur l'ifri"},
+                     "drop": {"bonsam et les joks", "vautours venus du nord"}},
+        },
+    },
 }
 
 
@@ -87,7 +96,8 @@ def is_furniture(t):
 
 def clean(t):
     t = t.replace("­", "")
-    return re.sub(r"\s+", " ", t).strip()
+    t = re.sub(r"\s+", " ", t).strip()
+    return re.sub(r" ([’'])", r"\1", t)        # pas d'espace avant une apostrophe
 
 
 def ends_sentence(t):
@@ -120,7 +130,8 @@ def in_dark(bbox, rects):
     return any(r.x0 <= cx <= r.x1 and r.y0 <= cy <= r.y1 for r in rects)
 
 
-def extract_html(pdf, p0, p1, exclude=frozenset(), truncate=None, drop=frozenset()):
+def extract_html(pdf, p0, p1, exclude=frozenset(), truncate=None, drop=frozenset(),
+                 skip_headings=frozenset()):
     truncate = truncate or {}
     d = fitz.open(pdf)
     items = []
@@ -168,6 +179,10 @@ def extract_html(pdf, p0, p1, exclude=frozenset(), truncate=None, drop=frozenset
             return
         if dropping[0]:
             return                          # dans une section supprimée : titres ignorés
+        if nt in skip_headings:             # titre retiré mais contenu conservé
+            flush_para()
+            flush_head()
+            return
         if tag == "h4" and trunc_left[0] is not None:
             return                          # troncature : sous-titres sautés
         flush_para()
@@ -279,8 +294,12 @@ def extract_html(pdf, p0, p1, exclude=frozenset(), truncate=None, drop=frozenset
 
 def norm(s):
     s = unicodedata.normalize("NFKD", s or "")
-    s = "".join(c for c in s if not unicodedata.combining(c))
-    return re.sub(r"^(?:la|le|les|l'|the)\s+", "", s.lower()).strip()
+    s = "".join(c for c in s if not unicodedata.combining(c)).lower()
+    s = s.replace("’", "'").replace("‘", "'")
+    s = re.sub(r"\s*'\s*", "'", s)        # apostrophes typographiques sans espace autour
+    s = re.sub(r"\s+", " ", s).strip()
+    # Article de tête : « les » AVANT « le » (sinon « les X » -> « s X »).
+    return re.sub(r"^(?:les|la|le|the)\s+", "", s).strip()
 
 
 def slugify(s):
@@ -310,7 +329,8 @@ def apply(book_key):
     for name, cfg in book["nations"].items():
         p0, p1 = cfg["pages"]
         desc = extract_html(pdf, p0, p1, cfg.get("exclude", frozenset()),
-                            cfg.get("truncate"), cfg.get("drop", frozenset()))
+                            cfg.get("truncate"), cfg.get("drop", frozenset()),
+                            cfg.get("skip_headings", frozenset()))
         art = by_norm.get(norm(name))
         if art:
             art["description"] = desc
