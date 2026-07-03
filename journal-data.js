@@ -1001,7 +1001,7 @@ window.JOURNAL_DB = {
         "updated": "2026-07-03",
         "created": "2026-07-03",
         "author": "Guillaume",
-        "image": "journal-images/img-mr56dtbi-0.jpg"
+        "image": "journal-images/img-mr57nfqo-0.jpg"
       }
     ],
     "objets": [
@@ -1023,6 +1023,14 @@ window.JOURNAL_DB = {
     ]
   },
   "changes": [
+    {
+      "author": "Guillaume",
+      "action": "modifié",
+      "target": "La Voie du Geng Yu Qiang",
+      "rubrique": "quetes",
+      "id": "que-mr56dtbi",
+      "date": "2026-07-03"
+    },
     {
       "author": "Guillaume",
       "action": "créé",
@@ -1464,5 +1472,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783097788261
+  "rev": 1783099916757
 };
