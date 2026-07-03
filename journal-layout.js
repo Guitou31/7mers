@@ -212,6 +212,8 @@
     if (main && window.JournalCore && window.JournalCore.isRubrique(rub)) {
       if (rub === "nations" && window.JournalCore.renderNations) {
         window.JournalCore.renderNations(main);
+      } else if (rub === "quetes" && window.JournalCore.renderQuetes) {
+        window.JournalCore.renderQuetes(main);
       } else {
         window.JournalCore.renderRubriqueList(rub, main);
       }

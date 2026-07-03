@@ -48,6 +48,14 @@
       { key: "sexe", label: "Sexe", type: "text", half: true, placeholder: "Sexe" },
       { key: "pronoms", label: "Pronoms", type: "text", half: true, placeholder: "Il, Elle" },
       { key: "etiquettes", label: "Étiquettes", type: "tags", placeholder: "Écrire, séparé par des virgules" }
+    ],
+    quetes: [
+      { key: "name", label: "Quête", type: "text", req: true, half: true, placeholder: "Nom de la quête" },
+      { key: "statut", label: "Statut", type: "select", half: true, options: ["En cours", "Terminé"], default: "En cours" },
+      { key: "type", label: "Type", type: "text", half: true, placeholder: "Principale, Secondaire…" },
+      { key: "title", label: "Titre", type: "text", half: true, placeholder: "Titre" },
+      { key: "description", label: "Description", type: "textarea-rich" },
+      { key: "etiquettes", label: "Étiquettes", type: "tags", placeholder: "Écrire, séparé par des virgules" }
     ]
   };
 
@@ -295,36 +303,82 @@
 
   // --- Rendu de la liste d'une rubrique (appelé par journal-layout sur les
   // pages de rubrique). Remplit #journal-main. ---
+  // Carte d'article générique (nom + méta + extrait). hideStatut : n'affiche
+  // pas le statut dans la méta (utile quand il est déjà porté par le groupe).
+  function card(a, r, hideStatut) {
+    var snippet = htmlToText(a.description).slice(0, 130);
+    var meta2 = [a.type, hideStatut ? "" : a.statut].filter(Boolean).join(" · ");
+    return "<a class='j-card" + (a.image ? " has-thumb" : "") + "' href='" + articleUrl(r, a.id) + "'>" +
+      (a.image ? "<div class='j-card-thumb'><img src='" + esc(a.image) + "' alt='' loading='lazy'></div>" : "") +
+      "<div class='j-card-body'>" +
+      "<div class='j-card-name'>" + esc(a.name) + "</div>" +
+      (meta2 ? "<div class='j-card-meta'>" + esc(meta2) + "</div>" : "") +
+      (snippet ? "<div class='j-card-snippet'>" + esc(snippet) + "</div>" : "") +
+      "</div></a>";
+  }
+
+  function emptyState(meta) {
+    return "<div class='j-empty'>" + icon(meta.icon, "j-empty-ico") +
+      "<p>Aucun " + esc(meta.singular) + " pour l'instant.</p>" +
+      "<p class='j-empty-hint'>Clique sur « Ajouter un " + esc(meta.singular) +
+      " » pour créer ton premier article.</p></div>";
+  }
+
   function renderRubriqueList(r, mainEl) {
     var meta = rubriqueMeta(r);
     if (!meta || !mainEl) return false;
     var arts = articlesOf(r).sort(function (a, b) {
       return (a.name || "").localeCompare(b.name || "", "fr");
     });
-
     var addBtn = "<a class='j-btn-add' href='" + editUrl(r) + "'>" +
       "<span class='j-plus'>+</span> Ajouter un " + esc(meta.singular) + "</a>";
-
-    var body;
-    if (!arts.length) {
-      body = "<div class='j-empty'>" + icon(meta.icon, "j-empty-ico") +
-        "<p>Aucun " + esc(meta.singular) + " pour l'instant.</p>" +
-        "<p class='j-empty-hint'>Clique sur « Ajouter un " + esc(meta.singular) +
-        " » pour créer ton premier article.</p></div>";
-    } else {
-      body = "<div class='j-card-grid'>" + arts.map(function (a) {
-        var snippet = htmlToText(a.description).slice(0, 130);
-        var meta2 = [a.type, a.statut].filter(Boolean).join(" · ");
-        return "<a class='j-card" + (a.image ? " has-thumb" : "") + "' href='" + articleUrl(r, a.id) + "'>" +
-          (a.image ? "<div class='j-card-thumb'><img src='" + esc(a.image) + "' alt='' loading='lazy'></div>" : "") +
-          "<div class='j-card-body'>" +
-          "<div class='j-card-name'>" + esc(a.name) + "</div>" +
-          (meta2 ? "<div class='j-card-meta'>" + esc(meta2) + "</div>" : "") +
-          (snippet ? "<div class='j-card-snippet'>" + esc(snippet) + "</div>" : "") +
-          "</div></a>";
-      }).join("") + "</div>";
-    }
+    var body = arts.length
+      ? "<div class='j-card-grid'>" + arts.map(function (a) { return card(a, r, false); }).join("") + "</div>"
+      : emptyState(meta);
     mainEl.innerHTML = "<div class='j-actions'>" + addBtn + "</div>" + body;
+    return true;
+  }
+
+  // Quêtes : en cours mises en avant en haut, terminées séparées plus bas,
+  // avec un filtre (Toutes / En cours / Terminées).
+  function isQueteDone(a) { return /^(termin|fini|complet|accompli|reussi|echou)/.test((a.statut || "").toLowerCase()); }
+
+  function renderQuetes(mainEl) {
+    var meta = rubriqueMeta("quetes");
+    if (!meta || !mainEl) return false;
+    var arts = articlesOf("quetes").sort(function (a, b) { return (a.name || "").localeCompare(b.name || "", "fr"); });
+    var addBtn = "<a class='j-btn-add' href='" + editUrl("quetes") + "'><span class='j-plus'>+</span> Ajouter une quête</a>";
+    if (!arts.length) {
+      mainEl.innerHTML = "<div class='j-actions'>" + addBtn + "</div>" + emptyState(meta);
+      return true;
+    }
+    var encours = arts.filter(function (a) { return !isQueteDone(a); });
+    var termine = arts.filter(isQueteDone);
+
+    function grp(label, cls, list) {
+      if (!list.length) return "";
+      return "<div class='j-quete-group " + cls + "'><div class='j-quete-title'>" + label + "</div>" +
+        "<div class='j-card-grid'>" + list.map(function (a) { return card(a, "quetes", true); }).join("") + "</div></div>";
+    }
+    var filter = "<div class='j-filter'>" +
+      "<button class='j-chip is-active' data-f='all' type='button'>Toutes</button>" +
+      "<button class='j-chip' data-f='encours' type='button'>En cours (" + encours.length + ")</button>" +
+      "<button class='j-chip' data-f='termine' type='button'>Terminées (" + termine.length + ")</button></div>";
+
+    mainEl.innerHTML = "<div class='j-actions'>" + addBtn + "</div>" + filter +
+      grp("En cours", "grp-encours", encours) + grp("Terminées", "grp-termine", termine);
+
+    var chips = mainEl.querySelectorAll(".j-chip");
+    var groups = mainEl.querySelectorAll(".j-quete-group");
+    Array.prototype.forEach.call(chips, function (chip) {
+      chip.addEventListener("click", function () {
+        Array.prototype.forEach.call(chips, function (c) { c.classList.toggle("is-active", c === chip); });
+        var f = chip.getAttribute("data-f");
+        Array.prototype.forEach.call(groups, function (g) {
+          g.style.display = (f === "all" || g.classList.contains("grp-" + f)) ? "" : "none";
+        });
+      });
+    });
     return true;
   }
 
@@ -344,6 +398,7 @@
     renderDescription: renderDescription,
     renderRubriqueList: renderRubriqueList,
     renderNations: renderNations,
+    renderQuetes: renderQuetes,
     continentOf: continentOf,
     CONTINENTS: CONTINENTS,
     isRubrique: function (id) { return !!RUBRIQUES[id]; }
