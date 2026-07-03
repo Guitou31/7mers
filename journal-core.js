@@ -24,6 +24,24 @@
     }
   } catch (e) { }
 
+  // Copies locales des images fraîchement publiées (voir rememberPendingImage
+  // dans journal-editer.js) : servies en data-URL tant que le déploiement du
+  // site n'a pas rattrapé le commit. Purgées après 30 minutes.
+  var PENDING_IMGS = {};
+  try {
+    var _pimgs = JSON.parse(localStorage.getItem("journal_pending_images") || "{}");
+    var _now = Date.now(), _keep = {}, _purged = false;
+    Object.keys(_pimgs).forEach(function (k) {
+      if (_pimgs[k] && _pimgs[k].t && _now - _pimgs[k].t < 30 * 60 * 1000) _keep[k] = _pimgs[k];
+      else _purged = true;
+    });
+    PENDING_IMGS = _keep;
+    if (_purged) localStorage.setItem("journal_pending_images", JSON.stringify(_keep));
+  } catch (e) { }
+  function imgSrc(p) {
+    return (p && PENDING_IMGS[p] && PENDING_IMGS[p].d) || p;
+  }
+
   // Statut singulier d'une rubrique + libellé + icône (icônes via journalIcon).
   var RUBRIQUES = {
     personnages:  { label: "Personnages",  singular: "personnage",   icon: "user" },
@@ -248,7 +266,7 @@
           return s ? "<div class='j-card-snippet'>" + esc(s) + "</div>" : "";
         })();
     return "<a class='j-card" + (a.image ? " has-thumb" : "") + "' href='" + articleUrl("nations", a.id) + "'>" +
-      (a.image ? "<div class='j-card-thumb'><img src='" + esc(a.image) + "' alt='' loading='lazy'></div>" : "") +
+      (a.image ? "<div class='j-card-thumb'><img src='" + esc(imgSrc(a.image)) + "' alt='' loading='lazy'></div>" : "") +
       "<div class='j-card-body'><div class='j-card-name'>" + esc(a.name) + "</div>" + body + "</div></a>";
   }
 
@@ -263,7 +281,7 @@
         var overview = idx[normName(c.label)];
         var img = overview && overview.image;
         return "<a class='j-card" + (img ? " has-thumb" : "") + "' href='journal-nations.html?continent=" + encodeURIComponent(c.key) + "'>" +
-          (img ? "<div class='j-card-thumb'><img src='" + esc(img) + "' alt='' loading='lazy'></div>" : "") +
+          (img ? "<div class='j-card-thumb'><img src='" + esc(imgSrc(img)) + "' alt='' loading='lazy'></div>" : "") +
           "<div class='j-card-body'><div class='j-card-name'>" + esc(c.label) + "</div>" +
           "<div class='j-card-meta'>" + c.nations.length + " nations</div></div></a>";
       }).join("");
@@ -294,7 +312,7 @@
     var overview = idx[normName(cont.label)];
     var hasDesc = overview && htmlToText(overview.description);
     var hero = (overview && overview.image)
-      ? "<div class='j-article-hero'><img src='" + esc(overview.image) + "' alt='" + esc(cont.label) + "'></div>"
+      ? "<div class='j-article-hero'><img src='" + esc(imgSrc(overview.image)) + "' alt='" + esc(cont.label) + "'></div>"
       : "";
     var ov = hasDesc ? "<div class='j-cont-desc j-desc'></div>" : "";
     var noms = cont.nations.slice().sort(function (a, b) { return a.localeCompare(b, "fr"); });
@@ -325,7 +343,7 @@
     var snippet = htmlToText(a.description).slice(0, 130);
     var meta2 = [a.type, hideStatut ? "" : a.statut].filter(Boolean).join(" · ");
     return "<a class='j-card" + (a.image ? " has-thumb" : "") + "' href='" + articleUrl(r, a.id) + "'>" +
-      (a.image ? "<div class='j-card-thumb'><img src='" + esc(a.image) + "' alt='' loading='lazy'></div>" : "") +
+      (a.image ? "<div class='j-card-thumb'><img src='" + esc(imgSrc(a.image)) + "' alt='' loading='lazy'></div>" : "") +
       "<div class='j-card-body'>" +
       "<div class='j-card-name'>" + esc(a.name) + "</div>" +
       (meta2 ? "<div class='j-card-meta'>" + esc(meta2) + "</div>" : "") +
@@ -410,6 +428,7 @@
     articleUrl: articleUrl,
     editUrl: editUrl,
     esc: esc,
+    imgSrc: imgSrc,
     htmlToText: htmlToText,
     renderDescription: renderDescription,
     renderRubriqueList: renderRubriqueList,

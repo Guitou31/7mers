@@ -208,7 +208,7 @@
         ? "<img src='" + src + "' alt=''>"
         : "<span class='j-image-ph'>" + CAMERA_SVG + "</span>";
     }
-    setPreview((existing && existing.image) || "");
+    setPreview((existing && existing.image && Core.imgSrc(existing.image)) || "");
 
     var controls = el("div", "j-image-controls");
     var pick = el("label", "j-btn-ghost", "Choisir une image");
@@ -234,7 +234,7 @@
     crop.addEventListener("click", function () {
       if (pendingImageFile) { openCropper(pendingImageFile).then(applyCropResult); return; }
       if (!existing || !existing.image || imageRemoved) return;
-      fetch(existing.image).then(function (r) {
+      fetch(Core.imgSrc(existing.image)).then(function (r) {
         if (!r.ok) throw new Error();
         return r.blob();
       }).then(function (b) {
@@ -493,14 +493,38 @@
     // Si une image a été choisie, on l'upload d'abord, puis on publie l'article.
     if (pendingImageFile) {
       msg("Envoi de l'image…", "");
-      GH.uploadImage(pendingImageFile).then(function (path) {
-        art.image = path; publish();
-      }).catch(function (err) {
+      var imgFile = pendingImageFile;
+      GH.uploadImage(imgFile).then(function (path) {
+        art.image = path;
+        // Copie locale : le fichier ne sera servi par le site qu'après le
+        // déploiement (~1-2 min) ; la copie permet un affichage immédiat.
+        return rememberPendingImage(path, imgFile);
+      }).then(publish).catch(function (err) {
         setBusy(false); msg("Échec image : " + (err.message || err), "err");
       });
     } else {
       publish();
     }
+  }
+
+  // Mémorise l'image envoyée (dataURL) en localStorage ; journal-core.js la
+  // substitue au chemin tant que le site n'a pas déployé le fichier.
+  function rememberPendingImage(path, file) {
+    return new Promise(function (resolve) {
+      var r = new FileReader();
+      r.onload = function () {
+        try {
+          var map = JSON.parse(localStorage.getItem("journal_pending_images") || "{}");
+          var keys = Object.keys(map).sort(function (a, b) { return (map[a].t || 0) - (map[b].t || 0); });
+          while (keys.length >= 3) delete map[keys.shift()];   // borne la taille
+          map[path] = { d: String(r.result), t: Date.now() };
+          localStorage.setItem("journal_pending_images", JSON.stringify(map));
+        } catch (e) { /* quota dépassé : l'image apparaîtra après déploiement */ }
+        resolve();
+      };
+      r.onerror = function () { resolve(); };
+      r.readAsDataURL(file);
+    });
   }
 
   function remove() {

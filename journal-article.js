@@ -76,7 +76,7 @@
       : "<div class='j-desc j-desc-empty'><em>Pas encore de description.</em></div>";
 
     var hero = art.image
-      ? "<div class='j-article-hero'><img src='" + Core.esc(art.image) + "' alt='" + Core.esc(art.name) + "'></div>"
+      ? "<div class='j-article-hero'><img src='" + Core.esc(Core.imgSrc(art.image)) + "' alt='" + Core.esc(art.name) + "'></div>"
       : "";
 
     main.innerHTML = actions + hero + info + descHtml;
