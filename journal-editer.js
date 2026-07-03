@@ -66,6 +66,140 @@
 
   var CAMERA_SVG = "<svg viewBox='0 0 24 24' aria-hidden='true'><path d='M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z'/><circle cx='12' cy='13' r='4'/></svg>";
 
+  // --- Recadrage d'image : glisser pour choisir la zone, zoom, ratio. ---
+  // Renvoie une promesse : File recadré (ou original si « sans recadrer »),
+  // null/undefined si annulé. L'export est plafonné à 960 px de large.
+  var CROP_RATIOS = [
+    { label: "Paysage", w: 16, h: 9 },
+    { label: "Standard", w: 4, h: 3 },
+    { label: "Carré", w: 1, h: 1 },
+    { label: "Portrait", w: 3, h: 4 }
+  ];
+
+  function openCropper(file) {
+    return new Promise(function (resolve) {
+      var url = URL.createObjectURL(file);
+      var img = new Image();
+      img.onerror = function () { URL.revokeObjectURL(url); resolve(file); };
+      img.onload = build;
+      img.src = url;
+
+      function build() {
+        var iw = img.naturalWidth, ih = img.naturalHeight;
+        var ratio = 4 / 3;
+        var sx, sy, sw, sh;           // rectangle source affiché (dans l'image)
+
+        var overlay = el("div", "j-modal-overlay");
+        overlay.innerHTML =
+          "<div class='j-modal j-crop-modal'>" +
+          "<h2>Recadrer l'image</h2>" +
+          "<div class='j-filter' id='crop-ratios'></div>" +
+          "<canvas class='j-crop-canvas' id='crop-canvas'></canvas>" +
+          "<div class='j-crop-zoom'><span>Zoom</span><input type='range' id='crop-zoom' min='100' max='400' value='100'></div>" +
+          "<p class='j-rich-hint'>Fais glisser l'image pour choisir la partie visible.</p>" +
+          "<div class='j-form-actions'>" +
+          "<button class='j-btn-add' id='crop-ok' type='button'>Valider le cadrage</button>" +
+          "<button class='j-btn-ghost' id='crop-raw' type='button'>Utiliser sans recadrer</button>" +
+          "<button class='j-btn-ghost' id='crop-cancel' type='button'>Annuler</button>" +
+          "</div></div>";
+        document.body.appendChild(overlay);
+
+        var canvas = overlay.querySelector("#crop-canvas");
+        var ctx = canvas.getContext("2d");
+        var zoomInput = overlay.querySelector("#crop-zoom");
+        var ratiosBox = overlay.querySelector("#crop-ratios");
+
+        CROP_RATIOS.forEach(function (r, i) {
+          var b = el("button", "j-chip" + (i === 1 ? " is-active" : ""), r.label + " " + r.w + ":" + r.h);
+          b.type = "button";
+          b.addEventListener("click", function () {
+            Array.prototype.forEach.call(ratiosBox.children, function (c) { c.classList.remove("is-active"); });
+            b.classList.add("is-active");
+            ratio = r.w / r.h;
+            fit();
+          });
+          ratiosBox.appendChild(b);
+        });
+
+        // Plus grand rectangle au ratio courant contenu dans l'image (zoom 1).
+        function coverRect() {
+          var w = iw, h = iw / ratio;
+          if (h > ih) { h = ih; w = ih * ratio; }
+          return { w: w, h: h };
+        }
+        function clamp() {
+          if (sx < 0) sx = 0;
+          if (sy < 0) sy = 0;
+          if (sx + sw > iw) sx = iw - sw;
+          if (sy + sh > ih) sy = ih - sh;
+        }
+        function draw() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(img, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
+        }
+        function fit() {
+          zoomInput.value = 100;
+          var c = coverRect();
+          sw = c.w; sh = c.h;
+          sx = (iw - sw) / 2; sy = (ih - sh) / 2;
+          var cw = Math.min(420, overlay.querySelector(".j-crop-modal").clientWidth - 48);
+          canvas.width = cw;
+          canvas.height = Math.round(cw / ratio);
+          draw();
+        }
+
+        zoomInput.addEventListener("input", function () {
+          var z = Math.max(100, +zoomInput.value || 100) / 100;
+          var c = coverRect();
+          var cx = sx + sw / 2, cy = sy + sh / 2;
+          sw = c.w / z; sh = c.h / z;
+          sx = cx - sw / 2; sy = cy - sh / 2;
+          clamp(); draw();
+        });
+
+        var dragging = false, lastX = 0, lastY = 0;
+        canvas.addEventListener("pointerdown", function (e) {
+          dragging = true; lastX = e.clientX; lastY = e.clientY;
+          try { canvas.setPointerCapture(e.pointerId); } catch (err) { }
+          e.preventDefault();
+        });
+        canvas.addEventListener("pointermove", function (e) {
+          if (!dragging) return;
+          sx -= (e.clientX - lastX) * (sw / canvas.width);
+          sy -= (e.clientY - lastY) * (sh / canvas.height);
+          lastX = e.clientX; lastY = e.clientY;
+          clamp(); draw();
+        });
+        canvas.addEventListener("pointerup", function () { dragging = false; });
+        canvas.addEventListener("pointercancel", function () { dragging = false; });
+
+        function finish(result) {
+          URL.revokeObjectURL(url);
+          overlay.remove();
+          resolve(result);
+        }
+        overlay.addEventListener("click", function (e) { if (e.target === overlay) finish(null); });
+        overlay.querySelector("#crop-cancel").addEventListener("click", function () { finish(null); });
+        overlay.querySelector("#crop-raw").addEventListener("click", function () { finish(file); });
+        overlay.querySelector("#crop-ok").addEventListener("click", function () {
+          var outW = Math.round(Math.min(960, sw));
+          var outH = Math.round(outW / ratio);
+          var oc = document.createElement("canvas");
+          oc.width = outW; oc.height = outH;
+          oc.getContext("2d").drawImage(img, sx, sy, sw, sh, 0, 0, outW, outH);
+          var isPng = /png/i.test(file.type) || /\.png$/i.test(file.name || "");
+          oc.toBlob(function (blob) {
+            if (!blob) { finish(file); return; }
+            finish(new File([blob], "recadree." + (isPng ? "png" : "jpg"),
+              { type: isPng ? "image/png" : "image/jpeg" }));
+          }, isPng ? "image/png" : "image/jpeg", 0.88);
+        });
+
+        fit();
+      }
+    });
+  }
+
   function buildImageControl() {
     var wrap = el("div", "j-image-field");
     var preview = el("div", "j-image-preview");
@@ -80,14 +214,35 @@
     var pick = el("label", "j-btn-ghost", "Choisir une image");
     var input = el("input"); input.type = "file"; input.accept = "image/*"; input.style.display = "none";
     pick.appendChild(input);
+    var crop = el("button", "j-btn-ghost", "Recadrer"); crop.type = "button";
     var rm = el("button", "j-btn-ghost", "Retirer"); rm.type = "button";
-    controls.appendChild(pick); controls.appendChild(rm);
+    controls.appendChild(pick); controls.appendChild(crop); controls.appendChild(rm);
+
+    function applyCropResult(result) {
+      if (!result) return;              // annulé : on ne change rien
+      pendingImageFile = result; imageRemoved = false;
+      setPreview(URL.createObjectURL(result));
+    }
 
     input.addEventListener("change", function () {
       var f = input.files && input.files[0];
+      input.value = "";
       if (!f) return;
-      pendingImageFile = f; imageRemoved = false;
-      setPreview(URL.createObjectURL(f));
+      openCropper(f).then(applyCropResult);
+    });
+    // Recadrer l'image en attente, ou l'image déjà publiée de l'article.
+    crop.addEventListener("click", function () {
+      if (pendingImageFile) { openCropper(pendingImageFile).then(applyCropResult); return; }
+      if (!existing || !existing.image || imageRemoved) return;
+      fetch(existing.image).then(function (r) {
+        if (!r.ok) throw new Error();
+        return r.blob();
+      }).then(function (b) {
+        var nm = (existing.image.split("/").pop() || "image");
+        return openCropper(new File([b], nm, { type: b.type || "image/jpeg" }));
+      }).then(applyCropResult).catch(function () {
+        msg("Impossible de charger l'image à recadrer (fais-le depuis le site en ligne).", "err");
+      });
     });
     rm.addEventListener("click", function () {
       pendingImageFile = null; imageRemoved = true; input.value = "";

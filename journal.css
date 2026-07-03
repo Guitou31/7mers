@@ -289,9 +289,20 @@
 .j-desc img { max-width: 100%; height: auto; border-radius: 6px; }
 .j-desc-empty { color: var(--ink-mute); }
 
-/* Image en tête de fiche */
+/* Image en tête de fiche (hauteur plafonnée : les très grandes images sont recadrées) */
 .j-article-hero { margin-bottom: 1.3rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--border-soft); max-width: 420px; }
-.j-article-hero img { width: 100%; height: auto; display: block; }
+.j-article-hero img { width: 100%; height: auto; max-height: 380px; object-fit: cover; display: block; }
+
+/* Modale de recadrage d'image */
+.j-crop-modal { max-width: 480px; }
+.j-crop-canvas {
+  width: 100%; display: block; margin: 0.5rem 0;
+  border: 1px solid var(--border); border-radius: 8px; background: var(--bg-card);
+  cursor: grab; touch-action: none;
+}
+.j-crop-canvas:active { cursor: grabbing; }
+.j-crop-zoom { display: flex; align-items: center; gap: 0.6rem; font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 0.3rem; }
+.j-crop-zoom input { flex: 1; }
 
 /* Contrôle d'image de l'éditeur (façon Kanka) */
 .j-image-field { display: flex; gap: 1rem; align-items: center; margin-bottom: 1.3rem; }
