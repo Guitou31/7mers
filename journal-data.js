@@ -987,6 +987,21 @@ window.JOURNAL_DB = {
         "updated": "2026-07-03",
         "author": "Guillaume",
         "statut": "En cours"
+      },
+      {
+        "id": "que-mr56dtbi",
+        "rubrique": "quetes",
+        "name": "La Voie du Geng Yu Qiang",
+        "statut": "En cours",
+        "type": "Personnelle",
+        "title": "",
+        "description": "Kogarashi, un Maitre de l'école&nbsp;<i>Geng Yu Qiang</i>&nbsp;dont <a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-8743715\">Lü Ji</a>&nbsp;est adepte, recherche deux criminels :&nbsp;<div><ul><li>Liang Zhenya, un sergent qui était aux ordres du père de <a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-8743715\">Lü Ji</a>&nbsp;, qu'elle a croisé brièvement lors de manœuvres militaires et lors de rencontres avec une école&nbsp;<i>Geng Yu Qiang</i> rivale. Lors de la débandade de son armée suite à sa tentative de rébellion ratée, il aurait avec son unité incendié un village et massacré ses habitants. Tout comme Lu Ji, il est en fuite en Theah, et Kogarashi pense qu'il essaierait de la rallier ou se faire une nouvelle vie de mercenaire.</li><li>Il recherche aussi le maitre de Liang, car la tradition de son pays natal du <a class=\"j-link\" href=\"journal-article.html?r=nations&amp;id=nat-8743398\">Fusō</a>&nbsp;exige que le maitre doit payer le même prix qu'un de ses disciples lorsque ce-dernier commet un crime en utilisant les techniques de son école. Selon ses informations, il voyagerait aux côtés de Liang.</li></ul></div>",
+        "etiquettes": [],
+        "slug": "la-voie-du-geng-yu-qiang",
+        "updated": "2026-07-03",
+        "created": "2026-07-03",
+        "author": "Guillaume",
+        "image": "journal-images/img-mr56dtbi-0.jpg"
       }
     ],
     "objets": [
@@ -1008,6 +1023,14 @@ window.JOURNAL_DB = {
     ]
   },
   "changes": [
+    {
+      "author": "Guillaume",
+      "action": "créé",
+      "target": "La Voie du Geng Yu Qiang",
+      "rubrique": "quetes",
+      "id": "que-mr56dtbi",
+      "date": "2026-07-03"
+    },
     {
       "author": "Guillaume",
       "action": "modifié",
@@ -1441,5 +1464,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783096368096
+  "rev": 1783097788261
 };
