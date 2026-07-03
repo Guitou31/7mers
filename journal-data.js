@@ -3,9 +3,8 @@
 //   - articles : les articles, regroupés par rubrique.
 //   - changes  : journal d'activité (le plus récent en premier).
 // Écrit par l'éditeur via l'API GitHub ; lu par toutes les pages du journal.
-// (Import initial depuis Kanka via import_kanka.py.)
 // ============================================================
-window.JOURNAL_DB = window.JOURNAL_DB = window.JOURNAL_DB = window.JOURNAL_DB = window.JOURNAL_DB = window.JOURNAL_DB = window.JOURNAL_DB = window.JOURNAL_DB = window.JOURNAL_DB = window.JOURNAL_DB = window.JOURNAL_DB = window.JOURNAL_DB = {
+window.JOURNAL_DB = {
   "articles": {
     "personnages": [
       {
@@ -983,10 +982,11 @@ window.JOURNAL_DB = window.JOURNAL_DB = window.JOURNAL_DB = window.JOURNAL_DB = 
         "image": "",
         "aliases": [],
         "etiquettes": [],
-        "description": "<p>Ochoa Del Alcala, un membre de la <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8743239\">Société des Explorateurs</a> qui a rencontré individuellement la plupart des <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8743698\">Aventuriers</a> auparavant, les a invité à venir le rencontrer dans la Taverne \"<a class=\"j-link\" href=\"journal-article.html?r=lieux&id=lie-8754131\">El Fuego Gentil</a>\".</p><p>Au lieu d'Ochoa, ils trouvent une lettre de sa part indiquant qu'il a trouvé les coordonnées de ruines sous-marines Syrneths, mais qu'il a été poursuivi par une mystérieuse organisation.</p><p>Il a inclut une carte donnant trois emplacements approximatifs de ruines où il aurait laissé un morceau de carte indiquant le chemin vers cette cité sous-marine.</p>",
+        "description": "<p>Ochoa Del Alcala, un membre de la <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8743239\">Société des Explorateurs</a>&nbsp;qui a rencontré individuellement la plupart des <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8743698\">Aventuriers</a>&nbsp;auparavant, les a invité à venir le rencontrer dans la Taverne \"<a class=\"j-link\" href=\"journal-article.html?r=lieux&amp;id=lie-8754131\">El Fuego Gentil</a>\".</p><p>Au lieu d'Ochoa, ils trouvent une lettre de sa part indiquant qu'il a trouvé les coordonnées de ruines sous-marines Syrneths, mais qu'il a été poursuivi par une mystérieuse organisation.</p><p>Il a inclut une carte donnant trois emplacements approximatifs de ruines où il aurait laissé un morceau de carte indiquant le chemin vers cette cité sous-marine.</p><p><ol><li>La première carte a été trouvée dans des ruines souterraines Syrneths en <a class=\"j-link\" href=\"journal-article.html?r=nations&amp;id=nat-8743344\">Inismore</a>&nbsp;, largement explorées avant les <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8743698\">Aventuriers</a>&nbsp;.</li><li>La deuxième carte a été trouvée dans d'autres ruines, en <a class=\"j-link\" href=\"journal-article.html?r=nations&amp;id=nat-8743355\">Sarmatie</a>&nbsp;, qui elles n'ont visiblement pas été explorées. Un démon habitait les lieux, vaincu par les <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8743698\">Aventuriers</a>&nbsp;aidés de membres des <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8923491\">Die Kreuzritter</a>&nbsp;.</li><li>La troisième carte a été trouvé dans un miroir Syrneth, qui se trouvait dans des ruines en Montaigne mais excavées et le miroir envoyé en Buché.</li></ol></p>",
         "created": "2026-01-22",
-        "updated": "2026-01-25",
-        "author": "Guillaume"
+        "updated": "2026-07-03",
+        "author": "Guillaume",
+        "statut": "En cours"
       }
     ],
     "objets": [
@@ -1008,6 +1008,14 @@ window.JOURNAL_DB = window.JOURNAL_DB = window.JOURNAL_DB = window.JOURNAL_DB = 
     ]
   },
   "changes": [
+    {
+      "author": "Guillaume",
+      "action": "modifié",
+      "target": "La cité sous-marine Syrneth",
+      "rubrique": "quetes",
+      "id": "que-8743156",
+      "date": "2026-07-03"
+    },
     {
       "author": "Guillaume",
       "action": "créé",
@@ -1432,5 +1440,6 @@ window.JOURNAL_DB = window.JOURNAL_DB = window.JOURNAL_DB = window.JOURNAL_DB = 
       "id": "per-8620898",
       "date": "2025-12-30"
     }
-  ]
+  ],
+  "rev": 1783096368096
 };
