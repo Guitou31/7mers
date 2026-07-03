@@ -174,7 +174,9 @@
       if (["ArrowUp", "ArrowDown", "Enter", "Tab", "Escape"].indexOf(e.key) < 0) updateMention();
     });
     ed.addEventListener("keydown", function (e) {
-      if (!popup) return;
+      // La popup n'est que masquée (jamais détruite) : tester sa VISIBILITÉ,
+      // sinon Entrée resterait avalée après le premier usage d'un @.
+      if (!popup || popup.style.display === "none") return;
       if (e.key === "ArrowDown") { e.preventDefault(); moveSel(1); }
       else if (e.key === "ArrowUp") { e.preventDefault(); moveSel(-1); }
       else if (e.key === "Enter" || e.key === "Tab") { e.preventDefault(); choose(popIndex); }
@@ -299,7 +301,12 @@
   // --- Messages ---
   function msg(text, kind) {
     var box = document.querySelector(".j-form-msg");
-    if (box) { box.textContent = text; box.className = "j-form-msg " + (kind || ""); }
+    if (box) {
+      box.textContent = text;
+      box.className = "j-form-msg " + (kind || "");
+      // Rendre le message visible (l'échec de publication passait inaperçu).
+      if (text) box.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
   }
   function setBusy(b) {
     var btn = document.getElementById("j-save-btn");
@@ -361,7 +368,9 @@
       "<div class='j-modal'>" +
       "<h2>Configuration GitHub</h2>" +
       "<p class='j-modal-lead'>Le jeton reste uniquement dans ce navigateur. Crée un jeton « fine-grained » " +
-      "avec la permission <strong>Contents : Read & write</strong> sur le dépôt.</p>" +
+      "avec la permission <strong>Contents : Read & write</strong> sur le dépôt. " +
+      "Colle bien la <strong>valeur</strong> du jeton (elle commence par <code>github_pat_</code>), " +
+      "pas son nom.</p>" +
       "<label class='j-label'>Ton nom (auteur des entrées)</label>" +
       "<input class='j-input' id='cfg-author' value='" + Core.esc(cfg.author || "Guillaume") + "'>" +
       "<label class='j-label'>Jeton GitHub</label>" +
@@ -373,17 +382,14 @@
       "</details>" +
       "<div class='j-form-actions'>" +
       "<button class='j-btn-add' id='cfg-save'>Enregistrer</button>" +
+      "<button class='j-btn-ghost' id='cfg-test'>Tester la connexion</button>" +
       "<button class='j-btn-ghost' id='cfg-cancel'>Annuler</button>" +
       "<button class='j-btn-danger' id='cfg-clear'>Effacer le jeton</button>" +
-      "</div></div>";
+      "</div>" +
+      "<div class='j-form-msg' id='cfg-msg'></div></div>";
     document.body.appendChild(overlay);
     function close() { overlay.remove(); }
-    overlay.addEventListener("click", function (e) { if (e.target === overlay) close(); });
-    overlay.querySelector("#cfg-cancel").addEventListener("click", close);
-    overlay.querySelector("#cfg-clear").addEventListener("click", function () {
-      GH.setConfig({ token: "" }); close(); msg("Jeton effacé.", "");
-    });
-    overlay.querySelector("#cfg-save").addEventListener("click", function () {
+    function saveFields() {
       GH.setConfig({
         author: overlay.querySelector("#cfg-author").value.trim() || "Guillaume",
         token: overlay.querySelector("#cfg-token").value.trim(),
@@ -391,6 +397,24 @@
         repo: overlay.querySelector("#cfg-repo").value.trim(),
         branch: overlay.querySelector("#cfg-branch").value.trim() || "main"
       });
+    }
+    overlay.addEventListener("click", function (e) { if (e.target === overlay) close(); });
+    overlay.querySelector("#cfg-cancel").addEventListener("click", close);
+    overlay.querySelector("#cfg-clear").addEventListener("click", function () {
+      GH.setConfig({ token: "" }); close(); msg("Jeton effacé.", "");
+    });
+    overlay.querySelector("#cfg-test").addEventListener("click", function () {
+      saveFields();
+      var box = overlay.querySelector("#cfg-msg");
+      box.textContent = "Test en cours…"; box.className = "j-form-msg";
+      GH.testConnection().then(function (ok) {
+        box.textContent = "✓ " + ok; box.className = "j-form-msg ok";
+      }).catch(function (err) {
+        box.textContent = "✗ " + (err.message || err); box.className = "j-form-msg err";
+      });
+    });
+    overlay.querySelector("#cfg-save").addEventListener("click", function () {
+      saveFields();
       close(); msg(GH.isConfigured() ? "Configuration enregistrée." : "Jeton manquant.", GH.isConfigured() ? "" : "err");
     });
   }

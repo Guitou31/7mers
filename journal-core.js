@@ -8,6 +8,22 @@
 (function () {
   "use strict";
 
+  // Après une publication depuis CE navigateur, le journal-data.js servi peut
+  // être en retard (cache GitHub Pages ~10 min). La version qu'on vient de
+  // publier est gardée en localStorage : si elle est plus récente (rev) que le
+  // fichier servi, on l'affiche ; sinon le fichier a rattrapé, on la jette.
+  try {
+    var _pending = JSON.parse(localStorage.getItem("journal_pending_db") || "null");
+    if (_pending && _pending.rev) {
+      var _served = window.JOURNAL_DB;
+      if (!_served || !_served.rev || _pending.rev > _served.rev) {
+        window.JOURNAL_DB = _pending;
+      } else {
+        localStorage.removeItem("journal_pending_db");
+      }
+    }
+  } catch (e) { }
+
   // Statut singulier d'une rubrique + libellé + icône (icônes via journalIcon).
   var RUBRIQUES = {
     personnages:  { label: "Personnages",  singular: "personnage",   icon: "user" },

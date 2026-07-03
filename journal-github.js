@@ -133,6 +133,25 @@
     };
   }
 
+  // Teste le jeton/dépôt sans rien écrire (GET du fichier de données).
+  function testConnection() {
+    var c = getConfig();
+    if (!c.token) return Promise.reject(new Error("Aucun jeton renseigné."));
+    return fetch(api("contents/" + PATH) + "?ref=" + encodeURIComponent(c.branch), { headers: headers() })
+      .then(function (res) {
+        if (res.status === 401) throw new Error("Jeton refusé (401) : colle la VALEUR du jeton (github_pat_…), pas son nom.");
+        if (res.status === 404) throw new Error("Introuvable (404) : le jeton n'a pas accès au dépôt " + c.owner + "/" + c.repo + " (ou branche « " + c.branch + " » inexistante).");
+        if (!res.ok) throw new Error("Erreur GitHub (" + res.status + ").");
+        return "Connexion OK — dépôt accessible avec ce jeton.";
+      });
+  }
+
+  // Après une publication réussie, garde la version publiée en local pour
+  // l'afficher immédiatement (le fichier servi peut être en retard : cache).
+  function rememberPending(db) {
+    try { localStorage.setItem("journal_pending_db", JSON.stringify(db)); } catch (e) { }
+  }
+
   // Insère/met à jour un article + prépend une entrée d'activité, puis commit.
   // Renvoie une promesse résolue avec le DB à jour.
   function saveArticle(rubrique, article, change) {
@@ -149,11 +168,12 @@
 
       if (change) db.changes.unshift(change);
       if (db.changes.length > 500) db.changes = db.changes.slice(0, 500);
+      db.rev = Date.now();
 
       var text = serializeDbFile(db);
       var msg = "Journal: " + (change ? change.action + " " + change.target : "maj " + article.name) +
         " (" + rubrique + ")";
-      return putFile(text, msg, cur.sha).then(function () { return db; });
+      return putFile(text, msg, cur.sha).then(function () { rememberPending(db); return db; });
     });
   }
 
@@ -164,15 +184,16 @@
       var list = (db.articles && db.articles[rubrique]) || [];
       db.articles[rubrique] = list.filter(function (a) { return a.id !== id; });
       if (change) db.changes.unshift(change);
+      db.rev = Date.now();
       var text = serializeDbFile(db);
       var msg = "Journal: " + (change ? change.action + " " + change.target : "suppr") + " (" + rubrique + ")";
-      return putFile(text, msg, cur.sha).then(function () { return db; });
+      return putFile(text, msg, cur.sha).then(function () { rememberPending(db); return db; });
     });
   }
 
   window.JournalGitHub = {
     getConfig: getConfig, setConfig: setConfig, isConfigured: isConfigured,
     clearToken: clearToken, getFile: getFile, saveArticle: saveArticle, deleteArticle: deleteArticle,
-    uploadImage: uploadImage, PATH: PATH
+    uploadImage: uploadImage, testConnection: testConnection, PATH: PATH
   };
 })();
