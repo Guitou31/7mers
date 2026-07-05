@@ -293,6 +293,35 @@
 .j-article-hero { margin-bottom: 1.3rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--border-soft); max-width: 420px; }
 .j-article-hero img { width: 100%; height: auto; max-height: 380px; object-fit: cover; display: block; }
 
+/* Membres d'une organisation — éditeur */
+.j-membres-rows { display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 0.6rem; }
+.j-membre-row { display: flex; gap: 0.5rem; align-items: center; }
+.j-membre-namewrap { position: relative; flex: 1.4; }
+.j-membre-row .m-role { flex: 1; }
+.j-membre-del {
+  background: transparent; border: 1px solid var(--border); color: var(--ink-mute);
+  border-radius: 6px; width: 34px; height: 34px; flex: 0 0 34px; cursor: pointer; font: inherit;
+}
+.j-membre-del:hover { color: #a23; border-color: #a23; }
+.j-membre-sugg {
+  position: absolute; left: 0; right: 0; top: 100%; z-index: 60; display: none;
+  background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 6px;
+  box-shadow: var(--shadow-lg); overflow: hidden;
+}
+.j-membre-sugg-item { padding: 0.4rem 0.65rem; cursor: pointer; font-size: 0.9rem; }
+.j-membre-sugg-item:hover { background: var(--accent); color: #fff; }
+
+/* Membres — fiche d'article */
+.j-members { margin-top: 1.7rem; }
+.j-member-row {
+  display: flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0.65rem;
+  background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: 8px; margin-bottom: 4px;
+}
+.j-member-av { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; flex: 0 0 30px; }
+.j-member-init { display: inline-flex; align-items: center; justify-content: center; background: var(--accent-soft); color: #fff; font-weight: 700; font-size: 0.85rem; }
+.j-member-name { font-weight: 600; }
+.j-member-role { margin-left: auto; font-size: 0.78rem; color: var(--ink-mute); font-style: italic; }
+
 /* Modale de recadrage d'image */
 .j-crop-modal { max-width: 480px; }
 .j-crop-canvas {

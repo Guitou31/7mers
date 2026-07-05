@@ -83,6 +83,15 @@
       { key: "pronoms", label: "Pronoms", type: "text", half: true, placeholder: "Il, Elle" },
       { key: "etiquettes", label: "Étiquettes", type: "tags", placeholder: "Écrire, séparé par des virgules" }
     ],
+    organisations: [
+      { key: "name", label: "Organisation", type: "text", req: true, half: true, placeholder: "Nom de l'organisation" },
+      { key: "type", label: "Type", type: "text", half: true, placeholder: "Guilde, Ordre, Société secrète…" },
+      { key: "title", label: "Titre", type: "text", half: true, placeholder: "Titre" },
+      { key: "lieux", label: "Lieux", type: "tags", half: true, placeholder: "Écrire, séparé par des virgules" },
+      { key: "description", label: "Description", type: "textarea-rich" },
+      { key: "membres", label: "Membres", type: "membres" },
+      { key: "etiquettes", label: "Étiquettes", type: "tags", placeholder: "Écrire, séparé par des virgules" }
+    ],
     quetes: [
       { key: "name", label: "Quête", type: "text", req: true, half: true, placeholder: "Nom de la quête" },
       { key: "statut", label: "Statut", type: "select", half: true, options: ["En cours", "Terminé"], default: "En cours" },

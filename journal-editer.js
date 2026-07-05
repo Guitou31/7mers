@@ -45,6 +45,11 @@
       wrap.appendChild(el("div", "j-rich-hint", "Astuce : tape <strong>@</strong> puis un nom pour lier un autre article (personnage, nation, organisation…)."));
       return wrap;
     }
+    if (f.type === "membres") {
+      var mc = buildMembersControl(Array.isArray(val) ? val : []);
+      inputs[f.key] = mc;                 // conteneur ; lu via readMembers()
+      return mc;
+    }
     if (f.type === "select") {
       var sel = el("select", "j-input");
       (f.options || []).forEach(function (o) {
@@ -62,6 +67,95 @@
     inp.value = val || "";
     inputs[f.key] = inp;
     return inp;
+  }
+
+  // --- Membres d'une organisation : lignes nom + rôle. Le nom propose les
+  // personnages existants (recherche en tapant) mais accepte du texte libre.
+  function buildMembersControl(list) {
+    var root = el("div", "j-membres");
+    var rows = el("div", "j-membres-rows");
+    root.appendChild(rows);
+
+    function suggestions(q) {
+      q = q.toLowerCase();
+      return (Core.articlesOf("personnages") || []).filter(function (p) {
+        return p.name && p.name.toLowerCase().indexOf(q) >= 0;
+      }).slice(0, 6);
+    }
+
+    function addRow(m) {
+      m = m || {};
+      var row = el("div", "j-membre-row");
+      if (m.id) row.setAttribute("data-id", m.id);
+      var nameWrap = el("div", "j-membre-namewrap");
+      var name = el("input", "j-input m-name");
+      name.type = "text";
+      name.placeholder = "Personnage (recherche en tapant)";
+      name.value = m.name || "";
+      var sugg = el("div", "j-membre-sugg");
+      nameWrap.appendChild(name); nameWrap.appendChild(sugg);
+      var role = el("input", "j-input m-role");
+      role.type = "text";
+      role.placeholder = "Rôle (Chef, Membre…)";
+      role.value = m.role || "";
+      var del = el("button", "j-membre-del", "✕");
+      del.type = "button"; del.title = "Retirer ce membre";
+      del.addEventListener("click", function () { row.remove(); });
+
+      name.addEventListener("input", function () {
+        row.removeAttribute("data-id");   // nom modifié : le lien sera re-résolu
+        var q = name.value.trim();
+        var hits = q ? suggestions(q) : [];
+        if (!hits.length) { sugg.innerHTML = ""; sugg.style.display = "none"; return; }
+        sugg.innerHTML = hits.map(function (p) {
+          return "<div class='j-membre-sugg-item' data-id='" + p.id + "'>" + Core.esc(p.name) + "</div>";
+        }).join("");
+        sugg.style.display = "block";
+        Array.prototype.forEach.call(sugg.children, function (it) {
+          it.addEventListener("mousedown", function (e) {
+            e.preventDefault();
+            name.value = it.textContent;
+            row.setAttribute("data-id", it.getAttribute("data-id"));
+            sugg.style.display = "none";
+          });
+        });
+      });
+      name.addEventListener("blur", function () {
+        setTimeout(function () { sugg.style.display = "none"; }, 150);
+      });
+
+      row.appendChild(nameWrap); row.appendChild(role); row.appendChild(del);
+      rows.appendChild(row);
+      return row;
+    }
+
+    (list || []).forEach(addRow);
+    var add = el("button", "j-btn-ghost", "+ Ajouter un membre");
+    add.type = "button";
+    add.addEventListener("click", function () {
+      var row = addRow();
+      row.querySelector(".m-name").focus();
+    });
+    root.appendChild(add);
+
+    root.readMembers = function () {
+      var out = [];
+      Array.prototype.forEach.call(rows.querySelectorAll(".j-membre-row"), function (row) {
+        var nm = row.querySelector(".m-name").value.trim();
+        if (!nm) return;
+        var id = row.getAttribute("data-id") || "";
+        if (!id) {
+          // Résolution par nom exact (le personnage existe peut-être déjà).
+          var hit = (Core.articlesOf("personnages") || []).filter(function (p) {
+            return (p.name || "").toLowerCase() === nm.toLowerCase();
+          })[0];
+          if (hit) id = hit.id;
+        }
+        out.push({ id: id, name: nm, role: row.querySelector(".m-role").value.trim() });
+      });
+      return out;
+    };
+    return root;
   }
 
   var CAMERA_SVG = "<svg viewBox='0 0 24 24' aria-hidden='true'><path d='M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z'/><circle cx='12' cy='13' r='4'/></svg>";
@@ -442,6 +536,7 @@
     art.rubrique = R;
     fields.forEach(function (f) {
       if (f.type === "textarea-rich") art[f.key] = getEditorHtml();
+      else if (f.type === "membres") art[f.key] = inputs[f.key].readMembers();
       else if (f.type === "tags") art[f.key] = splitTags(inputs[f.key].value);
       else art[f.key] = (inputs[f.key].value || "").trim();
     });

@@ -369,7 +369,44 @@ window.JOURNAL_DB = {
         "description": "<p>\"Aventuriers\" est le nom plus ou moins temporaire de la bande des personnages-joueurs.</p>",
         "created": "2026-01-23",
         "updated": "2026-01-23",
-        "author": "Guillaume"
+        "author": "Guillaume",
+        "membres": [
+          {
+            "id": "per-8743991",
+            "name": "Darmuid",
+            "role": ""
+          },
+          {
+            "id": "per-8723888",
+            "name": "Don Felipe",
+            "role": ""
+          },
+          {
+            "id": "per-8743980",
+            "name": "Dorian",
+            "role": ""
+          },
+          {
+            "id": "per-8743992",
+            "name": "Ingrid",
+            "role": ""
+          },
+          {
+            "id": "per-8743715",
+            "name": "Lü Ji",
+            "role": ""
+          },
+          {
+            "id": "per-8723966",
+            "name": "Marek Wrobleski",
+            "role": ""
+          },
+          {
+            "id": "per-8743774",
+            "name": "Mendoza",
+            "role": ""
+          }
+        ]
       },
       {
         "id": "org-8923491",
@@ -399,7 +436,14 @@ window.JOURNAL_DB = {
         "description": "<blockquote><i>(Renommé \"Tamatama\" à la V2, l'appellation \"Fidhelis\" est gardée pour ne pas s'embrouiller sur les écoles liées à cette ethnie.)</i></blockquote><p>Les caravanes des Fidhelis, ethnie originaire des lointains territoires\ndu sud-est d'<a class=\"j-link\" href=\"journal-article.html?r=nations&id=nat-8743396\">Agnivarsie</a>, voyagent beaucoup à travers l’<a class=\"j-link\" href=\"journal-article.html?r=nations&id=nat-8743368\">Ussura</a> et la <a class=\"j-link\" href=\"journal-article.html?r=nations&id=nat-8743355\">Sarmatie</a>, le plus\nsouvent le long des rivières quand ils transitent d ’une grande ville à une\nautre, ou bien via les anciens chemins de monte que les non-Ussurans ne connaissent\npas. Aujourd'hui, on les trouve surtout dans la province de Veche.</p><p>La plupart sont dīnistes. Ils occupent la position étrange mais\nconfortable de peuple artiste : on trouve parmi eux des musiciens, des\ndanseurs, des acteurs, etc. Leur mode de vie nomade les amène rarement à se\nmarier en dehors de leur ethnie, un choix qui leur convient.</p><p>Les Khazaris qui partent à la découverte du monde suivent\nsouvent les caravanes des Fidhelis, échangeant des chansons et partageant les\ndétails de leurs cartes pendant une bonne partie du chemin. Les Fidhelis qui sont\nallés le plus loin en dehors des frontières de la Nation ont permis l\n’hybridation de divers styles de danse à travers la Théah. Grâce à eux, le\nballet—une danse originaire de Montaigne, exigeant à la fois technique et\nforce—fait fureur au sein de nombreuses cours de boyards, surtout dans la très\nmoderne ville de Bashanta. Le Théâtre impérial de Bashanta, qui dispose des\ntoutes dernières innovations en termes de machines et d ’effets spéciaux de\nscène, a hébergé de nombreux spectacles d artistes Fidhelis. </p>",
         "created": "2026-01-27",
         "updated": "2026-01-27",
-        "author": "Guillaume"
+        "author": "Guillaume",
+        "membres": [
+          {
+            "id": "per-8723966",
+            "name": "Marek Wrobleski",
+            "role": ""
+          }
+        ]
       },
       {
         "id": "org-8626820",
@@ -414,7 +458,14 @@ window.JOURNAL_DB = {
         "description": "<p>Créé par le Troisième Prophète, cet ordre obscur au sein de l'Église du Vaticine est chargé de débusquer de d'anéantir la Sorcellerie sous toutes ses formes. A l'époque de sa création, l'Inquisition ne rendait de comptes qu'au Hiérophante qui parvenait à les contenir. Les souverains pontifes successifs ont gardé de près les Inquisiteurs, contenant leur nombre tout comme le pouvoir qui leur était accordé.</p><p><br></p><p>Avec la disparition du Hiérophante en 1666 AV, plus rien ne pouvait brider l'Inquisition, qui n'avait plus de comptes à rendre à personne. Le cardinal Esteban Verdugo a saisi les rênes de l’Église, redéfini la mission et les prérogatives de l'Inquisition, rassemblé les fanatiques. Il a déclaré coupé les vivres des universités de Théah, brûlé les livres anathèmes, fait enlever ou exécuter ses ennemis pour hérésie.</p><p><br></p><p>La Castille est le pays où le pouvoir de l'Inquisition se manifeste le plus, là où l’Église du Vaticine est la plus présente. C'est la seule nation où les Inquisiteurs évoluent ouvertement, sans dissimulation réelle. En Montaigne, l'Inquisition a recours à la paysannerie pour cacher ses actions contre la Noblesse sorcière. En Eisen, la confusion est telle que la seule précaution à réellement prendre est d'éviter les Eisenfürsten qui détestent les fanatiques. Les querelles politiques de Vodacce offrent un terrain favorable dont l'Inquisition sait tirer profit. En revanche, l'Avalon, l'Ussura et la Vendel montrant une réelle hostilité face aux fanatiques vaticins, la discrétion y est de mise.</p>",
         "created": "2025-12-31",
         "updated": "2025-12-31",
-        "author": "Guillaume"
+        "author": "Guillaume",
+        "membres": [
+          {
+            "id": "per-8620898",
+            "name": "Emilia Capodegra",
+            "role": "Capitaine"
+          }
+        ]
       },
       {
         "id": "org-8744061",
@@ -474,7 +525,14 @@ window.JOURNAL_DB = {
         "description": "<p>La Société des Explorateurs est probablement la moins\nsecrète de toutes les sociétés théanes. Par le passé, elle est même allée\njusqu’à promouvoir publiquement ses activités, invitant toute personne qui\ndésirait étudier ou explorer des ruines syrneth à la contacter. Il n’est donc\npas surprenant de constater que certains Explorateurs estiment qu’ils ont un\nmonopole sur les secrets de cette civilisation disparue, quand ils ne pensent\npas simplement en être propriétaire. </p><p>Si l’existence de la Société des Explorateurs est un secret\nde polichinelle, elle n’a cependant plus pignon sur rue. Depuis que l’Église\nvaticine l’a condamnée, elle doit faire profil bas et se cacher des agents de l’Inquisition.\n</p><p>La Société des Explorateurs est scindée en trois branches :\nles Conservateurs, les Érudits et les Prospecteurs. <br>Les Conservateurs, qui\ncataloguent et entretiennent tout le savoir de la Société tout en analysant la\nsociété et la culture syrneth, sont au sommet de la hiérarchie.<br>\nEn dessous se trouvent les Érudits, qui étudient les artefacts et technologies\nsyrneth, et conduisent des expériences avec. Enfin, à la base de la pyramide,\non trouve les Prospecteurs, qui localisent les ruines, les mettent au jour, les\ncartographient, les documentent et y découvrent des artefacts.<br>\nLes Prospecteurs sont les plus nombreux, et ceux que l’on rencontre le plus\nsouvent car ils voyagent de par le monde entier.<br>\nLes Conservateurs passent quant à eux le plus clair de leur temps dans les\nruines—une fois que les Prospecteurs y ont terminé leur travail— pour étudier\nen personne les cités, habitations et gravures. À l’inverse, les Érudits ont\ntendance à rester confinés dans leurs études, où ils cherchent à percer à jour\nles secrets syrneth ; ils forment le groupe le plus discret, travaillant dans\nl’isolement pour comprendre les mystères des artefacts syrneth.</p>",
         "created": "2026-01-22",
         "updated": "2026-01-22",
-        "author": "Guillaume"
+        "author": "Guillaume",
+        "membres": [
+          {
+            "id": "per-8743193",
+            "name": "Ochoa De Alcada",
+            "role": ""
+          }
+        ]
       }
     ],
     "familles": [

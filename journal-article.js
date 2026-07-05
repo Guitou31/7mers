@@ -56,7 +56,7 @@
       "<a class='j-btn-add' href='" + Core.editUrl(r, id) + "'>Éditer</a></div>";
 
     // Champs informatifs (hors nom/titre/description/image), seulement si remplis.
-    var SKIP = { name: 1, title: 1, description: 1, image: 1, slug: 1 };
+    var SKIP = { name: 1, title: 1, description: 1, image: 1, slug: 1, membres: 1 };
     var rows = "";
     Core.fieldsFor(r).forEach(function (f) {
       if (SKIP[f.key]) return;
@@ -79,7 +79,28 @@
       ? "<div class='j-article-hero'><img src='" + Core.esc(Core.imgSrc(art.image)) + "' alt='" + Core.esc(art.name) + "'></div>"
       : "";
 
-    main.innerHTML = actions + hero + info + descHtml;
+    // Membres (organisations) : lien vers la fiche du personnage si lié,
+    // avatar si le personnage a une image, sinon initiale.
+    var membersHtml = "";
+    if (Array.isArray(art.membres) && art.membres.length) {
+      membersHtml = "<div class='j-members'><div class='j-dash-section-title'>Membres (" +
+        art.membres.length + ")</div>" +
+        art.membres.map(function (m) {
+          var p = m.id ? Core.getArticle("personnages", m.id) : null;
+          var av = (p && p.image)
+            ? "<img class='j-member-av' src='" + Core.esc(Core.imgSrc(p.image)) + "' alt='' loading='lazy'>"
+            : "<span class='j-member-av j-member-init'>" + Core.esc((m.name || "?").charAt(0).toUpperCase()) + "</span>";
+          var nm = p
+            ? "<a class='j-link' href='" + Core.articleUrl("personnages", p.id) + "'>" + Core.esc(m.name) + "</a>"
+            : Core.esc(m.name);
+          return "<div class='j-member-row'>" + av +
+            "<span class='j-member-name'>" + nm + "</span>" +
+            (m.role ? "<span class='j-member-role'>" + Core.esc(m.role) + "</span>" : "") +
+            "</div>";
+        }).join("") + "</div>";
+    }
+
+    main.innerHTML = actions + hero + info + descHtml + membersHtml;
   }
 
   if (document.readyState === "loading") {
