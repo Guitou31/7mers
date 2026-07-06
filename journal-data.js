@@ -309,7 +309,7 @@ window.JOURNAL_DB = {
         "id": "per-mr9ktaok",
         "rubrique": "personnages",
         "name": "Dis Pater",
-        "type": "PNJ",
+        "type": "Scélérat",
         "title": "Antiquaire?",
         "familles": [],
         "lieux": [],
@@ -1119,6 +1119,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "Dis Pater",
+      "rubrique": "personnages",
+      "id": "per-mr9ktaok",
+      "date": "2026-07-06"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "Emilia Capodegra",
       "rubrique": "personnages",
       "id": "per-8620898",
@@ -1637,5 +1645,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783365791451
+  "rev": 1783365849512
 };
