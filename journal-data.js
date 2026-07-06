@@ -38,12 +38,12 @@ window.JOURNAL_DB = {
         "name": "Darmuid",
         "type": "Joueur",
         "title": "",
-        "image": "journal-images/a0e6bb76-6805-4b82-8c1c-2de9ff1223e2.jpg",
+        "image": "journal-images/img-mr9m5vyx-0.jpg",
         "aliases": [],
         "etiquettes": [],
         "description": "",
         "created": "2026-01-23",
-        "updated": "2026-01-23",
+        "updated": "2026-07-06",
         "author": "Guillaume",
         "familles": [],
         "nations": [
@@ -1119,6 +1119,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "Darmuid",
+      "rubrique": "personnages",
+      "id": "per-8743991",
+      "date": "2026-07-06"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "Dorian",
       "rubrique": "personnages",
       "id": "per-8743980",
@@ -1661,5 +1669,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783366091988
+  "rev": 1783366157074
 };
