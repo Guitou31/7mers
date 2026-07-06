@@ -286,14 +286,14 @@ window.JOURNAL_DB = {
         "slug": "zheng-yi-sao",
         "rubrique": "personnages",
         "name": "Zheng Yi Sao",
-        "type": "PNJ",
+        "type": "Scélérat",
         "title": "",
         "image": "journal-images/a0e6a39b-115a-4e02-a60e-91daed697a02.webp",
         "aliases": [],
         "etiquettes": [],
-        "description": "<p>Zheng Yi Sao, de son nom de jeune fille Ching Shih, était une prostituée du Shenzhou lorsqu'elle épousa Zheng Yi vers 1640.</p><p>Ensemble, ils unifient les clans pirates rivaux en une gigantesque coalition, la <b>Flotte au Drapeau Rouge, </b><span>qui terrorise les mers autour du Cathay.</span></p><p>Zheng Yi meurt brutalement en 1648 par une embuscade d'une flotte maritime levée par Lü Bei.</p><p>Ching Shih manœuvre habilement pour prendre le contrôle total de la confédération, plutôt que de laisser la place aux autres capitaines.</p><p>Elle instaure au sein de sa flotte un code de lois d'une rigueur absolue (décapitation pour désobéissance, règles strictes sur le partage du butin et le traitement des prisonnières).</p>",
+        "description": "<p>Zheng Yi Sao, de son nom de jeune fille&nbsp;Ching Shih, était une prostituée du Shenzhou lorsqu'elle épousa&nbsp;Zheng Yi vers 1640.</p><p>Ensemble, ils unifient les clans pirates rivaux en une gigantesque coalition, la <b>Flotte au Drapeau Rouge, </b><span>qui terrorise les mers autour du Cathay.</span></p><p>Zheng Yi meurt brutalement en 1648 par une embuscade d'une flotte maritime levée par Lü Bei.</p><p>Ching Shih manœuvre habilement pour prendre le contrôle total de la confédération, plutôt que de laisser la place aux autres capitaines.</p><p>Elle instaure au sein de sa flotte un code de lois d'une rigueur absolue (décapitation pour désobéissance, règles strictes sur le partage du butin et le traitement des prisonnières).</p>",
         "created": "2026-01-19",
-        "updated": "2026-01-22",
+        "updated": "2026-07-06",
         "author": "Guillaume",
         "familles": [],
         "nations": [
@@ -1119,6 +1119,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "Zheng Yi Sao",
+      "rubrique": "personnages",
+      "id": "per-8724232",
+      "date": "2026-07-06"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "Amadeo et Rocío Sandoval",
       "rubrique": "personnages",
       "id": "per-8875848",
@@ -1621,5 +1629,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783365207628
+  "rev": 1783365638712
 };
