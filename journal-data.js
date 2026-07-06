@@ -88,14 +88,14 @@ window.JOURNAL_DB = {
         "slug": "dona-uxia-serafin",
         "rubrique": "personnages",
         "name": "Doña Uxia Serafin",
-        "type": "PNJ",
+        "type": "Allié",
         "title": "Duquesa",
         "image": "journal-images/a0e6a688-9942-4786-a061-4b58ff9f8b10.jpg",
         "aliases": [],
         "etiquettes": [],
-        "description": "<p>Grande Duchesse de la région de Gallegos en <a class=\"j-link\" href=\"journal-article.html?r=nations&id=nat-8743332\">Castille</a> La Grande Tante de <a class=\"j-link\" href=\"journal-article.html?r=personnages&id=per-8723888\">Don Felipe</a> C'est une femme d'État redoutable et une diplomate polyglotte (elle parle les langues de Théah, mais aussi la plupart de celles du Croissant et de l'Ifri).</p><p><span>Elle est Maître Sorcière du Fuego Adentro.</span></p><p><span>Elle dirige ses affaires depuis San Felipe, souvent installée au Restaurante Salazar, un lieu aussi célèbre pour sa gastronomie que pour être le centre névralgique de son réseau d'espions.</span></p>",
+        "description": "<p>Grande Duchesse de la région de Gallegos en <a class=\"j-link\" href=\"journal-article.html?r=nations&amp;id=nat-8743332\">Castille</a> La Grande Tante de <a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-8723888\">Don Felipe</a> C'est une femme d'État redoutable et une diplomate polyglotte (elle parle les langues de Théah, mais aussi la plupart de celles du Croissant et de l'Ifri).</p><p><span>Elle est Maître Sorcière du Fuego Adentro.</span></p><p><span>Elle dirige ses affaires depuis San Felipe, souvent installée au Restaurante Salazar, un lieu aussi célèbre pour sa gastronomie que pour être le centre névralgique de son réseau d'espions.</span></p>",
         "created": "2026-01-19",
-        "updated": "2026-01-22",
+        "updated": "2026-07-06",
         "author": "Guillaume",
         "familles": [
           "Serafin"
@@ -107,7 +107,8 @@ window.JOURNAL_DB = {
         "age": "44",
         "sexe": "",
         "pronoms": "",
-        "statut": "Vivant"
+        "statut": "Vivant",
+        "thumb": "journal-images/img-mr9mjogt-0.jpg"
       },
       {
         "id": "per-8743980",
@@ -1119,6 +1120,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "Doña Uxia Serafin",
+      "rubrique": "personnages",
+      "id": "per-8723910",
+      "date": "2026-07-06"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "Darmuid",
       "rubrique": "personnages",
       "id": "per-8743991",
@@ -1669,5 +1678,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783366157074
+  "rev": 1783366805934
 };
