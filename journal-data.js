@@ -262,14 +262,14 @@ window.JOURNAL_DB = {
         "slug": "ochoa-de-alcada",
         "rubrique": "personnages",
         "name": "Ochoa De Alcada",
-        "type": "PNJ",
+        "type": "Allié",
         "title": "",
-        "image": "journal-images/a0e68d5b-b4fb-47f8-b03c-336d881b14cf.jpg",
+        "image": "journal-images/img-mr9m2bga-0.jpg",
         "aliases": [],
         "etiquettes": [],
         "description": "<p>Ochoa De Alcada est un membre de la Société des Explorateurs.</p><p>Il a rencontré la plupart des Aventuriers individuellement au cours de ses propres aventures, et les a aidé (ou a reçu leur aide).</p>",
         "created": "2026-01-22",
-        "updated": "2026-01-22",
+        "updated": "2026-07-06",
         "author": "Guillaume",
         "familles": [],
         "nations": [
@@ -1119,6 +1119,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "Ochoa De Alcada",
+      "rubrique": "personnages",
+      "id": "per-8743193",
+      "date": "2026-07-06"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "Dis Pater",
       "rubrique": "personnages",
       "id": "per-mr9ktaok",
@@ -1645,5 +1653,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783365849512
+  "rev": 1783365990841
 };
