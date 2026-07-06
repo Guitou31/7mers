@@ -1118,6 +1118,14 @@ window.JOURNAL_DB = {
   "changes": [
     {
       "author": "Guillaume",
+      "action": "modifié",
+      "target": "Dis Pater",
+      "rubrique": "personnages",
+      "id": "per-mr9ktaok",
+      "date": "2026-07-06"
+    },
+    {
+      "author": "Guillaume",
       "action": "créé",
       "target": "Dis Pater",
       "rubrique": "personnages",
@@ -1597,5 +1605,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783363890893
+  "rev": 1783363997402
 };
