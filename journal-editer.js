@@ -27,7 +27,9 @@
   var fields = Core.fieldsFor(R);
   var inputs = {};        // key -> élément input
   var editorEl = null;    // contenteditable description
-  var pendingImageFile = null;  // nouvelle image choisie (à uploader au save)
+  var pendingImageFile = null;  // nouvelle image ENTIÈRE choisie (à uploader au save)
+  var pendingThumbFile = null;  // vignette recadrée (pour les listes uniquement)
+  var thumbCleared = false;     // l'utilisateur a choisi « sans recadrer » sur l'existante
   var imageRemoved = false;     // l'utilisateur a retiré l'image existante
 
   // --- Construction du formulaire ---
@@ -190,11 +192,12 @@
         var overlay = el("div", "j-modal-overlay");
         overlay.innerHTML =
           "<div class='j-modal j-crop-modal'>" +
-          "<h2>Recadrer l'image</h2>" +
+          "<h2>Recadrer la vignette</h2>" +
           "<div class='j-filter' id='crop-ratios'></div>" +
           "<canvas class='j-crop-canvas' id='crop-canvas'></canvas>" +
           "<div class='j-crop-zoom'><span>Zoom</span><input type='range' id='crop-zoom' min='100' max='400' value='100'></div>" +
-          "<p class='j-rich-hint'>Fais glisser l'image pour choisir la partie visible.</p>" +
+          "<p class='j-rich-hint'>Ce cadrage ne concerne que la <strong>vignette des listes</strong> ; " +
+          "la fiche de l'article montre toujours l'image entière. Fais glisser l'image pour choisir la zone.</p>" +
           "<div class='j-form-actions'>" +
           "<button class='j-btn-add' id='crop-ok' type='button'>Valider le cadrage</button>" +
           "<button class='j-btn-ghost' id='crop-raw' type='button'>Utiliser sans recadrer</button>" +
@@ -306,7 +309,7 @@
         ? "<img src='" + src + "' alt=''>"
         : "<span class='j-image-ph'>" + CAMERA_SVG + "</span>";
     }
-    setPreview((existing && existing.image && Core.imgSrc(existing.image)) || "");
+    setPreview((existing && Core.imgSrc(existing.thumb || existing.image)) || "");
 
     var controls = el("div", "j-image-controls");
     var pick = el("label", "j-btn-ghost", "Choisir une image");
@@ -316,34 +319,78 @@
     var rm = el("button", "j-btn-ghost", "Retirer"); rm.type = "button";
     controls.appendChild(pick); controls.appendChild(crop); controls.appendChild(rm);
 
-    function applyCropResult(result) {
-      if (!result) return;              // annulé : on ne change rien
-      pendingImageFile = result; imageRemoved = false;
-      setPreview(URL.createObjectURL(result));
+    // Réduit l'image ENTIÈRE si très grande (max 1600 px de large) avant envoi.
+    function downscaleImage(file) {
+      return new Promise(function (resolve) {
+        var url = URL.createObjectURL(file);
+        var img = new Image();
+        img.onerror = function () { URL.revokeObjectURL(url); resolve(file); };
+        img.onload = function () {
+          var iw = img.naturalWidth, ih = img.naturalHeight;
+          if (iw <= 1600) { URL.revokeObjectURL(url); resolve(file); return; }
+          var c = document.createElement("canvas");
+          c.width = 1600; c.height = Math.round(ih * 1600 / iw);
+          c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+          var isPng = /png/i.test(file.type);
+          c.toBlob(function (b) {
+            URL.revokeObjectURL(url);
+            resolve(b ? new File([b], "image." + (isPng ? "png" : "jpg"),
+              { type: isPng ? "image/png" : "image/jpeg" }) : file);
+          }, isPng ? "image/png" : "image/jpeg", 0.9);
+        };
+        img.src = url;
+      });
     }
 
+    // Choix d'un fichier : le recadrage produit la VIGNETTE (listes) ;
+    // l'image entière est conservée telle quelle (réduite si énorme).
     input.addEventListener("change", function () {
       var f = input.files && input.files[0];
       input.value = "";
       if (!f) return;
-      openCropper(f).then(applyCropResult);
+      openCropper(f).then(function (result) {
+        if (!result) return;                       // annulé : rien ne change
+        downscaleImage(f).then(function (orig) {
+          pendingImageFile = orig;
+          pendingThumbFile = (result === f) ? null : result;   // « sans recadrer » = pas de vignette
+          thumbCleared = false; imageRemoved = false;
+          setPreview(URL.createObjectURL(pendingThumbFile || pendingImageFile));
+        });
+      });
     });
-    // Recadrer l'image en attente, ou l'image déjà publiée de l'article.
+
+    // Recadrer : (re)génère uniquement la vignette, à partir de la nouvelle
+    // image si une a été choisie, sinon de l'image déjà publiée.
     crop.addEventListener("click", function () {
-      if (pendingImageFile) { openCropper(pendingImageFile).then(applyCropResult); return; }
-      if (!existing || !existing.image || imageRemoved) return;
-      fetch(Core.imgSrc(existing.image)).then(function (r) {
-        if (!r.ok) throw new Error();
-        return r.blob();
-      }).then(function (b) {
-        var nm = (existing.image.split("/").pop() || "image");
-        return openCropper(new File([b], nm, { type: b.type || "image/jpeg" }));
-      }).then(applyCropResult).catch(function () {
+      var srcP;
+      if (pendingImageFile) {
+        srcP = Promise.resolve(pendingImageFile);
+      } else if (existing && existing.image && !imageRemoved) {
+        srcP = fetch(Core.imgSrc(existing.image)).then(function (r) {
+          if (!r.ok) throw new Error();
+          return r.blob();
+        }).then(function (b) {
+          return new File([b], (existing.image.split("/").pop() || "image"),
+            { type: b.type || "image/jpeg" });
+        });
+      } else {
+        return;
+      }
+      srcP.then(function (f) {
+        return openCropper(f).then(function (result) {
+          if (!result) return;                     // annulé
+          if (result === f) { pendingThumbFile = null; thumbCleared = true; }
+          else { pendingThumbFile = result; thumbCleared = false; }
+          setPreview(URL.createObjectURL(pendingThumbFile || f));
+        });
+      }).catch(function () {
         msg("Impossible de charger l'image à recadrer (fais-le depuis le site en ligne).", "err");
       });
     });
+
     rm.addEventListener("click", function () {
-      pendingImageFile = null; imageRemoved = true; input.value = "";
+      pendingImageFile = null; pendingThumbFile = null;
+      imageRemoved = true; thumbCleared = false; input.value = "";
       setPreview("");
     });
 
@@ -545,7 +592,7 @@
       else art[f.key] = (inputs[f.key].value || "").trim();
     });
     art.slug = Core.slugify(art.name);
-    if (imageRemoved) art.image = "";          // l'image uploadée écrasera (cf. save)
+    if (imageRemoved) { art.image = ""; art.thumb = ""; }   // les uploads écraseront (cf. save)
     art.updated = today();
     if (!art.created) art.created = today();
     art.author = GH.getConfig().author || "Guillaume";
@@ -589,21 +636,36 @@
         setBusy(false); msg("Échec : " + (err.message || err), "err");
       });
     };
-    // Si une image a été choisie, on l'upload d'abord, puis on publie l'article.
+    // Uploads éventuels avant publication : l'image ENTIÈRE (fiche) et la
+    // VIGNETTE recadrée (listes). Copies locales pour affichage immédiat
+    // (le site ne sert les fichiers qu'après déploiement, ~1-2 min).
+    var uploads = Promise.resolve();
     if (pendingImageFile) {
-      msg("Envoi de l'image…", "");
       var imgFile = pendingImageFile;
-      GH.uploadImage(imgFile).then(function (path) {
-        art.image = path;
-        // Copie locale : le fichier ne sera servi par le site qu'après le
-        // déploiement (~1-2 min) ; la copie permet un affichage immédiat.
-        return rememberPendingImage(path, imgFile);
-      }).then(publish).catch(function (err) {
-        setBusy(false); msg("Échec image : " + (err.message || err), "err");
+      uploads = uploads.then(function () {
+        msg("Envoi de l'image…", "");
+        return GH.uploadImage(imgFile).then(function (path) {
+          art.image = path;
+          if (!pendingThumbFile) art.thumb = "";   // l'ancienne vignette est périmée
+          return rememberPendingImage(path, imgFile);
+        });
       });
-    } else {
-      publish();
     }
+    if (pendingThumbFile) {
+      var thFile = pendingThumbFile;
+      uploads = uploads.then(function () {
+        msg("Envoi de la vignette…", "");
+        return GH.uploadImage(thFile).then(function (path) {
+          art.thumb = path;
+          return rememberPendingImage(path, thFile);
+        });
+      });
+    } else if (thumbCleared) {
+      art.thumb = "";
+    }
+    uploads.then(publish).catch(function (err) {
+      setBusy(false); msg("Échec image : " + (err.message || err), "err");
+    });
   }
 
   // Mémorise l'image envoyée (dataURL) en localStorage ; journal-core.js la

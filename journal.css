@@ -289,9 +289,10 @@
 .j-desc img { max-width: 100%; height: auto; border-radius: 6px; }
 .j-desc-empty { color: var(--ink-mute); }
 
-/* Image en tête de fiche (hauteur plafonnée : les très grandes images sont recadrées) */
-.j-article-hero { margin-bottom: 1.3rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--border-soft); max-width: 420px; }
-.j-article-hero img { width: 100%; height: auto; max-height: 380px; object-fit: cover; display: block; }
+/* Image en tête de fiche : l'image ENTIÈRE, redimensionnée raisonnablement
+   (jamais rognée — le recadrage ne concerne que la vignette des listes). */
+.j-article-hero { margin-bottom: 1.3rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--border-soft); max-width: 520px; background: var(--bg-card); }
+.j-article-hero img { display: block; width: auto; height: auto; max-width: 100%; max-height: 520px; margin: 0 auto; }
 
 /* Membres d'une organisation — éditeur */
 .j-membres-rows { display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 0.6rem; }
