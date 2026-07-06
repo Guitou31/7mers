@@ -1060,6 +1060,20 @@ window.JOURNAL_DB = {
         "created": "2026-07-03",
         "author": "Guillaume",
         "image": "journal-images/img-mr58i4u3-0.jpg"
+      },
+      {
+        "id": "que-mr9jrpb8",
+        "rubrique": "quetes",
+        "name": "Cours d'histoire",
+        "statut": "En cours",
+        "type": "Secondaire",
+        "title": "",
+        "description": "La fille de la reine&nbsp;Syntyche de&nbsp;<a class=\"j-link\" href=\"journal-article.html?r=nations&amp;id=nat-8743971\">La Numa</a>&nbsp;, Cassandre, vous invite dans son Royaume pour vous donner un cours d'histoire, et le sujet de Dis Pater sera aussi abordé si cela vous intéresse.",
+        "etiquettes": [],
+        "slug": "cours-d-histoire",
+        "updated": "2026-07-06",
+        "created": "2026-07-06",
+        "author": "Guillaume"
       }
     ],
     "objets": [
@@ -1081,6 +1095,14 @@ window.JOURNAL_DB = {
     ]
   },
   "changes": [
+    {
+      "author": "Guillaume",
+      "action": "créé",
+      "target": "Cours d'histoire",
+      "rubrique": "quetes",
+      "id": "que-mr9jrpb8",
+      "date": "2026-07-06"
+    },
     {
       "author": "Guillaume",
       "action": "modifié",
@@ -1546,5 +1568,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783101348917
+  "rev": 1783362134932
 };
