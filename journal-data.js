@@ -304,6 +304,27 @@ window.JOURNAL_DB = {
         "sexe": "",
         "pronoms": "",
         "statut": "Vivant"
+      },
+      {
+        "id": "per-mr9ktaok",
+        "rubrique": "personnages",
+        "name": "Dis Pater",
+        "type": "PNJ",
+        "title": "Antiquaire?",
+        "familles": [],
+        "lieux": [],
+        "nations": [],
+        "description": "Dis Pater est un antiquaire que rencontrent les <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8743698\">Aventuriers</a>&nbsp;en <a class=\"j-link\" href=\"journal-article.html?r=nations&amp;id=nat-8743355\">Sarmatie</a>&nbsp;.<div>Plus intéressé par les artefacts Numanari que Syrneths, il décrit précisément l'emplacement et fonction des ruines Syrneths que cherchaient les PJ. Il semble d'ailleurs lire parfaitement leur langage, et connait la fonction de la plupart des artefacts trouvés, à l'exception de l'<a class=\"j-link\" href=\"journal-article.html?r=objets&amp;id=obj-8724158\">Orbe d'Aigue Marine</a>&nbsp;qu'il a refusé d'indiquer.</div><div>Après que Darmuid ait déposé des tablettes semblant décrire une histoire ou des instructions en langage Syrneth, il semble avoir détruit l'une d'elles.</div>",
+        "age": "",
+        "statut": "Vivant",
+        "sexe": "Homme",
+        "pronoms": "",
+        "etiquettes": [],
+        "slug": "dis-pater",
+        "updated": "2026-07-06",
+        "created": "2026-07-06",
+        "author": "Guillaume",
+        "image": "journal-images/img-mr9ktaol-0.png"
       }
     ],
     "lieux": [
@@ -1098,6 +1119,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "créé",
+      "target": "Dis Pater",
+      "rubrique": "personnages",
+      "id": "per-mr9ktaok",
+      "date": "2026-07-06"
+    },
+    {
+      "author": "Guillaume",
+      "action": "créé",
       "target": "Cours d'histoire",
       "rubrique": "quetes",
       "id": "que-mr9jrpb8",
@@ -1568,5 +1597,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783362134932
+  "rev": 1783363890893
 };
