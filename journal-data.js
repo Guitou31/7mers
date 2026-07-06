@@ -212,7 +212,7 @@ window.JOURNAL_DB = {
         "slug": "marek-wrobleski",
         "rubrique": "personnages",
         "name": "Marek Wrobleski",
-        "type": "Lojetas",
+        "type": "Joueur",
         "title": "le Tsigane",
         "image": "journal-images/a0e6aec2-881c-494a-a351-601a8be58767.jpg",
         "aliases": [],
@@ -221,7 +221,7 @@ window.JOURNAL_DB = {
         ],
         "description": "<p><br></p><h3>Rencontre et sauvetage</h3><p>Envoyé par son Dievaï, Marek se rend en Inismore dans le but de rencontrer les Aventuriers et proposer ses services, sans toutefois connaitre lui-même la finalité.</p><p>Il est capturé par des Inquisiteurs agitateurs ayant rameuté une foule. Sur le point d'être pendu, il est sauvé in-extremis par les Aventuriers, Mendoza coupant la corde d'un tir de mousquet pendant que Don Felipe influence la foule à calmer leurs ardeurs.</p>",
         "created": "2026-01-19",
-        "updated": "2026-01-27",
+        "updated": "2026-07-06",
         "author": "Guillaume",
         "familles": [],
         "nations": [
@@ -1119,6 +1119,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "Marek Wrobleski",
+      "rubrique": "personnages",
+      "id": "per-8723966",
+      "date": "2026-07-06"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "Dis Pater",
       "rubrique": "personnages",
       "id": "per-mr9ktaok",
@@ -1605,5 +1613,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783363997402
+  "rev": 1783364796704
 };
