@@ -138,14 +138,14 @@ window.JOURNAL_DB = {
         "slug": "emilia-capodegra",
         "rubrique": "personnages",
         "name": "Emilia Capodegra",
-        "type": "PNJ",
+        "type": "Scélérat",
         "title": "Capitaine de l'Inquisition",
         "image": "journal-images/a0b87aa3-58c2-4ca4-8407-f7e83732cdfb.png",
         "aliases": [],
         "etiquettes": [],
-        "description": "<h3>Complot d'assassinat</h3><p>Déguisée en garde du corps, Emilia Capodegra assassine le noble Pedro Manatello lors des festivités de Los Borrachos, pendant que les Aventuriers tentaient d'intimider le noble pour une supposée tromperie.</p><p>Il s'avèrera que Pedro Manatello était un membre des Rilasciare et travaillait de concert avec une collègue en vue des préparatifs pour rencontrer des membres de la Bravoure de l'Epervier en vue d'une alliance.</p><p>Il semblerait que les espions de <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8626820\">Inquisition</a> sont particulièrement efficaces, et qu'ils aient fini par comprendre ce qu'il se trame.</p><h3>Avis de recherche d'info sur Ochoa</h3><p>Découverte sur un bandit d'une missive indiquant que tout individu disposant d'information sur Ochoa est invitée à se rendre dans la cité Vaticine. Elle est signée de la main d'Emilia Capodegra, Capitaine de l'Inquisition.</p>",
+        "description": "<h3>Complot d'assassinat</h3><p>Déguisée en garde du corps, Emilia Capodegra assassine le noble Pedro Manatello lors des festivités de Los Borrachos, pendant que les Aventuriers tentaient d'intimider le noble pour une supposée tromperie.</p><p>Il s'avèrera que Pedro Manatello était un membre des Rilasciare et travaillait de concert avec une collègue en vue des préparatifs pour rencontrer des membres de la Bravoure de l'Epervier en vue d'une alliance.</p><p>Il semblerait que les espions de <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8626820\">Inquisition</a>&nbsp;sont particulièrement efficaces, et qu'ils aient fini par comprendre ce qu'il se trame.</p><h3>Avis de recherche d'info sur Ochoa</h3><p>Découverte sur un bandit d'une missive indiquant que tout individu disposant d'information sur Ochoa est invitée à se rendre dans la cité Vaticine. Elle est signée de la main d'Emilia Capodegra, Capitaine de l'Inquisition.</p>",
         "created": "2025-12-30",
-        "updated": "2026-01-23",
+        "updated": "2026-07-06",
         "author": "Guillaume",
         "familles": [],
         "nations": [
@@ -1119,6 +1119,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "Emilia Capodegra",
+      "rubrique": "personnages",
+      "id": "per-8620898",
+      "date": "2026-07-06"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "Zheng Yi Sao",
       "rubrique": "personnages",
       "id": "per-8724232",
@@ -1629,5 +1637,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783365638712
+  "rev": 1783365791451
 };
