@@ -12,14 +12,14 @@ window.JOURNAL_DB = {
         "slug": "amadeo-et-rocio-sandoval",
         "rubrique": "personnages",
         "name": "Amadeo et Rocío Sandoval",
-        "type": "PNJ",
+        "type": "Allié",
         "title": "Roi",
         "image": "journal-images/a116fdb5-0992-45ea-b4b5-cf59067bd587.png",
         "aliases": [],
         "etiquettes": [],
         "description": "<p>Historiquement, le monarque a toujours été le Grande le plus\nfaible de Castille. Responsable de l’équilibre des forces entre les Grandes,\nqui contrôlent bien plus de terres, de ressources et de forces militaires que\nlui, le Roi menait une vie frustrante et stressante. À mesure que l\n’Inquisition centralisa le pouvoir derrière son trône de pacotille, l’influence\napparente du Roi ne cessa de grandir. Mais évidemment, le véritable pouvoir\nreste entre les mains d’El Concilio de la Razon. Le Roi souffre désormais d ’un\nnouveau type d ’impuissance. </p><p>Étant donnée cette situation délicate, lorsque la reine Almudena\nSandoval tomba enceinte du roi Salvador Aldana en 1652, tous deux dissimulèrent\nle fait qu’elle attendait deux enfants : un garçon, Amadeo, et une fille,\nRocío. La ressemblance des jumeaux empêcha quiconque de les différencier, en\ndehors du cercle royal de San Cristóbal, que même l’Inquisition ne pouvait\natteindre. Le Roi et la Reine savaient que l ’enfant qui hériterait du trône\nferait l ’objet d ’une surveillance et d ’une manipulation constantes. Ils avaient\nbesoin d ’un moyen subtil d ’échapper à El Concilio et à ses espions pour leur\npermettre de découvrir le monde au-delà de leur trône... Et pour vivre dans la\nvérité, la passion ou la liberté.</p><p>Amadeo et sa sœur Rocío partagent la même identité (ils utilisent\nle nom et le sexe d ’Amadeo) depuis bien avant le décès de leur père et le\ndépart de leur mère pour le ducado de Aldana visant à échapper en partie à la\nsurveillance de Verdugo. L ’un des jumeaux siégeait sur le trône, feignant une\nincompétence puérile, tandis que l ’autre se lançait dans de petites aventures dans\nla capitale et ses alentours, afin de découvrir ce qui se passait en Castille\net d ’acquérir une expérience de la vie. Ils partageaient ensuite les\névénements de la journée au cours de la nuit, avant d ’échanger leurs identités\nle lendemain. </p><p>Mais un problème survint. Peut-être l ’Inquisition eut-elle des\nsoupçons lorsque le Roi prit juste assez de décisions judicieuses pour empêcher\nla Montaigne d ’envahir la Castille. Il y a un an, El Concilio déplaça de force\nle roi Amadeo Sandoval dans la Cité vaticine pour sa propre sécurité ainsi que\npour repousser les forces hérétiques en Castille. Rocío, sa sœur bien aimée,\nson lien vital et la clé pour faire tomber le masque de l’Inquisition, ne put\nle suivre.</p>",
         "created": "2026-02-16",
-        "updated": "2026-02-16",
+        "updated": "2026-07-06",
         "author": "Guillaume",
         "familles": [
           "Sandoval"
@@ -1119,6 +1119,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "Amadeo et Rocío Sandoval",
+      "rubrique": "personnages",
+      "id": "per-8875848",
+      "date": "2026-07-06"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "Marek Wrobleski",
       "rubrique": "personnages",
       "id": "per-8723966",
@@ -1613,5 +1621,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783364796704
+  "rev": 1783365207628
 };
