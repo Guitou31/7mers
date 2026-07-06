@@ -71,7 +71,7 @@
   var FIELDS = {
     personnages: [
       { key: "name", label: "Personnage", type: "text", req: true, half: true, placeholder: "Nom de l'entrée" },
-      { key: "type", label: "Type", type: "text", half: true, placeholder: "PNJ, Joueurs, Autre" },
+      { key: "type", label: "Type", type: "select", half: true, options: ["Joueur", "Allié", "Neutre", "Scélérat"], default: "Neutre" },
       { key: "title", label: "Titre", type: "text", half: true, placeholder: "Titre" },
       { key: "familles", label: "Familles", type: "tags", half: true, placeholder: "Écrire, séparé par des virgules" },
       { key: "lieux", label: "Lieux", type: "tags", half: true, placeholder: "Écrire, séparé par des virgules" },
@@ -348,10 +348,11 @@
   // pages de rubrique). Remplit #journal-main. ---
   // Carte d'article générique (nom + méta + extrait). hideStatut : n'affiche
   // pas le statut dans la méta (utile quand il est déjà porté par le groupe).
-  function card(a, r, hideStatut) {
+  // extraAttr : attributs HTML supplémentaires sur la carte (ex. data-cat).
+  function card(a, r, hideStatut, extraAttr) {
     var snippet = htmlToText(a.description).slice(0, 130);
     var meta2 = [a.type, hideStatut ? "" : a.statut].filter(Boolean).join(" · ");
-    return "<a class='j-card" + (a.image ? " has-thumb" : "") + "' href='" + articleUrl(r, a.id) + "'>" +
+    return "<a " + (extraAttr ? extraAttr + " " : "") + "class='j-card" + (a.image ? " has-thumb" : "") + "' href='" + articleUrl(r, a.id) + "'>" +
       (a.image ? "<div class='j-card-thumb'><img src='" + esc(imgSrc(a.image)) + "' alt='' loading='lazy'></div>" : "") +
       "<div class='j-card-body'>" +
       "<div class='j-card-name'>" + esc(a.name) + "</div>" +
@@ -379,6 +380,72 @@
       ? "<div class='j-card-grid'>" + arts.map(function (a) { return card(a, r, false); }).join("") + "</div>"
       : emptyState(meta);
     mainEl.innerHTML = "<div class='j-actions'>" + addBtn + "</div>" + body;
+    return true;
+  }
+
+  // Personnages : filtre à pastilles par type (Joueurs / Scélérats / Neutres /
+  // Alliés). Les types hors catégories (ex. PNJ pas encore reclassé) vont
+  // sous une pastille « Autres », affichée seulement si nécessaire.
+  var PERSO_CATS = [
+    { key: "joueurs", label: "Joueurs", match: /^joueur/ },
+    { key: "scelerats", label: "Scélérats", match: /^scelerat/ },
+    { key: "neutres", label: "Neutres", match: /^neutre/ },
+    { key: "allies", label: "Alliés", match: /^allie/ }
+  ];
+  function persoCat(a) {
+    var t = normName(a.type || "");
+    for (var i = 0; i < PERSO_CATS.length; i++) {
+      if (PERSO_CATS[i].match.test(t)) return PERSO_CATS[i].key;
+    }
+    return "autres";
+  }
+
+  function renderPersonnages(mainEl) {
+    var meta = rubriqueMeta("personnages");
+    if (!meta || !mainEl) return false;
+    var arts = articlesOf("personnages").sort(function (a, b) {
+      return (a.name || "").localeCompare(b.name || "", "fr");
+    });
+    var addBtn = "<a class='j-btn-add' href='" + editUrl("personnages") +
+      "'><span class='j-plus'>+</span> Ajouter un personnage</a>";
+    if (!arts.length) {
+      mainEl.innerHTML = "<div class='j-actions'>" + addBtn + "</div>" + emptyState(meta);
+      return true;
+    }
+
+    var counts = { autres: 0 };
+    PERSO_CATS.forEach(function (c) { counts[c.key] = 0; });
+    var cards = arts.map(function (a) {
+      var cat = persoCat(a);
+      counts[cat]++;
+      return card(a, "personnages", false, "data-cat='" + cat + "'");
+    }).join("");
+
+    var chips = "<div class='j-filter'>" +
+      "<button class='j-chip is-active' data-f='all' type='button'>Tous (" + arts.length + ")</button>" +
+      PERSO_CATS.map(function (c) {
+        return "<button class='j-chip' data-f='" + c.key + "' type='button'>" +
+          c.label + " (" + counts[c.key] + ")</button>";
+      }).join("") +
+      (counts.autres
+        ? "<button class='j-chip' data-f='autres' type='button'>Autres (" + counts.autres + ")</button>"
+        : "") +
+      "</div>";
+
+    mainEl.innerHTML = "<div class='j-actions'>" + addBtn + "</div>" + chips +
+      "<div class='j-card-grid'>" + cards + "</div>";
+
+    var chipEls = mainEl.querySelectorAll(".j-chip");
+    var cardEls = mainEl.querySelectorAll(".j-card-grid .j-card");
+    Array.prototype.forEach.call(chipEls, function (chip) {
+      chip.addEventListener("click", function () {
+        Array.prototype.forEach.call(chipEls, function (c) { c.classList.toggle("is-active", c === chip); });
+        var f = chip.getAttribute("data-f");
+        Array.prototype.forEach.call(cardEls, function (elc) {
+          elc.style.display = (f === "all" || elc.getAttribute("data-cat") === f) ? "" : "none";
+        });
+      });
+    });
     return true;
   }
 
@@ -443,6 +510,7 @@
     renderRubriqueList: renderRubriqueList,
     renderNations: renderNations,
     renderQuetes: renderQuetes,
+    renderPersonnages: renderPersonnages,
     continentOf: continentOf,
     CONTINENTS: CONTINENTS,
     isRubrique: function (id) { return !!RUBRIQUES[id]; }

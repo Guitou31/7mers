@@ -214,6 +214,8 @@
         window.JournalCore.renderNations(main);
       } else if (rub === "quetes" && window.JournalCore.renderQuetes) {
         window.JournalCore.renderQuetes(main);
+      } else if (rub === "personnages" && window.JournalCore.renderPersonnages) {
+        window.JournalCore.renderPersonnages(main);
       } else {
         window.JournalCore.renderRubriqueList(rub, main);
       }

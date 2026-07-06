@@ -52,7 +52,11 @@
     }
     if (f.type === "select") {
       var sel = el("select", "j-input");
-      (f.options || []).forEach(function (o) {
+      var opts = (f.options || []).slice();
+      // Valeur héritée hors liste (ex. « PNJ ») : on l'ajoute pour ne pas
+      // l'écraser silencieusement à l'ouverture de la fiche.
+      if (val && opts.indexOf(val) < 0) opts.push(val);
+      opts.forEach(function (o) {
         var opt = el("option", null, o); opt.value = o;
         if (o === val) opt.selected = true;
         sel.appendChild(opt);
