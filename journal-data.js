@@ -116,12 +116,12 @@ window.JOURNAL_DB = {
         "name": "Dorian",
         "type": "Joueur",
         "title": "",
-        "image": "journal-images/a0e6bafb-0039-4e34-a363-c9fa2e865fe7.jpg",
+        "image": "journal-images/img-mr9m4hrw-0.jpg",
         "aliases": [],
         "etiquettes": [],
         "description": "",
         "created": "2026-01-23",
-        "updated": "2026-01-23",
+        "updated": "2026-07-06",
         "author": "Guillaume",
         "familles": [],
         "nations": [
@@ -1119,6 +1119,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "Dorian",
+      "rubrique": "personnages",
+      "id": "per-8743980",
+      "date": "2026-07-06"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "Ochoa De Alcada",
       "rubrique": "personnages",
       "id": "per-8743193",
@@ -1653,5 +1661,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783365990841
+  "rev": 1783366091988
 };
