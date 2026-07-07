@@ -228,7 +228,7 @@ window.JOURNAL_DB = {
         ],
         "description": "<p><br></p><h3>Rencontre et sauvetage</h3><p>Envoyé par son Dievaï, Marek se rend en Inismore dans le but de rencontrer les Aventuriers et proposer ses services, sans toutefois connaitre lui-même la finalité.</p><p>Il est capturé par des Inquisiteurs agitateurs ayant rameuté une foule. Sur le point d'être pendu, il est sauvé in-extremis par les Aventuriers, Mendoza coupant la corde d'un tir de mousquet pendant que Don Felipe influence la foule à calmer leurs ardeurs.</p>",
         "created": "2026-01-19",
-        "updated": "2026-07-06",
+        "updated": "2026-07-07",
         "author": "Guillaume",
         "familles": [],
         "nations": [
@@ -238,7 +238,8 @@ window.JOURNAL_DB = {
         "age": "26",
         "sexe": "Homme",
         "pronoms": "",
-        "statut": "Vivant"
+        "statut": "Vivant",
+        "thumb": "journal-images/img-mraxly8b-0.jpg"
       },
       {
         "id": "per-8743774",
@@ -1128,6 +1129,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "Marek Wrobleski",
+      "rubrique": "personnages",
+      "id": "per-8723966",
+      "date": "2026-07-07"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "Ingrid",
       "rubrique": "personnages",
       "id": "per-8743992",
@@ -1750,5 +1759,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783445506439
+  "rev": 1783445848597
 };
