@@ -246,7 +246,7 @@ window.JOURNAL_DB = {
         "etiquettes": [],
         "description": "",
         "created": "2026-01-23",
-        "updated": "2026-01-23",
+        "updated": "2026-07-07",
         "author": "Guillaume",
         "familles": [],
         "nations": [
@@ -256,7 +256,8 @@ window.JOURNAL_DB = {
         "age": "",
         "sexe": "",
         "pronoms": "",
-        "statut": "Vivant"
+        "statut": "Vivant",
+        "thumb": "journal-images/img-mraup9w5-0.png"
       },
       {
         "id": "per-8743193",
@@ -1120,6 +1121,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "Mendoza",
+      "rubrique": "personnages",
+      "id": "per-8743774",
+      "date": "2026-07-07"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "Doña Uxia Serafin",
       "rubrique": "personnages",
       "id": "per-8723910",
@@ -1678,5 +1687,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783366805934
+  "rev": 1783440965218
 };
