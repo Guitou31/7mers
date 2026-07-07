@@ -70,7 +70,7 @@ window.JOURNAL_DB = {
         ],
         "description": "",
         "created": "2026-01-19",
-        "updated": "2026-01-23",
+        "updated": "2026-07-07",
         "author": "Guillaume",
         "familles": [
           "Serafin"
@@ -82,7 +82,8 @@ window.JOURNAL_DB = {
         "age": "",
         "sexe": "Homme",
         "pronoms": "",
-        "statut": "Vivant"
+        "statut": "Vivant",
+        "thumb": "journal-images/img-mrawmlti-0.png"
       },
       {
         "id": "per-8723910",
@@ -1125,6 +1126,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "Don Felipe",
+      "rubrique": "personnages",
+      "id": "per-8723888",
+      "date": "2026-07-07"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "Dis Pater",
       "rubrique": "personnages",
       "id": "per-mr9ktaok",
@@ -1723,5 +1732,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783442803042
+  "rev": 1783444200362
 };
