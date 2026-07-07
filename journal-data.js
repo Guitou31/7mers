@@ -241,8 +241,13 @@ window.JOURNAL_DB = {
           {
             "id": "ent-k1111407",
             "name": "Première rencontre",
-            "date": "",
-            "html": "<p>Lü Ji, vient à la rencontre d'<a class=\"j-link\" href=\"journal-article.html?r=personnages&id=per-8743193\">Ochoa De Alcada</a> dont ce-dernier lui avait parlé de le revoir à la taverne <a class=\"j-link\" href=\"journal-article.html?r=lieux&id=lie-8754131\">El Fuego Gentil</a> si elle en avait besoin.</p><p>Elle rencontre d'abord <a class=\"j-link\" href=\"journal-article.html?r=personnages&id=per-8743992\">Ingrid</a> qui gardait les lieux, les autres étant partis en Inismore. Elle rencontre le reste des <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8743698\">Aventuriers</a> quelques jours plus tard.</p>"
+            "date": "20 Mars, 1667",
+            "cal": {
+              "y": 1667,
+              "m": 3,
+              "d": 20
+            },
+            "html": "<p>Lü Ji, vient à la rencontre d'<a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-8743193\">Ochoa De Alcada</a>&nbsp;dont ce-dernier lui avait parlé de le revoir à la taverne <a class=\"j-link\" href=\"journal-article.html?r=lieux&amp;id=lie-8754131\">El Fuego Gentil</a>&nbsp;si elle en avait besoin.</p><p>Elle rencontre d'abord <a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-8743992\">Ingrid</a>&nbsp;qui gardait les lieux, les autres étant partis en Inismore. Elle rencontre le reste des <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8743698\">Aventuriers</a> quelques jours plus tard.</p>"
           }
         ]
       },
@@ -1199,6 +1204,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "Lü Ji",
+      "rubrique": "personnages",
+      "id": "per-8743715",
+      "date": "2026-07-07"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "El Fuego Gentil",
       "rubrique": "lieux",
       "id": "lie-8754131",
@@ -1853,5 +1866,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783454307238
+  "rev": 1783454448633
 };
