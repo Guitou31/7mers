@@ -192,9 +192,9 @@ window.JOURNAL_DB = {
         "image": "journal-images/a0e6b538-4881-4c96-b7ab-28fd5814b270.png",
         "aliases": [],
         "etiquettes": [],
-        "description": "<h3>Première rencontre</h3><p>Lü Ji, vient à la rencontre d'<a class=\"j-link\" href=\"journal-article.html?r=personnages&id=per-8743193\">Ochoa De Alcada</a> dont ce-dernier lui avait parlé de le revoir à la taverne <a class=\"j-link\" href=\"journal-article.html?r=lieux&id=lie-8754131\">El Fuego Gentil</a> si elle en avait besoin.</p><p>Elle rencontre d'abord <a class=\"j-link\" href=\"journal-article.html?r=personnages&id=per-8743992\">Ingrid</a> qui gardait les lieux, les autres étant partis en Inismore. Elle rencontre le reste des <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8743698\">Aventuriers</a> quelques jours plus tard.</p>",
+        "description": "<h3>Première rencontre</h3><p>Lü Ji, vient à la rencontre d'<a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-8743193\">Ochoa De Alcada</a>&nbsp;dont ce-dernier lui avait parlé de le revoir à la taverne <a class=\"j-link\" href=\"journal-article.html?r=lieux&amp;id=lie-8754131\">El Fuego Gentil</a>&nbsp;si elle en avait besoin.</p><p>Elle rencontre d'abord <a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-8743992\">Ingrid</a>&nbsp;qui gardait les lieux, les autres étant partis en Inismore. Elle rencontre le reste des <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8743698\">Aventuriers</a> quelques jours plus tard.</p>",
         "created": "2026-01-23",
-        "updated": "2026-01-26",
+        "updated": "2026-07-07",
         "author": "Guillaume",
         "familles": [
           "Lü"
@@ -206,7 +206,8 @@ window.JOURNAL_DB = {
         "age": "",
         "sexe": "Femme",
         "pronoms": "",
-        "statut": "Vivant"
+        "statut": "Vivant",
+        "thumb": "journal-images/img-mrauxjyt-0.png"
       },
       {
         "id": "per-8723966",
@@ -1121,6 +1122,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "Lü Ji",
+      "rubrique": "personnages",
+      "id": "per-8743715",
+      "date": "2026-07-07"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "Mendoza",
       "rubrique": "personnages",
       "id": "per-8743774",
@@ -1687,5 +1696,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783440965218
+  "rev": 1783441351250
 };
