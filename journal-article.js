@@ -56,7 +56,7 @@
       "<a class='j-btn-add' href='" + Core.editUrl(r, id) + "'>Éditer</a></div>";
 
     // Champs informatifs (hors nom/titre/description/image), seulement si remplis.
-    var SKIP = { name: 1, title: 1, description: 1, image: 1, thumb: 1, slug: 1, membres: 1, entrees: 1 };
+    var SKIP = { name: 1, title: 1, description: 1, image: 1, thumb: 1, slug: 1, membres: 1, entrees: 1, date_actuelle: 1 };
     var rows = "";
     Core.fieldsFor(r).forEach(function (f) {
       if (SKIP[f.key]) return;

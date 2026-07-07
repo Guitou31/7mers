@@ -52,6 +52,35 @@
       inputs[f.key] = ec;
       return ec;
     }
+    if (f.type === "cal-date") {
+      // Date du calendrier Théan : année + mois + jour (jours selon le mois).
+      var cdWrap = el("div", "j-caldate");
+      var cd = (val && val.y) ? { y: +val.y, m: +val.m, d: +val.d } : Core.calCurrent();
+      var yIn = el("input", "j-input"); yIn.type = "number";
+      yIn.min = Core.CAL.minYear; yIn.value = cd.y; yIn.title = "Année";
+      var mSel = el("select", "j-input"); mSel.title = "Mois";
+      Core.CAL.months.forEach(function (mm, i) {
+        var o = el("option", null, mm[0]); o.value = i + 1; mSel.appendChild(o);
+      });
+      mSel.value = cd.m;
+      var dSel = el("select", "j-input"); dSel.title = "Jour";
+      function cdDays() {
+        var len = Core.CAL.months[(+mSel.value || 1) - 1][1];
+        var curD = +dSel.value || cd.d;
+        dSel.innerHTML = "";
+        for (var dd = 1; dd <= len; dd++) {
+          var o = el("option", null, String(dd)); o.value = dd; dSel.appendChild(o);
+        }
+        dSel.value = Math.min(curD, len);
+      }
+      mSel.addEventListener("change", cdDays);
+      cdDays(); dSel.value = cd.d;
+      cdWrap.appendChild(dSel); cdWrap.appendChild(mSel); cdWrap.appendChild(yIn);
+      inputs[f.key] = { getCalDate: function () {
+        return { y: +yIn.value || cd.y, m: +mSel.value || 1, d: +dSel.value || 1 };
+      } };
+      return cdWrap;
+    }
     if (f.type === "membres") {
       var mc = buildMembersControl(Array.isArray(val) ? val : []);
       inputs[f.key] = mc;                 // conteneur ; lu via readMembers()
@@ -153,15 +182,16 @@
       calBtn.addEventListener("click", function () {
         var show = panel.style.display === "none";
         if (show) {
-          selY.value = cal ? cal.y : Core.CAL.current.y;
-          selM.value = cal ? cal.m : Core.CAL.current.m;
+          var cur0 = Core.calCurrent();
+          selY.value = cal ? cal.y : cur0.y;
+          selM.value = cal ? cal.m : cur0.m;
           rebuildDays();
-          selD.value = cal ? cal.d : Core.CAL.current.d;
+          selD.value = cal ? cal.d : cur0.d;
         }
         panel.style.display = show ? "flex" : "none";
       });
       ok.addEventListener("click", function () {
-        cal = { y: +selY.value || Core.CAL.current.y, m: +selM.value || 1, d: +selD.value || 1 };
+        cal = { y: +selY.value || Core.calCurrent().y, m: +selM.value || 1, d: +selD.value || 1 };
         date.value = Core.calFormat(cal);   // texte de date auto-rempli (modifiable)
         calLabel(); panel.style.display = "none";
       });
@@ -734,6 +764,7 @@
       if (f.type === "textarea-rich") art[f.key] = getEditorHtml();
       else if (f.type === "entrees") art[f.key] = inputs[f.key].readEntrees();
       else if (f.type === "membres") art[f.key] = inputs[f.key].readMembers();
+      else if (f.type === "cal-date") art[f.key] = inputs[f.key].getCalDate();
       else if (f.type === "tags") art[f.key] = splitTags(inputs[f.key].value);
       else art[f.key] = (inputs[f.key].value || "").trim();
     });

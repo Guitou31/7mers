@@ -95,6 +95,13 @@
       { key: "membres", label: "Membres", type: "membres" },
       { key: "etiquettes", label: "Étiquettes", type: "tags", placeholder: "Écrire, séparé par des virgules" }
     ],
+    calendriers: [
+      { key: "name", label: "Nom", type: "text", req: true, half: true, placeholder: "Nom du calendrier" },
+      { key: "date_actuelle", label: "Date actuelle en jeu", type: "cal-date", half: true },
+      { key: "description", label: "Description", type: "textarea-rich" },
+      { key: "entrees", label: "Entrées (historique)", type: "entrees" },
+      { key: "etiquettes", label: "Étiquettes", type: "tags", placeholder: "Écrire, séparé par des virgules" }
+    ],
     quetes: [
       { key: "name", label: "Quête", type: "text", req: true, half: true, placeholder: "Nom de la quête" },
       { key: "statut", label: "Statut", type: "select", half: true, options: ["En cours", "Terminé"], default: "En cours" },
@@ -479,6 +486,14 @@
     if (!c || !c.m) return "";
     return c.d + " " + CAL.months[c.m - 1][0] + ", " + c.y;
   }
+  // Date « actuelle » de la campagne : définie sur la fiche du calendrier
+  // (champ date_actuelle, éditable), sinon valeur par défaut.
+  function calCurrent() {
+    var cal = (articlesOf("calendriers") || [])[0];
+    var c = cal && cal.date_actuelle;
+    if (c && c.y && c.m && c.d) return { y: +c.y, m: +c.m, d: +c.d };
+    return CAL.current;
+  }
 
   // Tous les événements liés au calendrier : les entrées (historique) de
   // n'importe quel article qui portent une date structurée `cal {y,m,d}`.
@@ -490,7 +505,8 @@
         (a.entrees || []).forEach(function (en) {
           if (en.cal && en.cal.y && en.cal.m && en.cal.d) {
             out.push({ y: +en.cal.y, m: +en.cal.m, d: +en.cal.d, name: en.name || "Entrée",
-                       rubrique: r, artId: a.id, artName: a.name, enId: en.id || "" });
+                       rubrique: r, artId: a.id, artName: a.name, enId: en.id || "",
+                       dateTxt: en.date || "", html: en.html || "" });
           }
         });
       });
@@ -498,11 +514,38 @@
     return out;
   }
 
+  // Popup de survol des événements du calendrier (élément unique réutilisé).
+  var calPopEl = null;
+  function showCalPop(chip, ev) {
+    if (!ev) return;
+    if (!calPopEl) {
+      calPopEl = document.createElement("div");
+      calPopEl.className = "j-cal-pop";
+      document.body.appendChild(calPopEl);
+    }
+    var excerpt = htmlToText(ev.html).slice(0, 220);
+    calPopEl.innerHTML =
+      "<div class='j-cal-pop-title'>" + esc(ev.name) + "</div>" +
+      (ev.dateTxt || calFormat(ev) ? "<div class='j-cal-pop-date'>" + esc(ev.dateTxt || calFormat(ev)) + "</div>" : "") +
+      (excerpt ? "<div class='j-cal-pop-body'>" + esc(excerpt) + (htmlToText(ev.html).length > 220 ? "…" : "") + "</div>" : "") +
+      "<div class='j-cal-pop-foot'>→ " + esc(ev.artName) + "</div>";
+    var r = chip.getBoundingClientRect();
+    var left = Math.max(8, Math.min(r.left + window.scrollX, window.scrollX + document.documentElement.clientWidth - 320));
+    calPopEl.style.left = left + "px";
+    calPopEl.style.top = (r.bottom + window.scrollY + 6) + "px";
+    calPopEl.style.display = "block";
+  }
+  function hideCalPop() {
+    if (calPopEl) calPopEl.style.display = "none";
+  }
+
   // Vue mensuelle interactive (navigation mois/année, événements cliquables).
   function renderCalendar(mount, viewY, viewM) {
-    var y = +viewY || CAL.current.y, m = +viewM || CAL.current.m;
+    var cur = calCurrent();
+    var y = +viewY || cur.y, m = +viewM || cur.m;
     if (y < CAL.minYear) { y = CAL.minYear; m = 1; }
     var events = calEvents();
+    hideCalPop();
 
     function nav(dy, dm) {
       var ny = y + dy, nm = m + dm;
@@ -515,7 +558,9 @@
 
     var len = CAL.months[m - 1][1];
     var first = calWeekday(y, m, 1);
-    var html = "<div class='j-cal-nav'>" +
+    var html = "<div class='j-cal-today'>Aujourd'hui en jeu : <strong>" + esc(calFormat(cur)) + "</strong>" +
+      "<span class='j-cal-today-hint'>(modifiable via « Éditer »)</span></div>" +
+      "<div class='j-cal-nav'>" +
       "<button class='j-chip' data-nav='today' type='button'>Aujourd'hui</button>" +
       "<span class='j-cal-navgrp'><button class='j-chip' data-nav='pm' type='button' aria-label='Mois précédent'>‹</button>" +
       "<strong class='j-cal-title'>" + esc(CAL.months[m - 1][0]) + " " + y + "</strong>" +
@@ -532,14 +577,13 @@
       html += "<tr>";
       for (var c = 0; c < 7; c++) {
         if ((day === 1 && c < first) || day > len) { html += "<td class='j-cal-empty'></td>"; continue; }
-        var isToday = (y === CAL.current.y && m === CAL.current.m && day === CAL.current.d);
+        var isToday = (y === cur.y && m === cur.m && day === cur.d);
         var evHtml = "";
         for (var k = 0; k < events.length; k++) {
           var e = events[k];
           if (e.y === y && e.m === m && e.d === day) {
-            evHtml += "<a class='j-cal-ev' href='" + articleUrl(e.rubrique, e.artId) +
-              (e.enId ? "#" + esc(e.enId) : "") + "' title='" + esc(e.name + " — " + e.artName) + "'>" +
-              esc(e.name) + "</a>";
+            evHtml += "<a class='j-cal-ev' data-ev='" + k + "' href='" + articleUrl(e.rubrique, e.artId) +
+              (e.enId ? "#" + esc(e.enId) : "") + "'>" + esc(e.name) + "</a>";
           }
         }
         html += "<td class='j-cal-day" + (isToday ? " is-today" : "") + "'>" +
@@ -556,7 +600,15 @@
     mount.querySelector("[data-nav='py']").addEventListener("click", function () { nav(-1, 0); });
     mount.querySelector("[data-nav='ny']").addEventListener("click", function () { nav(1, 0); });
     mount.querySelector("[data-nav='today']").addEventListener("click", function () {
-      renderCalendar(mount, CAL.current.y, CAL.current.m);
+      var c = calCurrent();
+      renderCalendar(mount, c.y, c.m);
+    });
+    // Popup de survol : montre l'entrée (titre, date, extrait), pas l'article.
+    Array.prototype.forEach.call(mount.querySelectorAll(".j-cal-ev"), function (chip) {
+      chip.addEventListener("mouseenter", function () {
+        showCalPop(chip, events[+chip.getAttribute("data-ev")]);
+      });
+      chip.addEventListener("mouseleave", hideCalPop);
     });
   }
 
@@ -624,6 +676,7 @@
     renderPersonnages: renderPersonnages,
     CAL: CAL,
     calFormat: calFormat,
+    calCurrent: calCurrent,
     renderCalendar: renderCalendar,
     continentOf: continentOf,
     CONTINENTS: CONTINENTS,

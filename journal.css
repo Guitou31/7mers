@@ -322,6 +322,27 @@
 }
 .j-cal-ev:hover { background: #743030; }
 
+/* Titre du calendrier : date actuelle en jeu */
+.j-cal-today { font-size: 1.25rem; color: var(--ink); margin-bottom: 0.8rem; }
+.j-cal-today strong { color: var(--accent); }
+.j-cal-today-hint { font-size: 0.72rem; color: var(--ink-mute); font-style: italic; margin-left: 0.6rem; }
+
+/* Popup de survol d'un événement (montre l'entrée, pas l'article) */
+.j-cal-pop {
+  position: absolute; z-index: 250; display: none; width: 300px; pointer-events: none;
+  background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 10px;
+  box-shadow: var(--shadow-lg); padding: 0.75rem 0.9rem;
+}
+.j-cal-pop-title { font-weight: 700; color: var(--accent); font-size: 0.98rem; }
+.j-cal-pop-date { font-size: 0.78rem; color: var(--ink-mute); font-style: italic; margin-top: 0.1rem; }
+.j-cal-pop-body { font-size: 0.84rem; color: var(--ink-soft); line-height: 1.45; margin-top: 0.4rem; }
+.j-cal-pop-foot { font-size: 0.76rem; color: var(--ink-mute); margin-top: 0.5rem; border-top: 1px dashed var(--border-soft); padding-top: 0.35rem; }
+
+/* Champ « Date actuelle en jeu » — éditeur du calendrier */
+.j-caldate { display: flex; gap: 0.45rem; align-items: center; }
+.j-caldate .j-input { width: auto; }
+.j-caldate input[type="number"] { max-width: 90px; }
+
 /* Liaison d'une entrée au calendrier — éditeur */
 .j-entree-calrow { margin-bottom: 0.5rem; display: flex; flex-direction: column; gap: 0.4rem; align-items: flex-start; }
 .j-entree-calpanel { display: flex; gap: 0.45rem; align-items: center; flex-wrap: wrap; }
