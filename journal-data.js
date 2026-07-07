@@ -326,10 +326,11 @@ window.JOURNAL_DB = {
         "pronoms": "",
         "etiquettes": [],
         "slug": "dis-pater",
-        "updated": "2026-07-06",
+        "updated": "2026-07-07",
         "created": "2026-07-06",
         "author": "Guillaume",
-        "image": "journal-images/img-mr9ktaol-0.png"
+        "image": "journal-images/img-mr9ktaol-0.png",
+        "thumb": "journal-images/img-mravsnlc-0.png"
       }
     ],
     "lieux": [
@@ -1124,6 +1125,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "Dis Pater",
+      "rubrique": "personnages",
+      "id": "per-mr9ktaok",
+      "date": "2026-07-07"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "Dorian",
       "rubrique": "personnages",
       "id": "per-8743980",
@@ -1714,5 +1723,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783442087065
+  "rev": 1783442803042
 };
