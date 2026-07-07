@@ -174,7 +174,7 @@ window.JOURNAL_DB = {
         "etiquettes": [],
         "description": "",
         "created": "2026-01-23",
-        "updated": "2026-01-23",
+        "updated": "2026-07-07",
         "author": "Guillaume",
         "familles": [],
         "nations": [
@@ -184,7 +184,8 @@ window.JOURNAL_DB = {
         "age": "",
         "sexe": "Femme",
         "pronoms": "",
-        "statut": "Vivant"
+        "statut": "Vivant",
+        "thumb": "journal-images/img-mraxelaf-0.png"
       },
       {
         "id": "per-8743715",
@@ -1127,6 +1128,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "Ingrid",
+      "rubrique": "personnages",
+      "id": "per-8743992",
+      "date": "2026-07-07"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "Emilia Capodegra",
       "rubrique": "personnages",
       "id": "per-8620898",
@@ -1741,5 +1750,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783444763844
+  "rev": 1783445506439
 };
