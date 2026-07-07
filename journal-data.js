@@ -118,12 +118,12 @@ window.JOURNAL_DB = {
         "name": "Dorian",
         "type": "Joueur",
         "title": "",
-        "image": "journal-images/img-mr9m4hrw-0.jpg",
+        "image": "journal-images/img-mravdasj-0.jpg",
         "aliases": [],
         "etiquettes": [],
         "description": "",
         "created": "2026-01-23",
-        "updated": "2026-07-06",
+        "updated": "2026-07-07",
         "author": "Guillaume",
         "familles": [],
         "nations": [
@@ -133,7 +133,8 @@ window.JOURNAL_DB = {
         "age": "",
         "sexe": "",
         "pronoms": "",
-        "statut": "Vivant"
+        "statut": "Vivant",
+        "thumb": "journal-images/img-mravdbrc-1.jpg"
       },
       {
         "id": "per-8620898",
@@ -1123,6 +1124,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "Dorian",
+      "rubrique": "personnages",
+      "id": "per-8743980",
+      "date": "2026-07-07"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "Darmuid",
       "rubrique": "personnages",
       "id": "per-8743991",
@@ -1705,5 +1714,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783441857203
+  "rev": 1783442087065
 };
