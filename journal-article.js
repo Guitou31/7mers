@@ -19,7 +19,7 @@
     var art = Core.getArticle(r, id);
 
     // Surligne la rubrique dans la barre latérale.
-    var navLink = document.querySelector('.j-item[href="journal-' + r + '.html"]');
+    var navLink = document.querySelector('.j-item[data-sec="journal-' + r + '"]');
     if (navLink) navLink.classList.add("is-current");
 
     if (!meta || !art) {
@@ -56,7 +56,7 @@
       "<a class='j-btn-add' href='" + Core.editUrl(r, id) + "'>Éditer</a></div>";
 
     // Champs informatifs (hors nom/titre/description/image), seulement si remplis.
-    var SKIP = { name: 1, title: 1, description: 1, image: 1, thumb: 1, slug: 1, membres: 1 };
+    var SKIP = { name: 1, title: 1, description: 1, image: 1, thumb: 1, slug: 1, membres: 1, entrees: 1 };
     var rows = "";
     Core.fieldsFor(r).forEach(function (f) {
       if (SKIP[f.key]) return;
@@ -71,13 +71,36 @@
     var descWrap = document.createElement("div");
     descWrap.className = "j-desc";
     Core.renderDescription(descWrap, art.description, id);
+    var hasEntrees = Array.isArray(art.entrees) && art.entrees.length;
     var descHtml = (art.description && Core.htmlToText(art.description))
       ? descWrap.outerHTML
-      : "<div class='j-desc j-desc-empty'><em>Pas encore de description.</em></div>";
+      : (hasEntrees ? "" : "<div class='j-desc j-desc-empty'><em>Pas encore de description.</em></div>");
 
     var hero = art.image
       ? "<div class='j-article-hero'><img src='" + Core.esc(Core.imgSrc(art.image)) + "' alt='" + Core.esc(art.name) + "'></div>"
       : "";
+
+    // Entrées datées (historique) : titre + date + contenu riche, dans
+    // l'ordre défini à l'édition. Les liens @ y sont résolus aussi.
+    var entreesHtml = "";
+    if (Array.isArray(art.entrees) && art.entrees.length) {
+      var wrapE = document.createElement("div");
+      art.entrees.forEach(function (en) {
+        var box = document.createElement("div");
+        box.className = "j-entree";
+        box.innerHTML = "<div class='j-entree-head'>" +
+          "<span class='j-entree-title'>" + Core.esc(en.name || "Entrée") + "</span>" +
+          (en.date ? "<span class='j-entree-date'>" + Core.esc(en.date) + "</span>" : "") +
+          "</div>";
+        var body = document.createElement("div");
+        body.className = "j-desc";
+        Core.renderDescription(body, en.html, id);
+        box.appendChild(body);
+        wrapE.appendChild(box);
+      });
+      entreesHtml = "<div class='j-entrees-view'><div class='j-dash-section-title'>Historique</div>" +
+        wrapE.innerHTML + "</div>";
+    }
 
     // Membres (organisations) : lien vers la fiche du personnage si lié,
     // avatar si le personnage a une image, sinon initiale.
@@ -100,7 +123,7 @@
         }).join("") + "</div>";
     }
 
-    main.innerHTML = actions + hero + info + descHtml + membersHtml;
+    main.innerHTML = actions + hero + info + descHtml + entreesHtml + membersHtml;
   }
 
   if (document.readyState === "loading") {

@@ -147,7 +147,7 @@ window.JOURNAL_DB = {
         "image": "journal-images/a0b87aa3-58c2-4ca4-8407-f7e83732cdfb.png",
         "aliases": [],
         "etiquettes": [],
-        "description": "<h3>Complot d'assassinat</h3><p>Déguisée en garde du corps, Emilia Capodegra assassine le noble Pedro Manatello lors des festivités de Los Borrachos, pendant que les Aventuriers tentaient d'intimider le noble pour une supposée tromperie.</p><p>Il s'avèrera que Pedro Manatello était un membre des Rilasciare et travaillait de concert avec une collègue en vue des préparatifs pour rencontrer des membres de la Bravoure de l'Epervier en vue d'une alliance.</p><p>Il semblerait que les espions de <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8626820\">Inquisition</a>&nbsp;sont particulièrement efficaces, et qu'ils aient fini par comprendre ce qu'il se trame.</p><h3>Avis de recherche d'info sur Ochoa</h3><p>Découverte sur un bandit d'une missive indiquant que tout individu disposant d'information sur Ochoa est invitée à se rendre dans la cité Vaticine. Elle est signée de la main d'Emilia Capodegra, Capitaine de l'Inquisition.</p>",
+        "description": "",
         "created": "2025-12-30",
         "updated": "2026-07-07",
         "author": "Guillaume",
@@ -160,7 +160,21 @@ window.JOURNAL_DB = {
         "sexe": "Femme",
         "pronoms": "",
         "statut": "Vivant",
-        "thumb": "journal-images/img-mrawyowd-0.png"
+        "thumb": "journal-images/img-mrawyowd-0.png",
+        "entrees": [
+          {
+            "id": "ent-k1107031",
+            "name": "Complot d'assassinat",
+            "date": "",
+            "html": "<p>Déguisée en garde du corps, Emilia Capodegra assassine le noble Pedro Manatello lors des festivités de Los Borrachos, pendant que les Aventuriers tentaient d'intimider le noble pour une supposée tromperie.</p><p>Il s'avèrera que Pedro Manatello était un membre des Rilasciare et travaillait de concert avec une collègue en vue des préparatifs pour rencontrer des membres de la Bravoure de l'Epervier en vue d'une alliance.</p><p>Il semblerait que les espions de <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8626820\">Inquisition</a> sont particulièrement efficaces, et qu'ils aient fini par comprendre ce qu'il se trame.</p>"
+          },
+          {
+            "id": "ent-k1107019",
+            "name": "Avis de recherche d'info sur Ochoa",
+            "date": "",
+            "html": "<p>Découverte sur un bandit d'une missive indiquant que tout individu disposant d'information sur Ochoa est invitée à se rendre dans la cité Vaticine. Elle est signée de la main d'Emilia Capodegra, Capitaine de l'Inquisition.</p>"
+          }
+        ]
       },
       {
         "id": "per-8743992",
@@ -197,7 +211,7 @@ window.JOURNAL_DB = {
         "image": "journal-images/a0e6b538-4881-4c96-b7ab-28fd5814b270.png",
         "aliases": [],
         "etiquettes": [],
-        "description": "<h3>Première rencontre</h3><p>Lü Ji, vient à la rencontre d'<a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-8743193\">Ochoa De Alcada</a>&nbsp;dont ce-dernier lui avait parlé de le revoir à la taverne <a class=\"j-link\" href=\"journal-article.html?r=lieux&amp;id=lie-8754131\">El Fuego Gentil</a>&nbsp;si elle en avait besoin.</p><p>Elle rencontre d'abord <a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-8743992\">Ingrid</a>&nbsp;qui gardait les lieux, les autres étant partis en Inismore. Elle rencontre le reste des <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8743698\">Aventuriers</a> quelques jours plus tard.</p>",
+        "description": "",
         "created": "2026-01-23",
         "updated": "2026-07-07",
         "author": "Guillaume",
@@ -212,7 +226,15 @@ window.JOURNAL_DB = {
         "sexe": "Femme",
         "pronoms": "",
         "statut": "Vivant",
-        "thumb": "journal-images/img-mrauxjyt-0.png"
+        "thumb": "journal-images/img-mrauxjyt-0.png",
+        "entrees": [
+          {
+            "id": "ent-k1111407",
+            "name": "Première rencontre",
+            "date": "",
+            "html": "<p>Lü Ji, vient à la rencontre d'<a class=\"j-link\" href=\"journal-article.html?r=personnages&id=per-8743193\">Ochoa De Alcada</a> dont ce-dernier lui avait parlé de le revoir à la taverne <a class=\"j-link\" href=\"journal-article.html?r=lieux&id=lie-8754131\">El Fuego Gentil</a> si elle en avait besoin.</p><p>Elle rencontre d'abord <a class=\"j-link\" href=\"journal-article.html?r=personnages&id=per-8743992\">Ingrid</a> qui gardait les lieux, les autres étant partis en Inismore. Elle rencontre le reste des <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8743698\">Aventuriers</a> quelques jours plus tard.</p>"
+          }
+        ]
       },
       {
         "id": "per-8723966",
@@ -226,7 +248,7 @@ window.JOURNAL_DB = {
         "etiquettes": [
           "Sorcier"
         ],
-        "description": "<p><br></p><h3>Rencontre et sauvetage</h3><p>Envoyé par son Dievaï, Marek se rend en Inismore dans le but de rencontrer les Aventuriers et proposer ses services, sans toutefois connaitre lui-même la finalité.</p><p>Il est capturé par des Inquisiteurs agitateurs ayant rameuté une foule. Sur le point d'être pendu, il est sauvé in-extremis par les Aventuriers, Mendoza coupant la corde d'un tir de mousquet pendant que Don Felipe influence la foule à calmer leurs ardeurs.</p>",
+        "description": "<p><br></p>",
         "created": "2026-01-19",
         "updated": "2026-07-07",
         "author": "Guillaume",
@@ -239,7 +261,15 @@ window.JOURNAL_DB = {
         "sexe": "Homme",
         "pronoms": "",
         "statut": "Vivant",
-        "thumb": "journal-images/img-mraxly8b-0.jpg"
+        "thumb": "journal-images/img-mraxly8b-0.jpg",
+        "entrees": [
+          {
+            "id": "ent-k1107079",
+            "name": "Rencontre et sauvetage",
+            "date": "",
+            "html": "<p>Envoyé par son Dievaï, Marek se rend en Inismore dans le but de rencontrer les Aventuriers et proposer ses services, sans toutefois connaitre lui-même la finalité.</p><p>Il est capturé par des Inquisiteurs agitateurs ayant rameuté une foule. Sur le point d'être pendu, il est sauvé in-extremis par les Aventuriers, Mendoza coupant la corde d'un tir de mousquet pendant que Don Felipe influence la foule à calmer leurs ardeurs.</p>"
+          }
+        ]
       },
       {
         "id": "per-8743774",
@@ -349,10 +379,18 @@ window.JOURNAL_DB = {
         "image": "journal-images/a0ea87e0-9912-4beb-bbaa-9d39943c1102.png",
         "aliases": [],
         "etiquettes": [],
-        "description": "<p>Cette auberge était visiblement la propriété de <a class=\"j-link\" href=\"journal-article.html?r=personnages&id=per-8743193\">Ochoa De Alcada</a>, qu'il a confié aux <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8743698\">Aventuriers</a>.</p><p>Elle est située au nord de Tarago, en <a class=\"j-link\" href=\"journal-article.html?r=nations&id=nat-8743332\">Castille</a>, à une centaine de kilomètres.</p><p>En raison de sa proximité avec les frontières de la Montaigne et l'Eisen contre qui la Castille a été en guerre ces dernières décennies, elle a été maintes fois saccagée et laissée à l'abandon depuis des années.</p><h3>Début de rénovations</h3><p>Lü Ji prend l'initiative d'engager un maçon pour rénover la façade de l'auberge et les cloisons qui comportent de nombreux trous.</p>",
+        "description": "<p>Cette auberge était visiblement la propriété de <a class=\"j-link\" href=\"journal-article.html?r=personnages&id=per-8743193\">Ochoa De Alcada</a>, qu'il a confié aux <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8743698\">Aventuriers</a>.</p><p>Elle est située au nord de Tarago, en <a class=\"j-link\" href=\"journal-article.html?r=nations&id=nat-8743332\">Castille</a>, à une centaine de kilomètres.</p><p>En raison de sa proximité avec les frontières de la Montaigne et l'Eisen contre qui la Castille a été en guerre ces dernières décennies, elle a été maintes fois saccagée et laissée à l'abandon depuis des années.</p>",
         "created": "2026-01-24",
         "updated": "2026-01-25",
-        "author": "Guillaume"
+        "author": "Guillaume",
+        "entrees": [
+          {
+            "id": "ent-k1111403",
+            "name": "Début de rénovations",
+            "date": "",
+            "html": "<p>Lü Ji prend l'initiative d'engager un maçon pour rénover la façade de l'auberge et les cloisons qui comportent de nombreux trous.</p>"
+          }
+        ]
       },
       {
         "id": "lie-8723920",
@@ -509,10 +547,18 @@ window.JOURNAL_DB = {
         "image": "journal-images/a0e6c59b-9341-440a-a419-1bc1ecf3573a.jpg",
         "aliases": [],
         "etiquettes": [],
-        "description": "<p>La Bravoure de l'Épervier est une organisation secrète montaginoise, partageant les mêmes objectifs que les <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8744026\">Rilasciare</a> , qui est donc du fait devenu une des nombreuse cellules indépendante de ce mouvement.</p><h3>Contact avec les Rilasciare</h3><p>Le noble castillan <span>Pedro Manatello initie une rencontre entre les </span><a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8744026\">Rilasciare</a> et les montaginois de <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8744061\">La Bravoure de l'Épervier</a>, en vue d'unifier les efforts de leur lutte contre les oppresseurs nobles et de l'Eglise des deux pays.</p><p>Il est assassiné par <a class=\"j-link\" href=\"journal-article.html?r=personnages&id=per-8620898\">Emilia Capodegra</a>, visiblement envoyée par l'<a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8626820\">Inquisition</a>. Elle profite de l'intervention des <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8743698\">Aventuriers</a> envoyés par sa femme intimider Pedro sur une supposée tromperie, alors qu'il discutait préparatifs avec une membre des Rilasciare.</p><p>Les deux entités arrivent malgré tout à faire leur rencontre en bordure de la ville de <a class=\"j-link\" href=\"journal-article.html?r=lieux&id=lie-8723920\">San Felipe</a> .</p>",
+        "description": "<p>La Bravoure de l'Épervier est une organisation secrète montaginoise, partageant les mêmes objectifs que les <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8744026\">Rilasciare</a> , qui est donc du fait devenu une des nombreuse cellules indépendante de ce mouvement.</p>",
         "created": "2026-01-23",
         "updated": "2026-01-23",
-        "author": "Guillaume"
+        "author": "Guillaume",
+        "entrees": [
+          {
+            "id": "ent-k1110022",
+            "name": "Contact avec les Rilasciare",
+            "date": "",
+            "html": "<p>Le noble castillan <span>Pedro Manatello initie une rencontre entre les </span><a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8744026\">Rilasciare</a> et les montaginois de <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8744061\">La Bravoure de l'Épervier</a>, en vue d'unifier les efforts de leur lutte contre les oppresseurs nobles et de l'Eglise des deux pays.</p><p>Il est assassiné par <a class=\"j-link\" href=\"journal-article.html?r=personnages&id=per-8620898\">Emilia Capodegra</a>, visiblement envoyée par l'<a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8626820\">Inquisition</a>. Elle profite de l'intervention des <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8743698\">Aventuriers</a> envoyés par sa femme intimider Pedro sur une supposée tromperie, alors qu'il discutait préparatifs avec une membre des Rilasciare.</p><p>Les deux entités arrivent malgré tout à faire leur rencontre en bordure de la ville de <a class=\"j-link\" href=\"journal-article.html?r=lieux&id=lie-8723920\">San Felipe</a> .</p>"
+          }
+        ]
       },
       {
         "id": "org-8743269",
@@ -524,10 +570,18 @@ window.JOURNAL_DB = {
         "image": "journal-images/a0e6952a-85f9-422a-a4da-70f23e22ef4d.svg",
         "aliases": [],
         "etiquettes": [],
-        "description": "<p>En Vodacce, les hommes traitent les femmes au <span>mieux comme de beaux objets, au pire comme des </span><span>esclaves. Traditionnellement, les femmes possèdent </span><span>donc très peu d’influence, presque aucune. Les Filles </span><span>de Sophie cherchent apparemment avant tout à rétablir un équilibre.</span></p><h3>Extraction d'une Sorte Strega</h3><p>Rencontre avec un membre de l'organisation <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8743269\">Les Filles de Sophie</a>, accompagné d'une Sorte Strega, lors du départ de la Castille vers l'Inismore. La Sorcière est visiblement en fuite de la Vodacce, où ces femmes sont particulièrement surveillées et emprisonnées dans des cages dorées.</p><p>Le voyage se déroule sans accroc, la Sorcière et son escorte ont juste déclaré se diriger vers Avalon.</p>",
+        "description": "<p>En Vodacce, les hommes traitent les femmes au <span>mieux comme de beaux objets, au pire comme des </span><span>esclaves. Traditionnellement, les femmes possèdent </span><span>donc très peu d’influence, presque aucune. Les Filles </span><span>de Sophie cherchent apparemment avant tout à rétablir un équilibre.</span></p>",
         "created": "2026-01-22",
         "updated": "2026-01-22",
-        "author": "Guillaume"
+        "author": "Guillaume",
+        "entrees": [
+          {
+            "id": "ent-k1109992",
+            "name": "Extraction d'une Sorte Strega",
+            "date": "",
+            "html": "<p>Rencontre avec un membre de l'organisation <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8743269\">Les Filles de Sophie</a>, accompagné d'une Sorte Strega, lors du départ de la Castille vers l'Inismore. La Sorcière est visiblement en fuite de la Vodacce, où ces femmes sont particulièrement surveillées et emprisonnées dans des cages dorées.</p><p>Le voyage se déroule sans accroc, la Sorcière et son escorte ont juste déclaré se diriger vers Avalon.</p>"
+          }
+        ]
       },
       {
         "id": "org-8744026",

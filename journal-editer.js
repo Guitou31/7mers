@@ -37,15 +37,20 @@
     var val = existing ? existing[f.key] : (f.default || "");
     if (f.type === "textarea-rich") {
       var wrap = el("div", "j-rich");
-      wrap.appendChild(buildToolbar());
       editorEl = el("div", "j-rich-area");
       editorEl.contentEditable = "true";
       editorEl.setAttribute("role", "textbox");
       editorEl.setAttribute("aria-multiline", "true");
       editorEl.innerHTML = (existing && existing.description) || "";
+      wrap.appendChild(buildToolbar(editorEl));
       wrap.appendChild(editorEl);
       wrap.appendChild(el("div", "j-rich-hint", "Astuce : tape <strong>@</strong> puis un nom pour lier un autre article (personnage, nation, organisation…)."));
       return wrap;
+    }
+    if (f.type === "entrees") {
+      var ec = buildEntreesControl(Array.isArray(val) ? val : []);
+      inputs[f.key] = ec;
+      return ec;
     }
     if (f.type === "membres") {
       var mc = buildMembersControl(Array.isArray(val) ? val : []);
@@ -73,6 +78,89 @@
     inp.value = val || "";
     inputs[f.key] = inp;
     return inp;
+  }
+
+  // --- Entrées datées (historique) : chaque entrée a un titre, une date
+  // libre (ex. « 26 Mars, 1667 ») et son propre éditeur riche (@ compris). ---
+  function buildEntreesControl(list) {
+    var root = el("div", "j-entrees");
+    var rows = el("div", "j-entrees-rows");
+    root.appendChild(rows);
+
+    function addRow(en) {
+      en = en || {};
+      var row = el("div", "j-entree-edit");
+      if (en.id) row.setAttribute("data-id", en.id);
+
+      var head = el("div", "j-entree-edit-head");
+      var name = el("input", "j-input e-name");
+      name.type = "text"; name.placeholder = "Titre de l'entrée";
+      name.value = en.name || "";
+      var date = el("input", "j-input e-date");
+      date.type = "text"; date.placeholder = "Date (ex. 26 Mars, 1667)";
+      date.value = en.date || "";
+      var up = el("button", "j-membre-del", "↑"); up.type = "button"; up.title = "Monter";
+      var down = el("button", "j-membre-del", "↓"); down.type = "button"; down.title = "Descendre";
+      var del = el("button", "j-membre-del", "✕"); del.type = "button"; del.title = "Supprimer l'entrée";
+      up.addEventListener("click", function () {
+        var prev = row.previousElementSibling;
+        if (prev) rows.insertBefore(row, prev);
+      });
+      down.addEventListener("click", function () {
+        var next = row.nextElementSibling;
+        if (next) rows.insertBefore(next, row);
+      });
+      del.addEventListener("click", function () {
+        if (confirm("Supprimer cette entrée ?")) row.remove();
+      });
+      head.appendChild(name); head.appendChild(date);
+      head.appendChild(up); head.appendChild(down); head.appendChild(del);
+
+      var rich = el("div", "j-rich");
+      var area = el("div", "j-rich-area e-body");
+      area.contentEditable = "true";
+      area.setAttribute("role", "textbox");
+      area.setAttribute("aria-multiline", "true");
+      area.innerHTML = en.html || "";
+      rich.appendChild(buildToolbar(area));
+      rich.appendChild(area);
+      wireMentions(area);
+
+      row.appendChild(head);
+      row.appendChild(rich);
+      rows.appendChild(row);
+      return row;
+    }
+
+    (list || []).forEach(addRow);
+    var add = el("button", "j-btn-ghost", "+ Ajouter une entrée");
+    add.type = "button";
+    add.addEventListener("click", function () {
+      var row = addRow();
+      row.querySelector(".e-name").focus();
+    });
+    root.appendChild(add);
+
+    root.readEntrees = function () {
+      var out = [];
+      Array.prototype.forEach.call(rows.querySelectorAll(".j-entree-edit"), function (row) {
+        var nm = row.querySelector(".e-name").value.trim();
+        var clone = row.querySelector(".e-body").cloneNode(true);
+        Array.prototype.forEach.call(clone.querySelectorAll("[contenteditable]"), function (n) {
+          n.removeAttribute("contenteditable");
+        });
+        var html = clone.innerHTML.trim();
+        if (!nm && !Core.htmlToText(html)) return;   // entrée vide : ignorée
+        out.push({
+          id: row.getAttribute("data-id") || ("ent-" + Date.now().toString(36) + "-" + out.length),
+          name: nm,
+          date: row.querySelector(".e-date").value.trim(),
+          html: html
+        });
+      });
+      return out;
+    };
+    return root;
   }
 
   // --- Membres d'une organisation : lignes nom + rôle. Le nom propose les
@@ -435,8 +523,8 @@
     if (editorEl) wireMentions(editorEl);
   }
 
-  // --- Barre d'outils de l'éditeur riche ---
-  function buildToolbar() {
+  // --- Barre d'outils de l'éditeur riche (liée à un éditeur donné) ---
+  function buildToolbar(ed) {
     var tools = [
       { cmd: "bold", label: "G", title: "Gras", style: "font-weight:700" },
       { cmd: "italic", label: "I", title: "Italique", style: "font-style:italic" },
@@ -455,7 +543,7 @@
       if (t.style) b.setAttribute("style", t.style);
       b.addEventListener("mousedown", function (e) { e.preventDefault(); }); // garde la sélection
       b.addEventListener("click", function () {
-        editorEl.focus();
+        ed.focus();
         if (t.block) document.execCommand("formatBlock", false, t.block);
         else if (t.link) { var u = prompt("URL du lien :", "https://"); if (u) document.execCommand("createLink", false, u); }
         else document.execCommand(t.cmd, false, null);
@@ -587,6 +675,7 @@
     art.rubrique = R;
     fields.forEach(function (f) {
       if (f.type === "textarea-rich") art[f.key] = getEditorHtml();
+      else if (f.type === "entrees") art[f.key] = inputs[f.key].readEntrees();
       else if (f.type === "membres") art[f.key] = inputs[f.key].readMembers();
       else if (f.type === "tags") art[f.key] = splitTags(inputs[f.key].value);
       else art[f.key] = (inputs[f.key].value || "").trim();
@@ -767,7 +856,7 @@
       if (head) head.innerHTML = "<div class='ph-text'><h1>Rubrique inconnue</h1></div>";
       return;
     }
-    var navLink = document.querySelector('.j-item[href="journal-' + R + '.html"]');
+    var navLink = document.querySelector('.j-item[data-sec="journal-' + R + '"]');
     if (navLink) navLink.classList.add("is-current");
     if (head) {
       head.innerHTML =

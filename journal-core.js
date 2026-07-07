@@ -66,6 +66,7 @@
     { key: "type", label: "Type", type: "text", half: true, placeholder: "PNJ, Lieu, Autre…" },
     { key: "title", label: "Titre", type: "text", half: true, placeholder: "Titre" },
     { key: "description", label: "Description", type: "textarea-rich" },
+    { key: "entrees", label: "Entrées (historique)", type: "entrees" },
     { key: "etiquettes", label: "Étiquettes", type: "tags", placeholder: "espion, noble, …" }
   ];
   var FIELDS = {
@@ -77,6 +78,7 @@
       { key: "lieux", label: "Lieux", type: "tags", half: true, placeholder: "Écrire, séparé par des virgules" },
       { key: "nations", label: "Nations", type: "tags", half: true, placeholder: "Écrire, séparé par des virgules" },
       { key: "description", label: "Description", type: "textarea-rich" },
+      { key: "entrees", label: "Entrées (historique)", type: "entrees" },
       { key: "age", label: "Âge", type: "text", half: true, placeholder: "Âge" },
       { key: "statut", label: "Statut", type: "select", half: true, options: STATUT_OPTS, default: "Vivant" },
       { key: "sexe", label: "Sexe", type: "text", half: true, placeholder: "Sexe" },
@@ -89,6 +91,7 @@
       { key: "title", label: "Titre", type: "text", half: true, placeholder: "Titre" },
       { key: "lieux", label: "Lieux", type: "tags", half: true, placeholder: "Écrire, séparé par des virgules" },
       { key: "description", label: "Description", type: "textarea-rich" },
+      { key: "entrees", label: "Entrées (historique)", type: "entrees" },
       { key: "membres", label: "Membres", type: "membres" },
       { key: "etiquettes", label: "Étiquettes", type: "tags", placeholder: "Écrire, séparé par des virgules" }
     ],
@@ -98,6 +101,7 @@
       { key: "type", label: "Type", type: "text", half: true, placeholder: "Principale, Secondaire…" },
       { key: "title", label: "Titre", type: "text", half: true, placeholder: "Titre" },
       { key: "description", label: "Description", type: "textarea-rich" },
+      { key: "entrees", label: "Entrées (historique)", type: "entrees" },
       { key: "etiquettes", label: "Étiquettes", type: "tags", placeholder: "Écrire, séparé par des virgules" }
     ]
   };

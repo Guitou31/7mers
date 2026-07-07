@@ -129,7 +129,14 @@
     function addItem(s) {
       var a = el("a", "j-item" + (s.id === cur ? " is-current" : ""));
       a.href = s.file;
+      // Calendriers : s'il n'y a qu'un seul calendrier, mener directement
+      // à sa fiche plutôt qu'à une liste d'un seul élément.
+      if (s.id === "journal-calendriers" && window.JournalCore) {
+        var cals = window.JournalCore.articlesOf("calendriers");
+        if (cals.length === 1) a.href = window.JournalCore.articleUrl("calendriers", cals[0].id);
+      }
       a.setAttribute("data-category", s.category || "top");
+      a.setAttribute("data-sec", s.id);
       if (s.id === cur) a.setAttribute("aria-current", "page");
       a.innerHTML = iconHtml(s.icon) + "<span>" + s.label + "</span>";
       nav.appendChild(a);
