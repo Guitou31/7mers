@@ -84,14 +84,23 @@
     // l'ordre défini à l'édition. Les liens @ y sont résolus aussi.
     var entreesHtml = "";
     if (Array.isArray(art.entrees) && art.entrees.length) {
+      var calArt = (Core.articlesOf("calendriers") || [])[0];
       var wrapE = document.createElement("div");
       art.entrees.forEach(function (en) {
         var box = document.createElement("div");
         box.className = "j-entree";
+        if (en.id) box.id = en.id;   // ancre pour les liens depuis le calendrier
+        var dateTxt = en.date || (en.cal ? Core.calFormat(en.cal) : "");
+        var dateHtml = "";
+        if (dateTxt) {
+          dateHtml = (en.cal && calArt)
+            ? "<a class='j-entree-date' href='" + Core.articleUrl("calendriers", calArt.id) +
+              "&y=" + (+en.cal.y) + "&m=" + (+en.cal.m) + "'>" + Core.esc(dateTxt) + "</a>"
+            : "<span class='j-entree-date'>" + Core.esc(dateTxt) + "</span>";
+        }
         box.innerHTML = "<div class='j-entree-head'>" +
           "<span class='j-entree-title'>" + Core.esc(en.name || "Entrée") + "</span>" +
-          (en.date ? "<span class='j-entree-date'>" + Core.esc(en.date) + "</span>" : "") +
-          "</div>";
+          dateHtml + "</div>";
         var body = document.createElement("div");
         body.className = "j-desc";
         Core.renderDescription(body, en.html, id);
@@ -123,7 +132,15 @@
         }).join("") + "</div>";
     }
 
-    main.innerHTML = actions + hero + info + descHtml + entreesHtml + membersHtml;
+    // Calendrier : vue mensuelle interactive après la description.
+    var calMountHtml = (r === "calendriers" && Core.renderCalendar)
+      ? "<div class='j-cal-wrap' id='cal-mount'></div>" : "";
+
+    main.innerHTML = actions + hero + info + descHtml + calMountHtml + entreesHtml + membersHtml;
+
+    if (r === "calendriers" && Core.renderCalendar) {
+      Core.renderCalendar(document.getElementById("cal-mount"), qs("y"), qs("m"));
+    }
   }
 
   if (document.readyState === "loading") {

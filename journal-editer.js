@@ -116,6 +116,61 @@
       head.appendChild(name); head.appendChild(date);
       head.appendChild(up); head.appendChild(down); head.appendChild(del);
 
+      // Liaison au calendrier Théan : la date structurée place l'entrée
+      // sur le calendrier interactif (le texte de date reste libre).
+      var cal = (en.cal && en.cal.y && en.cal.m && en.cal.d)
+        ? { y: +en.cal.y, m: +en.cal.m, d: +en.cal.d } : null;
+      var calRow = el("div", "j-entree-calrow");
+      var calBtn = el("button", "j-btn-ghost e-callink", "");
+      calBtn.type = "button";
+      function calLabel() {
+        calBtn.textContent = cal ? "🗓 " + Core.calFormat(cal) : "🗓 Lier au calendrier";
+      }
+      calLabel();
+      var panel = el("div", "j-entree-calpanel");
+      panel.style.display = "none";
+      var selY = el("input", "j-input"); selY.type = "number";
+      selY.min = Core.CAL.minYear; selY.style.maxWidth = "90px"; selY.title = "Année";
+      var selM = el("select", "j-input"); selM.title = "Mois";
+      Core.CAL.months.forEach(function (mm, i) {
+        var o = el("option", null, mm[0]); o.value = i + 1; selM.appendChild(o);
+      });
+      var selD = el("select", "j-input"); selD.title = "Jour";
+      function rebuildDays() {
+        var len = Core.CAL.months[(+selM.value || 1) - 1][1];
+        var cur = +selD.value || 1;
+        selD.innerHTML = "";
+        for (var dd = 1; dd <= len; dd++) {
+          var o = el("option", null, String(dd)); o.value = dd; selD.appendChild(o);
+        }
+        selD.value = Math.min(cur, len);
+      }
+      selM.addEventListener("change", rebuildDays);
+      var ok = el("button", "j-btn-add", "OK"); ok.type = "button";
+      var clr = el("button", "j-btn-ghost", "Retirer la date"); clr.type = "button";
+      panel.appendChild(selY); panel.appendChild(selM); panel.appendChild(selD);
+      panel.appendChild(ok); panel.appendChild(clr);
+      calBtn.addEventListener("click", function () {
+        var show = panel.style.display === "none";
+        if (show) {
+          selY.value = cal ? cal.y : Core.CAL.current.y;
+          selM.value = cal ? cal.m : Core.CAL.current.m;
+          rebuildDays();
+          selD.value = cal ? cal.d : Core.CAL.current.d;
+        }
+        panel.style.display = show ? "flex" : "none";
+      });
+      ok.addEventListener("click", function () {
+        cal = { y: +selY.value || Core.CAL.current.y, m: +selM.value || 1, d: +selD.value || 1 };
+        date.value = Core.calFormat(cal);   // texte de date auto-rempli (modifiable)
+        calLabel(); panel.style.display = "none";
+      });
+      clr.addEventListener("click", function () {
+        cal = null; calLabel(); panel.style.display = "none";
+      });
+      calRow.appendChild(calBtn); calRow.appendChild(panel);
+      row._getCal = function () { return cal; };
+
       var rich = el("div", "j-rich");
       var area = el("div", "j-rich-area e-body");
       area.contentEditable = "true";
@@ -127,6 +182,7 @@
       wireMentions(area);
 
       row.appendChild(head);
+      row.appendChild(calRow);
       row.appendChild(rich);
       rows.appendChild(row);
       return row;
@@ -155,6 +211,7 @@
           id: row.getAttribute("data-id") || ("ent-" + Date.now().toString(36) + "-" + out.length),
           name: nm,
           date: row.querySelector(".e-date").value.trim(),
+          cal: (row._getCal && row._getCal()) || null,
           html: html
         });
       });

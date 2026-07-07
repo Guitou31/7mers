@@ -453,6 +453,113 @@
     return true;
   }
 
+  // --- Calendrier Théan (structure reprise du calendrier Kanka) ---
+  // 358 jours/an : Janvier 30, Février 28, puis 30 pour tous les autres.
+  // Ancrage vérifié : le 1er Janvier 1667 est un Mardi.
+  var CAL = {
+    months: [["Janvier", 30], ["Février", 28], ["Mars", 30], ["Avril", 30], ["Mai", 30], ["Juin", 30],
+             ["Juillet", 30], ["Août", 30], ["Septembre", 30], ["Octobre", 30], ["Novembre", 30], ["Décembre", 30]],
+    weekdays: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+    minYear: 1667,                       // le calendrier commence en Janvier 1667
+    anchor: { y: 1667, m: 1, wd: 1 },    // 1er Janvier 1667 = Mardi (index 1)
+    current: { y: 1667, m: 4, d: 10 }    // date « actuelle » de la campagne
+  };
+  var CAL_YEAR_DAYS = CAL.months.reduce(function (s, m) { return s + m[1]; }, 0);
+
+  function calDaysFromAnchor(y, m, d) {
+    var days = (y - CAL.anchor.y) * CAL_YEAR_DAYS;
+    for (var i = 0; i < m - 1; i++) days += CAL.months[i][1];
+    return days + (d - 1);
+  }
+  function calWeekday(y, m, d) {
+    var wd = (CAL.anchor.wd + calDaysFromAnchor(y, m, d)) % 7;
+    return (wd + 7) % 7;
+  }
+  function calFormat(c) {
+    if (!c || !c.m) return "";
+    return c.d + " " + CAL.months[c.m - 1][0] + ", " + c.y;
+  }
+
+  // Tous les événements liés au calendrier : les entrées (historique) de
+  // n'importe quel article qui portent une date structurée `cal {y,m,d}`.
+  function calEvents() {
+    var out = [];
+    var arts = db().articles || {};
+    Object.keys(arts).forEach(function (r) {
+      (arts[r] || []).forEach(function (a) {
+        (a.entrees || []).forEach(function (en) {
+          if (en.cal && en.cal.y && en.cal.m && en.cal.d) {
+            out.push({ y: +en.cal.y, m: +en.cal.m, d: +en.cal.d, name: en.name || "Entrée",
+                       rubrique: r, artId: a.id, artName: a.name, enId: en.id || "" });
+          }
+        });
+      });
+    });
+    return out;
+  }
+
+  // Vue mensuelle interactive (navigation mois/année, événements cliquables).
+  function renderCalendar(mount, viewY, viewM) {
+    var y = +viewY || CAL.current.y, m = +viewM || CAL.current.m;
+    if (y < CAL.minYear) { y = CAL.minYear; m = 1; }
+    var events = calEvents();
+
+    function nav(dy, dm) {
+      var ny = y + dy, nm = m + dm;
+      if (nm < 1) { nm = 12; ny--; }
+      if (nm > 12) { nm = 1; ny++; }
+      if (ny < CAL.minYear || (ny === CAL.minYear && nm < 1)) { ny = CAL.minYear; nm = Math.max(1, nm); }
+      if (ny < CAL.minYear) { ny = CAL.minYear; nm = 1; }
+      renderCalendar(mount, ny, nm);
+    }
+
+    var len = CAL.months[m - 1][1];
+    var first = calWeekday(y, m, 1);
+    var html = "<div class='j-cal-nav'>" +
+      "<button class='j-chip' data-nav='today' type='button'>Aujourd'hui</button>" +
+      "<span class='j-cal-navgrp'><button class='j-chip' data-nav='pm' type='button' aria-label='Mois précédent'>‹</button>" +
+      "<strong class='j-cal-title'>" + esc(CAL.months[m - 1][0]) + " " + y + "</strong>" +
+      "<button class='j-chip' data-nav='nm' type='button' aria-label='Mois suivant'>›</button></span>" +
+      "<span class='j-cal-navgrp'><button class='j-chip' data-nav='py' type='button' aria-label='Année précédente'>«</button>" +
+      "<span class='j-cal-year'>" + y + "</span>" +
+      "<button class='j-chip' data-nav='ny' type='button' aria-label='Année suivante'>»</button></span>" +
+      "</div><div class='j-cal-scroll'><table class='j-cal'><thead><tr>" +
+      CAL.weekdays.map(function (w) { return "<th>" + w + "</th>"; }).join("") +
+      "</tr></thead><tbody>";
+
+    var day = 1;
+    while (day <= len) {
+      html += "<tr>";
+      for (var c = 0; c < 7; c++) {
+        if ((day === 1 && c < first) || day > len) { html += "<td class='j-cal-empty'></td>"; continue; }
+        var isToday = (y === CAL.current.y && m === CAL.current.m && day === CAL.current.d);
+        var evHtml = "";
+        for (var k = 0; k < events.length; k++) {
+          var e = events[k];
+          if (e.y === y && e.m === m && e.d === day) {
+            evHtml += "<a class='j-cal-ev' href='" + articleUrl(e.rubrique, e.artId) +
+              (e.enId ? "#" + esc(e.enId) : "") + "' title='" + esc(e.name + " — " + e.artName) + "'>" +
+              esc(e.name) + "</a>";
+          }
+        }
+        html += "<td class='j-cal-day" + (isToday ? " is-today" : "") + "'>" +
+          "<span class='j-cal-num'>" + day + "</span>" + evHtml + "</td>";
+        day++;
+      }
+      html += "</tr>";
+    }
+    html += "</tbody></table></div>";
+    mount.innerHTML = html;
+
+    mount.querySelector("[data-nav='pm']").addEventListener("click", function () { nav(0, -1); });
+    mount.querySelector("[data-nav='nm']").addEventListener("click", function () { nav(0, 1); });
+    mount.querySelector("[data-nav='py']").addEventListener("click", function () { nav(-1, 0); });
+    mount.querySelector("[data-nav='ny']").addEventListener("click", function () { nav(1, 0); });
+    mount.querySelector("[data-nav='today']").addEventListener("click", function () {
+      renderCalendar(mount, CAL.current.y, CAL.current.m);
+    });
+  }
+
   // Quêtes : en cours mises en avant en haut, terminées séparées plus bas,
   // avec un filtre (Toutes / En cours / Terminées).
   function isQueteDone(a) { return /^(termin|fini|complet|accompli|reussi|echou)/.test((a.statut || "").toLowerCase()); }
@@ -515,6 +622,9 @@
     renderNations: renderNations,
     renderQuetes: renderQuetes,
     renderPersonnages: renderPersonnages,
+    CAL: CAL,
+    calFormat: calFormat,
+    renderCalendar: renderCalendar,
     continentOf: continentOf,
     CONTINENTS: CONTINENTS,
     isRubrique: function (id) { return !!RUBRIQUES[id]; }

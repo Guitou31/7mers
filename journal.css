@@ -298,6 +298,36 @@
 .j-article-hero { margin-bottom: 1.3rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--border-soft); max-width: 520px; background: var(--bg-card); }
 .j-article-hero img { display: block; width: auto; height: auto; max-width: 100%; max-height: 520px; margin: 0 auto; }
 
+/* Calendrier interactif */
+.j-cal-wrap { margin: 1.4rem 0; }
+.j-cal-nav { display: flex; align-items: center; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 0.7rem; }
+.j-cal-navgrp { display: flex; align-items: center; gap: 0.35rem; }
+.j-cal-title { color: var(--accent); font-size: 1.15rem; min-width: 150px; text-align: center; }
+.j-cal-year { color: var(--ink-mute); font-weight: 700; }
+.j-cal-scroll { overflow-x: auto; }
+.j-cal { width: 100%; min-width: 640px; border-collapse: collapse; background: var(--bg-card); border: 1px solid var(--border); }
+.j-cal th {
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-mute);
+  padding: 0.45rem 0.4rem; border-bottom: 1px solid var(--border); background: var(--bg-elevated);
+}
+.j-cal td { vertical-align: top; border: 1px solid var(--border-soft); width: 14.28%; height: 74px; padding: 0.25rem 0.3rem; }
+.j-cal-empty { background: var(--bg); }
+.j-cal-num { font-size: 0.78rem; font-weight: 700; color: var(--ink-mute); display: block; margin-bottom: 2px; }
+.j-cal-day.is-today { box-shadow: inset 0 0 0 2px var(--accent); }
+.j-cal-day.is-today .j-cal-num { color: var(--accent); }
+.j-cal-ev {
+  display: block; font-size: 0.72rem; line-height: 1.3; background: var(--accent); color: #fff;
+  border-radius: 4px; padding: 1px 5px; margin-bottom: 2px; text-decoration: none;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.j-cal-ev:hover { background: #743030; }
+
+/* Liaison d'une entrée au calendrier — éditeur */
+.j-entree-calrow { margin-bottom: 0.5rem; display: flex; flex-direction: column; gap: 0.4rem; align-items: flex-start; }
+.j-entree-calpanel { display: flex; gap: 0.45rem; align-items: center; flex-wrap: wrap; }
+.j-entree-calpanel .j-input { width: auto; }
+.e-callink { font-size: 0.82rem; }
+
 /* Entrées datées (historique) — fiche */
 .j-entrees-view { margin-top: 1.7rem; }
 .j-entree {
