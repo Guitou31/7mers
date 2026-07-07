@@ -165,13 +165,23 @@ window.JOURNAL_DB = {
           {
             "id": "ent-k1107031",
             "name": "Complot d'assassinat",
-            "date": "",
-            "html": "<p>Déguisée en garde du corps, Emilia Capodegra assassine le noble Pedro Manatello lors des festivités de Los Borrachos, pendant que les Aventuriers tentaient d'intimider le noble pour une supposée tromperie.</p><p>Il s'avèrera que Pedro Manatello était un membre des Rilasciare et travaillait de concert avec une collègue en vue des préparatifs pour rencontrer des membres de la Bravoure de l'Epervier en vue d'une alliance.</p><p>Il semblerait que les espions de <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8626820\">Inquisition</a> sont particulièrement efficaces, et qu'ils aient fini par comprendre ce qu'il se trame.</p>"
+            "date": "26 Avril, 1667",
+            "cal": {
+              "y": 1667,
+              "m": 4,
+              "d": 26
+            },
+            "html": "<p>Déguisée en garde du corps, Emilia Capodegra assassine le noble Pedro Manatello lors des festivités de Los Borrachos, pendant que les Aventuriers tentaient d'intimider le noble pour une supposée tromperie.</p><p>Il s'avèrera que Pedro Manatello était un membre des Rilasciare et travaillait de concert avec une collègue en vue des préparatifs pour rencontrer des membres de la Bravoure de l'Epervier en vue d'une alliance.</p><p>Il semblerait que les espions de <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8626820\">Inquisition</a>&nbsp;sont particulièrement efficaces, et qu'ils aient fini par comprendre ce qu'il se trame.</p>"
           },
           {
             "id": "ent-k1107019",
-            "name": "Avis de recherche d'info sur Ochoa",
-            "date": "",
+            "name": "Avis de recherche d'Ochoa",
+            "date": "20 Janvier, 1667",
+            "cal": {
+              "y": 1667,
+              "m": 1,
+              "d": 20
+            },
             "html": "<p>Découverte sur un bandit d'une missive indiquant que tout individu disposant d'information sur Ochoa est invitée à se rendre dans la cité Vaticine. Elle est signée de la main d'Emilia Capodegra, Capitaine de l'Inquisition.</p>"
           }
         ]
@@ -231,8 +241,13 @@ window.JOURNAL_DB = {
           {
             "id": "ent-k1111407",
             "name": "Première rencontre",
-            "date": "",
-            "html": "<p>Lü Ji, vient à la rencontre d'<a class=\"j-link\" href=\"journal-article.html?r=personnages&id=per-8743193\">Ochoa De Alcada</a> dont ce-dernier lui avait parlé de le revoir à la taverne <a class=\"j-link\" href=\"journal-article.html?r=lieux&id=lie-8754131\">El Fuego Gentil</a> si elle en avait besoin.</p><p>Elle rencontre d'abord <a class=\"j-link\" href=\"journal-article.html?r=personnages&id=per-8743992\">Ingrid</a> qui gardait les lieux, les autres étant partis en Inismore. Elle rencontre le reste des <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8743698\">Aventuriers</a> quelques jours plus tard.</p>"
+            "date": "20 Mars, 1667",
+            "cal": {
+              "y": 1667,
+              "m": 3,
+              "d": 20
+            },
+            "html": "<p>Lü Ji, vient à la rencontre d'<a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-8743193\">Ochoa De Alcada</a>&nbsp;dont ce-dernier lui avait parlé de le revoir à la taverne <a class=\"j-link\" href=\"journal-article.html?r=lieux&amp;id=lie-8754131\">El Fuego Gentil</a>&nbsp;si elle en avait besoin.</p><p>Elle rencontre d'abord <a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-8743992\">Ingrid</a>&nbsp;qui gardait les lieux, les autres étant partis en Inismore. Elle rencontre le reste des <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8743698\">Aventuriers</a> quelques jours plus tard.</p>"
           }
         ]
       },
@@ -379,15 +394,20 @@ window.JOURNAL_DB = {
         "image": "journal-images/a0ea87e0-9912-4beb-bbaa-9d39943c1102.png",
         "aliases": [],
         "etiquettes": [],
-        "description": "<p>Cette auberge était visiblement la propriété de <a class=\"j-link\" href=\"journal-article.html?r=personnages&id=per-8743193\">Ochoa De Alcada</a>, qu'il a confié aux <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8743698\">Aventuriers</a>.</p><p>Elle est située au nord de Tarago, en <a class=\"j-link\" href=\"journal-article.html?r=nations&id=nat-8743332\">Castille</a>, à une centaine de kilomètres.</p><p>En raison de sa proximité avec les frontières de la Montaigne et l'Eisen contre qui la Castille a été en guerre ces dernières décennies, elle a été maintes fois saccagée et laissée à l'abandon depuis des années.</p>",
+        "description": "<p>Cette auberge était visiblement la propriété de <a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-8743193\">Ochoa De Alcada</a>, qu'il a confié aux <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8743698\">Aventuriers</a>.</p><p>Elle est située au nord de Tarago, en <a class=\"j-link\" href=\"journal-article.html?r=nations&amp;id=nat-8743332\">Castille</a>, à une centaine de kilomètres.</p><p>En raison de sa proximité avec les frontières de la Montaigne et l'Eisen contre qui la Castille a été en guerre ces dernières décennies, elle a été maintes fois saccagée et laissée à l'abandon depuis des années.</p>",
         "created": "2026-01-24",
-        "updated": "2026-01-25",
+        "updated": "2026-07-07",
         "author": "Guillaume",
         "entrees": [
           {
             "id": "ent-k1111403",
             "name": "Début de rénovations",
-            "date": "",
+            "date": "22 Mars, 1667",
+            "cal": {
+              "y": 1667,
+              "m": 3,
+              "d": 22
+            },
             "html": "<p>Lü Ji prend l'initiative d'engager un maçon pour rénover la façade de l'auberge et les cloisons qui comportent de nombreux trous.</p>"
           }
         ]
@@ -570,18 +590,25 @@ window.JOURNAL_DB = {
         "image": "journal-images/a0e6952a-85f9-422a-a4da-70f23e22ef4d.svg",
         "aliases": [],
         "etiquettes": [],
-        "description": "<p>En Vodacce, les hommes traitent les femmes au <span>mieux comme de beaux objets, au pire comme des </span><span>esclaves. Traditionnellement, les femmes possèdent </span><span>donc très peu d’influence, presque aucune. Les Filles </span><span>de Sophie cherchent apparemment avant tout à rétablir un équilibre.</span></p>",
+        "description": "<p>En Vodacce, les hommes traitent les femmes au&nbsp;<span>mieux comme de beaux objets, au pire comme des&nbsp;</span><span>esclaves. Traditionnellement, les femmes possèdent&nbsp;</span><span>donc très peu d’influence, presque aucune. Les Filles&nbsp;</span><span>de Sophie cherchent apparemment avant tout à rétablir un équilibre.</span></p>",
         "created": "2026-01-22",
-        "updated": "2026-01-22",
+        "updated": "2026-07-07",
         "author": "Guillaume",
         "entrees": [
           {
             "id": "ent-k1109992",
             "name": "Extraction d'une Sorte Strega",
-            "date": "",
-            "html": "<p>Rencontre avec un membre de l'organisation <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8743269\">Les Filles de Sophie</a>, accompagné d'une Sorte Strega, lors du départ de la Castille vers l'Inismore. La Sorcière est visiblement en fuite de la Vodacce, où ces femmes sont particulièrement surveillées et emprisonnées dans des cages dorées.</p><p>Le voyage se déroule sans accroc, la Sorcière et son escorte ont juste déclaré se diriger vers Avalon.</p>"
+            "date": "11 Février, 1667",
+            "cal": {
+              "y": 1667,
+              "m": 2,
+              "d": 11
+            },
+            "html": "<p>Rencontre avec un membre de l'organisation <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8743269\">Les Filles de Sophie</a>, accompagné d'une Sorte Strega, lors du départ de la Castille vers l'Inismore. La Sorcière est visiblement en fuite de la Vodacce, où ces femmes sont particulièrement surveillées et emprisonnées dans des cages dorées.</p><p>Le voyage se déroule sans accroc, la Sorcière et son escorte ont juste déclaré se diriger vers Avalon.</p>"
           }
-        ]
+        ],
+        "lieux": [],
+        "membres": []
       },
       {
         "id": "org-8744026",
@@ -593,10 +620,25 @@ window.JOURNAL_DB = {
         "image": "journal-images/a0e6bf48-4715-4afe-b22a-8c2a4e0bbf67.svg",
         "aliases": [],
         "etiquettes": [],
-        "description": "<p>Les Rilasciare, aussi appelés entre eux « Libres Penseurs »,\nforment une des Sociétés les plus clandestines de la Théah. Du fait de\nl’absence d’une réelle structure et d’un vrai dirigeant, c’est aussi la plus\ndésorganisée, la plus chaotique. Mais c’est précisément le but. </p><p>L’organisation fut fondée il y a bien longtemps par un\npersonnage énigmatique connu sous le nom d’« Uppman ». Selon certains, sa\ncréation remonte à l’ancienne République numanari. Selon d’autres, il n’existe\nque depuis une décennie. Les histoires concernant Uppman et ses premiers\ndisciples forment une légende urbaine contradictoire. D’aucuns avancent qu’il aurait\nété le mentor d’El Vagabundo, d’autres qu’il aurait été le mystérieux\nprofesseur qui fonda les Chevaliers de la Rose et de la Croix. Tout cela\npourrait bien n’être qu’un ramassis de rumeurs et de suppositions mais une chose\nest certaine : son Code et ses disciples continuent d’influencer le sort de la\nThéah. </p><p>Les Rilasciare aspirent à mener l’humanité vers un état\nmeilleur, un état d’autodétermination et de liberté : « Ni dieux, ni rois ».\nPour les Rilasciare, la religion et la monarchie sont les « Deux grandes\ntyrannies », toutes deux créées dans l’unique but de permettre à certains de\ncontrôler les autres.  </p>",
+        "description": "<p>Les Rilasciare, aussi appelés entre eux « Libres Penseurs »,\nforment une des Sociétés les plus clandestines de la Théah. Du fait de\nl’absence d’une réelle structure et d’un vrai dirigeant, c’est aussi la plus\ndésorganisée, la plus chaotique. Mais c’est précisément le but. </p><p>L’organisation fut fondée il y a bien longtemps par un\npersonnage énigmatique connu sous le nom d’« Uppman ». Selon certains, sa\ncréation remonte à l’ancienne République numanari. Selon d’autres, il n’existe\nque depuis une décennie. Les histoires concernant Uppman et ses premiers\ndisciples forment une légende urbaine contradictoire. D’aucuns avancent qu’il aurait\nété le mentor d’El Vagabundo, d’autres qu’il aurait été le mystérieux\nprofesseur qui fonda les Chevaliers de la Rose et de la Croix. Tout cela\npourrait bien n’être qu’un ramassis de rumeurs et de suppositions mais une chose\nest certaine : son Code et ses disciples continuent d’influencer le sort de la\nThéah. </p><p>Les Rilasciare aspirent à mener l’humanité vers un état\nmeilleur, un état d’autodétermination et de liberté : « Ni dieux, ni rois ».\nPour les Rilasciare, la religion et la monarchie sont les « Deux grandes\ntyrannies », toutes deux créées dans l’unique but de permettre à certains de\ncontrôler les autres. &nbsp;</p>",
         "created": "2026-01-23",
-        "updated": "2026-01-23",
-        "author": "Guillaume"
+        "updated": "2026-07-07",
+        "author": "Guillaume",
+        "lieux": [],
+        "entrees": [
+          {
+            "id": "ent-mrb2w9ue-0",
+            "name": "Contact avec les Rilasciare",
+            "date": "26 Mars, 1667",
+            "cal": {
+              "y": 1667,
+              "m": 3,
+              "d": 26
+            },
+            "html": "<div>Le noble castillan Pedro Manatello initie une rencontre entre les Rilasciare et les montaginois de <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8744061\">La Bravoure de l'Épervier</a>&nbsp;, en vue d'unifier les efforts de leur lutte contre les oppresseurs nobles et de l'Eglise des deux pays.</div><div><br></div><div>Il est assassiné par <a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-8620898\">Emilia Capodegra</a>&nbsp;, visiblement envoyée par l' <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8626820\">Inquisition</a>&nbsp;. Elle profite de l'intervention des Aventuriers envoyés par sa femme intimider Pedro sur une supposée tromperie, alors qu'il discutait préparatifs avec une membre des Rilasciare.</div><div><br></div><div>Les deux entités arrivent malgré tout à faire leur rencontre en bordure de la ville de <a class=\"j-link\" href=\"journal-article.html?r=lieux&amp;id=lie-8723920\">San Felipe</a>&nbsp;.</div>"
+          }
+        ],
+        "membres": []
       },
       {
         "id": "org-8743239",
@@ -1181,6 +1223,46 @@ window.JOURNAL_DB = {
     ]
   },
   "changes": [
+    {
+      "author": "Guillaume",
+      "action": "modifié",
+      "target": "Les Filles de Sophie",
+      "rubrique": "organisations",
+      "id": "org-8743269",
+      "date": "2026-07-07"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
+      "target": "Rilasciare",
+      "rubrique": "organisations",
+      "id": "org-8744026",
+      "date": "2026-07-07"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
+      "target": "Lü Ji",
+      "rubrique": "personnages",
+      "id": "per-8743715",
+      "date": "2026-07-07"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
+      "target": "El Fuego Gentil",
+      "rubrique": "lieux",
+      "id": "lie-8754131",
+      "date": "2026-07-07"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
+      "target": "Emilia Capodegra",
+      "rubrique": "personnages",
+      "id": "per-8620898",
+      "date": "2026-07-07"
+    },
     {
       "author": "Guillaume",
       "action": "modifié",
@@ -1822,5 +1904,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783446067991
+  "rev": 1783454860302
 };
