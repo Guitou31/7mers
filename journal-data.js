@@ -590,18 +590,25 @@ window.JOURNAL_DB = {
         "image": "journal-images/a0e6952a-85f9-422a-a4da-70f23e22ef4d.svg",
         "aliases": [],
         "etiquettes": [],
-        "description": "<p>En Vodacce, les hommes traitent les femmes au <span>mieux comme de beaux objets, au pire comme des </span><span>esclaves. Traditionnellement, les femmes possèdent </span><span>donc très peu d’influence, presque aucune. Les Filles </span><span>de Sophie cherchent apparemment avant tout à rétablir un équilibre.</span></p>",
+        "description": "<p>En Vodacce, les hommes traitent les femmes au&nbsp;<span>mieux comme de beaux objets, au pire comme des&nbsp;</span><span>esclaves. Traditionnellement, les femmes possèdent&nbsp;</span><span>donc très peu d’influence, presque aucune. Les Filles&nbsp;</span><span>de Sophie cherchent apparemment avant tout à rétablir un équilibre.</span></p>",
         "created": "2026-01-22",
-        "updated": "2026-01-22",
+        "updated": "2026-07-07",
         "author": "Guillaume",
         "entrees": [
           {
             "id": "ent-k1109992",
             "name": "Extraction d'une Sorte Strega",
-            "date": "",
-            "html": "<p>Rencontre avec un membre de l'organisation <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8743269\">Les Filles de Sophie</a>, accompagné d'une Sorte Strega, lors du départ de la Castille vers l'Inismore. La Sorcière est visiblement en fuite de la Vodacce, où ces femmes sont particulièrement surveillées et emprisonnées dans des cages dorées.</p><p>Le voyage se déroule sans accroc, la Sorcière et son escorte ont juste déclaré se diriger vers Avalon.</p>"
+            "date": "11 Février, 1667",
+            "cal": {
+              "y": 1667,
+              "m": 2,
+              "d": 11
+            },
+            "html": "<p>Rencontre avec un membre de l'organisation <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8743269\">Les Filles de Sophie</a>, accompagné d'une Sorte Strega, lors du départ de la Castille vers l'Inismore. La Sorcière est visiblement en fuite de la Vodacce, où ces femmes sont particulièrement surveillées et emprisonnées dans des cages dorées.</p><p>Le voyage se déroule sans accroc, la Sorcière et son escorte ont juste déclaré se diriger vers Avalon.</p>"
           }
-        ]
+        ],
+        "lieux": [],
+        "membres": []
       },
       {
         "id": "org-8744026",
@@ -1216,6 +1223,14 @@ window.JOURNAL_DB = {
     ]
   },
   "changes": [
+    {
+      "author": "Guillaume",
+      "action": "modifié",
+      "target": "Les Filles de Sophie",
+      "rubrique": "organisations",
+      "id": "org-8743269",
+      "date": "2026-07-07"
+    },
     {
       "author": "Guillaume",
       "action": "modifié",
@@ -1889,5 +1904,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783454726960
+  "rev": 1783454860302
 };
