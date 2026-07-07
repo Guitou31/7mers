@@ -278,7 +278,7 @@ window.JOURNAL_DB = {
         "etiquettes": [],
         "description": "<p>Ochoa De Alcada est un membre de la Société des Explorateurs.</p><p>Il a rencontré la plupart des Aventuriers individuellement au cours de ses propres aventures, et les a aidé (ou a reçu leur aide).</p>",
         "created": "2026-01-22",
-        "updated": "2026-07-06",
+        "updated": "2026-07-07",
         "author": "Guillaume",
         "familles": [],
         "nations": [
@@ -288,7 +288,8 @@ window.JOURNAL_DB = {
         "age": "38",
         "sexe": "Homme",
         "pronoms": "",
-        "statut": "Vivant"
+        "statut": "Vivant",
+        "thumb": "journal-images/img-mraxqnce-0.jpg"
       },
       {
         "id": "per-8724232",
@@ -1129,6 +1130,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "Ochoa De Alcada",
+      "rubrique": "personnages",
+      "id": "per-8743193",
+      "date": "2026-07-07"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "Marek Wrobleski",
       "rubrique": "personnages",
       "id": "per-8723966",
@@ -1759,5 +1768,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783445848597
+  "rev": 1783446067991
 };
