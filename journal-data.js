@@ -613,10 +613,25 @@ window.JOURNAL_DB = {
         "image": "journal-images/a0e6bf48-4715-4afe-b22a-8c2a4e0bbf67.svg",
         "aliases": [],
         "etiquettes": [],
-        "description": "<p>Les Rilasciare, aussi appelés entre eux « Libres Penseurs »,\nforment une des Sociétés les plus clandestines de la Théah. Du fait de\nl’absence d’une réelle structure et d’un vrai dirigeant, c’est aussi la plus\ndésorganisée, la plus chaotique. Mais c’est précisément le but. </p><p>L’organisation fut fondée il y a bien longtemps par un\npersonnage énigmatique connu sous le nom d’« Uppman ». Selon certains, sa\ncréation remonte à l’ancienne République numanari. Selon d’autres, il n’existe\nque depuis une décennie. Les histoires concernant Uppman et ses premiers\ndisciples forment une légende urbaine contradictoire. D’aucuns avancent qu’il aurait\nété le mentor d’El Vagabundo, d’autres qu’il aurait été le mystérieux\nprofesseur qui fonda les Chevaliers de la Rose et de la Croix. Tout cela\npourrait bien n’être qu’un ramassis de rumeurs et de suppositions mais une chose\nest certaine : son Code et ses disciples continuent d’influencer le sort de la\nThéah. </p><p>Les Rilasciare aspirent à mener l’humanité vers un état\nmeilleur, un état d’autodétermination et de liberté : « Ni dieux, ni rois ».\nPour les Rilasciare, la religion et la monarchie sont les « Deux grandes\ntyrannies », toutes deux créées dans l’unique but de permettre à certains de\ncontrôler les autres.  </p>",
+        "description": "<p>Les Rilasciare, aussi appelés entre eux « Libres Penseurs »,\nforment une des Sociétés les plus clandestines de la Théah. Du fait de\nl’absence d’une réelle structure et d’un vrai dirigeant, c’est aussi la plus\ndésorganisée, la plus chaotique. Mais c’est précisément le but. </p><p>L’organisation fut fondée il y a bien longtemps par un\npersonnage énigmatique connu sous le nom d’« Uppman ». Selon certains, sa\ncréation remonte à l’ancienne République numanari. Selon d’autres, il n’existe\nque depuis une décennie. Les histoires concernant Uppman et ses premiers\ndisciples forment une légende urbaine contradictoire. D’aucuns avancent qu’il aurait\nété le mentor d’El Vagabundo, d’autres qu’il aurait été le mystérieux\nprofesseur qui fonda les Chevaliers de la Rose et de la Croix. Tout cela\npourrait bien n’être qu’un ramassis de rumeurs et de suppositions mais une chose\nest certaine : son Code et ses disciples continuent d’influencer le sort de la\nThéah. </p><p>Les Rilasciare aspirent à mener l’humanité vers un état\nmeilleur, un état d’autodétermination et de liberté : « Ni dieux, ni rois ».\nPour les Rilasciare, la religion et la monarchie sont les « Deux grandes\ntyrannies », toutes deux créées dans l’unique but de permettre à certains de\ncontrôler les autres. &nbsp;</p>",
         "created": "2026-01-23",
-        "updated": "2026-01-23",
-        "author": "Guillaume"
+        "updated": "2026-07-07",
+        "author": "Guillaume",
+        "lieux": [],
+        "entrees": [
+          {
+            "id": "ent-mrb2w9ue-0",
+            "name": "Contact avec les Rilasciare",
+            "date": "26 Mars, 1667",
+            "cal": {
+              "y": 1667,
+              "m": 3,
+              "d": 26
+            },
+            "html": "<div>Le noble castillan Pedro Manatello initie une rencontre entre les Rilasciare et les montaginois de <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8744061\">La Bravoure de l'Épervier</a>&nbsp;, en vue d'unifier les efforts de leur lutte contre les oppresseurs nobles et de l'Eglise des deux pays.</div><div><br></div><div>Il est assassiné par <a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-8620898\">Emilia Capodegra</a>&nbsp;, visiblement envoyée par l' <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8626820\">Inquisition</a>&nbsp;. Elle profite de l'intervention des Aventuriers envoyés par sa femme intimider Pedro sur une supposée tromperie, alors qu'il discutait préparatifs avec une membre des Rilasciare.</div><div><br></div><div>Les deux entités arrivent malgré tout à faire leur rencontre en bordure de la ville de <a class=\"j-link\" href=\"journal-article.html?r=lieux&amp;id=lie-8723920\">San Felipe</a>&nbsp;.</div>"
+          }
+        ],
+        "membres": []
       },
       {
         "id": "org-8743239",
@@ -1201,6 +1216,14 @@ window.JOURNAL_DB = {
     ]
   },
   "changes": [
+    {
+      "author": "Guillaume",
+      "action": "modifié",
+      "target": "Rilasciare",
+      "rubrique": "organisations",
+      "id": "org-8744026",
+      "date": "2026-07-07"
+    },
     {
       "author": "Guillaume",
       "action": "modifié",
@@ -1866,5 +1889,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783454448633
+  "rev": 1783454726960
 };
