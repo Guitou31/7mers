@@ -38,12 +38,12 @@ window.JOURNAL_DB = {
         "name": "Darmuid",
         "type": "Joueur",
         "title": "",
-        "image": "journal-images/img-mr9m5vyx-0.jpg",
+        "image": "journal-images/img-mrav8dg9-0.jpg",
         "aliases": [],
         "etiquettes": [],
         "description": "",
         "created": "2026-01-23",
-        "updated": "2026-07-06",
+        "updated": "2026-07-07",
         "author": "Guillaume",
         "familles": [],
         "nations": [
@@ -53,7 +53,8 @@ window.JOURNAL_DB = {
         "age": "",
         "sexe": "",
         "pronoms": "",
-        "statut": "Vivant"
+        "statut": "Vivant",
+        "thumb": "journal-images/img-mrav8egp-1.jpg"
       },
       {
         "id": "per-8723888",
@@ -1122,6 +1123,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "Darmuid",
+      "rubrique": "personnages",
+      "id": "per-8743991",
+      "date": "2026-07-07"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "Lü Ji",
       "rubrique": "personnages",
       "id": "per-8743715",
@@ -1696,5 +1705,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783441351250
+  "rev": 1783441857203
 };
