@@ -389,15 +389,20 @@ window.JOURNAL_DB = {
         "image": "journal-images/a0ea87e0-9912-4beb-bbaa-9d39943c1102.png",
         "aliases": [],
         "etiquettes": [],
-        "description": "<p>Cette auberge était visiblement la propriété de <a class=\"j-link\" href=\"journal-article.html?r=personnages&id=per-8743193\">Ochoa De Alcada</a>, qu'il a confié aux <a class=\"j-link\" href=\"journal-article.html?r=organisations&id=org-8743698\">Aventuriers</a>.</p><p>Elle est située au nord de Tarago, en <a class=\"j-link\" href=\"journal-article.html?r=nations&id=nat-8743332\">Castille</a>, à une centaine de kilomètres.</p><p>En raison de sa proximité avec les frontières de la Montaigne et l'Eisen contre qui la Castille a été en guerre ces dernières décennies, elle a été maintes fois saccagée et laissée à l'abandon depuis des années.</p>",
+        "description": "<p>Cette auberge était visiblement la propriété de <a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-8743193\">Ochoa De Alcada</a>, qu'il a confié aux <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8743698\">Aventuriers</a>.</p><p>Elle est située au nord de Tarago, en <a class=\"j-link\" href=\"journal-article.html?r=nations&amp;id=nat-8743332\">Castille</a>, à une centaine de kilomètres.</p><p>En raison de sa proximité avec les frontières de la Montaigne et l'Eisen contre qui la Castille a été en guerre ces dernières décennies, elle a été maintes fois saccagée et laissée à l'abandon depuis des années.</p>",
         "created": "2026-01-24",
-        "updated": "2026-01-25",
+        "updated": "2026-07-07",
         "author": "Guillaume",
         "entrees": [
           {
             "id": "ent-k1111403",
             "name": "Début de rénovations",
-            "date": "",
+            "date": "22 Mars, 1667",
+            "cal": {
+              "y": 1667,
+              "m": 3,
+              "d": 22
+            },
             "html": "<p>Lü Ji prend l'initiative d'engager un maçon pour rénover la façade de l'auberge et les cloisons qui comportent de nombreux trous.</p>"
           }
         ]
@@ -1194,6 +1199,14 @@ window.JOURNAL_DB = {
     {
       "author": "Guillaume",
       "action": "modifié",
+      "target": "El Fuego Gentil",
+      "rubrique": "lieux",
+      "id": "lie-8754131",
+      "date": "2026-07-07"
+    },
+    {
+      "author": "Guillaume",
+      "action": "modifié",
       "target": "Emilia Capodegra",
       "rubrique": "personnages",
       "id": "per-8620898",
@@ -1840,5 +1853,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783453994029
+  "rev": 1783454307238
 };
