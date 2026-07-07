@@ -275,7 +275,7 @@
           return s ? "<div class='j-card-snippet'>" + esc(s) + "</div>" : "";
         })();
     return "<a class='j-card" + (a.image ? " has-thumb" : "") + "' href='" + articleUrl("nations", a.id) + "'>" +
-      (a.image || a.thumb ? "<div class='j-card-thumb'><img src='" + esc(imgSrc(a.thumb || a.image)) + "' alt='' loading='lazy'></div>" : "") +
+      (a.image || a.thumb ? "<div class='j-card-thumb" + (a.thumb ? " is-custom" : "") + "'><img src='" + esc(imgSrc(a.thumb || a.image)) + "' alt='' loading='lazy'></div>" : "") +
       "<div class='j-card-body'><div class='j-card-name'>" + esc(a.name) + "</div>" + body + "</div></a>";
   }
 
@@ -290,7 +290,7 @@
         var overview = idx[normName(c.label)];
         var img = overview && (overview.thumb || overview.image);
         return "<a class='j-card" + (img ? " has-thumb" : "") + "' href='journal-nations.html?continent=" + encodeURIComponent(c.key) + "'>" +
-          (img ? "<div class='j-card-thumb'><img src='" + esc(imgSrc(img)) + "' alt='' loading='lazy'></div>" : "") +
+          (img ? "<div class='j-card-thumb" + (overview.thumb ? " is-custom" : "") + "'><img src='" + esc(imgSrc(img)) + "' alt='' loading='lazy'></div>" : "") +
           "<div class='j-card-body'><div class='j-card-name'>" + esc(c.label) + "</div>" +
           "<div class='j-card-meta'>" + c.nations.length + " nations</div></div></a>";
       }).join("");
@@ -353,7 +353,7 @@
     var snippet = htmlToText(a.description).slice(0, 130);
     var meta2 = [a.type, hideStatut ? "" : a.statut].filter(Boolean).join(" · ");
     return "<a " + (extraAttr ? extraAttr + " " : "") + "class='j-card" + (a.image || a.thumb ? " has-thumb" : "") + "' href='" + articleUrl(r, a.id) + "'>" +
-      (a.image || a.thumb ? "<div class='j-card-thumb'><img src='" + esc(imgSrc(a.thumb || a.image)) + "' alt='' loading='lazy'></div>" : "") +
+      (a.image || a.thumb ? "<div class='j-card-thumb" + (a.thumb ? " is-custom" : "") + "'><img src='" + esc(imgSrc(a.thumb || a.image)) + "' alt='' loading='lazy'></div>" : "") +
       "<div class='j-card-body'>" +
       "<div class='j-card-name'>" + esc(a.name) + "</div>" +
       (meta2 ? "<div class='j-card-meta'>" + esc(meta2) + "</div>" : "") +

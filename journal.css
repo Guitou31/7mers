@@ -224,6 +224,10 @@
 .j-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); border-color: var(--accent-soft); }
 .j-card-thumb { height: 140px; background: var(--border-soft); }
 .j-card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Vignette recadrée par l'utilisateur : la case adopte les proportions exactes
+   du cadrage — on ne re-rogne jamais ce qu'il a choisi. */
+.j-card-thumb.is-custom { height: auto; }
+.j-card-thumb.is-custom img { height: auto; object-fit: fill; }
 .j-card-body { padding: 0.85rem 1rem; }
 .j-card-name { font-weight: 700; color: var(--accent); font-size: 1.02rem; }
 .j-card-meta { font-size: 0.74rem; color: var(--ink-mute); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 0.15rem; }
