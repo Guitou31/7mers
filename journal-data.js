@@ -1142,7 +1142,24 @@ window.JOURNAL_DB = {
           "m": 4,
           "d": 10
         },
-        "entrees": []
+        "entrees": [
+          {
+            "id": "ent-mrgxlb2k-0",
+            "name": "Arrivée en Sarmatie",
+            "date": "23 – 28 Juin, 1667",
+            "cal": {
+              "y": 1667,
+              "m": 6,
+              "d": 23
+            },
+            "cal_fin": {
+              "y": 1667,
+              "m": 6,
+              "d": 28
+            },
+            "html": ""
+          }
+        ]
       }
     ],
     "chronologies": [],
@@ -1363,6 +1380,14 @@ window.JOURNAL_DB = {
     ]
   },
   "changes": [
+    {
+      "author": "Guillaume",
+      "action": "modifié",
+      "target": "Calendrier Thean",
+      "rubrique": "calendriers",
+      "id": "cal-8723665",
+      "date": "2026-07-11"
+    },
     {
       "author": "Guillaume",
       "action": "modifié",
@@ -2124,5 +2149,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783808512128
+  "rev": 1783808614291
 };
