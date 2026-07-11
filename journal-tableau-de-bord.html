@@ -36,7 +36,7 @@
       "use strict";
       var SECTIONS = window.JOURNAL_SECTIONS || [];
       var ico = window.journalIcon || function () { return ""; };
-      var CAT_LABELS = { monde: "Monde", temps: "Temps", jeu: "Jeu" };
+      var CAT_LABELS = { monde: "Monde", temps: "Temps", jeu: "Jeu", commerce: "Commerce" };
 
       // --- Aperçu des derniers changements ---
       var dbChanges = (window.JOURNAL_DB && window.JOURNAL_DB.changes) || [];
@@ -71,7 +71,7 @@
 
       // --- Cartes de rubriques, groupées par catégorie ---
       var host = document.getElementById("dash-rubriques");
-      var cats = ["monde", "temps", "jeu"];
+      var cats = ["monde", "temps", "jeu", "commerce"];
       var html = "";
       cats.forEach(function (cat) {
         var items = SECTIONS.filter(function (s) { return s.category === cat; });

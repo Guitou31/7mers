@@ -30,6 +30,9 @@
     book: "<path d='M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z'/><path d='M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z'/>",
     compass: "<circle cx='12' cy='12' r='10'/><polygon points='16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76'/>",
     box: "<line x1='16.5' y1='9.4' x2='7.5' y2='4.21'/><path d='M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z'/><polyline points='3.27 6.96 12 12.01 20.73 6.96'/><line x1='12' y1='22.08' x2='12' y2='12'/>",
+    tool: "<path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/>",
+    anchor: "<circle cx='12' cy='5' r='3'/><line x1='12' y1='22' x2='12' y2='8'/><path d='M5 12H2a10 10 0 0 0 20 0h-3'/>",
+    route: "<circle cx='6' cy='19' r='3'/><circle cx='18' cy='5' r='3'/><path d='M12 19h4.5a3.5 3.5 0 0 0 0-7h-9a3.5 3.5 0 0 1 0-7H12'/>",
     back: "<line x1='19' y1='12' x2='5' y2='12'/><polyline points='12 19 5 12 12 5'/>"
   };
 
@@ -52,9 +55,13 @@
     { id: "journal-journaux", file: "journal-journaux.html", label: "Journaux", icon: "book", category: "temps", desc: "Récits de séance et journaux de bord." },
 
     { id: "journal-quetes", file: "journal-quetes.html", label: "Quêtes", icon: "compass", category: "jeu", desc: "Intrigues et objectifs en cours." },
-    { id: "journal-objets", file: "journal-objets.html", label: "Objets", icon: "box", category: "jeu", desc: "Objets notables et trésors." }
+    { id: "journal-objets", file: "journal-objets.html", label: "Objets", icon: "box", category: "jeu", desc: "Objets notables et trésors." },
+
+    { id: "journal-services", file: "journal-services.html", label: "Services", icon: "tool", category: "commerce", desc: "Prestations et savoir-faire monnayables." },
+    { id: "journal-flottille", file: "journal-flottille.html", label: "Flottille", icon: "anchor", category: "commerce", desc: "Les navires de la compagnie." },
+    { id: "journal-routes-commerciales", file: "journal-routes-commerciales.html", label: "Routes commerciales", icon: "route", category: "commerce", desc: "Itinéraires marchands et comptoirs." }
   ];
-  var CATEGORY_LABELS = { monde: "Monde", temps: "Temps", jeu: "Jeu" };
+  var CATEGORY_LABELS = { monde: "Monde", temps: "Temps", jeu: "Jeu", commerce: "Commerce" };
 
   // Expose pour les autres scripts (tableau de bord, changements…).
   window.JOURNAL_SECTIONS = SECTIONS;

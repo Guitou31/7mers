@@ -36,6 +36,9 @@ RUBRIQUES = {
     "journal-journaux.html":      ("Journaux",      "temps"),
     "journal-quetes.html":        ("Quêtes",        "jeu"),
     "journal-objets.html":        ("Objets",        "jeu"),
+    "journal-services.html":      ("Services",      "commerce"),
+    "journal-flottille.html":     ("Flottille",     "commerce"),
+    "journal-routes-commerciales.html": ("Routes commerciales", "commerce"),
 }
 
 SEP = "\x00"   # séparateur d'enregistrement

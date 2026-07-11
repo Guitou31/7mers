@@ -1220,7 +1220,10 @@ window.JOURNAL_DB = {
         "updated": "2026-01-19",
         "author": "Guillaume"
       }
-    ]
+    ],
+    "services": [],
+    "flottille": [],
+    "routes-commerciales": []
   },
   "changes": [
     {

@@ -128,7 +128,8 @@
   function emptyDb() {
     return {
       articles: { personnages: [], lieux: [], cartes: [], organisations: [], familles: [],
-        creatures: [], nations: [], calendriers: [], chronologies: [], journaux: [], quetes: [], objets: [] },
+        creatures: [], nations: [], calendriers: [], chronologies: [], journaux: [], quetes: [], objets: [],
+        services: [], flottille: [], "routes-commerciales": [] },
       changes: []
     };
   }

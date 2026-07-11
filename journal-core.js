@@ -55,7 +55,10 @@
     chronologies: { label: "Chronologies",  singular: "chronologie",   icon: "list" },
     journaux:     { label: "Journaux",      singular: "journal",       icon: "book" },
     quetes:       { label: "Quêtes",        singular: "quête",         icon: "compass" },
-    objets:       { label: "Objets",        singular: "objet",         icon: "box" }
+    objets:       { label: "Objets",        singular: "objet",         icon: "box" },
+    services:     { label: "Services",      singular: "service",       icon: "tool" },
+    flottille:    { label: "Flottille",     singular: "navire",        icon: "anchor" },
+    "routes-commerciales": { label: "Routes commerciales", singular: "route commerciale", icon: "route", fem: true }
   };
 
   // Champs du formulaire par rubrique. type : text | textarea-rich | select | tags | number.
@@ -373,9 +376,10 @@
   }
 
   function emptyState(meta) {
+    var un = meta.fem ? "une" : "un";
     return "<div class='j-empty'>" + icon(meta.icon, "j-empty-ico") +
-      "<p>Aucun " + esc(meta.singular) + " pour l'instant.</p>" +
-      "<p class='j-empty-hint'>Clique sur « Ajouter un " + esc(meta.singular) +
+      "<p>Aucun" + (meta.fem ? "e" : "") + " " + esc(meta.singular) + " pour l'instant.</p>" +
+      "<p class='j-empty-hint'>Clique sur « Ajouter " + un + " " + esc(meta.singular) +
       " » pour créer ton premier article.</p></div>";
   }
 
@@ -386,7 +390,7 @@
       return (a.name || "").localeCompare(b.name || "", "fr");
     });
     var addBtn = "<a class='j-btn-add' href='" + editUrl(r) + "'>" +
-      "<span class='j-plus'>+</span> Ajouter un " + esc(meta.singular) + "</a>";
+      "<span class='j-plus'>+</span> Ajouter " + (meta.fem ? "une" : "un") + " " + esc(meta.singular) + "</a>";
     var body = arts.length
       ? "<div class='j-card-grid'>" + arts.map(function (a) { return card(a, r, false); }).join("") + "</div>"
       : emptyState(meta);

@@ -951,10 +951,10 @@
         (window.journalIcon ? window.journalIcon(meta.icon, "ph-ico") : "") +
         "<div class='ph-text'>" +
         "<div class='j-crumb'><a href='journal-" + R + ".html'>" + Core.esc(meta.label) + "</a> <span>›</span> " +
-        (existing ? "Éditer" : "Nouveau") + "</div>" +
-        "<h1>" + (existing ? Core.esc(existing.name) : "Nouveau " + Core.esc(meta.singular)) + "</h1></div>";
+        (existing ? "Éditer" : (meta.fem ? "Nouvelle" : "Nouveau")) + "</div>" +
+        "<h1>" + (existing ? Core.esc(existing.name) : (meta.fem ? "Nouvelle " : "Nouveau ") + Core.esc(meta.singular)) + "</h1></div>";
     }
-    document.title = (existing ? "Éditer " + existing.name : "Nouveau " + meta.singular) + " — Journal 7ème Mer";
+    document.title = (existing ? "Éditer " + existing.name : (meta.fem ? "Nouvelle " : "Nouveau ") + meta.singular) + " — Journal 7ème Mer";
     renderForm(main);
     // Pré-remplit le nom si fourni (ex. créer une nation depuis un continent).
     if (!ID) {
