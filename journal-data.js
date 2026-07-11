@@ -1158,6 +1158,38 @@ window.JOURNAL_DB = {
               "d": 28
             },
             "html": ""
+          },
+          {
+            "id": "ent-mrgxq0jx-1",
+            "name": "Arrivée en Numa",
+            "date": "8 – 11 Juillet, 1667",
+            "cal": {
+              "y": 1667,
+              "m": 7,
+              "d": 8
+            },
+            "cal_fin": {
+              "y": 1667,
+              "m": 7,
+              "d": 11
+            },
+            "html": "Evènements en Numa"
+          },
+          {
+            "id": "ent-mrgxq0jx-2",
+            "name": "Arrivée en Montaigne - Buché",
+            "date": "9 – 11 Septembre, 1667",
+            "cal": {
+              "y": 1667,
+              "m": 9,
+              "d": 9
+            },
+            "cal_fin": {
+              "y": 1667,
+              "m": 9,
+              "d": 11
+            },
+            "html": ""
           }
         ]
       }
@@ -1380,6 +1412,14 @@ window.JOURNAL_DB = {
     ]
   },
   "changes": [
+    {
+      "author": "Guillaume",
+      "action": "modifié",
+      "target": "Calendrier Thean",
+      "rubrique": "calendriers",
+      "id": "cal-8723665",
+      "date": "2026-07-11"
+    },
     {
       "author": "Guillaume",
       "action": "modifié",
@@ -2149,5 +2189,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783808614291
+  "rev": 1783808835816
 };
