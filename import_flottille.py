@@ -175,20 +175,11 @@ def main():
                         items_html(sections.get("4", []))))
 
     # --- Routes commerciales ---
-    # Le pattern complet (§6)…
+    # Le pattern complet (§6) uniquement : les gammes génériques de routes
+    # restent dans son tableau, sans fiche individuelle (choix de Guillaume) —
+    # les vraies routes (ex. Route de Sarmatie) ont leurs propres documents.
     arts.append(article("routes-commerciales", "Pattern de marchandage", "Exploitation en temps mort",
                         "Règles", items_html(sections.get("6", []))))
-    # …et une fiche par route (première table du §6 : Route|Durée|Marge|Exposition)
-    table_routes = next((d for k, d in sections.get("6", []) if k == "table"), None)
-    if table_routes:
-        heads = table_routes[0]
-        for row in table_routes[1:]:
-            nom = re.sub(r"<br>.*", "", row[0]).strip()
-            if not nom:
-                continue
-            html = "".join("<p><strong>" + esc(re.sub(r"<br>.*", "", heads[i])) + " :</strong> "
-                           + row[i] + "</p>" for i in range(1, len(row)))
-            arts.append(article("routes-commerciales", nom, "", "Route", html))
 
     # --- Injection dans journal-data.js ---
     t = DATA.read_text(encoding="utf-8")

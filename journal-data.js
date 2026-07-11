@@ -1339,70 +1339,6 @@ window.JOURNAL_DB = {
         "author": "Guillaume"
       },
       {
-        "id": "rou-cabotage-sur-ports-voisins",
-        "slug": "cabotage-sur-ports-voisins",
-        "rubrique": "routes-commerciales",
-        "name": "Cabotage sûr (ports voisins)",
-        "type": "Route",
-        "title": "",
-        "image": "",
-        "aliases": [],
-        "etiquettes": [],
-        "description": "<p><strong>Durée :</strong> 2–4 semaines</p><p><strong>Marge brute indicative :</strong> 20 %</p><p><strong>Exposition :</strong> Faible</p>",
-        "entrees": [],
-        "created": "2026-07-11",
-        "updated": "2026-07-11",
-        "author": "Guillaume"
-      },
-      {
-        "id": "rou-grande-route-commerciale",
-        "slug": "grande-route-commerciale",
-        "rubrique": "routes-commerciales",
-        "name": "Grande route commerciale",
-        "type": "Route",
-        "title": "",
-        "image": "",
-        "aliases": [],
-        "etiquettes": [],
-        "description": "<p><strong>Durée :</strong> 1 mois</p><p><strong>Marge brute indicative :</strong> 30 %</p><p><strong>Exposition :</strong> Moyenne</p>",
-        "entrees": [],
-        "created": "2026-07-11",
-        "updated": "2026-07-11",
-        "author": "Guillaume"
-      },
-      {
-        "id": "rou-route-lointaine-ou-tendue",
-        "slug": "route-lointaine-ou-tendue",
-        "rubrique": "routes-commerciales",
-        "name": "Route lointaine ou tendue",
-        "type": "Route",
-        "title": "",
-        "image": "",
-        "aliases": [],
-        "etiquettes": [],
-        "description": "<p><strong>Durée :</strong> 6–10 semaines</p><p><strong>Marge brute indicative :</strong> 50 %</p><p><strong>Exposition :</strong> Élevée (piraterie, tempêtes, politique)</p>",
-        "entrees": [],
-        "created": "2026-07-11",
-        "updated": "2026-07-11",
-        "author": "Guillaume"
-      },
-      {
-        "id": "rou-contrebande",
-        "slug": "contrebande",
-        "rubrique": "routes-commerciales",
-        "name": "Contrebande",
-        "type": "Route",
-        "title": "",
-        "image": "",
-        "aliases": [],
-        "etiquettes": [],
-        "description": "<p><strong>Durée :</strong> Variable</p><p><strong>Marge brute indicative :</strong> 80–100 %</p><p><strong>Exposition :</strong> Mêmes risques selon la route mais risques au port — Nécessite la Seconde Chance et Dorian</p>",
-        "entrees": [],
-        "created": "2026-07-11",
-        "updated": "2026-07-11",
-        "author": "Guillaume"
-      },
-      {
         "id": "rou-la-route-de-sarmatie",
         "slug": "la-route-de-sarmatie",
         "rubrique": "routes-commerciales",
@@ -1427,38 +1363,6 @@ window.JOURNAL_DB = {
       "target": "La Route de Sarmatie",
       "rubrique": "routes-commerciales",
       "id": "rou-la-route-de-sarmatie",
-      "date": "2026-07-11"
-    },
-    {
-      "author": "Guillaume",
-      "action": "créé",
-      "target": "Contrebande",
-      "rubrique": "routes-commerciales",
-      "id": "rou-contrebande",
-      "date": "2026-07-11"
-    },
-    {
-      "author": "Guillaume",
-      "action": "créé",
-      "target": "Route lointaine ou tendue",
-      "rubrique": "routes-commerciales",
-      "id": "rou-route-lointaine-ou-tendue",
-      "date": "2026-07-11"
-    },
-    {
-      "author": "Guillaume",
-      "action": "créé",
-      "target": "Grande route commerciale",
-      "rubrique": "routes-commerciales",
-      "id": "rou-grande-route-commerciale",
-      "date": "2026-07-11"
-    },
-    {
-      "author": "Guillaume",
-      "action": "créé",
-      "target": "Cabotage sûr (ports voisins)",
-      "rubrique": "routes-commerciales",
-      "id": "rou-cabotage-sur-ports-voisins",
       "date": "2026-07-11"
     },
     {
