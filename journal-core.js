@@ -490,6 +490,18 @@
     if (!c || !c.m) return "";
     return c.d + " " + CAL.months[c.m - 1][0] + ", " + c.y;
   }
+  // Formate une plage de dates ; b optionnel (retombe sur une date simple).
+  function calFormatRange(a, b) {
+    if (!a || !a.m) return "";
+    a = { y: +a.y, m: +a.m, d: +a.d };
+    if (!b || !b.m) return calFormat(a);
+    b = { y: +b.y, m: +b.m, d: +b.d };
+    if (a.y === b.y && a.m === b.m && a.d === b.d) return calFormat(a);
+    if (a.y === b.y && a.m === b.m) return a.d + " – " + b.d + " " + CAL.months[a.m - 1][0] + ", " + a.y;
+    if (a.y === b.y) return a.d + " " + CAL.months[a.m - 1][0] + " – " + b.d + " " + CAL.months[b.m - 1][0] + ", " + a.y;
+    return calFormat(a) + " – " + calFormat(b);
+  }
+
   // Date « actuelle » de la campagne : définie sur la fiche du calendrier
   // (champ date_actuelle, éditable), sinon valeur par défaut.
   function calCurrent() {
@@ -508,9 +520,17 @@
       (arts[r] || []).forEach(function (a) {
         (a.entrees || []).forEach(function (en) {
           if (en.cal && en.cal.y && en.cal.m && en.cal.d) {
-            out.push({ y: +en.cal.y, m: +en.cal.m, d: +en.cal.d, name: en.name || "Entrée",
+            var fin = (en.cal_fin && en.cal_fin.y && en.cal_fin.m && en.cal_fin.d)
+              ? { y: +en.cal_fin.y, m: +en.cal_fin.m, d: +en.cal_fin.d } : null;
+            var ev = { y: +en.cal.y, m: +en.cal.m, d: +en.cal.d, fin: fin, name: en.name || "Entrée",
                        rubrique: r, artId: a.id, artName: a.name, enId: en.id || "",
-                       dateTxt: en.date || "", html: en.html || "" });
+                       dateTxt: en.date || "", html: en.html || "" };
+            ev.startN = calDaysFromAnchor(ev.y, ev.m, ev.d);
+            ev.endN = fin ? calDaysFromAnchor(fin.y, fin.m, fin.d) : ev.startN;
+            if (ev.endN < ev.startN) {           // garde-fou : fin avant début
+              var tmp = ev.startN; ev.startN = ev.endN; ev.endN = tmp;
+            }
+            out.push(ev);
           }
         });
       });
@@ -528,9 +548,10 @@
       document.body.appendChild(calPopEl);
     }
     var excerpt = htmlToText(ev.html).slice(0, 220);
+    var popDate = ev.dateTxt || calFormatRange(ev, ev.fin);
     calPopEl.innerHTML =
       "<div class='j-cal-pop-title'>" + esc(ev.name) + "</div>" +
-      (ev.dateTxt || calFormat(ev) ? "<div class='j-cal-pop-date'>" + esc(ev.dateTxt || calFormat(ev)) + "</div>" : "") +
+      (popDate ? "<div class='j-cal-pop-date'>" + esc(popDate) + "</div>" : "") +
       (excerpt ? "<div class='j-cal-pop-body'>" + esc(excerpt) + (htmlToText(ev.html).length > 220 ? "…" : "") + "</div>" : "") +
       "<div class='j-cal-pop-foot'>→ " + esc(ev.artName) + "</div>";
     var r = chip.getBoundingClientRect();
@@ -589,11 +610,13 @@
       for (var c = 0; c < 7; c++) {
         if ((day === 1 && c < first) || day > len) { html += "<td class='j-cal-empty'></td>"; continue; }
         var isToday = (y === cur.y && m === cur.m && day === cur.d);
+        var dayN = calDaysFromAnchor(y, m, day);
         var evHtml = "";
         for (var k = 0; k < events.length; k++) {
           var e = events[k];
-          if (e.y === y && e.m === m && e.d === day) {
-            evHtml += "<a class='j-cal-ev' data-ev='" + k + "' href='" + articleUrl(e.rubrique, e.artId) +
+          if (e.startN <= dayN && dayN <= e.endN) {
+            evHtml += "<a class='j-cal-ev" + (dayN > e.startN ? " is-cont" : "") +
+              "' data-ev='" + k + "' href='" + articleUrl(e.rubrique, e.artId) +
               (e.enId ? "#" + esc(e.enId) : "") + "'>" + esc(e.name) + "</a>";
           }
         }
@@ -687,6 +710,7 @@
     renderPersonnages: renderPersonnages,
     CAL: CAL,
     calFormat: calFormat,
+    calFormatRange: calFormatRange,
     calCurrent: calCurrent,
     renderCalendar: renderCalendar,
     continentOf: continentOf,

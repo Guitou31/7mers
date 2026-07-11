@@ -90,7 +90,7 @@
         var box = document.createElement("div");
         box.className = "j-entree";
         if (en.id) box.id = en.id;   // ancre pour les liens depuis le calendrier
-        var dateTxt = en.date || (en.cal ? Core.calFormat(en.cal) : "");
+        var dateTxt = en.date || (en.cal ? Core.calFormatRange(en.cal, en.cal_fin) : "");
         var dateHtml = "";
         if (dateTxt) {
           dateHtml = (en.cal && calArt)

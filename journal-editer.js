@@ -149,11 +149,13 @@
       // sur le calendrier interactif (le texte de date reste libre).
       var cal = (en.cal && en.cal.y && en.cal.m && en.cal.d)
         ? { y: +en.cal.y, m: +en.cal.m, d: +en.cal.d } : null;
+      var calFin = (en.cal_fin && en.cal_fin.y && en.cal_fin.m && en.cal_fin.d)
+        ? { y: +en.cal_fin.y, m: +en.cal_fin.m, d: +en.cal_fin.d } : null;
       var calRow = el("div", "j-entree-calrow");
       var calBtn = el("button", "j-btn-ghost e-callink", "");
       calBtn.type = "button";
       function calLabel() {
-        calBtn.textContent = cal ? "🗓 " + Core.calFormat(cal) : "🗓 Lier au calendrier";
+        calBtn.textContent = cal ? "🗓 " + Core.calFormatRange(cal, calFin) : "🗓 Lier au calendrier";
       }
       calLabel();
       var panel = el("div", "j-entree-calpanel");
@@ -175,9 +177,41 @@
         selD.value = Math.min(cur, len);
       }
       selM.addEventListener("change", rebuildDays);
+
+      // Fin de plage optionnelle (« jusqu'au ») : mêmes sélecteurs, activés
+      // par une case à cocher. L'événement couvrira chaque jour de la plage.
+      var finWrap = el("span", "j-cal-finwrap");
+      var chk = el("input"); chk.type = "checkbox"; chk.id = "";
+      var chkLab = el("label", "j-cal-finlab", "jusqu'au");
+      chkLab.insertBefore(chk, chkLab.firstChild);
+      var selY2 = el("input", "j-input"); selY2.type = "number";
+      selY2.min = Core.CAL.minYear; selY2.style.maxWidth = "90px"; selY2.title = "Année de fin";
+      var selM2 = el("select", "j-input"); selM2.title = "Mois de fin";
+      Core.CAL.months.forEach(function (mm, i) {
+        var o = el("option", null, mm[0]); o.value = i + 1; selM2.appendChild(o);
+      });
+      var selD2 = el("select", "j-input"); selD2.title = "Jour de fin";
+      function rebuildDays2() {
+        var len = Core.CAL.months[(+selM2.value || 1) - 1][1];
+        var cur = +selD2.value || 1;
+        selD2.innerHTML = "";
+        for (var dd = 1; dd <= len; dd++) {
+          var o = el("option", null, String(dd)); o.value = dd; selD2.appendChild(o);
+        }
+        selD2.value = Math.min(cur, len);
+      }
+      selM2.addEventListener("change", rebuildDays2);
+      function syncFinEnabled() {
+        selY2.disabled = selM2.disabled = selD2.disabled = !chk.checked;
+      }
+      chk.addEventListener("change", syncFinEnabled);
+      finWrap.appendChild(chkLab); finWrap.appendChild(selY2);
+      finWrap.appendChild(selM2); finWrap.appendChild(selD2);
+
       var ok = el("button", "j-btn-add", "OK"); ok.type = "button";
       var clr = el("button", "j-btn-ghost", "Retirer la date"); clr.type = "button";
       panel.appendChild(selY); panel.appendChild(selM); panel.appendChild(selD);
+      panel.appendChild(finWrap);
       panel.appendChild(ok); panel.appendChild(clr);
       calBtn.addEventListener("click", function () {
         var show = panel.style.display === "none";
@@ -187,19 +221,36 @@
           selM.value = cal ? cal.m : cur0.m;
           rebuildDays();
           selD.value = cal ? cal.d : cur0.d;
+          var f0 = calFin || cal || cur0;
+          chk.checked = !!calFin;
+          selY2.value = f0.y; selM2.value = f0.m;
+          rebuildDays2();
+          selD2.value = f0.d;
+          syncFinEnabled();
         }
         panel.style.display = show ? "flex" : "none";
       });
       ok.addEventListener("click", function () {
         cal = { y: +selY.value || Core.calCurrent().y, m: +selM.value || 1, d: +selD.value || 1 };
-        date.value = Core.calFormat(cal);   // texte de date auto-rempli (modifiable)
+        if (chk.checked) {
+          var f = { y: +selY2.value || cal.y, m: +selM2.value || 1, d: +selD2.value || 1 };
+          // Si la fin précède le début, on échange les deux bornes.
+          if (f.y < cal.y || (f.y === cal.y && (f.m < cal.m || (f.m === cal.m && f.d < cal.d)))) {
+            var tmp = cal; cal = f; f = tmp;
+          }
+          calFin = (f.y === cal.y && f.m === cal.m && f.d === cal.d) ? null : f;
+        } else {
+          calFin = null;
+        }
+        date.value = Core.calFormatRange(cal, calFin);  // texte auto-rempli (modifiable)
         calLabel(); panel.style.display = "none";
       });
       clr.addEventListener("click", function () {
-        cal = null; calLabel(); panel.style.display = "none";
+        cal = null; calFin = null; calLabel(); panel.style.display = "none";
       });
       calRow.appendChild(calBtn); calRow.appendChild(panel);
       row._getCal = function () { return cal; };
+      row._getCalFin = function () { return calFin; };
 
       var rich = el("div", "j-rich");
       var area = el("div", "j-rich-area e-body");
@@ -242,6 +293,7 @@
           name: nm,
           date: row.querySelector(".e-date").value.trim(),
           cal: (row._getCal && row._getCal()) || null,
+          cal_fin: (row._getCalFin && row._getCalFin()) || null,
           html: html
         });
       });

@@ -333,6 +333,13 @@
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .j-cal-ev:hover { background: #743030; }
+/* Jours de continuation d'une plage (après le 1er jour) : estompés */
+.j-cal-ev.is-cont { opacity: 0.62; }
+.j-cal-ev.is-cont:hover { opacity: 1; }
+
+/* Fin de plage (« jusqu'au ») dans le panneau de liaison */
+.j-cal-finwrap { display: inline-flex; gap: 0.45rem; align-items: center; flex-wrap: wrap; }
+.j-cal-finlab { display: inline-flex; gap: 0.3rem; align-items: center; font-size: 0.82rem; color: var(--ink-soft); cursor: pointer; }
 
 /* Titre du calendrier : date actuelle en jeu */
 .j-cal-today { font-size: 1.25rem; color: var(--ink); margin-bottom: 0.8rem; }
