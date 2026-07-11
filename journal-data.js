@@ -1142,16 +1142,7 @@ window.JOURNAL_DB = {
           "m": 4,
           "d": 10
         },
-        "entrees": [
-          {
-            "id": "ent-mrgx8wzi-0",
-            "name": "",
-            "date": "",
-            "cal": null,
-            "cal_fin": null,
-            "html": "Arrivée Sarmatie<div>Récupération 2ème morceau de carte</div>"
-          }
-        ]
+        "entrees": []
       }
     ],
     "chronologies": [],
@@ -1372,6 +1363,14 @@ window.JOURNAL_DB = {
     ]
   },
   "changes": [
+    {
+      "author": "Guillaume",
+      "action": "modifié",
+      "target": "Calendrier Thean",
+      "rubrique": "calendriers",
+      "id": "cal-8723665",
+      "date": "2026-07-11"
+    },
     {
       "author": "Guillaume",
       "action": "modifié",
@@ -2125,5 +2124,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783808036624
+  "rev": 1783808512128
 };
