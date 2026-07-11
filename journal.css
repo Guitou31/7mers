@@ -293,6 +293,13 @@
 .j-desc img { max-width: 100%; height: auto; border-radius: 6px; }
 .j-desc-empty { color: var(--ink-mute); }
 
+/* Tableaux dans les descriptions (fiches navires, grilles de coûts…) */
+.j-tablewrap { overflow-x: auto; margin: 0.6rem 0 1.1rem; }
+.j-desc table { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+.j-desc th, .j-desc td { border: 1px solid var(--border); padding: 0.35rem 0.6rem; text-align: left; vertical-align: top; }
+.j-desc th { background: var(--bg-elevated); color: var(--ink-soft); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.j-desc tr:nth-child(even) td { background: var(--bg-elevated); }
+
 /* Image en tête de fiche : l'image ENTIÈRE, redimensionnée raisonnablement
    (jamais rognée — le recadrage ne concerne que la vignette des listes). */
 .j-article-hero { margin-bottom: 1.3rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--border-soft); max-width: 520px; background: var(--bg-card); }

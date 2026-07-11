@@ -1221,11 +1221,278 @@ window.JOURNAL_DB = {
         "author": "Guillaume"
       }
     ],
-    "services": [],
-    "flottille": [],
-    "routes-commerciales": []
+    "services": [
+      {
+        "id": "ser-entretien-et-travaux",
+        "slug": "entretien-et-travaux",
+        "rubrique": "services",
+        "name": "Entretien et travaux",
+        "type": "Règles",
+        "title": "Chantier naval",
+        "image": "",
+        "aliases": [],
+        "etiquettes": [],
+        "description": "<div class='j-tablewrap'><table><tr><th>Opération</th><th>Coût</th><th>Durée</th></tr><tr><td>Entretien annuel (obligatoire)</td><td>Selon le navire</td><td>1 mois en cale sèche— (sinon tous les traits perdent 1 rang jusqu'au « contrôle technique »)</td></tr><tr><td>Réparer un dégât grave</td><td>250 G</td><td>1 semaine</td></tr><tr><td>Ajouter une modification</td><td>750 G par point de difficulté</td><td>2 semaines par point</td></tr><tr><td>Supprimer un défaut (Certains sont impossible à retirer comme « Vieux »)</td><td>2000 G par défaut</td><td>2 semaines par point du défaut</td></tr></table></div>",
+        "entrees": [],
+        "created": "2026-07-11",
+        "updated": "2026-07-11",
+        "author": "Guillaume"
+      },
+      {
+        "id": "ser-equipage-soldes-et-frais-d-exploitation",
+        "slug": "equipage-soldes-et-frais-d-exploitation",
+        "rubrique": "services",
+        "name": "Équipage : soldes et frais d'exploitation",
+        "type": "Règles",
+        "title": "",
+        "image": "",
+        "aliases": [],
+        "etiquettes": [],
+        "description": "<h3>4.1 — Grille de soldes mensuelles (proposition)</h3>\n<p>Grille calée sur ta table des revenus : le matelot est un « marin » à 10 G ; les spécialistes relèvent de l'artisan qualifié ; le capitaine engagé est un professionnel qualifié.</p>\n<div class='j-tablewrap'><table><tr><th>Rôle</th><th>Solde mensuelle</th><th>Remarque</th></tr><tr><td>Matelot</td><td>10 G</td><td>—</td></tr><tr><td>Cuisinier de bord</td><td>20 G</td><td>Une bonne table soutient le moral</td></tr><tr><td>Bosco</td><td>25 G</td><td>Responsable du pont et de la discipline</td></tr><tr><td>Charpentier de marine</td><td>25 G</td><td>Indispensable pour les réparations en mer</td></tr><tr><td>Canonnier-chef</td><td>25 G</td><td>Surtout utile au brick</td></tr><tr><td>Pilote-navigateur</td><td>30 G</td><td>—</td></tr><tr><td>Second</td><td>35 G</td><td>—</td></tr><tr><td>Capitaine délégué</td><td>100 à 150 G</td><td>Uniquement si aucun PJ ne commande — question de confiance !</td></tr></table></div>\n<p>Rations et vivres : Un équipage consomme 0,5 tonneau de rations par tranche de 10 marins et par semaine, soit 2 tonneaux par 10 marins et par mois. De ce fait, le coût est de 10 G le tonneau de rations standard (biscuit, salaisons, bière), et 15 G le tonneau de table améliorée — soit 2 à 3 G par homme et par mois. Penser à réserver l'espace de cale correspondant.</p>\n<p>Frais portuaires (proposition) : 10 à 30 G par escale (quai, pilotage, avitaillement) selon la taille du port ; droits de douane de 5 à 10 % de la valeur des marchandises dans les grands ports — c'est précisément ce que les caches de La Seconde Chance permettent d'éviter.</p>\n<h3>4.2 — Coût mensuel par navire (configuration commerciale)</h3>\n<div class='j-tablewrap'><table><tr><th>Navire</th><th>Équipage retenu</th><th>Soldes</th><th>Rations</th><th>Entretien</th><th>Total / mois</th></tr><tr><td>La Seconde Chance (Dorian capitaine)</td><td>35 matelots + bosco, charpentier, pilote, cuisinier (39 h.)</td><td>450 G</td><td>8 t → 80 G</td><td>8 G</td><td>≈ 540 G</td></tr><tr><td>La Seconde Chance (capitaine délégué)</td><td>Idem + capitaine engagé (40 h.)</td><td>570 G</td><td>8 t → 80 G</td><td>8 G</td><td>≈ 660 G</td></tr><tr><td>Brigantin (capitaine délégué)</td><td>20 matelots + second, bosco, charpentier, pilote, cuisinier + capitaine (26 h.)</td><td>455 G</td><td>5 t → 52 G</td><td>8 G</td><td>≈ 515 G</td></tr><tr><td>Brick (une fois retapé)</td><td>40 matelots + état-major complet + capitaine (47 h.)</td><td>680 G</td><td>9,5 t → 94 G</td><td>17 G</td><td>≈ 790 G</td></tr></table></div>",
+        "entrees": [],
+        "created": "2026-07-11",
+        "updated": "2026-07-11",
+        "author": "Guillaume"
+      }
+    ],
+    "flottille": [
+      {
+        "id": "flo-vue-d-ensemble-de-la-flottille",
+        "slug": "vue-d-ensemble-de-la-flottille",
+        "rubrique": "flottille",
+        "name": "Vue d'ensemble de la flottille",
+        "type": "Synthèse",
+        "title": "",
+        "image": "",
+        "aliases": [],
+        "etiquettes": [],
+        "description": "<p>Le groupe dispose désormais de trois bâtiments aux statuts très différents : La Seconde Chance, le schooner de Dorian, pleinement sien ; un brigantin exploité sous contrat forcé avec la Ligue de Vendel ; et un brick de la CCA en piteux état, prise contestée actuellement en cale sèche au chantier des Serafin.</p>\n<div class='j-tablewrap'><table><tr><th>Navire</th><th>Statut</th><th>Cargaison</th><th>Équipage (min / max)</th><th>Situation juridique</th></tr><tr><td>La Seconde Chance (schooner)</td><td>En service</td><td>25 tonneaux (+15 en caches)</td><td>35 / 120</td><td>Pleine propriété de Dorian</td></tr><tr><td>Brigantin de la Ligue</td><td>En service</td><td>25 tonneaux</td><td>20 / 80</td><td>Propriété de la Ligue de Vendel ; exploitation concédée contre 20 % des bénéfices, tous frais à la charge des PJ</td></tr><tr><td>Brick de la CCA</td><td>Cale sèche (chantier Serafin)</td><td>40 tonneaux</td><td>40 / 150</td><td>Prise contestée — la CCA le considère comme volé</td></tr></table></div>",
+        "entrees": [],
+        "created": "2026-07-11",
+        "updated": "2026-07-11",
+        "author": "Guillaume"
+      },
+      {
+        "id": "flo-la-seconde-chance",
+        "slug": "la-seconde-chance",
+        "rubrique": "flottille",
+        "name": "La Seconde Chance",
+        "type": "Navire",
+        "title": "Schooner de Dorian",
+        "image": "",
+        "aliases": [],
+        "etiquettes": [],
+        "description": "<p>Un schooner — ou goélette à hunier : le hunier du mât de misaine lui donne de la puissance aux allures portantes. Navire de choix pour le transport rapide comme pour la guerre, construit pour supporter le feu ennemi… et taillé, dans le cas présent, pour la contrebande.</p>\n<div class='j-tablewrap'><table><tr><th>Caractéristique</th><th>Valeur (d'après la fiche du navire)</th></tr><tr><td>Nom</td><td>La Seconde Chance (origine inconnue)</td></tr><tr><td>Fonction</td><td>Transport rapide et guerre légère ; voiles auriques et hunier</td></tr><tr><td>Dimensions</td><td>Immergée 30 m / hors-tout 50 m ; tirant d'eau 3,5 m (1,5 m quille remontée)</td></tr><tr><td>Équipage</td><td>Maximal 100 hommes ; 30 hommes nécessaires pour manœuvrer</td></tr><tr><td>Traits (actuel / maximum)</td><td>Gaillardise (Canons) 2 (max. 4) · Finesse (Équipage) 2 (max. 7) · Détermination (Coque) 3 (max. 6) · Esprit (Gouvernail) 3 (max. 8) · Panache (Voiles) 5 (max. 8)</td></tr><tr><td>Cargaison</td><td>25 tonneaux, plus 15 tonneaux dissimulables dans les caches</td></tr><tr><td>Entretien</td><td>100 G par an</td></tr></table></div>\n<p>Modifications :</p>\n<ul><li>Quille rétractable : quille remontée, le tirant d'eau passe de 3,5 à 1,5 m — de quoi remonter la plupart des rivières — mais le navire jette et garde un dé de moins sur les jets visant à éviter récifs et bancs de sable.</li><li>Caches de contrebande : jusqu'à 15 tonneaux dissimulés dans les zones « pleines » du navire ; seules des recherches véritablement poussées permettent de les découvrir.</li><li>Aspect trompeur : drapeaux, voiles et « faux nez » (figure de proue, fanaux, plaques de proue et de poupe) permettent de faire passer le navire pour celui d'une autre nation ; une transformation complète prend une scène.</li></ul>\n<p>Atouts commerciaux : vitesse, quille rétractable (mouillages discrets, estuaires, criques), 15 tonneaux invisibles aux douaniers et une identité changeante à volonté : c'est l'outil rêvé du fret d'opportunité et de la contrebande — y compris pour échapper à l'attention de la Ligue comme de la CCA.</p>",
+        "entrees": [],
+        "created": "2026-07-11",
+        "updated": "2026-07-11",
+        "author": "Guillaume"
+      },
+      {
+        "id": "flo-le-brigantin-de-la-ligue-de-vendel",
+        "slug": "le-brigantin-de-la-ligue-de-vendel",
+        "rubrique": "flottille",
+        "name": "Le Brigantin de la Ligue de Vendel",
+        "type": "Navire",
+        "title": "",
+        "image": "",
+        "aliases": [],
+        "etiquettes": [],
+        "description": "<p>Bon état général : la Ligue entretient correctement ses navires, contrairement à la CCA. Le bâtiment porte encore les aménagements sobres mais fonctionnels des marchands vendelars.</p>\n<div class='j-tablewrap'><table><tr><th>Caractéristique</th><th>Valeur</th></tr><tr><td>Nom</td><td>La Diligente (Origine Montaginoise)</td></tr><tr><td>Fonction</td><td>Transport et guerre légère ; voiles carrées et brigantine</td></tr><tr><td>Équipage</td><td>Maximal 80 hommes ; 20 hommes nécessaires pour manœuvrer</td></tr><tr><td>Traits</td><td>Gaillardise (Canons) 2 · Finesse (Équipage) 2 · Détermination (Coque) 2 · Esprit (Gouvernail) 5 · Panache (Voiles) 4</td></tr><tr><td>Cargaison</td><td>25 tonneaux</td></tr><tr><td>Entretien</td><td>100 G par an</td></tr><tr><td>Valeur vénale indicative</td><td>8 000 G hors modifications — repère utile si les PJ veulent un jour le racheter à la Ligue</td></tr></table></div>\n<p>Situation contractuelle : la « cession » extorquée au marchand était nulle — il n'était pas propriétaire mais affréteur. L'accord négocié laisse la propriété à la Ligue : les PJ exploitent le navire, versent 20 % des bénéfices et supportent l'intégralité des frais, ce détail n’ayant pas été négocié (équipage, vivres, entretien, réparations, taxes).</p>\n<ul><li>La Ligue peut exiger la présentation du livre de comptes : audits surprises possibles dans tout port de Theah, sauf la Vodacce.</li><li>Utiliser le navire pour la contrebande ou la piraterie constituerait une rupture de contrat : La Ligue ne vous couvrirait pas et pourrait demander la reprise du navire, au risque de la mise au ban des comptoirs de la Ligue (soit la quasi-totalité des ports Théans)</li><li>Contrepartie implicite : sous pavillon de la Ligue, le brigantin bénéficie d'une respectabilité commerciale et d'un accès facilité aux ports Théans (excepté Vodacce).</li></ul>\n<h3>Le pacte avec la Ligue de Vendel</h3>\n<p>En clair : sur chaque campagne commerciale du brigantin, calculer le bénéfice brut (valeur de vente des marchandises moins leur prix d'achat), verser 20 % à la Ligue, puis payer tous les frais d'exploitation sur la part restante. La Ligue, elle, ne débourse rien.</p>\n<ul><li>Tenue du livre de comptes exigée ; falsifier les chiffres est possible… jusqu'au premier audit croisé avec les registres portuaires vendelars.</li><li>Porte de sortie : racheter le navire (≈ 9 000 G hors modifications) mettrait fin à la redevance — la Ligue, pragmatique, vendrait volontiers au bon prix.</li><li>Accroche : la Ligue peut proposer d'assurer les cargaisons (prime d'environ 5 % de la valeur embarquée) — filet de sécurité, mais dépendance accrue.</li></ul>",
+        "entrees": [],
+        "created": "2026-07-11",
+        "updated": "2026-07-11",
+        "author": "Guillaume"
+      },
+      {
+        "id": "flo-le-brick-de-la-cca",
+        "slug": "le-brick-de-la-cca",
+        "rubrique": "flottille",
+        "name": "Le Brick de la CCA",
+        "type": "Navire",
+        "title": "",
+        "image": "",
+        "aliases": [],
+        "etiquettes": [],
+        "description": "<p>Fidèle aux habitudes de la Compagnie, le brick n'a reçu que le strict minimum d'entretien : boiseries fatiguées, artillerie revendue en partie, entreponts réaménagés à l'économie pour entasser la cargaison au détriment des hommes. Il est actuellement en cale sèche au chantier des Serafin.</p>\n<div class='j-tablewrap'><table><tr><th>Caractéristique</th><th>Valeur</th></tr><tr><td>Nom</td><td>The Providence (Origine Avalonienne)</td></tr><tr><td>Fonction</td><td>Transport et guerre légère ; voiles carrées</td></tr><tr><td>Équipage</td><td>40 hommes nécessaires pour manœuvrer ; maximum théorique 150, ramené à 100 couchages par les quartiers étriqués</td></tr><tr><td>Traits</td><td>Gaillardise (Canons) 5 · Finesse (Équipage) 3 (4 avant Quartiers étriqués) · Détermination (Coque) 3 · Esprit (Gouvernail) 2 · Panache (Voiles) 3</td></tr><tr><td>Cargaison</td><td>10 points, soit 50 tonneaux (40 + 10 grâce aux quartiers étriqués)</td></tr><tr><td>Défauts</td><td>Vieux (permanent : entretien tous les 6 mois) · Sous-armé (les dés de Gaillardise n'explosent pas, hors jets de blessure) · Quartiers étriqués (Équipage réduit de 1 rang mais +10 tonneaux)</td></tr><tr><td>Entretien</td><td>200 G tous les six mois (défaut Vieux), soit 400 G par an</td></tr><tr><td>Valeur vénale indicative</td><td>15 000 G une fois remis en état — bien moins dans son état actuel</td></tr></table></div>\n<h3>Le chantier du brick chez les Serafin</h3>\n<p>Proposition de feuille de route en trois phases, cumulables ou non selon les moyens des PJ. Les délais peuvent courir en parallèle des aventures.</p>\n<div class='j-tablewrap'><table><tr><th>Phase</th><th>Coût</th><th>Durée</th><th>Résultat</th></tr><tr><td>1. Remise à flot : réparer les avaries (proposition : 3 dégâts graves) + entretien semestriel</td><td>750 G + 100 G</td><td>3 semaines</td><td>Navire opérationnel, mais conservant ses trois défauts</td></tr><tr><td>2. Réarmement : supprimer Sous-armé (défaut 2)</td><td>3 000 G</td><td>4 semaines</td><td>Les dés de Gaillardise explosent de nouveau ; batterie recomplétée</td></tr><tr><td>3. Réaménagement : supprimer Quartiers étriqués (défaut 4)</td><td>6 000 G</td><td>8 semaines</td><td>Équipage remonte à 4 ; couchages rétablis</td></tr><tr><td>Défaut Vieux</td><td>—</td><td>—</td><td>Insupprimable : entretien de 200 G tous les 6 mois à vie</td></tr></table></div>\n<ul><li>Levier Serafin : le chantier appartenant à la famille de Don Felipe, ils offrent gratuitement les frais du port à sec pour un délai raisonnable (quelques mois à une année). Ils pourraient offrir une ristourne sur les travaux en échange de services rendus — pour la noblesse, une dette d'honneur vaut souvent bien plus cher que des guilders.</li><li>Le rebaptiser et modifier sa silhouette (gréement, figure de proue, peinture) compliquerait son identification par la CCA — pur enjeu narratif, à toi de fixer le prix du déguisement. L'Aspect trompeur de La Seconde Chance peut d'ailleurs servir de modèle à une modification équivalente.</li></ul>",
+        "entrees": [],
+        "created": "2026-07-11",
+        "updated": "2026-07-11",
+        "author": "Guillaume"
+      }
+    ],
+    "routes-commerciales": [
+      {
+        "id": "rou-pattern-de-marchandage",
+        "slug": "pattern-de-marchandage",
+        "rubrique": "routes-commerciales",
+        "name": "Pattern de marchandage",
+        "type": "Règles",
+        "title": "Exploitation en temps mort",
+        "image": "",
+        "aliases": [],
+        "etiquettes": [],
+        "description": "<p>Cycle mensuel simple, sans micro-gestion : quand un navire n'est pas mobilisé par l'aventure, il tourne en arrière-plan. Aucun jet n'est imposé — le squelette économique ci-dessous donne les moyennes, et la table d'événements te sert de variateur, à résoudre au dé ou narrativement selon la situation.</p>\n<h3>Étape 1 — Affecter le navire et son commandement</h3>\n<p>Le navire est-il libre ce mois-ci ? Qui le commande ? Sans PJ à bord, il faut un capitaine délégué (solde + confiance). Le brigantin ne peut faire que du commerce légal ; La Seconde Chance peut tout faire — cargaison légale en couverture, contrebande dans les caches ; le brick attend la fin de son chantier.</p>\n<h3>Étape 2 — Choisir une route</h3>\n<div class='j-tablewrap'><table><tr><th>Route</th><th>Durée</th><th>Marge brute indicative</th><th>Exposition</th></tr><tr><td>Cabotage sûr (ports voisins)</td><td>2–4 semaines</td><td>20 %</td><td>Faible</td></tr><tr><td>Grande route commerciale</td><td>1 mois</td><td>30 %</td><td>Moyenne</td></tr><tr><td>Route lointaine ou tendue</td><td>6–10 semaines</td><td>50 %</td><td>Élevée (piraterie, tempêtes, politique)</td></tr><tr><td>Contrebande</td><td>Variable</td><td>80–100 %</td><td>Mêmes risques selon la route mais risques au port — Nécessite la Seconde Chance et Dorian</td></tr></table></div>\n<h3>Étape 3 — Investir dans la cargaison</h3>\n<p>Le capital investi appartient aux PJ : c'est lui qui fait le rendement. Réserver l'espace des rations avant de charger : 2 tonneaux par 10 marins et par mois de mer (0,5 tonneau par 10 marins et par semaine).</p>\n<div class='j-tablewrap'><table><tr><th>Gamme</th><th>Exemples</th><th>Prix d'achat par tonneau</th></tr><tr><td>Denrées et vrac</td><td>Grain, bois, sel, poisson salé</td><td>40 G</td></tr><tr><td>Biens courants</td><td>Tissus, vin, ferronnerie, cuirs</td><td>100 G</td></tr><tr><td>Biens de qualité</td><td>Draps fins, armes, spiritueux, verrerie</td><td>200 G</td></tr><tr><td>Luxe</td><td>Soie, épices, porcelaine cathayane</td><td>400 G et plus</td></tr></table></div>\n<h3>Étape 4 — Résoudre le voyage (table d'événements, d10 ou au choix)</h3>\n<div class='j-tablewrap'><table><tr><th>d10</th><th>Événement</th><th>Effet</th></tr><tr><td>1</td><td>Tempête</td><td>1 dégât grave (250 G + 1 semaine de réparation) et retard</td></tr><tr><td>2</td><td>Avarie mineure</td><td>50 G de réparations courantes</td></tr><tr><td>3</td><td>Marché saturé</td><td>Marge divisée par deux</td></tr><tr><td>4</td><td>Contrôle douanier tatillon</td><td>Droits doublés ; cargaison illicite saisie (hors caches non découvertes)</td></tr><tr><td>5–6</td><td>Voyage sans histoire</td><td>Marge normale</td></tr><tr><td>7</td><td>Bonne affaire</td><td>Marge +10 points</td></tr><tr><td>8</td><td>Pénurie locale</td><td>Marge × 1,5</td></tr><tr><td>9</td><td>Fret ou passager d'opportunité</td><td>+100 G</td></tr><tr><td>10</td><td>Coup de maître</td><td>Marge × 2 et un contact commercial durable</td></tr></table></div>\n<p>Menaces de fond à superposer selon la géographie : la CCA en Mer Atabéenne (prime possible sur le brick, saisie à vue), les audits de la Ligue dans les ports Théans sous contrôle de la Ligue de Vendel si les PJ comptent les flouer, et la réputation grandissante de la flottille.</p>\n<h3>Étape 5 — Faire les comptes</h3>\n<p>Bénéfice brut = capital investi × marge. Sur le brigantin : verser 20 % du brut à la Ligue. Puis déduire les frais mensuels du navire (section 4.2). Le reste revient aux PJ. Une ligne de registre par cycle suffit : capital, route, événement, brut, part de la Ligue, frais, net.</p>\n<h3>Exemples chiffrés</h3>\n<div class='j-tablewrap'><table><tr><th>Configuration</th><th>Capital</th><th>Brut</th><th>Part Ligue</th><th>Frais</th><th>Net PJ</th></tr><tr><td>A. Brigantin, grande route, biens courants (20 t × 100 G)</td><td>2 000 G</td><td>600 G</td><td>120 G</td><td>515 G</td><td>≈ −35 G</td></tr><tr><td>B. Brigantin, grande route, biens de qualité (20 t × 200 G)</td><td>4 000 G</td><td>1 200 G</td><td>240 G</td><td>515 G</td><td>≈ +445 G</td></tr><tr><td>C. La Seconde Chance (Dorian à bord), route tendue, biens de qualité (17 t × 200 G)</td><td>3 400 G</td><td>1 700 G</td><td>—</td><td>540 G</td><td>≈ +1 160 G</td></tr><tr><td>D. La Seconde Chance, caches pleines (15 t de biens de qualité en contrebande, marge 100 %)</td><td>3 000 G</td><td>3 000 G</td><td>—</td><td>540 G</td><td>≈ +2 460 G</td></tr></table></div>\n<p>L'exemple A est voulu : le fret bon marché ne couvre pas les frais d'un brigantin grevé d'une redevance — il faut du capital, des routes ambitieuses ou des contacts pour gagner sa vie. C et D se cumulent sur un même voyage (cargaison légale en couverture, contrebande dans les caches, frais comptés une seule fois) : c'est le grand jeu du contrebandier — mais une découverte des caches signifie saisie totale et mise hors-la-loi. Rendement de croisière visé : 7 à 11 % du capital par mois en régime légal, bien davantage dans l'illégalité.</p>",
+        "entrees": [],
+        "created": "2026-07-11",
+        "updated": "2026-07-11",
+        "author": "Guillaume"
+      },
+      {
+        "id": "rou-cabotage-sur-ports-voisins",
+        "slug": "cabotage-sur-ports-voisins",
+        "rubrique": "routes-commerciales",
+        "name": "Cabotage sûr (ports voisins)",
+        "type": "Route",
+        "title": "",
+        "image": "",
+        "aliases": [],
+        "etiquettes": [],
+        "description": "<p><strong>Durée :</strong> 2–4 semaines</p><p><strong>Marge brute indicative :</strong> 20 %</p><p><strong>Exposition :</strong> Faible</p>",
+        "entrees": [],
+        "created": "2026-07-11",
+        "updated": "2026-07-11",
+        "author": "Guillaume"
+      },
+      {
+        "id": "rou-grande-route-commerciale",
+        "slug": "grande-route-commerciale",
+        "rubrique": "routes-commerciales",
+        "name": "Grande route commerciale",
+        "type": "Route",
+        "title": "",
+        "image": "",
+        "aliases": [],
+        "etiquettes": [],
+        "description": "<p><strong>Durée :</strong> 1 mois</p><p><strong>Marge brute indicative :</strong> 30 %</p><p><strong>Exposition :</strong> Moyenne</p>",
+        "entrees": [],
+        "created": "2026-07-11",
+        "updated": "2026-07-11",
+        "author": "Guillaume"
+      },
+      {
+        "id": "rou-route-lointaine-ou-tendue",
+        "slug": "route-lointaine-ou-tendue",
+        "rubrique": "routes-commerciales",
+        "name": "Route lointaine ou tendue",
+        "type": "Route",
+        "title": "",
+        "image": "",
+        "aliases": [],
+        "etiquettes": [],
+        "description": "<p><strong>Durée :</strong> 6–10 semaines</p><p><strong>Marge brute indicative :</strong> 50 %</p><p><strong>Exposition :</strong> Élevée (piraterie, tempêtes, politique)</p>",
+        "entrees": [],
+        "created": "2026-07-11",
+        "updated": "2026-07-11",
+        "author": "Guillaume"
+      },
+      {
+        "id": "rou-contrebande",
+        "slug": "contrebande",
+        "rubrique": "routes-commerciales",
+        "name": "Contrebande",
+        "type": "Route",
+        "title": "",
+        "image": "",
+        "aliases": [],
+        "etiquettes": [],
+        "description": "<p><strong>Durée :</strong> Variable</p><p><strong>Marge brute indicative :</strong> 80–100 %</p><p><strong>Exposition :</strong> Mêmes risques selon la route mais risques au port — Nécessite la Seconde Chance et Dorian</p>",
+        "entrees": [],
+        "created": "2026-07-11",
+        "updated": "2026-07-11",
+        "author": "Guillaume"
+      }
+    ]
   },
   "changes": [
+    {
+      "author": "Guillaume",
+      "action": "créé",
+      "target": "Contrebande",
+      "rubrique": "routes-commerciales",
+      "id": "rou-contrebande",
+      "date": "2026-07-11"
+    },
+    {
+      "author": "Guillaume",
+      "action": "créé",
+      "target": "Route lointaine ou tendue",
+      "rubrique": "routes-commerciales",
+      "id": "rou-route-lointaine-ou-tendue",
+      "date": "2026-07-11"
+    },
+    {
+      "author": "Guillaume",
+      "action": "créé",
+      "target": "Grande route commerciale",
+      "rubrique": "routes-commerciales",
+      "id": "rou-grande-route-commerciale",
+      "date": "2026-07-11"
+    },
+    {
+      "author": "Guillaume",
+      "action": "créé",
+      "target": "Cabotage sûr (ports voisins)",
+      "rubrique": "routes-commerciales",
+      "id": "rou-cabotage-sur-ports-voisins",
+      "date": "2026-07-11"
+    },
+    {
+      "author": "Guillaume",
+      "action": "créé",
+      "target": "Pattern de marchandage",
+      "rubrique": "routes-commerciales",
+      "id": "rou-pattern-de-marchandage",
+      "date": "2026-07-11"
+    },
+    {
+      "author": "Guillaume",
+      "action": "créé",
+      "target": "Équipage : soldes et frais d'exploitation",
+      "rubrique": "services",
+      "id": "ser-equipage-soldes-et-frais-d-exploitation",
+      "date": "2026-07-11"
+    },
+    {
+      "author": "Guillaume",
+      "action": "créé",
+      "target": "Entretien et travaux",
+      "rubrique": "services",
+      "id": "ser-entretien-et-travaux",
+      "date": "2026-07-11"
+    },
+    {
+      "author": "Guillaume",
+      "action": "créé",
+      "target": "Le Brick de la CCA",
+      "rubrique": "flottille",
+      "id": "flo-le-brick-de-la-cca",
+      "date": "2026-07-11"
+    },
+    {
+      "author": "Guillaume",
+      "action": "créé",
+      "target": "Le Brigantin de la Ligue de Vendel",
+      "rubrique": "flottille",
+      "id": "flo-le-brigantin-de-la-ligue-de-vendel",
+      "date": "2026-07-11"
+    },
+    {
+      "author": "Guillaume",
+      "action": "créé",
+      "target": "La Seconde Chance",
+      "rubrique": "flottille",
+      "id": "flo-la-seconde-chance",
+      "date": "2026-07-11"
+    },
+    {
+      "author": "Guillaume",
+      "action": "créé",
+      "target": "Vue d'ensemble de la flottille",
+      "rubrique": "flottille",
+      "id": "flo-vue-d-ensemble-de-la-flottille",
+      "date": "2026-07-11"
+    },
     {
       "author": "Guillaume",
       "action": "modifié",
