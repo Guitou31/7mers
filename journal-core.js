@@ -102,7 +102,7 @@
       { key: "name", label: "Nom", type: "text", req: true, half: true, placeholder: "Nom du calendrier" },
       { key: "date_actuelle", label: "Date actuelle en jeu", type: "cal-date", half: true },
       { key: "description", label: "Description", type: "textarea-rich" },
-      { key: "entrees", label: "Entrées (historique)", type: "entrees" },
+      { key: "entrees", label: "Événements (indépendants des articles)", type: "entrees" },
       { key: "etiquettes", label: "Étiquettes", type: "tags", placeholder: "Écrire, séparé par des virgules" }
     ],
     quetes: [
@@ -562,6 +562,12 @@
 
     var len = CAL.months[m - 1][1];
     var first = calWeekday(y, m, 1);
+    // Événements indépendants : ce sont les entrées du calendrier lui-même —
+    // le bouton mène à son éditeur, section « Événements ».
+    var calArt = (articlesOf("calendriers") || [])[0];
+    var addEvBtn = calArt
+      ? "<a class='j-btn-add j-cal-add' href='" + editUrl("calendriers", calArt.id) + "'>+ Événement</a>"
+      : "";
     var html = "<div class='j-cal-today'>Aujourd'hui en jeu : <strong>" + esc(calFormat(cur)) + "</strong>" +
       "<span class='j-cal-today-hint'>(modifiable via « Éditer »)</span></div>" +
       "<div class='j-cal-nav'>" +
@@ -572,6 +578,7 @@
       "<span class='j-cal-navgrp'><button class='j-chip' data-nav='py' type='button' aria-label='Année précédente'>«</button>" +
       "<span class='j-cal-year'>" + y + "</span>" +
       "<button class='j-chip' data-nav='ny' type='button' aria-label='Année suivante'>»</button></span>" +
+      addEvBtn +
       "</div><div class='j-cal-scroll'><table class='j-cal'><thead><tr>" +
       CAL.weekdays.map(function (w) { return "<th>" + w + "</th>"; }).join("") +
       "</tr></thead><tbody>";
