@@ -1401,10 +1401,34 @@ window.JOURNAL_DB = {
         "created": "2026-07-11",
         "updated": "2026-07-11",
         "author": "Guillaume"
+      },
+      {
+        "id": "rou-la-route-de-sarmatie",
+        "slug": "la-route-de-sarmatie",
+        "rubrique": "routes-commerciales",
+        "name": "La Route de Sarmatie",
+        "type": "Route",
+        "title": "Tarago (Castille) ↔ Rokiecin (Sarmatie)",
+        "image": "",
+        "aliases": [],
+        "etiquettes": [],
+        "description": "<h3>1. Le trajet</h3>\n<p>Distance : environ 11 000 km, soit ≈ 5 900 milles nautiques. Un voilier marchand de cette époque soutient en moyenne 4 à 6 nœuds sur un long trajet — les pointes sont bien plus hautes, mais calmes et vents contraires mangent la moyenne — soit 180 à 260 km par jour en naviguant jour et nuit.</p>\n<div class='j-tablewrap'><table><tr><th>Navire</th><th>Vitesse moyenne</th><th>Trajet simple (escales comprises)</th><th>Aller-retour (négoce compris)</th><th>Frais / trajet simple</th></tr><tr><td>La Seconde Chance (Voiles 5)</td><td>5–6 nœuds</td><td>≈ 7 semaines</td><td>≈ 4 mois</td><td>≈ 800 G</td></tr><tr><td>La Diligente (Voiles 3)</td><td>4–5 nœuds</td><td>≈ 8–9 semaines</td><td>≈ 5 mois</td><td>≈ 1 000 G</td></tr><tr><td>The Providence (Voiles 3)</td><td>4–5 nœuds</td><td>≈ 8–9 semaines</td><td>≈ 5 mois</td><td>≈ 1 600 G</td></tr></table></div>\n<p>Compter une à deux semaines d'achats et de ventes à chaque tête de ligne : la route autorise 2 à 3 rotations par an et par navire. Les frais ci-dessus découlent des coûts mensuels du document Flottille (soldes, rations, entretien lissé).</p>\n<h3>2. Marges classiques par tonneau</h3>\n<div class='j-tablewrap'><table><tr><th>Échange</th><th>Marge / tonneau</th><th>Remarques</th></tr><tr><td>Olives (aller)</td><td>+30 G</td><td>—</td></tr><tr><td>Huile d'olive (aller)</td><td>+50 G</td><td>—</td></tr><tr><td>Safran (aller)</td><td>+300 G</td><td>Production limitée : rarement plus de 2–3 tonneaux disponibles à l'achat *</td></tr><tr><td>Blé (retour)</td><td>+65 G</td><td>Calibré « juste rentable » : La Diligente (20 t utiles) → +1 300 G bruts, −260 G de taxe de la Ligue, −1 000 G de frais ≈ l'équilibre tout juste ; La Seconde Chance fait un peu mieux (≈ +370 G)</td></tr><tr><td>Bois (retour)</td><td>+80 G</td><td>Cale exclusive : rien d'autre que les vivres. Mâts et espars s'arriment mal dans une petite cale : les navires plus petits que le brick ne chargent que les 2/3 de leur cale utile * → La Seconde Chance ≈ +160 G le trajet (à peine rentable) ; The Providence (40 t) ≈ +1 600 G — c'est son navire</td></tr><tr><td>Tabac (Fidhelis)</td><td>+100 G</td><td>Troc obligatoire + à écouler au marché noir</td></tr><tr><td>Eau-de-vie (Fidhelis)</td><td>+50 G</td><td>Troc obligatoire ; à écouler au marché noir ou en usage taverne : ≈ 45 G d'économie par tonneau, mais comptes à maquiller</td></tr></table></div>\n<p>Le bois non revendu peut aussi filer droit au chantier Serafin : −10 % sur le coût des travaux de The Providence par cargaison fournie, et aucune traçabilité — un atout si le navire doit changer de visage.</p>\n<h3>3. Les affaires avec les Fidhelis</h3>\n<ul><li>Production limitée : à chaque passage, lancer 1d6 + 1d10 — ce sera autant de tonneaux à troquer, soit 1d6 tonneaux de tabac (plus rare, plus cher) et 1d10 tonneaux d'eau-de-vie.</li><li>Troc obligatoire : les Fidhelis cèdent à 50–60 % de la valeur marchande, payés en marchandises castillanes sûres et portables (safran, huile, bon acier) — pas de retour immédiat sur investissement : la contre-valeur est immobilisée dès l'aller.</li><li>Écoulement : marché noir nécessaire à l'arrivée — ou falsification des comptes si les PJ consomment la marchandise eux-mêmes (taverne). Toute cargaison fidhelie est illicite : le Contrôle douanier tatillon la saisit hors caches non découvertes.</li><li>Règle d'or : les Fidhelis se souviennent de qui les traite honnêtement — un partenaire loyal reçoit sa part des rumeurs qu'ils colportent d'un bout à l'autre de la Théah.</li></ul>",
+        "entrees": [],
+        "created": "2026-07-11",
+        "updated": "2026-07-11",
+        "author": "Guillaume"
       }
     ]
   },
   "changes": [
+    {
+      "author": "Guillaume",
+      "action": "créé",
+      "target": "La Route de Sarmatie",
+      "rubrique": "routes-commerciales",
+      "id": "rou-la-route-de-sarmatie",
+      "date": "2026-07-11"
+    },
     {
       "author": "Guillaume",
       "action": "créé",
