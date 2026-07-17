@@ -33,6 +33,7 @@
     tool: "<path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/>",
     anchor: "<circle cx='12' cy='5' r='3'/><line x1='12' y1='22' x2='12' y2='8'/><path d='M5 12H2a10 10 0 0 0 20 0h-3'/>",
     route: "<circle cx='6' cy='19' r='3'/><circle cx='18' cy='5' r='3'/><path d='M12 19h4.5a3.5 3.5 0 0 0 0-7h-9a3.5 3.5 0 0 1 0-7H12'/>",
+    dice: "<rect x='3' y='3' width='18' height='18' rx='3'/><circle cx='8.5' cy='8.5' r='1.1'/><circle cx='15.5' cy='8.5' r='1.1'/><circle cx='12' cy='12' r='1.1'/><circle cx='8.5' cy='15.5' r='1.1'/><circle cx='15.5' cy='15.5' r='1.1'/>",
     back: "<line x1='19' y1='12' x2='5' y2='12'/><polyline points='12 19 5 12 12 5'/>"
   };
 
@@ -59,7 +60,8 @@
 
     { id: "journal-services", file: "journal-services.html", label: "Services", icon: "tool", category: "commerce", desc: "Prestations et savoir-faire monnayables." },
     { id: "journal-flottille", file: "journal-flottille.html", label: "Flottille", icon: "anchor", category: "commerce", desc: "Les navires de la compagnie." },
-    { id: "journal-routes-commerciales", file: "journal-routes-commerciales.html", label: "Routes commerciales", icon: "route", category: "commerce", desc: "Itinéraires marchands et comptoirs." }
+    { id: "journal-routes-commerciales", file: "journal-routes-commerciales.html", label: "Routes commerciales", icon: "route", category: "commerce", desc: "Itinéraires marchands et comptoirs." },
+    { id: "journal-voyage", file: "journal-voyage.html", label: "Résolution de voyage", icon: "dice", category: "commerce", desc: "Calculateur des voyages commerciaux." }
   ];
   var CATEGORY_LABELS = { monde: "Monde", temps: "Temps", jeu: "Jeu", commerce: "Commerce" };
 

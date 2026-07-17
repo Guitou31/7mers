@@ -341,6 +341,29 @@
 .j-cal-finwrap { display: inline-flex; gap: 0.45rem; align-items: center; flex-wrap: wrap; }
 .j-cal-finlab { display: inline-flex; gap: 0.3rem; align-items: center; font-size: 0.82rem; color: var(--ink-soft); cursor: pointer; }
 
+/* Résolution de voyage (calculateur de commerce maritime) */
+.voy-block { margin-bottom: 1.1rem; }
+.voy-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem 1.2rem; margin-top: 0.5rem; }
+.voy-grid .j-label { display: flex; flex-direction: column; gap: 0.25rem; }
+.voy-grid .voy-check { flex-direction: row; align-items: center; gap: 0.45rem; grid-column: 1 / -1; }
+.voy-hint { font-weight: 400; color: var(--ink-mute); font-size: 0.76rem; }
+.voy-seuil { margin-top: 0.7rem; font-size: 0.88rem; color: var(--ink-soft); }
+.voy-warn { color: #b3261e; font-weight: 600; margin-top: 0.25rem; }
+.voy-ev { background: var(--bg-elevated); border: 1px solid var(--border-soft); border-radius: 6px; padding: 0.5rem 0.7rem; margin: 0.5rem 0; font-size: 0.9rem; }
+.voy-ev-special { border-color: #b3261e; box-shadow: inset 3px 0 0 #b3261e; }
+.voy-ev-note { font-size: 0.8rem; color: var(--ink-mute); font-style: italic; margin-top: 0.15rem; }
+.voy-result { border-radius: 10px; padding: 1rem 1.2rem; margin-top: 0.4rem; border: 1px solid var(--border); background: var(--bg-card); }
+.voy-result h3 { margin: 0 0 0.5rem; }
+.voy-pos h3 { color: #2e7d32; }
+.voy-neg h3 { color: #b3261e; }
+.voy-lines { border-collapse: collapse; font-size: 0.95rem; }
+.voy-lines td { padding: 0.2rem 0; }
+.voy-lines td + td { text-align: right; padding-left: 2rem; font-weight: 600; }
+.voy-net td { border-top: 2px solid var(--border); font-size: 1.1rem; font-weight: 700; padding-top: 0.4rem; }
+.voy-pos .voy-net td { color: #2e7d32; }
+.voy-neg .voy-net td { color: #b3261e; }
+@media (max-width: 640px) { .voy-grid { grid-template-columns: 1fr; } }
+
 /* Titre du calendrier : date actuelle en jeu */
 .j-cal-today { font-size: 1.25rem; color: var(--ink); margin-bottom: 0.8rem; }
 .j-cal-today strong { color: var(--accent); }

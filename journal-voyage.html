@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Résolution de voyage — Journal 7ème Mer</title>
+  <link rel="icon" type="image/png" href="Favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="journal.css">
+</head>
+<body data-page="journal-voyage">
+  <div class="journal-shell">
+    <button class="journal-toggle" id="journal-toggle" aria-label="Ouvrir le menu"
+            aria-controls="journal-sidebar" aria-expanded="false">☰</button>
+    <aside id="journal-sidebar" class="journal-sidebar" aria-label="Navigation du journal"></aside>
+    <div class="journal-content">
+      <header id="journal-pagehead" class="journal-pagehead"></header>
+      <main class="journal-main" id="journal-main">
+
+        <div class="j-entree voy-block">
+          <div class="j-entree-head"><span class="j-entree-title">1. Le voyage</span></div>
+          <div class="voy-grid">
+            <label class="j-label">Navire
+              <select id="v-navire" class="j-input"></select>
+            </label>
+            <label class="j-label">Route
+              <select id="v-route" class="j-input"></select>
+            </label>
+            <label class="j-label">Durée (mois) <span class="voy-hint" id="v-duree-hint"></span>
+              <input id="v-duree" class="j-input" type="number" min="1" max="12" value="4">
+            </label>
+            <label class="j-label">Taux d'investissement
+              <select id="v-taux" class="j-input">
+                <option value="50">50 G/t — marché âpre</option>
+                <option value="75" selected>75 G/t — standard</option>
+                <option value="100">100 G/t — marché lucratif</option>
+              </select>
+            </label>
+            <label class="j-label">Investissement cale (G) <span class="voy-hint" id="v-inv-hint"></span>
+              <input id="v-inv" class="j-input" type="number" min="0" value="0">
+            </label>
+            <label class="j-label">Investissement caches (G) <span class="voy-hint" id="v-caches-hint"></span>
+              <input id="v-caches" class="j-input" type="number" min="0" value="0">
+            </label>
+            <label class="j-label voy-check"><input id="v-delegue" type="checkbox"> Capitaine délégué (pas de PJ à bord)</label>
+          </div>
+          <div class="voy-seuil" id="v-seuil"></div>
+        </div>
+
+        <div class="j-entree voy-block">
+          <div class="j-entree-head"><span class="j-entree-title">2. Événement(s) du voyage</span>
+            <span class="j-entree-date">Lancer &amp; Garder de d6 (les 6 explosent) — saisis le total</span></div>
+          <div class="voy-grid">
+            <label class="j-label">Score du jet
+              <input id="v-score1" class="j-input" type="number" min="1" placeholder="ex. 16">
+            </label>
+            <label class="j-label" id="v-score2-wrap" style="display:none">Score du 2ᵉ jet (très long trajet)
+              <input id="v-score2" class="j-input" type="number" min="1">
+            </label>
+          </div>
+          <div id="v-events"></div>
+          <div class="voy-grid">
+            <label class="j-label">Ajustement de marge (points)
+              <input id="v-delta" class="j-input" type="number" value="0">
+            </label>
+            <label class="j-label">Multiplicateur de marge
+              <input id="v-mult" class="j-input" type="number" step="0.1" value="1">
+            </label>
+            <label class="j-label">Gains fixes (G)
+              <input id="v-gains" class="j-input" type="number" min="0" value="0">
+            </label>
+            <label class="j-label">Coûts d'événement (G)
+              <input id="v-couts" class="j-input" type="number" min="0" value="0">
+            </label>
+          </div>
+          <p class="j-rich-hint">Les champs se remplissent d'après la table ; lance les dés indiqués et ajuste-les à la main si besoin.</p>
+        </div>
+
+        <div class="j-actions">
+          <button class="j-btn-add" id="v-resoudre" type="button">Résoudre le voyage</button>
+        </div>
+        <div id="v-result"></div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="journal-data.js"></script>
+  <script src="journal-core.js"></script>
+  <script src="journal-changements.js"></script>
+  <script src="journal-layout.js"></script>
+  <script src="journal-voyage-app.js"></script>
+</body>
+</html>
