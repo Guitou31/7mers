@@ -760,9 +760,134 @@
 
   // --- École ---
   function renderEcole(ecole, container) {
-    if (ecole.redacted) renderEcoleRedacted(ecole, container);
-    else if (ecole.enrichie) renderEcoleEnrichie(ecole, container);
+    if (ecole.redacted) { renderEcoleRedacted(ecole, container); return; }
+    if (ecole.enrichie) renderEcoleEnrichie(ecole, container);
     else renderEcoleCompacte(ecole, container);
+    // Bouton d'impression de la fiche (joueur), inséré juste après l'en-tête.
+    const header = container.querySelector(".detail-header");
+    const btn = el("button", {
+      class: "ecole-print-btn", type: "button",
+      title: "Imprimer ou sauvegarder en PDF la fiche de l'école",
+      onclick: () => printEcoleFiche(ecole),
+    }, "🖨 Imprimer la fiche");
+    if (header && header.nextSibling) container.insertBefore(btn, header.nextSibling);
+    else container.appendChild(btn);
+  }
+
+  // ===== Fiche d'école imprimable =====
+  // Différences avec la fiche du générateur de duelliste : description
+  // complète, pas de caractéristiques/compétences (autre fiche joueur),
+  // les trois grades avec case à cocher « acquis », pas de jet de dés.
+  function escH(s) {
+    return String(s == null ? "" : s).replace(/[&<>"]/g,
+      c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  }
+
+  function buildEcoleFicheHTML(ecole) {
+    const d = ecole.details || {};
+    const out = [];
+
+    // En-tête
+    out.push("<div class='ep-head'><h1>" + escH(ecole.nom) + "</h1>" +
+      (d.sous_titre ? "<p class='ep-sub'>« " + escH(d.sous_titre) + " »</p>" : "") +
+      "<p class='ep-arme'>" + escH(ecole.arme_display || ecole.arme || "") + "</p></div>");
+
+    // Badges (nations + origine + restrictions)
+    const badges = [
+      ...(ecole.nations || []),
+      ORIGINE_LABELS[ecole.origine] || ecole.origine,
+      ecole.restriction_creation === "interdite" ? "Interdite à la création" : null,
+      ecole.restriction_creation === "limitee" ? "Accès limité" : null,
+      ecole.genre_restriction === "femmes" ? "Réservée aux femmes" : null,
+      ecole.genre_restriction === "hommes" ? "Réservée aux hommes" : null,
+    ].filter(Boolean);
+    out.push("<div class='ep-badges'>" + badges.map(b => "<span>" + escH(b) + "</span>").join("") + "</div>");
+
+    // Méta
+    const meta = [];
+    if (ecole.arme_display || ecole.arme) meta.push(["Arme(s)", ecole.arme_display || ecole.arme]);
+    if ((ecole.armes_categories || []).length) meta.push(["Catégorie(s)", ecole.armes_categories.join(", ")]);
+    if ((ecole.specialisations || []).length) meta.push(["Spécialisations", ecole.specialisations.join(", ")]);
+    const origineTxt = d.origine_texte || (ecole.nations || []).join(", ");
+    if (origineTxt) meta.push(["Origine", origineTxt]);
+    if (d.academies) meta.push(["Académies", d.academies]);
+    if (d.homologation) meta.push(["Homologation", d.homologation]);
+    if (d.doyen) meta.push(["Doyen", d.doyen]);
+    if (d.insigne) meta.push(["Insigne", d.insigne]);
+    if (d.appartenance_requise) meta.push(["Appartenance requise", d.appartenance_requise]);
+    out.push("<dl class='ep-meta'>" +
+      meta.map(([k, v]) => "<dt>" + escH(k) + "</dt><dd>" + escH(v) + "</dd>").join("") + "</dl>");
+
+    // Description complète (repli sur la courte si l'école n'est pas enrichie)
+    const paras = (d.description_longue && d.description_longue.length)
+      ? d.description_longue
+      : (ecole.description_courte ? [ecole.description_courte] : []);
+    if (paras.length) {
+      out.push("<h2>Description du style</h2>" +
+        paras.map(p => "<p class='ep-p'>" + escH(p) + "</p>").join(""));
+    }
+
+    // Niveaux de maîtrise avec case « acquis »
+    const niveaux = d.niveaux || {};
+    const courts = ecole.avantages_courts || {};
+    out.push("<h2>Niveaux de maîtrise <span class='ep-legend'>(cochez les grades acquis)</span></h2>");
+    for (const key of ["apprenti", "compagnon", "maitre"]) {
+      const niv = niveaux[key];
+      const court = courts[key];
+      if (!niv && !court) continue;
+      let body = "";
+      if (niv) {
+        if (niv.fluff) body += "<p class='ep-fluff'>" + escH(niv.fluff) + "</p>";
+        if (niv.regles) body += "<p class='ep-p'><strong>Effet de jeu :</strong> " + escH(niv.regles) + "</p>";
+      } else {
+        body = "<p class='ep-p'>" + escH(court) + "</p>";
+      }
+      out.push("<div class='ep-niveau'><span class='ep-check'></span>" +
+        "<div class='ep-niveau-body'><h3>" + NIVEAU_LABELS[key] + "</h3>" + body + "</div></div>");
+    }
+
+    // Techniques de combat : nom + 5 points à cocher + description complète
+    const techs = ecole.techniques_combat || [];
+    if (techs.length) {
+      const techniquesDB = (window.ECOLES_DATA && window.ECOLES_DATA.techniques) || {};
+      out.push("<h2>Techniques de combat</h2>");
+      const dots = "<span class='ep-dots'>" + "<span class='ep-dot'></span>".repeat(5) + "</span>";
+      for (const t of techs) {
+        const techDef = t.ref ? techniquesDB[t.ref] : null;
+        const nom = escH(t.nom_base) + (t.variante ? " <em>(" + escH(t.variante) + ")</em>" : "");
+        let body = "";
+        if (techDef) {
+          body = (techDef.description || "").split(/\n{2,}/).filter(Boolean)
+            .map(p => "<p class='ep-tech-desc'>" + escH(p) + "</p>").join("");
+          for (const tbl of (techDef.tables || [])) {
+            body += "<table class='ep-table'>" + tbl.map((row, idx) =>
+              "<tr>" + row.map(c => "<" + (idx === 0 ? "th" : "td") + ">" + escH(c) +
+                "</" + (idx === 0 ? "th" : "td") + ">").join("") + "</tr>").join("") + "</table>";
+          }
+        } else {
+          const comp = findCompetence(t.nom_base);
+          body = comp
+            ? "<p class='ep-tech-desc'><em>Compétence accordée directement par l'école : " + escH(comp.nom) + "</em></p>"
+            : "<p class='ep-tech-desc'><em>Description non disponible.</em></p>";
+        }
+        out.push("<div class='ep-tech'><div class='ep-tech-head'><span class='ep-tech-nom'>" +
+          nom + "</span>" + dots + "</div>" + body + "</div>");
+      }
+    }
+    return out.join("\n");
+  }
+
+  function printEcoleFiche(ecole) {
+    let box = document.getElementById("ecole-print");
+    if (!box) {
+      box = el("div", { id: "ecole-print" });
+      document.body.appendChild(box);
+    }
+    box.innerHTML = buildEcoleFicheHTML(ecole);
+    document.body.classList.add("ecole-printing");
+    const cleanup = () => document.body.classList.remove("ecole-printing");
+    window.addEventListener("afterprint", cleanup, { once: true });
+    window.print();
   }
 
   // Helper : remplace les caractères visibles par █ pour le style CIA.
