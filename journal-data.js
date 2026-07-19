@@ -1140,7 +1140,7 @@ window.JOURNAL_DB = {
         "date_actuelle": {
           "y": 1667,
           "m": 9,
-          "d": 15
+          "d": 24
         },
         "entrees": [
           {
@@ -1157,7 +1157,7 @@ window.JOURNAL_DB = {
               "m": 6,
               "d": 28
             },
-            "html": ""
+            "html": "Les aventuriers arrivent en Sarmatie explorer des ruines et y trouver le second morceau de carte de la cité sous-marine, accompagné par <a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-8723966\">Marek Wrobleski</a>&nbsp;qui y sera leur guide et traducteur.<div>Ils y rencontrent pour la première fois <a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-mr9ktaok\">Dis Pater</a>&nbsp;.</div>"
           },
           {
             "id": "ent-mrgxq0jx-1",
@@ -1173,7 +1173,7 @@ window.JOURNAL_DB = {
               "m": 7,
               "d": 11
             },
-            "html": "Evènements en Numa"
+            "html": "A peine repartis de Sarmatie, les <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8743698\">Aventuriers</a>&nbsp;repartent en direction de <a class=\"j-link\" href=\"journal-article.html?r=nations&amp;id=nat-8743971\">La Numa</a>&nbsp;pour y retrouver les acheteurs de l'<a class=\"j-link\" href=\"journal-article.html?r=objets&amp;id=obj-8724158\">Orbe d'Aigue Marine</a>.<div>Il s'avère qu'ils l'ont revendu au gouvernement de la Numa, et qu'il a été mis comme prix du grand tournoi du Colisée. Les <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8743698\">Aventuriers</a>&nbsp;n'ont pas d'autre choix que d'y participer, et gagnent le tournoi et surtout l'<a class=\"j-link\" href=\"journal-article.html?r=objets&amp;id=obj-8724158\">Orbe d'Aigue Marine</a>.</div>"
           },
           {
             "id": "ent-mrgxq0jx-2",
@@ -1189,7 +1189,7 @@ window.JOURNAL_DB = {
               "m": 9,
               "d": 11
             },
-            "html": ""
+            "html": "Les <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8743698\">Aventuriers</a>&nbsp;arrivent pour la première fois en Montaigne, chercher le dernier morceau de carte.<div>Il s'avère que les ruines où elles étaient ont été découvertes et fouillées, et que la carte est dans un miroir dans la ville de Buché.</div><div>Arrivés à Buché, il s'avère que le marquis local a été corrompu par un <a class=\"j-link\" href=\"journal-article.html?r=creatures&amp;id=cre-8744143\">Dievaï</a>&nbsp;, et la ville condamnée. Les PJ affrontent les soldats invoqués par la puissance maléfique, et parviennent à vaincre le <a class=\"j-link\" href=\"journal-article.html?r=creatures&amp;id=cre-8744143\">Dievaï</a>&nbsp; Balebog, obtenant par la suite le 3ème et dernier morceau de carte de la cité sous-marine Syrneth.</div>"
           },
           {
             "id": "ent-mrrxa4l2-3",
@@ -1434,6 +1434,14 @@ window.JOURNAL_DB = {
     ]
   },
   "changes": [
+    {
+      "author": "Guillaume",
+      "action": "modifié",
+      "target": "Calendrier Thean",
+      "rubrique": "calendriers",
+      "id": "cal-8723665",
+      "date": "2026-07-19"
+    },
     {
       "author": "Guillaume",
       "action": "modifié",
@@ -2227,5 +2235,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1784473220558
+  "rev": 1784473736128
 };
