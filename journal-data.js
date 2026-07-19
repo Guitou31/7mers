@@ -1255,10 +1255,28 @@ window.JOURNAL_DB = {
         "description": "Kogarashi, un Maitre de l'école&nbsp;<i>Geng Yu Qiang</i>&nbsp;dont <a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-8743715\">Lü Ji</a>&nbsp;est adepte, recherche deux criminels :&nbsp;<div><ul><li>Liang Zhenya, un sergent qui était aux ordres du père de <a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-8743715\">Lü Ji</a>&nbsp;, qu'elle a croisé brièvement lors de manœuvres militaires et lors de rencontres avec une école&nbsp;<i>Geng Yu Qiang</i> rivale. Lors de la débandade de son armée suite à sa tentative de rébellion ratée, il aurait avec son unité incendié un village et massacré ses habitants. Tout comme Lu Ji, il est en fuite en Theah, et Kogarashi pense qu'il essaierait de la rallier ou se faire une nouvelle vie de mercenaire.</li><li>Il recherche aussi le maitre de Liang, car la tradition de son pays natal du <a class=\"j-link\" href=\"journal-article.html?r=nations&amp;id=nat-8743398\">Fusō</a>&nbsp;exige que le maitre doit payer le même prix qu'un de ses disciples lorsque ce-dernier commet un crime en utilisant les techniques de son école. Selon ses informations, il voyagerait aux côtés de Liang.</li></ul></div>",
         "etiquettes": [],
         "slug": "la-voie-du-geng-yu-qiang",
-        "updated": "2026-07-03",
+        "updated": "2026-07-19",
         "created": "2026-07-03",
         "author": "Guillaume",
-        "image": "journal-images/img-mr58i4u3-0.jpg"
+        "image": "journal-images/img-mr58i4u3-0.jpg",
+        "entrees": [
+          {
+            "id": "ent-mrry3asu-0",
+            "name": "Appréhension de Bai Junwei",
+            "date": "22 – 23 Septembre, 1667",
+            "cal": {
+              "y": 1667,
+              "m": 9,
+              "d": 22
+            },
+            "cal_fin": {
+              "y": 1667,
+              "m": 9,
+              "d": 23
+            },
+            "html": "Bai Junwei, un des compagnons de Liang Zhenya, a été trouvé à La Motte, en Montaigne. Il s'est séparé de Liang qui était un peu trop vindicatif, même dans son nouveau travail de mercenaire en Theah. Il leur indique qu'il se trouve en <a class=\"j-link\" href=\"journal-article.html?r=nations&amp;id=nat-8743356\">Eisen</a>&nbsp;, dans la forêt de Wälder."
+          }
+        ]
       },
       {
         "id": "que-mr9jrpb8",
@@ -1434,6 +1452,14 @@ window.JOURNAL_DB = {
     ]
   },
   "changes": [
+    {
+      "author": "Guillaume",
+      "action": "modifié",
+      "target": "La Voie du Geng Yu Qiang",
+      "rubrique": "quetes",
+      "id": "que-mr56dtbi",
+      "date": "2026-07-19"
+    },
     {
       "author": "Guillaume",
       "action": "modifié",
@@ -2235,5 +2261,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1784473736128
+  "rev": 1784474581934
 };
