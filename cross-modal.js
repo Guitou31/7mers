@@ -846,10 +846,12 @@
         "<div class='ep-niveau-body'><h3>" + NIVEAU_LABELS[key] + "</h3>" + body + "</div></div>");
     }
 
-    // Techniques de combat : nom + 5 points à cocher + description complète
+    // Techniques de combat : nom + 5 points à cocher + description complète.
+    // Le bloc entier (titre compris) part sur une DEUXIÈME page à l'impression.
     const techs = ecole.techniques_combat || [];
     if (techs.length) {
       const techniquesDB = (window.ECOLES_DATA && window.ECOLES_DATA.techniques) || {};
+      out.push("<div class='ep-techs'>");
       out.push("<h2>Techniques de combat</h2>");
       const dots = "<span class='ep-dots'>" + "<span class='ep-dot'></span>".repeat(5) + "</span>";
       for (const t of techs) {
@@ -873,6 +875,7 @@
         out.push("<div class='ep-tech'><div class='ep-tech-head'><span class='ep-tech-nom'>" +
           nom + "</span>" + dots + "</div>" + body + "</div>");
       }
+      out.push("</div>");
     }
     return out.join("\n");
   }

@@ -2840,13 +2840,16 @@ p { margin: 0 0 0.6em; }
   body.ecole-printing #ecole-print { display: block; }
   body.ecole-printing { background: #fff; }
 
-  #ecole-print { font-size: 10.5pt; color: #2c1810; line-height: 1.45; }
+  /* Page 1 : fiche (en-tête, description, grades) — police resserrée pour
+     tenir sur une page. Page 2 : les techniques (.ep-techs). */
+  #ecole-print { font-size: 9.5pt; color: #2c1810; line-height: 1.38; }
+  #ecole-print .ep-techs { break-before: page; page-break-before: always; }
   #ecole-print .ep-head {
     background: #8b3a3a !important; color: #fff !important;
     -webkit-print-color-adjust: exact; print-color-adjust: exact;
-    padding: 0.55rem 0.9rem; border-radius: 6px; margin-bottom: 0.5rem;
+    padding: 0.45rem 0.9rem; border-radius: 6px; margin-bottom: 0.45rem;
   }
-  #ecole-print .ep-head h1 { margin: 0; font-size: 16pt; color: #fff; }
+  #ecole-print .ep-head h1 { margin: 0; font-size: 14.5pt; color: #fff; }
   #ecole-print .ep-sub { margin: 0.15rem 0 0; font-style: italic; color: #f0d8a0; font-size: 10pt; }
   #ecole-print .ep-arme { margin: 0.15rem 0 0; color: #f5efe0; font-size: 10pt; }
   #ecole-print .ep-badges { margin: 0 0 0.6rem; }
@@ -2858,16 +2861,16 @@ p { margin: 0 0 0.6em; }
   #ecole-print .ep-meta dt { font-weight: 700; color: #8b3a3a; }
   #ecole-print .ep-meta dd { margin: 0; }
   #ecole-print h2 {
-    font-size: 12pt; color: #8b3a3a; margin: 0.9rem 0 0.35rem;
+    font-size: 11pt; color: #8b3a3a; margin: 0.7rem 0 0.3rem;
     border-bottom: 1px solid #d4c4a0; padding-bottom: 2px;
   }
   #ecole-print .ep-legend { font-size: 8.5pt; color: #877766; font-weight: 400; }
-  #ecole-print .ep-p { margin: 0 0 0.45rem; text-align: justify; }
+  #ecole-print .ep-p { margin: 0 0 0.35rem; text-align: justify; }
   #ecole-print .ep-fluff { margin: 0 0 0.3rem; font-style: italic; color: #5c4838; }
   #ecole-print .ep-niveau {
     display: flex; gap: 0.6rem; align-items: flex-start;
     border: 1px solid #e8dcc0; border-left: 3px solid #8b3a3a;
-    border-radius: 4px; padding: 0.45rem 0.6rem; margin-bottom: 0.45rem;
+    border-radius: 4px; padding: 0.35rem 0.55rem; margin-bottom: 0.35rem;
     page-break-inside: avoid;
   }
   #ecole-print .ep-check {
