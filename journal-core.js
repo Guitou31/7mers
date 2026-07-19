@@ -712,6 +712,7 @@
     calFormat: calFormat,
     calFormatRange: calFormatRange,
     calCurrent: calCurrent,
+    calDayNum: function (c) { return calDaysFromAnchor(+c.y, +c.m, +c.d); },
     renderCalendar: renderCalendar,
     continentOf: continentOf,
     CONTINENTS: CONTINENTS,

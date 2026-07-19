@@ -393,6 +393,11 @@
 
 /* Entrées datées (historique) — fiche */
 .j-entrees-view { margin-top: 1.7rem; }
+/* Historique de la page calendrier : plus compact */
+.j-cal-entrees .j-entree { padding: 0.6rem 0.85rem; margin-bottom: 0.55rem; }
+.j-cal-entrees .j-entree-title { font-size: 0.95rem; }
+.j-cal-entrees .j-entree-date { font-size: 0.75rem; }
+.j-cal-entrees .j-desc { font-size: 0.86rem; line-height: 1.5; }
 .j-entree {
   background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: 10px;
   padding: 0.9rem 1.1rem; margin-bottom: 0.8rem;

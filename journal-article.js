@@ -86,7 +86,20 @@
     if (Array.isArray(art.entrees) && art.entrees.length) {
       var calArt = (Core.articlesOf("calendriers") || [])[0];
       var wrapE = document.createElement("div");
-      art.entrees.forEach(function (en) {
+      // Sur la page du calendrier : tri chronologique du plus récent au plus
+      // ancien (par date liée ; sans date = en bas), limité aux 10 dernières.
+      var isCalPage = (r === "calendriers");
+      var listE = art.entrees.slice();
+      var truncated = false;
+      if (isCalPage && Core.calDayNum) {
+        listE.sort(function (a, b) {
+          var na = (a.cal && a.cal.y) ? Core.calDayNum(a.cal) : -Infinity;
+          var nb = (b.cal && b.cal.y) ? Core.calDayNum(b.cal) : -Infinity;
+          return nb - na;
+        });
+        if (listE.length > 10) { truncated = true; listE = listE.slice(0, 10); }
+      }
+      listE.forEach(function (en) {
         var box = document.createElement("div");
         box.className = "j-entree";
         if (en.id) box.id = en.id;   // ancre pour les liens depuis le calendrier
@@ -107,7 +120,9 @@
         box.appendChild(body);
         wrapE.appendChild(box);
       });
-      entreesHtml = "<div class='j-entrees-view'><div class='j-dash-section-title'>Historique</div>" +
+      entreesHtml = "<div class='j-entrees-view" + (isCalPage ? " j-cal-entrees" : "") + "'>" +
+        "<div class='j-dash-section-title'>Historique" +
+        (truncated ? " — 10 dernières entrées" : "") + "</div>" +
         wrapE.innerHTML + "</div>";
     }
 
