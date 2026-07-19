@@ -1135,7 +1135,7 @@ window.JOURNAL_DB = {
         "etiquettes": [],
         "description": "",
         "created": "2026-01-19",
-        "updated": "2026-07-11",
+        "updated": "2026-07-19",
         "author": "Guillaume",
         "date_actuelle": {
           "y": 1667,
@@ -1190,6 +1190,22 @@ window.JOURNAL_DB = {
               "d": 11
             },
             "html": ""
+          },
+          {
+            "id": "ent-mrrxa4l2-3",
+            "name": "Evènements à La Motte",
+            "date": "22 – 23 Septembre, 1667",
+            "cal": {
+              "y": 1667,
+              "m": 9,
+              "d": 22
+            },
+            "cal_fin": {
+              "y": 1667,
+              "m": 9,
+              "d": 23
+            },
+            "html": "De retour de Buché, pendant que Darmuid et Ingrid récupèrent de leurs blessure suite au combat contre Belobog, le reste de l'équipe va à La Motte, encore en Montaigne, trouver un des compagnons de&nbsp;<span style=\"background-color: rgb(47, 39, 15); --darkreader-inline-bgcolor: var(--darkreader-background-2f270f, #2a220d);\" data-darkreader-inline-bgcolor=\"\">Liang Zhenya qui y a été vu. Ils le récupèrent.</span><div><span style=\"background-color: rgb(47, 39, 15); --darkreader-inline-bgcolor: var(--darkreader-background-2f270f, #2a220d);\" data-darkreader-inline-bgcolor=\"\"><br></span></div><div><span style=\"background-color: rgb(47, 39, 15); --darkreader-inline-bgcolor: var(--darkreader-background-2f270f, #2a220d);\" data-darkreader-inline-bgcolor=\"\">Ils engagent également un navigateur vétéran dont ils ont dû racheter ses cartes maritimes volées par un groupe de mercenaires engagés par le marquis local.</span></div>"
           }
         ]
       }
@@ -1418,6 +1434,14 @@ window.JOURNAL_DB = {
     ]
   },
   "changes": [
+    {
+      "author": "Guillaume",
+      "action": "modifié",
+      "target": "Calendrier Thean",
+      "rubrique": "calendriers",
+      "id": "cal-8723665",
+      "date": "2026-07-19"
+    },
     {
       "author": "Guillaume",
       "action": "modifié",
@@ -2203,5 +2227,5 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1783808947409
+  "rev": 1784473220558
 };
