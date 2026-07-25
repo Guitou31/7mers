@@ -146,6 +146,34 @@
         <p class="creation-note" id="langues-description"></p>
         <div id="step-3-langues" class="langues-bloc"></div>
       </div>
+
+      <div class="creation-block" id="export-fiche">
+        <h4>🖨 Exporter votre Héros</h4>
+        <p class="creation-note">
+          Vos choix (Nation, Arcane, traits, métiers, écoles, avantages, langues,
+          compétences…) remplissent automatiquement les fiches.
+          <strong>Ouvrir pré-remplie</strong> : la fiche s'ouvre dans un onglet,
+          reste modifiable, et <kbd>Ctrl</kbd>+<kbd>P</kbd> en fait un PDF.
+          <strong>Télécharger</strong> : fichier HTML autonome que le joueur
+          conserve et peut modifier plus tard.
+        </p>
+        <div class="export-fiche-grid">
+          <div class="export-fiche-item">
+            <strong>Fiche de personnage</strong>
+            <div class="export-fiche-btns">
+              <button type="button" id="export-fp-open" class="btn-export">Ouvrir pré-remplie</button>
+              <button type="button" id="export-fp-dl" class="btn-export is-ghost">Télécharger (HTML)</button>
+            </div>
+          </div>
+          <div class="export-fiche-item">
+            <strong>Liste de compétences</strong>
+            <div class="export-fiche-btns">
+              <button type="button" id="export-lc-open" class="btn-export">Ouvrir pré-remplie</button>
+              <button type="button" id="export-lc-dl" class="btn-export is-ghost">Télécharger (HTML)</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -160,5 +188,6 @@
   <script src="creation-state.js"></script>
   <script src="cross-modal.js"></script>
   <script src="creation-personnage-app.js"></script>
+  <script src="fiche-export.js"></script>
 </body>
 </html>
