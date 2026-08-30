@@ -53,6 +53,52 @@ def TABLE(headers, rows):
     return "<div class='sorc-tablewrap'><table>" + h + b + "</table></div>"
 
 
+def traiter_glyphe(path):
+    """Détourage de la pierre runique : le blanc EXTÉRIEUR (connecté aux bords)
+    devient transparent, la pierre grise et ses rehauts blancs intérieurs sont
+    préservés. Recadrage au contour + petite marge. Écrase le fichier."""
+    from collections import deque
+    from PIL import Image
+    SEUIL = 240
+    img = Image.open(path).convert("RGBA")
+    w, h = img.size
+    lum = list(img.convert("L").getdata())
+    fond = bytearray(w * h)          # 1 = blanc extérieur (à rendre transparent)
+    dq = deque()
+    for x in range(w):
+        for y in (0, h - 1):
+            i = y * w + x
+            if lum[i] >= SEUIL and not fond[i]:
+                fond[i] = 1
+                dq.append(i)
+    for y in range(h):
+        for x in (0, w - 1):
+            i = y * w + x
+            if lum[i] >= SEUIL and not fond[i]:
+                fond[i] = 1
+                dq.append(i)
+    while dq:
+        i = dq.popleft()
+        x, y = i % w, i // w
+        for nx, ny in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)):
+            if 0 <= nx < w and 0 <= ny < h:
+                j = ny * w + nx
+                if not fond[j] and lum[j] >= SEUIL:
+                    fond[j] = 1
+                    dq.append(j)
+    px = list(img.getdata())
+    px = [(r, g, b, 0) if fond[i] else (r, g, b, a)
+          for i, (r, g, b, a) in enumerate(px)]
+    img.putdata(px)
+    bbox = img.getbbox()             # bbox de l'alpha non nul
+    if bbox:
+        pad = 4
+        bbox = (max(0, bbox[0] - pad), max(0, bbox[1] - pad),
+                min(w, bbox[2] + pad), min(h, bbox[3] + pad))
+        img = img.crop(bbox)
+    img.save(path, optimize=True)
+
+
 def main():
     z = zipfile.ZipFile(DOCX)
     body = ET.fromstring(z.read("word/document.xml")).find(W + "body")
@@ -198,6 +244,10 @@ def main():
         if media:
             dest = IMGDIR / ("laerdom-%02d.png" % rune["num"])
             dest.write_bytes(z.read("word/" + media.lstrip("/")))
+            try:
+                traiter_glyphe(dest)
+            except Exception as e:
+                print(f"  ! glyphe {dest.name} non traité : {e}")
             rune["img"] = "images/runes/" + dest.name
         runes.append(rune)
     sections.append({"titre": "Les vingt-cinq runes", "type": "runes", "intro": intro})
