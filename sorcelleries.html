@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sorcelleries — Bréviaire 7ème Mer V2.1</title>
+  <link rel="icon" type="image/png" href="Favicon.png">
+  <link rel="apple-touch-icon" href="Favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="sorcelleries">
+  <div id="page-layout"></div>
+
+  <div class="page-section-title">
+    <h2>Sorcelleries</h2>
+    <p class="page-section-sub">Les arts mystiques de Théah, révisés pour la 1ère édition.</p>
+  </div>
+
+  <main class="layout" style="display:block">
+    <p class="results-count" id="sorc-count"></p>
+    <ul class="ecoles-grid" id="sorc-grid"></ul>
+  </main>
+
+  <script src="layout.js"></script>
+  <script src="sorcelleries.js"></script>
+  <script>
+    (function () {
+      "use strict";
+      var data = (window.SORCELLERIES_DATA || {}).sorcelleries || [];
+      var grid = document.getElementById("sorc-grid");
+      document.getElementById("sorc-count").textContent =
+        data.length + " sorcellerie" + (data.length > 1 ? "s" : "") + " documentée" + (data.length > 1 ? "s" : "");
+      data.forEach(function (s) {
+        var li = document.createElement("li");
+        li.className = "ecole-card is-enrichie";
+        li.tabIndex = 0;
+        li.setAttribute("role", "button");
+        li.setAttribute("aria-label", "Voir la sorcellerie " + s.nom);
+        function go() { location.href = "sorcellerie.html?s=" + encodeURIComponent(s.id); }
+        li.addEventListener("click", go);
+        li.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); }
+        });
+        li.innerHTML =
+          "<h2></h2><p class='arme'></p>" +
+          "<div class='badges'><span class='badge nation'></span>" +
+          "<span class='badge origine-seconde_edition_adaptee'>Sorcellerie</span></div>";
+        li.querySelector("h2").textContent = s.nom;
+        li.querySelector(".arme").textContent = s.accroche || "";
+        li.querySelector(".badge.nation").textContent = s.nation || "—";
+        grid.appendChild(li);
+      });
+    })();
+  </script>
+  <script src="creation-state.js"></script>
+  <script src="pp-bar-global.js"></script>
+</body>
+</html>

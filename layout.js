@@ -27,7 +27,7 @@
     { id: "techniques",            file: "techniques.html",           label: "Liste des techniques",   available: true,  category: "combat",   group: "ecoles_techniques" },
     { id: "generateur-duelliste",  file: "generateur-duelliste.html", label: "Générateur de duelliste",available: true,  category: "combat"   },
     { id: "journal",               file: "journal-tableau-de-bord.html", label: "Journal de campagne", available: true,  category: "journal"  },
-    { id: "sorcelleries",          file: "sorcelleries.html",         label: "Sorcelleries",           available: false, category: "magie"    },
+    { id: "sorcelleries",          file: "sorcelleries.html",         label: "Sorcelleries",           available: true,  category: "magie"    },
     { id: "societes-secretes",     file: "societes-secretes.html",    label: "Sociétés Secrètes",      available: false, category: "monde"    },
   ];
 
