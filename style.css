@@ -2966,3 +2966,21 @@ p { margin: 0 0 0.6em; }
 .sorc-glossaire dt:target { background: #f6e2b8; animation: sorc-flash 1.6s ease-out; }
 @keyframes sorc-flash { from { background: #efc46a; } to { background: #f6e2b8; } }
 .sorc-glossaire dd { margin: 0.15rem 0 0 1rem; color: var(--ink-soft); line-height: 1.5; }
+
+/* Sorcelleries — runes (Lærdom) et sections génériques */
+.sorc-block h4 { color: var(--accent); margin: 1rem 0 0.4rem; }
+.sorc-duo { display: flex; gap: 1rem; flex-wrap: wrap; }
+.sorc-duo .sorc-tablewrap { flex: 1; min-width: 220px; }
+.sorc-runes { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+.sorc-rune-top { display: flex; gap: 0.7rem; align-items: flex-start; margin-bottom: 0.4rem; }
+.sorc-rune-top > div { flex: 1; min-width: 0; }
+.sorc-rune-img {
+  width: 56px; height: 56px; object-fit: contain; flex: none;
+  background: #fff; border: 1px solid var(--border-soft); border-radius: 8px; padding: 4px;
+}
+.sorc-fam-tag {
+  display: inline-block; margin-top: 0.3rem; font-size: 0.7rem; text-transform: uppercase;
+  letter-spacing: 0.05em; color: var(--ink-mute); border: 1px solid var(--border);
+  border-radius: 999px; padding: 0.05rem 0.5rem;
+}
+.sorc-rune p { font-size: 0.88rem; margin: 0.4rem 0 0; }

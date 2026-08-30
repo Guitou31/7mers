@@ -73,10 +73,46 @@
 
   var html = [];
 
-  // ---- Badges + description ----
+  // ---- Badges ----
   html.push("<div class='sorc-badges badges'>" +
     (s.nation ? "<span class='badge nation'>" + esc(s.nation) + "</span>" : "") +
     "<span class='badge origine-seconde_edition_adaptee'>Sorcellerie</span></div>");
+
+  // ---- Carte d'une rune (grille filtrable, glyphe compris) ----
+  function runeCard(r) {
+    var search = norm(r.nom + " " + r.trad + " " + r.famille + " " + r.paras.join(" "));
+    return "<div class='sorc-forme sorc-rune' data-search=\"" + esc(search) + "\">" +
+      "<div class='sorc-rune-top'>" +
+      (r.img ? "<img class='sorc-rune-img' src='" + esc(r.img) + "' alt='" + esc(r.nom) + "' loading='lazy'>" : "") +
+      "<div><div class='sorc-forme-head'><span class='sorc-forme-nom'>" +
+      String(r.num).padStart(2, "0") + " · " + esc(r.nom) +
+      " <em>(« " + esc(r.trad) + " »)</em></span>" +
+      "<span class='sorc-nd'>ND " + esc(r.nd) + "</span></div>" +
+      (r.famille ? "<span class='sorc-fam-tag'>" + esc(r.famille) + "</span>" : "") +
+      "</div></div>" +
+      r.paras.map(paraHTML).join("") + "</div>";
+  }
+
+  // ---- Modèle générique par sections (Lærdom et suivantes) ----
+  if (s.sections && s.sections.length) {
+    s.sections.forEach(function (sec) {
+      if (sec.type === "runes") {
+        html.push("<div class='sorc-block'><h3>" + esc(sec.titre) + "</h3>" +
+          (sec.intro ? paraHTML(sec.intro) : "") +
+          "<input type='search' id='sorc-search' class='sorc-search' " +
+          "placeholder='Filtrer les runes (nom, traduction, effet…)' autocomplete='off'>" +
+          "<div class='sorc-formes sorc-runes'>" +
+          (s.runes || []).map(runeCard).join("") + "</div></div>");
+      } else {
+        html.push("<div class='sorc-block'><h3>" + esc(sec.titre) + "</h3>" + sec.html + "</div>");
+      }
+    });
+    main.insertAdjacentHTML("beforeend", html.join("\n"));
+    wireSearch();
+    return;
+  }
+
+  // ---- Modèle Pyeryem (description / héritage / formes / glossaire) ----
   html.push("<div class='sorc-block'><h3>Description</h3>" +
     (s.description || []).map(paraHTML).join("") + "</div>");
 
@@ -144,10 +180,12 @@
   }
 
   main.insertAdjacentHTML("beforeend", html.join("\n"));
+  wireSearch();
 
-  // ---- Filtre des formes ----
-  var input = document.getElementById("sorc-search");
-  if (input) {
+  // ---- Filtre des formes / runes (commun aux deux modèles) ----
+  function wireSearch() {
+    var input = document.getElementById("sorc-search");
+    if (!input) return;
     input.addEventListener("input", function () {
       var q = norm(input.value);
       document.querySelectorAll(".sorc-forme").forEach(function (card) {
