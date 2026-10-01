@@ -1206,6 +1206,26 @@ window.JOURNAL_DB = {
               "d": 23
             },
             "html": "De retour de Buché, pendant que Darmuid et Ingrid récupèrent de leurs blessure suite au combat contre Belobog, le reste de l'équipe va à La Motte, encore en Montaigne, trouver un des compagnons de&nbsp;<span style=\"background-color: rgb(47, 39, 15); --darkreader-inline-bgcolor: var(--darkreader-background-2f270f, #2a220d);\" data-darkreader-inline-bgcolor=\"\">Liang Zhenya qui y a été vu. Ils le récupèrent.</span><div><span style=\"background-color: rgb(47, 39, 15); --darkreader-inline-bgcolor: var(--darkreader-background-2f270f, #2a220d);\" data-darkreader-inline-bgcolor=\"\"><br></span></div><div><span style=\"background-color: rgb(47, 39, 15); --darkreader-inline-bgcolor: var(--darkreader-background-2f270f, #2a220d);\" data-darkreader-inline-bgcolor=\"\">Ils engagent également un navigateur vétéran dont ils ont dû racheter ses cartes maritimes volées par un groupe de mercenaires engagés par le marquis local.</span></div>"
+          },
+          {
+            "id": "ent-mupxt6ih-4",
+            "name": "Escale et retour à Numa",
+            "date": "2 Octobre, 1667",
+            "cal": {
+              "y": 1667,
+              "m": 10,
+              "d": 2
+            },
+            "cal_fin": null,
+            "html": "Départ de la Castille vers le Khemet.<div>Une escale a lieu dans le trajet vers <a class=\"j-link\" href=\"journal-article.html?r=nations&amp;id=nat-8743971\">La Numa</a>&nbsp; où la princesse Cassandre leur révèle le fruit de ses recherches et ses inquiétudes : <a class=\"j-link\" href=\"journal-article.html?r=personnages&amp;id=per-mr9ktaok\">Dis Pater</a>&nbsp;qui cotoie régulièrement sa mère semblerait être un <a class=\"j-link\" href=\"journal-article.html?r=creatures&amp;id=cre-8754807\">Syrnes</a>&nbsp;, et appelle les Aventuriers à la vigilance s'ils venaient à le revoir.</div>"
+          },
+          {
+            "id": "ent-mupxt6ih-5",
+            "name": "Arrivée au Khemet",
+            "date": "",
+            "cal": null,
+            "cal_fin": null,
+            "html": "Les Aventuriers se dirigent vers le Khemet.<div>Après deux escales dans des villes locales qui leur ont permis de découvrir les traditions locales, ils repartent en direction du palais estival où réside le Prince Siptah.</div><div>Le navire se fait percuter par ce qui s'avèrera être \"Vieille Gueule\", un énorme crocodile, ce qui fait arrimer au large.</div><div>Lu Ji décide d'utiliser la relique, ce qui a pour effet de désembourber très facilement le vaisseau, mais fait le dangereusement basculer, ce qui envoie à l'eau son frère et quelques marins. L'un d'entre eux se fait dévorer, tandis que Lu Min arrive de justesse à regagner le navire.</div><div><br></div><div>Après une dernière visite de ville, les Aventuriers prennent une entrée secrète qui pourrait mener discrètement et directement vers le palais. La raison pour laquelle personne n'en est revenu est les deux Sphinx gardant l'entrée et la sortie. Les Aventuriers résolvent néanmoins les énigmes posées par le Sphinx gardant l'issue vers le palais estival.</div><div>Ils y arrivent, et empruntent une échelle secrète, les faisant arriver à un entrepôt de nourriture du palais estival.</div>"
           }
         ]
       }
@@ -1452,6 +1472,14 @@ window.JOURNAL_DB = {
     ]
   },
   "changes": [
+    {
+      "author": "Guillaume",
+      "action": "modifié",
+      "target": "Calendrier Thean",
+      "rubrique": "calendriers",
+      "id": "cal-8723665",
+      "date": "2026-10-01"
+    },
     {
       "author": "Guillaume",
       "action": "modifié",
@@ -2269,7 +2297,7 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1790879756818,
+  "rev": 1790883524317,
   "xp": {
     "persos": [
       {
