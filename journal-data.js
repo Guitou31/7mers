@@ -381,6 +381,29 @@ window.JOURNAL_DB = {
         "author": "Guillaume",
         "image": "journal-images/img-mr9ktaol-0.png",
         "thumb": "journal-images/img-mravsnlc-0.png"
+      },
+      {
+        "id": "per-mupy675x",
+        "rubrique": "personnages",
+        "name": "Princesse Cassandre",
+        "type": "Allié",
+        "title": "Princesse",
+        "familles": [],
+        "lieux": [],
+        "nations": [],
+        "description": "La princesse Cassandre est la fille ainée de la reine&nbsp;Syntyche, qui dirige le&nbsp;Kousai, une des nombreuses îles de <a class=\"j-link\" href=\"journal-article.html?r=nations&amp;id=nat-8743971\">La Numa</a>&nbsp;.<div>Particulièrement intelligente, il s'avère qu'elle fait partie de la <a class=\"j-link\" href=\"journal-article.html?r=organisations&amp;id=org-8743239\">Société des Explorateurs</a>&nbsp;en tant qu'Erudite.</div>",
+        "entrees": [],
+        "age": "24",
+        "statut": "Vivant",
+        "sexe": "",
+        "pronoms": "",
+        "etiquettes": [],
+        "slug": "princesse-cassandre",
+        "updated": "2026-10-01",
+        "created": "2026-10-01",
+        "author": "Guillaume",
+        "image": "journal-images/img-mupy675y-0.png",
+        "thumb": "journal-images/img-mupy69n8-1.png"
       }
     ],
     "lieux": [
@@ -1478,6 +1501,14 @@ window.JOURNAL_DB = {
   "changes": [
     {
       "author": "Guillaume",
+      "action": "créé",
+      "target": "Princesse Cassandre",
+      "rubrique": "personnages",
+      "id": "per-mupy675x",
+      "date": "2026-10-01"
+    },
+    {
+      "author": "Guillaume",
       "action": "modifié",
       "target": "Calendrier Thean",
       "rubrique": "calendriers",
@@ -2309,7 +2340,7 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1790883655854,
+  "rev": 1790884137230,
   "xp": {
     "persos": [
       {
