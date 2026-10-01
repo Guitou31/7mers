@@ -1222,8 +1222,12 @@ window.JOURNAL_DB = {
           {
             "id": "ent-mupxt6ih-5",
             "name": "Arrivée au Khemet",
-            "date": "",
-            "cal": null,
+            "date": "18 Octobre, 1667",
+            "cal": {
+              "y": 1667,
+              "m": 10,
+              "d": 18
+            },
             "cal_fin": null,
             "html": "Les Aventuriers se dirigent vers le Khemet.<div>Après deux escales dans des villes locales qui leur ont permis de découvrir les traditions locales, ils repartent en direction du palais estival où réside le Prince Siptah.</div><div>Le navire se fait percuter par ce qui s'avèrera être \"Vieille Gueule\", un énorme crocodile, ce qui fait arrimer au large.</div><div>Lu Ji décide d'utiliser la relique, ce qui a pour effet de désembourber très facilement le vaisseau, mais fait le dangereusement basculer, ce qui envoie à l'eau son frère et quelques marins. L'un d'entre eux se fait dévorer, tandis que Lu Min arrive de justesse à regagner le navire.</div><div><br></div><div>Après une dernière visite de ville, les Aventuriers prennent une entrée secrète qui pourrait mener discrètement et directement vers le palais. La raison pour laquelle personne n'en est revenu est les deux Sphinx gardant l'entrée et la sortie. Les Aventuriers résolvent néanmoins les énigmes posées par le Sphinx gardant l'issue vers le palais estival.</div><div>Ils y arrivent, et empruntent une échelle secrète, les faisant arriver à un entrepôt de nourriture du palais estival.</div>"
           }
@@ -1472,6 +1476,14 @@ window.JOURNAL_DB = {
     ]
   },
   "changes": [
+    {
+      "author": "Guillaume",
+      "action": "modifié",
+      "target": "Calendrier Thean",
+      "rubrique": "calendriers",
+      "id": "cal-8723665",
+      "date": "2026-10-01"
+    },
     {
       "author": "Guillaume",
       "action": "modifié",
@@ -2297,7 +2309,7 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1790883524317,
+  "rev": 1790883655854,
   "xp": {
     "persos": [
       {
