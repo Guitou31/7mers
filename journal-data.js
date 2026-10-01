@@ -2261,5 +2261,580 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1784474581934
+  "rev": 1784474581934,
+  "xp": {
+    "persos": [
+      {
+        "id": "darmuid",
+        "nom": "Darmuid",
+        "joueur": "Renaud",
+        "groupe": "actif",
+        "xp_mj": 150,
+        "xp_av": 0
+      },
+      {
+        "id": "don-felipe",
+        "nom": "Don Felipe",
+        "joueur": "Fred",
+        "groupe": "actif",
+        "xp_mj": 150,
+        "xp_av": 0
+      },
+      {
+        "id": "dorian",
+        "nom": "Dorian",
+        "joueur": "Rémi",
+        "groupe": "actif",
+        "xp_mj": 150,
+        "xp_av": 0
+      },
+      {
+        "id": "ingrid",
+        "nom": "Ingrid",
+        "joueur": "Vanessa",
+        "groupe": "actif",
+        "xp_mj": 150,
+        "xp_av": 0
+      },
+      {
+        "id": "lu-ji",
+        "nom": "Lü Ji",
+        "joueur": "Anthony",
+        "groupe": "actif",
+        "xp_mj": 150,
+        "xp_av": 0
+      },
+      {
+        "id": "lu-min",
+        "nom": "Lü Min",
+        "joueur": "Anthony",
+        "groupe": "pnj",
+        "xp_mj": 140,
+        "xp_av": 0,
+        "note": "Serviteur (PNJ)"
+      },
+      {
+        "id": "marek",
+        "nom": "Marek Wrobleski",
+        "joueur": "Johann/MTO",
+        "groupe": "retrait",
+        "xp_mj": 75,
+        "xp_av": 0
+      },
+      {
+        "id": "mendoza",
+        "nom": "Mendoza",
+        "joueur": "Morgane",
+        "groupe": "retrait",
+        "xp_mj": 100,
+        "xp_av": 0
+      }
+    ],
+    "historique": [
+      {
+        "date": "2026-08-23",
+        "raison": "Session Numa",
+        "type": "mj",
+        "gains": [
+          {
+            "id": "don-felipe",
+            "xp": 15
+          },
+          {
+            "id": "lu-ji",
+            "xp": 15
+          },
+          {
+            "id": "dorian",
+            "xp": 15
+          },
+          {
+            "id": "darmuid",
+            "xp": 25
+          },
+          {
+            "id": "ingrid",
+            "xp": 25
+          },
+          {
+            "id": "lu-min",
+            "xp": 35
+          }
+        ]
+      },
+      {
+        "date": "2026-07-23",
+        "raison": "Mini-scénario arc Kogarashi",
+        "type": "mj",
+        "gains": [
+          {
+            "id": "don-felipe",
+            "xp": 5
+          },
+          {
+            "id": "lu-ji",
+            "xp": 10
+          },
+          {
+            "id": "dorian",
+            "xp": 10
+          },
+          {
+            "id": "lu-min",
+            "xp": 15
+          }
+        ]
+      },
+      {
+        "date": "2026-06-29",
+        "raison": "Fin du scénario du Voleur de Soleil",
+        "type": "mj",
+        "gains": [
+          {
+            "id": "don-felipe",
+            "xp": 25
+          },
+          {
+            "id": "lu-ji",
+            "xp": 20
+          },
+          {
+            "id": "dorian",
+            "xp": 20
+          },
+          {
+            "id": "darmuid",
+            "xp": 20
+          },
+          {
+            "id": "ingrid",
+            "xp": 20
+          },
+          {
+            "id": "lu-min",
+            "xp": 20
+          }
+        ]
+      },
+      {
+        "date": "2026-06-26",
+        "raison": "Session 31 Mai — Voleur de Soleil 2/3",
+        "type": "mj",
+        "gains": [
+          {
+            "id": "don-felipe",
+            "xp": 5
+          },
+          {
+            "id": "dorian",
+            "xp": 5
+          },
+          {
+            "id": "darmuid",
+            "xp": 5
+          },
+          {
+            "id": "ingrid",
+            "xp": 5
+          },
+          {
+            "id": "lu-ji",
+            "xp": 5
+          },
+          {
+            "id": "lu-min",
+            "xp": 5
+          }
+        ]
+      },
+      {
+        "date": "2026-05-22",
+        "raison": "Session 17 Mai (début Voleur de Soleil)",
+        "type": "mj",
+        "gains": [
+          {
+            "id": "don-felipe",
+            "xp": 5
+          },
+          {
+            "id": "mendoza",
+            "xp": 5
+          },
+          {
+            "id": "dorian",
+            "xp": 5
+          },
+          {
+            "id": "darmuid",
+            "xp": 5
+          },
+          {
+            "id": "ingrid",
+            "xp": 5
+          },
+          {
+            "id": "lu-ji",
+            "xp": 5
+          },
+          {
+            "id": "lu-min",
+            "xp": 5
+          }
+        ]
+      },
+      {
+        "date": "2026-05-17",
+        "raison": "Correction session Numa",
+        "type": "mj",
+        "gains": [
+          {
+            "id": "don-felipe",
+            "xp": 10
+          },
+          {
+            "id": "mendoza",
+            "xp": 10
+          },
+          {
+            "id": "dorian",
+            "xp": 10
+          }
+        ]
+      },
+      {
+        "date": "2026-05-11",
+        "raison": "Session 3 Mai",
+        "type": "mj",
+        "gains": [
+          {
+            "id": "don-felipe",
+            "xp": 5
+          },
+          {
+            "id": "mendoza",
+            "xp": 5
+          },
+          {
+            "id": "dorian",
+            "xp": 5
+          },
+          {
+            "id": "darmuid",
+            "xp": 5
+          },
+          {
+            "id": "ingrid",
+            "xp": 5
+          },
+          {
+            "id": "lu-ji",
+            "xp": 5
+          },
+          {
+            "id": "lu-min",
+            "xp": 5
+          },
+          {
+            "id": "marek",
+            "xp": 5
+          }
+        ]
+      },
+      {
+        "date": "2026-05-03",
+        "raison": "Correction session Numa",
+        "type": "mj",
+        "gains": [
+          {
+            "id": "don-felipe",
+            "xp": 5
+          },
+          {
+            "id": "mendoza",
+            "xp": 5
+          }
+        ]
+      },
+      {
+        "date": "2026-05-03",
+        "raison": "Fin session Numa",
+        "type": "mj",
+        "gains": [
+          {
+            "id": "don-felipe",
+            "xp": 5
+          },
+          {
+            "id": "mendoza",
+            "xp": 5
+          },
+          {
+            "id": "dorian",
+            "xp": 10
+          },
+          {
+            "id": "darmuid",
+            "xp": 20
+          },
+          {
+            "id": "ingrid",
+            "xp": 20
+          },
+          {
+            "id": "lu-ji",
+            "xp": 20
+          },
+          {
+            "id": "lu-min",
+            "xp": 10
+          }
+        ]
+      },
+      {
+        "date": "2026-04-19",
+        "raison": "Session — Début Arène et libération d'esclaves",
+        "type": "mj",
+        "gains": [
+          {
+            "id": "don-felipe",
+            "xp": 10
+          },
+          {
+            "id": "mendoza",
+            "xp": 10
+          },
+          {
+            "id": "dorian",
+            "xp": 10
+          },
+          {
+            "id": "darmuid",
+            "xp": 10
+          },
+          {
+            "id": "ingrid",
+            "xp": 10
+          },
+          {
+            "id": "lu-ji",
+            "xp": 10
+          },
+          {
+            "id": "lu-min",
+            "xp": 10
+          },
+          {
+            "id": "marek",
+            "xp": 10
+          }
+        ]
+      },
+      {
+        "date": "2026-04-19",
+        "raison": "Correction manuelle (Marek)",
+        "type": "mj",
+        "gains": [
+          {
+            "id": "marek",
+            "xp": -10
+          }
+        ]
+      },
+      {
+        "date": "2026-03-22",
+        "raison": "Fin de la Session 10 — 2ème morceau de carte + démon tué",
+        "type": "mj",
+        "gains": [
+          {
+            "id": "don-felipe",
+            "xp": 10
+          },
+          {
+            "id": "mendoza",
+            "xp": 20
+          },
+          {
+            "id": "dorian",
+            "xp": 20
+          },
+          {
+            "id": "darmuid",
+            "xp": 10
+          },
+          {
+            "id": "ingrid",
+            "xp": 20
+          },
+          {
+            "id": "lu-ji",
+            "xp": 10
+          },
+          {
+            "id": "lu-min",
+            "xp": 20
+          },
+          {
+            "id": "marek",
+            "xp": 15
+          }
+        ]
+      },
+      {
+        "date": "2026-03-22",
+        "raison": "Session 9",
+        "type": "mj",
+        "gains": [
+          {
+            "id": "don-felipe",
+            "xp": 5
+          },
+          {
+            "id": "mendoza",
+            "xp": 5
+          },
+          {
+            "id": "dorian",
+            "xp": 5
+          },
+          {
+            "id": "darmuid",
+            "xp": 5
+          },
+          {
+            "id": "ingrid",
+            "xp": 5
+          },
+          {
+            "id": "lu-ji",
+            "xp": 5
+          },
+          {
+            "id": "lu-min",
+            "xp": 5
+          },
+          {
+            "id": "marek",
+            "xp": 5
+          }
+        ]
+      },
+      {
+        "date": "2026-02-08",
+        "raison": "Fin de la session 8 — Avancement quête secondaire, découverte de l'identité de Rocío Sandoval, sœur jumelle du roi Amadeo Sandoval",
+        "type": "mj",
+        "gains": [
+          {
+            "id": "don-felipe",
+            "xp": 10
+          },
+          {
+            "id": "mendoza",
+            "xp": 10
+          },
+          {
+            "id": "dorian",
+            "xp": 10
+          },
+          {
+            "id": "darmuid",
+            "xp": 10
+          },
+          {
+            "id": "ingrid",
+            "xp": 15
+          },
+          {
+            "id": "lu-ji",
+            "xp": 10
+          },
+          {
+            "id": "lu-min",
+            "xp": 5
+          },
+          {
+            "id": "marek",
+            "xp": 10
+          }
+        ]
+      },
+      {
+        "date": "2026-02-02",
+        "raison": "Fin de la session 7 (25/01/2026) — Avancement de la quête principale et aléas",
+        "type": "mj",
+        "gains": [
+          {
+            "id": "don-felipe",
+            "xp": 5
+          },
+          {
+            "id": "mendoza",
+            "xp": 5
+          },
+          {
+            "id": "dorian",
+            "xp": 5
+          },
+          {
+            "id": "darmuid",
+            "xp": 5
+          },
+          {
+            "id": "ingrid",
+            "xp": 10
+          },
+          {
+            "id": "lu-ji",
+            "xp": 10
+          },
+          {
+            "id": "lu-min",
+            "xp": 10
+          },
+          {
+            "id": "marek",
+            "xp": 14
+          }
+        ]
+      },
+      {
+        "date": "2026-01-25",
+        "raison": "Reprise du Google Sheet — état avant le suivi détaillé",
+        "type": "mj",
+        "gains": [
+          {
+            "id": "don-felipe",
+            "xp": 30
+          },
+          {
+            "id": "mendoza",
+            "xp": 20
+          },
+          {
+            "id": "dorian",
+            "xp": 20
+          },
+          {
+            "id": "darmuid",
+            "xp": 30
+          },
+          {
+            "id": "ingrid",
+            "xp": 10
+          },
+          {
+            "id": "lu-ji",
+            "xp": 25
+          },
+          {
+            "id": "lu-min",
+            "xp": 10
+          },
+          {
+            "id": "marek",
+            "xp": 16
+          }
+        ]
+      }
+    ]
+  }
 };

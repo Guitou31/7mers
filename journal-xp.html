@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suivi XP — Journal 7ème Mer</title>
+  <link rel="icon" type="image/png" href="Favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="journal.css">
+</head>
+<body data-page="journal-xp">
+  <div class="journal-shell">
+    <button class="journal-toggle" id="journal-toggle" aria-label="Ouvrir le menu"
+            aria-controls="journal-sidebar" aria-expanded="false">☰</button>
+    <aside id="journal-sidebar" class="journal-sidebar" aria-label="Navigation du journal"></aside>
+    <div class="journal-content">
+      <header id="journal-pagehead" class="journal-pagehead"></header>
+      <main class="journal-main" id="journal-main">
+
+        <div id="xp-config-banner" hidden class="j-entree xp-banner">
+          ⚠ Publication non configurée : renseigne ton jeton GitHub pour enregistrer.
+          <button type="button" class="j-btn-ghost" id="xp-config-btn">Configuration GitHub</button>
+        </div>
+
+        <div class="j-entree voy-block">
+          <div class="j-entree-head"><span class="j-entree-title">Distribuer de l'XP</span></div>
+          <div class="voy-grid">
+            <label class="j-label">Montant (XP)
+              <input id="xp-montant" class="j-input" type="number" value="5">
+            </label>
+            <label class="j-label">Raison
+              <input id="xp-raison" class="j-input" type="text" placeholder="ex. Session du 12 octobre">
+            </label>
+            <label class="j-label">Type
+              <select id="xp-type" class="j-input">
+                <option value="mj" selected>Distribution MJ</option>
+                <option value="avantage">Avantage (XP bonus)</option>
+              </select>
+            </label>
+          </div>
+          <div class="j-actions" style="margin-top:0.8rem">
+            <button class="j-btn-add" id="xp-ajouter" type="button">Ajouter aux personnages cochés</button>
+            <button class="j-btn-ghost" id="xp-config-btn2" type="button">Configuration GitHub</button>
+          </div>
+          <div class="j-form-msg" id="xp-msg"></div>
+        </div>
+
+        <div id="xp-table"></div>
+
+        <div class="j-dash-section-title" style="margin-top:1.6rem">Historique</div>
+        <div id="xp-histo"></div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="journal-data.js"></script>
+  <script src="journal-core.js"></script>
+  <script src="journal-github.js"></script>
+  <script src="journal-changements.js"></script>
+  <script src="journal-layout.js"></script>
+  <script src="journal-xp-app.js"></script>
+</body>
+</html>

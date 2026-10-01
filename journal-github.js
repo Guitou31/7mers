@@ -153,6 +153,29 @@
     try { localStorage.setItem("journal_pending_db", JSON.stringify(db)); } catch (e) { }
   }
 
+  // Ajoute une entrée au Suivi XP : applique les gains aux totaux (xp_mj ou
+  // xp_av selon entry.type) et insère l'entrée en tête de l'historique.
+  // entry = { date, raison, type: "mj"|"avantage", gains: [{id, xp}] }
+  function saveXpEntry(entry) {
+    return getFile().then(function (cur) {
+      var db = cur.db || emptyDb();
+      if (!db.xp) db.xp = { persos: [], historique: [] };
+      (entry.gains || []).forEach(function (g) {
+        var p = (db.xp.persos || []).find(function (x) { return x.id === g.id; });
+        if (!p) return;
+        if (entry.type === "avantage") p.xp_av = (p.xp_av || 0) + g.xp;
+        else p.xp_mj = (p.xp_mj || 0) + g.xp;
+      });
+      db.xp.historique = db.xp.historique || [];
+      db.xp.historique.unshift(entry);
+      if (db.xp.historique.length > 300) db.xp.historique = db.xp.historique.slice(0, 300);
+      db.rev = Date.now();
+      var text = serializeDbFile(db);
+      return putFile(text, "Journal: XP — " + (entry.raison || "ajout"), cur.sha)
+        .then(function () { rememberPending(db); return db; });
+    });
+  }
+
   // Insère/met à jour un article + prépend une entrée d'activité, puis commit.
   // Renvoie une promesse résolue avec le DB à jour.
   function saveArticle(rubrique, article, change) {
@@ -195,6 +218,6 @@
   window.JournalGitHub = {
     getConfig: getConfig, setConfig: setConfig, isConfigured: isConfigured,
     clearToken: clearToken, getFile: getFile, saveArticle: saveArticle, deleteArticle: deleteArticle,
-    uploadImage: uploadImage, testConnection: testConnection, PATH: PATH
+    uploadImage: uploadImage, testConnection: testConnection, saveXpEntry: saveXpEntry, PATH: PATH
   };
 })();

@@ -524,3 +524,29 @@
   .j-field.half { grid-column: 1 / -1; }
 }
 
+
+/* ===== Suivi XP ===== */
+.xp-banner { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 1rem; border-color: #c9a23f; background: #faf3dd; }
+.xp-table { width: 100%; border-collapse: collapse; background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: 10px; overflow: hidden; }
+.xp-table th { text-align: left; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-mute); background: var(--bg-elevated); padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--border); }
+.xp-table th:nth-child(n+3), .xp-table td:nth-child(n+3) { text-align: center; width: 110px; }
+.xp-table td { padding: 0.45rem 0.7rem; border-bottom: 1px solid var(--border-soft); }
+.xp-grp td { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--accent); background: var(--bg-elevated); padding: 0.35rem 0.7rem; }
+.xp-row.is-pnj { background: rgba(43, 106, 115, 0.07); }
+.xp-row.is-pnj .xp-nom, .xp-row.is-pnj .xp-nom .j-link { color: #2b6a73; font-weight: 600; }
+.xp-row.is-retrait { opacity: 0.55; }
+.xp-row.is-retrait .xp-grp { color: var(--ink-mute); }
+.xp-joueur { color: var(--ink-mute); font-size: 0.8rem; }
+.xp-note { font-size: 0.72rem; font-style: italic; color: #2b6a73; border: 1px solid rgba(43,106,115,0.35); border-radius: 999px; padding: 0.05rem 0.5rem; margin-left: 0.3rem; }
+.xp-check { width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer; }
+.xp-val { cursor: pointer; font-weight: 600; color: var(--ink-soft); }
+.xp-val:hover { color: var(--accent); text-decoration: underline dotted; }
+.xp-total { font-weight: 800; color: var(--accent); font-size: 1.02rem; }
+.xp-entree { background: var(--bg-card); border: 1px solid var(--border-soft); border-radius: 8px; padding: 0.55rem 0.8rem; margin-bottom: 0.5rem; }
+.xp-entree-head { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; }
+.xp-date { font-size: 0.78rem; color: var(--ink-mute); font-weight: 700; }
+.xp-raison { font-weight: 600; }
+.xp-badge { font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; border-radius: 999px; padding: 0.1rem 0.5rem; }
+.xp-badge-mj { background: var(--accent); color: #fff; }
+.xp-badge-av { background: #2e7d32; color: #fff; }
+.xp-gains { margin-top: 0.25rem; font-size: 0.85rem; color: var(--ink-soft); line-height: 1.5; }
