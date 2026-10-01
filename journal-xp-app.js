@@ -14,6 +14,18 @@
     { key: "pnj",     label: "Serviteurs (PNJ)" },
     { key: "retrait", label: "En retrait — retour hypothétique" }
   ];
+  // Teinte légère de la ligne selon la nationalité du personnage.
+  // (Mendoza reste gris neutre ; le pourpre de Marek reste voilé par le
+  // grisé « en retrait ».)
+  var TEINTES = {
+    "darmuid":    "rgba(46, 125, 50, 0.10)",   // Inish — vert d'Irlande
+    "don-felipe": "rgba(179, 38, 30, 0.10)",   // Castillan + sorcier de feu — rouge
+    "dorian":     "rgba(2, 119, 189, 0.10)",   // La Bucca — bleu océan de l'île libre
+    "ingrid":     "rgba(96, 125, 139, 0.16)",  // Vesten — gris-bleu glacial
+    "lu-ji":      "rgba(255, 160, 0, 0.12)",   // Cathay — or impérial
+    "lu-min":     "rgba(255, 160, 0, 0.12)",   // Cathay — or impérial
+    "marek":      "rgba(136, 14, 79, 0.10)"    // Sarmatie — pourpre
+  };
   var HISTO_DEFAUT = 25;
   var histoTout = false;
 
@@ -72,7 +84,8 @@
         var nomHtml = href
           ? "<a class='j-link' href='" + href + "'>" + esc(p.nom) + "</a>"
           : esc(p.nom);
-        out.push("<tr class='xp-row is-" + grp.key + "'>" +
+        var teinte = TEINTES[p.id] ? " style='background:" + TEINTES[p.id] + "'" : "";
+        out.push("<tr class='xp-row is-" + grp.key + "'" + teinte + ">" +
           "<td><input type='checkbox' class='xp-check' data-id='" + p.id + "'" +
           (coche ? " checked" : "") + "></td>" +
           "<td class='xp-nom'>" + nomHtml +

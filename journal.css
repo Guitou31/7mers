@@ -532,7 +532,7 @@
 .xp-table th:nth-child(n+3), .xp-table td:nth-child(n+3) { text-align: center; width: 110px; }
 .xp-table td { padding: 0.45rem 0.7rem; border-bottom: 1px solid var(--border-soft); }
 .xp-grp td { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--accent); background: var(--bg-elevated); padding: 0.35rem 0.7rem; }
-.xp-row.is-pnj { background: rgba(43, 106, 115, 0.07); }
+/* Fond de ligne = teinte de nationalité (inline, voir TEINTES dans l'app) */
 .xp-row.is-pnj .xp-nom, .xp-row.is-pnj .xp-nom .j-link { color: #2b6a73; font-weight: 600; }
 .xp-row.is-retrait { opacity: 0.55; }
 .xp-row.is-retrait .xp-grp { color: var(--ink-mute); }
