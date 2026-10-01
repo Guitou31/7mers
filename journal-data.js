@@ -675,15 +675,22 @@ window.JOURNAL_DB = {
         "etiquettes": [],
         "description": "<p>La Société des Explorateurs est probablement la moins\nsecrète de toutes les sociétés théanes. Par le passé, elle est même allée\njusqu’à promouvoir publiquement ses activités, invitant toute personne qui\ndésirait étudier ou explorer des ruines syrneth à la contacter. Il n’est donc\npas surprenant de constater que certains Explorateurs estiment qu’ils ont un\nmonopole sur les secrets de cette civilisation disparue, quand ils ne pensent\npas simplement en être propriétaire. </p><p>Si l’existence de la Société des Explorateurs est un secret\nde polichinelle, elle n’a cependant plus pignon sur rue. Depuis que l’Église\nvaticine l’a condamnée, elle doit faire profil bas et se cacher des agents de l’Inquisition.\n</p><p>La Société des Explorateurs est scindée en trois branches :\nles Conservateurs, les Érudits et les Prospecteurs. <br>Les Conservateurs, qui\ncataloguent et entretiennent tout le savoir de la Société tout en analysant la\nsociété et la culture syrneth, sont au sommet de la hiérarchie.<br>\nEn dessous se trouvent les Érudits, qui étudient les artefacts et technologies\nsyrneth, et conduisent des expériences avec. Enfin, à la base de la pyramide,\non trouve les Prospecteurs, qui localisent les ruines, les mettent au jour, les\ncartographient, les documentent et y découvrent des artefacts.<br>\nLes Prospecteurs sont les plus nombreux, et ceux que l’on rencontre le plus\nsouvent car ils voyagent de par le monde entier.<br>\nLes Conservateurs passent quant à eux le plus clair de leur temps dans les\nruines—une fois que les Prospecteurs y ont terminé leur travail— pour étudier\nen personne les cités, habitations et gravures. À l’inverse, les Érudits ont\ntendance à rester confinés dans leurs études, où ils cherchent à percer à jour\nles secrets syrneth ; ils forment le groupe le plus discret, travaillant dans\nl’isolement pour comprendre les mystères des artefacts syrneth.</p>",
         "created": "2026-01-22",
-        "updated": "2026-01-22",
+        "updated": "2026-10-01",
         "author": "Guillaume",
         "membres": [
           {
             "id": "per-8743193",
             "name": "Ochoa De Alcada",
             "role": ""
+          },
+          {
+            "id": "per-mupy675x",
+            "name": "Princesse Cassandre",
+            "role": ""
           }
-        ]
+        ],
+        "lieux": [],
+        "entrees": []
       }
     ],
     "familles": [
@@ -1499,6 +1506,14 @@ window.JOURNAL_DB = {
     ]
   },
   "changes": [
+    {
+      "author": "Guillaume",
+      "action": "modifié",
+      "target": "Société des Explorateurs",
+      "rubrique": "organisations",
+      "id": "org-8743239",
+      "date": "2026-10-01"
+    },
     {
       "author": "Guillaume",
       "action": "créé",
@@ -2340,7 +2355,7 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1790884137230,
+  "rev": 1790884266291,
   "xp": {
     "persos": [
       {
