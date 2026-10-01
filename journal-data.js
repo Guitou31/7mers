@@ -1135,12 +1135,12 @@ window.JOURNAL_DB = {
         "etiquettes": [],
         "description": "",
         "created": "2026-01-19",
-        "updated": "2026-07-19",
+        "updated": "2026-10-01",
         "author": "Guillaume",
         "date_actuelle": {
           "y": 1667,
-          "m": 9,
-          "d": 24
+          "m": 10,
+          "d": 18
         },
         "entrees": [
           {
@@ -1452,6 +1452,14 @@ window.JOURNAL_DB = {
     ]
   },
   "changes": [
+    {
+      "author": "Guillaume",
+      "action": "modifié",
+      "target": "Calendrier Thean",
+      "rubrique": "calendriers",
+      "id": "cal-8723665",
+      "date": "2026-10-01"
+    },
     {
       "author": "Guillaume",
       "action": "modifié",
@@ -2261,7 +2269,7 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1790878876630,
+  "rev": 1790879756818,
   "xp": {
     "persos": [
       {
