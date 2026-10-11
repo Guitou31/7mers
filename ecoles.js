@@ -1619,7 +1619,7 @@ window.ECOLES_DATA = {
     "tir precis": {
       "nom": "Tir précis",
       "categorie": "Techniques de combat à distance",
-      "description": "Le personnage apprend à se concentrer afin de porter le coup là où il le faut. Le rang de cette technique de combat détermine le nombre de rounds pendant lesquels il peut se concentrer. Chaque round de concentration augmente la portée de l’arme de 10 mètres et donne une augmentation gratuite ne pouvant être utilisée que pour un tir localisé (tête, main, etc.).",
+      "description": "Le personnage apprend à se concentrer afin de porter le coup là où il le faut. Le rang de cette technique de combat détermine le nombre d’actions qu’il peut dépenser et cumuler pendant lesquelles il peut se concentrer. Chaque action de concentration ainsi dépensée augmente la portée de l’arme de 10 mètres (5 pour les pistolets) et donne une augmentation gratuite ne pouvant être utilisée que pour un tir localisé (tête, main, etc.). Ce bonus est perdu si vous prenez des dégâts (avant encaissement).",
       "ecoles_enseignant": [
         "O'Faolain",
         "Rasmussen",
