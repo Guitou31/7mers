@@ -24,7 +24,7 @@
     return (s || "").toString()
       .replace(/œ/g, "oe").replace(/Œ/g, "OE")
       .replace(/æ/g, "ae").replace(/Æ/g, "AE")
-      .replace(/[''`]/g, "'")        // apostrophes typo. → apostrophe ASCII
+      .replace(/['‘’ʼ`]/g, "'")  // apostrophes typographiques (’ ‘ ʼ) → apostrophe ASCII
       .normalize("NFKD").replace(/[̀-ͯ]/g, "")
       .toLowerCase();
   }
@@ -38,11 +38,12 @@
     "al'marikk": "Al Marikk",
     "bernouilli": "Bernoulli",
     "la pointe au coeur": "La Pointe au Coeur",
+    "al-aifa": "Al Aïfa",
     // 'Tulwar' et 'Rachecourt' : volontairement non aliasés
     // → s'afficheront en texte (école introuvable / supprimée).
   };
   function slugify(s) {
-    return normalize(s).replace(/['']/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+    return normalize(s).replace(/'/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   }
   function el(tag, attrs, children) {
     const e = document.createElement(tag);
@@ -176,6 +177,38 @@
     if (type === "technique") return findTechnique(nom);
     return null;
   }
+
+  // Complète les listes "écoles enseignant" des techniques à partir des
+  // références portées par les écoles elles-mêmes (Spadassin + Combat) :
+  // les listes précalculées du docx sont incomplètes (ex. Tir d'Instinct).
+  // Ajout uniquement (jamais de retrait), dédoublonné via normalize().
+  (function completerEcolesEnseignant() {
+    const td = window.ECOLES_DATA && window.ECOLES_DATA.techniques;
+    if (!td) return;
+    const sources = [
+      (window.ECOLES_DATA.ecoles || []),
+      ((window.ECOLES_COMBAT_DATA && window.ECOLES_COMBAT_DATA.ecoles) || []),
+    ];
+    const touchees = new Set();
+    for (const ecoles of sources) {
+      for (const ec of ecoles) {
+        if (ec.redacted) continue; // les écoles classifiées restent invisibles
+        for (const tc of (ec.techniques_combat || [])) {
+          const t = tc && tc.ref ? td[tc.ref] : null;
+          if (!t) continue;
+          if (!Array.isArray(t.ecoles_enseignant)) t.ecoles_enseignant = [];
+          const k = normalize(ec.nom);
+          if (!t.ecoles_enseignant.some(n => normalize(n) === k)) {
+            t.ecoles_enseignant.push(ec.nom);
+            touchees.add(t);
+          }
+        }
+      }
+    }
+    for (const t of touchees) {
+      t.ecoles_enseignant.sort((a, b) => a.localeCompare(b, "fr", { sensitivity: "base" }));
+    }
+  })();
 
   // Pour les liens "spécialisation" depuis une école/compétence : cherche
   // dans entraînements puis métiers, renvoie {type, nom} ou null.

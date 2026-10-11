@@ -19,17 +19,19 @@ window.ECOLES_COMBAT_DATA = {
       "Vodacce"
     ],
     "repartition_armes": {
-      "Escrime (Sabre)": 8,
-      "Lances": 2,
-      "Fouet": 1,
-      "Couteau": 8,
-      "Escrime (Rapière)": 5,
-      "Pugilat": 4,
-      "Escrime (Épée)": 2,
+      "Atypique / Accessoire": 3,
       "Boucliers": 1,
-      "Haches": 1,
+      "Couteau": 8,
+      "Escrime (Épée)": 3,
+      "Escrime (Rapière)": 5,
+      "Escrime (Sabre)": 8,
+      "Fouet": 1,
+      "Fusils": 4,
       "Gant de combat": 1,
-      "Atypique / Accessoire": 3
+      "Haches": 1,
+      "Lances": 2,
+      "Pistolets": 6,
+      "Pugilat": 4
     },
     "repartition_restrictions": {
       "libre": 35,
@@ -40,13 +42,15 @@ window.ECOLES_COMBAT_DATA = {
       "Atypique / Accessoire",
       "Boucliers",
       "Couteau",
+      "Escrime (Épée)",
       "Escrime (Rapière)",
       "Escrime (Sabre)",
-      "Escrime (Épée)",
       "Fouet",
+      "Fusils",
       "Gant de combat",
       "Haches",
       "Lances",
+      "Pistolets",
       "Pugilat"
     ],
     "restrictions_creation": {
@@ -150,7 +154,10 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "arme": "Katzbalger et pistolet ou pistolet de duel",
       "arme_display": "Katzbalger et pistolet ou pistolet de duel",
-      "armes_categories": [],
+      "armes_categories": [
+        "Pistolets",
+        "Escrime (Épée)"
+      ],
       "specialisations": [
         "Escrime (Épées)",
         "Commandement"
@@ -311,14 +318,16 @@ window.ECOLES_COMBAT_DATA = {
       "genre_restriction": null
     },
     {
-      "nom": "Bouffe- doublons",
+      "nom": "Bouffe-Doublons",
       "origine": "officielle",
       "nations": [
         "Nations Pirates"
       ],
       "arme": "Pistolet",
       "arme_display": "Pistolet",
-      "armes_categories": [],
+      "armes_categories": [
+        "Pistolets"
+      ],
       "specialisations": [
         "Combat de rue",
         "Pistolet"
@@ -487,7 +496,9 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "arme": "Pistolet de poche",
       "arme_display": "Pistolet de poche",
-      "armes_categories": [],
+      "armes_categories": [
+        "Pistolets"
+      ],
       "specialisations": [
         "Arnaqueur",
         "Pistolet"
@@ -1411,7 +1422,9 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "arme": "Pistolet ou pistolet de duel",
       "arme_display": "Pistolet ou pistolet de duel",
-      "armes_categories": [],
+      "armes_categories": [
+        "Pistolets"
+      ],
       "specialisations": [
         "Chasseur de primes",
         "Pistolet"
@@ -1495,7 +1508,9 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "arme": "Tromblon de marine",
       "arme_display": "Tromblon de marine",
-      "armes_categories": [],
+      "armes_categories": [
+        "Fusils"
+      ],
       "specialisations": [
         "Marine",
         "Fusils"
@@ -1504,7 +1519,7 @@ window.ECOLES_COMBAT_DATA = {
       "techniques_combat": [
         {
           "nom_base": "Exploiter les faiblesses",
-          "variante": "Mousquet",
+          "variante": "Fusils",
           "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
@@ -2011,7 +2026,9 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "arme": "Mousquet de précision",
       "arme_display": "Mousquet de précision",
-      "armes_categories": [],
+      "armes_categories": [
+        "Fusils"
+      ],
       "specialisations": [
         "Guérillero",
         "Fusils"
@@ -2026,7 +2043,7 @@ window.ECOLES_COMBAT_DATA = {
         },
         {
           "nom_base": "Exploiter les faiblesses",
-          "variante": "Mousquet",
+          "variante": "Fusils",
           "ref": "exploiter les faiblesses",
           "source": "pdf_combat"
         },
@@ -3547,7 +3564,9 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "arme": "Mousquet",
       "arme_display": "Mousquet",
-      "armes_categories": [],
+      "armes_categories": [
+        "Fusils"
+      ],
       "specialisations": [
         "Fusils",
         "Pugilat"
@@ -3561,15 +3580,15 @@ window.ECOLES_COMBAT_DATA = {
           "source": "pdf_combat"
         },
         {
-          "nom_base": "Déplacements circulaires",
+          "nom_base": "Tir d’Instinct",
           "variante": null,
-          "ref": "deplacements circulaires",
+          "ref": "tir d'instinct",
           "source": "pdf_combat"
         },
         {
-          "nom_base": "Exploiter les faiblesses",
-          "variante": "Mousquet",
-          "ref": "exploiter les faiblesses",
+          "nom_base": "Tir en ricochet",
+          "variante": null,
+          "ref": "tir en ricochet",
           "source": "pdf_combat"
         },
         {
@@ -3606,11 +3625,11 @@ window.ECOLES_COMBAT_DATA = {
         "niveaux": {
           "apprenti": {
             "fluff": "Le premier enseignement de l’école O’Faolain, est : “un mousquet c’est bien, mais deux c’est mieux !”.",
-            "regles": "Vous ne tenez pas compte des pénalités de main non directrice quand vous utilisez un mousquet. De plus, vous pouvez porter jusqu’à six mousquets sur vous sans subir la moindre pénalité. Enfin, vous rechargez deux fois plus vite."
+            "regles": "Vous ignorez l’attribut “Lourde” lorsque vous utilisez un mousquet : vous n’avez donc aucun malus en utilisant un mousquet sans support (fourquine, rebord de fenêtre…). De plus, vous pouvez porter jusqu’à quatre mousquets sans pénalité (au lieu de deux). Ranger un mousquet et en armer un qui était dans votre dos devient une seule action."
           },
           "compagnon": {
             "fluff": "Les mousquets sont vos plus fidèles compagnons, aussi vous les connaissez bien.",
-            "regles": "Un compagnon de l’école O’Faolain ne tient plus compte des pénalités à ses jets d’attaque au mousquet."
+            "regles": "Vous divisez par deux l’attribut de rechargement d’un mousquet (arrondi à l’inférieur). De plus, vous ignorez les malus d’ignition dus aux intempéries."
           },
           "maitre": {
             "fluff": "",
@@ -3630,7 +3649,9 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "arme": "Pistolet de duel",
       "arme_display": "Pistolet de duel",
-      "armes_categories": [],
+      "armes_categories": [
+        "Pistolets"
+      ],
       "specialisations": [
         "Athlétisme",
         "Pistolet"
@@ -3975,7 +3996,9 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "arme": "Pistolet ou pistolet de duel",
       "arme_display": "Pistolet ou pistolet de duel",
-      "armes_categories": [],
+      "armes_categories": [
+        "Pistolets"
+      ],
       "specialisations": [
         "Courtisan",
         "Pistolet"
@@ -4895,7 +4918,9 @@ window.ECOLES_COMBAT_DATA = {
       ],
       "arme": "Mousquet ou mousquet de Teschen",
       "arme_display": "Mousquet ou mousquet de Teschen",
-      "armes_categories": [],
+      "armes_categories": [
+        "Fusils"
+      ],
       "specialisations": [
         "Arme d’hast",
         "Fusils"

@@ -369,7 +369,6 @@ window.ECOLES_DATA = {
         "Gbeto",
         "Kulachniy Boi",
         "Mateenatya",
-        "O'Faolain",
         "Omuhelo",
         "Tin Hinan",
         "Vilkas"
@@ -604,7 +603,6 @@ window.ECOLES_DATA = {
         "Necare",
         "Ottenheim",
         "Overmars",
-        "O’Faolain",
         "Pavois",
         "Peecke",
         "Provolone",
@@ -743,6 +741,10 @@ window.ECOLES_DATA = {
         "Fronde": [
           "Nadja’hari"
         ],
+        "Fusils": [
+          "Durante",
+          "Guzman"
+        ],
         "Gant de combat": [
           "Al’Marikk",
           "Eisenfaust",
@@ -772,11 +774,6 @@ window.ECOLES_DATA = {
         "Masse": [
           "Hammer",
           "Winckler"
-        ],
-        "Mousquet": [
-          "Durante",
-          "Guzman",
-          "O’Faolain"
         ],
         "Pistolet": [
           "Bouffe-Doublons",
@@ -1538,7 +1535,7 @@ window.ECOLES_DATA = {
     "tir d'adresse": {
       "nom": "Tir d’adresse",
       "categorie": "Techniques de combat à distance",
-      "description": "Pour chaque rang dont vous disposez dans cette technique de combat, vous soustrayez 5 points à toutes les pénalités relatives au tir (portée, couverture, etc.). Tir d’adresse ne vous permet pas de descendre votre ND sous le niveau de difficulté pour être touché de base, tout comme il ne peut augmenter les dommages infligés. Cependant, cela s’applique aux coups ciblés. Par exemple, si une cible à un ND pour être touché de 20, plus 15 pour les modificateurs (comme un coup ciblé à la main), un spadassin ayant 5 rangs dans la technique de combat Tir d’adresse annulera les 15 points de modificateurs mais ne pourra baisser le ND pour être touché de base (soit 20).",
+      "description": "Pour chaque rang dont vous disposez dans cette technique de combat, vous soustrayez 5 points à toutes les pénalités relatives au tir (couverture, intempéries, cible en mouvement, tirs ciblés, etc.). Tir d’adresse ne vous permet pas de descendre votre ND sous le niveau de difficulté pour être touché de base, tout comme il ne permet pas d’ignorer les malus dus si vous avez sprinté. Au rang 4 et 5, vous pouvez, au lieu d’ignorer une pénalité situationnelle, ignorer les malus dus au dépassement de portée, de respectivement un et deux crans de portée effective de plus.",
       "ecoles_enseignant": [
         "Bouffe-Doublons",
         "Buslayevich",
@@ -1556,8 +1553,18 @@ window.ECOLES_DATA = {
     "tir d'instinct": {
       "nom": "Tir d’Instinct",
       "categorie": "Techniques de combat à distance",
-      "description": "Cette technique de combat permet au personnage de tirer sur une cible à l’instinct et, donc, à une vitesse ahurissante. S’il se fait attaquer et qu’il n’a pas le temps de réagir sans effectuer d’interruption, le joueur peut avancer l’un de ses dés d’action de (rang dans la technique de combat) x 2 phases (phase 1 au minimum) et l’utiliser pour tirer avant si sa nouvelle phase précède celle actuelle. Cette technique de combat est effective, même en cas d’attaque surprise, si l’arme est dans les mains du personnage. Ecoles l’enseignant : Bouffe-Doublons, Bricquébec, Buslayevich, Cappuntina, Chima Gongjian Shou, Durante, Mortis, Rasmussen",
-      "ecoles_enseignant": [],
+      "description": "Cette technique de combat permet au personnage de tirer sur une cible à l’instinct et, donc, à une vitesse ahurissante. S’il se fait attaquer et qu’il n’a pas le temps de réagir sans effectuer d’interruption, le joueur peut avancer l’un de ses dés d’action de (rang dans la technique de combat) x 2 phases (phase 1 au minimum) et l’utiliser pour tirer avant si sa nouvelle phase précède celle actuelle. Cette technique de combat est effective, même en cas d’attaque surprise, si l’arme est dans les mains du personnage.",
+      "ecoles_enseignant": [
+        "Bouffe-Doublons",
+        "Bricquébec",
+        "Buslayevich",
+        "Cappuntina",
+        "Chima Gongjian Shou",
+        "Durante",
+        "Mortis",
+        "O’Faolain",
+        "Rasmussen"
+      ],
       "tables": []
     },
     "tir en cloche": {
@@ -1583,10 +1590,11 @@ window.ECOLES_DATA = {
     "tir en ricochet": {
       "nom": "Tir en ricochet",
       "categorie": "Techniques de combat à distance",
-      "description": "Chaque ricochet confère une augmentation de 5 points au ND du tir et retire 1 dé lancé et gardé aux dommages infligés, mais octroie 1 dé d’héroïsme qui doit être utilisé avant la fin du combat.",
+      "description": "Chaque ricochet confère une augmentation de 5 points au ND du tir et retire 1 dé lancé et gardé aux dommages infligés, mais octroie 1 dé d’héroïsme qui doit être utilisé avant la fin du combat. Ces malus ne peuvent être retirés d’aucune manière.",
       "ecoles_enseignant": [
         "Donnerwetter",
-        "Nadja'hari"
+        "Nadja'hari",
+        "O’Faolain"
       ],
       "tables": []
     },
