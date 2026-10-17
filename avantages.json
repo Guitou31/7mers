@@ -2574,11 +2574,12 @@
       "nation_lien": null,
       "v2": false,
       "h_heroisme": false,
-      "description": "+2g0 pour les jets de perception visuelle de loin, réduit de 2 rangs les pénalités de distance de tir et lancer.",
+      "description": "+2g0 pour les jets de perception visuelle de loin, réduit d’un rang les pénalités de distance pour le tir et le lancer (cumulable).",
       "cout_affiche": "2 PP",
       "description_v1": [
         "Le personnage voit plus loin que la plupart des gens.",
-        "Il a droit à 2 dés lancés non gardés supplémentaire (+2g0) pour les jets de perception consistant à voir quelque chose d’éloigné et peut réduire de deux rangs les pénalités de distance pour le tir et le lancer."
+        "Il a droit à 2 dés lancés non gardés supplémentaires (+2g0) pour les jets de perception consistant à voir quelque chose d’éloigné.",
+        "De plus, il peut réduire d’un rang les pénalités de distance pour le tir et le lancer éloignés : par exemple, un tir qui dépasse légèrement la portée effective subit un malus de -1g1, ce que l’Avantage supprime. Ce bonus est cumulable avec d’autres Avantages ou techniques éventuels qui concerneraient ce même malus."
       ]
     },
     {
