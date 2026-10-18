@@ -2355,7 +2355,7 @@ window.JOURNAL_DB = {
       "date": "2025-12-30"
     }
   ],
-  "rev": 1790884266291,
+  "rev": 1792363408744,
   "xp": {
     "persos": [
       {
@@ -2363,7 +2363,7 @@ window.JOURNAL_DB = {
         "nom": "Darmuid",
         "joueur": "Renaud",
         "groupe": "actif",
-        "xp_mj": 160,
+        "xp_mj": 170,
         "xp_av": 0
       },
       {
@@ -2371,7 +2371,7 @@ window.JOURNAL_DB = {
         "nom": "Don Felipe",
         "joueur": "Fred",
         "groupe": "actif",
-        "xp_mj": 160,
+        "xp_mj": 170,
         "xp_av": 0
       },
       {
@@ -2379,7 +2379,7 @@ window.JOURNAL_DB = {
         "nom": "Dorian",
         "joueur": "Rémi",
         "groupe": "actif",
-        "xp_mj": 160,
+        "xp_mj": 170,
         "xp_av": 0
       },
       {
@@ -2387,7 +2387,7 @@ window.JOURNAL_DB = {
         "nom": "Ingrid",
         "joueur": "Vanessa",
         "groupe": "actif",
-        "xp_mj": 160,
+        "xp_mj": 170,
         "xp_av": 0
       },
       {
@@ -2395,7 +2395,7 @@ window.JOURNAL_DB = {
         "nom": "Lü Ji",
         "joueur": "Anthony",
         "groupe": "actif",
-        "xp_mj": 160,
+        "xp_mj": 170,
         "xp_av": 0
       },
       {
@@ -2403,7 +2403,7 @@ window.JOURNAL_DB = {
         "nom": "Lü Min",
         "joueur": "Anthony",
         "groupe": "pnj",
-        "xp_mj": 150,
+        "xp_mj": 160,
         "xp_av": 0,
         "note": "Serviteur (PNJ)"
       },
@@ -2425,6 +2425,37 @@ window.JOURNAL_DB = {
       }
     ],
     "historique": [
+      {
+        "date": "2026-10-18",
+        "raison": "Session 18 octobre, Khemet chapitre 2, cassage de gueule de la CCA",
+        "type": "mj",
+        "gains": [
+          {
+            "id": "darmuid",
+            "xp": 10
+          },
+          {
+            "id": "don-felipe",
+            "xp": 10
+          },
+          {
+            "id": "dorian",
+            "xp": 10
+          },
+          {
+            "id": "ingrid",
+            "xp": 10
+          },
+          {
+            "id": "lu-ji",
+            "xp": 10
+          },
+          {
+            "id": "lu-min",
+            "xp": 10
+          }
+        ]
+      },
       {
         "date": "2026-10-01",
         "raison": "Session dimanche 6 septembre, Khemet chapitre 2",
