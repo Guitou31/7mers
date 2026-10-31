@@ -15,7 +15,7 @@ window.TECHNIQUES_CORRIGEES = {
     "arracher une arme": {
       "nom": "Arracher une arme",
       "categorie": "Techniques de spadassin classiques",
-      "description": "Votre PJ peut utiliser cette compétence pour arracher l’arme de son adversaire et la projeter au loin. Le spadassin utilise son fouet qui va s’enrouler autour de l’arme de son belligérant et le lui arrache des mains en tirant un coup sec sur la poignée de son fouet. Pour réussir cette manœuvre, le spadassin doit d’abord réussir un jet d’attaque contre le ND de son adversaire avec deux augmentations (il vise l’arme) ; s’il y parvient, il doit ensuite réussir un jet d’opposition [Gaillardise contre Détermination de son adversaire] avec un bonus de 5 points (rares sont ceux qui s’y attendent !). Celui qui remporte ce jet arrache l’arme de son adversaire et l’envoie à 1D10+2 mètres. Le spadassin doit donc faire attention de ne pas se retrouver lui-même désarmé lors de cette manœuvre particulièrement difficile.",
+      "description": "Votre PJ peut utiliser cette compétence pour arracher l’arme de son adversaire et la projeter au loin. Le spadassin utilise son fouet qui va s’enrouler autour de l’arme de son belligérant et le lui arrache des mains en tirant un coup sec sur la poignée de son fouet. Pour réussir cette manœuvre, le spadassin doit d’abord réussir un jet d’attaque contre le ND de son adversaire avec quatre augmentations (il vise l’arme) ; s’il y parvient, il doit ensuite réussir un jet d’opposition [Gaillardise contre Détermination de son adversaire] avec un bonus de 5 points (rares sont ceux qui s’y attendent !). Celui qui remporte ce jet arrache l’arme de son adversaire et l’envoie à 1D10+2 mètres. Le spadassin doit donc faire attention de ne pas se retrouver lui-même désarmé lors de cette manœuvre particulièrement difficile.",
       "ecoles_enseignant": [
         "Malone"
       ],
@@ -966,7 +966,7 @@ window.TECHNIQUES_CORRIGEES = {
     "rasoir": {
       "nom": "Rasoir",
       "categorie": "Techniques de spadassin classiques",
-      "description": "Vous avez étudié les bases de l’anatomie et maîtrisez parfaitement le déplacement de votre lame d’escrime afin de profiter de vos connaissances. En conséquence, lorsque vous frappez un adversaire avec une arme d’escrime, vous infligez des blessures précises et extrêmement douloureuses. Pour chaque rang dans cette technique de combat, vous infligez 2 points de santé supplémentaires.",
+      "description": "Vous avez étudié les bases de l’anatomie et maîtrisez parfaitement le déplacement de votre lame d’escrime afin de profiter de vos connaissances. En conséquence, lorsque vous frappez un adversaire avec une arme d’escrime, vous infligez des blessures précises et extrêmement douloureuses. Pour chaque rang dans cette technique de combat, vous infligez 2 points de santé supplémentaires. De plus, vous gagnez une augmentation gratuite sur tous vos coups ciblés.",
       "ecoles_enseignant": [
         "Marchenko"
       ],

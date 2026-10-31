@@ -93,7 +93,7 @@ window.ECOLES_DATA = {
     "arracher une arme": {
       "nom": "Arracher une arme",
       "categorie": "Techniques de spadassin classiques",
-      "description": "Votre PJ peut utiliser cette compétence pour arracher l’arme de son adversaire et la projeter au loin. Le spadassin utilise son fouet qui va s’enrouler autour de l’arme de son belligérant et le lui arrache des mains en tirant un coup sec sur la poignée de son fouet. Pour réussir cette manœuvre, le spadassin doit d’abord réussir un jet d’attaque contre le ND de son adversaire avec deux augmentations (il vise l’arme) ; s’il y parvient, il doit ensuite réussir un jet d’opposition [Gaillardise contre Détermination de son adversaire] avec un bonus de 5 points (rares sont ceux qui s’y attendent !). Celui qui remporte ce jet arrache l’arme de son adversaire et l’envoie à 1D10+2 mètres. Le spadassin doit donc faire attention de ne pas se retrouver lui-même désarmé lors de cette manœuvre particulièrement difficile.",
+      "description": "Votre PJ peut utiliser cette compétence pour arracher l’arme de son adversaire et la projeter au loin. Le spadassin utilise son fouet qui va s’enrouler autour de l’arme de son belligérant et le lui arrache des mains en tirant un coup sec sur la poignée de son fouet. Pour réussir cette manœuvre, le spadassin doit d’abord réussir un jet d’attaque contre le ND de son adversaire avec quatre augmentations (il vise l’arme) ; s’il y parvient, il doit ensuite réussir un jet d’opposition [Gaillardise contre Détermination de son adversaire] avec un bonus de 5 points (rares sont ceux qui s’y attendent !). Celui qui remporte ce jet arrache l’arme de son adversaire et l’envoie à 1D10+2 mètres. Le spadassin doit donc faire attention de ne pas se retrouver lui-même désarmé lors de cette manœuvre particulièrement difficile.",
       "ecoles_enseignant": [
         "Malone"
       ],
@@ -1130,7 +1130,7 @@ window.ECOLES_DATA = {
     "rasoir": {
       "nom": "Rasoir",
       "categorie": "Techniques de spadassin classiques",
-      "description": "Vous avez étudié les bases de l’anatomie et maîtrisez parfaitement le déplacement de votre lame d’escrime afin de profiter de vos connaissances. En conséquence, lorsque vous frappez un adversaire avec une arme d’escrime, vous infligez des blessures précises et extrêmement douloureuses. Pour chaque rang dans cette technique de combat, vous infligez 2 points de santé supplémentaires.",
+      "description": "Vous avez étudié les bases de l’anatomie et maîtrisez parfaitement le déplacement de votre lame d’escrime afin de profiter de vos connaissances. En conséquence, lorsque vous frappez un adversaire avec une arme d’escrime, vous infligez des blessures précises et extrêmement douloureuses. Pour chaque rang dans cette technique de combat, vous infligez 2 points de santé supplémentaires. De plus, vous gagnez une augmentation gratuite sur tous vos coups ciblés.",
       "ecoles_enseignant": [
         "Marchenko"
       ],
@@ -2746,8 +2746,8 @@ window.ECOLES_DATA = {
       ],
       "avantages_courts": {
         "apprenti": "Bénéficie d’un bonus de (5 + 2 x Rang d’école) à son ND pour être touché.",
-        "compagnon": "Doit réussir un jet d’Attaque (Bâton) avec trois augmentations (il vise la tête). S’il touche, son adversaire encaisse un coup qui l’assomme (à moins de réussir un jet de Gaillardise contre un ND de 25 + 5 par augmentation au-delà des trois premières).",
-        "maitre": "Doit réussir un jet de Finesse contre un ND de 30 ; s’il le réussit, son adversaire est envoyé au sol (sans pouvoir utiliser de défense active) où il est en position idéal pour être assommer. La technique du compagnon peut alors être utilisée (en dépensant un dé d’action) sans augmentations supplémentaires, un 5 suffit donc pour l’assommer (plus d’éventuelles augmentations en sus pour augmenter les chances de le mettre K.O.)."
+        "compagnon": "Doit réussir un jet d’Attaque (Bâton) avec quatre augmentations (il vise la tête). S’il touche, son adversaire encaisse un coup qui l’assomme (à moins de réussir un jet de Gaillardise contre un ND de 30 + 5 par augmentation au-delà des quatre premières).",
+        "maitre": "Doit réussir un jet de Finesse contre un ND de 30 ; s’il le réussit, son adversaire est envoyé au sol (sans pouvoir utiliser de défense active) où il ne pourra utiliser que la compétence « Roulé-Boulé » pour se défendre. La technique du compagnon peut alors être utilisée (en dépensant un dé d’action) avec deux augmentations au lieu de quatre."
       },
       "restriction_creation": "libre",
       "genre_restriction": null,
@@ -2771,11 +2771,11 @@ window.ECOLES_DATA = {
           },
           "compagnon": {
             "fluff": "Le compagnon apprend à utiliser son bâton pour mettre son adversaire K.O. en l’assommant.",
-            "regles": "Il doit réussir un jet d’Attaque (Bâton) avec trois augmentations (il vise la tête). S’il touche, son adversaire encaisse un coup qui l’assomme (à moins de réussir un jet de Gaillardise contre un ND de 25 + 5 par augmentation au-delà des trois premières)."
+            "regles": "Il doit réussir un jet d’Attaque (Bâton) avec quatre augmentations (il vise la tête). S’il touche, son adversaire encaisse un coup qui l’assomme (à moins de réussir un jet de Gaillardise contre un ND de 30 + 5 par augmentation au-delà des quatre premières)."
           },
           "maitre": {
             "fluff": "Un maître peut utiliser son bâton comme un perchiste moderne afin de se donner beaucoup d’élan et de frapper son adversaire avec ses deux pieds pour le jeter au sol.",
-            "regles": "Pour cela, il doit réussir un jet de Finesse contre un ND de 30 ; s’il le réussit, son adversaire est envoyé au sol (sans pouvoir utiliser de défense active) où il est en position idéal pour être assommer. La technique du compagnon peut alors être utilisée (en dépensant un dé d’action) sans augmentations supplémentaires, un 5 suffit donc pour l’assommer (plus d’éventuelles augmentations en sus pour augmenter les chances de le mettre K.O.)."
+            "regles": "Pour cela, il doit réussir un jet de Finesse contre un ND de 30 ; s’il le réussit, son adversaire est envoyé au sol (sans pouvoir utiliser de défense active) où il ne pourra utiliser que la compétence « Roulé-Boulé » pour se défendre. La technique du compagnon peut alors être utilisée (en dépensant un dé d’action) avec deux augmentations au lieu de quatre."
           }
         },
         "categorie_creation": "Écoles autorisées sans restriction à la création",

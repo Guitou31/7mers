@@ -4897,7 +4897,7 @@
           },
           "compagnon": {
             "fluff": "Les compagnons apprennent que les armes sont pratiquement des extensions du bras de leurs ennemis, et qu’elles doivent être brisées, comme un bras doit l’être.",
-            "regles": "Vous pouvez utiliser une Manchette pour tenter de briser des armes. Pour essayer de frapper l’arme, lancez Finesse + Manchette contre le ND de votre opposant, plus deux Augmentations pour localiser votre attaque sur l’arme. Si vous touchez, effectuez un jet de dommages contre l’arme. Pour la briser, vous devez atteindre un ND basé sur l’arme visée. Cette attaque ne peut être parée par l’arme attaquée, toute tentative en ce sens conduit l’arme à être touchée automatiquement. Vous pouvez prendre des Augmentations sur votre attaque pour augmenter vos dégâts."
+            "regles": "Vous pouvez utiliser une Manchette pour tenter de briser des armes. Pour essayer de frapper l’arme, lancez Finesse + Manchette contre le ND de votre opposant, plus trois Augmentations pour localiser votre attaque sur l’arme. Si vous touchez, effectuez un jet de dommages contre l’arme. Pour la briser, vous devez atteindre un ND basé sur l’arme visée. Cette attaque ne peut être parée par l’arme attaquée, toute tentative en ce sens conduit l’arme à être touchée automatiquement. Vous pouvez prendre des Augmentations sur votre attaque pour augmenter vos dégâts."
           },
           "maitre": {
             "fluff": "Des années d’entraînement et d’expérience ont rendu les jambes d’un maître assez fortes pour frapper avec la force d’un cheval.",
